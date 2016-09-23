@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">有个APP</string>
+
+    <string name="mainactivity_name">首页</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

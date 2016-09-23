@@ -39,13 +39,12 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:background="@color/white"
-                    android:text="取消"
+                    android:text="@string/dialog_cancel"
                     android:textColor="@color/black"
                     android:textSize="16sp"/>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:layout_centerHorizontal="true"
                     android:background="@color/link_gray"/>
 
                 <TextView
@@ -55,7 +54,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:background="@drawable/selector_btn_blue"
-                    android:text="确定"
+                    android:text="@string/dialog_confirm"
                     android:textColor="@color/white"
                     android:textSize="16sp"/>
             </LinearLayout>

@@ -5,31 +5,31 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
-            android:title="拍照" />
+            android:title="@string/menu_nav_camera" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="相册" />
+            android:title="@string/menu_nav_gallery" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="幻灯片" />
+            android:title="@string/menu_nav_slideshow" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="设置" />
+            android:title="@string/menu_nav_manage" />
     </group>
 
-    <item android:title="互动">
+    <item android:title="@string/menu_nav_title">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="分享" />
+                android:title="@string/menu_nav_share" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="发送" />
+                android:title="@string/menu_nav_send" />
         </menu>
     </item>
 

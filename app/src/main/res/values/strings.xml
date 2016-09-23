@@ -7,4 +7,18 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+
+    <string name="dialog_confirm">确定</string>
+    <string name="dialog_cancel">取消</string>
+
+
+    <string name="menu_nav_camera">拍照</string>
+    <string name="menu_nav_gallery">相册</string>
+    <string name="menu_nav_slideshow">幻灯片</string>
+    <string name="menu_nav_manage">设置</string>
+    <string name="menu_nav_title">互动</string>
+    <string name="menu_nav_share">分享</string>
+    <string name="menu_nav_send">发送</string>
+
 </resources>

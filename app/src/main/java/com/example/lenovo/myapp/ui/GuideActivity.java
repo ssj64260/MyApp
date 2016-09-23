@@ -44,4 +44,9 @@ public class GuideActivity extends BaseActivity {
             }
         }).start();
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }

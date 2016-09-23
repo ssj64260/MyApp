@@ -38,7 +38,6 @@ public class GuideActivity extends BaseActivity {
                         Intent intent = new Intent();
                         intent.setClass(GuideActivity.this, MainActivity.class);
                         startActivity(intent);
-                        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
                         finish();
                     }
                 });

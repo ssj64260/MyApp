@@ -158,14 +158,13 @@ public class MainActivity extends BaseAppCompatActivity
 
                 if (isRefresh) {
                     list.clear();
-                    recyclerView.setLoadingMoreEnabled(true);
                 }
 
                 for (int i = 0; i < 10; i++) {
                     if (isRefresh) {
-                        list.add(new MainListBean("新的分类" + i / 4, "新的测试数据NO." + i));
+                        list.add(new MainListBean("刷新分类" + i / 4, "刷新测试数据NO." + i));
                     } else {
-                        list.add(new MainListBean("分类" + list.size() / 4, "测试数据NO." + list.size()));
+                        list.add(new MainListBean("加载分类" + list.size() / 4, "加载测试数据NO." + list.size()));
                     }
                 }
 
@@ -178,6 +177,10 @@ public class MainActivity extends BaseAppCompatActivity
                         if (list.size() > 39) {
 //                            recyclerView.noMoreLoading();
                             recyclerView.setLoadingMoreEnabled(false);
+                        }
+
+                        if (isRefresh) {
+                            recyclerView.setLoadingMoreEnabled(true);
                         }
                     }
                 });

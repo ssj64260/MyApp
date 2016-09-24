@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\listview_header.xml",
+        "source": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\bundles\\debug\\res\\layout\\listview_header.xml"
+    },
+    {
+        "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_head.xml",
+        "source": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_head.xml"
+    },
+    {
+        "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\listview_footer.xml",
+        "source": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\bundles\\debug\\res\\layout\\listview_footer.xml"
+    }
+]

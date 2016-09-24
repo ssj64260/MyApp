@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.ui;
+package com.example.lenovo.myapp.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,6 +7,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,10 +19,16 @@ import com.example.lenovo.myapp.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.dialog.InputContentDialog;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
+import com.example.lenovo.myapp.model.MainListBean;
+import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.example.lenovo.myapp.utils.FastClick;
 import com.example.lenovo.myapp.utils.StringCheck;
 import com.example.lenovo.myapp.utils.ToastUtil;
 import com.example.lenovo.myapp.widgets.Glide.GlideCircleTransform;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends BaseAppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +42,11 @@ public class MainActivity extends BaseAppCompatActivity
     private DrawerLayout drawer;
     private ImageView ivMainAvatar;//主页头像
 
+    private XRecyclerView recyclerView;
+    private List<MainListBean> list;
+    private MainAdapter adapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +59,7 @@ public class MainActivity extends BaseAppCompatActivity
     private void initView() {
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ivMainAvatar = (ImageView) findViewById(R.id.iv_main_avatar);
+        recyclerView = (XRecyclerView) findViewById(R.id.xrv_list);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +120,69 @@ public class MainActivity extends BaseAppCompatActivity
 
         tvUsername.setText("COKU");
         tvEmail.setText("799536767@qq.com");
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                doRefreshLoading(true);
+            }
+
+            @Override
+            public void onLoadMore() {
+                doRefreshLoading(false);
+            }
+        });
+
+        list = new ArrayList<>();
+        adapter = new MainAdapter(this, list);
+        recyclerView.setAdapter(adapter);
+
+
+        for (int i = 0; i < 10; i++) {
+            list.add(new MainListBean("分类" + i / 4, "测试数据NO." + i));
+        }
+        adapter.notifyDataSetChanged();
+    }
+
+    private void doRefreshLoading(final boolean isRefresh) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    Thread.sleep(2000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                if (isRefresh) {
+                    list.clear();
+                    recyclerView.setLoadingMoreEnabled(true);
+                }
+
+                for (int i = 0; i < 10; i++) {
+                    if (isRefresh) {
+                        list.add(new MainListBean("新的分类" + i / 4, "新的测试数据NO." + i));
+                    } else {
+                        list.add(new MainListBean("分类" + list.size() / 4, "测试数据NO." + list.size()));
+                    }
+                }
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.notifyDataSetChanged();
+                        recyclerView.stopAll();
+
+                        if (list.size() > 39) {
+//                            recyclerView.noMoreLoading();
+                            recyclerView.setLoadingMoreEnabled(false);
+                        }
+                    }
+                });
+            }
+        }).start();
     }
 
     @Override

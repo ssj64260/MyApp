@@ -12,6 +12,12 @@
     <dimen name="main_avatar_width">40dp</dimen>
     <dimen name="main_avatar_height">40dp</dimen>
 
+    <dimen name="item_main_list_base_height">64dp</dimen>
+    <dimen name="item_main_list_head_height">40dp</dimen>
+
+    <dimen name="item_line_height">1dp</dimen>
+
     <dimen name="textsize_16sp">16sp</dimen>
+    <dimen name="textsize_14sp">14sp</dimen>
 
 </resources>

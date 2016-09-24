@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_datetime"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+        <!--android:background="@drawable/shape_bg_gray_transparent"-->
+        <!--android:gravity="center"-->
+        <!--android:includeFontPadding="false"-->
+        <!--tools:text="2015-11-11 03:03:03"-->
+        <!--android:textColor="@color/white" />-->
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_main_list_head_height"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        tools:text="头部数据头部数据"
+        android:textSize="@dimen/textsize_14sp"
+        android:ellipsize="end"
+        android:maxLines="1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_line_height"
+        android:background="@color/link_gray"/>
+
+    <include layout="@layout/item_main_list_base"/>
+
+</LinearLayout>

@@ -12,13 +12,13 @@
 
         <!--主页面-->
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:label="@string/mainactivity_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 
         <!--欢迎界面-->
-        <activity android:name=".ui.GuideActivity"
+        <activity android:name=".ui.activity.GuideActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter>

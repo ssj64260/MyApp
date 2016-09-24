@@ -1,0 +1,206 @@
+[
+    {
+        "outputFile": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 2010,
+                    "endColumn": 74,
+                    "endOffset": 2080
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\24.2.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 2085,
+                    "endColumn": 75,
+                    "endOffset": 2156
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\24.2.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 2161,
+                    "endColumn": 71,
+                    "endOffset": 2228
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\24.2.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 2233,
+                    "endColumn": 48,
+                    "endOffset": 2277
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 2282,
+                    "endColumn": 65,
+                    "endOffset": 2343
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\24.2.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 2348,
+                    "endColumn": 63,
+                    "endOffset": 2407
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2412,
+                    "endColumn": 59,
+                    "endOffset": 2467
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 2472,
+                    "endColumn": 53,
+                    "endOffset": 2521
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 2526,
+                    "endColumn": 60,
+                    "endOffset": 2582
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2587,
+                    "endColumn": 63,
+                    "endOffset": 2646
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 2651,
+                    "endColumn": 61,
+                    "endOffset": 2708
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 2713,
+                    "endColumn": 52,
+                    "endOffset": 2761
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 2766,
+                    "endColumn": 47,
+                    "endOffset": 2809
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2814,
+                    "endColumn": 49,
+                    "endOffset": 2859
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 198,
+                        "endColumn": 49,
+                        "endOffset": 243
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 2864,
+                    "endColumn": 45,
+                    "endOffset": 2905
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 2910,
+                    "endColumn": 46,
+                    "endOffset": 2952
+                },
+                "from": {
+                    "file": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\values\\strings.xml"
+                }
+            }
+        ]
+    }
+]

@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.ui;
+package com.example.lenovo.myapp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

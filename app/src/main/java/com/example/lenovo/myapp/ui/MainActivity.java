@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lenovo.myapp.R;
@@ -29,7 +30,9 @@ public class MainActivity extends BaseAppCompatActivity
 
     private DefaultProgressDialog progressDialog;
 
-    private ImageView ivAvatar;
+    private ImageView ivAvatar;//侧滑栏头像
+    private TextView tvUsername;//侧滑栏用户名
+    private TextView tvEmail;//侧滑栏用户邮箱
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,8 @@ public class MainActivity extends BaseAppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ivAvatar = (ImageView) headerView.findViewById(R.id.iv_avatar);
+        tvUsername = (TextView) headerView.findViewById(R.id.tv_username);
+        tvEmail = (TextView) headerView.findViewById(R.id.tv_email);
 
         progressDialog = new DefaultProgressDialog(this);
     }
@@ -83,6 +88,9 @@ public class MainActivity extends BaseAppCompatActivity
                 .transform(transform)
 //                .placeholder(R.mipmap.app_icon)
                 .into(ivAvatar);
+
+        tvUsername.setText("COKU");
+        tvEmail.setText("799536767@qq.com");
     }
 
     @Override

@@ -11,7 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
@@ -20,17 +22,25 @@ import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.utils.FastClick;
 import com.example.lenovo.myapp.utils.StringCheck;
 import com.example.lenovo.myapp.utils.ToastUtil;
+import com.example.lenovo.myapp.widgets.Glide.GlideCircleTransform;
 
 public class MainActivity extends BaseAppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private DefaultProgressDialog progressDialog;
 
+    private ImageView ivAvatar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initView();
+        setData();
+    }
+
+    private void initView() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -55,9 +65,24 @@ public class MainActivity extends BaseAppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.inflateHeaderView(R.layout.nav_header_main);
+        navigationView.inflateMenu(R.menu.activity_main_drawer);
         navigationView.setNavigationItemSelectedListener(this);
 
+        ivAvatar = (ImageView) headerView.findViewById(R.id.iv_avatar);
+
         progressDialog = new DefaultProgressDialog(this);
+    }
+
+    private void setData() {
+
+        GlideCircleTransform transform = new GlideCircleTransform(this)
+                .setBorderThickness(10)
+                .setColor(255, 255, 255, 1);
+        Glide.with(this).load(R.mipmap.app_icon)
+                .transform(transform)
+//                .placeholder(R.mipmap.app_icon)
+                .into(ivAvatar);
     }
 
     @Override
@@ -97,7 +122,7 @@ public class MainActivity extends BaseAppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_camera:
                 ToastUtil.toast("打开相机");
                 break;
@@ -123,19 +148,17 @@ public class MainActivity extends BaseAppCompatActivity
         return true;
     }
 
-
-
     ///////////////////////////////////////////////////////////////////////////
     // show dialog method
     ///////////////////////////////////////////////////////////////////////////
-    private void showTipsActionDialog(){
+    private void showTipsActionDialog() {
         TipsActionDialog dialog = new TipsActionDialog(this);
         dialog.setTitleText("是否打开设置");
         dialog.setConfirmText("打开");
         dialog.setCancelText("否");
     }
 
-    private void showProgressDialog(){
+    private void showProgressDialog() {
         progressDialog.setMessage("分享中...");
         progressDialog.showDialog();
         new Thread(new Runnable() {
@@ -143,7 +166,7 @@ public class MainActivity extends BaseAppCompatActivity
             public void run() {
                 try {
                     Thread.sleep(2000);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -157,7 +180,7 @@ public class MainActivity extends BaseAppCompatActivity
         }).start();
     }
 
-    private void showInputContentDialog(){
+    private void showInputContentDialog() {
         InputContentDialog dialog = new InputContentDialog(this);
         dialog.setCanDismissByBackPressed(false);
         dialog.setTitleText("请填写发送的内容");

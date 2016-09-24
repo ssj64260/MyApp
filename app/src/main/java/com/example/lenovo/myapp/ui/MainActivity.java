@@ -1,14 +1,12 @@
 package com.example.lenovo.myapp.ui;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,6 +32,9 @@ public class MainActivity extends BaseAppCompatActivity
     private TextView tvUsername;//侧滑栏用户名
     private TextView tvEmail;//侧滑栏用户邮箱
 
+    private DrawerLayout drawer;
+    private ImageView ivMainAvatar;//主页头像
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +45,8 @@ public class MainActivity extends BaseAppCompatActivity
     }
 
     private void initView() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ivMainAvatar = (ImageView) findViewById(R.id.iv_main_avatar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -57,15 +58,10 @@ public class MainActivity extends BaseAppCompatActivity
                             public void onClick(View v) {
                                 ToastUtil.toast("忽略了该推送");
                             }
-                        }).show();
+                        })
+                        .show();
             }
         });
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.inflateHeaderView(R.layout.nav_header_main);
@@ -80,14 +76,34 @@ public class MainActivity extends BaseAppCompatActivity
     }
 
     private void setData() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Glide.get(MainActivity.this).clearDiskCache();
+            }
+        }).start();
 
         GlideCircleTransform transform = new GlideCircleTransform(this)
                 .setBorderThickness(10)
                 .setColor(255, 255, 255, 1);
+
         Glide.with(this).load(R.mipmap.app_icon)
                 .transform(transform)
 //                .placeholder(R.mipmap.app_icon)
                 .into(ivAvatar);
+
+        Glide.with(this).load(R.mipmap.app_icon)
+                .transform(new GlideCircleTransform(this))
+                .into(ivMainAvatar);
+
+        ivMainAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.openDrawer(GravityCompat.START);
+                }
+            }
+        });
 
         tvUsername.setText("COKU");
         tvEmail.setText("799536767@qq.com");
@@ -95,7 +111,6 @@ public class MainActivity extends BaseAppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -107,28 +122,9 @@ public class MainActivity extends BaseAppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            ToastUtil.toast("settings");
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.nav_camera:
@@ -151,7 +147,6 @@ public class MainActivity extends BaseAppCompatActivity
                 break;
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -205,4 +200,67 @@ public class MainActivity extends BaseAppCompatActivity
             }
         });
     }
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    // 参考代码
+    ///////////////////////////////////////////////////////////////////////////
+    /*private void initToolBar(){
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setTitle("空白页");
+//        toolbar.setLogo(R.mipmap.ic_launcher);
+//        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+        toolbar.inflateMenu(R.menu.main);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.action_settings) {
+                    ToastUtil.toast("settings");
+                }
+                return true;
+            }
+        });
+
+        int iconWidth = DisplayUtil.getInstance().dip2px(40);
+        int borderWidth = DisplayUtil.getInstance().dip2px(5);
+        ImageView imageView = new ImageView(this);
+        imageView.setLayoutParams(new ViewGroup.LayoutParams(iconWidth, iconWidth));
+        Glide.with(this)
+                .load(R.mipmap.app_icon)
+                .transform(new GlideCircleTransform(this).setBorderThickness(borderWidth).setColor(255, 255, 255, 1))
+                .into(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                } else {
+                    drawer.openDrawer(GravityCompat.START);
+                }
+            }
+        });
+        toolbar.addView(imageView, 0);
+//        setSupportActionBar(toolbar);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                ToastUtil.toast(getString(R.string.navigation_drawer_close));
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                ToastUtil.toast(getString(R.string.navigation_drawer_open));
+            }
+        };
+        toggle.setDrawerIndicatorEnabled(false);
+//        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+    }*/
 }

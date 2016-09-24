@@ -33,8 +33,8 @@ public class GlideCircleTransform extends BitmapTransformation {
         return this;
     }
 
-    public GlideCircleTransform setBorderThickness(int borderThickness) {
-        this.borderThickness = borderThickness;
+    public GlideCircleTransform setBorderThickness(int px) {
+        this.borderThickness = px;
         return this;
     }
 

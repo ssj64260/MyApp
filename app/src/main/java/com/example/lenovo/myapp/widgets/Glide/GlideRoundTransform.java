@@ -41,8 +41,8 @@ public class GlideRoundTransform extends BitmapTransformation {
         return this;
     }
 
-    public GlideRoundTransform setBorderThickness(int borderThickness) {
-        this.borderThickness = borderThickness;
+    public GlideRoundTransform setBorderThickness(int px) {
+        this.borderThickness = px;
         return this;
     }
 

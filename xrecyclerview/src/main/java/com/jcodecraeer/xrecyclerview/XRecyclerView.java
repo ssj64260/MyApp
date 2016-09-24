@@ -170,7 +170,6 @@ public class XRecyclerView extends RecyclerView {
     }
     /**
      * 是否可以加载更多
-     * @param enabled
      */
     public void setLoadingMoreEnabled(boolean enabled){
         loadingMoreEnabled = enabled;
@@ -198,7 +197,6 @@ public class XRecyclerView extends RecyclerView {
             }
         }
     }
-
 
     public void setRefreshProgressStyle(int style) {
         mRefreshProgressStyle = style;

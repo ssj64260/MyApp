@@ -394,3 +394,5 @@ xrecyclerview/build/intermediates/res/resources-debug-androidTest.ap_
 xrecyclerview/build/intermediates/symbols/androidTest/debug/R.txt
 xrecyclerview/build/outputs/aar/xrecyclerview-debug.aar
 xrecyclerview/build/outputs/aar/xrecyclerview-release.aar
+xrecyclerview/build/intermediates/annotations/debug/annotations.zip
+xrecyclerview/build/intermediates/bundles/debug/classes.jar

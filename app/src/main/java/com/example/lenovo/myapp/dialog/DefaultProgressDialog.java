@@ -16,6 +16,7 @@ public class DefaultProgressDialog {
         }
 //        progressDialog.setCancelable(MyApplication.isApkDebugable());
         progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
     }
 
     public void setCancelable(boolean cancelable){

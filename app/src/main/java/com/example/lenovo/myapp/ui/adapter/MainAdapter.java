@@ -18,6 +18,8 @@ import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private OnItemClickListener onItemClickListener;
+
     private List<MainListBean> list;
     private LayoutInflater layoutInflater;
 
@@ -66,8 +68,16 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    private void bindNoHeadItem(NoHeadViewHolder holder, int position) {
+    private void bindNoHeadItem(NoHeadViewHolder holder, final int position) {
         holder.name.setText(list.get(position).getName());
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(v, position);
+                }
+            }
+        });
     }
 
     private void bindHeadItem(HeadViewHolder holder, int position) {
@@ -97,5 +107,13 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(view);
             name = (TextView) view.findViewById(R.id.tv_name);
         }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 }

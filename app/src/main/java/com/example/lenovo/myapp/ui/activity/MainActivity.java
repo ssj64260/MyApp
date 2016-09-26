@@ -137,7 +137,12 @@ public class MainActivity extends BaseAppCompatActivity
         list = new ArrayList<>();
         adapter = new MainAdapter(this, list);
         recyclerView.setAdapter(adapter);
-
+        adapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                ToastUtil.toast(list.get(position).getName());
+            }
+        });
 
         for (int i = 0; i < 10; i++) {
             list.add(new MainListBean("分类" + i / 4, "测试数据NO." + i));

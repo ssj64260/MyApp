@@ -44,12 +44,12 @@
         "source": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\progressbar.xml"
     },
     {
-        "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\loading_10.png",
-        "source": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\loading_10.png"
-    },
-    {
         "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\loading_12.png",
         "source": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\loading_12.png"
+    },
+    {
+        "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\loading_10.png",
+        "source": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\loading_10.png"
     },
     {
         "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\loading_04.png",

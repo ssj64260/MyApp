@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -211,6 +212,11 @@ public class MainActivity extends BaseAppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()) {
+            case R.id.nav_home:
+                Intent intent = new Intent();
+                intent.setClass(this, ToolsTabActivity.class);
+                startActivity(intent);
+                break;
             case R.id.nav_camera:
                 ToastUtil.toast("打开相机");
                 break;

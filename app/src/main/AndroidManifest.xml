@@ -28,6 +28,10 @@
             </intent-filter>
         </activity>
 
+        <!--头部功能按钮测试页面-->
+        <activity android:name=".ui.activity.ToolsTabActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

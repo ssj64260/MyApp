@@ -396,3 +396,7 @@ xrecyclerview/build/outputs/aar/xrecyclerview-debug.aar
 xrecyclerview/build/outputs/aar/xrecyclerview-release.aar
 xrecyclerview/build/intermediates/annotations/debug/annotations.zip
 xrecyclerview/build/intermediates/bundles/debug/classes.jar
+.gradle/2.14.1/tasks/_cxb library_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin
+.gradle/2.14.1/tasks/_cxb library_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock
+.gradle/2.14.1/tasks/_cxb library_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin
+.gradle/2.14.1/tasks/_cxb library_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock

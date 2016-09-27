@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="textsize_16sp">16sp</dimen>
+    <dimen name="textsize_14sp">14sp</dimen>
+    <dimen name="textsize_12sp">12sp</dimen>
+
+    <!--用于自定义控件-->
+    <dimen name="custom_weight_4dp">4dp</dimen>
+    <dimen name="custom_weight_6dp">6dp</dimen>
+    <dimen name="custom_weight_7dp">7dp</dimen>
+    <dimen name="custom_weight_8dp">8dp</dimen>
+    <dimen name="custom_weight_16dp">16dp</dimen>
+    <dimen name="custom_weight_20dp">20dp</dimen>
+    <dimen name="custom_weight_24dp">24dp</dimen>
+    <dimen name="custom_weight_40dp">40dp</dimen>
+    <dimen name="custom_weight_80dp">80dp</dimen>
+    <dimen name="custom_weight_170dp">170dp</dimen>
+</resources>

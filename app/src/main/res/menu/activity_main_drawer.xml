@@ -3,17 +3,24 @@
 
     <group android:checkableBehavior="none">
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/menu_nav_home"/>
+        <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_nav_camera" />
+            android:title="@string/menu_nav_camera"
+            android:visible="false"/>
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_nav_gallery" />
+            android:title="@string/menu_nav_gallery"
+            android:visible="false"/>
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_nav_slideshow" />
+            android:title="@string/menu_nav_slideshow"
+            android:visible="false"/>
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

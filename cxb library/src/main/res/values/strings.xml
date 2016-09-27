@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">cxb library</string>
+
+    <!--用于自定义控件标记id-->
+    <item type="id" name="vp_tab_list"/>
+    <item type="id" name="llyout_point_list"/>
+</resources>

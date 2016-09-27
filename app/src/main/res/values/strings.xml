@@ -13,6 +13,7 @@
     <string name="dialog_cancel">取消</string>
 
 
+    <string name="menu_nav_home">主页</string>
     <string name="menu_nav_camera">拍照</string>
     <string name="menu_nav_gallery">相册</string>
     <string name="menu_nav_slideshow">幻灯片</string>

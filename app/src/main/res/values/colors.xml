@@ -19,4 +19,5 @@
     <color name="btn_green_normal">#12C386</color>
 
     <color name="meituan_green">#22C5AA</color>
+    <color name="meituan_green_pressed">#13b69b</color>
 </resources>

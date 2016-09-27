@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import com.cxb.tools.MainTab.MainTab;
 import com.cxb.tools.MainTab.MainTabListLayout;
+import com.cxb.tools.MainTab.MainTabResoureUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
 import com.example.lenovo.myapp.utils.ToastUtil;
@@ -19,34 +20,6 @@ import java.util.List;
  */
 
 public class ToolsTabActivity extends BaseActivity implements View.OnClickListener {
-
-    private final int[] icon = {
-            R.mipmap.ic_abra,
-            R.mipmap.ic_ursaring,
-            R.mipmap.ic_magikarp,
-            R.mipmap.ic_murkrow,
-            R.mipmap.ic_cubone,
-            R.mipmap.ic_lopunny,
-            R.mipmap.ic_jolteon,
-            R.mipmap.ic_flareon,
-            R.mipmap.ic_eevee,
-            R.mipmap.ic_entei,
-            R.mipmap.ic_gyarados,
-            R.mipmap.ic_isshu6,
-            R.mipmap.ic_lucario,
-            R.mipmap.ic_duskull,
-            R.mipmap.ic_koffing,
-            R.mipmap.ic_diglett,
-            R.mipmap.ic_ditto,
-            R.mipmap.ic_gengar,
-            R.mipmap.ic_isshu12,
-            R.mipmap.ic_marowak,
-            R.mipmap.ic_scizor,
-            R.mipmap.ic_shuckle,
-            R.mipmap.ic_staraptor,
-            R.mipmap.ic_weavile,
-            R.mipmap.ic_zubat
-    };
 
     private MainTabListLayout mainTabListLayout;
     private List<MainTab> tabList;
@@ -81,7 +54,7 @@ public class ToolsTabActivity extends BaseActivity implements View.OnClickListen
 
         tabList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            tabList.add(new MainTab(String.valueOf(i), icon[i], "宝可梦" + i));
+            tabList.add(new MainTab(String.valueOf(i), MainTabResoureUtil.icon[i], MainTabResoureUtil.name[i]));
         }
 
         mainTabListLayout.setSpanCount(5);

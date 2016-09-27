@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
+import com.example.lenovo.myapp.dialog.EvaluationDialog;
 import com.example.lenovo.myapp.dialog.InputContentDialog;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
@@ -235,6 +236,9 @@ public class MainActivity extends BaseAppCompatActivity
             case R.id.nav_send:
                 showInputContentDialog();
                 break;
+            case R.id.nav_evaluation:
+                showEvaluationDialog();
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
@@ -291,6 +295,17 @@ public class MainActivity extends BaseAppCompatActivity
         });
     }
 
+    private void showEvaluationDialog() {
+        EvaluationDialog evaDialog = new EvaluationDialog(this);
+        evaDialog.setTitle("给有个APP评价一次");
+        evaDialog.setConfirmDismiss(true);
+        evaDialog.setOnSelectedListener(new EvaluationDialog.OnSelectedListener() {
+            @Override
+            public void OnselectedListener(View v, String content, float score) {
+                ToastUtil.toast("评价内容:" + content + "\n评分:" + score);
+            }
+        });
+    }
 
     ///////////////////////////////////////////////////////////////////////////
     // 参考代码

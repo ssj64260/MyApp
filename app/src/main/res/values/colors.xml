@@ -8,10 +8,15 @@
     <color name="bg_gray_transparent">#66BFBFBF</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="gray99">#fcfcfc</color>
+    <color name="gray96">#f5f5f5</color>
+    <color name="gray60">#999999</color>
 
     <color name="toast_bg_transparent">#99000000</color>
 
     <color name="link_gray">#D5DBE0</color>
+
+    <color name="text_black">#525252</color>
 
     <color name="btn_blue_pressed">#5997EF</color>
     <color name="btn_blue_normal">#7FB6F6</color>

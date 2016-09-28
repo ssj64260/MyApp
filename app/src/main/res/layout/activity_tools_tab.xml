@@ -20,7 +20,8 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_scan"
-            android:background="@drawable/selector_bg_iselectable_green"/>
+            android:background="@drawable/selector_bg_iselectable_green"
+            tools:ignore="ContentDescription" />
 
         <LinearLayout
             android:id="@+id/ll_search_bar"
@@ -36,12 +37,14 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:scaleType="centerInside"
-                android:src="@mipmap/ic_search"/>
+                android:src="@mipmap/ic_search"
+                tools:ignore="ContentDescription" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:gravity="center_vertical"
-                android:text="搜索宝可梦信息"/>
+                android:text="搜索宝可梦信息"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <ImageView
@@ -50,7 +53,8 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_message"
-            android:background="@drawable/selector_bg_iselectable_green"/>
+            android:background="@drawable/selector_bg_iselectable_green"
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 

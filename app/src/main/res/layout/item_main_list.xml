@@ -32,7 +32,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_line_height"
-        android:background="@color/link_gray"/>
+        android:background="@color/line_gray"/>
 
     <include layout="@layout/item_main_list_base"/>
 

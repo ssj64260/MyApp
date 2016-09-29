@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -49,6 +50,9 @@ public class ToolsTabActivity extends BaseActivity implements View.OnClickListen
             @Override
             public void onItemClick(View v, int position) {
                 ToastUtil.toast(tabList.get(position).getName());
+                Intent intent = new Intent();
+                intent.setClass(ToolsTabActivity.this, NewsTabbarActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -63,7 +67,7 @@ public class ToolsTabActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_scan:
                 ToastUtil.toast("二维码");
                 break;

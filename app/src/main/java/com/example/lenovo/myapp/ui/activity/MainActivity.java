@@ -286,6 +286,7 @@ public class MainActivity extends BaseAppCompatActivity
         dialog.setOnConfirmListener(new InputContentDialog.OnConfirmListener() {
             @Override
             public void OnConfirmListener(View v, String content) {
+                hideKeyboard();
                 if (StringCheck.isEmpty(content)) {
                     ToastUtil.toast("内容不能为空");
                 } else {

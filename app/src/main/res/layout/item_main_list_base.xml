@@ -22,5 +22,5 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_line_height"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:background="@color/link_gray"/>
+        android:background="@color/line_gray"/>
 </LinearLayout>

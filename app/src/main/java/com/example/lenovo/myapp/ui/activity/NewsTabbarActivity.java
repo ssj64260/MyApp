@@ -8,7 +8,7 @@ import com.cxb.tools.NewsTab.NewsTab;
 import com.cxb.tools.NewsTab.NewsTabResoureUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
-import com.example.lenovo.myapp.utils.ToastUtil;
+import com.cxb.tools.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;

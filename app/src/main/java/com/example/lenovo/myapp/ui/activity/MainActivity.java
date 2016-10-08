@@ -23,9 +23,9 @@ import com.example.lenovo.myapp.dialog.InputContentDialog;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
-import com.example.lenovo.myapp.utils.FastClick;
-import com.example.lenovo.myapp.utils.StringCheck;
-import com.example.lenovo.myapp.utils.ToastUtil;
+import com.cxb.tools.utils.FastClick;
+import com.cxb.tools.utils.StringCheck;
+import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.widgets.Glide.GlideCircleTransform;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 

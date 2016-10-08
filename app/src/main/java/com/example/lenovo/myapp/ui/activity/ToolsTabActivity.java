@@ -11,7 +11,7 @@ import com.cxb.tools.MainTab.MainTabListLayout;
 import com.cxb.tools.MainTab.MainTabResoureUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
-import com.example.lenovo.myapp.utils.ToastUtil;
+import com.cxb.tools.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;

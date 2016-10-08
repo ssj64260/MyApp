@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cxb.tools.R;
+import com.cxb.tools.utils.StringCheck;
 
 import java.util.List;
 
@@ -46,16 +47,17 @@ public class MainTabAdapter extends RecyclerView.Adapter<MainTabAdapter.MainBoxV
                 if (mOnItemSelectedListener != null) {
                     mOnItemSelectedListener.onItemClick(v, position);
                 }
-
-                //TODO 有具体事件时需要删除
-//                String message = FuWuLogic.clickItem(position,context.get());
-//                if (!"".equals(message)) {
-//                    ToastUtil.toast(message);
-//                }
             }
         });
-        holder.tv.setText(list.get(position).getName());
-        holder.iv.setImageResource(list.get(position).getLogoResource());
+
+        MainTab mainTab = list.get(position);
+
+        holder.tv.setText(mainTab.getName());
+        if (!StringCheck.isEmpty(mainTab.getUrl())) {
+            
+        } else {
+            holder.iv.setImageResource(mainTab.getLogoResource());
+        }
     }
 
     public interface OnItemSelectedListener {

@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.utils;
+package com.cxb.tools.utils;
 
 import android.app.Activity;
 import android.content.ComponentName;

@@ -84,11 +84,13 @@ public class MainTabListLayout extends LinearLayout {
         addView(pointsLayout);
     }
 
+    //设置每行多少个item
     public void setSpanCount(int spanCount){
         this.spanCount = spanCount;
         count = spanCount * 2;
     }
 
+    //添加item列表
     public void setList(List<MainTab> tabList) {
         this.tabList = tabList;
         initTab();

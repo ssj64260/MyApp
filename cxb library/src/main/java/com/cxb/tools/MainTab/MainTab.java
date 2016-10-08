@@ -8,14 +8,19 @@ import java.io.Serializable;
 public class MainTab implements Serializable {
 
     private String id;
-    private String logo;
     private String name;
-    private String url;
-    private int logoResource;
+    private String url;//图标url
+    private int logoResource;//图标本地资源
 
     public MainTab(String id, int logoResource, String name) {
         this.id = id;
         this.logoResource = logoResource;
+        this.name = name;
+    }
+
+    public MainTab(String id, String url, String name) {
+        this.id = id;
+        this.url = url;
         this.name = name;
     }
 
@@ -25,14 +30,6 @@ public class MainTab implements Serializable {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getLogo() {
-        return logo;
-    }
-
-    public void setLogo(String logo) {
-        this.logo = logo;
     }
 
     public String getName() {

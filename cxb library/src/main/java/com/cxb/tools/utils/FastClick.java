@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.utils;
+package com.cxb.tools.utils;
 
 /**
  * 防止快速点击工具

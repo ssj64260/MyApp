@@ -251,13 +251,13 @@ public class MainActivity extends BaseAppCompatActivity
     ///////////////////////////////////////////////////////////////////////////
     private void showTipsActionDialog() {
         TipsActionDialog dialog = new TipsActionDialog(this);
-        dialog.setTitleText("打开系统设置？");
+        dialog.setTitleText("打开系统WIFI设置？");
         dialog.setConfirmText("打开");
         dialog.setCancelText("取消");
         dialog.setOnConfirmListener(new TipsActionDialog.OnConfirmListener() {
             @Override
             public void OnConfirmListener(View v) {
-                startActivity(new Intent(Settings.ACTION_SETTINGS));
+                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
             }
         });
     }

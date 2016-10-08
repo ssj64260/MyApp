@@ -8,6 +8,7 @@ ext {
                versionName      : "1.0"]
 
     dependencies = ["logger"         : 'com.orhanobut:logger:1.15',
+                    "supprot-v4"     : 'com.android.support:support-v4:24.2.1',
                     "appcompat-v7"   : 'com.android.support:appcompat-v7:24.2.1',
                     "recyclerview-v7": 'com.android.support:recyclerview-v7:24.2.1',
                     "design"         : 'com.android.support:design:24.2.1',

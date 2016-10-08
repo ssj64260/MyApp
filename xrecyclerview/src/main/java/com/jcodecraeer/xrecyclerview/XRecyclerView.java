@@ -184,6 +184,7 @@ public class XRecyclerView extends RecyclerView {
                 }
             }
         }else{
+            // TODO: 2016/10/8 没有更多数据时是否隐藏底部提示
 //            showFooter(false);
             noMoreLoading();
         }

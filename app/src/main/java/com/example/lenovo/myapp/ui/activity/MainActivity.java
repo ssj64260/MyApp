@@ -26,7 +26,7 @@ import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
-import com.example.lenovo.myapp.widgets.Glide.GlideCircleTransform;
+import com.cxb.tools.Glide.GlideCircleTransform;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;

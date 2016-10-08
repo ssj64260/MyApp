@@ -1,36 +1,15 @@
 package com.cxb.tools.utils;
 
-import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.Signature;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
-import android.widget.Toast;
-
-import java.io.ByteArrayInputStream;
-import java.lang.ref.WeakReference;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-
-import javax.security.auth.x500.X500Principal;
 
 public class AndroidUtils {
 
-    public static Boolean isEmulator() {
+    /*public static Boolean isEmulator() {
         return "google_sdk".equals(Build.PRODUCT);
     }
 
-    /*public static String getAndroidId() {
+    public static String getAndroidId() {
         return Secure.getString(MsqFrameworkApp.getInstance().getContentResolver(),
                 Secure.ANDROID_ID);
     }
@@ -92,7 +71,7 @@ public class AndroidUtils {
     public static Integer getHeapSize() {
         return ((ActivityManager) MsqFrameworkApp.getInstance().getSystemService(
                 Context.ACTIVITY_SERVICE)).getMemoryClass();
-    }*/
+    }
 
 
     public static Boolean isMediaMounted() {
@@ -114,7 +93,7 @@ public class AndroidUtils {
 
     public static String getPlatformVersion() {
         return Build.VERSION.RELEASE;
-    }
+    }*/
 
 
     /*public static Boolean isSmallScreen() {
@@ -222,7 +201,7 @@ public class AndroidUtils {
         return metrics;
     }*/
 
-    public interface ISafeHandler {
+    /*public interface ISafeHandler {
         void handleMessage(Message msg);
     }
 
@@ -281,12 +260,12 @@ public class AndroidUtils {
     }
 
 
-    /*
+    *//*
      * @package name
      * Google Play Store : com.android.vending
      * Google Map : com.google.android.apps.maps
      *
-     */
+     *//*
     public static boolean isApkAvailable(Context context, String packagename) {
         PackageInfo packageInfo;
 
@@ -328,7 +307,7 @@ public class AndroidUtils {
         } catch (CertificateException e) {
         }
         return debuggable;
-    }
+    }*/
 
     public static boolean isApkDebugable(Context context) {
         try {

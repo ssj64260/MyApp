@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.widgets.Glide;
+package com.cxb.tools.Glide;
 
 import android.content.Context;
 import android.content.res.Resources;

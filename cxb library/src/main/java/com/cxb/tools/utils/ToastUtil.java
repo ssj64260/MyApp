@@ -41,7 +41,7 @@ public abstract class ToastUtil {
         }
     }
 
-    public enum ToastMgr {
+    private enum ToastMgr {
         builder;
         private View toastView;
         private TextView tv;

@@ -1,8 +1,8 @@
-package com.example.lenovo.myapp.utils;
+package com.cxb.tools.utils;
 
 // dp，sp，px单位转换
 
-import com.example.lenovo.myapp.MyApplication;
+import android.content.Context;
 
 public class DisplayUtil {
 
@@ -14,12 +14,12 @@ public class DisplayUtil {
 
     }
 
-    public static DisplayUtil getInstance() {
+    public static DisplayUtil getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (DisplayUtil.class){
                 if (INSTANCE == null) {
                     INSTANCE = new DisplayUtil();
-                    scale = MyApplication.getInstance().getResources().getDisplayMetrics().density;
+                    scale = context.getResources().getDisplayMetrics().density;
                 }
             }
         }

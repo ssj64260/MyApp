@@ -31,7 +31,6 @@ dependencies {
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["design"]
     compile rootProject.ext.dependencies["logger"]
-    compile rootProject.ext.dependencies["glide"]
     compile project(':xrecyclerview')
     compile project(':cxb library')
 }

@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.lenovo.myapp.R;
@@ -23,7 +24,7 @@ public class TipsActionDialog {
     private Window window;
 
     private TextView title;
-    private TextView cancel, confirm;
+    private Button cancel, confirm;
 
     private OnConfirmListener mOnConfirmListener;
     private OnCancelListener mOnCancelListener;
@@ -53,8 +54,8 @@ public class TipsActionDialog {
 
 
         title = (TextView) window.findViewById(R.id.tv_title);
-        cancel = (TextView) window.findViewById(R.id.btn_cancel);
-        confirm = (TextView) window.findViewById(R.id.btn_confirm);
+        cancel = (Button) window.findViewById(R.id.btn_cancel);
+        confirm = (Button) window.findViewById(R.id.btn_confirm);
     }
 
     //设置是否强制在dismiss对话框时 销毁Activity

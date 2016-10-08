@@ -2,6 +2,7 @@ package com.example.lenovo.myapp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,6 +16,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.cxb.tools.Glide.GlideCircleTransform;
+import com.cxb.tools.utils.FastClick;
+import com.cxb.tools.utils.StringCheck;
+import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
@@ -23,10 +28,6 @@ import com.example.lenovo.myapp.dialog.InputContentDialog;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
-import com.cxb.tools.utils.FastClick;
-import com.cxb.tools.utils.StringCheck;
-import com.cxb.tools.utils.ToastUtil;
-import com.cxb.tools.Glide.GlideCircleTransform;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
@@ -250,9 +251,15 @@ public class MainActivity extends BaseAppCompatActivity
     ///////////////////////////////////////////////////////////////////////////
     private void showTipsActionDialog() {
         TipsActionDialog dialog = new TipsActionDialog(this);
-        dialog.setTitleText("是否打开设置");
+        dialog.setTitleText("打开系统WIFI设置？");
         dialog.setConfirmText("打开");
-        dialog.setCancelText("否");
+        dialog.setCancelText("取消");
+        dialog.setOnConfirmListener(new TipsActionDialog.OnConfirmListener() {
+            @Override
+            public void OnConfirmListener(View v) {
+                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+            }
+        });
     }
 
     private void showProgressDialog() {

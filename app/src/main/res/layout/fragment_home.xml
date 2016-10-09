@@ -14,7 +14,7 @@
 
         <ImageView
             android:id="@+id/iv_scan"
-            android:layout_width="@dimen/nav_header_scan_width"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_scan"
@@ -47,7 +47,7 @@
 
         <ImageView
             android:id="@+id/iv_message"
-            android:layout_width="@dimen/nav_header_scan_width"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_message"

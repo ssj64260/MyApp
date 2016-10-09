@@ -71,10 +71,6 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
             }
         });
 
-        //两位数
-        tabLayout.showMsg(0, 55);
-        tabLayout.setMsgMargin(0, -5, 5);
-
         //三位数
         tabLayout.showMsg(1, 100);
         tabLayout.setMsgMargin(1, -5, 5);

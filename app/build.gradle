@@ -33,4 +33,5 @@ dependencies {
     compile rootProject.ext.dependencies["logger"]
     compile project(':xrecyclerview')
     compile project(':cxb library')
+    compile project(':FlycoTabLayout_Lib')
 }

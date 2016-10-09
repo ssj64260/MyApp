@@ -18,7 +18,7 @@ public class NewsTabResoureUtil {
             "个体值",
             "努力值",
             "捕获地点",
-
+            "帅气值",
             "美丽值",
             "聪明值",
             "坚强值"

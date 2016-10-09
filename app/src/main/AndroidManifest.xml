@@ -38,6 +38,11 @@
         <activity android:name=".ui.activity.NewsTabbarActivity"
             android:screenOrientation="portrait"/>
 
+        <!--口袋妖怪主页-->
+        <activity android:name=".ui.activity.PokemonMainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

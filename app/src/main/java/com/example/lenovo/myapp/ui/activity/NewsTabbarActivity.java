@@ -41,7 +41,7 @@ public class NewsTabbarActivity extends BaseActivity {
         });
 
         list = new ArrayList<>();
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 15; i++) {
             list.add(new NewsTab(String.valueOf(i), NewsTabResoureUtil.name[i]));
         }
         svNewsTabs.addTabList(list);

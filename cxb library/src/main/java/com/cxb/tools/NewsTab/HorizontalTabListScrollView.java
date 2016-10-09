@@ -6,6 +6,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,8 +28,8 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
     private List<NewsTab> tabList;
     private OnItemSelectedListener mOnItemSelectedListener;//点击回调
 
-    private final int textColorNormal = 0xFFF0F2F5;//未选中的字体颜色
-    private final int textColorSelect = 0xFFFFD633;//选中的字体颜色
+    private final int textColorNormal = 0xFF000000;//未选中的字体颜色
+    private final int textColorSelect = 0xFF0295C9;//选中的字体颜色
 
     public HorizontalTabListScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -56,7 +58,6 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
         for (int i = 0; i < tabList.size(); i++) {
             final View itemView = mLayoutInflater.inflate(R.layout.item_news_tab, null);
             final TextView name = (TextView) itemView.findViewById(R.id.tv_name);
-            final TextView link = (TextView) itemView.findViewById(R.id.tv_link);
 
             String cateName = tabList.get(i).getName();
 
@@ -67,8 +68,10 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
             if (i == 0) {
                 topTempView = itemView;
                 name.setTextColor(textColorSelect);
-                link.setVisibility(VISIBLE);
                 itemView.setClickable(false);
+                Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.scale_big);
+                animation.setFillAfter(true);
+                name.startAnimation(animation);
             }
 
             //头部菜单按钮点击事件
@@ -99,7 +102,7 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
     //获得当前位置的X坐标
     private int getXCoordinate(int position) {
         int allWidth = 0;
-        for (int i = 0; i < (position - 1); i++) {
+        for (int i = 0; i < (position - 2); i++) {
             allWidth += mHorizontalTabView.getChildAt(i).getWidth();
         }
         return allWidth;
@@ -111,9 +114,10 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
         //拿到点击前按钮的对象，并把样式还原
         topTempView.setClickable(true);
         TextView tempName = (TextView) topTempView.findViewById(R.id.tv_name);
-        TextView tempLink = (TextView) topTempView.findViewById(R.id.tv_link);
         tempName.setTextColor(textColorNormal);
-        tempLink.setVisibility(View.INVISIBLE);
+        Animation animation1 = AnimationUtils.loadAnimation(getContext(), R.anim.scale_small);
+        animation1.setFillAfter(true);
+        tempName.startAnimation(animation1);
 
         //记录当前点击按钮的对象
         topTempView = selectView;
@@ -121,12 +125,13 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
         //设置当前点击按钮的样式
         topTempView.setClickable(false);
         tempName = (TextView) topTempView.findViewById(R.id.tv_name);
-        tempLink = (TextView) topTempView.findViewById(R.id.tv_link);
         tempName.setTextColor(textColorSelect);
-        tempLink.setVisibility(View.VISIBLE);
+        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.scale_big);
+        animation.setFillAfter(true);
+        tempName.startAnimation(animation);
 
         //设置跳转的位置
-        scrollTo(getXCoordinate(position), 0);
+        smoothScrollTo(getXCoordinate(position), 0);
     }
 
     public interface OnItemSelectedListener {

@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cxb.tools.Glide.GlideCircleTransform;
-import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
@@ -194,19 +193,6 @@ public class MainActivity extends BaseAppCompatActivity
                 });
             }
         }).start();
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            if (FastClick.isExitClick()) {
-                finish();
-            } else {
-                ToastUtil.toast("再次点击退出程序");
-            }
-        }
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

@@ -68,7 +68,7 @@ public class GuideActivity extends BaseActivity {
         if (!isNoFirst) {
             isNoFirst = true;
             Intent intent = new Intent();
-            intent.setClass(GuideActivity.this, MainActivity.class);
+            intent.setClass(GuideActivity.this, PokemonMainActivity.class);
             startActivity(intent);
             finish();
         }

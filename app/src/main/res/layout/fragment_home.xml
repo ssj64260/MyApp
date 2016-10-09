@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:orientation="horizontal"
+        android:background="@color/black"
         android:gravity="center_vertical"
-        android:background="@color/meituan_green">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/iv_scan"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:background="@drawable/selector_bg_selectable"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_scan"
-            android:background="@drawable/selector_bg_iselectable_green"
             tools:ignore="ContentDescription" />
 
         <LinearLayout
@@ -26,17 +26,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
+            android:background="@drawable/shape_bg_search"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:background="@drawable/shape_bg_search">
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:scaleType="centerInside"
                 android:src="@mipmap/ic_search"
                 tools:ignore="ContentDescription" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
@@ -49,9 +51,9 @@
             android:id="@+id/iv_message"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:background="@drawable/selector_bg_selectable"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_message"
-            android:background="@drawable/selector_bg_iselectable_green"
             tools:ignore="ContentDescription" />
 
     </LinearLayout>

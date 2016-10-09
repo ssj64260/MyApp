@@ -27,4 +27,6 @@
 
     <color name="meituan_green">#22C5AA</color>
     <color name="meituan_green_pressed">#13b69b</color>
+
+    <color name="black_pressed">#33FFFFFF</color>
 </resources>

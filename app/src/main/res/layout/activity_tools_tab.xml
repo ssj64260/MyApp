@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_scan"
-            android:background="@drawable/selector_bg_iselectable_green"
+            android:background="@drawable/selector_bg_selectable"
             tools:ignore="ContentDescription" />
 
         <LinearLayout
@@ -53,7 +53,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerInside"
             android:src="@mipmap/ic_message"
-            android:background="@drawable/selector_bg_iselectable_green"
+            android:background="@drawable/selector_bg_selectable"
             tools:ignore="ContentDescription" />
 
     </LinearLayout>

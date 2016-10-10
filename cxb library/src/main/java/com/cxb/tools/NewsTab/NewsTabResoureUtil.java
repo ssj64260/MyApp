@@ -24,4 +24,34 @@ public class NewsTabResoureUtil {
             "坚强值"
     };
 
+    public static final String[] placeName = {
+            "关都",
+            "城都",
+            "丰缘",
+            "神奥",
+            "合众",
+            "卡洛斯"
+    };
+
+    public static final String[] characteristic = {
+            "一般",
+            "格斗",
+            "飞行",
+            "毒",
+            "地面",
+            "岩石",
+            "虫",
+            "幽灵",
+            "钢",
+            "火",
+            "水",
+            "草",
+            "电",
+            "超能力",
+            "冰",
+            "龙",
+            "恶",
+            "妖精"
+    };
+
 }

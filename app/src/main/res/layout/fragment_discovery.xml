@@ -2,33 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="top"
-        android:text="发现"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="发现"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
+        <com.cxb.tools.NewsTab.HorizontalTabListScrollView
+            android:id="@+id/htlsv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@+id/img_add"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:text="发现"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_add" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/bg_gradient"
+            android:scaleType="centerCrop"
+            android:layout_toLeftOf="@+id/img_add"/>
+
+    </RelativeLayout>
+
 </LinearLayout>

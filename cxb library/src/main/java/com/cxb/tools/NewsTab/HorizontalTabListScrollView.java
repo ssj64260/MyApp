@@ -55,6 +55,9 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
     private void initTab() {
         mHorizontalTabView.removeAllViews();
         LayoutInflater mLayoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
         for (int i = 0; i < tabList.size(); i++) {
             final View itemView = mLayoutInflater.inflate(R.layout.item_news_tab, null);
             final TextView name = (TextView) itemView.findViewById(R.id.tv_name);
@@ -89,6 +92,7 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
                 }
             });
 
+            itemView.setLayoutParams(layoutParams);
             mHorizontalTabView.addView(itemView);
         }
         scrollTo(0, 0);

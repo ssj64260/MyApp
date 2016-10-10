@@ -203,7 +203,7 @@ public class MainActivity extends BaseAppCompatActivity
         switch (item.getItemId()) {
             case R.id.nav_home:
                 Intent intent = new Intent();
-                intent.setClass(this, PokemonMainActivity.class);
+                intent.setClass(this, IntroductionActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_camera:

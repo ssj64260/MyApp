@@ -14,7 +14,7 @@ import com.example.lenovo.myapp.base.BaseActivity;
 
 public class GuideActivity extends BaseActivity {
 
-    private int time = 3;
+    private int time = 5;
     private TextView tvSkip;
     private boolean isNoFirst = false;
 

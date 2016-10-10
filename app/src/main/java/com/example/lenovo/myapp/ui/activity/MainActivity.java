@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cxb.tools.Glide.GlideCircleTransform;
+import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
@@ -169,9 +170,9 @@ public class MainActivity extends BaseAppCompatActivity
 
                 for (int i = 0; i < 10; i++) {
                     if (isRefresh) {
-                        list.add(new MainListBean("刷新分类" + i / 4, "刷新测试数据NO." + i));
+                        list.add(new MainListBean("刷新分类" + i / 4, "刷新数据NO." + i));
                     } else {
-                        list.add(new MainListBean("加载分类" + list.size() / 4, "加载测试数据NO." + list.size()));
+                        list.add(new MainListBean("加载分类" + list.size() / 4, "加载数据NO." + list.size()));
                     }
                 }
 
@@ -228,8 +229,16 @@ public class MainActivity extends BaseAppCompatActivity
                 break;
         }
 
-        drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (FastClick.isExitClick()) {
+            finish();
+        } else {
+            ToastUtil.toast("再次点击退出程序");
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////

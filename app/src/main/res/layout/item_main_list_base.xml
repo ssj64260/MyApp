@@ -5,6 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_line_height"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:background="@color/line_gray"
+        android:visibility="gone"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_main_list_base_height"
@@ -18,9 +26,4 @@
         android:ellipsize="end"
         android:maxLines="1"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/item_line_height"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:background="@color/line_gray"/>
 </LinearLayout>

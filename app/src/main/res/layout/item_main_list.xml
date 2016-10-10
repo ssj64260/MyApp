@@ -24,15 +24,11 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:gravity="center_vertical"
+        android:background="@color/bg_gray_transparent"
         tools:text="头部数据头部数据"
         android:textSize="@dimen/textsize_14sp"
         android:ellipsize="end"
         android:maxLines="1"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/item_line_height"
-        android:background="@color/line_gray"/>
 
     <include layout="@layout/item_main_list_base"/>
 

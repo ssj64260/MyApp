@@ -64,11 +64,11 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (holder instanceof HeadViewHolder) {
             bindHeadItem((HeadViewHolder) holder, position);
         } else {
-            bindNoHeadItem((NoHeadViewHolder) holder, position);
+            bindNoHeadItem((NoHeadViewHolder) holder, position, true);
         }
     }
 
-    private void bindNoHeadItem(NoHeadViewHolder holder, final int position) {
+    private void bindNoHeadItem(NoHeadViewHolder holder, final int position, boolean isNoHead) {
         holder.name.setText(list.get(position).getName());
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,10 +78,11 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 }
             }
         });
+        holder.line.setVisibility(isNoHead ? View.VISIBLE : View.GONE);
     }
 
     private void bindHeadItem(HeadViewHolder holder, int position) {
-        bindNoHeadItem(holder, position);
+        bindNoHeadItem(holder, position, false);
 
         holder.head.setText(list.get(position).getHead());
     }
@@ -102,10 +103,12 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private class NoHeadViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
+        private View line;
 
         private NoHeadViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.tv_name);
+            line = view.findViewById(R.id.view_line);
         }
     }
 

@@ -5,8 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
-import com.cxb.tools.utils.FastClick;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.model.TabEntity;
@@ -23,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 口袋妖怪咨询主页
+ * 口袋妖怪资讯主页
  */
 
 public class PokemonMainActivity extends BaseAppCompatActivity {
@@ -105,12 +103,12 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         mViewPager.setCurrentItem(0);
     }
 
-    @Override
-    public void onBackPressed() {
-        if (FastClick.isExitClick()) {
-            finish();
-        } else {
-            ToastUtil.toast("再次点击退出程序");
-        }
-    }
+//    @Override
+//    public void onBackPressed() {
+//        if (FastClick.isExitClick()) {
+//            finish();
+//        } else {
+//            ToastUtil.toast("再次点击退出程序");
+//        }
+//    }
 }

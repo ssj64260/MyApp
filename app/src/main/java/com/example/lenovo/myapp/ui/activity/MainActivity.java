@@ -148,7 +148,7 @@ public class MainActivity extends BaseAppCompatActivity
         });
 
         for (int i = 0; i < 10; i++) {
-            list.add(new MainListBean("分类" + i / 4, "测试数据NO." + i));
+            list.add(new MainListBean("分类" + i / 4, "测试数据#" + i));
         }
         adapter.notifyDataSetChanged();
     }
@@ -170,9 +170,9 @@ public class MainActivity extends BaseAppCompatActivity
 
                 for (int i = 0; i < 10; i++) {
                     if (isRefresh) {
-                        list.add(new MainListBean("刷新分类" + i / 4, "刷新数据NO." + i));
+                        list.add(new MainListBean("刷新分类" + i / 4, "刷新数据#" + i));
                     } else {
-                        list.add(new MainListBean("加载分类" + list.size() / 4, "加载数据NO." + list.size()));
+                        list.add(new MainListBean("加载分类" + list.size() / 4, "加载数据#" + list.size()));
                     }
                 }
 

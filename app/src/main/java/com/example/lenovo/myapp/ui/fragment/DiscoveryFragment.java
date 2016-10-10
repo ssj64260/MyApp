@@ -13,12 +13,12 @@ import com.example.lenovo.myapp.R;
  * 附近
  */
 
-public class NearbyFragment extends Fragment {
+public class DiscoveryFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_nearby, null);
+        View view = inflater.inflate(R.layout.fragment_discovery, null);
 
 
         return view;

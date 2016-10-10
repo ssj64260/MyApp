@@ -11,7 +11,7 @@ import com.example.lenovo.myapp.model.TabEntity;
 import com.example.lenovo.myapp.ui.adapter.MyPagerAdapter;
 import com.example.lenovo.myapp.ui.fragment.HomeFragment;
 import com.example.lenovo.myapp.ui.fragment.MineFragment;
-import com.example.lenovo.myapp.ui.fragment.NearbyFragment;
+import com.example.lenovo.myapp.ui.fragment.DiscoveryFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -26,7 +26,7 @@ import java.util.List;
 
 public class PokemonMainActivity extends BaseAppCompatActivity {
 
-    private String[] titles = {"首页", "附近", "我的"};
+    private String[] titles = {"首页", "发现", "我的"};
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private List<Fragment> mFragments = new ArrayList<>();
@@ -79,7 +79,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         tabLayout.showDot(2);
 
         mFragments.add(new HomeFragment());
-        mFragments.add(new NearbyFragment());
+        mFragments.add(new DiscoveryFragment());
         mFragments.add(new MineFragment());
 
         mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), mFragments));

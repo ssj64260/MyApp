@@ -39,7 +39,7 @@ public class GuideActivity extends BaseActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (time > 0) {
+                while (time > 0 && !isNoFirst) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

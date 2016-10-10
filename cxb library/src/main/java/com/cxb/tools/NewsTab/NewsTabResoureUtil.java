@@ -54,4 +54,25 @@ public class NewsTabResoureUtil {
             "妖精"
     };
 
+    public static final String[] characteristic_english = {
+            "general",
+            "Fighting",
+            "flight",
+            "poison",
+            "ground",
+            "rock",
+            "insect",
+            "ghost",
+            "steel",
+            "fire",
+            "water",
+            "grass",
+            "Electricity",
+            "superpower",
+            "ice",
+            "Dragon",
+            "evil",
+            "Fairy"
+    };
+
 }

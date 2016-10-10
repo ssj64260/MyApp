@@ -23,4 +23,25 @@
     <string name="menu_nav_send">发送</string>
     <string name="menu_nav_evaluation">评价</string>
 
+
+    <!--口袋妖怪属性-->
+    <string name="general">一般</string>
+    <string name="Fighting">格斗</string>
+    <string name="flight">飞行</string>
+    <string name="poison">毒</string>
+    <string name="ground">地面</string>
+    <string name="rock">岩石</string>
+    <string name="insect">虫</string>
+    <string name="ghost">幽灵</string>
+    <string name="steel">钢</string>
+    <string name="fire">火</string>
+    <string name="water">水</string>
+    <string name="grass">草</string>
+    <string name="Electricity">电</string>
+    <string name="superpower">超能力</string>
+    <string name="ice">冰</string>
+    <string name="Dragon">龙</string>
+    <string name="evil">恶</string>
+    <string name="Fairy">妖精</string>
+
 </resources>

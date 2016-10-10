@@ -300,7 +300,7 @@ public class MainActivity extends BaseAppCompatActivity
 
     private void showEvaluationDialog() {
         EvaluationDialog evaDialog = new EvaluationDialog(this);
-        evaDialog.setTitle("给有个APP评价一次");
+        evaDialog.setTitle("给这个APP评价一次");
         evaDialog.setConfirmDismiss(true);
         evaDialog.setOnSelectedListener(new EvaluationDialog.OnSelectedListener() {
             @Override

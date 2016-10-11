@@ -3,15 +3,14 @@ package com.example.lenovo.myapp.ui.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import android.support.v4.app.FragmentTransaction;
 
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.model.TabEntity;
-import com.example.lenovo.myapp.ui.adapter.MyPagerAdapter;
+import com.example.lenovo.myapp.ui.fragment.DiscoveryFragment;
 import com.example.lenovo.myapp.ui.fragment.HomeFragment;
 import com.example.lenovo.myapp.ui.fragment.MineFragment;
-import com.example.lenovo.myapp.ui.fragment.DiscoveryFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -29,11 +28,11 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
     private String[] titles = {"首页", "发现", "我的"};
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    private List<Fragment> mFragments = new ArrayList<>();
+    private List<Fragment> fragmentList;
 
     private CommonTabLayout tabLayout;
 
-    private ViewPager mViewPager;
+    private Fragment curFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +41,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
 
         initView();
         setData();
+        initFragment();
 
     }
 
@@ -51,8 +51,36 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         }
 
         tabLayout = (CommonTabLayout) findViewById(R.id.com_tablayout);
-        mViewPager = (ViewPager) findViewById(R.id.vp_fragment);
 
+    }
+
+    private void initFragment() {
+        fragmentList = new ArrayList<>();
+        fragmentList.add(new HomeFragment());
+        fragmentList.add(new DiscoveryFragment());
+        fragmentList.add(new MineFragment());
+
+        showFragment(0);
+    }
+
+    private void showFragment(int position) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        if (curFragment != null){
+            transaction.hide(curFragment);
+        }
+
+        curFragment = getSupportFragmentManager().findFragmentByTag(fragmentList.get(position).getClass().getName());
+        if (curFragment == null) {
+            curFragment = fragmentList.get(position);
+        }
+
+        if (!curFragment.isAdded()) {
+            transaction.add(R.id.fl_fragment, curFragment);
+        } else {
+            transaction.show(curFragment);
+        }
+        transaction.commit();
     }
 
     private void setData() {
@@ -60,7 +88,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         tabLayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
-                mViewPager.setCurrentItem(position);
+                showFragment(position);
 
                 tabLayout.hideMsg(position);
             }
@@ -78,29 +106,6 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         //设置未读消息红点
         tabLayout.showDot(2);
 
-        mFragments.add(new HomeFragment());
-        mFragments.add(new DiscoveryFragment());
-        mFragments.add(new MineFragment());
-
-        mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), mFragments));
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                tabLayout.setCurrentTab(position);
-                tabLayout.hideMsg(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-        mViewPager.setCurrentItem(0);
     }
 
 //    @Override

@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1",
+        "name": "一般",
+        "en_name": "general"
+    },
+    {
+        "id": "2",
+        "name": "格斗",
+        "en_name": "fighting"
+    },
+    {
+        "id": "3",
+        "name": "飞行",
+        "en_name": "flight"
+    },
+    {
+        "id": "4",
+        "name": "毒",
+        "en_name": "poison"
+    },
+    {
+        "id": "5",
+        "name": "地面",
+        "en_name": "ground"
+    },
+    {
+        "id": "6",
+        "name": "岩石",
+        "en_name": "rock"
+    },
+    {
+        "id": "7",
+        "name": "虫",
+        "en_name": "insect"
+    },
+    {
+        "id": "8",
+        "name": "幽灵",
+        "en_name": "ghost"
+    },
+    {
+        "id": "9",
+        "name": "钢",
+        "en_name": "steel"
+    },
+    {
+        "id": "10",
+        "name": "火",
+        "en_name": "fire"
+    },
+    {
+        "id": "11",
+        "name": "水",
+        "en_name": "water"
+    },
+    {
+        "id": "12",
+        "name": "草",
+        "en_name": "grass"
+    },
+    {
+        "id": "13",
+        "name": "电",
+        "en_name": "electricity"
+    },
+    {
+        "id": "13",
+        "name": "超能力",
+        "en_name": "superpower"
+    },
+    {
+        "id": "13",
+        "name": "冰",
+        "en_name": "ice"
+    },
+    {
+        "id": "13",
+        "name": "龙",
+        "en_name": "dragon"
+    },
+    {
+        "id": "13",
+        "name": "恶",
+        "en_name": "evil"
+    },
+    {
+        "id": "13",
+        "name": "妖精",
+        "en_name": "fairy"
+    }
+]

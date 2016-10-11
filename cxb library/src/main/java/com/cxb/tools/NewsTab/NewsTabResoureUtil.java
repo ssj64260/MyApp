@@ -56,7 +56,7 @@ public class NewsTabResoureUtil {
 
     public static final String[] characteristic_english = {
             "general",
-            "Fighting",
+            "fighting",
             "flight",
             "poison",
             "ground",
@@ -67,12 +67,12 @@ public class NewsTabResoureUtil {
             "fire",
             "water",
             "grass",
-            "Electricity",
+            "electricity",
             "superpower",
             "ice",
-            "Dragon",
+            "dragon",
             "evil",
-            "Fairy"
+            "fairy"
     };
 
 }

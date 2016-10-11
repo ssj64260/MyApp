@@ -52,11 +52,11 @@
         "source": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\drawable-hdpi\\loading_12.png"
     },
     {
-        "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_pulltorefresh_arrow.png",
-        "source": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\drawable-hdpi\\ic_pulltorefresh_arrow.png"
-    },
-    {
         "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_07.png",
         "source": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\drawable-hdpi\\loading_07.png"
+    },
+    {
+        "merged": "D:\\msquare\\MyApp\\xrecyclerview\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_pulltorefresh_arrow.png",
+        "source": "D:\\msquare\\MyApp\\xrecyclerview\\src\\main\\res\\drawable-hdpi\\ic_pulltorefresh_arrow.png"
     }
 ]

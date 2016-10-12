@@ -3,6 +3,9 @@
 /.idea/libraries  
 .DS_Store  
 /build 
+.idea
+
+
 MyApp.iml
 .gradle/2.14.1/taskArtifacts/cache.properties
 .gradle/2.14.1/taskArtifacts/cache.properties.lock
@@ -404,3 +407,11 @@ xrecyclerview/build/intermediates/bundles/debug/classes.jar
 .gradle/2.14.1/tasks/_FlycoTabLayout_Lib_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock
 .gradle/2.14.1/tasks/_FlycoTabLayout_Lib_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin
 .gradle/2.14.1/tasks/_FlycoTabLayout_Lib_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock
+.gradle/2.14.1/tasks/_FlycoTabLayout_Lib_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin
+.gradle/2.14.1/tasks/_FlycoTabLayout_Lib_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock
+.gradle/2.14.1/tasks/_FlycoTabLayout_Lib_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin
+.gradle/2.14.1/tasks/_FlycoTabLayout_Lib_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock
+.gradle/2.14.1/tasks/_cxb library_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin
+.gradle/2.14.1/tasks/_cxb library_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock
+.gradle/2.14.1/tasks/_cxb library_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin
+.gradle/2.14.1/tasks/_cxb library_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock

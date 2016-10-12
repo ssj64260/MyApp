@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/iv_pm_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_pm_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/ll_pm_property"
+        android:layout_toRightOf="@+id/iv_pm_logo"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:text="No.001" />
+
+    <TextView
+        android:id="@+id/tv_pm_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_pm_id"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@+id/iv_pm_logo"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:text="妙蛙种子" />
+
+    <LinearLayout
+        android:id="@+id/ll_pm_property"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_pm_property1"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:background="@color/general"
+            tools:text="超能力" />
+
+        <TextView
+            android:id="@+id/tv_pm_property2"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:background="@color/btn_green_pressed"
+            tools:text="草" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white" />
+
+</RelativeLayout>

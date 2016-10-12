@@ -1,5 +1,7 @@
 package com.cxb.tools.NewsTab;
 
+import com.cxb.tools.R;
+
 /**
  * maintab资源工具
  */
@@ -73,6 +75,48 @@ public class NewsTabResoureUtil {
             "dragon",
             "evil",
             "fairy"
+    };
+
+    public static final int[] characteristic_bg_color = {
+            R.drawable.shape_bg_general,
+            R.drawable.shape_bg_fighting,
+            R.drawable.shape_bg_flight,
+            R.drawable.shape_bg_poison,
+            R.drawable.shape_bg_ground,
+            R.drawable.shape_bg_rock,
+            R.drawable.shape_bg_insect,
+            R.drawable.shape_bg_ghost,
+            R.drawable.shape_bg_steel,
+            R.drawable.shape_bg_fire,
+            R.drawable.shape_bg_water,
+            R.drawable.shape_bg_grass,
+            R.drawable.shape_bg_electricity,
+            R.drawable.shape_bg_superpower,
+            R.drawable.shape_bg_ice,
+            R.drawable.shape_bg_dragon,
+            R.drawable.shape_bg_evil,
+            R.drawable.shape_bg_fairy
+    };
+
+    public static final int[] characteristic_color = {
+            0xFFBBBBAA,
+            0xFFBB5544,
+            0xFF6699FF,
+            0xFFAA5599,
+            0xFFDDBB55,
+            0xFFBBAA66,
+            0xFFAABB22,
+            0xFF6666BB,
+            0xFFAAAABB,
+            0xFFFF4422,
+            0xFF3399FF,
+            0xFF77CC55,
+            0xFFFFCC33,
+            0xFFFF5599,
+            0xFF77DDFF,
+            0xFF7766EE,
+            0xFF775544,
+            0xFFFFAAFF
     };
 
 }

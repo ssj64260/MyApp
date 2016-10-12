@@ -10,7 +10,6 @@ public class PokemonBean {
 
     private String id;
     private String name;
-    private String property1;
     private List<PropertyBean> property;
     private List<CharacteristicBean> characteristic;
     private String hp;
@@ -35,14 +34,6 @@ public class PokemonBean {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getProperty1() {
-        return property1;
-    }
-
-    public void setProperty1(String property1) {
-        this.property1 = property1;
     }
 
     public List<PropertyBean> getProperty() {

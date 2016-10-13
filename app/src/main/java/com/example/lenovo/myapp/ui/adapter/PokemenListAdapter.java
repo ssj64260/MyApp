@@ -53,8 +53,8 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         requestManager.load(logoUrl)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .placeholder(R.mipmap.app_icon)
-                .error(R.mipmap.app_icon)
+                .placeholder(R.mipmap.ic_no_image)
+                .error(R.mipmap.ic_no_image)
                 .into(holder.ivLogo);
         holder.tvId.setText("No." + pm.getId());
         holder.tvName.setText(pm.getName());

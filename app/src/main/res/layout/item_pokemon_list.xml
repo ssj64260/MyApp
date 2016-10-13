@@ -40,7 +40,7 @@
 
     <LinearLayout
         android:id="@+id/ll_pm_property"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
@@ -51,6 +51,7 @@
             android:id="@+id/tv_pm_property1"
             android:layout_width="60dp"
             android:layout_height="24dp"
+            android:layout_marginRight="1dp"
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="12sp"

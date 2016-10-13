@@ -11,11 +11,15 @@ import android.view.ViewGroup;
 import com.cxb.tools.NewsTab.HorizontalTabListScrollView;
 import com.cxb.tools.NewsTab.NewsTab;
 import com.cxb.tools.utils.AssetsUtil;
+import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.adapter.MyPagerAdapter;
+import com.example.lenovo.myapp.utils.CustomDepthPageTransformer;
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,15 +67,22 @@ public class DiscoveryFragment extends Fragment {
     }
 
     private void setData() {
-//        String json = AssetsUtil.getAssetsTxtByName(getActivity(), "property");
-//        Type newsType = new TypeToken<List<NewsTab>>() {}.getType();
-
         list = new ArrayList<>();
-        list.addAll((List<NewsTab>) AssetsUtil.getObjectByName(getActivity(), "property", new TypeToken<List<NewsTab>>() {
-        }.getType()));
         propertyList = new ArrayList<>();
-        propertyList.addAll((List<PropertyBean>) AssetsUtil.getObjectByName(getActivity(), "property", new TypeToken<List<PropertyBean>>() {
-        }.getType()));
+
+        String json = AssetsUtil.getAssetsTxtByName(getActivity(), "property");
+        if (!StringCheck.isEmpty(json)) {
+            Type newsType = new TypeToken<List<NewsTab>>() {
+            }.getType();
+            Type propertyType = new TypeToken<List<PropertyBean>>() {
+            }.getType();
+            Gson gson = new Gson();
+
+            List<NewsTab> newsTemp = gson.fromJson(json, newsType);
+            List<PropertyBean> propertyTemp = gson.fromJson(json, propertyType);
+            list.addAll(newsTemp);
+            propertyList.addAll(propertyTemp);
+        }
 
         svNewsTabs.addTabList(list);
 
@@ -80,6 +91,7 @@ public class DiscoveryFragment extends Fragment {
         }
 
         mViewPager.setAdapter(new MyPagerAdapter(getActivity().getSupportFragmentManager(), fragmentList));
+        mViewPager.setPageTransformer(true, new CustomDepthPageTransformer());
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

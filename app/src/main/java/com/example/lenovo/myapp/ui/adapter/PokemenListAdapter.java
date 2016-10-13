@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cxb.tools.NewsTab.NewsTabResoureUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
@@ -50,7 +51,11 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         PokemonBean pm = list.get(position);
         String logoUrl = "http://res.pokemon.name/common/pokemon/pgl/" + pm.getId() + ".00.png";
 
-        requestManager.load(logoUrl).placeholder(R.mipmap.app_icon).into(holder.ivLogo);
+        requestManager.load(logoUrl)
+                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                .placeholder(R.mipmap.app_icon)
+                .error(R.mipmap.app_icon)
+                .into(holder.ivLogo);
         holder.tvId.setText("No." + pm.getId());
         holder.tvName.setText(pm.getName());
 

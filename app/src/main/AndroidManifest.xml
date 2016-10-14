@@ -12,23 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!--启动页-->
+        <activity android:name=".ui.activity.StartupPageActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!--广告页-->
+        <activity android:name=".ui.activity.AdPagesActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <!--主页面-->
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/mainactivity_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
-
-        <!--欢迎界面-->
-        <activity android:name=".ui.activity.GuideActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <!--头部功能按钮测试页面-->
         <activity android:name=".ui.activity.ToolsTabActivity"

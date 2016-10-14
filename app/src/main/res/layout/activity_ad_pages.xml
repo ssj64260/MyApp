@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
     <ImageView
-        android:id="@+id/iv_ad"
+        android:id="@+id/iv_startup_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@mipmap/img_guide"/>
+        android:src="@mipmap/img_instinct"/>
 
     <TextView
         android:id="@+id/tv_skip"

@@ -1,6 +1,5 @@
 package com.example.lenovo.myapp.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -12,7 +11,7 @@ import com.example.lenovo.myapp.base.BaseActivity;
  * 欢迎界面
  */
 
-public class GuideActivity extends BaseActivity {
+public class AdPagesActivity extends BaseActivity {
 
     private int time = 5;
     private TextView tvSkip;
@@ -21,7 +20,7 @@ public class GuideActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guide);
+        setContentView(R.layout.activity_ad_pages);
 
         tvSkip = (TextView) findViewById(R.id.tv_skip);
 
@@ -32,7 +31,7 @@ public class GuideActivity extends BaseActivity {
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toMain();
+                toFinish();
             }
         });
 
@@ -57,20 +56,18 @@ public class GuideActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        toMain();
+                        toFinish();
                     }
                 });
             }
         }).start();
     }
 
-    private void toMain() {
+    private void toFinish() {
         if (!isNoFirst) {
             isNoFirst = true;
-            Intent intent = new Intent();
-            intent.setClass(GuideActivity.this, MainActivity.class);
-            startActivity(intent);
             finish();
+            overridePendingTransition(0, 0);
         }
     }
 

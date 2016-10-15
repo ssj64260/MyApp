@@ -108,6 +108,12 @@ public class TipsActionDialog {
         cancel.setText(can);
     }
 
+    public void dismiss() {
+        if (dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
+        }
+    }
+
     private void setListener(final Context context) {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +122,7 @@ public class TipsActionDialog {
                     mOnCancelListener.OnCancelListener(v);
                 }
                 if (cancelCanDismiss) {
-                    dialog.dismiss();
+                    dismiss();
                 }
             }
         });
@@ -127,7 +133,7 @@ public class TipsActionDialog {
                     mOnConfirmListener.OnConfirmListener(v);
                 }
                 if (confirmCanDismiss) {
-                    dialog.dismiss();
+                    dismiss();
                 }
             }
         });
@@ -136,7 +142,7 @@ public class TipsActionDialog {
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
                     if (backCanDismiss) {
-                        dialog.dismiss();
+                        dismiss();
                     }
                     if (finish) {
                         ((Activity) context).finish();

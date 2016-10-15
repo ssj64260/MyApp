@@ -78,7 +78,7 @@ public class DiscoveryPageFragment extends Fragment {
         }
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        PokemenListAdapter adapter = new PokemenListAdapter(getActivity(), pmList);
+        PokemenListAdapter adapter = new PokemenListAdapter(getActivity(), pmList, property);
         mRecyclerView.setAdapter(adapter);
 
     }

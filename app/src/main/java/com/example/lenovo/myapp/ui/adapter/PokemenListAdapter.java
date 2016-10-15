@@ -25,21 +25,30 @@ import java.util.List;
 
 public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private static final String ALL = "all";
+
     private LayoutInflater layoutInflater;
-
     private List<PokemonBean> list;
-
     private RequestManager requestManager;
+    private String type;
 
-    public PokemenListAdapter(Context context, List<PokemonBean> list) {
+    public PokemenListAdapter(Context context, List<PokemonBean> list, String type) {
         this.list = list;
         layoutInflater = LayoutInflater.from(context);
         requestManager = Glide.with(context);
+        this.type = type;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new PmViewHolder(layoutInflater.inflate(R.layout.item_pokemon_list, parent, false));
+        int layout;
+        if (ALL.equals(type)) {
+            layout = R.layout.item_pokemon_list_all;
+        } else {
+            layout = R.layout.item_pokemon_list;
+        }
+
+        return new PmViewHolder(layoutInflater.inflate(layout, parent, false));
     }
 
     @Override
@@ -49,17 +58,31 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private void bindPmItem(PmViewHolder holder, int position) {
         PokemonBean pm = list.get(position);
+        String id = pm.getId();
+        String mega = pm.getMega();
 
-        String logoNoBackground = "http://res.pokemon.name/sprites/core/xy/front/" + pm.getId() + "." + pm.getMega() + ".png";
-        String smallLogo = "http://res.pokemon.name/common/pokemon/icons/" + pm.getId() + "." + pm.getMega() + ".png";
-        String littleBigLogo = "http://res.pokemon.name/common/pokemon/pgl/" + pm.getId() + "." + pm.getMega() + ".png";
+        if (StringCheck.isEmpty(mega)) {
+            mega = "00";
+        }
 
-        requestManager.load(logoNoBackground)
+        String noBackgroundLogo = "http://res.pokemon.name/sprites/core/xy/front/" + id + "." + mega + ".png";
+        String smallLogo = "http://res.pokemon.name/common/pokemon/icons/" + id + "." + mega + ".png";
+        String littleBigLogo = "http://res.pokemon.name/common/pokemon/pgl/" + id + "." + mega + ".png";
+
+        String url;
+
+        if (ALL.equals(type)) {
+            url = smallLogo;
+        } else {
+            url = noBackgroundLogo;
+        }
+
+        requestManager.load(url)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .placeholder(R.mipmap.ic_no_image)
                 .error(R.mipmap.ic_no_image)
                 .into(holder.ivLogo);
-        holder.tvId.setText("No." + pm.getId());
+        holder.tvId.setText("No." + id);
         holder.tvName.setText(pm.getName());
 
         List<PropertyBean> pList = pm.getProperty();

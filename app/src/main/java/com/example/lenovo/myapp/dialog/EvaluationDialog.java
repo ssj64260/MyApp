@@ -153,12 +153,6 @@ public class EvaluationDialog {
         this.confirmDismiss = confirmDismiss;
     }
 
-    public void showDialog() {
-        if (dialog != null && !isShowing()) {
-
-        }
-    }
-
     public void dismiss() {
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();

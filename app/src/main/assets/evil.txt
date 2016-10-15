@@ -2,7 +2,7 @@
     {
         "id": "197",
         "name": "月精灵",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -29,7 +29,7 @@
     {
         "id": "198",
         "name": "黑暗鸦",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -64,7 +64,7 @@
     {
         "id": "215",
         "name": "狃拉",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -99,7 +99,7 @@
     {
         "id": "228",
         "name": "戴鲁比",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -134,7 +134,7 @@
     {
         "id": "229",
         "name": "黑鲁加",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -169,7 +169,7 @@
     {
         "id": "248",
         "name": "班吉拉",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -200,7 +200,7 @@
     {
         "id": "261",
         "name": "土狼犬",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -231,7 +231,7 @@
     {
         "id": "262",
         "name": "大狼犬",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -262,7 +262,7 @@
     {
         "id": "274",
         "name": "长鼻叶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "12",
                 "name": "草"
@@ -297,7 +297,7 @@
     {
         "id": "275",
         "name": "狡猾天狗",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "12",
                 "name": "草"
@@ -332,7 +332,7 @@
     {
         "id": "302",
         "name": "勾魂眼",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -367,7 +367,7 @@
     {
         "id": "318",
         "name": "利牙鱼",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -398,7 +398,7 @@
     {
         "id": "319",
         "name": "巨牙鲨",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -429,7 +429,7 @@
     {
         "id": "332",
         "name": "梦歌奈亚",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "12",
                 "name": "草"
@@ -460,7 +460,7 @@
     {
         "id": "342",
         "name": "铁螯龙虾",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -495,7 +495,7 @@
     {
         "id": "359",
         "name": "阿勃梭鲁",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -526,7 +526,7 @@
     {
         "id": "430",
         "name": "乌鸦头头",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -561,7 +561,7 @@
     {
         "id": "434",
         "name": "臭鼬噗",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "4",
                 "name": "毒"
@@ -596,7 +596,7 @@
     {
         "id": "435",
         "name": "坦克臭鼬",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "4",
                 "name": "毒"
@@ -631,7 +631,7 @@
     {
         "id": "442",
         "name": "花岩怪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "8",
                 "name": "幽灵"
@@ -662,7 +662,7 @@
     {
         "id": "452",
         "name": "龙王蝎",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "4",
                 "name": "毒"
@@ -697,7 +697,7 @@
     {
         "id": "461",
         "name": "玛狃拉",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -728,7 +728,7 @@
     {
         "id": "491",
         "name": "达克莱伊",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -751,7 +751,7 @@
     {
         "id": "509",
         "name": "扒手猫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -782,7 +782,7 @@
     {
         "id": "510",
         "name": "酷豹",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -813,7 +813,7 @@
     {
         "id": "551",
         "name": "黑眼鳄",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -848,7 +848,7 @@
     {
         "id": "552",
         "name": "混混鳄",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -883,7 +883,7 @@
     {
         "id": "553",
         "name": "流氓鳄",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -918,7 +918,7 @@
     {
         "id": "559",
         "name": "滑头小子",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -953,7 +953,7 @@
     {
         "id": "560",
         "name": "头巾混混",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -988,7 +988,7 @@
     {
         "id": "570",
         "name": "索罗亚",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1011,7 +1011,7 @@
     {
         "id": "571",
         "name": "索罗亚克",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1034,7 +1034,7 @@
     {
         "id": "624",
         "name": "驹刀小兵",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1069,7 +1069,7 @@
     {
         "id": "625",
         "name": "劈斩司令",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1104,7 +1104,7 @@
     {
         "id": "629",
         "name": "秃鹰小子",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1139,7 +1139,7 @@
     {
         "id": "630",
         "name": "秃鹰娜",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1174,7 +1174,7 @@
     {
         "id": "633",
         "name": "单首龙",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1201,7 +1201,7 @@
     {
         "id": "634",
         "name": "双头龙",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1228,7 +1228,7 @@
     {
         "id": "635",
         "name": "三头龙",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1255,7 +1255,7 @@
     {
         "id": "658",
         "name": "甲贺忍蛙",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -1286,7 +1286,7 @@
     {
         "id": "675",
         "name": "流氓熊猫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "2",
                 "name": "格斗"
@@ -1321,7 +1321,7 @@
     {
         "id": "686",
         "name": "好啦鱿",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1356,7 +1356,7 @@
     {
         "id": "687",
         "name": "乌贼王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1391,7 +1391,7 @@
     {
         "id": "717",
         "name": "伊裴尔塔尔",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1418,7 +1418,7 @@
     {
         "id": "229",
         "name": "超级黑鲁加",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1449,7 +1449,7 @@
     {
         "id": "248",
         "name": "超级班吉拉",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -1480,7 +1480,7 @@
     {
         "id": "130",
         "name": "超级暴鲤龙",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -1511,7 +1511,7 @@
     {
         "id": "359",
         "name": "超级阿勃梭鲁",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1538,7 +1538,7 @@
     {
         "id": "302",
         "name": "超级勾魂眼",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -1569,7 +1569,7 @@
     {
         "id": "319",
         "name": "超级巨牙鲨",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -1600,7 +1600,7 @@
     {
         "id": "720",
         "name": "被解放的胡帕",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "14",
                 "name": "超能力"

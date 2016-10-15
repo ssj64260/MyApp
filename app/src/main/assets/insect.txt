@@ -2,7 +2,7 @@
     {
         "id": "010",
         "name": "绿毛虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -29,7 +29,7 @@
     {
         "id": "011",
         "name": "铁甲蛹",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -56,7 +56,7 @@
     {
         "id": "012",
         "name": "巴大蝶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -87,7 +87,7 @@
     {
         "id": "013",
         "name": "独角虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -118,7 +118,7 @@
     {
         "id": "014",
         "name": "铁壳蛹",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -149,7 +149,7 @@
     {
         "id": "015",
         "name": "大针蜂",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -180,7 +180,7 @@
     {
         "id": "046",
         "name": "派拉斯",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -215,7 +215,7 @@
     {
         "id": "047",
         "name": "派拉斯特",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -250,7 +250,7 @@
     {
         "id": "048",
         "name": "毛球",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -285,7 +285,7 @@
     {
         "id": "049",
         "name": "摩鲁蛾",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -320,7 +320,7 @@
     {
         "id": "123",
         "name": "飞天螳螂",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -355,7 +355,7 @@
     {
         "id": "127",
         "name": "凯罗斯",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -386,7 +386,7 @@
     {
         "id": "165",
         "name": "芭瓢虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -421,7 +421,7 @@
     {
         "id": "166",
         "name": "安瓢虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -456,7 +456,7 @@
     {
         "id": "167",
         "name": "线球",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -491,7 +491,7 @@
     {
         "id": "168",
         "name": "阿利多斯",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -526,7 +526,7 @@
     {
         "id": "193",
         "name": "阳阳玛",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -561,7 +561,7 @@
     {
         "id": "204",
         "name": "榛果球",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -588,7 +588,7 @@
     {
         "id": "205",
         "name": "佛烈托斯",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -619,7 +619,7 @@
     {
         "id": "212",
         "name": "巨钳螳螂",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -654,7 +654,7 @@
     {
         "id": "213",
         "name": "壶壶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -689,7 +689,7 @@
     {
         "id": "214",
         "name": "赫拉克罗斯",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -724,7 +724,7 @@
     {
         "id": "265",
         "name": "刺尾虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -751,7 +751,7 @@
     {
         "id": "266",
         "name": "甲壳蛹",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -778,7 +778,7 @@
     {
         "id": "267",
         "name": "狩猎凤蝶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -809,7 +809,7 @@
     {
         "id": "268",
         "name": "盾甲茧",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -836,7 +836,7 @@
     {
         "id": "269",
         "name": "毒粉蝶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -867,7 +867,7 @@
     {
         "id": "283",
         "name": "溜溜糖球",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -898,7 +898,7 @@
     {
         "id": "284",
         "name": "雨翅蛾",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -929,7 +929,7 @@
     {
         "id": "290",
         "name": "土居忍士",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -960,7 +960,7 @@
     {
         "id": "291",
         "name": "铁面忍者",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -991,7 +991,7 @@
     {
         "id": "292",
         "name": "脱壳忍者",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1022,7 +1022,7 @@
     {
         "id": "313",
         "name": "电萤虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1053,7 +1053,7 @@
     {
         "id": "314",
         "name": "甜甜萤",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1084,7 +1084,7 @@
     {
         "id": "347",
         "name": "太古羽虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"6",
                 "name": "岩石"
@@ -1115,7 +1115,7 @@
     {
         "id": "348",
         "name": "太古盔甲",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"6",
                 "name": "岩石"
@@ -1146,7 +1146,7 @@
     {
         "id": "401",
         "name": "圆法师",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1173,7 +1173,7 @@
     {
         "id": "402",
         "name": "音箱蟀",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1200,7 +1200,7 @@
     {
         "id": "412",
         "name": "结草儿（草木蓑衣）",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1227,7 +1227,7 @@
     {
         "id": "413",
         "name": "结草贵妇（草木蓑衣）",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1258,7 +1258,7 @@
     {
         "id": "414",
         "name": "绅士蛾",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1289,7 +1289,7 @@
     {
         "id": "415",
         "name": "三蜜蜂",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1320,7 +1320,7 @@
     {
         "id": "416",
         "name": "蜂后",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1351,7 +1351,7 @@
     {
         "id": "451",
         "name": "紫天蝎",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"4",
                 "name": "毒"
@@ -1386,7 +1386,7 @@
     {
         "id": "469",
         "name": "梅卡阳玛",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1421,7 +1421,7 @@
     {
         "id": "540",
         "name": "虫宝包",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1456,7 +1456,7 @@
     {
         "id": "541",
         "name": "宝包茧",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1491,7 +1491,7 @@
     {
         "id": "542",
         "name": "保母虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1526,7 +1526,7 @@
     {
         "id": "543",
         "name": "百足蜈蚣",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1561,7 +1561,7 @@
     {
         "id": "544",
         "name": "车轮毬",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1596,7 +1596,7 @@
     {
         "id": "545",
         "name": "蜈蚣王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1631,7 +1631,7 @@
     {
         "id": "557",
         "name": "石居蟹",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1666,7 +1666,7 @@
     {
         "id": "558",
         "name": "岩殿居蟹",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1701,7 +1701,7 @@
     {
         "id": "588",
         "name": "盖盖虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1732,7 +1732,7 @@
     {
         "id": "589",
         "name": "骑士蜗牛",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1767,7 +1767,7 @@
     {
         "id": "595",
         "name": "电电虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1802,7 +1802,7 @@
     {
         "id": "596",
         "name": "电蜘蛛",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1837,7 +1837,7 @@
     {
         "id": "616",
         "name": "小嘴蜗",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1868,7 +1868,7 @@
     {
         "id": "617",
         "name": "敏捷虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1899,7 +1899,7 @@
     {
         "id": "632",
         "name": "铁蚁",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1934,7 +1934,7 @@
     {
         "id": "636",
         "name": "燃烧虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1965,7 +1965,7 @@
     {
         "id": "637",
         "name": "火神虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -1996,7 +1996,7 @@
     {
         "id": "649",
         "name": "盖诺赛克特",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2023,7 +2023,7 @@
     {
         "id": "664",
         "name": "粉蛹",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2054,7 +2054,7 @@
     {
         "id": "665",
         "name": "粉蝶蛹",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2081,7 +2081,7 @@
     {
         "id": "666",
         "name": "碧粉蝶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2116,7 +2116,7 @@
     {
         "id": "413",
         "name": "结草贵妇（沙地蓑衣）",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2147,7 +2147,7 @@
     {
         "id": "413",
         "name": "结草贵妇（垃圾蓑衣）",
-        "property": [
+        "mega":"02",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2178,7 +2178,7 @@
     {
         "id": "212",
         "name": "超级巨钳螳螂",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2209,7 +2209,7 @@
     {
         "id": "127",
         "name": "超级凯罗斯",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2240,7 +2240,7 @@
     {
         "id": "214",
         "name": "超级赫拉克罗斯",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id":"7",
                 "name": "虫"
@@ -2271,7 +2271,7 @@
     {
         "id": "015",
         "name": "超级大针蜂",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id":"7",
                 "name": "虫"

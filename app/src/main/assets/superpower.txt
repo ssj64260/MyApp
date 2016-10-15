@@ -2,7 +2,7 @@
     {
         "id": "063",
         "name": "凯西",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -33,7 +33,7 @@
     {
         "id": "064",
         "name": "勇基拉",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -64,7 +64,7 @@
     {
         "id": "065",
         "name": "胡地",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -95,7 +95,7 @@
     {
         "id": "079",
         "name": "呆呆兽",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -130,7 +130,7 @@
     {
         "id": "080",
         "name": "呆壳兽",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -165,7 +165,7 @@
     {
         "id": "096",
         "name": "催眠貘",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -196,7 +196,7 @@
     {
         "id": "097",
         "name": "引梦貘人",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -227,7 +227,7 @@
     {
         "id": "102",
         "name": "蛋蛋",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "12",
                 "name": "草"
@@ -258,7 +258,7 @@
     {
         "id": "103",
         "name": "椰蛋树",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "12",
                 "name": "草"
@@ -289,7 +289,7 @@
     {
         "id": "121",
         "name": "宝石海星",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -324,7 +324,7 @@
     {
         "id": "122",
         "name": "魔墙人偶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -359,7 +359,7 @@
     {
         "id": "124",
         "name": "迷唇姐",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "15",
                 "name": "冰"
@@ -394,7 +394,7 @@
     {
         "id": "150",
         "name": "超梦",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -421,7 +421,7 @@
     {
         "id": "151",
         "name": "梦幻",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -444,7 +444,7 @@
     {
         "id": "177",
         "name": "天然雀",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -479,7 +479,7 @@
     {
         "id": "178",
         "name": "天然鸟",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -514,7 +514,7 @@
     {
         "id": "196",
         "name": "太阳精灵",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -541,7 +541,7 @@
     {
         "id": "199",
         "name": "河马王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -576,7 +576,7 @@
     {
         "id": "201",
         "name": "未知图腾",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -599,7 +599,7 @@
     {
         "id": "202",
         "name": "果然翁",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -626,7 +626,7 @@
     {
         "id": "203",
         "name": "麒麟奇",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "1",
                 "name": "一般"
@@ -661,7 +661,7 @@
     {
         "id": "238",
         "name": "迷唇娃",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "15",
                 "name": "冰"
@@ -696,7 +696,7 @@
     {
         "id": "249",
         "name": "洛奇亚",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -727,7 +727,7 @@
     {
         "id": "251",
         "name": "雪拉比",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -754,7 +754,7 @@
     {
         "id": "280",
         "name": "拉鲁拉丝",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -789,7 +789,7 @@
     {
         "id": "281",
         "name": "奇鲁莉安",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -824,7 +824,7 @@
     {
         "id": "282",
         "name": "沙奈朵",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -859,7 +859,7 @@
     {
         "id": "307",
         "name": "玛沙那",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "2",
                 "name": "格斗"
@@ -890,7 +890,7 @@
     {
         "id": "308",
         "name": "恰雷姆",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "2",
                 "name": "格斗"
@@ -921,7 +921,7 @@
     {
         "id": "325",
         "name": "跳跳猪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -952,7 +952,7 @@
     {
         "id": "326",
         "name": "噗噗猪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -983,7 +983,7 @@
     {
         "id": "337",
         "name": "月石",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -1010,7 +1010,7 @@
     {
         "id": "338",
         "name": "太阳岩",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -1037,7 +1037,7 @@
     {
         "id": "343",
         "name": "天秤偶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1064,7 +1064,7 @@
     {
         "id": "344",
         "name": "念力土偶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1091,7 +1091,7 @@
     {
         "id": "358",
         "name": "风铃铃",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1114,7 +1114,7 @@
     {
         "id": "360",
         "name": "小果然",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1137,7 +1137,7 @@
     {
         "id": "374",
         "name": "铁哑铃",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -1168,7 +1168,7 @@
     {
         "id": "375",
         "name": "金属怪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -1199,7 +1199,7 @@
     {
         "id": "376",
         "name": "巨金怪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -1230,7 +1230,7 @@
     {
         "id": "380",
         "name": "拉帝亚斯",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -1257,7 +1257,7 @@
     {
         "id": "381",
         "name": "拉帝欧斯",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -1284,7 +1284,7 @@
     {
         "id": "385",
         "name": "基拉祈",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -1311,7 +1311,7 @@
     {
         "id": "386",
         "name": "代欧奇希斯（一般形态）",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1334,7 +1334,7 @@
     {
         "id": "433",
         "name": "铃铛响",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1357,7 +1357,7 @@
     {
         "id": "436",
         "name": "铜镜怪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -1392,7 +1392,7 @@
     {
         "id": "437",
         "name": "青铜钟",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -1427,7 +1427,7 @@
     {
         "id": "439",
         "name": "魔尼尼",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1462,7 +1462,7 @@
     {
         "id": "475",
         "name": "艾路雷朵",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1493,7 +1493,7 @@
     {
         "id": "480",
         "name": "由克希",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1516,7 +1516,7 @@
     {
         "id": "481",
         "name": "艾姆利多",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1539,7 +1539,7 @@
     {
         "id": "482",
         "name": "亚克诺姆",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1562,7 +1562,7 @@
     {
         "id": "488",
         "name": "克雷色利亚",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1585,7 +1585,7 @@
     {
         "id": "494",
         "name": "比克提尼",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1612,7 +1612,7 @@
     {
         "id": "517",
         "name": "食梦梦",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1643,7 +1643,7 @@
     {
         "id": "518",
         "name": "梦梦蚀",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1674,7 +1674,7 @@
     {
         "id": "527",
         "name": "滚滚蝙蝠",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1709,7 +1709,7 @@
     {
         "id": "528",
         "name": "心蝙蝠",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1744,7 +1744,7 @@
     {
         "id": "561",
         "name": "象征鸟",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1779,7 +1779,7 @@
     {
         "id": "574",
         "name": "哥德宝宝",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1810,7 +1810,7 @@
     {
         "id": "575",
         "name": "哥德小童",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1841,7 +1841,7 @@
     {
         "id": "576",
         "name": "哥德小姐",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1872,7 +1872,7 @@
     {
         "id": "577",
         "name": "单卵细胞球",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1903,7 +1903,7 @@
     {
         "id": "578",
         "name": "双卵细胞球",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1934,7 +1934,7 @@
     {
         "id": "579",
         "name": "人造细胞卵",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1965,7 +1965,7 @@
     {
         "id": "605",
         "name": "小灰怪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -1996,7 +1996,7 @@
     {
         "id": "606",
         "name": "大宇怪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2027,7 +2027,7 @@
     {
         "id": "648",
         "name": "美洛耶塔（歌声形态）",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "1",
                 "name": "一般"
@@ -2054,7 +2054,7 @@
     {
         "id": "655",
         "name": "妖火红狐",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "10",
                 "name": "火"
@@ -2085,7 +2085,7 @@
     {
         "id": "677",
         "name": "妙喵",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2116,7 +2116,7 @@
     {
         "id": "678",
         "name": "超能妙喵（雄性的样子）",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2147,7 +2147,7 @@
     {
         "id": "686",
         "name": "好啦鱿",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -2182,7 +2182,7 @@
     {
         "id": "687",
         "name": "乌贼王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "17",
                 "name": "恶"
@@ -2217,7 +2217,7 @@
     {
         "id": "720",
         "name": "被束缚的胡帕",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2244,7 +2244,7 @@
     {
         "id": "386",
         "name": "代欧奇希斯（攻击形态）",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2267,7 +2267,7 @@
     {
         "id": "386",
         "name": "代欧奇希斯（防御形态）",
-        "property": [
+        "mega":"02",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2290,7 +2290,7 @@
     {
         "id": "386",
         "name": "代欧奇希斯（速度形态）",
-        "property": [
+        "mega":"03",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2313,7 +2313,7 @@
     {
         "id": "555",
         "name": "达摩狒狒（不倒翁模式）",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "10",
                 "name": "火"
@@ -2344,7 +2344,7 @@
     {
         "id": "678",
         "name": "超能妙喵（雌性的样子）",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2375,7 +2375,7 @@
     {
         "id": "282",
         "name": "超级沙奈朵",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2406,7 +2406,7 @@
     {
         "id": "150",
         "name": "超级超梦X",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2437,7 +2437,7 @@
     {
         "id": "150",
         "name": "超级超梦Y",
-        "property": [
+        "mega":"02",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2464,7 +2464,7 @@
     {
         "id": "308",
         "name": "超级恰雷姆",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "2",
                 "name": "格斗"
@@ -2495,7 +2495,7 @@
     {
         "id": "065",
         "name": "超级胡地",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2522,7 +2522,7 @@
     {
         "id": "381",
         "name": "超级拉帝欧斯",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -2549,7 +2549,7 @@
     {
         "id": "380",
         "name": "超级拉帝亚斯",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -2576,7 +2576,7 @@
     {
         "id": "475",
         "name": "超级艾路雷朵",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "14",
                 "name": "超能力"
@@ -2607,7 +2607,7 @@
     {
         "id": "080",
         "name": "超级呆壳兽",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -2638,7 +2638,7 @@
     {
         "id": "376",
         "name": "超级巨金怪",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -2669,7 +2669,7 @@
     {
         "id": "720",
         "name": "被解放的胡帕",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "14",
                 "name": "超能力"

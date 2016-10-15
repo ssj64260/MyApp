@@ -49,21 +49,10 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private void bindPmItem(PmViewHolder holder, int position) {
         PokemonBean pm = list.get(position);
-        String name = pm.getName();
 
-        int mega = 0;
-
-        if (name.contains("超级")) {
-            mega = 1;
-        }
-
-        if (name.lastIndexOf("Y") == name.length() -1) {
-            mega = 2;
-        }
-
-        String logoNoBackground = "http://res.pokemon.name/sprites/core/xy/front/" + pm.getId() + ".0" + mega + ".png";
-        String smallLogo = "http://res.pokemon.name/common/pokemon/icons/" + pm.getId() + ".0" + mega + ".png";
-        String littleBigLogo = "http://res.pokemon.name/common/pokemon/pgl/" + pm.getId() + ".0" + mega + ".png";
+        String logoNoBackground = "http://res.pokemon.name/sprites/core/xy/front/" + pm.getId() + "." + pm.getMega() + ".png";
+        String smallLogo = "http://res.pokemon.name/common/pokemon/icons/" + pm.getId() + "." + pm.getMega() + ".png";
+        String littleBigLogo = "http://res.pokemon.name/common/pokemon/pgl/" + pm.getId() + "." + pm.getMega() + ".png";
 
         requestManager.load(logoNoBackground)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)

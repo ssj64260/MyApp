@@ -8,17 +8,18 @@ import java.util.List;
 
 public class PokemonBean {
 
-    private String id;
-    private String name;
-    private List<PropertyBean> property;
-    private List<CharacteristicBean> characteristic;
-    private String hp;
-    private String attack;
-    private String defense;
-    private String s_attack;
-    private String s_defense;
-    private String speed;
-    private String ethnic_value;
+    private String id;//pokemon ID
+    private String name;//pokemon 名称
+    private String mega;//pokemon 形态
+    private List<PropertyBean> property;//pokemon 属性
+    private List<CharacteristicBean> characteristic;//pokemon 特性
+    private String hp;//pokemon 血量
+    private String attack;//pokemon 攻击
+    private String defense;//pokemon 防御
+    private String s_attack;//pokemon 特攻
+    private String s_defense;//pokemon 特防
+    private String speed;//pokemon 速度
+    private String ethnic_value;//pokemon 种族值
 
     public String getId() {
         return id;
@@ -34,6 +35,14 @@ public class PokemonBean {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getMega() {
+        return mega;
+    }
+
+    public void setMega(String mega) {
+        this.mega = mega;
     }
 
     public List<PropertyBean> getProperty() {

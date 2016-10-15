@@ -2,7 +2,7 @@
     {
         "id": "027",
         "name": "穿山鼠",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -29,7 +29,7 @@
     {
         "id": "028",
         "name": "穿山王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -56,7 +56,7 @@
     {
         "id": "031",
         "name": "尼多后",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "4",
                 "name": "毒"
@@ -91,7 +91,7 @@
     {
         "id": "034",
         "name": "尼多王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "4",
                 "name": "毒"
@@ -126,7 +126,7 @@
     {
         "id": "050",
         "name": "地鼠",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -157,7 +157,7 @@
     {
         "id": "051",
         "name": "三地鼠",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -188,7 +188,7 @@
     {
         "id": "074",
         "name": "小拳石",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -223,7 +223,7 @@
     {
         "id": "075",
         "name": "隆隆石",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -258,7 +258,7 @@
     {
         "id": "076",
         "name": "隆隆岩",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -293,7 +293,7 @@
     {
         "id": "095",
         "name": "大岩蛇",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -328,7 +328,7 @@
     {
         "id": "104",
         "name": "卡拉卡拉",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -359,7 +359,7 @@
     {
         "id": "105",
         "name": "嘎啦嘎啦",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -390,7 +390,7 @@
     {
         "id": "111",
         "name": "独角犀牛",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -425,7 +425,7 @@
     {
         "id": "112",
         "name": "独角犀牛",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -460,7 +460,7 @@
     {
         "id": "194",
         "name": "乌波",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -495,7 +495,7 @@
     {
         "id": "195",
         "name": "沼王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -530,7 +530,7 @@
     {
         "id": "207",
         "name": "天蝎",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -565,7 +565,7 @@
     {
         "id": "208",
         "name": "大钢蛇",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -600,7 +600,7 @@
     {
         "id": "220",
         "name": "小山猪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "15",
                 "name": "冰"
@@ -635,7 +635,7 @@
     {
         "id": "221",
         "name": "长毛猪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "15",
                 "name": "冰"
@@ -670,7 +670,7 @@
     {
         "id": "231",
         "name": "小小象",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -697,7 +697,7 @@
     {
         "id": "232",
         "name": "顿甲",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -724,7 +724,7 @@
     {
         "id": "246",
         "name": "由基拉",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -755,7 +755,7 @@
     {
         "id": "247",
         "name": "沙基拉",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "6",
                 "name": "岩石"
@@ -786,7 +786,7 @@
     {
         "id": "259",
         "name": "沼跃鱼",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -817,7 +817,7 @@
     {
         "id": "260",
         "name": "巨沼怪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -848,7 +848,7 @@
     {
         "id": "290",
         "name": "土居忍士",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "7",
                 "name": "虫"
@@ -879,7 +879,7 @@
     {
         "id": "322",
         "name": "呆火驼",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "10",
                 "name": "火"
@@ -914,7 +914,7 @@
     {
         "id": "323",
         "name": "喷火驼",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "10",
                 "name": "火"
@@ -949,7 +949,7 @@
     {
         "id": "328",
         "name": "大颚蚁",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -980,7 +980,7 @@
     {
         "id": "329",
         "name": "超音波幼虫",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1011,7 +1011,7 @@
     {
         "id": "330",
         "name": "沙漠蜻蜓",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1042,7 +1042,7 @@
     {
         "id": "339",
         "name": "泥泥鳅",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -1077,7 +1077,7 @@
     {
         "id": "340",
         "name": "鲶鱼王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -1112,7 +1112,7 @@
     {
         "id": "343",
         "name": "天秤偶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1139,7 +1139,7 @@
     {
         "id": "344",
         "name": "念力土偶",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1166,7 +1166,7 @@
     {
         "id": "383",
         "name": "固拉多",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1189,7 +1189,7 @@
     {
         "id": "389",
         "name": "土台龟",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "12",
                 "name": "草"
@@ -1220,7 +1220,7 @@
     {
         "id": "423",
         "name": "海牛兽（西海）",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -1255,7 +1255,7 @@
     {
         "id": "443",
         "name": "圆陆鲨",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -1286,7 +1286,7 @@
     {
         "id": "444",
         "name": "尖牙陆鲨",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -1317,7 +1317,7 @@
     {
         "id": "445",
         "name": "烈咬陆鲨",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -1348,7 +1348,7 @@
     {
         "id": "449",
         "name": "怪河马",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1375,7 +1375,7 @@
     {
         "id": "450",
         "name": "河马兽",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1402,7 +1402,7 @@
     {
         "id": "464",
         "name": "超铁暴龙",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1437,7 +1437,7 @@
     {
         "id": "472",
         "name": "天蝎王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1472,7 +1472,7 @@
     {
         "id": "473",
         "name": "象牙猪",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "15",
                 "name": "冰"
@@ -1507,7 +1507,7 @@
     {
         "id": "529",
         "name": "螺钉地鼠",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1538,7 +1538,7 @@
     {
         "id": "530",
         "name": "龙头地鼠",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1573,7 +1573,7 @@
     {
         "id": "536",
         "name": "蓝蟾蜍",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -1608,7 +1608,7 @@
     {
         "id": "537",
         "name": "蟾蜍王",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -1643,7 +1643,7 @@
     {
         "id": "551",
         "name": "黑眼鳄",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1678,7 +1678,7 @@
     {
         "id": "552",
         "name": "混混鳄",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1713,7 +1713,7 @@
     {
         "id": "553",
         "name": "流氓鳄",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1748,7 +1748,7 @@
     {
         "id": "618",
         "name": "泥巴鱼",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1783,7 +1783,7 @@
     {
         "id": "622",
         "name": "泥偶小人",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1818,7 +1818,7 @@
     {
         "id": "623",
         "name": "泥偶巨人",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1853,7 +1853,7 @@
     {
         "id": "645",
         "name": "土地云（化身形态）",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -1884,7 +1884,7 @@
     {
         "id": "660",
         "name": "攉土兔",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "1",
                 "name": "一般"
@@ -1919,7 +1919,7 @@
     {
         "id": "718",
         "name": "基格尔德·50%形态",
-        "property": [
+        "mega":"00",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -1946,7 +1946,7 @@
     {
         "id": "413",
         "name": "结草贵妇（沙地蓑衣）",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "7",
                 "name": "虫"
@@ -1977,7 +1977,7 @@
     {
         "id": "645",
         "name": "土地云（灵兽形态）",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -2008,7 +2008,7 @@
     {
         "id": "445",
         "name": "超级烈咬陆鲨",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "16",
                 "name": "龙"
@@ -2039,7 +2039,7 @@
     {
         "id": "260",
         "name": "超级巨沼怪",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "11",
                 "name": "水"
@@ -2070,7 +2070,7 @@
     {
         "id": "208",
         "name": "超级大钢蛇",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "9",
                 "name": "钢"
@@ -2101,7 +2101,7 @@
     {
         "id": "383",
         "name": "原始固拉多",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "5",
                 "name": "地面"
@@ -2128,7 +2128,7 @@
     {
         "id": "323",
         "name": "超级喷火驼",
-        "property": [
+        "mega":"01",        "property": [
             {
                 "id": "10",
                 "name": "火"

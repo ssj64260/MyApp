@@ -1,0 +1,1488 @@
+[
+    {
+        "id": "025",
+        "name": "皮卡丘",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "避雷针"
+            }
+        ],
+        "hp": "35",
+        "attack": "55",
+        "defense": "40",
+        "s_attack": "50",
+        "s_defense": "50",
+        "speed": "90",
+        "ethnic_value": "320"
+    },
+    {
+        "id": "026",
+        "name": "雷丘",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "避雷针"
+            }
+        ],
+        "hp": "60",
+        "attack": "90",
+        "defense": "55",
+        "s_attack": "90",
+        "s_defense": "80",
+        "speed": "110",
+        "ethnic_value": "485"
+    },
+    {
+        "id": "081",
+        "name": "小磁怪",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "9",
+                "name": "钢"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "磁力"
+            },
+            {
+                "id": "",
+                "name": "坚硬"
+            },
+            {
+                "id": "",
+                "name": "分析"
+            }
+        ],
+        "hp": "25",
+        "attack": "35",
+        "defense": "70",
+        "s_attack": "95",
+        "s_defense": "55",
+        "speed": "45",
+        "ethnic_value": "325"
+    },
+    {
+        "id": "082",
+        "name": "三合一磁怪",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "9",
+                "name": "钢"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "磁力"
+            },
+            {
+                "id": "",
+                "name": "坚硬"
+            },
+            {
+                "id": "",
+                "name": "分析"
+            }
+        ],
+        "hp": "50",
+        "attack": "60",
+        "defense": "95",
+        "s_attack": "120",
+        "s_defense": "70",
+        "speed": "70",
+        "ethnic_value": "465"
+    },
+    {
+        "id": "100",
+        "name": "霹雳电球",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "隔音"
+            },
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "引爆"
+            }
+        ],
+        "hp": "40",
+        "attack": "30",
+        "defense": "50",
+        "s_attack": "55",
+        "s_defense": "55",
+        "speed": "100",
+        "ethnic_value": "330"
+    },
+    {
+        "id": "101",
+        "name": "顽皮雷弹",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "隔音"
+            },
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "引爆"
+            }
+        ],
+        "hp": "60",
+        "attack": "50",
+        "defense": "70",
+        "s_attack": "80",
+        "s_defense": "80",
+        "speed": "140",
+        "ethnic_value": "480"
+    },
+    {
+        "id": "125",
+        "name": "电击兽",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "干劲"
+            }
+        ],
+        "hp": "65",
+        "attack": "83",
+        "defense": "57",
+        "s_attack": "95",
+        "s_defense": "85",
+        "speed": "105",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "135",
+        "name": "雷伊布",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "蓄电"
+            },
+            {
+                "id": "",
+                "name": "早足"
+            }
+        ],
+        "hp": "65",
+        "attack": "65",
+        "defense": "60",
+        "s_attack": "110",
+        "s_defense": "95",
+        "speed": "130",
+        "ethnic_value": "525"
+    },
+    {
+        "id": "145",
+        "name": "闪电鸟",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "压力"
+            },
+            {
+                "id": "",
+                "name": "静电"
+            }
+        ],
+        "hp": "90",
+        "attack": "90",
+        "defense": "85",
+        "s_attack": "125",
+        "s_defense": "90",
+        "speed": "100",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "170",
+        "name": "灯笼鱼",
+        "property": [
+            {
+                "id": "11",
+                "name": "水"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "蓄电"
+            },
+            {
+                "id": "",
+                "name": "发光"
+            },
+            {
+                "id": "",
+                "name": "贮水"
+            }
+        ],
+        "hp": "75",
+        "attack": "38",
+        "defense": "38",
+        "s_attack": "56",
+        "s_defense": "56",
+        "speed": "67",
+        "ethnic_value": "330"
+    },
+    {
+        "id": "171",
+        "name": "电灯怪",
+        "property": [
+            {
+                "id": "11",
+                "name": "水"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "蓄电"
+            },
+            {
+                "id": "",
+                "name": "发光"
+            },
+            {
+                "id": "",
+                "name": "贮水"
+            }
+        ],
+        "hp": "125",
+        "attack": "58",
+        "defense": "58",
+        "s_attack": "76",
+        "s_defense": "76",
+        "speed": "67",
+        "ethnic_value": "460"
+    },
+    {
+        "id": "172",
+        "name": "皮丘",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "避雷针"
+            }
+        ],
+        "hp": "20",
+        "attack": "40",
+        "defense": "15",
+        "s_attack": "35",
+        "s_defense": "35",
+        "speed": "60",
+        "ethnic_value": "205"
+    },
+    {
+        "id": "179",
+        "name": "咩利羊",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "正极"
+            }
+        ],
+        "hp": "55",
+        "attack": "40",
+        "defense": "40",
+        "s_attack": "65",
+        "s_defense": "45",
+        "speed": "35",
+        "ethnic_value": "280"
+    },
+    {
+        "id": "180",
+        "name": "绵绵",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "正极"
+            }
+        ],
+        "hp": "70",
+        "attack": "55",
+        "defense": "55",
+        "s_attack": "80",
+        "s_defense": "60",
+        "speed": "45",
+        "ethnic_value": "365"
+    },
+    {
+        "id": "181",
+        "name": "电龙",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "正极"
+            }
+        ],
+        "hp": "90",
+        "attack": "75",
+        "defense": "85",
+        "s_attack": "115",
+        "s_defense": "90",
+        "speed": "55",
+        "ethnic_value": "510"
+    },
+    {
+        "id": "239",
+        "name": "电击怪",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "干劲"
+            }
+        ],
+        "hp": "45",
+        "attack": "63",
+        "defense": "37",
+        "s_attack": "65",
+        "s_defense": "55",
+        "speed": "95",
+        "ethnic_value": "360"
+    },
+    {
+        "id": "243",
+        "name": "雷公",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "压力"
+            },
+            {
+                "id": "",
+                "name": "蓄电"
+            }
+        ],
+        "hp": "90",
+        "attack": "85",
+        "defense": "75",
+        "s_attack": "115",
+        "s_defense": "100",
+        "speed": "115",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "309",
+        "name": "落雷兽",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "避雷针"
+            },
+            {
+                "id": "",
+                "name": "负极"
+            }
+        ],
+        "hp": "40",
+        "attack": "45",
+        "defense": "40",
+        "s_attack": "65",
+        "s_defense": "40",
+        "speed": "65",
+        "ethnic_value": "295"
+    },
+    {
+        "id": "310",
+        "name": "雷电兽",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "避雷针"
+            },
+            {
+                "id": "",
+                "name": "负极"
+            }
+        ],
+        "hp": "70",
+        "attack": "75",
+        "defense": "60",
+        "s_attack": "105",
+        "s_defense": "60",
+        "speed": "105",
+        "ethnic_value": "475"
+    },
+    {
+        "id": "311",
+        "name": "正电拍拍",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "正极"
+            },
+            {
+                "id": "",
+                "name": "避雷针"
+            }
+        ],
+        "hp": "60",
+        "attack": "50",
+        "defense": "40",
+        "s_attack": "85",
+        "s_defense": "75",
+        "speed": "95",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "312",
+        "name": "负电拍拍",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "负极"
+            },
+            {
+                "id": "",
+                "name": "蓄电"
+            }
+        ],
+        "hp": "60",
+        "attack": "40",
+        "defense": "50",
+        "s_attack": "75",
+        "s_defense": "85",
+        "speed": "95",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "403",
+        "name": "小猫怪",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "根性"
+            }
+        ],
+        "hp": "45",
+        "attack": "65",
+        "defense": "34",
+        "s_attack": "40",
+        "s_defense": "34",
+        "speed": "45",
+        "ethnic_value": "263"
+    },
+    {
+        "id": "404",
+        "name": "勒克猫",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "根性"
+            }
+        ],
+        "hp": "60",
+        "attack": "85",
+        "defense": "49",
+        "s_attack": "60",
+        "s_defense": "49",
+        "speed": "60",
+        "ethnic_value": "363"
+    },
+    {
+        "id": "405",
+        "name": "伦琴猫",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "根性"
+            }
+        ],
+        "hp": "80",
+        "attack": "120",
+        "defense": "79",
+        "s_attack": "95",
+        "s_defense": "79",
+        "speed": "70",
+        "ethnic_value": "523"
+    },
+    {
+        "id": "417",
+        "name": "帕奇利兹",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "蓄电"
+            }
+        ],
+        "hp": "60",
+        "attack": "45",
+        "defense": "70",
+        "s_attack": "45",
+        "s_defense": "90",
+        "speed": "95",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "462",
+        "name": "自爆磁怪",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "9",
+                "name": "钢"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "磁力"
+            },
+            {
+                "id": "",
+                "name": "坚硬"
+            },
+            {
+                "id": "",
+                "name": "分析"
+            }
+        ],
+        "hp": "70",
+        "attack": "70",
+        "defense": "115",
+        "s_attack": "130",
+        "s_defense": "90",
+        "speed": "60",
+        "ethnic_value": "535"
+    },
+    {
+        "id": "466",
+        "name": "电击魔兽",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "电引擎"
+            },
+            {
+                "id": "",
+                "name": "干劲"
+            }
+        ],
+        "hp": "75",
+        "attack": "123",
+        "defense": "67",
+        "s_attack": "95",
+        "s_defense": "85",
+        "speed": "95",
+        "ethnic_value": "540"
+    },
+    {
+        "id": "479",
+        "name": "洛托姆",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "8",
+                "name": "幽灵"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "50",
+        "attack": "50",
+        "defense": "77",
+        "s_attack": "95",
+        "s_defense": "77",
+        "speed": "91",
+        "ethnic_value": "440"
+    },
+    {
+        "id": "522",
+        "name": "斑斑马",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "避雷针"
+            },
+            {
+                "id": "",
+                "name": "电引擎"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            }
+        ],
+        "hp": "45",
+        "attack": "60",
+        "defense": "32",
+        "s_attack": "50",
+        "s_defense": "32",
+        "speed": "76",
+        "ethnic_value": "295"
+    },
+    {
+        "id": "523",
+        "name": "雷电斑马",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "避雷针"
+            },
+            {
+                "id": "",
+                "name": "电引擎"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            }
+        ],
+        "hp": "75",
+        "attack": "100",
+        "defense": "63",
+        "s_attack": "80",
+        "s_defense": "63",
+        "speed": "116",
+        "ethnic_value": "497"
+    },
+    {
+        "id": "587",
+        "name": "电飞鼠",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "电引擎"
+            }
+        ],
+        "hp": "55",
+        "attack": "75",
+        "defense": "60",
+        "s_attack": "75",
+        "s_defense": "60",
+        "speed": "103",
+        "ethnic_value": "428"
+    },
+    {
+        "id": "595",
+        "name": "电电虫",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "复眼"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            },
+            {
+                "id": "",
+                "name": "虫之预感"
+            }
+        ],
+        "hp": "50",
+        "attack": "47",
+        "defense": "50",
+        "s_attack": "57",
+        "s_defense": "50",
+        "speed": "65",
+        "ethnic_value": "319"
+    },
+    {
+        "id": "596",
+        "name": "电蜘蛛",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "复眼"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            },
+            {
+                "id": "",
+                "name": "虫之预感"
+            }
+        ],
+        "hp": "70",
+        "attack": "77",
+        "defense": "60",
+        "s_attack": "97",
+        "s_defense": "60",
+        "speed": "108",
+        "ethnic_value": "472"
+    },
+    {
+        "id": "602",
+        "name": "麻麻小鱼",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "35",
+        "attack": "55",
+        "defense": "40",
+        "s_attack": "45",
+        "s_defense": "40",
+        "speed": "60",
+        "ethnic_value": "275"
+    },
+    {
+        "id": "603",
+        "name": "麻麻鳗",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "65",
+        "attack": "85",
+        "defense": "70",
+        "s_attack": "75",
+        "s_defense": "70",
+        "speed": "40",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "604",
+        "name": "麻麻鳗鱼王",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "85",
+        "attack": "115",
+        "defense": "80",
+        "s_attack": "105",
+        "s_defense": "80",
+        "speed": "50",
+        "ethnic_value": "515"
+    },
+    {
+        "id": "618",
+        "name": "泥巴鱼",
+        "property": [
+            {
+                "id": "5",
+                "name": "地面"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "静电"
+            },
+            {
+                "id": "",
+                "name": "柔软"
+            },
+            {
+                "id": "",
+                "name": "沙隐"
+            }
+        ],
+        "hp": "109",
+        "attack": "66",
+        "defense": "84",
+        "s_attack": "81",
+        "s_defense": "99",
+        "speed": "32",
+        "ethnic_value": "471"
+    },
+    {
+        "id": "642",
+        "name": "雷电云（化身形态）",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "恶作剧之心"
+            },
+            {
+                "id": "",
+                "name": "不服输"
+            }
+        ],
+        "hp": "79",
+        "attack": "115",
+        "defense": "70",
+        "s_attack": "125",
+        "s_defense": "80",
+        "speed": "111",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "644",
+        "name": "捷克罗姆",
+        "property": [
+            {
+                "id": "16",
+                "name": "龙"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "垓级电压"
+            }
+        ],
+        "hp": "100",
+        "attack": "150",
+        "defense": "120",
+        "s_attack": "120",
+        "s_defense": "100",
+        "speed": "90",
+        "ethnic_value": "680"
+    },
+    {
+        "id": "694",
+        "name": "伞电蜥",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "干燥肌肤"
+            },
+            {
+                "id": "",
+                "name": "沙隐"
+            },
+            {
+                "id": "",
+                "name": "太阳力量"
+            }
+        ],
+        "hp": "44",
+        "attack": "38",
+        "defense": "33",
+        "s_attack": "61",
+        "s_defense": "43",
+        "speed": "70",
+        "ethnic_value": "289"
+    },
+    {
+        "id": "695",
+        "name": "光电闪蜥",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "干燥肌肤"
+            },
+            {
+                "id": "",
+                "name": "沙隐"
+            },
+            {
+                "id": "",
+                "name": "太阳力量"
+            }
+        ],
+        "hp": "62",
+        "attack": "55",
+        "defense": "52",
+        "s_attack": "109",
+        "s_defense": "94",
+        "speed": "109",
+        "ethnic_value": "481"
+    },
+    {
+        "id": "702",
+        "name": "咚咚鼠",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "18",
+                "name": "妖精"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "颊囊"
+            },
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "正极"
+            }
+        ],
+        "hp": "67",
+        "attack": "58",
+        "defense": "57",
+        "s_attack": "81",
+        "s_defense": "67",
+        "speed": "101",
+        "ethnic_value": "431"
+    },
+    {
+        "id": "479",
+        "name": "加热洛托姆",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "10",
+                "name": "火"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "50",
+        "attack": "65",
+        "defense": "107",
+        "s_attack": "105",
+        "s_defense": "107",
+        "speed": "86",
+        "ethnic_value": "520"
+    },
+    {
+        "id": "479",
+        "name": "冲洗洛托姆",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "11",
+                "name": "水"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "50",
+        "attack": "65",
+        "defense": "107",
+        "s_attack": "105",
+        "s_defense": "107",
+        "speed": "86",
+        "ethnic_value": "520"
+    },
+    {
+        "id": "479",
+        "name": "结霜洛托姆",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "15",
+                "name": "冰"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "50",
+        "attack": "65",
+        "defense": "107",
+        "s_attack": "105",
+        "s_defense": "107",
+        "speed": "86",
+        "ethnic_value": "520"
+    },
+    {
+        "id": "479",
+        "name": "旋转洛托姆",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "50",
+        "attack": "65",
+        "defense": "107",
+        "s_attack": "105",
+        "s_defense": "107",
+        "speed": "86",
+        "ethnic_value": "520"
+    },
+    {
+        "id": "479",
+        "name": "切割洛托姆",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "12",
+                "name": "草"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "50",
+        "attack": "65",
+        "defense": "107",
+        "s_attack": "105",
+        "s_defense": "107",
+        "speed": "86",
+        "ethnic_value": "520"
+    },
+    {
+        "id": "642",
+        "name": "雷电云（灵兽形态）",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "蓄电"
+            },
+            {
+                "id": "",
+                "name": "蓄电"
+            }
+        ],
+        "hp": "79",
+        "attack": "105",
+        "defense": "70",
+        "s_attack": "145",
+        "s_defense": "80",
+        "speed": "101",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "181",
+        "name": "超级电龙",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            },
+            {
+                "id": "16",
+                "name": "龙"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "破格"
+            },
+            {
+                "id": "",
+                "name": "破格"
+            }
+        ],
+        "hp": "90",
+        "attack": "95",
+        "defense": "105",
+        "s_attack": "165",
+        "s_defense": "110",
+        "speed": "45",
+        "ethnic_value": "610"
+    },
+    {
+        "id": "310",
+        "name": "超级雷电兽",
+        "property": [
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "威吓"
+            }
+        ],
+        "hp": "70",
+        "attack": "75",
+        "defense": "80",
+        "s_attack": "135",
+        "s_defense": "80",
+        "speed": "135",
+        "ethnic_value": "575"
+    }
+]

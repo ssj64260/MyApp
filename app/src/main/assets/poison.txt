@@ -1,0 +1,1980 @@
+[
+    {
+        "id": "001",
+        "name": "妙蛙种子",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "茂盛"
+            },
+            {
+                "id": "",
+                "name": "叶绿素"
+            }
+        ],
+        "hp": "45",
+        "attack": "49",
+        "defense": "49",
+        "s_attack": "65",
+        "s_defense": "65",
+        "speed": "45",
+        "ethnic_value": "318"
+    },
+    {
+        "id": "002",
+        "name": "妙蛙草",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "茂盛"
+            },
+            {
+                "id": "",
+                "name": "叶绿素"
+            }
+        ],
+        "hp": "60",
+        "attack": "62",
+        "defense": "63",
+        "s_attack": "80",
+        "s_defense": "80",
+        "speed": "60",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "003",
+        "name": "妙蛙花",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "茂盛"
+            },
+            {
+                "id": "",
+                "name": "叶绿素"
+            }
+        ],
+        "hp": "80",
+        "attack": "82",
+        "defense": "83",
+        "s_attack": "100",
+        "s_defense": "100",
+        "speed": "80",
+        "ethnic_value": "525"
+    },
+    {
+        "id": "013",
+        "name": "独角虫",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "鳞粉"
+            },
+            {
+                "id": "",
+                "name": "逃足"
+            }
+        ],
+        "hp": "40",
+        "attack": "35",
+        "defense": "30",
+        "s_attack": "20",
+        "s_defense": "20",
+        "speed": "50",
+        "ethnic_value": "195"
+    },
+    {
+        "id": "014",
+        "name": "铁壳蛹",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "蜕皮"
+            },
+            {
+                "id": "",
+                "name": "蜕皮"
+            }
+        ],
+        "hp": "45",
+        "attack": "25",
+        "defense": "50",
+        "s_attack": "25",
+        "s_defense": "25",
+        "speed": "35",
+        "ethnic_value": "205"
+    },
+    {
+        "id": "015",
+        "name": "大针蜂",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "虫之预感"
+            },
+            {
+                "id": "",
+                "name": "狙击手"
+            }
+        ],
+        "hp": "65",
+        "attack": "90",
+        "defense": "40",
+        "s_attack": "45",
+        "s_defense": "80",
+        "speed": "75",
+        "ethnic_value": "395"
+    },
+    {
+        "id": "023",
+        "name": "阿柏蛇",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "蜕皮"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            }
+        ],
+        "hp": "35",
+        "attack": "60",
+        "defense": "44",
+        "s_attack": "40",
+        "s_defense": "54",
+        "speed": "55",
+        "ethnic_value": "288"
+    },
+    {
+        "id": "024",
+        "name": "阿柏怪",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "蜕皮"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            }
+        ],
+        "hp": "60",
+        "attack": "85",
+        "defense": "69",
+        "s_attack": "65",
+        "s_defense": "79",
+        "speed": "80",
+        "ethnic_value": "438"
+    },
+    {
+        "id": "029",
+        "name": "尼多兰",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "活力"
+            }
+        ],
+        "hp": "55",
+        "attack": "47",
+        "defense": "52",
+        "s_attack": "40",
+        "s_defense": "40",
+        "speed": "41",
+        "ethnic_value": "275"
+    },
+    {
+        "id": "030",
+        "name": "尼多娜",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "活力"
+            }
+        ],
+        "hp": "70",
+        "attack": "62",
+        "defense": "67",
+        "s_attack": "55",
+        "s_defense": "55",
+        "speed": "56",
+        "ethnic_value": "365"
+    },
+    {
+        "id": "031",
+        "name": "尼多后",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "5",
+                "name": "地面"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            }
+        ],
+        "hp": "90",
+        "attack": "92",
+        "defense": "87",
+        "s_attack": "75",
+        "s_defense": "85",
+        "speed": "76",
+        "ethnic_value": "505"
+    },
+    {
+        "id": "032",
+        "name": "尼多郎",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "活力"
+            }
+        ],
+        "hp": "46",
+        "attack": "57",
+        "defense": "40",
+        "s_attack": "40",
+        "s_defense": "40",
+        "speed": "50",
+        "ethnic_value": "273"
+    },
+    {
+        "id": "033",
+        "name": "尼多力诺",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "活力"
+            }
+        ],
+        "hp": "61",
+        "attack": "72",
+        "defense": "57",
+        "s_attack": "55",
+        "s_defense": "55",
+        "speed": "65",
+        "ethnic_value": "365"
+    },
+    {
+        "id": "034",
+        "name": "尼多王",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "5",
+                "name": "地面"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            }
+        ],
+        "hp": "81",
+        "attack": "102",
+        "defense": "77",
+        "s_attack": "85",
+        "s_defense": "75",
+        "speed": "85",
+        "ethnic_value": "505"
+    },
+    {
+        "id": "041",
+        "name": "超音蝠",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "穿透"
+            }
+        ],
+        "hp": "40",
+        "attack": "45",
+        "defense": "35",
+        "s_attack": "30",
+        "s_defense": "40",
+        "speed": "55",
+        "ethnic_value": "245"
+    },
+    {
+        "id": "042",
+        "name": "大嘴蝠",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "穿透"
+            }
+        ],
+        "hp": "75",
+        "attack": "80",
+        "defense": "70",
+        "s_attack": "65",
+        "s_defense": "75",
+        "speed": "90",
+        "ethnic_value": "455"
+    },
+    {
+        "id": "043",
+        "name": "走路草",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "叶绿素"
+            },
+            {
+                "id": "",
+                "name": "逃足"
+            }
+        ],
+        "hp": "45",
+        "attack": "50",
+        "defense": "55",
+        "s_attack": "75",
+        "s_defense": "65",
+        "speed": "30",
+        "ethnic_value": "320"
+    },
+    {
+        "id": "044",
+        "name": "臭臭花",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "叶绿素"
+            },
+            {
+                "id": "",
+                "name": "恶臭"
+            }
+        ],
+        "hp": "60",
+        "attack": "65",
+        "defense": "70",
+        "s_attack": "85",
+        "s_defense": "75",
+        "speed": "40",
+        "ethnic_value": "395"
+    },
+    {
+        "id": "045",
+        "name": "霸王花",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "叶绿素"
+            },
+            {
+                "id": "",
+                "name": "孢子"
+            }
+        ],
+        "hp": "75",
+        "attack": "80",
+        "defense": "85",
+        "s_attack": "110",
+        "s_defense": "90",
+        "speed": "50",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "048",
+        "name": "毛球",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "复眼"
+            },
+            {
+                "id": "",
+                "name": "有色眼镜"
+            },
+            {
+                "id": "",
+                "name": "逃足"
+            }
+        ],
+        "hp": "60",
+        "attack": "55",
+        "defense": "50",
+        "s_attack": "40",
+        "s_defense": "55",
+        "speed": "45",
+        "ethnic_value": "305"
+    },
+    {
+        "id": "049",
+        "name": "摩鲁蛾",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "鳞粉"
+            },
+            {
+                "id": "",
+                "name": "有色眼镜"
+            },
+            {
+                "id": "",
+                "name": "奇迹皮肤"
+            }
+        ],
+        "hp": "70",
+        "attack": "65",
+        "defense": "60",
+        "s_attack": "90",
+        "s_defense": "75",
+        "speed": "90",
+        "ethnic_value": "450"
+    },
+    {
+        "id": "069",
+        "name": "喇叭芽",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "叶绿素"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            }
+        ],
+        "hp": "50",
+        "attack": "75",
+        "defense": "35",
+        "s_attack": "70",
+        "s_defense": "30",
+        "speed": "40",
+        "ethnic_value": "300"
+    },
+    {
+        "id": "070",
+        "name": "口呆花",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "叶绿素"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            }
+        ],
+        "hp": "65",
+        "attack": "90",
+        "defense": "50",
+        "s_attack": "85",
+        "s_defense": "45",
+        "speed": "55",
+        "ethnic_value": "390"
+    },
+    {
+        "id": "071",
+        "name": "大食花",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "叶绿素"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            }
+        ],
+        "hp": "80",
+        "attack": "105",
+        "defense": "65",
+        "s_attack": "100",
+        "s_defense": "70",
+        "speed": "70",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "072",
+        "name": "玛瑙水母",
+        "property": [
+            {
+                "id": "11",
+                "name": "水"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "净体"
+            },
+            {
+                "id": "",
+                "name": "毒液"
+            },
+            {
+                "id": "",
+                "name": "接雨盘"
+            }
+        ],
+        "hp": "40",
+        "attack": "40",
+        "defense": "35",
+        "s_attack": "50",
+        "s_defense": "100",
+        "speed": "70",
+        "ethnic_value": "335"
+    },
+    {
+        "id": "073",
+        "name": "毒刺水母",
+        "property": [
+            {
+                "id": "11",
+                "name": "水"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "净体"
+            },
+            {
+                "id": "",
+                "name": "毒液"
+            },
+            {
+                "id": "",
+                "name": "接雨盘"
+            }
+        ],
+        "hp": "80",
+        "attack": "70",
+        "defense": "65",
+        "s_attack": "80",
+        "s_defense": "120",
+        "speed": "100",
+        "ethnic_value": "515"
+    },
+    {
+        "id": "088",
+        "name": "臭泥",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "恶臭"
+            },
+            {
+                "id": "",
+                "name": "黏着"
+            },
+            {
+                "id": "",
+                "name": "毒手"
+            }
+        ],
+        "hp": "80",
+        "attack": "80",
+        "defense": "50",
+        "s_attack": "40",
+        "s_defense": "50",
+        "speed": "25",
+        "ethnic_value": "325"
+    },
+    {
+        "id": "089",
+        "name": "臭臭泥",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "恶臭"
+            },
+            {
+                "id": "",
+                "name": "黏着"
+            },
+            {
+                "id": "",
+                "name": "毒手"
+            }
+        ],
+        "hp": "105",
+        "attack": "105",
+        "defense": "75",
+        "s_attack": "65",
+        "s_defense": "100",
+        "speed": "50",
+        "ethnic_value": "500"
+    },
+    {
+        "id": "092",
+        "name": "鬼斯",
+        "property": [
+            {
+                "id": "8",
+                "name": "幽灵"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "30",
+        "attack": "35",
+        "defense": "30",
+        "s_attack": "100",
+        "s_defense": "35",
+        "speed": "80",
+        "ethnic_value": "310"
+    },
+    {
+        "id": "093",
+        "name": "鬼斯通",
+        "property": [
+            {
+                "id": "8",
+                "name": "幽灵"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "45",
+        "attack": "50",
+        "defense": "45",
+        "s_attack": "115",
+        "s_defense": "55",
+        "speed": "95",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "094",
+        "name": "耿鬼",
+        "property": [
+            {
+                "id": "8",
+                "name": "幽灵"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "60",
+        "attack": "65",
+        "defense": "60",
+        "s_attack": "130",
+        "s_defense": "75",
+        "speed": "110",
+        "ethnic_value": "500"
+    },
+    {
+        "id": "109",
+        "name": "瓦斯弹",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "40",
+        "attack": "65",
+        "defense": "95",
+        "s_attack": "60",
+        "s_defense": "45",
+        "speed": "35",
+        "ethnic_value": "340"
+    },
+    {
+        "id": "110",
+        "name": "双弹瓦斯",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "飘浮"
+            }
+        ],
+        "hp": "65",
+        "attack": "90",
+        "defense": "120",
+        "s_attack": "85",
+        "s_defense": "70",
+        "speed": "60",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "167",
+        "name": "线球",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "虫之预感"
+            },
+            {
+                "id": "",
+                "name": "不眠"
+            },
+            {
+                "id": "",
+                "name": "狙击手"
+            }
+        ],
+        "hp": "40",
+        "attack": "60",
+        "defense": "40",
+        "s_attack": "40",
+        "s_defense": "40",
+        "speed": "30",
+        "ethnic_value": "250"
+    },
+    {
+        "id": "168",
+        "name": "阿利多斯",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "虫之预感"
+            },
+            {
+                "id": "",
+                "name": "不眠"
+            },
+            {
+                "id": "",
+                "name": "狙击手"
+            }
+        ],
+        "hp": "70",
+        "attack": "90",
+        "defense": "70",
+        "s_attack": "60",
+        "s_defense": "60",
+        "speed": "40",
+        "ethnic_value": "390"
+    },
+    {
+        "id": "169",
+        "name": "叉字蝠",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "穿透"
+            }
+        ],
+        "hp": "85",
+        "attack": "90",
+        "defense": "80",
+        "s_attack": "70",
+        "s_defense": "80",
+        "speed": "130",
+        "ethnic_value": "535"
+    },
+    {
+        "id": "211",
+        "name": "千针鱼",
+        "property": [
+            {
+                "id": "11",
+                "name": "水"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "轻快"
+            },
+            {
+                "id": "",
+                "name": "威吓"
+            }
+        ],
+        "hp": "65",
+        "attack": "95",
+        "defense": "75",
+        "s_attack": "55",
+        "s_defense": "55",
+        "speed": "85",
+        "ethnic_value": "430"
+    },
+    {
+        "id": "269",
+        "name": "毒粉蝶",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "鳞粉"
+            },
+            {
+                "id": "",
+                "name": "复眼"
+            }
+        ],
+        "hp": "60",
+        "attack": "50",
+        "defense": "70",
+        "s_attack": "50",
+        "s_defense": "90",
+        "speed": "65",
+        "ethnic_value": "385"
+    },
+    {
+        "id": "315",
+        "name": "毒蔷薇",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "自然回复"
+            },
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "叶子防守"
+            }
+        ],
+        "hp": "50",
+        "attack": "60",
+        "defense": "45",
+        "s_attack": "100",
+        "s_defense": "80",
+        "speed": "65",
+        "ethnic_value": "400"
+    },
+    {
+        "id": "316",
+        "name": "溶食兽",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒液"
+            },
+            {
+                "id": "",
+                "name": "黏着"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            }
+        ],
+        "hp": "70",
+        "attack": "43",
+        "defense": "53",
+        "s_attack": "43",
+        "s_defense": "53",
+        "speed": "40",
+        "ethnic_value": "302"
+    },
+    {
+        "id": "317",
+        "name": "吞食兽",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒液"
+            },
+            {
+                "id": "",
+                "name": "黏着"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            }
+        ],
+        "hp": "100",
+        "attack": "73",
+        "defense": "83",
+        "s_attack": "73",
+        "s_defense": "83",
+        "speed": "55",
+        "ethnic_value": "467"
+    },
+    {
+        "id": "336",
+        "name": "饭匙蛇",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "蜕皮"
+            },
+            {
+                "id": "",
+                "name": "穿透"
+            }
+        ],
+        "hp": "73",
+        "attack": "100",
+        "defense": "60",
+        "s_attack": "100",
+        "s_defense": "60",
+        "speed": "65",
+        "ethnic_value": "458"
+    },
+    {
+        "id": "406",
+        "name": "含羞苞",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "自然回复"
+            },
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "叶子防守"
+            }
+        ],
+        "hp": "40",
+        "attack": "30",
+        "defense": "35",
+        "s_attack": "50",
+        "s_defense": "70",
+        "speed": "55",
+        "ethnic_value": "280"
+    },
+    {
+        "id": "407",
+        "name": "罗丝雷朵",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "自然回复"
+            },
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "技术高手"
+            }
+        ],
+        "hp": "60",
+        "attack": "70",
+        "defense": "65",
+        "s_attack": "125",
+        "s_defense": "105",
+        "speed": "90",
+        "ethnic_value": "515"
+    },
+    {
+        "id": "434",
+        "name": "臭鼬噗",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "17",
+                "name": "恶"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "恶臭"
+            },
+            {
+                "id": "",
+                "name": "引爆"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            }
+        ],
+        "hp": "63",
+        "attack": "63",
+        "defense": "47",
+        "s_attack": "41",
+        "s_defense": "41",
+        "speed": "74",
+        "ethnic_value": "329"
+    },
+    {
+        "id": "435",
+        "name": "坦克臭鼬",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "17",
+                "name": "恶"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "恶臭"
+            },
+            {
+                "id": "",
+                "name": "引爆"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            }
+        ],
+        "hp": "103",
+        "attack": "93",
+        "defense": "67",
+        "s_attack": "71",
+        "s_defense": "61",
+        "speed": "84",
+        "ethnic_value": "479"
+    },
+    {
+        "id": "451",
+        "name": "紫天蝎",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "7",
+                "name": "虫"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "战斗盔甲"
+            },
+            {
+                "id": "",
+                "name": "狙击手"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            }
+        ],
+        "hp": "40",
+        "attack": "50",
+        "defense": "90",
+        "s_attack": "30",
+        "s_defense": "55",
+        "speed": "65",
+        "ethnic_value": "330"
+    },
+    {
+        "id": "452",
+        "name": "龙王蝎",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "17",
+                "name": "恶"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "战斗盔甲"
+            },
+            {
+                "id": "",
+                "name": "狙击手"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            }
+        ],
+        "hp": "70",
+        "attack": "90",
+        "defense": "110",
+        "s_attack": "60",
+        "s_defense": "75",
+        "speed": "95",
+        "ethnic_value": "500"
+    },
+    {
+        "id": "453",
+        "name": "不良蛙",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "危险预知"
+            },
+            {
+                "id": "",
+                "name": "干燥肌肤"
+            },
+            {
+                "id": "",
+                "name": "毒手"
+            }
+        ],
+        "hp": "48",
+        "attack": "61",
+        "defense": "40",
+        "s_attack": "61",
+        "s_defense": "40",
+        "speed": "50",
+        "ethnic_value": "300"
+    },
+    {
+        "id": "454",
+        "name": "毒骷蛙",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "危险预知"
+            },
+            {
+                "id": "",
+                "name": "干燥肌肤"
+            },
+            {
+                "id": "",
+                "name": "毒手"
+            }
+        ],
+        "hp": "83",
+        "attack": "106",
+        "defense": "65",
+        "s_attack": "86",
+        "s_defense": "65",
+        "speed": "85",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "543",
+        "name": "百足蜈蚣",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "虫之预感"
+            },
+            {
+                "id": "",
+                "name": "加速"
+            }
+        ],
+        "hp": "30",
+        "attack": "45",
+        "defense": "59",
+        "s_attack": "30",
+        "s_defense": "39",
+        "speed": "57",
+        "ethnic_value": "260"
+    },
+    {
+        "id": "544",
+        "name": "车轮毬",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "虫之预感"
+            },
+            {
+                "id": "",
+                "name": "加速"
+            }
+        ],
+        "hp": "40",
+        "attack": "55",
+        "defense": "99",
+        "s_attack": "40",
+        "s_defense": "79",
+        "speed": "47",
+        "ethnic_value": "360"
+    },
+    {
+        "id": "545",
+        "name": "蜈蚣王",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "虫之预感"
+            },
+            {
+                "id": "",
+                "name": "加速"
+            }
+        ],
+        "hp": "60",
+        "attack": "100",
+        "defense": "89",
+        "s_attack": "55",
+        "s_defense": "69",
+        "speed": "112",
+        "ethnic_value": "485"
+    },
+    {
+        "id": "568",
+        "name": "破破袋",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "恶臭"
+            },
+            {
+                "id": "",
+                "name": "黏着"
+            },
+            {
+                "id": "",
+                "name": "引爆"
+            }
+        ],
+        "hp": "50",
+        "attack": "50",
+        "defense": "62",
+        "s_attack": "40",
+        "s_defense": "62",
+        "speed": "65",
+        "ethnic_value": "329"
+    },
+    {
+        "id": "569",
+        "name": "灰尘山",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "恶臭"
+            },
+            {
+                "id": "",
+                "name": "破碎铠甲"
+            },
+            {
+                "id": "",
+                "name": "引爆"
+            }
+        ],
+        "hp": "80",
+        "attack": "95",
+        "defense": "82",
+        "s_attack": "60",
+        "s_defense": "82",
+        "speed": "75",
+        "ethnic_value": "474"
+    },
+    {
+        "id": "590",
+        "name": "宝贝球菇",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "孢子"
+            },
+            {
+                "id": "",
+                "name": "再生力"
+            }
+        ],
+        "hp": "69",
+        "attack": "55",
+        "defense": "45",
+        "s_attack": "55",
+        "s_defense": "55",
+        "speed": "15",
+        "ethnic_value": "294"
+    },
+    {
+        "id": "591",
+        "name": "暴露菇",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "孢子"
+            },
+            {
+                "id": "",
+                "name": "再生力"
+            }
+        ],
+        "hp": "114",
+        "attack": "85",
+        "defense": "70",
+        "s_attack": "85",
+        "s_defense": "80",
+        "speed": "30",
+        "ethnic_value": "464"
+    },
+    {
+        "id": "690",
+        "name": "垃垃藻",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "11",
+                "name": "水"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "毒手"
+            },
+            {
+                "id": "",
+                "name": "适应力"
+            }
+        ],
+        "hp": "50",
+        "attack": "60",
+        "defense": "60",
+        "s_attack": "60",
+        "s_defense": "60",
+        "speed": "30",
+        "ethnic_value": "320"
+    },
+    {
+        "id": "691",
+        "name": "毒藻龙",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "16",
+                "name": "龙"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毒刺"
+            },
+            {
+                "id": "",
+                "name": "毒手"
+            },
+            {
+                "id": "",
+                "name": "适应力"
+            }
+        ],
+        "hp": "65",
+        "attack": "75",
+        "defense": "90",
+        "s_attack": "97",
+        "s_defense": "123",
+        "speed": "44",
+        "ethnic_value": "494"
+    },
+    {
+        "id": "094",
+        "name": "超级耿鬼",
+        "property": [
+            {
+                "id": "8",
+                "name": "幽灵"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "踩影"
+            }
+        ],
+        "hp": "60",
+        "attack": "65",
+        "defense": "80",
+        "s_attack": "170",
+        "s_defense": "95",
+        "speed": "130",
+        "ethnic_value": "600"
+    },
+    {
+        "id": "003",
+        "name": "超级妙蛙花",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "厚脂肪"
+            },
+            {
+                "id": "",
+                "name": "厚脂肪"
+            }
+        ],
+        "hp": "80",
+        "attack": "100",
+        "defense": "123",
+        "s_attack": "122",
+        "s_defense": "120",
+        "speed": "80",
+        "ethnic_value": "625"
+    },
+    {
+        "id": "015",
+        "name": "超级大针蜂",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "4",
+                "name": "毒"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "适应力"
+            },
+            {
+                "id": "",
+                "name": "适应力"
+            }
+        ],
+        "hp": "65",
+        "attack": "150",
+        "defense": "40",
+        "s_attack": "15",
+        "s_defense": "80",
+        "speed": "145",
+        "ethnic_value": "495"
+    }
+]

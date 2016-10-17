@@ -1,6 +1,10 @@
 package com.example.lenovo.myapp.ui.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -13,11 +17,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cxb.tools.Glide.GlideCircleTransform;
 import com.cxb.tools.utils.FastClick;
+import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
@@ -49,6 +55,33 @@ public class MainActivity extends BaseAppCompatActivity
     private List<MainListBean> list;
     private MainAdapter adapter;
 
+    private RelativeLayout rlNetworkWarm;
+
+    BroadcastReceiver checkNetwork = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int networkStatus = NetworkUtil.getInstance().checkNetWorkType(MainActivity.this);
+            int apnType = NetworkUtil.getInstance().checkAPNType(MainActivity.this);
+
+            switch (networkStatus){
+                case NetworkUtil.NETWORK_NONE:
+                    rlNetworkWarm.setVisibility(View.VISIBLE);
+                    break;
+                case NetworkUtil.NETWORK_MOBILE:
+                    if (apnType == NetworkUtil.NETWORK_TYPE_CMNET) {
+                        ToastUtil.toast("已连接CMNET移动网络");
+                    } else {
+                        ToastUtil.toast("已连接CMWAP移动网络");
+                    }
+                    rlNetworkWarm.setVisibility(View.GONE);
+                    break;
+                case NetworkUtil.NETWORK_WIFI:
+                    ToastUtil.toast("已连接WIFI网络");
+                    rlNetworkWarm.setVisibility(View.GONE);
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +90,22 @@ public class MainActivity extends BaseAppCompatActivity
 
         initView();
         setData();
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(checkNetwork, intentFilter);
+
     }
 
     private void initView() {
+        rlNetworkWarm = (RelativeLayout) findViewById(R.id.rl_network_warnning);
+        rlNetworkWarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+            }
+        });
+
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ivMainAvatar = (ImageView) findViewById(R.id.iv_main_avatar);
         recyclerView = (XRecyclerView) findViewById(R.id.xrv_list);
@@ -239,6 +285,12 @@ public class MainActivity extends BaseAppCompatActivity
         } else {
             ToastUtil.toast("再次点击退出程序");
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(checkNetwork);
+        super.onDestroy();
     }
 
     ///////////////////////////////////////////////////////////////////////////

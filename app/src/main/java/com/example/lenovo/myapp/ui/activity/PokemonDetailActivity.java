@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -8,7 +9,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.cxb.tools.NewsTab.NewsTabResoureUtil;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.DisplayUtil;
@@ -118,7 +121,16 @@ public class PokemonDetailActivity extends BaseActivity {
 
     private void setData() {
         String id = pokemon.getId();
+        String mega = pokemon.getMega();
         String genuineSmallLogo = "http://www.koudai8.com/pmdex/img/pm/cg/" + id + ".png";
+        final String noBackgroundLogo = "http://res.pokemon.name/sprites/core/xy/front/" + id + "." + mega + ".png";
+        String url;
+        if ("00".equals(mega)) {
+            url = genuineSmallLogo;
+        } else {
+            url = noBackgroundLogo;
+        }
+
         List<PropertyBean> pList = pokemon.getProperty();
         List<CharacteristicBean> cList = pokemon.getCharacteristic();
         String hp = pokemon.getHp();
@@ -159,11 +171,21 @@ public class PokemonDetailActivity extends BaseActivity {
         tvCnName.setText(name.getCn_name());
         tvJpEnName.setText(name.getJp_name() + " " + name.getEn_name());
         tvId.setText("#" + id);
-        Glide.with(this).load(genuineSmallLogo)
+        final RequestManager requestManager = Glide.with(this);
+        requestManager.load(url)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .placeholder(R.mipmap.bg_ditto)
                 .error(R.mipmap.bg_ditto)
-                .into(ivImage);
+                .into(new GlideDrawableImageViewTarget(ivImage) {
+                    @Override
+                    public void onLoadFailed(Exception e, Drawable errorDrawable) {
+                        super.onLoadFailed(e, errorDrawable);
+                        requestManager.load(noBackgroundLogo)
+                                .placeholder(R.mipmap.bg_ditto)
+                                .error(R.mipmap.bg_ditto)
+                                .into(ivImage);
+                    }
+                });
 
         //设置特性
         if (cList != null && cList.size() > 0) {

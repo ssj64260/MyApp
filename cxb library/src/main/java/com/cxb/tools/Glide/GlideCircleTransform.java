@@ -60,7 +60,7 @@ public class GlideCircleTransform extends BitmapTransformation {
         Canvas canvas = new Canvas(result);
 
         float r = size / 2f;
-        if (borderThickness != 0) {
+        if (alpha != 0) {
             Paint bgPaint = new Paint();
             bgPaint.setColor(Color.rgb(red, green, blue));
             bgPaint.setAntiAlias(true);

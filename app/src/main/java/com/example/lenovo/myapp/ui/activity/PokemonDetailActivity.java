@@ -66,7 +66,6 @@ public class PokemonDetailActivity extends BaseActivity {
     private View lineSdefense;//特防柱状图
     private View lineSpeed;//速度柱状图
 
-
     private PokemonBean pokemon;
     private PokemonNameBean name;
 
@@ -162,8 +161,8 @@ public class PokemonDetailActivity extends BaseActivity {
         tvId.setText("#" + id);
         Glide.with(this).load(genuineSmallLogo)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .placeholder(R.mipmap.ic_no_image_white)
-                .error(R.mipmap.ic_no_image_white)
+                .placeholder(R.mipmap.bg_ditto)
+                .error(R.mipmap.bg_ditto)
                 .into(ivImage);
 
         //设置特性

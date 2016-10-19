@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@color/white">
+        android:background="#111111">
 
         <com.cxb.tools.NewsTab.HorizontalTabListScrollView
             android:id="@+id/htlsv_list"
@@ -42,7 +42,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray60"/>
+        android:background="#333333"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_fragment"

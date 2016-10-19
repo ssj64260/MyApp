@@ -60,7 +60,7 @@ public class GlideRoundTransform extends BitmapTransformation {
         }
 
         Canvas canvas = new Canvas(result);
-        if (borderThickness != 0) {
+        if (alpha != 0) {
             Paint bgPaint = new Paint();
             bgPaint.setColor(Color.rgb(red, green, blue));
             bgPaint.setAntiAlias(true);

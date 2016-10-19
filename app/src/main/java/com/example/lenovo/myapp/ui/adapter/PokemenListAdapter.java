@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.cxb.tools.Glide.GlideCircleTransform;
 import com.cxb.tools.NewsTab.NewsTabResoureUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
@@ -35,11 +36,16 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private RequestManager requestManager;
     private String type;
 
+    private GlideCircleTransform transform;
+
     public PokemenListAdapter(Context context, List<PokemonBean> list, String type) {
         this.list = list;
         layoutInflater = LayoutInflater.from(context);
         requestManager = Glide.with(context);
         this.type = type;
+
+        transform = new GlideCircleTransform(context)
+                .setColor(192, 192, 192, 1);
     }
 
     @Override
@@ -84,9 +90,10 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
 
         requestManager.load(url)
+                .transform(transform)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .placeholder(R.mipmap.ic_no_image)
-                .error(R.mipmap.ic_no_image)
+                .placeholder(R.mipmap.ic_no_image_circle)
+                .error(R.mipmap.ic_no_image_circle)
                 .into(holder.ivLogo);
         holder.tvId.setText("No." + id);
         holder.tvName.setText(pm.getName());

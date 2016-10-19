@@ -22,8 +22,11 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cxb.tools.Glide.GlideCircleTransform;
+import com.cxb.tools.utils.DataCleanManager;
 import com.cxb.tools.utils.FastClick;
+import com.cxb.tools.utils.GetFileSizeUtil;
 import com.cxb.tools.utils.NetworkUtil;
+import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
@@ -36,6 +39,7 @@ import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,13 +61,15 @@ public class MainActivity extends BaseAppCompatActivity
 
     private RelativeLayout rlNetworkWarm;
 
+    private NavigationView navigationView;//左侧滑动菜单
+
     BroadcastReceiver checkNetwork = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             int networkStatus = NetworkUtil.getInstance().checkNetWorkType(MainActivity.this);
             int apnType = NetworkUtil.getInstance().checkAPNType(MainActivity.this);
 
-            switch (networkStatus){
+            switch (networkStatus) {
                 case NetworkUtil.NETWORK_NONE:
                     rlNetworkWarm.setVisibility(View.VISIBLE);
                     break;
@@ -97,6 +103,12 @@ public class MainActivity extends BaseAppCompatActivity
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getCacheSize();
+    }
+
     private void initView() {
         rlNetworkWarm = (RelativeLayout) findViewById(R.id.rl_network_warnning);
         rlNetworkWarm.setOnClickListener(new View.OnClickListener() {
@@ -125,7 +137,7 @@ public class MainActivity extends BaseAppCompatActivity
             }
         });
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.inflateHeaderView(R.layout.nav_header_main);
         navigationView.inflateMenu(R.menu.activity_main_drawer);
         navigationView.setNavigationItemSelectedListener(this);
@@ -278,6 +290,26 @@ public class MainActivity extends BaseAppCompatActivity
         return true;
     }
 
+    //获取缓存大小并设置到menu里
+    private void getCacheSize() {
+        long cacheSize = 0;
+        try {
+            String cacheDir = SDCardUtil.getInstance().getCacheDir(this);
+            String externalCacheDir = SDCardUtil.getInstance().getExternalCacheDir(this);
+
+            cacheSize += GetFileSizeUtil.getInstance().getFileSize(new File(cacheDir));
+            cacheSize += GetFileSizeUtil.getInstance().getFileSize(new File(externalCacheDir));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        String cache = GetFileSizeUtil.getInstance().FormetFileSize(cacheSize);
+
+        if (navigationView != null) {
+            navigationView.getMenu().findItem(R.id.nav_manage).setTitle("清理缓存：" + cache);
+        }
+    }
+
     @Override
     public void onBackPressed() {
         if (FastClick.isExitClick()) {
@@ -298,13 +330,16 @@ public class MainActivity extends BaseAppCompatActivity
     ///////////////////////////////////////////////////////////////////////////
     private void showTipsActionDialog() {
         TipsActionDialog dialog = new TipsActionDialog(this);
-        dialog.setTitleText("打开系统WIFI设置？");
-        dialog.setConfirmText("打开");
+        dialog.setTitleText("清理缓存？");
+        dialog.setConfirmText("清理");
         dialog.setCancelText("取消");
         dialog.setOnConfirmListener(new TipsActionDialog.OnConfirmListener() {
             @Override
             public void OnConfirmListener(View v) {
-                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                DataCleanManager.cleanInternalCache(MainActivity.this);
+                DataCleanManager.cleanExternalCache(MainActivity.this);
+
+                getCacheSize();
             }
         });
     }

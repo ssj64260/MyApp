@@ -22,7 +22,7 @@ public class GetFileSizeUtil {
     public long getFileSizes(File f) throws Exception {
         long s = 0;
         if (f.exists()) {
-            FileInputStream fis = null;
+            FileInputStream fis;
             fis = new FileInputStream(f);
             s = fis.available();
         } else {
@@ -37,26 +37,26 @@ public class GetFileSizeUtil {
         File flist[] = f.listFiles();
         for (int i = 0; i < flist.length; i++) {
             if (flist[i].isDirectory()) {
-                size = size + getFileSize(flist[i]);//TODO 不检查二级目录以下的目录
+                size += getFileSize(flist[i]);
             } else {
-                size = size + flist[i].length();
+                size += flist[i].length();
             }
         }
         return size;
     }
 
-    /*** 转换文件大小单位(b/kb/mb/gb) ***/
+    /*** 转换文件大小单位(B/KB/MB/GB) ***/
     public String FormetFileSize(long fileS) {// 转换文件大小
         DecimalFormat df = new DecimalFormat("#0.00");
-        String fileSizeString = "";
+        String fileSizeString;
         if (fileS < 1024) {
             fileSizeString = df.format((double) fileS) + "B";
         } else if (fileS < 1048576) {
-            fileSizeString = df.format((double) fileS / 1024) + "K";
+            fileSizeString = df.format((double) fileS / 1024) + "KB";
         } else if (fileS < 1073741824) {
-            fileSizeString = df.format((double) fileS / 1048576) + "M";
+            fileSizeString = df.format((double) fileS / 1048576) + "MB";
         } else {
-            fileSizeString = df.format((double) fileS / 1073741824) + "G";
+            fileSizeString = df.format((double) fileS / 1073741824) + "GB";
         }
         return fileSizeString;
     }

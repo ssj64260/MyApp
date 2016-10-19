@@ -1,10 +1,12 @@
 package com.example.lenovo.myapp.model;
 
+import java.io.Serializable;
+
 /**
  * 属性
  */
 
-public class PropertyBean {
+public class PropertyBean implements Serializable {
 
     private String id;
     private String name;

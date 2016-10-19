@@ -1,12 +1,13 @@
 package com.example.lenovo.myapp.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * 口袋妖怪
  */
 
-public class PokemonBean {
+public class PokemonBean implements Serializable {
 
     private String id;//pokemon ID
     private String name;//pokemon 名称

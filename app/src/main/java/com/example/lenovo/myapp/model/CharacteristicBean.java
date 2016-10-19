@@ -1,10 +1,12 @@
 package com.example.lenovo.myapp.model;
 
+import java.io.Serializable;
+
 /**
  * 特性
  */
 
-public class CharacteristicBean {
+public class CharacteristicBean implements Serializable {
 
     private String id;
     private String name;

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -26,6 +27,8 @@ import java.util.List;
 public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final String ALL = "all";
+
+    private MainAdapter.OnItemClickListener onItemClickListener;
 
     private LayoutInflater layoutInflater;
     private List<PokemonBean> list;
@@ -56,7 +59,7 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         bindPmItem((PmViewHolder) holder, position);
     }
 
-    private void bindPmItem(PmViewHolder holder, int position) {
+    private void bindPmItem(PmViewHolder holder, final int position) {
         PokemonBean pm = list.get(position);
         String id = pm.getId();
         String mega = pm.getMega();
@@ -68,6 +71,9 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         String noBackgroundLogo = "http://res.pokemon.name/sprites/core/xy/front/" + id + "." + mega + ".png";
         String smallLogo = "http://res.pokemon.name/common/pokemon/icons/" + id + "." + mega + ".png";
         String littleBigLogo = "http://res.pokemon.name/common/pokemon/pgl/" + id + "." + mega + ".png";
+
+        String genuineSmallLogo = "http://www.koudai8.com/pmdex/img/pm/cg/" + id + ".png";
+        String detailWeb = "https://wiki.52poke.com/wiki/" + pm.getName();
 
         String url;
 
@@ -94,7 +100,7 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 holder.tvProperty1.setVisibility(View.VISIBLE);
 
                 if (!StringCheck.isEmpty(pb.getId())) {
-                    holder.tvProperty1.setBackgroundResource(NewsTabResoureUtil.characteristic_bg_color[Integer.parseInt(pb.getId()) - 1]);
+                    holder.tvProperty1.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
                 }
             } else {
                 holder.tvProperty1.setVisibility(View.GONE);
@@ -106,12 +112,21 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 holder.tvProperty2.setVisibility(View.VISIBLE);
 
                 if (!StringCheck.isEmpty(pb.getId())) {
-                    holder.tvProperty2.setBackgroundResource(NewsTabResoureUtil.characteristic_bg_color[Integer.parseInt(pb.getId()) - 1]);
+                    holder.tvProperty2.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
                 }
             } else {
                 holder.tvProperty2.setVisibility(View.GONE);
             }
         }
+
+        holder.all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(v, position);
+                }
+            }
+        });
     }
 
     @Override
@@ -120,6 +135,7 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     private class PmViewHolder extends RecyclerView.ViewHolder {
+        private RelativeLayout all;
         private ImageView ivLogo;
         private TextView tvId;
         private TextView tvName;
@@ -129,11 +145,20 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         public PmViewHolder(View itemView) {
             super(itemView);
+            all = (RelativeLayout) itemView.findViewById(R.id.rl_all);
             ivLogo = (ImageView) itemView.findViewById(R.id.iv_pm_logo);
             tvId = (TextView) itemView.findViewById(R.id.tv_pm_id);
             tvName = (TextView) itemView.findViewById(R.id.tv_pm_name);
             tvProperty1 = (TextView) itemView.findViewById(R.id.tv_pm_property1);
             tvProperty2 = (TextView) itemView.findViewById(R.id.tv_pm_property2);
         }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+    public void setOnItemClickListener(MainAdapter.OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 }

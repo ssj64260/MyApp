@@ -41,4 +41,30 @@
     <color name="dragon">#7766EE</color>
     <color name="evil">#775544</color>
     <color name="fairy">#FFAAFF</color>
+
+    <color name="bg_general">#E7E7D8</color>
+    <color name="bg_fighting">#DD9988</color>
+    <color name="bg_flight">#99BBFF</color>
+    <color name="bg_poison">#C689BA</color>
+    <color name="bg_ground">#F1DDA0</color>
+    <color name="bg_rock">#E1D08C</color>
+    <color name="bg_insect">#DAEC44</color>
+    <color name="bg_ghost">#9F9FEC</color>
+    <color name="bg_steel">#DFDFE1</color>
+    <color name="bg_fire">#FF927D</color>
+    <color name="bg_water">#77BBFF</color>
+    <color name="bg_grass">#BDFFA3</color>
+    <color name="bg_electricity">#FAE078</color>
+    <color name="bg_superpower">#FF9CC4</color>
+    <color name="bg_ice">#DBF6FF</color>
+    <color name="bg_dragon">#A194FF</color>
+    <color name="bg_evil">#BDA396</color>
+    <color name="bg_fairy">#FBCBFB</color>
+
+    <color name="hp">#12FB58</color>
+    <color name="attack">#FFF60C</color>
+    <color name="defense">#FF8701</color>
+    <color name="s_attack">#14F1F6</color>
+    <color name="s_defense">#0D50FC</color>
+    <color name="speed">#E608FB</color>
 </resources>

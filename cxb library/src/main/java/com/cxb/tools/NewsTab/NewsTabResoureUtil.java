@@ -35,7 +35,7 @@ public class NewsTabResoureUtil {
             "卡洛斯"
     };
 
-    public static final String[] characteristic = {
+    public static final String[] property = {
             "一般",
             "格斗",
             "飞行",
@@ -56,7 +56,7 @@ public class NewsTabResoureUtil {
             "妖精"
     };
 
-    public static final String[] characteristic_english = {
+    public static final String[] property_english = {
             "general",
             "fighting",
             "flight",
@@ -77,7 +77,7 @@ public class NewsTabResoureUtil {
             "fairy"
     };
 
-    public static final int[] characteristic_bg_color = {
+    public static final int[] property_bg_color = {
             R.drawable.shape_bg_general,
             R.drawable.shape_bg_fighting,
             R.drawable.shape_bg_flight,
@@ -98,7 +98,28 @@ public class NewsTabResoureUtil {
             R.drawable.shape_bg_fairy
     };
 
-    public static final int[] characteristic_color = {
+    public static final int[] perty_bg_color = {
+            R.drawable.shape_bg_general_light,
+            R.drawable.shape_bg_fighting_light,
+            R.drawable.shape_bg_flight_light,
+            R.drawable.shape_bg_poison_light,
+            R.drawable.shape_bg_ground_light,
+            R.drawable.shape_bg_rock_light,
+            R.drawable.shape_bg_insect_light,
+            R.drawable.shape_bg_ghost_light,
+            R.drawable.shape_bg_steel_light,
+            R.drawable.shape_bg_fire_light,
+            R.drawable.shape_bg_water_light,
+            R.drawable.shape_bg_grass_light,
+            R.drawable.shape_bg_electricity_light,
+            R.drawable.shape_bg_superpower_light,
+            R.drawable.shape_bg_ice_light,
+            R.drawable.shape_bg_dragon_light,
+            R.drawable.shape_bg_evil_light,
+            R.drawable.shape_bg_fairy_light
+    };
+
+    public static final int[] property_color = {
             0xFFBBBBAA,
             0xFFBB5544,
             0xFF6699FF,

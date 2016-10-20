@@ -31,11 +31,10 @@
             android:src="@mipmap/ic_add" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:src="@mipmap/bg_gradient"
+            android:src="@drawable/shape_bg_gray_gradient"
             android:scaleType="centerCrop"
-            android:visibility="gone"
             android:layout_toLeftOf="@+id/img_add"/>
 
     </RelativeLayout>

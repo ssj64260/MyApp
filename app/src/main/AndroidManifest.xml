@@ -37,14 +37,6 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 
-        <!--头部功能按钮测试页面-->
-        <activity android:name=".ui.activity.ToolsTabActivity"
-            android:screenOrientation="portrait"/>
-
-        <!--新闻头部分类按钮-->
-        <activity android:name=".ui.activity.NewsTabbarActivity"
-            android:screenOrientation="portrait"/>
-
         <!--口袋妖怪主页-->
         <activity android:name=".ui.activity.PokemonMainActivity"
             android:theme="@style/AppTheme.NoActionBar"

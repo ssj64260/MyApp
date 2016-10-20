@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -64,6 +65,9 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="center_horizontal"
-        android:orientation="vertical" />
+        android:orientation="vertical"
+        app:span_count="5"
+        app:mt_select_point="@mipmap/point_select_pop"
+        app:mt_unselect_point="@mipmap/point_unselect"/>
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.cxb.tools.MainTab;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,10 +39,24 @@ public class MainTabListLayout extends LinearLayout {
 
     private int count = 10;//tab每一页多少个功能
     private int spanCount = 5;//一行多少列表
+    private int selectPoint;//选中页面时对应的标记图片
+    private int unselectPoint;//非选中页面的标记图片
 
     public MainTabListLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+
+        initAttrs(context, attrs);
         init();
+    }
+
+    private void initAttrs(Context context, AttributeSet attrs) {
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MainTabListLayout);
+        selectPoint = ta.getResourceId(R.styleable.MainTabListLayout_mt_select_point, R.mipmap.point_select_pop);
+        unselectPoint = ta.getResourceId(R.styleable.MainTabListLayout_mt_unselect_point, R.mipmap.point_unselect);
+        spanCount = ta.getInt(R.styleable.MainTabListLayout_span_count, 5);
+        count = spanCount * 2;
+        ta.recycle();
     }
 
     public void init() {
@@ -85,7 +100,7 @@ public class MainTabListLayout extends LinearLayout {
     }
 
     //设置每行多少个item
-    public void setSpanCount(int spanCount){
+    public void setSpanCount(int spanCount) {
         this.spanCount = spanCount;
         count = spanCount * 2;
     }
@@ -148,9 +163,9 @@ public class MainTabListLayout extends LinearLayout {
         ivPoints.setLayoutParams(params);
         imageViews[pageIndex] = ivPoints;
         if (pageIndex == 0) {
-            ivPoints.setBackgroundResource(R.mipmap.point_select_pop);
+            ivPoints.setBackgroundResource(selectPoint);
         } else {
-            ivPoints.setBackgroundResource(R.mipmap.point_unselect);
+            ivPoints.setBackgroundResource(unselectPoint);
         }
         pointsLayout.addView(ivPoints);
     }
@@ -159,10 +174,10 @@ public class MainTabListLayout extends LinearLayout {
     private void resetPoints(int position) {
         for (int i = 0; i < imageViews.length; i++) {
             imageViews[position]
-                    .setBackgroundResource(R.mipmap.point_select_pop);
+                    .setBackgroundResource(selectPoint);
             if (position != i) {
                 imageViews[i]
-                        .setBackgroundResource(R.mipmap.point_unselect);
+                        .setBackgroundResource(unselectPoint);
             }
         }
     }

@@ -1,6 +1,5 @@
 package com.example.lenovo.myapp.ui.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,7 +14,6 @@ import com.cxb.tools.MainTab.MainTabListLayout;
 import com.cxb.tools.MainTab.MainTabResoureUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.activity.NewsTabbarActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,9 +57,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onItemClick(View v, int position) {
                 ToastUtil.toast(tabList.get(position).getName());
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), NewsTabbarActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -70,7 +65,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             tabList.add(new MainTab(String.valueOf(i), MainTabResoureUtil.icon[i], MainTabResoureUtil.name[i]));
         }
 
-        mainTabListLayout.setSpanCount(5);
         mainTabListLayout.setList(tabList);
     }
 

@@ -3,7 +3,6 @@ package com.example.lenovo.myapp.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
 
 /**
@@ -15,7 +14,6 @@ public class StartupPageActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_startup_page);
 
         new Thread(new Runnable() {
             @Override

@@ -25,4 +25,10 @@
         <item name="android:isIndicator">false</item>
     </style>
 
+    <!--快速启动页主题-->
+    <style name="splashTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    
 </resources>

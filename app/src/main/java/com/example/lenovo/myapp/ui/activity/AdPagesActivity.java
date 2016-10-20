@@ -35,30 +35,35 @@ public class AdPagesActivity extends BaseActivity {
             }
         });
 
+        tvSkip.setText("跳过" + time);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (time > 0 && !isNoFirst) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            tvSkip.setText("跳过" + time);
-                        }
-                    });
+                while (!isNoFirst) {
                     try {
                         Thread.sleep(1000);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     time--;
-                }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tvSkip.setText("跳过" + time);
+                        }
+                    });
 
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        toFinish();
+                    if (time == 1) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                toFinish();
+                            }
+                        });
+                        break;
                     }
-                });
+                }
             }
         }).start();
     }

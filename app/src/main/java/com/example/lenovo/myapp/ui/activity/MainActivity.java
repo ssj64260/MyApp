@@ -82,7 +82,7 @@ public class MainActivity extends BaseAppCompatActivity
                     rlNetworkWarm.setVisibility(View.GONE);
                     break;
                 case NetworkUtil.NETWORK_WIFI:
-                    ToastUtil.toast("已连接WIFI网络");
+                    ToastUtil.toast("已连接WIFI网络，可以正常使用");
                     rlNetworkWarm.setVisibility(View.GONE);
                     break;
             }

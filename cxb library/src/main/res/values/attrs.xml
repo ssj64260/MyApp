@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="HorizontalTabListScrollView">
+        <attr name="ht_select_text_color" format="color"/>
+        <attr name="ht_unselect_text_color" format="color"/>
+        <attr name="ht_text_size" format="dimension"/>
+        <attr name="ht_left_reserve_tab" format="enum">
+            <enum name="one_tab" value="1"/>
+            <enum name="two_tab" value="2"/>
+            <enum name="three_tab" value="3"/>
+            <enum name="four_tab" value="4"/>
+        </attr>
+    </declare-styleable>
+
+
+</resources>

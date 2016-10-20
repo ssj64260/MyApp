@@ -1,7 +1,10 @@
 package com.cxb.tools.NewsTab;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cxb.tools.R;
+import com.cxb.tools.utils.DisplayUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,11 +32,19 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
     private List<NewsTab> tabList;
     private OnItemSelectedListener mOnItemSelectedListener;//点击回调
 
-    private final int textColorNormal = 0xFF707070;//未选中的字体颜色
-    private final int textColorSelect = 0xFF0295C9;//选中的字体颜色
+    private int textColorNormal = 0xFF707070;//未选中的字体颜色
+    private int textColorSelect = 0xFF0295C9;//选中的字体颜色
+    private float textSize = 0f;//字体大小px
+    private int reserveTab = 1;//左边预留tab个数
 
     public HorizontalTabListScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        if (isInEditMode()) {
+            return;
+        }
+
+        initAttrs(context, attrs);
         init();
     }
 
@@ -44,6 +56,15 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
         layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
         mHorizontalTabView.setLayoutParams(layoutParams);
         this.addView(mHorizontalTabView);
+    }
+
+    private void initAttrs(Context context, AttributeSet attrs) {
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.HorizontalTabListScrollView);
+        textColorNormal = ta.getColor(R.styleable.HorizontalTabListScrollView_ht_unselect_text_color, Color.parseColor("#FF707070"));
+        textColorSelect = ta.getColor(R.styleable.HorizontalTabListScrollView_ht_select_text_color, Color.parseColor("#FF0295C9"));
+        textSize = ta.getDimension(R.styleable.HorizontalTabListScrollView_ht_text_size, DisplayUtil.getInstance(getContext()).sp2px(14f));
+        reserveTab = ta.getInt(R.styleable.HorizontalTabListScrollView_ht_left_reserve_tab, 1);
+        ta.recycle();
     }
 
     public void addTabList(List<NewsTab> tabList) {
@@ -64,6 +85,9 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
 
             String cateName = tabList.get(i).getName();
 
+            if (textSize > 0) {
+                name.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+            }
             name.setText(cateName);
             name.setTextColor(textColorNormal);
             itemView.setTag(i);
@@ -106,7 +130,7 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
     //获得当前位置的X坐标
     private int getXCoordinate(int position) {
         int allWidth = 0;
-        for (int i = 0; i < (position - 2); i++) {
+        for (int i = 0; i < (position - reserveTab); i++) {
             allWidth += mHorizontalTabView.getChildAt(i).getWidth();
         }
         return allWidth;

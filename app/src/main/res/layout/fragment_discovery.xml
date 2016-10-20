@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="#111111">
+        android:background="#3C4146">
 
         <com.cxb.tools.NewsTab.HorizontalTabListScrollView
             android:id="@+id/htlsv_list"
@@ -35,6 +35,7 @@
             android:layout_height="match_parent"
             android:src="@mipmap/bg_gradient"
             android:scaleType="centerCrop"
+            android:visibility="gone"
             android:layout_toLeftOf="@+id/img_add"/>
 
     </RelativeLayout>
@@ -48,6 +49,6 @@
         android:id="@+id/vp_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"/>
+        android:background="#11141A"/>
 
 </LinearLayout>

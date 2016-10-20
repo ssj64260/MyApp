@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:background="@color/black">
+    android:background="#11141A">
 
     <FrameLayout
         android:id="@+id/fl_fragment"
@@ -18,12 +18,12 @@
         android:id="@+id/com_tablayout"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:background="#111111"
+        android:background="#21262D"
         tl:tl_iconHeight="32dp"
         tl:tl_iconWidth="32dp"
         tl:tl_indicator_color="#000000"
         tl:tl_indicator_height="0dp"
-        tl:tl_textSelectColor="#ffffff"
+        tl:tl_textSelectColor="#FF0295C9"
         tl:tl_textUnselectColor="#66ffffff"
         tl:tl_textsize="12sp"
         tl:tl_underline_color="#DDDDDD"

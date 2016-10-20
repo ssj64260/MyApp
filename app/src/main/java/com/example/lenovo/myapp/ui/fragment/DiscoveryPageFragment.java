@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cxb.tools.utils.AssetsUtil;
+import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
@@ -86,10 +87,12 @@ public class DiscoveryPageFragment extends Fragment {
         adapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), PokemonDetailActivity.class);
-                intent.putExtra("pokemon", pmList.get(position));
-                startActivity(intent);
+                if (!FastClick.isFastClick()) {
+                    Intent intent = new Intent();
+                    intent.setClass(getActivity(), PokemonDetailActivity.class);
+                    intent.putExtra("pokemon", pmList.get(position));
+                    startActivity(intent);
+                }
             }
         });
     }

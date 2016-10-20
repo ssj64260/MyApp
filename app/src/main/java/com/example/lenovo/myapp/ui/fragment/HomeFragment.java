@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import com.cxb.tools.MainTab.MainTab;
 import com.cxb.tools.MainTab.MainTabListLayout;
 import com.cxb.tools.MainTab.MainTabResoureUtil;
+import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 
@@ -56,7 +57,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mainTabListLayout.setOnItemSelectedListener(new MainTabListLayout.OnItemSelectedListener() {
             @Override
             public void onItemClick(View v, int position) {
-                ToastUtil.toast(tabList.get(position).getName());
+                if (!FastClick.isFastClick()) {
+                    ToastUtil.toast(tabList.get(position).getName());
+                }
             }
         });
 

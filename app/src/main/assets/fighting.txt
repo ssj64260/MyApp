@@ -1,0 +1,1714 @@
+[
+    {
+        "id": "056",
+        "name": "猴怪",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "干劲"
+            },
+            {
+                "id": "",
+                "name": "怒穴"
+            },
+            {
+                "id": "",
+                "name": "不服输"
+            }
+        ],
+        "hp": "40",
+        "attack": "80",
+        "defense": "35",
+        "s_attack": "35",
+        "s_defense": "45",
+        "speed": "70",
+        "ethnic_value": "305"
+    },
+    {
+        "id": "057",
+        "name": "火爆猴",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "干劲"
+            },
+            {
+                "id": "",
+                "name": "怒穴"
+            },
+            {
+                "id": "",
+                "name": "不服输"
+            }
+        ],
+        "hp": "65",
+        "attack": "105",
+        "defense": "60",
+        "s_attack": "60",
+        "s_defense": "70",
+        "speed": "95",
+        "ethnic_value": "455"
+    },
+    {
+        "id": "062",
+        "name": "蚊香泳士",
+        "mega": "00",
+        "property": [
+            {
+                "id": "11",
+                "name": "水"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "贮水"
+            },
+            {
+                "id": "",
+                "name": "潮湿"
+            },
+            {
+                "id": "",
+                "name": "轻快"
+            }
+        ],
+        "hp": "90",
+        "attack": "95",
+        "defense": "95",
+        "s_attack": "70",
+        "s_defense": "90",
+        "speed": "70",
+        "ethnic_value": "510"
+    },
+    {
+        "id": "066",
+        "name": "腕力",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "无防御"
+            },
+            {
+                "id": "",
+                "name": "不屈之心"
+            }
+        ],
+        "hp": "70",
+        "attack": "80",
+        "defense": "50",
+        "s_attack": "35",
+        "s_defense": "35",
+        "speed": "35",
+        "ethnic_value": "305"
+    },
+    {
+        "id": "067",
+        "name": "豪力",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "无防御"
+            },
+            {
+                "id": "",
+                "name": "不屈之心"
+            }
+        ],
+        "hp": "80",
+        "attack": "100",
+        "defense": "70",
+        "s_attack": "50",
+        "s_defense": "60",
+        "speed": "45",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "068",
+        "name": "怪力",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "无防御"
+            },
+            {
+                "id": "",
+                "name": "不屈之心"
+            }
+        ],
+        "hp": "90",
+        "attack": "130",
+        "defense": "80",
+        "s_attack": "65",
+        "s_defense": "85",
+        "speed": "55",
+        "ethnic_value": "505"
+    },
+    {
+        "id": "106",
+        "name": "飞腿郎",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "柔软"
+            },
+            {
+                "id": "",
+                "name": "舍身"
+            },
+            {
+                "id": "",
+                "name": "杂技"
+            }
+        ],
+        "hp": "50",
+        "attack": "120",
+        "defense": "53",
+        "s_attack": "35",
+        "s_defense": "110",
+        "speed": "87",
+        "ethnic_value": "455"
+    },
+    {
+        "id": "107",
+        "name": "快拳郎",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "铁拳"
+            },
+            {
+                "id": "",
+                "name": "精神力"
+            }
+        ],
+        "hp": "50",
+        "attack": "105",
+        "defense": "79",
+        "s_attack": "35",
+        "s_defense": "110",
+        "speed": "76",
+        "ethnic_value": "455"
+    },
+    {
+        "id": "214",
+        "name": "赫拉克罗斯",
+        "mega": "00",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "虫之预感"
+            },
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "自信过剩"
+            }
+        ],
+        "hp": "80",
+        "attack": "125",
+        "defense": "75",
+        "s_attack": "40",
+        "s_defense": "95",
+        "speed": "85",
+        "ethnic_value": "500"
+    },
+    {
+        "id": "236",
+        "name": "巴尔郎",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "不屈之心"
+            },
+            {
+                "id": "",
+                "name": "干劲"
+            }
+        ],
+        "hp": "35",
+        "attack": "35",
+        "defense": "35",
+        "s_attack": "35",
+        "s_defense": "35",
+        "speed": "35",
+        "ethnic_value": "210"
+    },
+    {
+        "id": "237",
+        "name": "柯波郎",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "技术高手"
+            },
+            {
+                "id": "",
+                "name": "不屈之心"
+            }
+        ],
+        "hp": "50",
+        "attack": "95",
+        "defense": "95",
+        "s_attack": "35",
+        "s_defense": "110",
+        "speed": "70",
+        "ethnic_value": "455"
+    },
+    {
+        "id": "256",
+        "name": "力壮鸡",
+        "mega": "00",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "猛火"
+            },
+            {
+                "id": "",
+                "name": "加速"
+            }
+        ],
+        "hp": "60",
+        "attack": "85",
+        "defense": "60",
+        "s_attack": "85",
+        "s_defense": "60",
+        "speed": "55",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "257",
+        "name": "火焰鸡",
+        "mega": "00",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "猛火"
+            },
+            {
+                "id": "",
+                "name": "加速"
+            }
+        ],
+        "hp": "80",
+        "attack": "120",
+        "defense": "70",
+        "s_attack": "110",
+        "s_defense": "70",
+        "speed": "80",
+        "ethnic_value": "530"
+    },
+    {
+        "id": "286",
+        "name": "斗笠菇",
+        "mega": "00",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "孢子"
+            },
+            {
+                "id": "",
+                "name": "毒疗"
+            },
+            {
+                "id": "",
+                "name": "技术高手"
+            }
+        ],
+        "hp": "60",
+        "attack": "130",
+        "defense": "80",
+        "s_attack": "60",
+        "s_defense": "60",
+        "speed": "70",
+        "ethnic_value": "460"
+    },
+    {
+        "id": "296",
+        "name": "幕下力士",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "厚脂肪"
+            },
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            }
+        ],
+        "hp": "72",
+        "attack": "60",
+        "defense": "30",
+        "s_attack": "20",
+        "s_defense": "30",
+        "speed": "25",
+        "ethnic_value": "237"
+    },
+    {
+        "id": "297",
+        "name": "铁掌力士",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "厚脂肪"
+            },
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            }
+        ],
+        "hp": "144",
+        "attack": "120",
+        "defense": "60",
+        "s_attack": "40",
+        "s_defense": "60",
+        "speed": "50",
+        "ethnic_value": "474"
+    },
+    {
+        "id": "307",
+        "name": "玛沙那",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            },
+            {
+                "id": "14",
+                "name": "超能力"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "瑜珈之力"
+            },
+            {
+                "id": "",
+                "name": "心灵感应"
+            }
+        ],
+        "hp": "30",
+        "attack": "40",
+        "defense": "55",
+        "s_attack": "40",
+        "s_defense": "55",
+        "speed": "60",
+        "ethnic_value": "280"
+    },
+    {
+        "id": "308",
+        "name": "恰雷姆",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            },
+            {
+                "id": "14",
+                "name": "超能力"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "瑜珈之力"
+            },
+            {
+                "id": "",
+                "name": "心灵感应"
+            }
+        ],
+        "hp": "60",
+        "attack": "60",
+        "defense": "75",
+        "s_attack": "60",
+        "s_defense": "75",
+        "speed": "80",
+        "ethnic_value": "410"
+    },
+    {
+        "id": "391",
+        "name": "猛火猴",
+        "mega": "00",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "猛火"
+            },
+            {
+                "id": "",
+                "name": "铁拳"
+            }
+        ],
+        "hp": "64",
+        "attack": "78",
+        "defense": "52",
+        "s_attack": "78",
+        "s_defense": "52",
+        "speed": "81",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "392",
+        "name": "烈焰猴",
+        "mega": "00",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "猛火"
+            },
+            {
+                "id": "",
+                "name": "铁拳"
+            }
+        ],
+        "hp": "76",
+        "attack": "104",
+        "defense": "71",
+        "s_attack": "104",
+        "s_defense": "71",
+        "speed": "108",
+        "ethnic_value": "534"
+    },
+    {
+        "id": "447",
+        "name": "利欧路",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "不屈之心"
+            },
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "恶作剧之心"
+            }
+        ],
+        "hp": "40",
+        "attack": "70",
+        "defense": "40",
+        "s_attack": "35",
+        "s_defense": "40",
+        "speed": "60",
+        "ethnic_value": "285"
+    },
+    {
+        "id": "448",
+        "name": "路卡利欧",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            },
+            {
+                "id": "9",
+                "name": "钢"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "不屈之心"
+            },
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "正义之心"
+            }
+        ],
+        "hp": "70",
+        "attack": "110",
+        "defense": "70",
+        "s_attack": "115",
+        "s_defense": "70",
+        "speed": "90",
+        "ethnic_value": "525"
+    },
+    {
+        "id": "453",
+        "name": "不良蛙",
+        "mega": "00",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "危险预知"
+            },
+            {
+                "id": "",
+                "name": "干燥肌肤"
+            },
+            {
+                "id": "",
+                "name": "毒手"
+            }
+        ],
+        "hp": "48",
+        "attack": "61",
+        "defense": "40",
+        "s_attack": "61",
+        "s_defense": "40",
+        "speed": "50",
+        "ethnic_value": "300"
+    },
+    {
+        "id": "454",
+        "name": "毒骷蛙",
+        "mega": "00",
+        "property": [
+            {
+                "id": "4",
+                "name": "毒"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "危险预知"
+            },
+            {
+                "id": "",
+                "name": "干燥肌肤"
+            },
+            {
+                "id": "",
+                "name": "毒手"
+            }
+        ],
+        "hp": "83",
+        "attack": "106",
+        "defense": "65",
+        "s_attack": "86",
+        "s_defense": "65",
+        "speed": "85",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "475",
+        "name": "艾路雷朵",
+        "mega": "00",
+        "property": [
+            {
+                "id": "14",
+                "name": "超能力"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "不屈之心"
+            },
+            {
+                "id": "",
+                "name": "正义之心"
+            }
+        ],
+        "hp": "68",
+        "attack": "125",
+        "defense": "65",
+        "s_attack": "65",
+        "s_defense": "115",
+        "speed": "80",
+        "ethnic_value": "518"
+    },
+    {
+        "id": "499",
+        "name": "炒炒猪",
+        "mega": "00",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "猛火"
+            },
+            {
+                "id": "",
+                "name": "厚脂肪"
+            }
+        ],
+        "hp": "90",
+        "attack": "93",
+        "defense": "55",
+        "s_attack": "70",
+        "s_defense": "55",
+        "speed": "55",
+        "ethnic_value": "418"
+    },
+    {
+        "id": "500",
+        "name": "炎武王",
+        "mega": "00",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "猛火"
+            },
+            {
+                "id": "",
+                "name": "舍身"
+            }
+        ],
+        "hp": "110",
+        "attack": "123",
+        "defense": "65",
+        "s_attack": "100",
+        "s_defense": "65",
+        "speed": "65",
+        "ethnic_value": "528"
+    },
+    {
+        "id": "532",
+        "name": "搬运小匠",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            },
+            {
+                "id": "",
+                "name": "铁拳"
+            }
+        ],
+        "hp": "75",
+        "attack": "80",
+        "defense": "55",
+        "s_attack": "25",
+        "s_defense": "35",
+        "speed": "35",
+        "ethnic_value": "305"
+    },
+    {
+        "id": "533",
+        "name": "铁骨土人",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            },
+            {
+                "id": "",
+                "name": "铁拳"
+            }
+        ],
+        "hp": "85",
+        "attack": "105",
+        "defense": "85",
+        "s_attack": "40",
+        "s_defense": "50",
+        "speed": "40",
+        "ethnic_value": "405"
+    },
+    {
+        "id": "534",
+        "name": "修缮老匠",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            },
+            {
+                "id": "",
+                "name": "铁拳"
+            }
+        ],
+        "hp": "105",
+        "attack": "140",
+        "defense": "95",
+        "s_attack": "55",
+        "s_defense": "65",
+        "speed": "45",
+        "ethnic_value": "505"
+    },
+    {
+        "id": "538",
+        "name": "投射鬼",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "破格"
+            }
+        ],
+        "hp": "120",
+        "attack": "100",
+        "defense": "85",
+        "s_attack": "30",
+        "s_defense": "85",
+        "speed": "45",
+        "ethnic_value": "465"
+    },
+    {
+        "id": "539",
+        "name": "打击鬼",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "坚硬"
+            },
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "破格"
+            }
+        ],
+        "hp": "75",
+        "attack": "125",
+        "defense": "75",
+        "s_attack": "30",
+        "s_defense": "75",
+        "speed": "85",
+        "ethnic_value": "465"
+    },
+    {
+        "id": "559",
+        "name": "滑头小子",
+        "mega": "00",
+        "property": [
+            {
+                "id": "17",
+                "name": "恶"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "蜕皮"
+            },
+            {
+                "id": "",
+                "name": "自信过剩"
+            },
+            {
+                "id": "",
+                "name": "威吓"
+            }
+        ],
+        "hp": "50",
+        "attack": "75",
+        "defense": "70",
+        "s_attack": "35",
+        "s_defense": "70",
+        "speed": "48",
+        "ethnic_value": "348"
+    },
+    {
+        "id": "560",
+        "name": "头巾混混",
+        "mega": "00",
+        "property": [
+            {
+                "id": "17",
+                "name": "恶"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "蜕皮"
+            },
+            {
+                "id": "",
+                "name": "自信过剩"
+            },
+            {
+                "id": "",
+                "name": "威吓"
+            }
+        ],
+        "hp": "65",
+        "attack": "90",
+        "defense": "115",
+        "s_attack": "45",
+        "s_defense": "115",
+        "speed": "58",
+        "ethnic_value": "488"
+    },
+    {
+        "id": "619",
+        "name": "功夫鼬",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "再生力"
+            },
+            {
+                "id": "",
+                "name": "舍身"
+            }
+        ],
+        "hp": "45",
+        "attack": "85",
+        "defense": "50",
+        "s_attack": "55",
+        "s_defense": "50",
+        "speed": "65",
+        "ethnic_value": "350"
+    },
+    {
+        "id": "620",
+        "name": "师父鼬",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "再生力"
+            },
+            {
+                "id": "",
+                "name": "舍身"
+            }
+        ],
+        "hp": "65",
+        "attack": "125",
+        "defense": "60",
+        "s_attack": "95",
+        "s_defense": "60",
+        "speed": "105",
+        "ethnic_value": "510"
+    },
+    {
+        "id": "638",
+        "name": "勾帕路翁",
+        "mega": "00",
+        "property": [
+            {
+                "id": "9",
+                "name": "钢"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "正义之心"
+            }
+        ],
+        "hp": "91",
+        "attack": "90",
+        "defense": "129",
+        "s_attack": "90",
+        "s_defense": "72",
+        "speed": "108",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "639",
+        "name": "代拉基翁",
+        "mega": "00",
+        "property": [
+            {
+                "id": "6",
+                "name": "岩石"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "正义之心"
+            }
+        ],
+        "hp": "91",
+        "attack": "129",
+        "defense": "90",
+        "s_attack": "72",
+        "s_defense": "90",
+        "speed": "108",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "640",
+        "name": "毕力吉翁",
+        "mega": "00",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "正义之心"
+            }
+        ],
+        "hp": "91",
+        "attack": "90",
+        "defense": "72",
+        "s_attack": "90",
+        "s_defense": "129",
+        "speed": "108",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "647",
+        "name": "凯路迪欧（一般的样子）",
+        "mega": "00",
+        "property": [
+            {
+                "id": "11",
+                "name": "水"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "正义之心"
+            }
+        ],
+        "hp": "91",
+        "attack": "72",
+        "defense": "90",
+        "s_attack": "129",
+        "s_defense": "90",
+        "speed": "108",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "652",
+        "name": "布里卡隆",
+        "mega": "00",
+        "property": [
+            {
+                "id": "12",
+                "name": "草"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "茂盛"
+            },
+            {
+                "id": "",
+                "name": "防弹"
+            }
+        ],
+        "hp": "88",
+        "attack": "107",
+        "defense": "122",
+        "s_attack": "74",
+        "s_defense": "75",
+        "speed": "64",
+        "ethnic_value": "530"
+    },
+    {
+        "id": "674",
+        "name": "顽皮熊猫",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "铁拳"
+            },
+            {
+                "id": "",
+                "name": "破格"
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "67",
+        "attack": "82",
+        "defense": "62",
+        "s_attack": "46",
+        "s_defense": "48",
+        "speed": "43",
+        "ethnic_value": "348"
+    },
+    {
+        "id": "675",
+        "name": "流氓熊猫",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            },
+            {
+                "id": "17",
+                "name": "恶"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "铁拳"
+            },
+            {
+                "id": "",
+                "name": "破格"
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "95",
+        "attack": "124",
+        "defense": "78",
+        "s_attack": "69",
+        "s_defense": "71",
+        "speed": "58",
+        "ethnic_value": "495"
+    },
+    {
+        "id": "701",
+        "name": "摔角鹰人",
+        "mega": "00",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "柔软"
+            },
+            {
+                "id": "",
+                "name": "杂技"
+            },
+            {
+                "id": "",
+                "name": "破格"
+            }
+        ],
+        "hp": "78",
+        "attack": "92",
+        "defense": "75",
+        "s_attack": "74",
+        "s_defense": "63",
+        "speed": "118",
+        "ethnic_value": "500"
+    },
+    {
+        "id": "648",
+        "name": "美洛耶塔（舞步形态）",
+        "mega": "01",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "天之恩惠"
+            }
+        ],
+        "hp": "100",
+        "attack": "128",
+        "defense": "90",
+        "s_attack": "77",
+        "s_defense": "77",
+        "speed": "128",
+        "ethnic_value": "600"
+    },
+    {
+        "id": "647",
+        "name": "凯路迪欧（觉悟的样子）",
+        "mega": "01",
+        "property": [
+            {
+                "id": "11",
+                "name": "水"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "正义之心"
+            }
+        ],
+        "hp": "91",
+        "attack": "72",
+        "defense": "90",
+        "s_attack": "129",
+        "s_defense": "90",
+        "speed": "108",
+        "ethnic_value": "580"
+    },
+    {
+        "id": "150",
+        "name": "超级超梦X",
+        "mega": "01",
+        "property": [
+            {
+                "id": "14",
+                "name": "超能力"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "不屈之心"
+            },
+            {
+                "id": "",
+                "name": "不屈之心"
+            }
+        ],
+        "hp": "106",
+        "attack": "190",
+        "defense": "100",
+        "s_attack": "154",
+        "s_defense": "100",
+        "speed": "130",
+        "ethnic_value": "780"
+    },
+    {
+        "id": "257",
+        "name": "超级火焰鸡",
+        "mega": "01",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "加速"
+            },
+            {
+                "id": "",
+                "name": "加速"
+            }
+        ],
+        "hp": "80",
+        "attack": "160",
+        "defense": "80",
+        "s_attack": "130",
+        "s_defense": "80",
+        "speed": "100",
+        "ethnic_value": "630"
+    },
+    {
+        "id": "308",
+        "name": "超级恰雷姆",
+        "mega": "01",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            },
+            {
+                "id": "14",
+                "name": "超能力"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "大力士"
+            },
+            {
+                "id": "",
+                "name": "大力士"
+            }
+        ],
+        "hp": "60",
+        "attack": "100",
+        "defense": "85",
+        "s_attack": "80",
+        "s_defense": "85",
+        "speed": "100",
+        "ethnic_value": "510"
+    },
+    {
+        "id": "448",
+        "name": "超级路卡利欧",
+        "mega": "01",
+        "property": [
+            {
+                "id": "2",
+                "name": "格斗"
+            },
+            {
+                "id": "9",
+                "name": "钢"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "适应力"
+            },
+            {
+                "id": "",
+                "name": "适应力"
+            }
+        ],
+        "hp": "70",
+        "attack": "145",
+        "defense": "88",
+        "s_attack": "140",
+        "s_defense": "70",
+        "speed": "112",
+        "ethnic_value": "625"
+    },
+    {
+        "id": "214",
+        "name": "超级赫拉克罗斯",
+        "mega": "01",
+        "property": [
+            {
+                "id": "7",
+                "name": "虫"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "连续攻击"
+            },
+            {
+                "id": "",
+                "name": "连续攻击"
+            }
+        ],
+        "hp": "80",
+        "attack": "185",
+        "defense": "115",
+        "s_attack": "40",
+        "s_defense": "105",
+        "speed": "75",
+        "ethnic_value": "600"
+    },
+    {
+        "id": "475",
+        "name": "超级艾路雷朵",
+        "mega": "01",
+        "property": [
+            {
+                "id": "14",
+                "name": "超能力"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "精神力"
+            }
+        ],
+        "hp": "68",
+        "attack": "165",
+        "defense": "95",
+        "s_attack": "65",
+        "s_defense": "115",
+        "speed": "110",
+        "ethnic_value": "618"
+    },
+    {
+        "id": "428",
+        "name": "超级长耳兔",
+        "mega": "01",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "胆气"
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "65",
+        "attack": "136",
+        "defense": "94",
+        "s_attack": "54",
+        "s_defense": "96",
+        "speed": "135",
+        "ethnic_value": "580"
+    }
+]

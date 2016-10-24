@@ -268,10 +268,14 @@ public class MainActivity extends BaseAppCompatActivity
                 ToastUtil.toast("打开相机");
                 break;
             case R.id.nav_gallery:
-                ToastUtil.toast("打开相册");
+                Intent okhttpIntent = new Intent();
+                okhttpIntent.setClass(this, OkhttpTestActivity.class);
+                startActivity(okhttpIntent);
                 break;
             case R.id.nav_slideshow:
-                ToastUtil.toast("打开幻灯片");
+                Intent animIntent = new Intent();
+                animIntent.setClass(this, AnimationTestActivity.class);
+                startActivity(animIntent);
                 break;
             case R.id.nav_manage:
                 showTipsActionDialog();

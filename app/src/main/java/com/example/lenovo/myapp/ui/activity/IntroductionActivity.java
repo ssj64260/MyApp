@@ -107,4 +107,9 @@ public class IntroductionActivity extends BaseActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }

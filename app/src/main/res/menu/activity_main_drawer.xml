@@ -15,12 +15,12 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_nav_gallery"
-            android:visible="false"/>
+            android:visible="true"/>
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_nav_slideshow"
-            android:visible="false"/>
+            android:visible="true"/>
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

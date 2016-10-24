@@ -3,6 +3,10 @@
     package="com.example.lenovo.myapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    //下面这些事使用到缓存的时候需要用的
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name=".MyApplication"
@@ -49,6 +53,14 @@
 
         <!--口袋妖怪详情页面-->
         <activity android:name=".ui.activity.PokemonDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.AnimationTestActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.OkhttpTestActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 

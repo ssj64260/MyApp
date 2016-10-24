@@ -1,0 +1,3430 @@
+[
+    {
+        "id": "016",
+        "name": "波波",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "蹒跚"
+            },
+            {
+                "id": "",
+                "name": "胸甲"
+            }
+        ],
+        "hp": "40",
+        "attack": "45",
+        "defense": "40",
+        "s_attack": "35",
+        "s_defense": "35",
+        "speed": "56",
+        "ethnic_value": "251"
+    },
+    {
+        "id": "017",
+        "name": "比比鸟",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "蹒跚"
+            },
+            {
+                "id": "",
+                "name": "胸甲"
+            }
+        ],
+        "hp": "63",
+        "attack": "60",
+        "defense": "55",
+        "s_attack": "50",
+        "s_defense": "50",
+        "speed": "71",
+        "ethnic_value": "349"
+    },
+    {
+        "id": "018",
+        "name": "大比鸟",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "蹒跚"
+            },
+            {
+                "id": "",
+                "name": "胸甲"
+            }
+        ],
+        "hp": "83",
+        "attack": "80",
+        "defense": "75",
+        "s_attack": "70",
+        "s_defense": "70",
+        "speed": "101",
+        "ethnic_value": "479"
+    },
+    {
+        "id": "019",
+        "name": "小拉达",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "活力"
+            }
+        ],
+        "hp": "30",
+        "attack": "56",
+        "defense": "35",
+        "s_attack": "25",
+        "s_defense": "35",
+        "speed": "72",
+        "ethnic_value": "253"
+    },
+    {
+        "id": "020",
+        "name": "拉达",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "活力"
+            }
+        ],
+        "hp": "55",
+        "attack": "81",
+        "defense": "60",
+        "s_attack": "50",
+        "s_defense": "70",
+        "speed": "97",
+        "ethnic_value": "413"
+    },
+    {
+        "id": "021",
+        "name": "烈雀",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "狙击手"
+            }
+        ],
+        "hp": "40",
+        "attack": "60",
+        "defense": "30",
+        "s_attack": "31",
+        "s_defense": "31",
+        "speed": "70",
+        "ethnic_value": "262"
+    },
+    {
+        "id": "022",
+        "name": "大嘴雀",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "狙击手"
+            }
+        ],
+        "hp": "65",
+        "attack": "90",
+        "defense": "65",
+        "s_attack": "61",
+        "s_defense": "61",
+        "speed": "100",
+        "ethnic_value": "442"
+    },
+    {
+        "id": "039",
+        "name": "胖丁",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "18",
+                "name": "妖精"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "魅惑之躯"
+            },
+            {
+                "id": "",
+                "name": "争强好胜"
+            },
+            {
+                "id": "",
+                "name": "队友守护"
+            }
+        ],
+        "hp": "115",
+        "attack": "45",
+        "defense": "20",
+        "s_attack": "45",
+        "s_defense": "25",
+        "speed": "20",
+        "ethnic_value": "270"
+    },
+    {
+        "id": "040",
+        "name": "胖可丁",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "18",
+                "name": "妖精"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "魅惑之躯"
+            },
+            {
+                "id": "",
+                "name": "争强好胜"
+            },
+            {
+                "id": "",
+                "name": "察觉"
+            }
+        ],
+        "hp": "140",
+        "attack": "70",
+        "defense": "45",
+        "s_attack": "85",
+        "s_defense": "50",
+        "speed": "45",
+        "ethnic_value": "435"
+    },
+    {
+        "id": "052",
+        "name": "喵喵",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "",
+                "name": "捡拾"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "技术高手"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            }
+        ],
+        "hp": "40",
+        "attack": "45",
+        "defense": "35",
+        "s_attack": "40",
+        "s_defense": "40",
+        "speed": "90",
+        "ethnic_value": "290"
+    },
+    {
+        "id": "053",
+        "name": "猫老大",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "柔软"
+            },
+            {
+                "id": "",
+                "name": "技术高手"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            }
+        ],
+        "hp": "65",
+        "attack": "70",
+        "defense": "60",
+        "s_attack": "65",
+        "s_defense": "65",
+        "speed": "115",
+        "ethnic_value": "440"
+    },
+    {
+        "id": "083",
+        "name": "大葱鸭",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "不服输"
+            }
+        ],
+        "hp": "52",
+        "attack": "65",
+        "defense": "55",
+        "s_attack": "58",
+        "s_defense": "62",
+        "speed": "60",
+        "ethnic_value": "352"
+    },
+    {
+        "id": "084",
+        "name": "嘟嘟",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "早起"
+            },
+            {
+                "id": "",
+                "name": "蹒跚"
+            }
+        ],
+        "hp": "35",
+        "attack": "85",
+        "defense": "45",
+        "s_attack": "35",
+        "s_defense": "35",
+        "speed": "75",
+        "ethnic_value": "310"
+    },
+    {
+        "id": "085",
+        "name": "嘟嘟利",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "早起"
+            },
+            {
+                "id": "",
+                "name": "蹒跚"
+            }
+        ],
+        "hp": "60",
+        "attack": "110",
+        "defense": "70",
+        "s_attack": "60",
+        "s_defense": "60",
+        "speed": "100",
+        "ethnic_value": "460"
+    },
+    {
+        "id": "108",
+        "name": "大舌头",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "我行我素"
+            },
+            {
+                "id": "",
+                "name": "迟钝"
+            },
+            {
+                "id": "",
+                "name": "无天气"
+            }
+        ],
+        "hp": "90",
+        "attack": "55",
+        "defense": "75",
+        "s_attack": "60",
+        "s_defense": "75",
+        "speed": "30",
+        "ethnic_value": "385"
+    },
+    {
+        "id": "113",
+        "name": "吉利蛋",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "自然回复"
+            },
+            {
+                "id": "",
+                "name": "天之恩惠"
+            },
+            {
+                "id": "",
+                "name": "治愈之心"
+            }
+        ],
+        "hp": "250",
+        "attack": "5",
+        "defense": "5",
+        "s_attack": "35",
+        "s_defense": "105",
+        "speed": "50",
+        "ethnic_value": "450"
+    },
+    {
+        "id": "115",
+        "name": "袋兽",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "早起"
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            },
+            {
+                "id": "",
+                "name": "精神力"
+            }
+        ],
+        "hp": "105",
+        "attack": "95",
+        "defense": "80",
+        "s_attack": "40",
+        "s_defense": "80",
+        "speed": "90",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "128",
+        "name": "肯泰罗",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "怒穴"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            }
+        ],
+        "hp": "75",
+        "attack": "100",
+        "defense": "95",
+        "s_attack": "40",
+        "s_defense": "70",
+        "speed": "110",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "132",
+        "name": "百变怪",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "柔软"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "替代物"
+            }
+        ],
+        "hp": "48",
+        "attack": "48",
+        "defense": "48",
+        "s_attack": "48",
+        "s_defense": "48",
+        "speed": "48",
+        "ethnic_value": "288"
+    },
+    {
+        "id": "133",
+        "name": "伊布",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "适应力"
+            },
+            {
+                "id": "",
+                "name": "危险预知"
+            }
+        ],
+        "hp": "55",
+        "attack": "55",
+        "defense": "50",
+        "s_attack": "45",
+        "s_defense": "65",
+        "speed": "55",
+        "ethnic_value": "325"
+    },
+    {
+        "id": "137",
+        "name": "立方兽",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "复制"
+            },
+            {
+                "id": "",
+                "name": "下载"
+            },
+            {
+                "id": "",
+                "name": "分析"
+            }
+        ],
+        "hp": "65",
+        "attack": "60",
+        "defense": "70",
+        "s_attack": "85",
+        "s_defense": "75",
+        "speed": "40",
+        "ethnic_value": "395"
+    },
+    {
+        "id": "143",
+        "name": "卡比兽",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "免疫"
+            },
+            {
+                "id": "",
+                "name": "厚脂肪"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            }
+        ],
+        "hp": "160",
+        "attack": "110",
+        "defense": "65",
+        "s_attack": "65",
+        "s_defense": "110",
+        "speed": "30",
+        "ethnic_value": "540"
+    },
+    {
+        "id": "161",
+        "name": "尾立",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "察觉"
+            }
+        ],
+        "hp": "35",
+        "attack": "46",
+        "defense": "34",
+        "s_attack": "35",
+        "s_defense": "45",
+        "speed": "20",
+        "ethnic_value": "215"
+    },
+    {
+        "id": "162",
+        "name": "大尾立",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "察觉"
+            }
+        ],
+        "hp": "85",
+        "attack": "76",
+        "defense": "64",
+        "s_attack": "45",
+        "s_defense": "55",
+        "speed": "90",
+        "ethnic_value": "415"
+    },
+    {
+        "id": "163",
+        "name": "咕咕",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "不眠"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "有色眼镜"
+            }
+        ],
+        "hp": "60",
+        "attack": "30",
+        "defense": "30",
+        "s_attack": "36",
+        "s_defense": "56",
+        "speed": "50",
+        "ethnic_value": "262"
+    },
+    {
+        "id": "164",
+        "name": "猫头夜鹰",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "不眠"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "有色眼镜"
+            }
+        ],
+        "hp": "100",
+        "attack": "50",
+        "defense": "50",
+        "s_attack": "76",
+        "s_defense": "96",
+        "speed": "70",
+        "ethnic_value": "442"
+    },
+    {
+        "id": "174",
+        "name": "宝宝丁",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "18",
+                "name": "妖精"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "魅惑之躯"
+            },
+            {
+                "id": "",
+                "name": "争强好胜"
+            },
+            {
+                "id": "",
+                "name": "队友守护"
+            }
+        ],
+        "hp": "90",
+        "attack": "30",
+        "defense": "15",
+        "s_attack": "40",
+        "s_defense": "20",
+        "speed": "15",
+        "ethnic_value": "210"
+    },
+    {
+        "id": "190",
+        "name": "长尾怪手",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "连续攻击"
+            }
+        ],
+        "hp": "55",
+        "attack": "70",
+        "defense": "55",
+        "s_attack": "40",
+        "s_defense": "55",
+        "speed": "85",
+        "ethnic_value": "360"
+    },
+    {
+        "id": "203",
+        "name": "麒麟奇",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "14",
+                "name": "超能力"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "精神力"
+            },
+            {
+                "id": "",
+                "name": "早起"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            }
+        ],
+        "hp": "70",
+        "attack": "80",
+        "defense": "65",
+        "s_attack": "90",
+        "s_defense": "65",
+        "speed": "85",
+        "ethnic_value": "455"
+    },
+    {
+        "id": "206",
+        "name": "土龙弟弟",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "天之恩惠"
+            },
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "颤抖"
+            }
+        ],
+        "hp": "100",
+        "attack": "70",
+        "defense": "70",
+        "s_attack": "65",
+        "s_defense": "65",
+        "speed": "45",
+        "ethnic_value": "415"
+    },
+    {
+        "id": "216",
+        "name": "熊宝宝",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "早足"
+            },
+            {
+                "id": "",
+                "name": "采蜜"
+            }
+        ],
+        "hp": "60",
+        "attack": "80",
+        "defense": "50",
+        "s_attack": "50",
+        "s_defense": "50",
+        "speed": "40",
+        "ethnic_value": "330"
+    },
+    {
+        "id": "217",
+        "name": "圈圈熊",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": "早足"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            }
+        ],
+        "hp": "90",
+        "attack": "130",
+        "defense": "75",
+        "s_attack": "75",
+        "s_defense": "75",
+        "speed": "55",
+        "ethnic_value": "500"
+    },
+    {
+        "id": "233",
+        "name": "3D龙2",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "复制"
+            },
+            {
+                "id": "",
+                "name": "下载"
+            },
+            {
+                "id": "",
+                "name": "分析"
+            }
+        ],
+        "hp": "85",
+        "attack": "80",
+        "defense": "90",
+        "s_attack": "105",
+        "s_defense": "95",
+        "speed": "60",
+        "ethnic_value": "515"
+    },
+    {
+        "id": "234",
+        "name": "惊角鹿",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "察觉"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            }
+        ],
+        "hp": "73",
+        "attack": "95",
+        "defense": "62",
+        "s_attack": "85",
+        "s_defense": "65",
+        "speed": "85",
+        "ethnic_value": "465"
+    },
+    {
+        "id": "235",
+        "name": "图图犬",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "我行我素"
+            },
+            {
+                "id": "",
+                "name": "技术高手"
+            },
+            {
+                "id": "",
+                "name": "心意不定"
+            }
+        ],
+        "hp": "55",
+        "attack": "20",
+        "defense": "35",
+        "s_attack": "20",
+        "s_defense": "45",
+        "speed": "75",
+        "ethnic_value": "250"
+    },
+    {
+        "id": "241",
+        "name": "大奶罐",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "厚脂肪"
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            }
+        ],
+        "hp": "95",
+        "attack": "80",
+        "defense": "105",
+        "s_attack": "40",
+        "s_defense": "70",
+        "speed": "100",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "242",
+        "name": "幸福蛋",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "自然回复"
+            },
+            {
+                "id": "",
+                "name": "天之恩惠"
+            },
+            {
+                "id": "",
+                "name": "治愈之心"
+            }
+        ],
+        "hp": "255",
+        "attack": "10",
+        "defense": "10",
+        "s_attack": "75",
+        "s_defense": "135",
+        "speed": "55",
+        "ethnic_value": "540"
+    },
+    {
+        "id": "263",
+        "name": "蛇纹熊",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            },
+            {
+                "id": "",
+                "name": "早足"
+            }
+        ],
+        "hp": "38",
+        "attack": "30",
+        "defense": "41",
+        "s_attack": "30",
+        "s_defense": "41",
+        "speed": "60",
+        "ethnic_value": "240"
+    },
+    {
+        "id": "264",
+        "name": "直冲熊",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            },
+            {
+                "id": "",
+                "name": "早足"
+            }
+        ],
+        "hp": "78",
+        "attack": "70",
+        "defense": "61",
+        "s_attack": "50",
+        "s_defense": "61",
+        "speed": "100",
+        "ethnic_value": "420"
+    },
+    {
+        "id": "276",
+        "name": "傲骨燕",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "40",
+        "attack": "55",
+        "defense": "30",
+        "s_attack": "30",
+        "s_defense": "30",
+        "speed": "85",
+        "ethnic_value": "270"
+    },
+    {
+        "id": "277",
+        "name": "大王燕",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "根性"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "60",
+        "attack": "85",
+        "defense": "60",
+        "s_attack": "50",
+        "s_defense": "50",
+        "speed": "125",
+        "ethnic_value": "430"
+    },
+    {
+        "id": "287",
+        "name": "懒人翁",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "懒惰"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "60",
+        "attack": "60",
+        "defense": "60",
+        "s_attack": "35",
+        "s_defense": "35",
+        "speed": "30",
+        "ethnic_value": "280"
+    },
+    {
+        "id": "288",
+        "name": "过动猿",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "干劲"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "80",
+        "attack": "80",
+        "defense": "80",
+        "s_attack": "55",
+        "s_defense": "55",
+        "speed": "90",
+        "ethnic_value": "440"
+    },
+    {
+        "id": "289",
+        "name": "请假王",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "懒惰"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "150",
+        "attack": "160",
+        "defense": "100",
+        "s_attack": "95",
+        "s_defense": "65",
+        "speed": "100",
+        "ethnic_value": "670"
+    },
+    {
+        "id": "293",
+        "name": "咕妞妞",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "隔音"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "颤抖"
+            }
+        ],
+        "hp": "64",
+        "attack": "51",
+        "defense": "23",
+        "s_attack": "51",
+        "s_defense": "23",
+        "speed": "28",
+        "ethnic_value": "240"
+    },
+    {
+        "id": "294",
+        "name": "吼爆弹",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "隔音"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "84",
+        "attack": "71",
+        "defense": "43",
+        "s_attack": "71",
+        "s_defense": "43",
+        "speed": "48",
+        "ethnic_value": "360"
+    },
+    {
+        "id": "295",
+        "name": "爆音怪",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "隔音"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "104",
+        "attack": "91",
+        "defense": "63",
+        "s_attack": "91",
+        "s_defense": "73",
+        "speed": "68",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "298",
+        "name": "露力丽",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "18",
+                "name": "妖精"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "厚脂肪"
+            },
+            {
+                "id": "",
+                "name": "大力士"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            }
+        ],
+        "hp": "50",
+        "attack": "20",
+        "defense": "40",
+        "s_attack": "20",
+        "s_defense": "40",
+        "speed": "20",
+        "ethnic_value": "190"
+    },
+    {
+        "id": "300",
+        "name": "向尾喵",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "魅惑之躯"
+            },
+            {
+                "id": "",
+                "name": "普通皮肤"
+            },
+            {
+                "id": "",
+                "name": "奇迹皮肤"
+            }
+        ],
+        "hp": "50",
+        "attack": "45",
+        "defense": "45",
+        "s_attack": "35",
+        "s_defense": "35",
+        "speed": "50",
+        "ethnic_value": "260"
+    },
+    {
+        "id": "301",
+        "name": "优雅猫",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "魅惑之躯"
+            },
+            {
+                "id": "",
+                "name": "普通皮肤"
+            },
+            {
+                "id": "",
+                "name": "奇迹皮肤"
+            }
+        ],
+        "hp": "70",
+        "attack": "65",
+        "defense": "65",
+        "s_attack": "55",
+        "s_defense": "55",
+        "speed": "70",
+        "ethnic_value": "380"
+    },
+    {
+        "id": "327",
+        "name": "晃晃斑",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "我行我素"
+            },
+            {
+                "id": "",
+                "name": "蹒跚"
+            },
+            {
+                "id": "",
+                "name": "性情乖僻"
+            }
+        ],
+        "hp": "60",
+        "attack": "60",
+        "defense": "60",
+        "s_attack": "60",
+        "s_defense": "60",
+        "speed": "60",
+        "ethnic_value": "360"
+    },
+    {
+        "id": "333",
+        "name": "青绵鸟",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "自然回复"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "无天气"
+            }
+        ],
+        "hp": "45",
+        "attack": "40",
+        "defense": "60",
+        "s_attack": "40",
+        "s_defense": "75",
+        "speed": "50",
+        "ethnic_value": "310"
+    },
+    {
+        "id": "335",
+        "name": "猫鼬斩",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "免疫"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "毒暴走"
+            }
+        ],
+        "hp": "73",
+        "attack": "115",
+        "defense": "60",
+        "s_attack": "60",
+        "s_defense": "60",
+        "speed": "90",
+        "ethnic_value": "458"
+    },
+    {
+        "id": "351",
+        "name": "漂浮泡泡",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "气象台"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "70",
+        "attack": "70",
+        "defense": "70",
+        "s_attack": "70",
+        "s_defense": "70",
+        "speed": "70",
+        "ethnic_value": "420"
+    },
+    {
+        "id": "352",
+        "name": "变隐龙",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "变色"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "千变万化"
+            }
+        ],
+        "hp": "60",
+        "attack": "90",
+        "defense": "70",
+        "s_attack": "60",
+        "s_defense": "120",
+        "speed": "40",
+        "ethnic_value": "440"
+    },
+    {
+        "id": "396",
+        "name": "姆克儿",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "舍身"
+            }
+        ],
+        "hp": "40",
+        "attack": "55",
+        "defense": "30",
+        "s_attack": "30",
+        "s_defense": "30",
+        "speed": "60",
+        "ethnic_value": "245"
+    },
+    {
+        "id": "397",
+        "name": "姆克鸟",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "舍身"
+            }
+        ],
+        "hp": "55",
+        "attack": "75",
+        "defense": "50",
+        "s_attack": "40",
+        "s_defense": "40",
+        "speed": "80",
+        "ethnic_value": "340"
+    },
+    {
+        "id": "398",
+        "name": "姆克鹰",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "舍身"
+            }
+        ],
+        "hp": "85",
+        "attack": "120",
+        "defense": "70",
+        "s_attack": "50",
+        "s_defense": "60",
+        "speed": "100",
+        "ethnic_value": "485"
+    },
+    {
+        "id": "399",
+        "name": "大牙狸",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "单纯"
+            },
+            {
+                "id": "",
+                "name": "天然"
+            },
+            {
+                "id": "",
+                "name": "心意不定"
+            }
+        ],
+        "hp": "59",
+        "attack": "45",
+        "defense": "40",
+        "s_attack": "35",
+        "s_defense": "40",
+        "speed": "31",
+        "ethnic_value": "250"
+    },
+    {
+        "id": "400",
+        "name": "大尾狸",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "11",
+                "name": "水"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "单纯"
+            },
+            {
+                "id": "",
+                "name": "天然"
+            },
+            {
+                "id": "",
+                "name": "心意不定"
+            }
+        ],
+        "hp": "79",
+        "attack": "85",
+        "defense": "60",
+        "s_attack": "55",
+        "s_defense": "60",
+        "speed": "71",
+        "ethnic_value": "410"
+    },
+    {
+        "id": "424",
+        "name": "双尾怪手",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "技术高手"
+            },
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "连续攻击"
+            }
+        ],
+        "hp": "75",
+        "attack": "100",
+        "defense": "66",
+        "s_attack": "60",
+        "s_defense": "66",
+        "speed": "115",
+        "ethnic_value": "482"
+    },
+    {
+        "id": "427",
+        "name": "卷卷耳",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "不器用"
+            },
+            {
+                "id": "",
+                "name": "柔软"
+            }
+        ],
+        "hp": "55",
+        "attack": "66",
+        "defense": "44",
+        "s_attack": "44",
+        "s_defense": "56",
+        "speed": "85",
+        "ethnic_value": "350"
+    },
+    {
+        "id": "428",
+        "name": "长耳兔",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "魅惑之躯"
+            },
+            {
+                "id": "",
+                "name": "不器用"
+            },
+            {
+                "id": "",
+                "name": "柔软"
+            }
+        ],
+        "hp": "65",
+        "attack": "76",
+        "defense": "84",
+        "s_attack": "54",
+        "s_defense": "96",
+        "speed": "105",
+        "ethnic_value": "480"
+    },
+    {
+        "id": "431",
+        "name": "魅力喵",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "柔软"
+            },
+            {
+                "id": "",
+                "name": "我行我素"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            }
+        ],
+        "hp": "49",
+        "attack": "55",
+        "defense": "42",
+        "s_attack": "42",
+        "s_defense": "37",
+        "speed": "85",
+        "ethnic_value": "310"
+    },
+    {
+        "id": "432",
+        "name": "东施喵",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "厚脂肪"
+            },
+            {
+                "id": "",
+                "name": "我行我素"
+            },
+            {
+                "id": "",
+                "name": "不服输"
+            }
+        ],
+        "hp": "71",
+        "attack": "82",
+        "defense": "64",
+        "s_attack": "64",
+        "s_defense": "59",
+        "speed": "112",
+        "ethnic_value": "452"
+    },
+    {
+        "id": "440",
+        "name": "小福蛋",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "自然回复"
+            },
+            {
+                "id": "",
+                "name": "天之恩惠"
+            },
+            {
+                "id": "",
+                "name": "队友守护"
+            }
+        ],
+        "hp": "100",
+        "attack": "5",
+        "defense": "5",
+        "s_attack": "15",
+        "s_defense": "65",
+        "speed": "30",
+        "ethnic_value": "220"
+    },
+    {
+        "id": "441",
+        "name": "聒噪鸟",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "蹒跚"
+            },
+            {
+                "id": "",
+                "name": "胸甲"
+            }
+        ],
+        "hp": "76",
+        "attack": "65",
+        "defense": "45",
+        "s_attack": "92",
+        "s_defense": "42",
+        "speed": "91",
+        "ethnic_value": "411"
+    },
+    {
+        "id": "446",
+        "name": "小卡比兽",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "厚脂肪"
+            },
+            {
+                "id": "",
+                "name": "贪吃鬼"
+            }
+        ],
+        "hp": "135",
+        "attack": "85",
+        "defense": "40",
+        "s_attack": "40",
+        "s_defense": "85",
+        "speed": "5",
+        "ethnic_value": "390"
+    },
+    {
+        "id": "463",
+        "name": "大舌舔",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "我行我素"
+            },
+            {
+                "id": "",
+                "name": "迟钝"
+            },
+            {
+                "id": "",
+                "name": "无天气"
+            }
+        ],
+        "hp": "110",
+        "attack": "85",
+        "defense": "95",
+        "s_attack": "80",
+        "s_defense": "95",
+        "speed": "50",
+        "ethnic_value": "515"
+    },
+    {
+        "id": "474",
+        "name": "3D龙Z",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "适应力"
+            },
+            {
+                "id": "",
+                "name": "下载"
+            },
+            {
+                "id": "",
+                "name": "分析"
+            }
+        ],
+        "hp": "85",
+        "attack": "80",
+        "defense": "70",
+        "s_attack": "135",
+        "s_defense": "75",
+        "speed": "90",
+        "ethnic_value": "535"
+    },
+    {
+        "id": "486",
+        "name": "雷吉奇卡斯",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "缓慢启动"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "110",
+        "attack": "160",
+        "defense": "110",
+        "s_attack": "80",
+        "s_defense": "110",
+        "speed": "100",
+        "ethnic_value": "670"
+    },
+    {
+        "id": "493",
+        "name": "阿尔宙斯",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "多重属性"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "120",
+        "attack": "120",
+        "defense": "120",
+        "s_attack": "120",
+        "s_defense": "120",
+        "speed": "120",
+        "ethnic_value": "720"
+    },
+    {
+        "id": "504",
+        "name": "探探鼠",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "逃足"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "分析"
+            }
+        ],
+        "hp": "45",
+        "attack": "55",
+        "defense": "39",
+        "s_attack": "35",
+        "s_defense": "39",
+        "speed": "42",
+        "ethnic_value": "255"
+    },
+    {
+        "id": "505",
+        "name": "步哨鼠",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "发光"
+            },
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "分析"
+            }
+        ],
+        "hp": "60",
+        "attack": "85",
+        "defense": "69",
+        "s_attack": "60",
+        "s_defense": "69",
+        "speed": "77",
+        "ethnic_value": "420"
+    },
+    {
+        "id": "506",
+        "name": "小约克",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "干劲"
+            },
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "逃足"
+            }
+        ],
+        "hp": "45",
+        "attack": "60",
+        "defense": "45",
+        "s_attack": "25",
+        "s_defense": "45",
+        "speed": "55",
+        "ethnic_value": "275"
+    },
+    {
+        "id": "507",
+        "name": "哈约克",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "挖沙"
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "65",
+        "attack": "80",
+        "defense": "65",
+        "s_attack": "35",
+        "s_defense": "65",
+        "speed": "60",
+        "ethnic_value": "370"
+    },
+    {
+        "id": "508",
+        "name": "长毛狗",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "威吓"
+            },
+            {
+                "id": "",
+                "name": "挖沙"
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "85",
+        "attack": "110",
+        "defense": "90",
+        "s_attack": "45",
+        "s_defense": "90",
+        "speed": "80",
+        "ethnic_value": "500"
+    },
+    {
+        "id": "519",
+        "name": "豆豆鸽",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "胸甲"
+            },
+            {
+                "id": "",
+                "name": "强运"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            }
+        ],
+        "hp": "50",
+        "attack": "55",
+        "defense": "50",
+        "s_attack": "36",
+        "s_defense": "30",
+        "speed": "43",
+        "ethnic_value": "264"
+    },
+    {
+        "id": "520",
+        "name": "波波鸽",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "胸甲"
+            },
+            {
+                "id": "",
+                "name": "强运"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            }
+        ],
+        "hp": "62",
+        "attack": "77",
+        "defense": "62",
+        "s_attack": "50",
+        "s_defense": "42",
+        "speed": "65",
+        "ethnic_value": "358"
+    },
+    {
+        "id": "521",
+        "name": "轰隆雉鸡",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "胸甲"
+            },
+            {
+                "id": "",
+                "name": "强运"
+            },
+            {
+                "id": "",
+                "name": "斗争心"
+            }
+        ],
+        "hp": "80",
+        "attack": "115",
+        "defense": "80",
+        "s_attack": "65",
+        "s_defense": "55",
+        "speed": "93",
+        "ethnic_value": "488"
+    },
+    {
+        "id": "531",
+        "name": "差不多娃娃",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "治愈之心"
+            },
+            {
+                "id": "",
+                "name": "再生力"
+            },
+            {
+                "id": "",
+                "name": "不器用"
+            }
+        ],
+        "hp": "103",
+        "attack": "60",
+        "defense": "86",
+        "s_attack": "60",
+        "s_defense": "86",
+        "speed": "50",
+        "ethnic_value": "445"
+    },
+    {
+        "id": "572",
+        "name": "泡沫栗鼠",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "魅惑之躯"
+            },
+            {
+                "id": "",
+                "name": "技术高手"
+            },
+            {
+                "id": "",
+                "name": "连续攻击"
+            }
+        ],
+        "hp": "55",
+        "attack": "50",
+        "defense": "40",
+        "s_attack": "40",
+        "s_defense": "40",
+        "speed": "75",
+        "ethnic_value": "300"
+    },
+    {
+        "id": "573",
+        "name": "奇诺栗鼠",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "魅惑之躯"
+            },
+            {
+                "id": "",
+                "name": "技术高手"
+            },
+            {
+                "id": "",
+                "name": "连续攻击"
+            }
+        ],
+        "hp": "75",
+        "attack": "95",
+        "defense": "60",
+        "s_attack": "65",
+        "s_defense": "60",
+        "speed": "115",
+        "ethnic_value": "470"
+    },
+    {
+        "id": "585",
+        "name": "四季鹿（春天的样子）",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "12",
+                "name": "草"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "叶绿素"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            },
+            {
+                "id": "",
+                "name": "天之恩惠"
+            }
+        ],
+        "hp": "60",
+        "attack": "60",
+        "defense": "50",
+        "s_attack": "40",
+        "s_defense": "50",
+        "speed": "75",
+        "ethnic_value": "335"
+    },
+    {
+        "id": "586",
+        "name": "芽吹鹿（春天的样子）",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "12",
+                "name": "草"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "叶绿素"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            },
+            {
+                "id": "",
+                "name": "天之恩惠"
+            }
+        ],
+        "hp": "80",
+        "attack": "100",
+        "defense": "70",
+        "s_attack": "60",
+        "s_defense": "70",
+        "speed": "95",
+        "ethnic_value": "475"
+    },
+    {
+        "id": "626",
+        "name": "爆爆头水牛",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "舍身"
+            },
+            {
+                "id": "",
+                "name": "食草"
+            },
+            {
+                "id": "",
+                "name": "隔音"
+            }
+        ],
+        "hp": "95",
+        "attack": "110",
+        "defense": "95",
+        "s_attack": "40",
+        "s_defense": "95",
+        "speed": "55",
+        "ethnic_value": "490"
+    },
+    {
+        "id": "627",
+        "name": "毛头小鹰",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            },
+            {
+                "id": "",
+                "name": "活力"
+            }
+        ],
+        "hp": "70",
+        "attack": "83",
+        "defense": "50",
+        "s_attack": "37",
+        "s_defense": "50",
+        "speed": "60",
+        "ethnic_value": "350"
+    },
+    {
+        "id": "628",
+        "name": "勇士鹰",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "锐利目光"
+            },
+            {
+                "id": "",
+                "name": "全力攻击"
+            },
+            {
+                "id": "",
+                "name": "不服输"
+            }
+        ],
+        "hp": "100",
+        "attack": "123",
+        "defense": "75",
+        "s_attack": "57",
+        "s_defense": "75",
+        "speed": "80",
+        "ethnic_value": "510"
+    },
+    {
+        "id": "648",
+        "name": "美洛耶塔（歌声形态）",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "14",
+                "name": "超能力"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "天之恩惠"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "100",
+        "attack": "77",
+        "defense": "77",
+        "s_attack": "128",
+        "s_defense": "128",
+        "speed": "90",
+        "ethnic_value": "600"
+    },
+    {
+        "id": "659",
+        "name": "掘掘兔",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "颊囊"
+            },
+            {
+                "id": "",
+                "name": "大力士"
+            }
+        ],
+        "hp": "38",
+        "attack": "36",
+        "defense": "38",
+        "s_attack": "32",
+        "s_defense": "36",
+        "speed": "57",
+        "ethnic_value": "237"
+    },
+    {
+        "id": "660",
+        "name": "攉土兔",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "5",
+                "name": "地面"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "捡拾"
+            },
+            {
+                "id": "",
+                "name": "颊囊"
+            },
+            {
+                "id": "",
+                "name": "大力士"
+            }
+        ],
+        "hp": "85",
+        "attack": "56",
+        "defense": "77",
+        "s_attack": "50",
+        "s_defense": "77",
+        "speed": "78",
+        "ethnic_value": "423"
+    },
+    {
+        "id": "661",
+        "name": "小箭雀",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "胸甲"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "疾风之翼"
+            }
+        ],
+        "hp": "45",
+        "attack": "50",
+        "defense": "43",
+        "s_attack": "40",
+        "s_defense": "38",
+        "speed": "62",
+        "ethnic_value": "278"
+    },
+    {
+        "id": "667",
+        "name": "小狮狮",
+        "mega": "00",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            },
+            {
+                "id": "",
+                "name": "自信过剩"
+            }
+        ],
+        "hp": "62",
+        "attack": "50",
+        "defense": "58",
+        "s_attack": "73",
+        "s_defense": "54",
+        "speed": "72",
+        "ethnic_value": "369"
+    },
+    {
+        "id": "668",
+        "name": "火炎狮",
+        "mega": "00",
+        "property": [
+            {
+                "id": "10",
+                "name": "火"
+            },
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "斗争心"
+            },
+            {
+                "id": "",
+                "name": "紧张感"
+            },
+            {
+                "id": "",
+                "name": "自信过剩"
+            }
+        ],
+        "hp": "86",
+        "attack": "68",
+        "defense": "72",
+        "s_attack": "109",
+        "s_defense": "66",
+        "speed": "106",
+        "ethnic_value": "507"
+    },
+    {
+        "id": "676",
+        "name": "多丽米亚",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "毛皮外衣"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "75",
+        "attack": "80",
+        "defense": "60",
+        "s_attack": "65",
+        "s_defense": "90",
+        "speed": "102",
+        "ethnic_value": "472"
+    },
+    {
+        "id": "694",
+        "name": "伞电蜥",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "干燥肌肤"
+            },
+            {
+                "id": "",
+                "name": "沙隐"
+            },
+            {
+                "id": "",
+                "name": "太阳力量"
+            }
+        ],
+        "hp": "44",
+        "attack": "38",
+        "defense": "33",
+        "s_attack": "61",
+        "s_defense": "43",
+        "speed": "70",
+        "ethnic_value": "289"
+    },
+    {
+        "id": "695",
+        "name": "光电闪蜥",
+        "mega": "00",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "13",
+                "name": "电"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "干燥肌肤"
+            },
+            {
+                "id": "",
+                "name": "沙隐"
+            },
+            {
+                "id": "",
+                "name": "太阳力量"
+            }
+        ],
+        "hp": "62",
+        "attack": "55",
+        "defense": "52",
+        "s_attack": "109",
+        "s_defense": "94",
+        "speed": "109",
+        "ethnic_value": "481"
+    },
+    {
+        "id": "648",
+        "name": "美洛耶塔（舞步形态）",
+        "mega": "01",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "天之恩惠"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": ""
+            }
+        ],
+        "hp": "100",
+        "attack": "128",
+        "defense": "90",
+        "s_attack": "77",
+        "s_defense": "77",
+        "speed": "128",
+        "ethnic_value": "600"
+    },
+    {
+        "id": "115",
+        "name": "超级袋兽",
+        "mega": "01",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "亲子爱"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "亲子爱"
+            }
+        ],
+        "hp": "105",
+        "attack": "125",
+        "defense": "100",
+        "s_attack": "60",
+        "s_defense": "100",
+        "speed": "100",
+        "ethnic_value": "590"
+    },
+    {
+        "id": "531",
+        "name": "超级差不多娃娃",
+        "mega": "01",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "18",
+                "name": "妖精"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "治愈之心"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "治愈之心"
+            }
+        ],
+        "hp": "103",
+        "attack": "60",
+        "defense": "126",
+        "s_attack": "80",
+        "s_defense": "126",
+        "speed": "50",
+        "ethnic_value": "545"
+    },
+    {
+        "id": "018",
+        "name": "超级大比鸟",
+        "mega": "01",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "3",
+                "name": "飞行"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "无防御"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "无防御"
+            }
+        ],
+        "hp": "83",
+        "attack": "80",
+        "defense": "80",
+        "s_attack": "135",
+        "s_defense": "80",
+        "speed": "121",
+        "ethnic_value": "579"
+    },
+    {
+        "id": "428",
+        "name": "超级长耳兔",
+        "mega": "01",
+        "property": [
+            {
+                "id": "1",
+                "name": "一般"
+            },
+            {
+                "id": "2",
+                "name": "格斗"
+            }
+        ],
+        "characteristic": [
+            {
+                "id": "",
+                "name": "胆气"
+            },
+            {
+                "id": "",
+                "name": ""
+            },
+            {
+                "id": "",
+                "name": "胆气"
+            }
+        ],
+        "hp": "65",
+        "attack": "136",
+        "defense": "94",
+        "s_attack": "54",
+        "s_defense": "96",
+        "speed": "135",
+        "ethnic_value": "580"
+    }
+]

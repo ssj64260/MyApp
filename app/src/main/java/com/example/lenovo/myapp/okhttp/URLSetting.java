@@ -16,11 +16,7 @@ public class URLSetting {
     private String baseUrl;
 
     private URLSetting() {
-        if (MyApplication.isApkDebugable()) {
-            baseUrl = PreferencesUtil.getInstance().getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, DEBUG_URL);
-        } else {
-            baseUrl = OFFICIAL_URL;
-        }
+        setUrl();
     }
 
     public static URLSetting getInstance() {
@@ -39,12 +35,16 @@ public class URLSetting {
     }
 
     public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
         PreferencesUtil.getInstance().setString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, baseUrl);
+        setUrl();
     }
 
     public void resetBaseUrl() {
         PreferencesUtil.getInstance().clearData(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL);
+        setUrl();
+    }
+
+    private void setUrl(){
         if (MyApplication.isApkDebugable()) {
             baseUrl = PreferencesUtil.getInstance().getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, DEBUG_URL);
         } else {

@@ -56,6 +56,9 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 
+
+
+        <!-- ***********************************测试用页面*********************************** -->
         <activity android:name=".ui.activity.AnimationTestActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
@@ -63,6 +66,11 @@
         <activity android:name=".ui.activity.OkhttpTestActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.SetPostUrlActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <!-- ***********************************测试用页面*********************************** -->
 
     </application>
 

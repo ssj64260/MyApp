@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ public class OkhttpTestActivity extends BaseActivity implements View.OnClickList
 
     private Button btnAd;
     private Button btnTable;
+    private Button btnChange;
 
     private MeishiyiAdCall adCall = new MeishiyiAdCall();
     private MeishiyiTableCall tableCall = new MeishiyiTableCall();
@@ -46,6 +48,9 @@ public class OkhttpTestActivity extends BaseActivity implements View.OnClickList
         progressDialog = new DefaultProgressDialog(this);
         progressDialog.setMessage("请求中...");
 
+        btnChange = (Button) findViewById(R.id.btn_change_url);
+        btnChange.setOnClickListener(this);
+
         btnAd = (Button) findViewById(R.id.btn_meishiyi_ad);
         btnAd.setOnClickListener(this);
 
@@ -63,6 +68,11 @@ public class OkhttpTestActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_change_url:
+                Intent intent = new Intent();
+                intent.setClass(this, SetPostUrlActivity.class);
+                startActivity(intent);
+                break;
             case R.id.btn_meishiyi_ad:
                 adCall.requestCall();
                 break;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Environment;
 
 /**
- * Created by Administrator on 15/9/16.
+ * sd卡路径
  */
 public class SDCardUtil {
 

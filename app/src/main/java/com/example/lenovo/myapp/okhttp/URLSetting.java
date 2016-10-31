@@ -2,15 +2,13 @@ package com.example.lenovo.myapp.okhttp;
 
 import com.cxb.tools.utils.PreferencesUtil;
 import com.example.lenovo.myapp.MyApplication;
+import com.example.lenovo.myapp.utils.Constants;
 
 /**
  * 请求链接设置
  */
 
 public class URLSetting {
-
-    private static final String DEBUG_URL = "itest.meishiyi.cn/index.php/";//测试链接
-    private static final String OFFICIAL_URL = "i.meishiyi.cn/index.php/";//正式链接
 
     private volatile static URLSetting instance;
     private String baseUrl;
@@ -44,11 +42,11 @@ public class URLSetting {
         setUrl();
     }
 
-    private void setUrl(){
+    private void setUrl() {
         if (MyApplication.isApkDebugable()) {
-            baseUrl = PreferencesUtil.getInstance().getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, DEBUG_URL);
+            baseUrl = PreferencesUtil.getInstance().getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, Constants.DEBUG_URL);
         } else {
-            baseUrl = OFFICIAL_URL;
+            baseUrl = Constants.OFFICIAL_URL;
         }
     }
 

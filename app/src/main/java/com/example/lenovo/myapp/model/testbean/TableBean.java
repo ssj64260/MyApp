@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.model.meishiyi;
+package com.example.lenovo.myapp.model.testbean;
 
 import java.io.Serializable;
 

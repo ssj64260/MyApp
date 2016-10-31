@@ -1,7 +1,7 @@
 package com.example.lenovo.myapp.okhttp.call;
 
 import com.cxb.tools.network.okhttp.OkHttpApi;
-import com.example.lenovo.myapp.model.meishiyi.TableBean;
+import com.example.lenovo.myapp.model.testbean.TableBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.utils.Constants;
 import com.google.gson.reflect.TypeToken;
@@ -16,14 +16,15 @@ import java.util.Map;
  */
 
 public class MeishiyiTableCall extends OkHttpApi {
-    private static final String PATH = "WSTables/GetTablesList";
+    private static final String PATH = Constants.URL_MSY_TABLE;
     private Map<String, String> params;
     private Type returnType;
 
     public MeishiyiTableCall() {
-        currentProtocol = Protocol.HTTP;
-        currentBaseUrl = URLSetting.getInstance().getBaseUrl();
-        requestId = Constants.MSY_TABLE;
+        super();
+        setCurrentProtocol(Protocol.HTTP);
+        setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl());
+        setRequestId(Constants.REQUEST_ID_MSY_TABLE);
     }
 
     public void setParams(String memberId) {
@@ -37,6 +38,6 @@ public class MeishiyiTableCall extends OkHttpApi {
     }
 
     public void requestCall() {
-        postPath(PATH, params, returnType);
+        postParameters(PATH, params, returnType);
     }
 }

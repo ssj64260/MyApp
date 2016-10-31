@@ -23,4 +23,56 @@
         android:layout_height="50dp"
         android:text="POST美食易获取餐桌"/>
 
+    <Button
+        android:id="@+id/btn_syn_get"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textAllCaps="false"
+        android:text="Github Message"/>
+    <Button
+        android:id="@+id/btn_authenticator"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textAllCaps="false"
+        android:text="需要验证的连接"/>
+    <Button
+        android:id="@+id/btn_get_app_version"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="获取App版本号"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_version1"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:inputType="date"
+            android:hint="当前版本号"
+            android:textColor="@color/white"
+            android:background="@color/grass"/>
+        <EditText
+            android:id="@+id/et_version2"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:inputType="date"
+            android:hint="网络版本号"
+            android:textColor="@color/white"
+            android:background="@color/btn_blue_normal"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_compare_version"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="比较两个版本号大小"/>
+
+
 </LinearLayout>

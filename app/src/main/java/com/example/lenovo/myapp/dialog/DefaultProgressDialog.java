@@ -2,11 +2,16 @@ package com.example.lenovo.myapp.dialog;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+
+import com.example.lenovo.myapp.MyApplication;
 
 /**
  * 自定义loading对话框
  */
 public class DefaultProgressDialog {
+
+    private OnDismissListener mOnDismissListener;
 
     private ProgressDialog progressDialog;
 
@@ -14,9 +19,17 @@ public class DefaultProgressDialog {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(ctx);
         }
-//        progressDialog.setCancelable(MyApplication.isApkDebugable());
-        progressDialog.setCancelable(false);
+        progressDialog.setCancelable(MyApplication.isApkDebugable());
         progressDialog.setCanceledOnTouchOutside(false);
+
+        progressDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if (mOnDismissListener != null) {
+                    mOnDismissListener.OnDismissListener();
+                }
+            }
+        });
     }
 
     public void setCancelable(boolean cancelable){
@@ -36,5 +49,14 @@ public class DefaultProgressDialog {
         if (progressDialog != null && progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
+    }
+
+    //设置取消按钮点击后的回调事件
+    public void setOnDismissListener(OnDismissListener mOnDismissListener) {
+        this.mOnDismissListener = mOnDismissListener;
+    }
+
+    public interface OnDismissListener {
+        void OnDismissListener();
     }
 }

@@ -70,16 +70,16 @@ public class TipsActionDialog {
     }
 
     //设置取消按钮显示隐藏
-    public void setCancelButtonVisibility(int v) {
+    public void setCancelButtonVisibility(boolean visibility) {
         if (cancel != null) {
-            cancel.setVisibility(v);
+            cancel.setVisibility(visibility ? View.VISIBLE : View.GONE);
         }
     }
 
     //设置确定按钮显示隐藏
-    public void setConfirmButtonVisibility(int v) {
+    public void setConfirmButtonVisibility(boolean visibility) {
         if (confirm != null) {
-            confirm.setVisibility(v);
+            confirm.setVisibility(visibility ? View.VISIBLE : View.GONE);
         }
     }
 

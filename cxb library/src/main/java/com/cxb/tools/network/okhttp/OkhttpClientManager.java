@@ -1,32 +1,39 @@
 package com.cxb.tools.network.okhttp;
 
+import java.util.concurrent.TimeUnit;
+
 import okhttp3.OkHttpClient;
 
 /**
- * 获取okhttpclient对象
+ * OkhttpClient 管理工具
  */
 
-public class OkhttpClientManager {
+public class OkHttpClientManager {
 
-    private static OkhttpClientManager instance;
-    private OkHttpClient.Builder client;
+    private static OkHttpClientManager mInstance;
+    private OkHttpClient client;
 
-    private OkhttpClientManager() {
-        client = new OkHttpClient.Builder();
+    private OkHttpClientManager() {
+        client = new OkHttpClient.Builder()
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .build();
     }
 
-    public static OkhttpClientManager getInstance() {
-        if (instance == null) {
-            synchronized (OkhttpClientManager.class) {
-                if (instance == null) {
-                    instance = new OkhttpClientManager();
+    public static OkHttpClientManager getInstance() {
+        if (mInstance == null) {
+            synchronized (OkHttpClientManager.class) {
+                if (mInstance == null) {
+                    mInstance = new OkHttpClientManager();
                 }
             }
         }
-        return instance;
+        return mInstance;
     }
 
-    public OkHttpClient.Builder getClient() {
+    public OkHttpClient getClient() {
         return client;
     }
+
 }

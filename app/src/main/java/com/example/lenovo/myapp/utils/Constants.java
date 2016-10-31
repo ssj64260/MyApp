@@ -6,7 +6,15 @@ package com.example.lenovo.myapp.utils;
 
 public class Constants {
 
-    public static final int MSY_AD = 1000;
-    public static final int MSY_TABLE = 1001;
+    public static final String DEBUG_URL = "itest.meishiyi.cn/index.php/";//测试链接
+    public static final String OFFICIAL_URL = "i.meishiyi.cn/index.php/";//正式链接
+
+    //美食易广告
+    public static final int REQUEST_ID_MSY_AD = 1000;
+    public static final String URL_MSY_AD = "ADGetData/getHomeAdvert";
+
+    //美食易餐位
+    public static final int REQUEST_ID_MSY_TABLE = 1001;
+    public static final String URL_MSY_TABLE = "WSTables/GetTablesList";
 
 }

@@ -35,7 +35,7 @@ public class MyApplication extends Application {
 
         initToast();//初始化通用Toast
 
-        Logger.init(getString(R.string.app_name)).hideThreadInfo();//初始化Log显示的TAG
+        Logger.init(getString(R.string.app_name));//初始化Log显示的TAG
 
         if (isApkDebugable()) {
             ToastUtil.toast("这是debug版本");

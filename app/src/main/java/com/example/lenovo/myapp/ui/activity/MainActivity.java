@@ -43,8 +43,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseAppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends BaseAppCompatActivity {
 
     private DefaultProgressDialog progressDialog;
 
@@ -140,7 +139,7 @@ public class MainActivity extends BaseAppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.inflateHeaderView(R.layout.nav_header_main);
         navigationView.inflateMenu(R.menu.activity_main_drawer);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(selectedListener);
 
         ivAvatar = (ImageView) headerView.findViewById(R.id.iv_avatar);
         tvUsername = (TextView) headerView.findViewById(R.id.tv_username);
@@ -254,45 +253,45 @@ public class MainActivity extends BaseAppCompatActivity
         }).start();
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    NavigationView.OnNavigationItemSelectedListener selectedListener = new NavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.nav_home:
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, IntroductionActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.nav_camera:
+                    ToastUtil.toast("打开相机");
+                    break;
+                case R.id.nav_gallery:
+                    Intent okhttpIntent = new Intent();
+                    okhttpIntent.setClass(MainActivity.this, OkhttpTestActivity.class);
+                    startActivity(okhttpIntent);
+                    break;
+                case R.id.nav_slideshow:
+                    Intent animIntent = new Intent();
+                    animIntent.setClass(MainActivity.this, AnimationTestActivity.class);
+                    startActivity(animIntent);
+                    break;
+                case R.id.nav_manage:
+                    showTipsActionDialog();
+                    break;
+                case R.id.nav_share:
+                    showProgressDialog();
+                    break;
+                case R.id.nav_send:
+                    showInputContentDialog();
+                    break;
+                case R.id.nav_evaluation:
+                    showEvaluationDialog();
+                    break;
+            }
 
-        switch (item.getItemId()) {
-            case R.id.nav_home:
-                Intent intent = new Intent();
-                intent.setClass(this, IntroductionActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.nav_camera:
-                ToastUtil.toast("打开相机");
-                break;
-            case R.id.nav_gallery:
-                Intent okhttpIntent = new Intent();
-                okhttpIntent.setClass(this, OkhttpTestActivity.class);
-                startActivity(okhttpIntent);
-                break;
-            case R.id.nav_slideshow:
-                Intent animIntent = new Intent();
-                animIntent.setClass(this, AnimationTestActivity.class);
-                startActivity(animIntent);
-                break;
-            case R.id.nav_manage:
-                showTipsActionDialog();
-                break;
-            case R.id.nav_share:
-                showProgressDialog();
-                break;
-            case R.id.nav_send:
-                showInputContentDialog();
-                break;
-            case R.id.nav_evaluation:
-                showEvaluationDialog();
-                break;
+            return true;
         }
-
-        return true;
-    }
+    };
 
     //获取缓存大小并设置到menu里
     private void getCacheSize() {

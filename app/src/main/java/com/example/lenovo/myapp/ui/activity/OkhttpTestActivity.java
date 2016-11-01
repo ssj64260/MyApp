@@ -31,7 +31,7 @@ import java.util.Map;
  * okhttp 请求框架
  */
 
-public class OkhttpTestActivity extends BaseActivity implements View.OnClickListener {
+public class OkhttpTestActivity extends BaseActivity {
 
     private Button btnAd;
     private Button btnTable;
@@ -71,25 +71,25 @@ public class OkhttpTestActivity extends BaseActivity implements View.OnClickList
         progressDialog.setMessage("请求中...");
 
         btnChange = (Button) findViewById(R.id.btn_change_url);
-        btnChange.setOnClickListener(this);
+        btnChange.setOnClickListener(btnClick);
 
         btnAd = (Button) findViewById(R.id.btn_meishiyi_ad);
-        btnAd.setOnClickListener(this);
+        btnAd.setOnClickListener(btnClick);
 
         btnTable = (Button) findViewById(R.id.btn_meishiyi_table);
-        btnTable.setOnClickListener(this);
+        btnTable.setOnClickListener(btnClick);
 
         btnSynGet = (Button) findViewById(R.id.btn_syn_get);
-        btnSynGet.setOnClickListener(this);
+        btnSynGet.setOnClickListener(btnClick);
 
         btnAuthenticator = (Button) findViewById(R.id.btn_authenticator);
-        btnAuthenticator.setOnClickListener(this);
+        btnAuthenticator.setOnClickListener(btnClick);
 
         btnGetVersion = (Button) findViewById(R.id.btn_get_app_version);
-        btnGetVersion.setOnClickListener(this);
+        btnGetVersion.setOnClickListener(btnClick);
 
         btnCompareVersion = (Button) findViewById(R.id.btn_compare_version);
-        btnCompareVersion.setOnClickListener(this);
+        btnCompareVersion.setOnClickListener(btnClick);
 
         version1 = (EditText) findViewById(R.id.et_version1);
         version2 = (EditText) findViewById(R.id.et_version2);
@@ -105,54 +105,56 @@ public class OkhttpTestActivity extends BaseActivity implements View.OnClickList
         tableCall.addListener(callBack);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_change_url:
-                Intent intent = new Intent();
-                intent.setClass(this, SetPostUrlActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.btn_meishiyi_ad:
-                Type returnType = new TypeToken<List<AdBean>>() {
-                }.getType();
-                Map<String, String> params = new HashMap<>();
-                params.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
-                params.put("user", "aiweitest");
-                okHttpApi.setRequestId(Constants.REQUEST_ID_MSY_AD)
-                        .setCurrentProtocol(OkHttpApi.Protocol.HTTP)
-                        .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
-                        .getPath(Constants.URL_MSY_AD, params, returnType);
-                break;
-            case R.id.btn_meishiyi_table:
-                tableCall.requestCall();
-                break;
-            case R.id.btn_syn_get:
-                okHttpApi.setRequestId(9999)
-                        .setCurrentProtocol(OkHttpApi.Protocol.HTTPS)
-                        .setCurrentBaseUrl("api.github.com")
-                        .getPath("gists/c2a7c39532239ff261be", GithubBean.class);
-                break;
-            case R.id.btn_authenticator:
-                okHttpAuthenticatior.setRequestId(9998)
-                        .setCurrentProtocol(OkHttpApi.Protocol.HTTP)
-                        .setCurrentBaseUrl("publicobject.com")
-                        .getPath("secrets/hellosecret.txt", null);
-                break;
-            case R.id.btn_get_app_version:
-                ToastUtil.toast(VersionUtil.getVersionName(getPackageManager(), getApplication().getPackageName()));
-                break;
-            case R.id.btn_compare_version:
-                String v1 = version1.getText().toString();
-                String v2 = version2.getText().toString();
-                if (VersionUtil.isNewVersion(v1, v2)) {
-                    ToastUtil.toast("有更新，请下载");
-                } else {
-                    ToastUtil.toast("无更新");
-                }
-                break;
+    View.OnClickListener btnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_change_url:
+                    Intent intent = new Intent();
+                    intent.setClass(OkhttpTestActivity.this, SetPostUrlActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_meishiyi_ad:
+                    Type returnType = new TypeToken<List<AdBean>>() {
+                    }.getType();
+                    Map<String, String> params = new HashMap<>();
+                    params.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
+                    params.put("user", "aiweitest");
+                    okHttpApi.setRequestId(Constants.REQUEST_ID_MSY_AD)
+                            .setCurrentProtocol(OkHttpApi.Protocol.HTTP)
+                            .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
+                            .getPath(Constants.URL_MSY_AD, params, returnType);
+                    break;
+                case R.id.btn_meishiyi_table:
+                    tableCall.requestCall();
+                    break;
+                case R.id.btn_syn_get:
+                    okHttpApi.setRequestId(9999)
+                            .setCurrentProtocol(OkHttpApi.Protocol.HTTPS)
+                            .setCurrentBaseUrl("api.github.com")
+                            .getPath("gists/c2a7c39532239ff261be", GithubBean.class);
+                    break;
+                case R.id.btn_authenticator:
+                    okHttpAuthenticatior.setRequestId(9998)
+                            .setCurrentProtocol(OkHttpApi.Protocol.HTTP)
+                            .setCurrentBaseUrl("publicobject.com")
+                            .getPath("secrets/hellosecret.txt", null);
+                    break;
+                case R.id.btn_get_app_version:
+                    ToastUtil.toast(VersionUtil.getVersionName(getPackageManager(), getApplication().getPackageName()));
+                    break;
+                case R.id.btn_compare_version:
+                    String v1 = version1.getText().toString();
+                    String v2 = version2.getText().toString();
+                    if (VersionUtil.isNewVersion(v1, v2)) {
+                        ToastUtil.toast("有更新，请下载");
+                    } else {
+                        ToastUtil.toast("无更新");
+                    }
+                    break;
+            }
         }
-    }
+    };
 
     private OnRequestCallBack callBack = new OnRequestCallBack() {
         @Override

@@ -17,7 +17,7 @@ import com.example.lenovo.myapp.okhttp.URLSetting;
  * <p/>
  * 设置接口url
  */
-public class SetPostUrlActivity extends BaseActivity implements View.OnClickListener {
+public class SetPostUrlActivity extends BaseActivity {
 
     private final String HOST = "itest.meishiyi.cn/index.php";
     private final String HOST_TRUE = "i.meishiyi.cn/index.php";
@@ -39,57 +39,59 @@ public class SetPostUrlActivity extends BaseActivity implements View.OnClickList
         urlText = (EditText) findViewById(R.id.et_set_url);
 
         urlText.setText(curUrl);
-        findViewById(R.id.btn_use_default_url).setOnClickListener(this);
-        findViewById(R.id.btn_use_true_url).setOnClickListener(this);
-        findViewById(R.id.btn_use_custom_url).setOnClickListener(this);
-        findViewById(R.id.btn_set_confirm).setOnClickListener(this);
-        findViewById(R.id.btn_clear_all_data).setOnClickListener(this);
-        findViewById(R.id.btn_clear_db).setOnClickListener(this);
-        findViewById(R.id.btn_clear_share).setOnClickListener(this);
+        findViewById(R.id.btn_use_default_url).setOnClickListener(btnClick);
+        findViewById(R.id.btn_use_true_url).setOnClickListener(btnClick);
+        findViewById(R.id.btn_use_custom_url).setOnClickListener(btnClick);
+        findViewById(R.id.btn_set_confirm).setOnClickListener(btnClick);
+        findViewById(R.id.btn_clear_all_data).setOnClickListener(btnClick);
+        findViewById(R.id.btn_clear_db).setOnClickListener(btnClick);
+        findViewById(R.id.btn_clear_share).setOnClickListener(btnClick);
 
-        findViewById(R.id.btn_test).setOnClickListener(this);
+        findViewById(R.id.btn_test).setOnClickListener(btnClick);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_use_default_url:
-                urlText.setText(HOST);
-                break;
-            case R.id.btn_use_true_url:
-                urlText.setText(HOST_TRUE);
-                break;
-            case R.id.btn_use_custom_url:
-                urlText.setText(HOST_TEST);
-                break;
-            case R.id.btn_set_confirm:
-                String url = urlText.getText().toString();
-                if (StringCheck.isEmpty(url)) {
-                    ToastUtil.toast("url不能为空");
-                } else {
-                    if (url.equals(curUrl)) {
-                        ToastUtil.toast("设置成功");
-                        finish();
+    View.OnClickListener btnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_use_default_url:
+                    urlText.setText(HOST);
+                    break;
+                case R.id.btn_use_true_url:
+                    urlText.setText(HOST_TRUE);
+                    break;
+                case R.id.btn_use_custom_url:
+                    urlText.setText(HOST_TEST);
+                    break;
+                case R.id.btn_set_confirm:
+                    String url = urlText.getText().toString();
+                    if (StringCheck.isEmpty(url)) {
+                        ToastUtil.toast("url不能为空");
                     } else {
-                        curUrl = url;
-                        deleteAllData(true, true);
+                        if (url.equals(curUrl)) {
+                            ToastUtil.toast("设置成功");
+                            finish();
+                        } else {
+                            curUrl = url;
+                            deleteAllData(true, true);
+                        }
                     }
-                }
-                break;
-            case R.id.btn_clear_all_data:
-                deleteAllData(true, true);
-                break;
-            case R.id.btn_clear_db:
-                deleteAllData(true, false);
-                break;
-            case R.id.btn_clear_share:
-                deleteAllData(false, true);
-                break;
-            case R.id.btn_test:
+                    break;
+                case R.id.btn_clear_all_data:
+                    deleteAllData(true, true);
+                    break;
+                case R.id.btn_clear_db:
+                    deleteAllData(true, false);
+                    break;
+                case R.id.btn_clear_share:
+                    deleteAllData(false, true);
+                    break;
+                case R.id.btn_test:
 
-                break;
+                    break;
+            }
         }
-    }
+    };
 
     private void deleteAllData(final boolean clearDB, final boolean clearShare) {
         new Thread(new Runnable() {

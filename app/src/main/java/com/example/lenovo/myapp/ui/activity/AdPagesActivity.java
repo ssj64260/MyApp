@@ -72,7 +72,7 @@ public class AdPagesActivity extends BaseActivity {
         if (!isNoFirst) {
             isNoFirst = true;
             finish();
-            overridePendingTransition(0, 0);
+            overridePendingTransition(R.anim.alpha_0_to_1, R.anim.alpha_1_to_0);
         }
     }
 

@@ -5,13 +5,20 @@ import android.content.pm.PackageManager;
 
 /**
  * 版本号工具类
+ *
+ * 安装机制，迭代安装只能安装version name比较大的，version code不作限制
  */
 public class VersionUtil {
 
-    //比较两个版本号大小
-    public static boolean isNewVersion(String curVersion, String netVersion) {
+    //比较两个version name大小
+    public static boolean isNewVersionName(String curVersion, String netVersion) {
 
         if (!StringCheck.isEmpty(curVersion) && !StringCheck.isEmpty(netVersion)) {
+
+            if (curVersion.equals(netVersion)) {
+                return false;
+            }
+
             try {
                 String[] curVersions = curVersion.split("\\.");
                 String[] netVersions = netVersion.split("\\.");
@@ -37,14 +44,30 @@ public class VersionUtil {
         return false;
     }
 
-    //获取版本号
+    //比较两个version code
+    public static boolean isNewVersionCode(int curVersion, int netVersion) {
+        return curVersion != netVersion;
+    }
+
+    //获取version name
     public static String getVersionName(PackageManager pm, String packageName) {
         try {
             PackageInfo pi = pm.getPackageInfo(packageName, 0);
             return pi.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-            return "1.0";
+            return "1.0.0";
+        }
+    }
+
+    //获取version code
+    public static int getVersionCode(PackageManager pm, String packageName) {
+        try {
+            PackageInfo pi = pm.getPackageInfo(packageName, 0);
+            return pi.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return 1;
         }
     }
 

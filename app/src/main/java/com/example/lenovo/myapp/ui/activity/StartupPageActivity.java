@@ -3,6 +3,7 @@ package com.example.lenovo.myapp.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
 
 /**
@@ -43,6 +44,7 @@ public class StartupPageActivity extends BaseActivity {
         Intent ad = new Intent();
         ad.setClass(this, AdPagesActivity.class);
         startActivity(ad);
+        overridePendingTransition(R.anim.alpha_0_to_1, R.anim.alpha_1_to_0);
 
         finish();
     }

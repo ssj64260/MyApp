@@ -146,7 +146,7 @@ public class OkhttpTestActivity extends BaseActivity {
                 case R.id.btn_compare_version:
                     String v1 = version1.getText().toString();
                     String v2 = version2.getText().toString();
-                    if (VersionUtil.isNewVersion(v1, v2)) {
+                    if (VersionUtil.isNewVersionName(v1, v2)) {
                         ToastUtil.toast("有更新，请下载");
                     } else {
                         ToastUtil.toast("无更新");

@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.ui.activity;
+package com.example.lenovo.myapp.ui.activity.test;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import com.example.lenovo.myapp.model.testbean.GithubBean;
 import com.example.lenovo.myapp.model.testbean.TableBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.okhttp.call.MeishiyiTableCall;
+import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.utils.Constants;
 import com.google.gson.reflect.TypeToken;
 import com.orhanobut.logger.Logger;

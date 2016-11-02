@@ -27,15 +27,15 @@ import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.GetFileSizeUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.SDCardUtil;
-import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
-import com.example.lenovo.myapp.dialog.EvaluationDialog;
-import com.example.lenovo.myapp.dialog.InputContentDialog;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
+import com.example.lenovo.myapp.ui.activity.test.AnimationTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.DialogTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.OkhttpTestActivity;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
@@ -275,17 +275,22 @@ public class MainActivity extends BaseAppCompatActivity {
                     animIntent.setClass(MainActivity.this, AnimationTestActivity.class);
                     startActivity(animIntent);
                     break;
+                case R.id.nav_dialog_test:
+                    Intent dialogIntent = new Intent();
+                    dialogIntent.setClass(MainActivity.this, DialogTestActivity.class);
+                    startActivity(dialogIntent);
+                    break;
                 case R.id.nav_manage:
                     showTipsActionDialog();
                     break;
                 case R.id.nav_share:
-                    showProgressDialog();
+
                     break;
                 case R.id.nav_send:
-                    showInputContentDialog();
+
                     break;
                 case R.id.nav_evaluation:
-                    showEvaluationDialog();
+
                     break;
             }
 
@@ -343,59 +348,6 @@ public class MainActivity extends BaseAppCompatActivity {
                 DataCleanManager.cleanExternalCache(MainActivity.this);
 
                 getCacheSize();
-            }
-        });
-    }
-
-    private void showProgressDialog() {
-        progressDialog.setMessage("分享中...");
-        progressDialog.showDialog();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        progressDialog.dismissDialog();
-                    }
-                });
-            }
-        }).start();
-    }
-
-    private void showInputContentDialog() {
-        InputContentDialog dialog = new InputContentDialog(this);
-        dialog.setCanDismissByBackPressed(false);
-        dialog.setTitleText("请填写发送的内容");
-        dialog.setConfirmText("发送");
-        dialog.setCancelText("关闭");
-        dialog.setOnConfirmListener(new InputContentDialog.OnConfirmListener() {
-            @Override
-            public void OnConfirmListener(View v, String content) {
-                hideKeyboard();
-                if (StringCheck.isEmpty(content)) {
-                    ToastUtil.toast("内容不能为空");
-                } else {
-                    ToastUtil.toast(content);
-                }
-            }
-        });
-    }
-
-    private void showEvaluationDialog() {
-        EvaluationDialog evaDialog = new EvaluationDialog(this);
-        evaDialog.setTitle("给这个APP评价一次");
-        evaDialog.setConfirmDismiss(true);
-        evaDialog.setOnSelectedListener(new EvaluationDialog.OnSelectedListener() {
-            @Override
-            public void OnselectedListener(View v, String content, float score) {
-                ToastUtil.toast("评价内容:" + content + "\n评分:" + score);
             }
         });
     }

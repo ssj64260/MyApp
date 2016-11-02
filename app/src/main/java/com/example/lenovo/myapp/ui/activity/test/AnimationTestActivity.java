@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.ui.activity;
+package com.example.lenovo.myapp.ui.activity.test;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;

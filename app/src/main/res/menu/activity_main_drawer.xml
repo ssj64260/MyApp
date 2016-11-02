@@ -13,30 +13,35 @@
             android:visible="false"/>
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_nav_gallery"
             android:visible="true"/>
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_nav_slideshow"
             android:visible="true"/>
+        <item
+            android:id="@+id/nav_dialog_test"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_dialog_test"/>
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_nav_manage" />
     </group>
 
-    <item android:title="@string/menu_nav_title">
+    <item android:title="@string/menu_nav_title"
+        android:visible="false">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_nav_share" />
+                android:title="@string/menu_nav_share"/>
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_nav_send" />
+                android:title="@string/menu_nav_send"/>
             <item
                 android:id="@+id/nav_evaluation"
                 android:icon="@drawable/ic_menu_evaluation"

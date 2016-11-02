@@ -15,8 +15,9 @@
 
     <string name="menu_nav_home">主页</string>
     <string name="menu_nav_camera">拍照</string>
-    <string name="menu_nav_gallery">相册</string>
-    <string name="menu_nav_slideshow">幻灯片</string>
+    <string name="menu_nav_gallery">接口测试</string>
+    <string name="menu_nav_slideshow">动画测试</string>
+    <string name="menu_nav_dialog_test">对话框测试</string>
     <string name="menu_nav_manage">设置</string>
     <string name="menu_nav_title">互动</string>
     <string name="menu_nav_share">分享</string>

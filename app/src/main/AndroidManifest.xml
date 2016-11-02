@@ -59,11 +59,15 @@
 
 
         <!-- ***********************************测试用页面*********************************** -->
-        <activity android:name=".ui.activity.AnimationTestActivity"
+        <activity android:name=".ui.activity.test.AnimationTestActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.activity.OkhttpTestActivity"
+        <activity android:name=".ui.activity.test.OkhttpTestActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.test.DialogTestActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 

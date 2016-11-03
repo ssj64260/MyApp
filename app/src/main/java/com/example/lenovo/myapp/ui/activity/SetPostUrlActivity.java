@@ -25,7 +25,6 @@ public class SetPostUrlActivity extends BaseActivity {
 
     private EditText urlText;
 
-    private PreferencesUtil mPreferencesUtil;
     private String curUrl = "";
 
     @Override
@@ -33,8 +32,7 @@ public class SetPostUrlActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_post_url);
 
-        mPreferencesUtil = PreferencesUtil.getInstance();
-        curUrl = mPreferencesUtil.getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, HOST);
+        curUrl = PreferencesUtil.getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, HOST);
 
         urlText = (EditText) findViewById(R.id.et_set_url);
 
@@ -99,7 +97,7 @@ public class SetPostUrlActivity extends BaseActivity {
             public void run() {
 
                 if (clearShare) {
-                    mPreferencesUtil.clearData(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL);
+                    PreferencesUtil.clearData(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL);
                 }
 
                 URLSetting.getInstance().setBaseUrl(curUrl);

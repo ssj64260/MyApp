@@ -30,12 +30,12 @@ import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
-import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.activity.test.AnimationTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.DialogTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.OkhttpTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.ThreadPoolTestActivity;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
@@ -44,8 +44,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseAppCompatActivity {
-
-    private DefaultProgressDialog progressDialog;
 
     private ImageView ivAvatar;//侧滑栏头像
     private TextView tvUsername;//侧滑栏用户名
@@ -65,8 +63,8 @@ public class MainActivity extends BaseAppCompatActivity {
     BroadcastReceiver checkNetwork = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            int networkStatus = NetworkUtil.getInstance().checkNetWorkType(MainActivity.this);
-            int apnType = NetworkUtil.getInstance().checkAPNType(MainActivity.this);
+            int networkStatus = NetworkUtil.checkNetWorkType(MainActivity.this);
+            int apnType = NetworkUtil.checkAPNType(MainActivity.this);
 
             switch (networkStatus) {
                 case NetworkUtil.NETWORK_NONE:
@@ -145,7 +143,6 @@ public class MainActivity extends BaseAppCompatActivity {
         tvUsername = (TextView) headerView.findViewById(R.id.tv_username);
         tvEmail = (TextView) headerView.findViewById(R.id.tv_email);
 
-        progressDialog = new DefaultProgressDialog(this);
     }
 
     private void setData() {
@@ -280,17 +277,13 @@ public class MainActivity extends BaseAppCompatActivity {
                     dialogIntent.setClass(MainActivity.this, DialogTestActivity.class);
                     startActivity(dialogIntent);
                     break;
+                case R.id.nav_thread_pool_test:
+                    Intent threadIntent = new Intent();
+                    threadIntent.setClass(MainActivity.this, ThreadPoolTestActivity.class);
+                    startActivity(threadIntent);
+                    break;
                 case R.id.nav_manage:
                     showTipsActionDialog();
-                    break;
-                case R.id.nav_share:
-
-                    break;
-                case R.id.nav_send:
-
-                    break;
-                case R.id.nav_evaluation:
-
                     break;
             }
 
@@ -302,8 +295,8 @@ public class MainActivity extends BaseAppCompatActivity {
     private void getCacheSize() {
         long cacheSize = 0;
         try {
-            String cacheDir = SDCardUtil.getInstance().getCacheDir(this);
-            String externalCacheDir = SDCardUtil.getInstance().getExternalCacheDir(this);
+            String cacheDir = SDCardUtil.getCacheDir(this);
+            String externalCacheDir = SDCardUtil.getExternalCacheDir(this);
 
             cacheSize += GetFileSizeUtil.getInstance().getFileSize(new File(cacheDir));
             cacheSize += GetFileSizeUtil.getInstance().getFileSize(new File(externalCacheDir));

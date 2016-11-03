@@ -17,25 +17,8 @@ public class NetworkUtil {
     public static final int NETWORK_TYPE_CMNET = 101;//CMNET
     public static final int NETWORK_TYPE_CMWAP = 102;//CMWAP
 
-    private static NetworkUtil INSTANCE;
-
-    private NetworkUtil() {
-
-    }
-
-    public static NetworkUtil getInstance() {
-        if (INSTANCE == null) {
-            synchronized (NetworkUtil.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new NetworkUtil();
-                }
-            }
-        }
-        return INSTANCE;
-    }
-
     //判断是否有网络连接
-    public boolean isNetworkConnected(Context context) {
+    public static boolean isNetworkConnected(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -45,7 +28,7 @@ public class NetworkUtil {
     }
 
     //判断网络类型
-    public int checkNetWorkType(Context context) {
+    public static int checkNetWorkType(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -66,7 +49,7 @@ public class NetworkUtil {
     }
 
     //判断移动网络类型
-    public int checkAPNType(Context context) {
+    public static int checkAPNType(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 

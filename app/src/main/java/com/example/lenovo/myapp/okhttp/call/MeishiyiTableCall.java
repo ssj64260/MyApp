@@ -1,6 +1,6 @@
 package com.example.lenovo.myapp.okhttp.call;
 
-import com.cxb.tools.network.okhttp.OkHttpApi;
+import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
 import com.example.lenovo.myapp.model.testbean.TableBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.utils.Constants;
@@ -15,7 +15,7 @@ import java.util.Map;
  * 美食易广告请求
  */
 
-public class MeishiyiTableCall extends OkHttpApi {
+public class MeishiyiTableCall extends OkHttpAsynchApi {
     private static final String PATH = Constants.URL_MSY_TABLE;
     private Map<String, String> params;
     private Type returnType;

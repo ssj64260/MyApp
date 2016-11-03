@@ -33,18 +33,18 @@ public class URLSetting {
     }
 
     public void setBaseUrl(String baseUrl) {
-        PreferencesUtil.getInstance().setString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, baseUrl);
+        PreferencesUtil.setString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, baseUrl);
         setUrl();
     }
 
     public void resetBaseUrl() {
-        PreferencesUtil.getInstance().clearData(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL);
+        PreferencesUtil.clearData(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL);
         setUrl();
     }
 
     private void setUrl() {
         if (MyApplication.isApkDebugable()) {
-            baseUrl = PreferencesUtil.getInstance().getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, Constants.DEBUG_URL);
+            baseUrl = PreferencesUtil.getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, Constants.DEBUG_URL);
         } else {
             baseUrl = Constants.OFFICIAL_URL;
         }

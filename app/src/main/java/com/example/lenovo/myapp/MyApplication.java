@@ -3,6 +3,7 @@ package com.example.lenovo.myapp;
 import android.app.Application;
 
 import com.cxb.tools.utils.AndroidUtils;
+import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.orhanobut.logger.Logger;
 
@@ -40,6 +41,8 @@ public class MyApplication extends Application {
         if (isApkDebugable()) {
             ToastUtil.toast("这是debug版本");
         }
+
+        ThreadPoolUtil.init(2);//初始化线程池最大线程数
     }
 
     ///////////////////////////////////////////////////////////////////////////

@@ -4,9 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     //下面这些事使用到缓存的时候需要用的
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".MyApplication"
@@ -17,9 +17,10 @@
         android:theme="@style/AppTheme">
 
         <!--启动页-->
-        <activity android:name=".ui.activity.StartupPageActivity"
-            android:theme="@style/splashTheme"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".ui.activity.StartupPageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/splashTheme">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,50 +31,62 @@
         </activity>
 
         <!--广告页-->
-        <activity android:name=".ui.activity.AdPagesActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.AdPagesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!--主页面-->
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/mainactivity_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!--口袋妖怪主页-->
-        <activity android:name=".ui.activity.PokemonMainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.PokemonMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!--app介绍页面-->
-        <activity android:name=".ui.activity.IntroductionActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.IntroductionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!--口袋妖怪详情页面-->
-        <activity android:name=".ui.activity.PokemonDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".ui.activity.PokemonDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
 
         <!-- ***********************************测试用页面*********************************** -->
-        <activity android:name=".ui.activity.test.AnimationTestActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.test.AnimationTestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".ui.activity.test.OkhttpTestActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.test.OkhttpTestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".ui.activity.test.DialogTestActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.test.DialogTestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".ui.activity.SetPostUrlActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.test.ThreadPoolTestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ui.activity.SetPostUrlActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!-- ***********************************测试用页面*********************************** -->
 
     </application>

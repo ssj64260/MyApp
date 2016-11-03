@@ -6,7 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.cxb.tools.network.okhttp.OkHttpApi;
+import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
+import com.cxb.tools.network.okhttp.OkHttpBaseApi;
 import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.ToastUtil;
 import com.cxb.tools.utils.VersionUtil;
@@ -46,8 +47,8 @@ public class OkhttpTestActivity extends BaseActivity {
     private EditText version2;
 
     private MeishiyiTableCall tableCall = new MeishiyiTableCall();
-    private OkHttpApi okHttpApi;
-    private OkHttpApi okHttpAuthenticatior;
+    private OkHttpAsynchApi okHttpAsynchApi;
+    private OkHttpAsynchApi okHttpAuthenticatior;
 
     private DefaultProgressDialog progressDialog;
 
@@ -66,7 +67,7 @@ public class OkhttpTestActivity extends BaseActivity {
         progressDialog.setOnDismissListener(new DefaultProgressDialog.OnDismissListener() {
             @Override
             public void OnDismissListener() {
-                okHttpApi.cancelRequest();
+                okHttpAsynchApi.cancelRequest();
             }
         });
         progressDialog.setMessage("请求中...");
@@ -97,9 +98,9 @@ public class OkhttpTestActivity extends BaseActivity {
     }
 
     private void setData() {
-        okHttpApi = new OkHttpApi()
+        okHttpAsynchApi = new OkHttpAsynchApi()
                 .addListener(callBack);
-        okHttpAuthenticatior = new OkHttpApi("jesse", "password1")
+        okHttpAuthenticatior = new OkHttpAsynchApi("jesse", "password1")
                 .addListener(callBack);
 
         tableCall.setParams("1");
@@ -121,8 +122,8 @@ public class OkhttpTestActivity extends BaseActivity {
                     Map<String, String> params = new HashMap<>();
                     params.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
                     params.put("user", "aiweitest");
-                    okHttpApi.setRequestId(Constants.REQUEST_ID_MSY_AD)
-                            .setCurrentProtocol(OkHttpApi.Protocol.HTTP)
+                    okHttpAsynchApi.setRequestId(Constants.REQUEST_ID_MSY_AD)
+                            .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
                             .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
                             .getPath(Constants.URL_MSY_AD, params, returnType);
                     break;
@@ -130,14 +131,14 @@ public class OkhttpTestActivity extends BaseActivity {
                     tableCall.requestCall();
                     break;
                 case R.id.btn_syn_get:
-                    okHttpApi.setRequestId(9999)
-                            .setCurrentProtocol(OkHttpApi.Protocol.HTTPS)
+                    okHttpAsynchApi.setRequestId(9999)
+                            .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTPS)
                             .setCurrentBaseUrl("api.github.com")
                             .getPath("gists/c2a7c39532239ff261be", GithubBean.class);
                     break;
                 case R.id.btn_authenticator:
                     okHttpAuthenticatior.setRequestId(9998)
-                            .setCurrentProtocol(OkHttpApi.Protocol.HTTP)
+                            .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
                             .setCurrentBaseUrl("publicobject.com")
                             .getPath("secrets/hellosecret.txt", null);
                     break;
@@ -183,7 +184,7 @@ public class OkhttpTestActivity extends BaseActivity {
                                 ToastUtil.toast("请求美食易广告失败");
                                 break;
                             case Constants.REQUEST_ID_MSY_TABLE:
-                                ToastUtil.toast("请求美食易时间段失败");
+                                ToastUtil.toast("请求美食易餐位失败");
                                 break;
                             case 9999:
                                 ToastUtil.toast("请求失败");
@@ -217,14 +218,14 @@ public class OkhttpTestActivity extends BaseActivity {
                             for (TableBean time : timeTemp) {
                                 content += time.getTableName() + "\n";
                             }
-                            ToastUtil.toast("请求美食易时间段成功");
+                            ToastUtil.toast("请求美食易餐位成功");
                             break;
                         case 9999:
-                            GithubBean github = (GithubBean) dataObject;
-                            Map<String, GithubBean.OkhttpTxt> map = github.getFiles();
-                            for (Map.Entry<String, GithubBean.OkhttpTxt> entry : map.entrySet()) {
-                                content += entry.getKey() + "\n" + entry.getValue().content + "\n";
-                            }
+//                            GithubBean github = (GithubBean) dataObject;
+//                            Map<String, GithubBean.OkhttpTxt> map = github.getFiles();
+//                            for (Map.Entry<String, GithubBean.OkhttpTxt> entry : map.entrySet()) {
+//                                content += entry.getKey() + "\n" + entry.getValue().content + "\n";
+//                            }
                             ToastUtil.toast("请求Github成功");
                             break;
                         case 9998:

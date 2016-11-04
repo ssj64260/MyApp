@@ -3,6 +3,7 @@ package com.example.lenovo.myapp.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
 
@@ -16,7 +17,7 @@ public class StartupPageActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        new Thread(new Runnable() {
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
                 try{
@@ -32,7 +33,7 @@ public class StartupPageActivity extends BaseActivity {
                     }
                 });
             }
-        }).start();
+        });
 
     }
 

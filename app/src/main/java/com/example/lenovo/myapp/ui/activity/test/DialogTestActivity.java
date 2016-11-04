@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.cxb.tools.utils.StringCheck;
+import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
@@ -89,7 +90,7 @@ public class DialogTestActivity extends BaseActivity {
     private void showProgressDialog() {
         progressDialog.setMessage("加载中...");
         progressDialog.showDialog();
-        new Thread(new Runnable() {
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -105,7 +106,7 @@ public class DialogTestActivity extends BaseActivity {
                     }
                 });
             }
-        }).start();
+        });
     }
 
     private void showInputContentDialog() {

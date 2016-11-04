@@ -27,6 +27,7 @@ import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.GetFileSizeUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.SDCardUtil;
+import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
@@ -146,12 +147,12 @@ public class MainActivity extends BaseAppCompatActivity {
     }
 
     private void setData() {
-        new Thread(new Runnable() {
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
                 Glide.get(MainActivity.this).clearDiskCache();
             }
-        }).start();
+        });
 
         GlideCircleTransform transform = new GlideCircleTransform(this)
                 .setBorderThickness(10)
@@ -208,10 +209,9 @@ public class MainActivity extends BaseAppCompatActivity {
     }
 
     private void doRefreshLoading(final boolean isRefresh) {
-        new Thread(new Runnable() {
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
-
                 try {
                     Thread.sleep(2000);
                 } catch (Exception e) {
@@ -247,7 +247,7 @@ public class MainActivity extends BaseAppCompatActivity {
                     }
                 });
             }
-        }).start();
+        });
     }
 
     NavigationView.OnNavigationItemSelectedListener selectedListener = new NavigationView.OnNavigationItemSelectedListener() {

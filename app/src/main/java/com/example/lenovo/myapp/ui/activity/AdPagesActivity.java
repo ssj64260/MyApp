@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
 
@@ -37,7 +38,7 @@ public class AdPagesActivity extends BaseActivity {
 
         tvSkip.setText("跳过" + time);
 
-        new Thread(new Runnable() {
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
                 while (!isNoFirst) {
@@ -65,7 +66,7 @@ public class AdPagesActivity extends BaseActivity {
                     }
                 }
             }
-        }).start();
+        });
     }
 
     private void toFinish() {

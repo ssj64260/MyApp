@@ -6,6 +6,7 @@ import android.widget.EditText;
 
 import com.cxb.tools.utils.PreferencesUtil;
 import com.cxb.tools.utils.StringCheck;
+import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
@@ -92,10 +93,9 @@ public class SetPostUrlActivity extends BaseActivity {
     };
 
     private void deleteAllData(final boolean clearDB, final boolean clearShare) {
-        new Thread(new Runnable() {
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
-
                 if (clearShare) {
                     PreferencesUtil.clearData(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL);
                 }
@@ -110,6 +110,6 @@ public class SetPostUrlActivity extends BaseActivity {
                     }
                 });
             }
-        }).start();
+        });
     }
 }

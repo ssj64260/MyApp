@@ -1,5 +1,7 @@
 package com.cxb.tools.network.okhttp;
 
+import com.orhanobut.logger.Logger;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -37,7 +39,7 @@ public abstract class OkHttpBaseApi {
     private final String Authorization = "Authorization";
     private final String USER_AGENT = "User-Agent";
 
-    private Protocol currentProtocol;
+    private Protocol currentProtocol = null;
     private String currentBaseUrl;
     int requestId;
 
@@ -75,6 +77,11 @@ public abstract class OkHttpBaseApi {
     }
 
     private String getWholeUrl(String path) {
+
+        if (currentProtocol == null) {
+            Logger.e("没有设置协议类型，如没有设置.setCurrentProtocol(Protocol.HTTP)");
+        }
+
         String protocol = currentProtocol == OkHttpBaseApi.Protocol.HTTP ? "http://" : "https://";
         return protocol + currentBaseUrl + "/" + path;
     }

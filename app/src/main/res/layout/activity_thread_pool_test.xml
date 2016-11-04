@@ -1,78 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
-
+    android:fitsSystemWindows="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
         <Button
             android:id="@+id/btn_heart_get"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="心跳请求"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_sequence"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="顺序请求"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/btn_cached_thread_pool"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="缓存线程池"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_fixed_thread_pool"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="定长线程池"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_scheduled_thread_pool"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="延时执行"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_scheduled_thread_pool_rate"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="周期执行"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_scheduled_thread_pool_delay"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="每周期延时执行"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_single_thread_pool"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="单线程线程池"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_shut_down"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="取消所有线程"
+            android:textAllCaps="false" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_cached_thread_pool"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="缓存线程池"
-        android:textAllCaps="false" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_fixed_thread_pool"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="定长线程池"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清除信息"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_scheduled_thread_pool"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="延时执行"
-        android:textAllCaps="false" />
-    <Button
-        android:id="@+id/btn_scheduled_thread_pool_rate"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="周期执行"
-        android:textAllCaps="false" />
+        <ScrollView
+            android:id="@+id/sv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:background="@color/black">
 
-    <Button
-        android:id="@+id/btn_scheduled_thread_pool_delay"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="每周期延时执行"
-        android:textAllCaps="false" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_single_thread_pool"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="单线程线程池"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_shut_down"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="取消所有线程"
-        android:textAllCaps="false" />
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fadeScrollbars="true"
+                    android:padding="5dp"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    tools:text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 </LinearLayout>

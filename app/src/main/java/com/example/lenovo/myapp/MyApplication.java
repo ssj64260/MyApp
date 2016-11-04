@@ -42,7 +42,7 @@ public class MyApplication extends Application {
             ToastUtil.toast("这是debug版本");
         }
 
-        ThreadPoolUtil.init(2);//初始化线程池最大线程数
+        ThreadPoolUtil.init(5);//初始化线程池最大线程数
     }
 
     ///////////////////////////////////////////////////////////////////////////

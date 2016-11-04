@@ -3,6 +3,8 @@ package com.example.lenovo.myapp.ui.activity.test;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.cxb.tools.network.okhttp.OkHttpBaseApi;
 import com.cxb.tools.network.okhttp.OkHttpSynchApi;
@@ -18,7 +20,6 @@ import com.example.lenovo.myapp.model.testbean.TableBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.utils.Constants;
 import com.google.gson.reflect.TypeToken;
-import com.orhanobut.logger.Logger;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -41,6 +42,10 @@ public class ThreadPoolTestActivity extends BaseActivity {
     private Button btnScheduledDelay;
     private Button btnSingle;
     private Button btnShutDown;
+
+    private ScrollView svBackground;
+    private Button btnClear;
+    private TextView tvContent;
 
     private DefaultProgressDialog progressDialog;
 
@@ -86,6 +91,14 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
         btnShutDown = (Button) findViewById(R.id.btn_shut_down);
         btnShutDown.setOnClickListener(click);
+
+        btnClear = (Button) findViewById(R.id.btn_clear);
+        btnClear.setOnClickListener(click);
+
+        svBackground = (ScrollView) findViewById(R.id.sv_background);
+
+        tvContent = (TextView) findViewById(R.id.tv_content);
+//        tvContent.setMovementMethod(ScrollingMovementMethod.getInstance());
     }
 
     private void initData() {
@@ -132,6 +145,9 @@ public class ThreadPoolTestActivity extends BaseActivity {
                     break;
                 case R.id.btn_shut_down:
                     shutDownAll();
+                    break;
+                case R.id.btn_clear:
+                    tvContent.setText("");
                     break;
             }
         }
@@ -228,20 +244,22 @@ public class ThreadPoolTestActivity extends BaseActivity {
                     if (reason != FailureReason.OTHER) {
                         ToastUtil.toast(reason.getReason());
                     } else {
+                        String content = tvContent.getText().toString();
                         switch (requestId) {
                             case Constants.REQUEST_ID_MSY_AD:
-                                Logger.d("请求美食易广告失败");
+                                tvContent.setText(content + "请求美食易广告失败\n");
                                 break;
                             case Constants.REQUEST_ID_MSY_TABLE:
-                                Logger.d("请求美食易餐位失败");
+                                tvContent.setText(content + "请求美食易餐位失败\n");
                                 break;
                             case 9999:
-                                Logger.d("请求Github失败");
+                                tvContent.setText(content + "请求Github失败\n");
                                 break;
                             case 9998:
-                                Logger.d("验证请求失败");
+                                tvContent.setText(content + "验证请求失败\n");
                                 break;
                         }
+                        svBackground.fullScroll(ScrollView.FOCUS_DOWN);
                     }
                 }
             });
@@ -253,20 +271,22 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 @Override
                 public void run() {
                     progressDialog.dismissDialog();
+                    String content = tvContent.getText().toString();
                     switch (requestId) {
                         case Constants.REQUEST_ID_MSY_AD:
-                            Logger.d("请求美食易广告成功");
+                            tvContent.setText(content + "请求美食易广告成功\n");
                             break;
                         case Constants.REQUEST_ID_MSY_TABLE:
-                            Logger.d("请求美食易餐位成功");
+                            tvContent.setText(content + "请求美食易餐位成功\n");
                             break;
                         case 9999:
-                            Logger.d("请求Github成功");
+                            tvContent.setText(content + "请求Github成功\n");
                             break;
                         case 9998:
-                            Logger.d("验证请求成功");
+                            tvContent.setText(content + "验证请求成功\n");
                             break;
                     }
+                    svBackground.fullScroll(ScrollView.FOCUS_DOWN);
                 }
             });
         }
@@ -293,8 +313,16 @@ public class ThreadPoolTestActivity extends BaseActivity {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    Logger.d("active count = " + Thread.activeCount()
-                            + " index = " + index);
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            String content = tvContent.getText().toString();
+                            tvContent.setText(content + "active count = " + Thread.activeCount()
+                                    + " index = " + index + "\n");
+                            svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                        }
+                    });
                 }
             });
         }
@@ -308,7 +336,14 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 @Override
                 public void run() {
                     try {
-                        Logger.d(index);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                String content = tvContent.getText().toString();
+                                tvContent.setText(content + index + "\n");
+                                svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                            }
+                        });
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -323,55 +358,83 @@ public class ThreadPoolTestActivity extends BaseActivity {
         ThreadPoolUtil.getInstache().scheduled(new Runnable() {
             @Override
             public void run() {
-                System.out.println("delay 3 seconds");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String content = tvContent.getText().toString();
+                        tvContent.setText(content + "延时3秒钟执行\n");
+                        svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                    }
+                });
             }
         }, 3, TimeUnit.SECONDS);
     }
 
-    //延时1秒钟，之后每3秒执行一次（间隔时间和任务时间同步计算，最终等待时间为较长的那个时间）
+    //延时1秒钟，之后每2秒执行一次（间隔时间和任务时间同步计算，最终等待时间为较长的那个时间）
     private void scheduledThreadPoolRate() {
         ThreadPoolUtil.getInstache().scheduledRate(new Runnable() {
 
             @Override
             public void run() {
-                Logger.d("delay 1 seconds, and excute every 3 seconds");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String content = tvContent.getText().toString();
+                        tvContent.setText(content + "延时1秒钟，\n之后每2秒执行一次\n");
+                        svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                    }
+                });
                 try {
                     Thread.sleep(1000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-        }, 1, 3, TimeUnit.SECONDS);
+        }, 1, 2, TimeUnit.SECONDS);
 
     }
 
-    //延时1秒钟，之后每次完成任务后延时3秒
+    //延时1秒钟，之后每次完成任务后延时1秒
     private void scheduledThreadPoolDelay() {
         ThreadPoolUtil.getInstache().scheduledDelay(new Runnable() {
 
             @Override
             public void run() {
-                Logger.d("delay 1 seconds, and excute every 3 seconds");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String content = tvContent.getText().toString();
+                        tvContent.setText(content + "延时1秒钟，\n之后每次完成任务后延时1秒\n");
+                        svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                    }
+                });
                 try {
-                    Thread.sleep(5000);
+                    Thread.sleep(3000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-        }, 1, 3, TimeUnit.SECONDS);
+        }, 1, 1, TimeUnit.SECONDS);
 
     }
 
     private void singleThreadPool() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             final int index = i;
             ThreadPoolUtil.getInstache().singleExecute(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        Thread.sleep((10 - index) * 1000);
-                        Logger.d(index);
+                        Thread.sleep((100 - index) * 10);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                String content = tvContent.getText().toString();
+                                tvContent.setText(content + index + "\n");
+                                svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                            }
+                        });
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

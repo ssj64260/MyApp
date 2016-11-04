@@ -74,11 +74,14 @@ public abstract class OkHttpBaseApi {
                 .build();
     }
 
+    private String getWholeUrl(String path) {
+        String protocol = currentProtocol == OkHttpBaseApi.Protocol.HTTP ? "http://" : "https://";
+        return protocol + currentBaseUrl + "/" + path;
+    }
+
     //GET 参数已拼在url里
     public void getPath(String path, Type returnType) {
-        String protocolString = currentProtocol == OkHttpBaseApi.Protocol.HTTP ? "http://" : "https://";
-        String url = protocolString + currentBaseUrl + "/" + path;
-
+        String url = getWholeUrl(path);
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -107,8 +110,7 @@ public abstract class OkHttpBaseApi {
             path += paramsEndpoint;
         }
 
-        String protocolString = currentProtocol == OkHttpBaseApi.Protocol.HTTP ? "http://" : "https://";
-        String url = protocolString + currentBaseUrl + "/" + path;
+        String url = getWholeUrl(path);
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -118,8 +120,7 @@ public abstract class OkHttpBaseApi {
 
     //post parameters
     public void postParameters(String path, Map<String, String> params, Type returnType) {
-        String protocolString = currentProtocol == OkHttpBaseApi.Protocol.HTTP ? "http://" : "https://";
-        String url = protocolString + currentBaseUrl + "/" + path;
+        String url = getWholeUrl(path);
         FormBody.Builder body = new FormBody.Builder();
 
         for (Map.Entry<String, String> param : params.entrySet()) {
@@ -137,8 +138,7 @@ public abstract class OkHttpBaseApi {
 
     //post string
     public void postString(String path, String postBody, Type returnType) {
-        String protocolString = currentProtocol == OkHttpBaseApi.Protocol.HTTP ? "http://" : "https://";
-        String url = protocolString + currentBaseUrl + "/" + path;
+        String url = getWholeUrl(path);
         RequestBody body = RequestBody.create(MEDIA_TYPE_MARKDOWN, postBody);
 
         Request request = new Request.Builder()
@@ -151,8 +151,7 @@ public abstract class OkHttpBaseApi {
 
     //post file
     public void postFile(String path, File file, Type returnType) {
-        String protocolString = currentProtocol == OkHttpBaseApi.Protocol.HTTP ? "http://" : "https://";
-        String url = protocolString + currentBaseUrl + "/" + path;
+        String url = getWholeUrl(path);
         RequestBody body = RequestBody.create(MEDIA_TYPE_MARKDOWN, file);
 
         Request request = new Request.Builder()

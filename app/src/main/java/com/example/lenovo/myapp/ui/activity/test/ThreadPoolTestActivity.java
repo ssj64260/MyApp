@@ -53,6 +53,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
     private OkHttpSynchApi getList;
     private OkHttpSynchApi getGithub;
 
+    private int threadIndex = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +120,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
     View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            threadIndex = 0;
             switch (v.getId()) {
                 case R.id.btn_heart_get:
                     heartGet();
@@ -167,12 +170,13 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
             @Override
             public void run() {
+                threadIndex++;
                 getAd.setRequestId(Constants.REQUEST_ID_MSY_AD)
                         .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
                         .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
                         .getPath(Constants.URL_MSY_AD, params, returnType);
             }
-        }, 0, 3, TimeUnit.SECONDS);
+        }, 0, 1, TimeUnit.SECONDS);
     }
 
     private void sequence() {
@@ -196,6 +200,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
                 @Override
                 public void run() {
+                    threadIndex++;
                     switch (index % 3) {
                         case 0:
                             getGithub.setRequestId(9999)
@@ -247,16 +252,16 @@ public class ThreadPoolTestActivity extends BaseActivity {
                         String content = tvContent.getText().toString();
                         switch (requestId) {
                             case Constants.REQUEST_ID_MSY_AD:
-                                tvContent.setText(content + "请求美食易广告失败\n");
+                                tvContent.setText(content + threadIndex + "#请求美食易广告失败\n");
                                 break;
                             case Constants.REQUEST_ID_MSY_TABLE:
-                                tvContent.setText(content + "请求美食易餐位失败\n");
+                                tvContent.setText(content + threadIndex + "#请求美食易餐位失败\n");
                                 break;
                             case 9999:
-                                tvContent.setText(content + "请求Github失败\n");
+                                tvContent.setText(content + threadIndex + "#请求Github失败\n");
                                 break;
                             case 9998:
-                                tvContent.setText(content + "验证请求失败\n");
+                                tvContent.setText(content + threadIndex + "#验证请求失败\n");
                                 break;
                         }
                         svBackground.fullScroll(ScrollView.FOCUS_DOWN);
@@ -274,16 +279,16 @@ public class ThreadPoolTestActivity extends BaseActivity {
                     String content = tvContent.getText().toString();
                     switch (requestId) {
                         case Constants.REQUEST_ID_MSY_AD:
-                            tvContent.setText(content + "请求美食易广告成功\n");
+                            tvContent.setText(content + threadIndex + "#请求美食易广告成功\n");
                             break;
                         case Constants.REQUEST_ID_MSY_TABLE:
-                            tvContent.setText(content + "请求美食易餐位成功\n");
+                            tvContent.setText(content + threadIndex + "#请求美食易餐位成功\n");
                             break;
                         case 9999:
-                            tvContent.setText(content + "请求Github成功\n");
+                            tvContent.setText(content + threadIndex + "#请求Github成功\n");
                             break;
                         case 9998:
-                            tvContent.setText(content + "验证请求成功\n");
+                            tvContent.setText(content + threadIndex + "#验证请求成功\n");
                             break;
                     }
                     svBackground.fullScroll(ScrollView.FOCUS_DOWN);
@@ -379,8 +384,9 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        threadIndex++;
                         String content = tvContent.getText().toString();
-                        tvContent.setText(content + "延时1秒钟，\n之后每2秒执行一次\n");
+                        tvContent.setText(content + threadIndex + "#延时1秒钟，\n之后每2秒执行一次\n");
                         svBackground.fullScroll(ScrollView.FOCUS_DOWN);
                     }
                 });
@@ -404,7 +410,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
                     @Override
                     public void run() {
                         String content = tvContent.getText().toString();
-                        tvContent.setText(content + "延时1秒钟，\n之后每次完成任务后延时1秒\n");
+                        tvContent.setText(content + threadIndex + "#延时1秒钟，\n之后每次完成任务后延时1秒\n");
                         svBackground.fullScroll(ScrollView.FOCUS_DOWN);
                     }
                 });

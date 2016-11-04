@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/meituan_green"
+    android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -9,37 +11,39 @@
         android:id="@+id/btn_change_url"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="更换接口"/>
+        android:text="更换接口" />
 
     <Button
         android:id="@+id/btn_meishiyi_ad"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="GET美食易顶部广告"/>
+        android:text="GET美食易顶部广告" />
 
     <Button
         android:id="@+id/btn_meishiyi_table"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="POST美食易获取餐桌"/>
+        android:text="POST美食易获取餐桌" />
 
     <Button
         android:id="@+id/btn_syn_get"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:textAllCaps="false"
-        android:text="Github Message"/>
+        android:text="Github Message"
+        android:textAllCaps="false" />
+
     <Button
         android:id="@+id/btn_authenticator"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:textAllCaps="false"
-        android:text="需要验证的连接"/>
+        android:text="需要验证的连接"
+        android:textAllCaps="false" />
+
     <Button
         android:id="@+id/btn_get_app_version"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="获取App版本号"/>
+        android:text="获取App版本号" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,20 +55,21 @@
             android:id="@+id/et_version1"
             android:layout_width="150dp"
             android:layout_height="50dp"
+            android:background="@color/grass"
             android:gravity="center"
-            android:inputType="date"
             android:hint="当前版本号"
-            android:textColor="@color/white"
-            android:background="@color/grass"/>
+            android:inputType="date"
+            android:textColor="@color/white" />
+
         <EditText
             android:id="@+id/et_version2"
             android:layout_width="150dp"
             android:layout_height="50dp"
+            android:background="@color/btn_blue_normal"
             android:gravity="center"
-            android:inputType="date"
             android:hint="网络版本号"
-            android:textColor="@color/white"
-            android:background="@color/btn_blue_normal"/>
+            android:inputType="date"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -72,7 +77,7 @@
         android:id="@+id/btn_compare_version"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="比较两个版本号大小"/>
+        android:text="比较两个版本号大小" />
 
 
 </LinearLayout>

@@ -26,6 +26,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -176,6 +177,7 @@ public class PokemonDetailActivity extends BaseActivity {
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .placeholder(R.mipmap.bg_ditto)
                 .error(R.mipmap.bg_ditto)
+                .fitCenter()
                 .into(new GlideDrawableImageViewTarget(ivImage) {
                     @Override
                     public void onLoadFailed(Exception e, Drawable errorDrawable) {
@@ -183,20 +185,29 @@ public class PokemonDetailActivity extends BaseActivity {
                         requestManager.load(noBackgroundLogo)
                                 .placeholder(R.mipmap.bg_ditto)
                                 .error(R.mipmap.bg_ditto)
+                                .fitCenter()
                                 .into(ivImage);
                     }
                 });
 
         //设置特性
         if (cList != null && cList.size() > 0) {
-            if (cList.size() >= 3) {
-                tvCharacteristic1.setText(cList.get(0).getName() + " 或 " + cList.get(1).getName());
-                tvCharacteristic2.setText(cList.get(2).getName());
-            } else if (cList.size() >= 2) {
-                tvCharacteristic1.setText(cList.get(0).getName());
-                tvCharacteristic2.setText(cList.get(1).getName());
+            List<String> cNames = new ArrayList<>();
+            for (CharacteristicBean c : cList) {
+                String cName = c.getName();
+                if (!StringCheck.isEmpty(cName)) {
+                    cNames.add(cName);
+                }
+            }
+
+            if (cNames.size() >= 3) {
+                tvCharacteristic1.setText(cNames.get(0) + "  或  " + cNames.get(1));
+                tvCharacteristic2.setText(cNames.get(2));
+            } else if (cNames.size() >= 2) {
+                tvCharacteristic1.setText(cNames.get(0));
+                tvCharacteristic2.setText(cNames.get(1));
             } else {
-                tvCharacteristic1.setText(cList.get(0).getName());
+                tvCharacteristic1.setText(cNames.get(0));
                 tvCharacteristic2.setText("无");
             }
         }

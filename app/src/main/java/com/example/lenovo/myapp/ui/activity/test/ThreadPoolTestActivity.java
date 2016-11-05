@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity.test;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ThreadPoolTestActivity extends BaseActivity {
 
+    private Button btnAsyncTask;
     private Button btnHeartGet;
     private Button btnSequence;
     private Button btnCached;
@@ -66,6 +68,9 @@ public class ThreadPoolTestActivity extends BaseActivity {
     }
 
     private void initVew() {
+
+        btnAsyncTask = (Button) findViewById(R.id.btn_async_task);
+        btnAsyncTask.setOnClickListener(click);
 
         btnHeartGet = (Button) findViewById(R.id.btn_heart_get);
         btnHeartGet.setOnClickListener(click);
@@ -122,6 +127,9 @@ public class ThreadPoolTestActivity extends BaseActivity {
         public void onClick(View v) {
             threadIndex = 0;
             switch (v.getId()) {
+                case R.id.btn_async_task:
+                    asyncTaskTest();
+                    break;
                 case R.id.btn_heart_get:
                     heartGet();
                     break;
@@ -454,5 +462,48 @@ public class ThreadPoolTestActivity extends BaseActivity {
         ThreadPoolUtil.getInstache().fixedShutDown(0);
         ThreadPoolUtil.getInstache().scheduledShutDown(0);
         ThreadPoolUtil.getInstache().singleShutDown(0);
+    }
+
+    private void asyncTaskTest() {
+        new AsyncTask<Integer, String, String>() {
+            @Override
+            protected void onPreExecute() {
+                tvContent.setText("开始下载...\n");
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                String con = tvContent.getText().toString();
+                tvContent.setText(con + s + "\n");
+                super.onPostExecute(s);
+            }
+
+            @Override
+            protected void onProgressUpdate(String... values) {
+                tvContent.setText("下载中：" + values[0] + "%\n");
+                super.onProgressUpdate(values);
+            }
+
+            @Override
+            protected String doInBackground(Integer... params) {
+                try {
+                    Thread.sleep(2000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                for (int i = params[0]; i <= 100; i++) {
+                    publishProgress(String.valueOf(i));
+                    try {
+                        long sec = (long) (Math.random() * 300);
+                        Thread.sleep(sec);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                return "下载完成";
+            }
+        }.execute(0);
     }
 }

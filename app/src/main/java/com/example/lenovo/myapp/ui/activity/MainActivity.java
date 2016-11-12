@@ -23,7 +23,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.cxb.tools.Glide.GlideCircleTransform;
 import com.cxb.tools.utils.DataCleanManager;
-import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.GetFileSizeUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.SDCardUtil;
@@ -308,15 +307,6 @@ public class MainActivity extends BaseAppCompatActivity {
 
         if (navigationView != null) {
             navigationView.getMenu().findItem(R.id.nav_manage).setTitle("清理缓存：" + cache);
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (FastClick.isExitClick()) {
-            finish();
-        } else {
-            ToastUtil.toast("再次点击退出程序");
         }
     }
 

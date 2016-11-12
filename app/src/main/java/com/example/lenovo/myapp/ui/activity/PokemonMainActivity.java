@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
+import com.cxb.tools.utils.FastClick;
+import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.model.TabEntity;
@@ -108,12 +110,12 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
 
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        if (FastClick.isExitClick()) {
-//            finish();
-//        } else {
-//            ToastUtil.toast("再次点击退出程序");
-//        }
-//    }
+    @Override
+    public void onBackPressed() {
+        if (FastClick.isExitClick()) {
+            finish();
+        } else {
+            ToastUtil.toast("再次点击退出程序");
+        }
+    }
 }

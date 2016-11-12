@@ -1,6 +1,5 @@
 package com.example.lenovo.myapp.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -53,9 +52,9 @@ public class IntroductionActivity extends BaseActivity {
         findViewById(R.id.tv_skip).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(IntroductionActivity.this, PokemonMainActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent();
+//                intent.setClass(IntroductionActivity.this, PokemonMainActivity.class);
+//                startActivity(intent);
                 finish();
             }
         });

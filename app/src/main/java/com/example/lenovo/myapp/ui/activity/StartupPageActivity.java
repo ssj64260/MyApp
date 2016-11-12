@@ -39,7 +39,7 @@ public class StartupPageActivity extends BaseActivity {
 
     private void startNextActivity() {
         Intent main = new Intent();
-        main.setClass(this, MainActivity.class);
+        main.setClass(this, PokemonMainActivity.class);
         startActivity(main);
 
         Intent ad = new Intent();

@@ -3,6 +3,7 @@ package com.example.lenovo.myapp.ui.activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -268,5 +269,36 @@ public class PokemonDetailActivity extends BaseActivity {
         lineSattack.setLayoutParams(sAttackParams);
         lineSdefense.setLayoutParams(sDefenseParams);
         lineSpeed.setLayoutParams(speedParams);
+
+        ScaleAnimation hpScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
+        hpScaleX.setFillAfter(true);
+        hpScaleX.setDuration(2000);
+        lineHp.startAnimation(hpScaleX);
+
+        ScaleAnimation attackScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
+        attackScaleX.setFillAfter(true);
+        attackScaleX.setDuration(2000);
+        lineAttack.startAnimation(attackScaleX);
+
+        ScaleAnimation defenseScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
+        defenseScaleX.setFillAfter(true);
+        defenseScaleX.setDuration(2000);
+        lineDefense.startAnimation(defenseScaleX);
+
+        ScaleAnimation sAttackScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
+        sAttackScaleX.setFillAfter(true);
+        sAttackScaleX.setDuration(2000);
+        lineSattack.startAnimation(sAttackScaleX);
+
+        ScaleAnimation sDefenseScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
+        sDefenseScaleX.setFillAfter(true);
+        sDefenseScaleX.setDuration(2000);
+        lineSdefense.startAnimation(sDefenseScaleX);
+
+        ScaleAnimation speedScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
+        speedScaleX.setFillAfter(true);
+        speedScaleX.setDuration(2000);
+        lineSpeed.startAnimation(speedScaleX);
+
     }
 }

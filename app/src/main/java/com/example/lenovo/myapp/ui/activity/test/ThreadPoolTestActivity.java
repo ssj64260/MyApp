@@ -105,7 +105,6 @@ public class ThreadPoolTestActivity extends BaseActivity {
         svBackground = (ScrollView) findViewById(R.id.sv_background);
 
         tvContent = (TextView) findViewById(R.id.tv_content);
-//        tvContent.setMovementMethod(ScrollingMovementMethod.getInstance());
     }
 
     private void initData() {

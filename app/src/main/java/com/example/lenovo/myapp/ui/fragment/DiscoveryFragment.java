@@ -12,7 +12,9 @@ import com.cxb.tools.NewsTab.HorizontalTabListScrollView;
 import com.cxb.tools.NewsTab.NewsTab;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.StringCheck;
+import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
+import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.adapter.MyPagerAdapter;
 import com.example.lenovo.myapp.utils.CustomDepthPageTransformer;
@@ -36,6 +38,8 @@ public class DiscoveryFragment extends Fragment {
     private ViewPager mViewPager;
     private List<Fragment> fragmentList = new ArrayList<>();
 
+    private DefaultProgressDialog progressDialog;
+
     private View view;
 
     @Nullable
@@ -53,6 +57,8 @@ public class DiscoveryFragment extends Fragment {
     }
 
     private void initView() {
+        progressDialog = new DefaultProgressDialog(getActivity());
+
         mViewPager = (ViewPager) view.findViewById(R.id.vp_fragment);
 
         svNewsTabs = (HorizontalTabListScrollView) view.findViewById(R.id.htlsv_list);
@@ -66,45 +72,60 @@ public class DiscoveryFragment extends Fragment {
     }
 
     private void setData() {
-        list = new ArrayList<>();
-        propertyList = new ArrayList<>();
+        progressDialog.setMessage("加载中...");
+        progressDialog.showDialog();
 
-        String json = AssetsUtil.getAssetsTxtByName(getActivity(), "property");
-        if (!StringCheck.isEmpty(json)) {
-            Type newsType = new TypeToken<List<NewsTab>>() {
-            }.getType();
-            Type propertyType = new TypeToken<List<PropertyBean>>() {
-            }.getType();
-            Gson gson = new Gson();
-
-            List<NewsTab> newsTemp = gson.fromJson(json, newsType);
-            List<PropertyBean> propertyTemp = gson.fromJson(json, propertyType);
-            list.addAll(newsTemp);
-            propertyList.addAll(propertyTemp);
-        }
-
-        svNewsTabs.addTabList(list);
-
-        for (int i = 0; i < propertyList.size(); i++) {
-            fragmentList.add(DiscoveryPageFragment.newInstance(propertyList.get(i).getEn_name()));
-        }
-
-        mViewPager.setAdapter(new MyPagerAdapter(getActivity().getSupportFragmentManager(), fragmentList));
-        mViewPager.setPageTransformer(true, new CustomDepthPageTransformer());
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void run() {
+                list = new ArrayList<>();
+                propertyList = new ArrayList<>();
 
-            }
+                String json = AssetsUtil.getAssetsTxtByName(getActivity(), "property");
+                if (!StringCheck.isEmpty(json)) {
+                    Type newsType = new TypeToken<List<NewsTab>>() {
+                    }.getType();
+                    Type propertyType = new TypeToken<List<PropertyBean>>() {
+                    }.getType();
+                    Gson gson = new Gson();
 
-            @Override
-            public void onPageSelected(int position) {
-                svNewsTabs.changeTabByPostion(position);
-            }
+                    List<NewsTab> newsTemp = gson.fromJson(json, newsType);
+                    List<PropertyBean> propertyTemp = gson.fromJson(json, propertyType);
+                    list.addAll(newsTemp);
+                    propertyList.addAll(propertyTemp);
+                }
 
-            @Override
-            public void onPageScrollStateChanged(int state) {
+                for (int i = 0; i < propertyList.size(); i++) {
+                    fragmentList.add(DiscoveryPageFragment.newInstance(propertyList.get(i).getEn_name()));
+                }
 
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        svNewsTabs.addTabList(list);
+
+                        mViewPager.setAdapter(new MyPagerAdapter(getActivity().getSupportFragmentManager(), fragmentList));
+                        mViewPager.setPageTransformer(true, new CustomDepthPageTransformer());
+                        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                            @Override
+                            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                            }
+
+                            @Override
+                            public void onPageSelected(int position) {
+                                svNewsTabs.changeTabByPostion(position);
+                            }
+
+                            @Override
+                            public void onPageScrollStateChanged(int state) {
+
+                            }
+                        });
+
+                        progressDialog.dismissDialog();
+                    }
+                });
             }
         });
     }

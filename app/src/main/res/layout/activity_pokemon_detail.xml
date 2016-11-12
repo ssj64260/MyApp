@@ -273,7 +273,7 @@
 
                     <View
                         android:id="@+id/view_hp_line"
-                        android:layout_width="90dp"
+                        android:layout_width="match_parent"
                         android:layout_height="15dp"
                         android:background="@drawable/shape_bg_hp" />
                 </LinearLayout>
@@ -317,7 +317,7 @@
 
                     <View
                         android:id="@+id/view_attack_line"
-                        android:layout_width="90dp"
+                        android:layout_width="match_parent"
                         android:layout_height="15dp"
                         android:background="@drawable/shape_bg_attack" />
                 </LinearLayout>
@@ -361,7 +361,7 @@
 
                     <View
                         android:id="@+id/view_defense_line"
-                        android:layout_width="90dp"
+                        android:layout_width="match_parent"
                         android:layout_height="15dp"
                         android:background="@drawable/shape_bg_defense" />
                 </LinearLayout>
@@ -405,7 +405,7 @@
 
                     <View
                         android:id="@+id/view_s_attack_line"
-                        android:layout_width="90dp"
+                        android:layout_width="match_parent"
                         android:layout_height="15dp"
                         android:background="@drawable/shape_bg_s_attack" />
                 </LinearLayout>
@@ -449,7 +449,7 @@
 
                     <View
                         android:id="@+id/view_s_defense_line"
-                        android:layout_width="90dp"
+                        android:layout_width="match_parent"
                         android:layout_height="15dp"
                         android:background="@drawable/shape_bg_s_defense" />
                 </LinearLayout>
@@ -493,7 +493,7 @@
 
                     <View
                         android:id="@+id/view_speede_line"
-                        android:layout_width="90dp"
+                        android:layout_width="match_parent"
                         android:layout_height="15dp"
                         android:background="@drawable/shape_bg_speed" />
                 </LinearLayout>

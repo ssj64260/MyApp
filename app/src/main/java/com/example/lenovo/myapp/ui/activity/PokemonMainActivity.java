@@ -27,7 +27,7 @@ import java.util.List;
 
 public class PokemonMainActivity extends BaseAppCompatActivity {
 
-    private String[] titles = {"首页", "发现", "我的"};
+    private String[] titles = {"首页", "图鉴", "我的"};
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private List<Fragment> fragmentList;

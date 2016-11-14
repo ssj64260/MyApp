@@ -3,6 +3,7 @@ package com.example.lenovo.myapp.ui.activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,6 +18,7 @@ import com.cxb.tools.NewsTab.NewsTabResoureUtil;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.StringCheck;
+import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
 import com.example.lenovo.myapp.model.CharacteristicBean;
@@ -251,17 +253,17 @@ public class PokemonDetailActivity extends BaseActivity {
         tvSpeed.setText(speed);
 
         LinearLayout.LayoutParams hpParams = (LinearLayout.LayoutParams) lineHp.getLayoutParams();
-        hpParams.width = (int) (DisplayUtil.getInstance(this).dip2px(Float.parseFloat(hp)) * 0.8);
+        hpParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(hp)) * 0.8);
         LinearLayout.LayoutParams attackParams = (LinearLayout.LayoutParams) lineAttack.getLayoutParams();
-        attackParams.width = (int) (DisplayUtil.getInstance(this).dip2px(Float.parseFloat(attack)) * 0.8);
+        attackParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(attack)) * 0.8);
         LinearLayout.LayoutParams defenseParams = (LinearLayout.LayoutParams) lineDefense.getLayoutParams();
-        defenseParams.width = (int) (DisplayUtil.getInstance(this).dip2px(Float.parseFloat(defense)) * 0.8);
+        defenseParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(defense)) * 0.8);
         LinearLayout.LayoutParams sAttackParams = (LinearLayout.LayoutParams) lineSattack.getLayoutParams();
-        sAttackParams.width = (int) (DisplayUtil.getInstance(this).dip2px(Float.parseFloat(sAttack)) * 0.8);
+        sAttackParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(sAttack)) * 0.8);
         LinearLayout.LayoutParams sDefenseParams = (LinearLayout.LayoutParams) lineSdefense.getLayoutParams();
-        sDefenseParams.width = (int) (DisplayUtil.getInstance(this).dip2px(Float.parseFloat(sDefense)) * 0.8);
+        sDefenseParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(sDefense)) * 0.8);
         LinearLayout.LayoutParams speedParams = (LinearLayout.LayoutParams) lineSpeed.getLayoutParams();
-        speedParams.width = (int) (DisplayUtil.getInstance(this).dip2px(Float.parseFloat(speed)) * 0.8);
+        speedParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(speed)) * 0.8);
 
         lineHp.setLayoutParams(hpParams);
         lineAttack.setLayoutParams(attackParams);
@@ -270,35 +272,17 @@ public class PokemonDetailActivity extends BaseActivity {
         lineSdefense.setLayoutParams(sDefenseParams);
         lineSpeed.setLayoutParams(speedParams);
 
-        ScaleAnimation hpScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
-        hpScaleX.setFillAfter(true);
-        hpScaleX.setDuration(2000);
-        lineHp.startAnimation(hpScaleX);
+        ScaleAnimation scaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
+        scaleX.setInterpolator(new AccelerateDecelerateInterpolator());
+        scaleX.setFillAfter(true);
+        scaleX.setDuration(1500);
 
-        ScaleAnimation attackScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
-        attackScaleX.setFillAfter(true);
-        attackScaleX.setDuration(2000);
-        lineAttack.startAnimation(attackScaleX);
-
-        ScaleAnimation defenseScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
-        defenseScaleX.setFillAfter(true);
-        defenseScaleX.setDuration(2000);
-        lineDefense.startAnimation(defenseScaleX);
-
-        ScaleAnimation sAttackScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
-        sAttackScaleX.setFillAfter(true);
-        sAttackScaleX.setDuration(2000);
-        lineSattack.startAnimation(sAttackScaleX);
-
-        ScaleAnimation sDefenseScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
-        sDefenseScaleX.setFillAfter(true);
-        sDefenseScaleX.setDuration(2000);
-        lineSdefense.startAnimation(sDefenseScaleX);
-
-        ScaleAnimation speedScaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
-        speedScaleX.setFillAfter(true);
-        speedScaleX.setDuration(2000);
-        lineSpeed.startAnimation(speedScaleX);
+        lineHp.startAnimation(scaleX);
+        lineAttack.startAnimation(scaleX);
+        lineDefense.startAnimation(scaleX);
+        lineSattack.startAnimation(scaleX);
+        lineSdefense.startAnimation(scaleX);
+        lineSpeed.startAnimation(scaleX);
 
     }
 }

@@ -14,7 +14,7 @@
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
 
         <!--启动页-->
         <activity
@@ -33,60 +33,55 @@
         <!--广告页-->
         <activity
             android:name=".ui.activity.AdPagesActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
         <!--主页面-->
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/mainactivity_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
         <!--口袋妖怪主页-->
         <activity
             android:name=".ui.activity.PokemonMainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
         <!--app介绍页面-->
         <activity
             android:name=".ui.activity.IntroductionActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
         <!--口袋妖怪详情页面-->
         <activity
             android:name=".ui.activity.PokemonDetailActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
 
         <!-- ***********************************测试用页面*********************************** -->
         <activity
             android:name=".ui.activity.test.AnimationTestActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.activity.test.OkhttpTestActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.activity.test.DialogTestActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.activity.test.ThreadPoolTestActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.activity.SetPostUrlActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.test.SlidingMenuTestActivity"
+            android:screenOrientation="portrait" />
+
         <!-- ***********************************测试用页面*********************************** -->
 
     </application>

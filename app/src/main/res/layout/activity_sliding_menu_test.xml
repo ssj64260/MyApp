@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.cxb.tools.SlidingMenu.MySlidingMenu
+        android:id="@+id/sm_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include_menu"
+            layout="@layout/include_left_menu" />
+
+        <include
+            android:id="@+id/include_content"
+            layout="@layout/include_right_content" />
+
+    </com.cxb.tools.SlidingMenu.MySlidingMenu>
+
+</LinearLayout>

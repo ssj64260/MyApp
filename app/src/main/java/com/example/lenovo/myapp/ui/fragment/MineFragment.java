@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.activity.MainActivity;
+import com.example.lenovo.myapp.ui.activity.test.SlidingMenuTestActivity;
 
 /**
  * 我的
@@ -37,6 +38,15 @@ public class MineFragment extends Fragment {
     private void initView() {
         tvTools = (TextView) view.findViewById(R.id.tv_tools);
         tvTools.setOnClickListener(click);
+
+        view.findViewById(R.id.tv_sliding_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), SlidingMenuTestActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private View.OnClickListener click = new View.OnClickListener() {

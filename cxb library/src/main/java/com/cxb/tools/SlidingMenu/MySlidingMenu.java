@@ -2,6 +2,7 @@ package com.cxb.tools.SlidingMenu;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.Scroller;
@@ -29,10 +30,14 @@ public class MySlidingMenu extends ViewGroup {
     private int mMenuWidth;
     private int mContentWidth;
 
-    private int spacePx = 70;//菜单右侧空位宽度
+    private final int spacePx = 80;//菜单右侧空位宽度
+    private final int shortTouchTime = 200;//短触摸时间
+    private final int shortTouchWidth = 5;//短触摸长度
 
     private int mLastX;//手指开始点击X坐标
     private int mLastY;//手指开始点击Y坐标
+    private long mLastTime;//手指开始点击时的时间
+    private int dx = 0;
 
     private int mLastXIntercept;
     private int mLastYIntercept;
@@ -84,17 +89,23 @@ public class MySlidingMenu extends ViewGroup {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        long upTime = System.currentTimeMillis();
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 mLastX = (int) event.getX();
                 mLastY = (int) event.getY();
+                mLastTime = System.currentTimeMillis();
                 break;
             case MotionEvent.ACTION_MOVE:
+                if (upTime - mLastTime > shortTouchTime) {
+                    mLastTime = System.currentTimeMillis();
+                }
+
                 int currentX = (int) event.getX();
                 int currentY = (int) event.getY();
                 //拿到x方向的偏移量
-                int dx = currentX - mLastX;
+                dx = currentX - mLastX;
                 if (dx < 0) {//向左滑动
                     //边界控制，如果Menu已经完全显示，再滑动的话
                     //Menu左侧就会出现白边了,进行边界控制
@@ -125,11 +136,22 @@ public class MySlidingMenu extends ViewGroup {
                 mMenu.setTranslationX(2 * (mMenuWidth + getScrollX()) / 3);
                 break;
             case MotionEvent.ACTION_UP:
-                if (getScrollX() < -mMenuWidth / 2) {//打开Menu
-                    openMenu();
-                } else {//关闭Menu
-                    closeMenu();
+                if (upTime - mLastTime > shortTouchTime) {
+                    if (getScrollX() < -mScreenWidth / 2) {
+                        openMenu();
+                    } else {
+                        closeMenu();
+                    }
+                } else {
+                    if (dx > shortTouchWidth) {
+                        openMenu();
+                    } else {
+                        closeMenu();
+                    }
                 }
+
+                Log.d("有个APP", String.valueOf(upTime - mLastTime));
+                Log.d("有个APP", getScrollX() + "   " + (-mScreenWidth / 2));
                 break;
         }
         return true;
@@ -140,14 +162,15 @@ public class MySlidingMenu extends ViewGroup {
         boolean intercept = false;
         int x = (int) ev.getX();
         int y = (int) ev.getY();
+        // TODO: 2016/11/16 优化触摸事件
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 intercept = false;
                 break;
             case MotionEvent.ACTION_MOVE:
-                int deltaX = (int) ev.getX() - mLastXIntercept;
-                int deltaY = (int) ev.getY() - mLastYIntercept;
-                if (Math.abs(deltaX) > Math.abs(deltaY)) {//横向滑动
+                int deltaX = x - mLastXIntercept;
+                int deltaY = y - mLastYIntercept;
+                if (Math.abs(deltaX) > Math.abs(deltaY) * 2) {//横向滑动
                     intercept = true;
                 } else {//纵向滑动
                     intercept = false;
@@ -159,6 +182,7 @@ public class MySlidingMenu extends ViewGroup {
         }
         mLastX = x;
         mLastY = y;
+        mLastTime = System.currentTimeMillis();
         mLastXIntercept = x;
         mLastYIntercept = y;
         return intercept;
@@ -171,7 +195,7 @@ public class MySlidingMenu extends ViewGroup {
             invalidate();
 
             //设置页面交错偏移量
-            mMenu.setTranslationX(2*(mMenuWidth+getScrollX())/3);
+            mMenu.setTranslationX(2 * (mMenuWidth + getScrollX()) / 3);
         }
     }
 
@@ -203,5 +227,9 @@ public class MySlidingMenu extends ViewGroup {
         mScroller.startScroll(getScrollX(), 0, -mMenuWidth - getScrollX(), 0, 500);
         invalidate();
         isOpen = true;
+    }
+
+    public boolean isOpen() {
+        return isOpen;
     }
 }

@@ -146,12 +146,13 @@ public class MainActivity extends BaseAppCompatActivity {
     }
 
     private void setData() {
-        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
-            @Override
-            public void run() {
-                Glide.get(MainActivity.this).clearDiskCache();
-            }
-        });
+        Glide.get(MainActivity.this).clearMemory();
+//        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+//            @Override
+//            public void run() {
+//                Glide.get(MainActivity.this).clearDiskCache();
+//            }
+//        });
 
         GlideCircleTransform transform = new GlideCircleTransform(this)
                 .setBorderThickness(10)
@@ -160,10 +161,12 @@ public class MainActivity extends BaseAppCompatActivity {
         Glide.with(this).load(R.mipmap.app_icon)
                 .transform(transform)
 //                .placeholder(R.mipmap.app_icon)
+                .dontAnimate()
                 .into(ivAvatar);
 
         Glide.with(this).load(R.mipmap.app_icon)
                 .transform(new GlideCircleTransform(this))
+                .dontAnimate()
                 .into(ivMainAvatar);
 
         ivMainAvatar.setOnClickListener(new View.OnClickListener() {

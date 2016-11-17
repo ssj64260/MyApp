@@ -10,11 +10,11 @@
 
         <include
             android:id="@+id/include_menu"
-            layout="@layout/include_left_menu" />
+            layout="@layout/include_qq_left_menu" />
 
         <include
             android:id="@+id/include_content"
-            layout="@layout/include_right_content" />
+            layout="@layout/include_qq_right_content" />
 
     </com.cxb.tools.SlidingMenu.MySlidingMenu>
 

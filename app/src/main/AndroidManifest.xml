@@ -79,7 +79,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.activity.test.SlidingMenuTestActivity"
+            android:name=".ui.activity.QQMainActivity"
             android:screenOrientation="portrait" />
 
         <!-- ***********************************测试用页面*********************************** -->

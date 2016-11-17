@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.activity.MainActivity;
-import com.example.lenovo.myapp.ui.activity.test.SlidingMenuTestActivity;
+import com.example.lenovo.myapp.ui.activity.QQMainActivity;
 
 /**
  * 我的
@@ -43,7 +43,7 @@ public class MineFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), SlidingMenuTestActivity.class);
+                intent.setClass(getActivity(), QQMainActivity.class);
                 startActivity(intent);
             }
         });

@@ -189,13 +189,7 @@ public class QQMainActivity extends BaseActivity {
     private OnTabSelectListener tabSelect = new OnTabSelectListener() {
         @Override
         public void onTabSelect(int position) {
-            if (position == 0) {
-                recyclerView.setVisibility(View.VISIBLE);
-                rightView.findViewById(R.id.tv_qq_phone).setVisibility(View.GONE);
-            } else {
-                rightView.findViewById(R.id.tv_qq_phone).setVisibility(View.VISIBLE);
-                recyclerView.setVisibility(View.GONE);
-            }
+            setTopTab(position);
         }
 
         @Override
@@ -203,6 +197,16 @@ public class QQMainActivity extends BaseActivity {
             // TODO: 2016/11/21 点击当前选中的tab后的操作
         }
     };
+
+    public void setTopTab(int position) {
+        if (position == 0) {
+            recyclerView.setVisibility(View.VISIBLE);
+            rightView.findViewById(R.id.tv_qq_phone).setVisibility(View.GONE);
+        } else {
+            rightView.findViewById(R.id.tv_qq_phone).setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        }
+    }
 
     private void doRefreshLoading(final boolean isRefresh) {
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {

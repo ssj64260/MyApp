@@ -16,7 +16,6 @@ import com.example.lenovo.myapp.ui.fragment.MineFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.flyco.tablayout.utils.DefaultIconUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,17 @@ import java.util.List;
 
 public class PokemonMainActivity extends BaseAppCompatActivity {
 
-    private String[] titles = {"首页", "图鉴", "我的"};
+    private final String[] titles = {"首页", "图鉴", "我的"};
+    private final int[] iconSelect = {
+            R.mipmap.tab_home_unselect,
+            R.mipmap.tab_discovery_unselect,
+            R.mipmap.tab_me_unselect
+    };
+    private final int[] iconUnselect = {
+            R.mipmap.tab_home_select,
+            R.mipmap.tab_discovery_select,
+            R.mipmap.tab_me_select
+    };
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private List<Fragment> fragmentList;
@@ -49,7 +58,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
 
     private void initView() {
         for (int i = 0; i < titles.length; i++) {
-            mTabEntities.add(new TabEntity(titles[i], DefaultIconUtil.iconSelect[i], DefaultIconUtil.iconUnselect[i]));
+            mTabEntities.add(new TabEntity(titles[i], iconSelect[i], iconUnselect[i]));
         }
 
         tabLayout = (CommonTabLayout) findViewById(R.id.com_tablayout);
@@ -68,7 +77,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
     private void showFragment(int position) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        if (curFragment != null){
+        if (curFragment != null) {
             transaction.hide(curFragment);
         }
 

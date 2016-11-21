@@ -1,11 +1,5 @@
 <manifest
-    package="com.flyco.tablayout"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    package="com.flyco.tablayout">
 
-    <application
-        android:allowBackup="true"
-        android:supportsRtl="true">
-
-    </application>
 
 </manifest>

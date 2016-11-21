@@ -1,6 +1,7 @@
 package com.jcodecraeer.xrecyclerview;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -45,13 +46,13 @@ public class LoadingMoreFooter extends LinearLayout {
         progressCon.setLayoutParams(new ViewGroup.LayoutParams(progressWidth, progressWidth));
 
         AVLoadingIndicatorView progressView = new AVLoadingIndicatorView(this.getContext());
-        progressView.setIndicatorColor(0xffB5B5B5);
+        progressView.setIndicatorColor(Color.parseColor("#ffB5B5B5"));
         progressView.setIndicatorId(ProgressStyle.BallSpinFadeLoader);
         progressCon.setView(progressView);
 
         addView(progressCon);
         mText = new TextView(context);
-        mText.setTextColor(0xff333333);
+        mText.setTextColor(Color.parseColor("#ff333333"));
         mText.setText("正在加载···");
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -66,7 +67,7 @@ public class LoadingMoreFooter extends LinearLayout {
             progressCon.setView(new ProgressBar(mContext, null, android.R.attr.progressBarStyle));
         } else {
             AVLoadingIndicatorView progressView = new AVLoadingIndicatorView(this.getContext());
-            progressView.setIndicatorColor(0xffB5B5B5);
+            progressView.setIndicatorColor(Color.parseColor("#ffB5B5B5"));
             progressView.setIndicatorId(style);
             progressCon.setView(progressView);
         }

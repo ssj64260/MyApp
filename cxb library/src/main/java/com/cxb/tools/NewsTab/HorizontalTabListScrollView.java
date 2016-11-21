@@ -32,8 +32,8 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
     private List<NewsTab> tabList;
     private OnItemSelectedListener mOnItemSelectedListener;//点击回调
 
-    private int textColorNormal = 0xFF707070;//未选中的字体颜色
-    private int textColorSelect = 0xFF0295C9;//选中的字体颜色
+    private int textColorNormal = Color.parseColor("#FF707070");//未选中的字体颜色
+    private int textColorSelect = Color.parseColor("#FF0295C9");//选中的字体颜色
     private float textSize = 0f;//字体大小px
     private int reserveTab = 1;//左边预留tab个数
 

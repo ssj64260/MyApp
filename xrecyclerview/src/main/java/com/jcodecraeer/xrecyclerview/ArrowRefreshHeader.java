@@ -2,6 +2,7 @@ package com.jcodecraeer.xrecyclerview;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -72,7 +73,7 @@ public class ArrowRefreshHeader extends LinearLayout implements BaseRefreshHeade
         //init the progress view
         mProgressBar = (SimpleViewSwithcer) findViewById(R.id.listview_header_progressbar);
         AVLoadingIndicatorView progressView = new AVLoadingIndicatorView(context);
-        progressView.setIndicatorColor(0xffB5B5B5);
+        progressView.setIndicatorColor(Color.parseColor("#ffB5B5B5"));
         progressView.setIndicatorId(ProgressStyle.BallSpinFadeLoader);
         mProgressBar.setView(progressView);
 
@@ -98,7 +99,7 @@ public class ArrowRefreshHeader extends LinearLayout implements BaseRefreshHeade
             mProgressBar.setView(new ProgressBar(mContext, null, android.R.attr.progressBarStyle));
         } else {
             AVLoadingIndicatorView progressView = new AVLoadingIndicatorView(this.getContext());
-            progressView.setIndicatorColor(0xffB5B5B5);
+            progressView.setIndicatorColor(Color.parseColor("#ffB5B5B5"));
             progressView.setIndicatorId(style);
             mProgressBar.setView(progressView);
         }

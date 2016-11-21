@@ -17,6 +17,8 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.base.BaseActivity;
 import com.example.lenovo.myapp.model.QQMessageBean;
 import com.example.lenovo.myapp.ui.adapter.QQMainAdapter;
+import com.flyco.tablayout.SegmentTabLayout;
+import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
@@ -27,6 +29,10 @@ import java.util.List;
  */
 
 public class QQMainActivity extends BaseActivity {
+
+    private String[] titles = {"消息", "电话"};
+
+    private SegmentTabLayout titleTab;
 
     private MySlidingMenu smMain;
     private View leftView;
@@ -101,7 +107,11 @@ public class QQMainActivity extends BaseActivity {
 
     private void initRightView() {
         rightView = findViewById(R.id.include_content);
+        titleTab = (SegmentTabLayout) rightView.findViewById(R.id.stl_title_tab);
         ivMainAvatar = (ImageView) rightView.findViewById(R.id.iv_main_avatar);
+
+        titleTab.setTabData(titles);
+        titleTab.setOnTabSelectListener(tabSelect);
 
         Glide.with(this).load(R.mipmap.app_icon)
 //                .skipMemoryCache(true)
@@ -173,6 +183,24 @@ public class QQMainActivity extends BaseActivity {
                     smMain.toggleMenu();
                     break;
             }
+        }
+    };
+
+    private OnTabSelectListener tabSelect = new OnTabSelectListener() {
+        @Override
+        public void onTabSelect(int position) {
+            if (position == 0) {
+                recyclerView.setVisibility(View.VISIBLE);
+                rightView.findViewById(R.id.tv_qq_phone).setVisibility(View.GONE);
+            } else {
+                rightView.findViewById(R.id.tv_qq_phone).setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.GONE);
+            }
+        }
+
+        @Override
+        public void onTabReselect(int position) {
+            // TODO: 2016/11/21 点击当前选中的tab后的操作
         }
     };
 

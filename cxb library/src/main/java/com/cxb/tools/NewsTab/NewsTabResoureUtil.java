@@ -1,5 +1,7 @@
 package com.cxb.tools.NewsTab;
 
+import android.graphics.Color;
+
 import com.cxb.tools.R;
 
 /**
@@ -120,24 +122,24 @@ public class NewsTabResoureUtil {
     };
 
     public static final int[] property_color = {
-            0xFFBBBBAA,
-            0xFFBB5544,
-            0xFF6699FF,
-            0xFFAA5599,
-            0xFFDDBB55,
-            0xFFBBAA66,
-            0xFFAABB22,
-            0xFF6666BB,
-            0xFFAAAABB,
-            0xFFFF4422,
-            0xFF3399FF,
-            0xFF77CC55,
-            0xFFFFCC33,
-            0xFFFF5599,
-            0xFF77DDFF,
-            0xFF7766EE,
-            0xFF775544,
-            0xFFFFAAFF
+            Color.parseColor("#FFBBBBAA"),
+            Color.parseColor("#FFBB5544"),
+            Color.parseColor("#FF6699FF"),
+            Color.parseColor("#FFAA5599"),
+            Color.parseColor("#FFDDBB55"),
+            Color.parseColor("#FFBBAA66"),
+            Color.parseColor("#FFAABB22"),
+            Color.parseColor("#FF6666BB"),
+            Color.parseColor("#FFAAAABB"),
+            Color.parseColor("#FFFF4422"),
+            Color.parseColor("#FF3399FF"),
+            Color.parseColor("#FF77CC55"),
+            Color.parseColor("#FFFFCC33"),
+            Color.parseColor("#FFFF5599"),
+            Color.parseColor("#FF77DDFF"),
+            Color.parseColor("#FF7766EE"),
+            Color.parseColor("#FF775544"),
+            Color.parseColor("#FFFFAAFF")
     };
 
 }

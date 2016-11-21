@@ -2,6 +2,7 @@ package com.example.lenovo.myapp.ui.activity.test;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -59,7 +60,7 @@ public class AnimationTestActivity extends BaseActivity {
                 ObjectAnimator rotationY = ObjectAnimator.ofFloat(btnB, AnimationUtil.rotationY, 0f, 180f);
                 rotationY.setDuration(2000);
 
-                ObjectAnimator backgroundColor = ObjectAnimator.ofInt(btnB, AnimationUtil.backgroundColor, 0xFFFFFF00, 0xFFFF0000);
+                ObjectAnimator backgroundColor = ObjectAnimator.ofInt(btnB, AnimationUtil.backgroundColor, Color.parseColor("#FFFFFF00"), Color.parseColor("#FFFF0000"));
                 backgroundColor.setDuration(10000);
 
                 animatorSet.play(translationY).with(translationX);

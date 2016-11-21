@@ -25,7 +25,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile rootProject.ext.dependencies["design"]
     compile project(':xrecyclerview')
     compile project(':cxb library')
     compile project(':FlycoTabLayout_Lib')

@@ -20,6 +20,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile rootProject.ext.dependencies["recyclerview-v7"]
+    compile 'com.android.support:recyclerview-v7:25.0.0'
 }
 

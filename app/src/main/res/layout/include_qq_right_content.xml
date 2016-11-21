@@ -55,8 +55,9 @@
             android:clickable="false"
             android:gravity="center"
             android:text="电话页面"
+            android:textColor="@color/black"
             android:textSize="30sp"
-            android:textColor="@color/black"/>
+            android:visibility="gone" />
     </RelativeLayout>
 
 </LinearLayout>

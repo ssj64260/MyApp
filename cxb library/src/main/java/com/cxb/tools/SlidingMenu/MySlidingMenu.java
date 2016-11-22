@@ -124,10 +124,6 @@ public class MySlidingMenu extends RelativeLayout {
                 mLastY = (int) event.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (haveShelter) {
-                    shelter.setVisibility(VISIBLE);
-                }
-
                 int currentX = (int) event.getX();
                 int currentY = (int) event.getY();
                 dx = currentX - mLastX;
@@ -232,6 +228,8 @@ public class MySlidingMenu extends RelativeLayout {
             shelter.setAlpha(backgroundAlpha * Math.abs(l) / mContentWidth);
             if (l == 0) {
                 shelter.setVisibility(GONE);
+            } else {
+                shelter.setVisibility(VISIBLE);
             }
         }
     }

@@ -26,11 +26,11 @@
         <com.flyco.tablayout.SegmentTabLayout
             android:id="@+id/stl_title_tab"
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_height="31dp"
             android:layout_centerInParent="true"
             tl:tl_bar_color="#12B7F5"
             tl:tl_indicator_color="#ffffff"
-            tl:tl_indicator_corner_radius="4dp"
+            tl:tl_indicator_corner_radius="2.5dp"
             tl:tl_tab_padding="17dp"
             tl:tl_textSelectColor="#12B7F5" />
     </RelativeLayout>

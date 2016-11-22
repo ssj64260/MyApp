@@ -41,7 +41,7 @@
                 android:layout_width="39dp"
                 android:layout_height="39dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginTop="16dp"
                 android:src="@mipmap/app_icon" />
 
@@ -57,38 +57,18 @@
                 android:textSize="30sp"
                 tools:text="COKU" />
 
-            <LinearLayout
+            <com.cxb.tools.QQLevelLayout.QQLevelLayout
+                android:id="@+id/qql_qq_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_menu_avatar"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:gravity="bottom"
+                android:orientation="horizontal"
                 android:paddingTop="5dp">
 
-                <ImageView
-                    android:layout_width="11dp"
-                    android:layout_height="11dp"
-                    android:src="@mipmap/ic_star_big" />
-
-                <ImageView
-                    android:layout_width="11dp"
-                    android:layout_height="11dp"
-                    android:layout_marginLeft="2dp"
-                    android:src="@mipmap/ic_star_big" />
-
-                <ImageView
-                    android:layout_width="11dp"
-                    android:layout_height="11dp"
-                    android:layout_marginLeft="2dp"
-                    android:src="@mipmap/ic_star_big" />
-
-                <ImageView
-                    android:layout_width="11dp"
-                    android:layout_height="11dp"
-                    android:layout_marginLeft="2dp"
-                    android:src="@mipmap/ic_star_big" />
-            </LinearLayout>
+            </com.cxb.tools.QQLevelLayout.QQLevelLayout>
         </RelativeLayout>
 
         <LinearLayout
@@ -99,7 +79,8 @@
             android:layout_marginBottom="15dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="20dp">
+            android:paddingLeft="20dp"
+            android:background="@drawable/selector_bg_selectable">
 
             <TextView
                 android:id="@+id/tv_menu_sign"
@@ -118,7 +99,6 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

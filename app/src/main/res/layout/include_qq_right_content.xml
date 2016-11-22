@@ -30,7 +30,7 @@
             android:layout_centerInParent="true"
             tl:tl_bar_color="#12B7F5"
             tl:tl_indicator_color="#ffffff"
-            tl:tl_indicator_corner_radius="2.5dp"
+            tl:tl_indicator_corner_radius="3dp"
             tl:tl_tab_padding="17dp"
             tl:tl_textSelectColor="#12B7F5" />
     </RelativeLayout>

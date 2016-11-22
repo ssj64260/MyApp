@@ -67,4 +67,7 @@
     <color name="s_attack">#14F1F6</color>
     <color name="s_defense">#0D50FC</color>
     <color name="speed">#E608FB</color>
+
+    <color name="black_pressed">#33FFFFFF</color>
+
 </resources>

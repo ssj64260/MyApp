@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cxb.tools.Glide.GlideCircleTransform;
+import com.cxb.tools.QQLevelLayout.QQLevelLayout;
 import com.cxb.tools.SlidingMenu.MySlidingMenu;
 import com.cxb.tools.SlidingMenu.SlidingMenuResUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
@@ -45,6 +46,7 @@ public class QQMainActivity extends BaseActivity {
     private QQMainAdapter adapter;
 
 
+    private QQLevelLayout qqLevel;
     private ImageView ivBackground;
     private ImageView ivScan;
     private ImageView ivMenuAvatar;
@@ -79,6 +81,7 @@ public class QQMainActivity extends BaseActivity {
     private void initLeftView() {
         leftView = findViewById(R.id.include_menu);
 
+        qqLevel = (QQLevelLayout) leftView.findViewById(R.id.qql_qq_level);
         ivBackground = (ImageView) leftView.findViewById(R.id.iv_menu_background);
         ivScan = (ImageView) leftView.findViewById(R.id.iv_menu_scan);
         ivMenuAvatar = (ImageView) leftView.findViewById(R.id.iv_menu_avatar);
@@ -91,9 +94,10 @@ public class QQMainActivity extends BaseActivity {
         llSign.setOnClickListener(leftClick);
 
         tvMenuName.setText("COKU");
+        qqLevel.setLevel(59);
 
         GlideCircleTransform transform = new GlideCircleTransform(this)
-                .setBorderThickness(5)
+                .setBorderThickness(11)
                 .setColor(255, 255, 255, 1);
 
         Glide.with(this).load(R.mipmap.app_icon)

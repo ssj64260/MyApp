@@ -8,7 +8,7 @@ import android.util.TypedValue;
 
 public class DisplayUtil {
 
-    private static DisplayMetrics getMetrics(Context context){
+    public static DisplayMetrics getMetrics(Context context){
         return context.getResources().getDisplayMetrics();
     }
 

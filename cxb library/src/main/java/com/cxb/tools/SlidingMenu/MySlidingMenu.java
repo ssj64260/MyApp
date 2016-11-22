@@ -34,8 +34,8 @@ public class MySlidingMenu extends RelativeLayout {
     private int mMenuWidth;
     private int mContentWidth;
 
-    private final int spacePx = 80;//菜单右侧空位宽度
-    private final int shortTouchWidth = 1;//短触摸长度
+    private final int spacePx = 75;//菜单右侧空位宽度
+    private float shortTouchWidth = 5;//根据手机分辨率来决定 短触摸长度
     private final float backgroundAlpha = 0.6f;//遮蔽层透明度
 
     private int mLastX;//手指开始点击X坐标
@@ -59,6 +59,8 @@ public class MySlidingMenu extends RelativeLayout {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MySlidingMenu);
         haveShelter = ta.getBoolean(R.styleable.MySlidingMenu_shelter, true);
         ta.recycle();
+
+        shortTouchWidth = DisplayUtil.getMetrics(context).density;
 
         mScroller = new Scroller(context);
 
@@ -243,12 +245,14 @@ public class MySlidingMenu extends RelativeLayout {
     }
 
     private void closeMenu() {
+//        Log.d("有个APP - closeMenu", getScrollX() + "   " + (-getScrollX()));
         mScroller.startScroll(getScrollX(), 0, -getScrollX(), 0, 500);
         invalidate();
         isOpen = false;
     }
 
     private void openMenu() {
+//        Log.d("有个APP - openMenu", getScrollX() + "   " + (-mMenuWidth - getScrollX()));
         if (haveShelter) {
             shelter.setVisibility(VISIBLE);
         }

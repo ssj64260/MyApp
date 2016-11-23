@@ -20,7 +20,8 @@ import com.example.lenovo.myapp.okhttp.URLSetting;
  */
 public class SetPostUrlActivity extends BaseActivity {
 
-    private final String HOST = "itest.meishiyi.cn/index.php";
+//    private final String HOST = "itest.meishiyi.cn/index.php";
+    private final String HOST = "121.43.145.235/msy/api/index.php";
     private final String HOST_TRUE = "i.meishiyi.cn/index.php";
     private final String HOST_TEST = "192.168.199.173/meishiyi/api/index.php";
 

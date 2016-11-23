@@ -31,6 +31,10 @@ public class MeishiyiTableCall extends OkHttpAsynchApi {
         params = new HashMap<>();
         params.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
         params.put("user", "aiweitest");
+        params.put("e_access_token", "sACu425r6r45740A4tjmwSD466108Gy0a3f7");
+        params.put("eeId", "97");
+        params.put("timesId", "2935");
+        params.put("date", "2016-11-23");
         params.put("memberId", memberId);
 
         returnType = new TypeToken<List<TableBean>>() {

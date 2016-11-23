@@ -103,7 +103,7 @@ public class OkhttpTestActivity extends BaseActivity {
         okHttpAuthenticatior = new OkHttpAsynchApi("jesse", "password1")
                 .addListener(callBack);
 
-        tableCall.setParams("1");
+        tableCall.setParams("1719");
         tableCall.addListener(callBack);
     }
 
@@ -221,11 +221,11 @@ public class OkhttpTestActivity extends BaseActivity {
                             ToastUtil.toast("请求美食易餐位成功");
                             break;
                         case 9999:
-//                            GithubBean github = (GithubBean) dataObject;
-//                            Map<String, GithubBean.OkhttpTxt> map = github.getFiles();
-//                            for (Map.Entry<String, GithubBean.OkhttpTxt> entry : map.entrySet()) {
-//                                content += entry.getKey() + "\n" + entry.getValue().content + "\n";
-//                            }
+                            GithubBean github = (GithubBean) dataObject;
+                            Map<String, GithubBean.OkhttpTxt> map = github.getFiles();
+                            for (Map.Entry<String, GithubBean.OkhttpTxt> entry : map.entrySet()) {
+                                content += entry.getKey() + "\n" + entry.getValue().content + "\n";
+                            }
                             ToastUtil.toast("请求Github成功");
                             break;
                         case 9998:

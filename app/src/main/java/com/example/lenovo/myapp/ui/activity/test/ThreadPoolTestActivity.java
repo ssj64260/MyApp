@@ -199,6 +199,10 @@ public class ThreadPoolTestActivity extends BaseActivity {
         final Map<String, String> tabParams = new HashMap<>();
         tabParams.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
         tabParams.put("user", "aiweitest");
+        tabParams.put("e_access_token", "sACu425r6r45740A4tjmwSD466108Gy0a3f7");
+        tabParams.put("eeId", "97");
+        tabParams.put("timesId", "2935");
+        tabParams.put("date", "2016-11-23");
         tabParams.put("memberId", "1");
 
         for (int i = 0; i < 30; i++) {

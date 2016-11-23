@@ -48,7 +48,7 @@ public abstract class OkHttpBaseApi {
 
     OkHttpClient client;
 
-    boolean debug = false;//开启debug模式，打印log
+    boolean debug = true;//开启debug模式，打印log
 
     OkHttpBaseApi() {
         client = OkHttpClientManager.getInstance().getClient();

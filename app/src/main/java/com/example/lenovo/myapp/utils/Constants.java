@@ -6,7 +6,8 @@ package com.example.lenovo.myapp.utils;
 
 public class Constants {
 
-    public static final String DEBUG_URL = "itest.meishiyi.cn/index.php/";//测试链接
+//    public static final String DEBUG_URL = "itest.meishiyi.cn/index.php/";//测试链接
+    public static final String DEBUG_URL = "121.43.145.235/msy/api/index.php";//测试链接
     public static final String OFFICIAL_URL = "i.meishiyi.cn/index.php/";//正式链接
 
     //美食易广告

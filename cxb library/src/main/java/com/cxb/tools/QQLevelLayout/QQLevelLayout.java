@@ -39,8 +39,8 @@ public class QQLevelLayout extends LinearLayout {
     }
 
     public void setLevel(int level) {
-        if (level < 1) {
-            throw new IllegalAccessError("等级只能为正数");
+        if (level < 1 || level > 100) {
+            throw new IllegalAccessError("level must be (0,100]");
         }
 
         int curNum = level;

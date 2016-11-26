@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.base.BaseActivity;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.adapter.ViewPagerAdapter;
 
 import java.util.ArrayList;

@@ -12,7 +12,7 @@ import android.widget.Button;
 import com.cxb.tools.utils.AnimationUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.base.BaseActivity;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 
 
 public class AnimationTestActivity extends BaseActivity {

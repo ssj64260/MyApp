@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.base.BaseActivity;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 
 /**
  * 欢迎界面

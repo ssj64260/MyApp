@@ -13,7 +13,7 @@ import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.base.BaseActivity;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;

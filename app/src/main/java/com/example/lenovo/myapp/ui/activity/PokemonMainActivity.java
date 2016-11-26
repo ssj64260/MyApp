@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.base.BaseAppCompatActivity;
+import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.model.TabEntity;
 import com.example.lenovo.myapp.ui.fragment.DiscoveryFragment;
 import com.example.lenovo.myapp.ui.fragment.HomeFragment;

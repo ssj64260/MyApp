@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.base;
+package com.example.lenovo.myapp.ui.base;
 
 import android.content.Context;
 import android.os.Build;

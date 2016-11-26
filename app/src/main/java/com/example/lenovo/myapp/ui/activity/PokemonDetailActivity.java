@@ -20,7 +20,7 @@ import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.base.BaseActivity;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.model.CharacteristicBean;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PokemonNameBean;

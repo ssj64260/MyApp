@@ -1,6 +1,7 @@
 package com.example.lenovo.myapp.ui.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -10,8 +11,8 @@ import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.base.BaseActivity;
 import com.example.lenovo.myapp.okhttp.URLSetting;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 
 /**
  * Created by CXB on 16/8/20.
@@ -20,7 +21,7 @@ import com.example.lenovo.myapp.okhttp.URLSetting;
  */
 public class SetPostUrlActivity extends BaseActivity {
 
-//    private final String HOST = "itest.meishiyi.cn/index.php";
+    //    private final String HOST = "itest.meishiyi.cn/index.php";
     private final String HOST = "121.43.145.235/msy/api/index.php";
     private final String HOST_TRUE = "i.meishiyi.cn/index.php";
     private final String HOST_TEST = "192.168.199.173/meishiyi/api/index.php";
@@ -48,6 +49,17 @@ public class SetPostUrlActivity extends BaseActivity {
         findViewById(R.id.btn_clear_share).setOnClickListener(btnClick);
 
         findViewById(R.id.btn_test).setOnClickListener(btnClick);
+
+        setOnKeyboardChangeListener(new OnKeyboardChangeListener() {
+            @Override
+            public void onkeyboardChangelistener(boolean isShow) {
+                if (isShow) {
+                    Log.d("有个","键盘弹出");
+                } else {
+                    Log.d("有个","键盘收起来了");
+                }
+            }
+        });
     }
 
     View.OnClickListener btnClick = new View.OnClickListener() {

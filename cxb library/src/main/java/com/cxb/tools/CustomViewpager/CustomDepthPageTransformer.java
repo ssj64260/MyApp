@@ -1,10 +1,9 @@
-package com.example.lenovo.myapp.utils;
+package com.cxb.tools.CustomViewpager;
 
 import android.annotation.SuppressLint;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-
-import com.example.lenovo.myapp.R;
+import android.view.ViewGroup;
 
 /**
  * viewpager 仿UC头条动画
@@ -17,7 +16,15 @@ public class CustomDepthPageTransformer implements ViewPager.PageTransformer {
     public void transformPage(View view, float position) {
         int pageWidth = view.getWidth();
 
-        View childView = view.findViewById(R.id.rv_pm_list);
+        ViewGroup viewGroup = (ViewGroup) view;
+
+        int childCount = viewGroup.getChildCount();
+        View childView;
+        if (childCount > 0) {
+            childView = viewGroup.getChildAt(0);
+        } else {
+            return;
+        }
 
         if (position < -1) {// [-Infinity,-1)
             childView.setTranslationX(0);

@@ -10,7 +10,14 @@ import android.content.pm.PackageManager;
  */
 public class VersionUtil {
 
-    //比较两个version name大小
+
+    /**
+     * 比较两个version name大小
+     *
+     * @param curVersion 当前app版本号
+     * @param netVersion 网络获取的版本号
+     * @return true为有新版本，false为没有新版本
+     */
     public static boolean isNewVersionName(String curVersion, String netVersion) {
 
         if (!StringCheck.isEmpty(curVersion) && !StringCheck.isEmpty(netVersion)) {

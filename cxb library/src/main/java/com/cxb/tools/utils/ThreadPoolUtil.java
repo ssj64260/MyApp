@@ -39,10 +39,12 @@ public class ThreadPoolUtil {
         return instance;
     }
 
-    public static void init(int maxThread){
+    //设置最大线程数（建议在application里设置）
+    public static void init(int maxThread) {
         ThreadPoolUtil.maxThread = maxThread;
     }
 
+    //缓存线程池
     public void cachedExecute(Runnable runnable) {
         if (cachedThreadPool == null || cachedThreadPool.isShutdown()) {
             cachedThreadPool = Executors.newCachedThreadPool();
@@ -50,6 +52,7 @@ public class ThreadPoolUtil {
         cachedThreadPool.execute(runnable);
     }
 
+    //定长线程池
     public void fixedExecute(Runnable runnable) {
         if (fixedThreadPool == null || fixedThreadPool.isShutdown()) {
             fixedThreadPool = Executors.newFixedThreadPool(maxThread);
@@ -57,6 +60,13 @@ public class ThreadPoolUtil {
         fixedThreadPool.execute(runnable);
     }
 
+    /**
+     * 延迟执行线程池
+     *
+     * @param runnable 线程操作
+     * @param initialDelay 延迟时间
+     * @param timeUnit 时间类型（时，分，秒）
+     */
     public void scheduled(Runnable runnable, long initialDelay, TimeUnit timeUnit) {
         if (scheduledThreadPool == null || scheduledThreadPool.isShutdown()) {
             scheduledThreadPool = Executors.newScheduledThreadPool(maxThread);
@@ -64,6 +74,14 @@ public class ThreadPoolUtil {
         scheduledThreadPool.schedule(runnable, initialDelay, timeUnit);
     }
 
+    /**
+     * 初始延迟+周期线程池
+     *
+     * @param runnable 线程操作
+     * @param initialDelay 延迟时间
+     * @param period 周期时间
+     * @param timeUnit 时间类型（时，分，秒）
+     */
     public void scheduledRate(Runnable runnable, long initialDelay, long period, TimeUnit timeUnit) {
         if (scheduledThreadPool == null || scheduledThreadPool.isShutdown()) {
             scheduledThreadPool = Executors.newScheduledThreadPool(maxThread);
@@ -71,6 +89,15 @@ public class ThreadPoolUtil {
         scheduledThreadPool.scheduleAtFixedRate(runnable, initialDelay, period, timeUnit);
     }
 
+
+    /**
+     * 初始延迟+每次延迟线程池
+     *
+     * @param runnable 线程操作
+     * @param initialDelay 延迟时间
+     * @param delay 每次执行后延迟时间
+     * @param timeUnit 时间类型（时，分，秒）
+     */
     public void scheduledDelay(Runnable runnable, long initialDelay, long delay, TimeUnit timeUnit) {
         if (scheduledThreadPool == null || scheduledThreadPool.isShutdown()) {
             scheduledThreadPool = Executors.newScheduledThreadPool(maxThread);
@@ -78,6 +105,7 @@ public class ThreadPoolUtil {
         scheduledThreadPool.scheduleWithFixedDelay(runnable, initialDelay, delay, timeUnit);
     }
 
+    //单线程线程池
     public void singleExecute(Runnable runnable) {
         if (singleThreadExecutor == null || singleThreadExecutor.isShutdown()) {
             singleThreadExecutor = Executors.newSingleThreadExecutor();
@@ -101,6 +129,10 @@ public class ThreadPoolUtil {
         setShutDown(singleThreadExecutor, awaitTime);
     }
 
+    /**
+     * @param executorService 需要终止的线程池类型
+     * @param awaitTime 线程总执行时间，超时则终止（传入0则立刻终止）
+     */
     private void setShutDown(ExecutorService executorService, long awaitTime) {
         if (executorService != null) {
             try {

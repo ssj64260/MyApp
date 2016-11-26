@@ -1,7 +1,6 @@
 package com.cxb.tools.utils;
 
 import android.content.Context;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,9 +56,8 @@ public abstract class ToastUtil {
             toast = new Toast(context);
             toast.setView(toastView);
 
-            DisplayMetrics dm = context.getResources().getDisplayMetrics();
             // 屏幕高度（像素）
-            height = dm.heightPixels;
+            height = DisplayUtil.getMetrics(context).heightPixels;
         }
 
         /**

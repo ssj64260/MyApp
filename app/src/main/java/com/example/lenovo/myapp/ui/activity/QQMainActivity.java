@@ -1,10 +1,17 @@
 package com.example.lenovo.myapp.ui.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -12,6 +19,7 @@ import com.cxb.tools.Glide.GlideCircleTransform;
 import com.cxb.tools.QQLevelLayout.QQLevelLayout;
 import com.cxb.tools.SlidingMenu.MySlidingMenu;
 import com.cxb.tools.SlidingMenu.SlidingMenuResUtil;
+import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
@@ -54,6 +62,27 @@ public class QQMainActivity extends BaseActivity {
     private LinearLayout llSign;
     private TextView tvSign;
 
+    private RelativeLayout rlNetworkWarm;
+
+    BroadcastReceiver checkNetwork = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int networkStatus = NetworkUtil.checkNetWorkType(QQMainActivity.this);
+
+            switch (networkStatus) {
+                case NetworkUtil.NETWORK_NONE:
+                    rlNetworkWarm.setVisibility(View.VISIBLE);
+                    break;
+                case NetworkUtil.NETWORK_MOBILE:
+                    rlNetworkWarm.setVisibility(View.GONE);
+                    break;
+                case NetworkUtil.NETWORK_WIFI:
+                    rlNetworkWarm.setVisibility(View.GONE);
+                    break;
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +90,16 @@ public class QQMainActivity extends BaseActivity {
 
         initView();
 
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(checkNetwork, intentFilter);
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(checkNetwork);
+        super.onDestroy();
     }
 
     private void initView() {
@@ -126,6 +165,9 @@ public class QQMainActivity extends BaseActivity {
 
         ivMainAvatar.setOnClickListener(rightClick);
 
+        rlNetworkWarm = (RelativeLayout) findViewById(R.id.rl_network_warnning);
+        rlNetworkWarm.setOnClickListener(rightClick);
+
         recyclerView = (XRecyclerView) rightView.findViewById(R.id.xrv_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.showFooter(false);
@@ -185,6 +227,9 @@ public class QQMainActivity extends BaseActivity {
             switch (v.getId()) {
                 case R.id.iv_main_avatar:
                     smMain.toggleMenu();
+                    break;
+                case R.id.rl_network_warnning:
+                    startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
                     break;
             }
         }

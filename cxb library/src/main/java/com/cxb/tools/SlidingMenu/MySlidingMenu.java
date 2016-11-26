@@ -10,7 +10,6 @@ import android.widget.Scroller;
 
 import com.cxb.tools.R;
 import com.cxb.tools.utils.DisplayUtil;
-import com.cxb.tools.utils.ScreenUtils;
 
 /**
  * 侧滑菜单
@@ -64,8 +63,8 @@ public class MySlidingMenu extends RelativeLayout {
 
         mScroller = new Scroller(context);
 
-        mScreenWidth = ScreenUtils.getScreenWidth(context);
-        mScreenHeight = ScreenUtils.getScreenHeight(context);
+        mScreenWidth = DisplayUtil.getScreenWidth(context);
+        mScreenHeight = DisplayUtil.getScreenHeight(context);
         //设置Menu距离屏幕右侧的距离，convertToDp是将代码中的100转换成100dp
         mMenuRightPadding = DisplayUtil.convertToDp(context, spacePx);
 

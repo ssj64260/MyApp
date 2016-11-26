@@ -17,7 +17,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.adapter.MyPagerAdapter;
-import com.example.lenovo.myapp.utils.CustomDepthPageTransformer;
+import com.cxb.tools.CustomViewpager.CustomDepthPageTransformer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

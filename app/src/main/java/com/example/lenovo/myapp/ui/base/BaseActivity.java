@@ -5,7 +5,6 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,6 +23,8 @@ public class BaseActivity extends Activity {
     private InputMethodManager manager;
 
     private OnKeyboardChangeListener mOnKeyboardChangeListener;
+
+    private boolean curIsShow = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,12 +87,13 @@ public class BaseActivity extends Activity {
             int screenHeight = DisplayUtil.getScreenHeight(MyApplication.getInstance());
             int heightDifference = screenHeight - (r.bottom - r.top);
 
-            Log.d("有个", screenHeight + "-" + (r.bottom - r.top) + "=" + heightDifference);
+//            Log.d("有个", screenHeight + "-" + (r.bottom - r.top) + "=" + heightDifference);
 
             boolean isShow = heightDifference > screenHeight / 3;
 
-            if (mOnKeyboardChangeListener != null) {
+            if (mOnKeyboardChangeListener != null && ((!curIsShow && isShow) || curIsShow && !isShow)) {
                 mOnKeyboardChangeListener.onkeyboardChangelistener(isShow);
+                curIsShow = isShow;
             }
         }
     };

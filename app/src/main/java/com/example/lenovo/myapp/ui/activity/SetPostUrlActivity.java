@@ -1,7 +1,6 @@
 package com.example.lenovo.myapp.ui.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -53,11 +52,7 @@ public class SetPostUrlActivity extends BaseActivity {
         setOnKeyboardChangeListener(new OnKeyboardChangeListener() {
             @Override
             public void onkeyboardChangelistener(boolean isShow) {
-                if (isShow) {
-                    Log.d("有个","键盘弹出");
-                } else {
-                    Log.d("有个","键盘收起来了");
-                }
+                ToastUtil.toast(isShow ? "键盘弹起" : "键盘收起");
             }
         });
     }

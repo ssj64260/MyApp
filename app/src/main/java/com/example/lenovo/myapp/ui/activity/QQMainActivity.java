@@ -39,7 +39,7 @@ import java.util.List;
 
 public class QQMainActivity extends BaseActivity {
 
-    private String[] titles = {"消息", "电话"};
+    private final String[] titles = {"消息", "电话"};
 
     private SegmentTabLayout titleTab;
 

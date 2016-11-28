@@ -26,7 +26,6 @@ public class IntroductionActivity extends BaseActivity {
 
     private List<ImageView> pointList;
 
-
     private static final int[] pics = {
             R.mipmap.img_instinct,
             R.mipmap.img_valor,

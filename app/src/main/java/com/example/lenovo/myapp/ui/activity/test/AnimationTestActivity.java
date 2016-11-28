@@ -9,10 +9,18 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import com.cxb.tools.utils.AnimationUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+
+import static android.view.View.ROTATION;
+import static android.view.View.ROTATION_X;
+import static android.view.View.ROTATION_Y;
+import static android.view.View.SCALE_X;
+import static android.view.View.SCALE_Y;
+import static android.view.View.TRANSLATION_X;
+import static android.view.View.TRANSLATION_Y;
+import static com.cxb.tools.utils.AnimationUtil.BACKGROUND_COLOR;
 
 
 public class AnimationTestActivity extends BaseActivity {
@@ -42,25 +50,25 @@ public class AnimationTestActivity extends BaseActivity {
 
                 AnimatorSet animatorSet = new AnimatorSet();
 
-                ObjectAnimator translationY = ObjectAnimator.ofFloat(btnB, AnimationUtil.translationY, 0f, 100f, 50f, 150f, 80f, 200f, 180f, 400f);
+                ObjectAnimator translationY = ObjectAnimator.ofFloat(btnB, TRANSLATION_Y, 0f, 100f, 50f, 150f, 80f, 200f, 180f, 400f);
                 translationY.setDuration(4000);
-                ObjectAnimator translationX = ObjectAnimator.ofFloat(btnB, AnimationUtil.translationX, 0f, 200f);
+                ObjectAnimator translationX = ObjectAnimator.ofFloat(btnB, TRANSLATION_X, 0f, 200f);
                 translationX.setDuration(4000);
 
-                ObjectAnimator scaleX = ObjectAnimator.ofFloat(btnB, AnimationUtil.scaleX, 1f, 2f, 1f);
+                ObjectAnimator scaleX = ObjectAnimator.ofFloat(btnB, SCALE_X, 1f, 2f, 1f);
                 scaleX.setDuration(2000);
-                ObjectAnimator scaleY = ObjectAnimator.ofFloat(btnB, AnimationUtil.scaleY, 1f, 2f, 1f);
+                ObjectAnimator scaleY = ObjectAnimator.ofFloat(btnB, SCALE_Y, 1f, 2f, 1f);
                 scaleY.setDuration(2000);
 
-                ObjectAnimator rotation = ObjectAnimator.ofFloat(btnB, AnimationUtil.rotation, 0f, 360f);
+                ObjectAnimator rotation = ObjectAnimator.ofFloat(btnB, ROTATION, 0f, 360f);
                 rotation.setDuration(2000);
 
-                ObjectAnimator rotationX = ObjectAnimator.ofFloat(btnB, AnimationUtil.rotationX, 0f, 180f);
+                ObjectAnimator rotationX = ObjectAnimator.ofFloat(btnB, ROTATION_X, 0f, 180f);
                 rotationX.setDuration(2000);
-                ObjectAnimator rotationY = ObjectAnimator.ofFloat(btnB, AnimationUtil.rotationY, 0f, 180f);
+                ObjectAnimator rotationY = ObjectAnimator.ofFloat(btnB, ROTATION_Y, 0f, 180f);
                 rotationY.setDuration(2000);
 
-                ObjectAnimator backgroundColor = ObjectAnimator.ofInt(btnB, AnimationUtil.backgroundColor, Color.parseColor("#FFFFFF00"), Color.parseColor("#FFFF0000"));
+                ObjectAnimator backgroundColor = ObjectAnimator.ofInt(btnB, BACKGROUND_COLOR, Color.parseColor("#FFFFFF00"), Color.parseColor("#FFFF0000"));
                 backgroundColor.setDuration(10000);
 
                 animatorSet.play(translationY).with(translationX);
@@ -83,7 +91,7 @@ public class AnimationTestActivity extends BaseActivity {
             public void onClick(View v) {
                 ToastUtil.toast("C");
 
-                ObjectAnimator translationY = ObjectAnimator.ofFloat(btnC, AnimationUtil.translationY, 0f, 50f, 0f);
+                ObjectAnimator translationY = ObjectAnimator.ofFloat(btnC, TRANSLATION_Y, 0f, 50f, 0f);
                 translationY.setDuration(500);
                 translationY.setRepeatCount(-1);
                 translationY.start();

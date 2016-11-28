@@ -1,8 +1,12 @@
 package com.example.lenovo.myapp.okhttp;
 
-import com.cxb.tools.utils.PreferencesUtil;
+import com.example.lenovo.myapp.utils.PreferencesUtil;
 import com.example.lenovo.myapp.MyApplication;
-import com.example.lenovo.myapp.utils.Constants;
+
+import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_BASE_URL;
+import static com.example.lenovo.myapp.utils.Constants.DEBUG_URL;
+import static com.example.lenovo.myapp.utils.Constants.OFFICIAL_URL;
 
 /**
  * 请求链接设置
@@ -33,20 +37,15 @@ public class URLSetting {
     }
 
     public void setBaseUrl(String baseUrl) {
-        PreferencesUtil.setString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, baseUrl);
+        PreferencesUtil.setData(APP_SETTING, KEY_BASE_URL, baseUrl);
         setUrl();
     }
 
-    public void resetBaseUrl() {
-        PreferencesUtil.clearData(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL);
-        setUrl();
-    }
-
-    private void setUrl() {
+    public void setUrl() {
         if (MyApplication.isApkDebugable()) {
-            baseUrl = PreferencesUtil.getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, Constants.DEBUG_URL);
+            baseUrl = PreferencesUtil.getString(APP_SETTING, KEY_BASE_URL, DEBUG_URL);
         } else {
-            baseUrl = Constants.OFFICIAL_URL;
+            baseUrl = OFFICIAL_URL;
         }
     }
 

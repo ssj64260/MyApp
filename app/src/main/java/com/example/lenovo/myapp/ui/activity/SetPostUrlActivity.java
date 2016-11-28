@@ -4,14 +4,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.cxb.tools.utils.PreferencesUtil;
+import com.example.lenovo.myapp.utils.PreferencesUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
-import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+
+import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_BASE_URL;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.USER_INFO;
+import static com.example.lenovo.myapp.utils.Constants.CUSTOM_URL;
+import static com.example.lenovo.myapp.utils.Constants.DEBUG_URL;
+import static com.example.lenovo.myapp.utils.Constants.OFFICIAL_URL;
 
 /**
  * Created by CXB on 16/8/20.
@@ -19,11 +25,6 @@ import com.example.lenovo.myapp.ui.base.BaseActivity;
  * 设置接口url
  */
 public class SetPostUrlActivity extends BaseActivity {
-
-    //    private final String HOST = "itest.meishiyi.cn/index.php";
-    private final String HOST = "121.43.145.235/msy/api/index.php";
-    private final String HOST_TRUE = "i.meishiyi.cn/index.php";
-    private final String HOST_TEST = "192.168.199.173/meishiyi/api/index.php";
 
     private EditText urlText;
 
@@ -34,7 +35,7 @@ public class SetPostUrlActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_post_url);
 
-        curUrl = PreferencesUtil.getString(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL, HOST);
+        curUrl = PreferencesUtil.getString(APP_SETTING, KEY_BASE_URL, DEBUG_URL);
 
         urlText = (EditText) findViewById(R.id.et_set_url);
 
@@ -62,13 +63,13 @@ public class SetPostUrlActivity extends BaseActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_use_default_url:
-                    urlText.setText(HOST);
+                    urlText.setText(DEBUG_URL);
                     break;
                 case R.id.btn_use_true_url:
-                    urlText.setText(HOST_TRUE);
+                    urlText.setText(OFFICIAL_URL);
                     break;
                 case R.id.btn_use_custom_url:
-                    urlText.setText(HOST_TEST);
+                    urlText.setText(CUSTOM_URL);
                     break;
                 case R.id.btn_set_confirm:
                     String url = urlText.getText().toString();
@@ -105,10 +106,12 @@ public class SetPostUrlActivity extends BaseActivity {
             @Override
             public void run() {
                 if (clearShare) {
-                    PreferencesUtil.clearData(MyApplication.getInstance(), PreferencesUtil.KEY_BASE_URL);
+                    PreferencesUtil.clearAll(APP_SETTING);
+                    PreferencesUtil.clearAll(USER_INFO);
                 }
 
-                URLSetting.getInstance().setBaseUrl(curUrl);
+                PreferencesUtil.setData(APP_SETTING, KEY_BASE_URL, curUrl);
+                URLSetting.getInstance().setUrl();
 
                 runOnUiThread(new Runnable() {
                     @Override

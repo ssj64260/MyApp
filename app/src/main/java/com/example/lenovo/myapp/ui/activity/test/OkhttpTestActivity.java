@@ -12,7 +12,6 @@ import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.ToastUtil;
 import com.cxb.tools.utils.VersionUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
@@ -20,7 +19,7 @@ import com.example.lenovo.myapp.model.testbean.TableBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.okhttp.call.MeishiyiTableCall;
 import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
-import com.example.lenovo.myapp.utils.Constants;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.google.gson.reflect.TypeToken;
 import com.orhanobut.logger.Logger;
 
@@ -28,6 +27,10 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.example.lenovo.myapp.utils.Constants.REQUEST_ID_MSY_AD;
+import static com.example.lenovo.myapp.utils.Constants.REQUEST_ID_MSY_TABLE;
+import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
 
 /**
  * okhttp 请求框架
@@ -122,10 +125,10 @@ public class OkhttpTestActivity extends BaseActivity {
                     Map<String, String> params = new HashMap<>();
                     params.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
                     params.put("user", "aiweitest");
-                    okHttpAsynchApi.setRequestId(Constants.REQUEST_ID_MSY_AD)
+                    okHttpAsynchApi.setRequestId(REQUEST_ID_MSY_AD)
                             .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
                             .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
-                            .getPath(Constants.URL_MSY_AD, params, returnType);
+                            .getPath(URL_MSY_AD, params, returnType);
                     break;
                 case R.id.btn_meishiyi_table:
                     tableCall.requestCall();
@@ -180,10 +183,10 @@ public class OkhttpTestActivity extends BaseActivity {
                         ToastUtil.toast(reason.getReason());
                     } else {
                         switch (requestId) {
-                            case Constants.REQUEST_ID_MSY_AD:
+                            case REQUEST_ID_MSY_AD:
                                 ToastUtil.toast("请求美食易广告失败");
                                 break;
-                            case Constants.REQUEST_ID_MSY_TABLE:
+                            case REQUEST_ID_MSY_TABLE:
                                 ToastUtil.toast("请求美食易餐位失败");
                                 break;
                             case 9999:
@@ -206,14 +209,14 @@ public class OkhttpTestActivity extends BaseActivity {
                     progressDialog.dismissDialog();
                     String content = "";
                     switch (requestId) {
-                        case Constants.REQUEST_ID_MSY_AD:
+                        case REQUEST_ID_MSY_AD:
                             List<AdBean> adTemp = (List<AdBean>) dataObject;
                             for (AdBean ad : adTemp) {
                                 content += ad.getPic_url() + "\n";
                             }
                             ToastUtil.toast("请求美食易广告成功");
                             break;
-                        case Constants.REQUEST_ID_MSY_TABLE:
+                        case REQUEST_ID_MSY_TABLE:
                             List<TableBean> timeTemp = (List<TableBean>) dataObject;
                             for (TableBean time : timeTemp) {
                                 content += time.getTableName() + "\n";

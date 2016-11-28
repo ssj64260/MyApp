@@ -6,9 +6,10 @@ package com.example.lenovo.myapp.utils;
 
 public class Constants {
 
-//    public static final String DEBUG_URL = "itest.meishiyi.cn/index.php/";//测试链接
-    public static final String DEBUG_URL = "121.43.145.235/msy/api/index.php";//测试链接
+    public static final String DEBUG_URL = "itest.meishiyi.cn/index.php/";//测试链接
+//    public static final String DEBUG_URL = "121.43.145.235/msy/api/index.php";//测试链接
     public static final String OFFICIAL_URL = "i.meishiyi.cn/index.php/";//正式链接
+    public static final String CUSTOM_URL = "192.168.199.173/meishiyi/api/index.php";//自定义链接
 
     //美食易广告
     public static final int REQUEST_ID_MSY_AD = 1000;

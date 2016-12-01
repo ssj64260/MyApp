@@ -16,7 +16,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
-import com.example.lenovo.myapp.model.testbean.TableBean;
+import com.example.lenovo.myapp.model.testbean.UserInfoBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.google.gson.reflect.TypeToken;
@@ -27,10 +27,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static com.example.lenovo.myapp.utils.Constants.REQUEST_ID_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.REQUEST_ID_MSY_TABLE;
+import static com.example.lenovo.myapp.utils.Constants.ID_MSY_AD;
+import static com.example.lenovo.myapp.utils.Constants.ID_BOSS_LOGIN;
 import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.URL_MSY_TABLE;
+import static com.example.lenovo.myapp.utils.Constants.URL_BOSS_LOGIN;
 
 /**
  * 线程池测试
@@ -182,7 +182,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
             @Override
             public void run() {
                 threadIndex++;
-                getAd.setRequestId(REQUEST_ID_MSY_AD)
+                getAd.setRequestId(ID_MSY_AD)
                         .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
                         .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
                         .getPath(URL_MSY_AD, params, returnType);
@@ -193,7 +193,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
     private void sequence() {
         final Type adType = new TypeToken<List<AdBean>>() {
         }.getType();
-        final Type tabType = new TypeToken<List<TableBean>>() {
+        final Type tabType = new TypeToken<List<UserInfoBean>>() {
         }.getType();
 
         final Map<String, String> adParams = new HashMap<>();
@@ -224,16 +224,16 @@ public class ThreadPoolTestActivity extends BaseActivity {
                                     .getPath("gists/c2a7c39532239ff261be", GithubBean.class);
                             break;
                         case 1:
-                            getAd.setRequestId(REQUEST_ID_MSY_AD)
+                            getAd.setRequestId(ID_MSY_AD)
                                     .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
                                     .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
                                     .getPath(URL_MSY_AD, adParams, adType);
                             break;
                         case 2:
-                            getList.setRequestId(REQUEST_ID_MSY_TABLE)
+                            getList.setRequestId(ID_BOSS_LOGIN)
                                     .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
                                     .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
-                                    .postParameters(URL_MSY_TABLE, tabParams, tabType);
+                                    .postParameters(URL_BOSS_LOGIN, tabParams, tabType);
                             break;
                     }
                 }
@@ -266,10 +266,10 @@ public class ThreadPoolTestActivity extends BaseActivity {
                     } else {
                         String content = tvContent.getText().toString();
                         switch (requestId) {
-                            case REQUEST_ID_MSY_AD:
+                            case ID_MSY_AD:
                                 tvContent.setText(content + threadIndex + "#请求美食易广告失败\n");
                                 break;
-                            case REQUEST_ID_MSY_TABLE:
+                            case ID_BOSS_LOGIN:
                                 tvContent.setText(content + threadIndex + "#请求美食易餐位失败\n");
                                 break;
                             case 9999:
@@ -293,10 +293,10 @@ public class ThreadPoolTestActivity extends BaseActivity {
                     progressDialog.dismissDialog();
                     String content = tvContent.getText().toString();
                     switch (requestId) {
-                        case REQUEST_ID_MSY_AD:
+                        case ID_MSY_AD:
                             tvContent.setText(content + threadIndex + "#请求美食易广告成功\n");
                             break;
-                        case REQUEST_ID_MSY_TABLE:
+                        case ID_BOSS_LOGIN:
                             tvContent.setText(content + threadIndex + "#请求美食易餐位成功\n");
                             break;
                         case 9999:

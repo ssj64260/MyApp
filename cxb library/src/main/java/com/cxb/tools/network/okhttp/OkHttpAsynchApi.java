@@ -61,16 +61,17 @@ public class OkHttpAsynchApi extends OkHttpBaseApi {
 
                 try {
                     String json = response.body().string();
+
+                    if (debug) {
+                        Logger.t(url.substring(url.lastIndexOf("/") + 1, url.contains("?") ? url.indexOf("?") : url.length())).json(json + "");
+                    }
+
                     Object bm;
                     if (returnType != null) {
                         Gson gson = new Gson();
                         bm = gson.fromJson(json, returnType);
                     } else {
                         bm = json;
-                    }
-
-                    if (debug) {
-                        Logger.t(url.substring(url.lastIndexOf("/") + 1, url.contains("?") ? url.indexOf("?") : url.length())).json(json + "");
                     }
 
                     if (callBack != null) {

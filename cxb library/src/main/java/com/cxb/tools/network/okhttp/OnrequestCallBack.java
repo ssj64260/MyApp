@@ -4,7 +4,7 @@ package com.cxb.tools.network.okhttp;
  * 请求回调接口
  */
 
-public class OnRequestCallBack {
+public interface OnRequestCallBack {
 
     public enum FailureReason {
         CANCELED("请求已取消"),
@@ -23,13 +23,10 @@ public class OnRequestCallBack {
         }
     }
 
-    public void onBefore(int requestId) {
-    }
+    public void onBefore(int requestId);
 
-    public void onFailure(int requestId, FailureReason reason) {
-    }
+    public void onFailure(int requestId, FailureReason reason);
 
-    public void onResponse(int requestId, Object dataObject, int networkCode) {
-    }
+    public void onResponse(int requestId, Object dataObject, int networkCode);
 
 }

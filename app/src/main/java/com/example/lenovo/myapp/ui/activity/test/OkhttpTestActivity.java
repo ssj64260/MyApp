@@ -9,15 +9,16 @@ import android.widget.EditText;
 import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
 import com.cxb.tools.network.okhttp.OkHttpBaseApi;
 import com.cxb.tools.network.okhttp.OnRequestCallBack;
+import com.cxb.tools.network.okhttp.ServiceResult;
 import com.cxb.tools.utils.ToastUtil;
 import com.cxb.tools.utils.VersionUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
-import com.example.lenovo.myapp.model.testbean.TableBean;
+import com.example.lenovo.myapp.model.testbean.UserInfoBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
-import com.example.lenovo.myapp.okhttp.call.MeishiyiTableCall;
+import com.example.lenovo.myapp.okhttp.call.BossLoginCall;
 import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.google.gson.reflect.TypeToken;
@@ -28,8 +29,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.example.lenovo.myapp.utils.Constants.REQUEST_ID_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.REQUEST_ID_MSY_TABLE;
+import static com.example.lenovo.myapp.utils.Constants.ID_MSY_AD;
+import static com.example.lenovo.myapp.utils.Constants.ID_BOSS_LOGIN;
 import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
 
 /**
@@ -49,7 +50,7 @@ public class OkhttpTestActivity extends BaseActivity {
     private EditText version1;
     private EditText version2;
 
-    private MeishiyiTableCall tableCall = new MeishiyiTableCall();
+    private BossLoginCall tableCall = new BossLoginCall();
     private OkHttpAsynchApi okHttpAsynchApi;
     private OkHttpAsynchApi okHttpAuthenticatior;
 
@@ -106,7 +107,7 @@ public class OkhttpTestActivity extends BaseActivity {
         okHttpAuthenticatior = new OkHttpAsynchApi("jesse", "password1")
                 .addListener(callBack);
 
-        tableCall.setParams("1719");
+        tableCall.setParams("13826414032", "123456");
         tableCall.addListener(callBack);
     }
 
@@ -125,7 +126,7 @@ public class OkhttpTestActivity extends BaseActivity {
                     Map<String, String> params = new HashMap<>();
                     params.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
                     params.put("user", "aiweitest");
-                    okHttpAsynchApi.setRequestId(REQUEST_ID_MSY_AD)
+                    okHttpAsynchApi.setRequestId(ID_MSY_AD)
                             .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
                             .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
                             .getPath(URL_MSY_AD, params, returnType);
@@ -183,10 +184,10 @@ public class OkhttpTestActivity extends BaseActivity {
                         ToastUtil.toast(reason.getReason());
                     } else {
                         switch (requestId) {
-                            case REQUEST_ID_MSY_AD:
+                            case ID_MSY_AD:
                                 ToastUtil.toast("请求美食易广告失败");
                                 break;
-                            case REQUEST_ID_MSY_TABLE:
+                            case ID_BOSS_LOGIN:
                                 ToastUtil.toast("请求美食易餐位失败");
                                 break;
                             case 9999:
@@ -209,19 +210,22 @@ public class OkhttpTestActivity extends BaseActivity {
                     progressDialog.dismissDialog();
                     String content = "";
                     switch (requestId) {
-                        case REQUEST_ID_MSY_AD:
+                        case ID_MSY_AD:
                             List<AdBean> adTemp = (List<AdBean>) dataObject;
                             for (AdBean ad : adTemp) {
                                 content += ad.getPic_url() + "\n";
                             }
                             ToastUtil.toast("请求美食易广告成功");
                             break;
-                        case REQUEST_ID_MSY_TABLE:
-                            List<TableBean> timeTemp = (List<TableBean>) dataObject;
-                            for (TableBean time : timeTemp) {
-                                content += time.getTableName() + "\n";
-                            }
-                            ToastUtil.toast("请求美食易餐位成功");
+                        case ID_BOSS_LOGIN:
+                            ServiceResult<UserInfoBean> sr = (ServiceResult<UserInfoBean>) dataObject;
+                            UserInfoBean userinfo = sr.getData();
+                            content += sr.getMsg() + ":" + sr.getCode() + "\n";
+                            content += userinfo.getBossid() + "\n";
+                            content += userinfo.getAccess_token() + "\n";
+                            content += userinfo.getIsfirst() + "\n";
+
+                            ToastUtil.toast("美食易BOSS登录成功");
                             break;
                         case 9999:
                             GithubBean github = (GithubBean) dataObject;

@@ -68,6 +68,13 @@
     <attr name="tl_textSelectColor" format="color"/>
     <!-- 设置字体未选中颜色 -->
     <attr name="tl_textUnselectColor" format="color"/>
+
+    <!--background-->
+    <!--设置背景选中颜色-->
+    <attr name="tl_backgroundSelectColor" format="color"/>
+    <!--设置背景未选中颜色-->
+    <attr name="tl_backgroundUnselectColor" format="color"/>
+
     <!-- 设置字体加粗 -->
     <attr name="tl_textBold" format="enum">
         <enum name="NONE" value="0"/>
@@ -152,6 +159,10 @@
         <attr name="tl_textUnselectColor"/>
         <attr name="tl_textBold"/>
         <attr name="tl_textAllCaps"/>
+
+        <!--background-->
+        <attr name="tl_backgroundSelectColor"/>
+        <attr name="tl_backgroundUnselectColor"/>
 
         <!-- icon -->
         <!-- 设置icon宽度 -->

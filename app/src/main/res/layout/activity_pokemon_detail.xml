@@ -67,6 +67,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/shape_bg_content_white"
+            tools:src="@mipmap/bg_ditto"
             android:padding="5dp" />
 
         <!--特性-->

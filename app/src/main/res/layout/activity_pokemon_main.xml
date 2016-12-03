@@ -3,22 +3,22 @@
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#11141A"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    android:background="#11141A">
+    android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/fl_fragment"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
-    </FrameLayout>
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/com_tablayout"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="#21262D"
+        tl:tl_backgroundSelectColor="#11141A"
         tl:tl_iconHeight="32dp"
         tl:tl_iconWidth="32dp"
         tl:tl_indicator_color="#000000"
@@ -27,6 +27,6 @@
         tl:tl_textUnselectColor="#66ffffff"
         tl:tl_textsize="12sp"
         tl:tl_underline_color="#DDDDDD"
-        tl:tl_underline_height="0dp"/>
+        tl:tl_underline_height="0dp" />
 
 </LinearLayout>

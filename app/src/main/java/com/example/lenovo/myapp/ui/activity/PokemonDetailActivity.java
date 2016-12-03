@@ -178,15 +178,14 @@ public class PokemonDetailActivity extends BaseActivity {
         final RequestManager requestManager = Glide.with(this);
         requestManager.load(url)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .placeholder(R.mipmap.bg_ditto)
-                .error(R.mipmap.bg_ditto)
                 .fitCenter()
+                .placeholder(R.mipmap.bg_ditto)
+                .dontAnimate()
                 .into(new GlideDrawableImageViewTarget(ivImage) {
                     @Override
                     public void onLoadFailed(Exception e, Drawable errorDrawable) {
                         super.onLoadFailed(e, errorDrawable);
                         requestManager.load(noBackgroundLogo)
-                                .placeholder(R.mipmap.bg_ditto)
                                 .error(R.mipmap.bg_ditto)
                                 .fitCenter()
                                 .into(ivImage);

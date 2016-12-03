@@ -20,9 +20,9 @@ public class StartupPageActivity extends BaseActivity {
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
-                try{
+                try {
                     Thread.sleep(1000);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 

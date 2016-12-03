@@ -29,6 +29,7 @@ import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
+import com.example.lenovo.myapp.ui.activity.test.DateTimeTestActivity;
 import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
@@ -283,6 +284,11 @@ public class MainActivity extends BaseAppCompatActivity {
                     Intent threadIntent = new Intent();
                     threadIntent.setClass(MainActivity.this, ThreadPoolTestActivity.class);
                     startActivity(threadIntent);
+                    break;
+                case R.id.nav_datetime_test:
+                    Intent datetimeIntent = new Intent();
+                    datetimeIntent.setClass(MainActivity.this, DateTimeTestActivity.class);
+                    startActivity(datetimeIntent);
                     break;
                 case R.id.nav_manage:
                     showTipsActionDialog();

@@ -306,7 +306,12 @@ public class ThreadPoolTestActivity extends BaseActivity {
                             tvContent.setText(content + threadIndex + "#验证请求成功\n");
                             break;
                     }
-                    svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                    tvContent.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                        }
+                    });
                 }
             });
         }

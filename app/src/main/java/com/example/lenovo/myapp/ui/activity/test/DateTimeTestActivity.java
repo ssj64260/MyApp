@@ -208,7 +208,12 @@ public class DateTimeTestActivity extends BaseActivity {
             }
 
             tvContent.setText(content);
-            svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+            tvContent.post(new Runnable() {
+                @Override
+                public void run() {
+                    svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+                }
+            });
         }
     };
 }

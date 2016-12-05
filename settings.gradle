@@ -1,1 +1,1 @@
-include ':app', ':xrecyclerview', ':cxb library', ':FlycoTabLayout_Lib'
+include ':app', ':xrecyclerview', ':cxb library', ':FlycoTabLayout_Lib', ':DateTimePicker_Lib'

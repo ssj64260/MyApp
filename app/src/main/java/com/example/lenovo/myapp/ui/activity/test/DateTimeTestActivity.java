@@ -3,11 +3,13 @@ package com.example.lenovo.myapp.ui.activity.test;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.android.datetimepicker.date.DatePickerDialog;
+import com.android.datetimepicker.time.RadialPickerLayout;
+import com.android.datetimepicker.time.TimePickerDialog;
 import com.cxb.tools.utils.DateTimeUtils;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
@@ -15,6 +17,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.orhanobut.logger.Logger;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -27,10 +30,10 @@ public class DateTimeTestActivity extends BaseActivity {
 
     private TextView tvContent;
 
-    private EditText etDate1;
-    private EditText etDate2;
-    private EditText etTime1;
-    private EditText etTime2;
+    private TextView tvDate1;
+    private TextView tvDate2;
+    private TextView tvTime1;
+    private TextView tvTime2;
 
     private Button btnGetDifTime;
     private Button btnGetDifDay;
@@ -55,10 +58,10 @@ public class DateTimeTestActivity extends BaseActivity {
         svBackground = (ScrollView) findViewById(R.id.sv_background);
 
         tvContent = (TextView) findViewById(R.id.tv_content);
-        etDate1 = (EditText) findViewById(R.id.et_date1);
-        etDate2 = (EditText) findViewById(R.id.et_date2);
-        etTime1 = (EditText) findViewById(R.id.et_time1);
-        etTime2 = (EditText) findViewById(R.id.et_time2);
+        tvDate1 = (TextView) findViewById(R.id.tv_date1);
+        tvDate2 = (TextView) findViewById(R.id.tv_date2);
+        tvTime1 = (TextView) findViewById(R.id.tv_time1);
+        tvTime2 = (TextView) findViewById(R.id.tv_time2);
 
         btnGetDifTime = (Button) findViewById(R.id.btn_get_difference_time);
         btnGetDifDay = (Button) findViewById(R.id.btn_get_difference_day);
@@ -68,16 +71,21 @@ public class DateTimeTestActivity extends BaseActivity {
 
         rgDate = (RadioGroup) findViewById(R.id.rg_date);
 
-        etDate1.setText("2016-11-24");
-        etDate2.setText("2016-11-24");
-        etTime1.setText("23:33:33");
-        etTime2.setText("23:33:33");
+        tvDate1.setText("2016-11-24");
+        tvDate2.setText("2016-11-24");
+        tvTime1.setText("23:33:33");
+        tvTime2.setText("23:33:33");
 
-        btnGetDifTime.setOnClickListener(click);
-        btnGetDifDay.setOnClickListener(click);
-        btnGetFriendlyDT.setOnClickListener(click);
-        btnGetDateTime.setOnClickListener(click);
-        btnClear.setOnClickListener(click);
+        tvDate1.setOnClickListener(textClick);
+        tvDate2.setOnClickListener(textClick);
+        tvTime1.setOnClickListener(textClick);
+        tvTime2.setOnClickListener(textClick);
+
+        btnGetDifTime.setOnClickListener(btnClick);
+        btnGetDifDay.setOnClickListener(btnClick);
+        btnGetFriendlyDT.setOnClickListener(btnClick);
+        btnGetDateTime.setOnClickListener(btnClick);
+        btnClear.setOnClickListener(btnClick);
 
         rgDate.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -161,16 +169,51 @@ public class DateTimeTestActivity extends BaseActivity {
         }
     }
 
-    private View.OnClickListener click = new View.OnClickListener() {
+    // textview点击监听
+    private View.OnClickListener textClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            switch (v.getId()) {
+                case R.id.tv_date1:
+                    String dateText1 = tvDate1.getText().toString();
+                    String timeText1 = tvTime1.getText().toString();
+                    String datetime1 = dateText1 + " " + timeText1;
+
+                    Calendar date1 = Calendar.getInstance();
+                    date1.setTime(DateTimeUtils.StringToDate(datetime1));
+
+                    DatePickerDialog.newInstance(dateSet, date1.get(Calendar.YEAR), date1.get(Calendar.MONTH), date1.get(Calendar.DAY_OF_MONTH)).show(getFragmentManager(), String.valueOf(v.getId()));
+                    break;
+                case R.id.tv_date2:
+                    String dateText2 = tvDate2.getText().toString();
+                    String timeText2 = tvTime2.getText().toString();
+                    String datetime2 = dateText2 + " " + timeText2;
+
+                    Calendar date2 = Calendar.getInstance();
+                    date2.setTime(DateTimeUtils.StringToDate(datetime2));
+
+                    DatePickerDialog.newInstance(dateSet, date2.get(Calendar.YEAR), date2.get(Calendar.MONTH), date2.get(Calendar.DAY_OF_MONTH)).show(getFragmentManager(), String.valueOf(v.getId()));
+                    break;
+                case R.id.tv_time1:
+                case R.id.tv_time2:
+
+                    break;
+            }
+        }
+    };
+
+    //按钮点击监听
+    private View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             String temp = "";
 
             String content = tvContent.getText().toString();
-            String dateText1 = etDate1.getText().toString();
-            String dateText2 = etDate2.getText().toString();
-            String timeText1 = etTime1.getText().toString();
-            String timeText2 = etTime2.getText().toString();
+            String dateText1 = tvDate1.getText().toString();
+            String dateText2 = tvDate2.getText().toString();
+            String timeText1 = tvTime1.getText().toString();
+            String timeText2 = tvTime2.getText().toString();
 
             String datetime1 = dateText1 + " " + timeText1;
             String datetime2 = dateText2 + " " + timeText2;
@@ -214,6 +257,26 @@ public class DateTimeTestActivity extends BaseActivity {
                     svBackground.fullScroll(ScrollView.FOCUS_DOWN);
                 }
             });
+        }
+    };
+
+    //日期选择监听
+    private DatePickerDialog.OnDateSetListener dateSet = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePickerDialog dialog, int year, int monthOfYear, int dayOfMonth) {
+            if (String.valueOf(R.id.tv_date1).equals(dialog.getTag())) {
+                tvDate1.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+            } else if (String.valueOf(R.id.tv_date2).equals(dialog.getTag())) {
+                tvDate2.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+            }
+        }
+    };
+
+    //时间选择监听
+    private TimePickerDialog.OnTimeSetListener timeSet = new TimePickerDialog.OnTimeSetListener() {
+        @Override
+        public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
+
         }
     };
 }

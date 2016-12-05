@@ -29,4 +29,5 @@ dependencies {
     compile project(':xrecyclerview')
     compile project(':cxb library')
     compile project(':FlycoTabLayout_Lib')
+    compile project(':DateTimePicker_Lib')
 }

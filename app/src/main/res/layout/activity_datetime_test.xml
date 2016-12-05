@@ -54,16 +54,15 @@
                 android:gravity="center"
                 android:text="日期【1】" />
 
-            <EditText
-                android:id="@+id/et_date1"
+            <TextView
+                android:id="@+id/tv_date1"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1.2"
                 android:background="@drawable/shape_bg_stroke_gray"
+                android:gravity="center"
                 android:maxLength="10"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
+                android:maxLines="1" />
 
             <TextView
                 android:layout_width="50dp"
@@ -71,16 +70,15 @@
                 android:gravity="center"
                 android:text="时间【1】" />
 
-            <EditText
-                android:id="@+id/et_time1"
+            <TextView
+                android:id="@+id/tv_time1"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_bg_stroke_gray"
+                android:gravity="center"
                 android:maxLength="8"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
+                android:maxLines="1" />
 
         </LinearLayout>
 
@@ -88,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="1dp"
-            android:background="@color/black"/>
+            android:background="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,16 +99,15 @@
                 android:gravity="center"
                 android:text="日期【2】" />
 
-            <EditText
-                android:id="@+id/et_date2"
+            <TextView
+                android:id="@+id/tv_date2"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1.2"
                 android:background="@drawable/shape_bg_stroke_gray"
+                android:gravity="center"
                 android:maxLength="10"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
+                android:maxLines="1" />
 
             <TextView
                 android:layout_width="50dp"
@@ -118,16 +115,15 @@
                 android:gravity="center"
                 android:text="时间【2】" />
 
-            <EditText
-                android:id="@+id/et_time2"
+            <TextView
+                android:id="@+id/tv_time2"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_bg_stroke_gray"
+                android:gravity="center"
                 android:maxLength="8"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
+                android:maxLines="1" />
 
         </LinearLayout>
 
@@ -184,7 +180,7 @@
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                android:text="获取相差日期"/>
+                android:text="获取相差日期" />
 
             <Button
                 android:id="@+id/btn_get_difference_time"
@@ -198,6 +194,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <Button
                 android:id="@+id/btn_get_friendly_datetime"
                 android:layout_width="0dp"

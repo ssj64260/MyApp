@@ -181,7 +181,6 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
             @Override
             public void run() {
-                threadIndex++;
                 getAd.setRequestId(ID_MSY_AD)
                         .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
                         .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
@@ -215,7 +214,6 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
                 @Override
                 public void run() {
-                    threadIndex++;
                     switch (index % 3) {
                         case 0:
                             getGithub.setRequestId(9999)
@@ -265,6 +263,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
                         ToastUtil.toast(reason.getReason());
                     } else {
                         String content = tvContent.getText().toString();
+                        threadIndex++;
                         switch (requestId) {
                             case ID_MSY_AD:
                                 tvContent.setText(content + threadIndex + "#请求美食易广告失败\n");
@@ -292,6 +291,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 public void run() {
                     progressDialog.dismissDialog();
                     String content = tvContent.getText().toString();
+                    threadIndex++;
                     switch (requestId) {
                         case ID_MSY_AD:
                             tvContent.setText(content + threadIndex + "#请求美食易广告成功\n");

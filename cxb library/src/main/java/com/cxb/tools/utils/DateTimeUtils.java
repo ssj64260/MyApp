@@ -293,12 +293,7 @@ public class DateTimeUtils {
     // 日期字符串转时间对象（忽然年月日）
     public static Date StringToTimeIgnoreDate(String dateTimeStr) {
         try {
-            String[] dateTime = dateTimeStr.split(" ");
-            if (dateTime.length < 2) {
-                return null;
-            }
-
-            return enLongTimeFormat.parse(dateTime[1]);
+            return enLongTimeFormat.parse(dateTimeStr);
         } catch (ParseException e) {
             e.printStackTrace();
             return null;

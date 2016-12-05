@@ -175,19 +175,39 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="获取相差：" />
+
+            <Button
+                android:id="@+id/btn_get_difference_year"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="年份" />
+
+            <Button
+                android:id="@+id/btn_get_difference_month"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="月数" />
+
             <Button
                 android:id="@+id/btn_get_difference_day"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                android:text="获取相差日期" />
+                android:text="天数" />
 
             <Button
                 android:id="@+id/btn_get_difference_time"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                android:text="获取相差时间" />
+                android:text="分钟" />
 
         </LinearLayout>
 

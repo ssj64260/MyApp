@@ -19,6 +19,7 @@ package com.android.datetimepicker.date;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.format.DateUtils;
@@ -53,6 +54,8 @@ public class DatePickerDialog extends DialogFragment implements
         OnClickListener, DatePickerController {
 
     private static final String TAG = "DatePickerDialog";
+
+    private String parentId = "";
 
     private static final int UNINITIALIZED = -1;
     private static final int MONTH_AND_DAY_VIEW = 0;
@@ -118,7 +121,7 @@ public class DatePickerDialog extends DialogFragment implements
     public interface OnDateSetListener {
 
         /**
-         * @param view The view associated with this listener.
+         * @param dialog The view associated with this listener.
          * @param year The year that was set.
          * @param monthOfYear The month that was set (0-11) for compatibility
          *            with {@link java.util.Calendar}.
@@ -288,6 +291,16 @@ public class DatePickerDialog extends DialogFragment implements
     public void onPause() {
         super.onPause();
         mHapticFeedbackController.stop();
+    }
+
+    @Override
+    public void show(FragmentManager manager, String tag) {
+        parentId = tag;
+        super.show(manager, tag);
+    }
+
+    public String getParentId(){
+        return parentId;
     }
 
     private void setCurrentView(final int viewIndex) {

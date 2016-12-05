@@ -8,7 +8,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.datetimepicker.date.DatePickerDialog;
-import com.android.datetimepicker.time.RadialPickerLayout;
 import com.android.datetimepicker.time.TimePickerDialog;
 import com.cxb.tools.utils.DateTimeUtils;
 import com.cxb.tools.utils.StringCheck;
@@ -37,6 +36,8 @@ public class DateTimeTestActivity extends BaseActivity {
 
     private Button btnGetDifTime;
     private Button btnGetDifDay;
+    private Button btnGetDifMonth;
+    private Button btnGetDifYear;
     private Button btnGetFriendlyDT;
     private Button btnGetDateTime;
     private Button btnClear;
@@ -65,16 +66,21 @@ public class DateTimeTestActivity extends BaseActivity {
 
         btnGetDifTime = (Button) findViewById(R.id.btn_get_difference_time);
         btnGetDifDay = (Button) findViewById(R.id.btn_get_difference_day);
+        btnGetDifMonth = (Button) findViewById(R.id.btn_get_difference_month);
+        btnGetDifYear = (Button) findViewById(R.id.btn_get_difference_year);
         btnGetFriendlyDT = (Button) findViewById(R.id.btn_get_friendly_datetime);
         btnGetDateTime = (Button) findViewById(R.id.btn_get_current_datetime);
         btnClear = (Button) findViewById(R.id.btn_clear);
 
         rgDate = (RadioGroup) findViewById(R.id.rg_date);
 
-        tvDate1.setText("2016-11-24");
-        tvDate2.setText("2016-11-24");
-        tvTime1.setText("23:33:33");
-        tvTime2.setText("23:33:33");
+        String date = DateTimeUtils.getEnDate();
+        String time = DateTimeUtils.getCurrentTime(DateTimeUtils.TimeType.MEDIUM);
+
+        tvDate1.setText(date);
+        tvDate2.setText(date);
+        tvTime1.setText(time);
+        tvTime2.setText(time);
 
         tvDate1.setOnClickListener(textClick);
         tvDate2.setOnClickListener(textClick);
@@ -83,6 +89,8 @@ public class DateTimeTestActivity extends BaseActivity {
 
         btnGetDifTime.setOnClickListener(btnClick);
         btnGetDifDay.setOnClickListener(btnClick);
+        btnGetDifMonth.setOnClickListener(btnClick);
+        btnGetDifYear.setOnClickListener(btnClick);
         btnGetFriendlyDT.setOnClickListener(btnClick);
         btnGetDateTime.setOnClickListener(btnClick);
         btnClear.setOnClickListener(btnClick);
@@ -177,27 +185,31 @@ public class DateTimeTestActivity extends BaseActivity {
             switch (v.getId()) {
                 case R.id.tv_date1:
                     String dateText1 = tvDate1.getText().toString();
-                    String timeText1 = tvTime1.getText().toString();
-                    String datetime1 = dateText1 + " " + timeText1;
-
                     Calendar date1 = Calendar.getInstance();
-                    date1.setTime(DateTimeUtils.StringToDate(datetime1));
+                    date1.setTime(DateTimeUtils.StringToDateIgnoreTime(dateText1));
 
                     DatePickerDialog.newInstance(dateSet, date1.get(Calendar.YEAR), date1.get(Calendar.MONTH), date1.get(Calendar.DAY_OF_MONTH)).show(getFragmentManager(), String.valueOf(v.getId()));
                     break;
                 case R.id.tv_date2:
                     String dateText2 = tvDate2.getText().toString();
-                    String timeText2 = tvTime2.getText().toString();
-                    String datetime2 = dateText2 + " " + timeText2;
-
                     Calendar date2 = Calendar.getInstance();
-                    date2.setTime(DateTimeUtils.StringToDate(datetime2));
+                    date2.setTime(DateTimeUtils.StringToDateIgnoreTime(dateText2));
 
                     DatePickerDialog.newInstance(dateSet, date2.get(Calendar.YEAR), date2.get(Calendar.MONTH), date2.get(Calendar.DAY_OF_MONTH)).show(getFragmentManager(), String.valueOf(v.getId()));
                     break;
                 case R.id.tv_time1:
-                case R.id.tv_time2:
+                    String timeText1 = tvTime1.getText().toString();
+                    Calendar time1 = Calendar.getInstance();
+                    time1.setTime(DateTimeUtils.StringToTimeIgnoreDate(timeText1));
 
+                    TimePickerDialog.newInstance(timeSet, time1.get(Calendar.HOUR_OF_DAY), time1.get(Calendar.MINUTE), true).show(getFragmentManager(), String.valueOf(v.getId()));
+                    break;
+                case R.id.tv_time2:
+                    String timeText2 = tvTime2.getText().toString();
+                    Calendar time2 = Calendar.getInstance();
+                    time2.setTime(DateTimeUtils.StringToTimeIgnoreDate(timeText2));
+
+                    TimePickerDialog.newInstance(timeSet, time2.get(Calendar.HOUR_OF_DAY), time2.get(Calendar.MINUTE), true).show(getFragmentManager(), String.valueOf(v.getId()));
                     break;
             }
         }
@@ -232,6 +244,16 @@ public class DateTimeTestActivity extends BaseActivity {
                         temp = "\n【getNumberOfDays】\n【相差" + DateTimeUtils.getNumberOfDays(date1, date2) + "天】\n";
                     }
                     break;
+                case R.id.btn_get_difference_month:
+                    if (checkDate(dateText1, dateText2) && checkTime(timeText1, timeText2)) {
+                        temp = "\n【getNumberOfMonth】\n【相差" + DateTimeUtils.getNumberOfMonth(date1, date2) + "个月】\n";
+                    }
+                    break;
+                case R.id.btn_get_difference_year:
+                    if (checkDate(dateText1, dateText2) && checkTime(timeText1, timeText2)) {
+                        temp = "\n【getNumberOfYear】\n【相差" + DateTimeUtils.getNumberOfYear(date1, date2) + "年】\n";
+                    }
+                    break;
                 case R.id.btn_get_friendly_datetime:
                     if (checkDate(dateText1) && checkTime(timeText1)) {
                         temp = "\n【getFriendlyDateTime】\n【" + DateTimeUtils.getFriendlyDateTime(maxRange, datetime1) + "】\n";
@@ -264,9 +286,9 @@ public class DateTimeTestActivity extends BaseActivity {
     private DatePickerDialog.OnDateSetListener dateSet = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePickerDialog dialog, int year, int monthOfYear, int dayOfMonth) {
-            if (String.valueOf(R.id.tv_date1).equals(dialog.getTag())) {
+            if (String.valueOf(R.id.tv_date1).equals(dialog.getParentId())) {
                 tvDate1.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
-            } else if (String.valueOf(R.id.tv_date2).equals(dialog.getTag())) {
+            } else if (String.valueOf(R.id.tv_date2).equals(dialog.getParentId())) {
                 tvDate2.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
             }
         }
@@ -275,8 +297,13 @@ public class DateTimeTestActivity extends BaseActivity {
     //时间选择监听
     private TimePickerDialog.OnTimeSetListener timeSet = new TimePickerDialog.OnTimeSetListener() {
         @Override
-        public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
-
+        public void onTimeSet(TimePickerDialog dialog, int hourOfDay, int minute) {
+            int second = (int) (Math.random() * 60);
+            if (String.valueOf(R.id.tv_time1).equals(dialog.getParentId())) {
+                tvTime1.setText(hourOfDay + ":" + minute + ":" + second);
+            } else if (String.valueOf(R.id.tv_time2).equals(dialog.getParentId())) {
+                tvTime2.setText(hourOfDay + ":" + minute + ":" + second);
+            }
         }
     };
 }

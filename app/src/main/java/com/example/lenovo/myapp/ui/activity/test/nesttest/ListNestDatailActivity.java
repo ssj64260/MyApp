@@ -3,6 +3,7 @@ package com.example.lenovo.myapp.ui.activity.test.nesttest;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -217,7 +218,7 @@ public class ListNestDatailActivity extends BaseActivity {
         }
 
         rtoAdapter = new RecyclerToOtherAdapter(this, nestList, listType);
-        rvRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rvRecycler.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         rvRecycler.setAdapter(rtoAdapter);
 
         pmAdapter = new PokemenListAdapter(this, scrollList, "all");

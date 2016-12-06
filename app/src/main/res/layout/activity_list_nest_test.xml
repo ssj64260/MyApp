@@ -37,21 +37,21 @@
                 android:id="@+id/btn_recycler_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RecyclerView 嵌套 ListView"
+                android:text="RecyclerView 嵌套 ListView（瀑布流）"
                 android:textAllCaps="false"/>
 
             <Button
                 android:id="@+id/btn_recycler_grid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RecyclerView 嵌套 GridView"
+                android:text="RecyclerView 嵌套 GridView（瀑布流）"
                 android:textAllCaps="false"/>
 
             <Button
                 android:id="@+id/btn_recycler_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RecyclerView 嵌套 RecyclerView"
+                android:text="RecyclerView 嵌套 RecyclerView（瀑布流）"
                 android:textAllCaps="false"/>
 
             <Button

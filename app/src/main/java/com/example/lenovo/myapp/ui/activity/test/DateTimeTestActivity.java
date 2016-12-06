@@ -134,12 +134,13 @@ public class DateTimeTestActivity extends BaseActivity {
         content += "SHORT: \t" + DateTimeUtils.getCurrentDateTime(DateTimeUtils.DateType.SHORT, DateTimeUtils.TimeType.SHORT) + "\n";
 
         content += "\n【custom】\n";
-        content += "getEnDate:       \t" + DateTimeUtils.getEnDate() + "\n";
-        content += "getEnNotYearDate:\t" + DateTimeUtils.getEnNotYearDate() + "\n";
-        content += "getCnNotYearDate:\t" + DateTimeUtils.getCnNotYearDate() + "\n";
-        content += "getCnLongTime:   \t" + DateTimeUtils.getCnLongTime() + "\n";
-        content += "getCnShortTime:  \t" + DateTimeUtils.getCnShortTime() + "\n";
-        content += "getCnWeek:       \t" + DateTimeUtils.getCnWeek() + "\n";
+        content += "getEnLongDateTime:\t" + DateTimeUtils.getEnLongDateTime() + "\n";
+        content += "getEnDate:        \t" + DateTimeUtils.getEnDate() + "\n";
+        content += "getEnNotYearDate: \t" + DateTimeUtils.getEnNotYearDate() + "\n";
+        content += "getCnNotYearDate: \t" + DateTimeUtils.getCnNotYearDate() + "\n";
+        content += "getCnLongTime:    \t" + DateTimeUtils.getCnLongTime() + "\n";
+        content += "getCnShortTime:   \t" + DateTimeUtils.getCnShortTime() + "\n";
+        content += "getCnWeek:        \t" + DateTimeUtils.getCnWeek() + "\n";
 
         return content;
 

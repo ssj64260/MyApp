@@ -61,7 +61,7 @@ public class DateTimeUtils {
     public enum MaxRange {
         DAY,
         MONTH,
-        YEAR;
+        YEAR
     }
 
     // 获取当前日期，格式根据datetype决定
@@ -203,20 +203,7 @@ public class DateTimeUtils {
 
     //获取两个日期的年份差（忽略时分秒）
     public static int getNumberOfYear(Date date1, Date date2) {
-        if (date1 == null || date2 == null) {
-            throw new IllegalAccessError("string can not convert date");
-        } else {
-            Calendar calendar1 = Calendar.getInstance();
-            Calendar calendar2 = Calendar.getInstance();
-
-            calendar1.setTime(date1);
-            calendar2.setTime(date2);
-
-            int year1 = calendar1.get(Calendar.YEAR);
-            int year2 = calendar2.get(Calendar.YEAR);
-
-            return year1 - year2;
-        }
+        return getNumberOfMonth(date1, date2) / 12;
     }
 
     //获取两个日期的月数差（忽略时分秒）
@@ -257,7 +244,7 @@ public class DateTimeUtils {
         }
     }
 
-    // 获取两个时间的分钟差（忽略年月日）
+    // 获取两个时间的分钟差
     public static int getNumberOfMinute(Date time1, Date time2) {
         if (time1 == null || time2 == null) {
             throw new IllegalAccessError("string can not convert date");

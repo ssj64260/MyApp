@@ -129,19 +129,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:gravity="center_vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:text="最大范围：" />
+            <Button
+                android:id="@+id/btn_get_friendly_datetime"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="友好时间【1】" />
 
             <RadioGroup
                 android:id="@+id/rg_date"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_width="0dp"
+                android:layout_weight="1.3"
+                android:layout_height="45dp"
                 android:checkedButton="@+id/rb_year"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -209,18 +211,6 @@
                 android:layout_weight="1"
                 android:text="分钟" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btn_get_friendly_datetime"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:text="获取友好时间【1】" />
         </LinearLayout>
 
         <LinearLayout

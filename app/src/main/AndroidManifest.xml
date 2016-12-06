@@ -80,6 +80,14 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".ui.activity.test.nesttest.ListNestTestActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.test.nesttest.ListNestDatailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".ui.activity.SetPostUrlActivity"
             android:screenOrientation="portrait" />
 

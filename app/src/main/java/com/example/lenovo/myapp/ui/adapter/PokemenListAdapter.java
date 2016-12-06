@@ -148,7 +148,6 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         private TextView tvName;
         private TextView tvProperty1;
         private TextView tvProperty2;
-        private TextView tvCharacteristic;
 
         public PmViewHolder(View itemView) {
             super(itemView);

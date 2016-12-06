@@ -20,6 +20,7 @@
     <string name="menu_nav_dialog_test">对话框测试</string>
     <string name="menu_nav_thread_pool_test">线程池测试</string>
     <string name="menu_nav_datetime_test">日期工具测试</string>
+    <string name="menu_nav_list_nest_test">列表嵌套测试</string>
     <string name="menu_nav_manage">设置</string>
     <string name="menu_nav_title">互动</string>
     <string name="menu_nav_share">分享</string>

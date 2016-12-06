@@ -30,6 +30,7 @@ import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.activity.test.DateTimeTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
@@ -289,6 +290,11 @@ public class MainActivity extends BaseAppCompatActivity {
                     Intent datetimeIntent = new Intent();
                     datetimeIntent.setClass(MainActivity.this, DateTimeTestActivity.class);
                     startActivity(datetimeIntent);
+                    break;
+                case R.id.nav_list_nest_test:
+                    Intent nestIntent = new Intent();
+                    nestIntent.setClass(MainActivity.this, ListNestTestActivity.class);
+                    startActivity(nestIntent);
                     break;
                 case R.id.nav_manage:
                     showTipsActionDialog();

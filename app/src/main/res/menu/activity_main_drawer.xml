@@ -37,6 +37,11 @@
             android:title="@string/menu_nav_datetime_test"/>
 
         <item
+            android:id="@+id/nav_list_nest_test"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_list_nest_test"/>
+
+        <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_nav_manage" />

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/meituan_green"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_list_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ListView 嵌套 ListView"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/btn_list_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ListView 嵌套 GridView"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/btn_list_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ListView 嵌套 RecyclerView"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/btn_recycler_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RecyclerView 嵌套 ListView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_recycler_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RecyclerView 嵌套 GridView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_recycler_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RecyclerView 嵌套 RecyclerView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_grid_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GridView 嵌套 ListView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_grid_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GridView 嵌套 GridView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_grid_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GridView 嵌套 RecyclerView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_scroll_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ScrollView 嵌套 ListView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_scroll_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ScrollView 嵌套 GridView"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_scroll_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ScrollView 嵌套 RecyclerView"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

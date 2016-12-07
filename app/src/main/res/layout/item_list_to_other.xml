@@ -23,13 +23,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.cxb.tools.CustomList.NoScrollListView
+        <ListView
             android:id="@+id/lv_item_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"/>
 
-        <com.cxb.tools.CustomList.NoScrollGridView
+        <GridView
             android:id="@+id/gv_item_grid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

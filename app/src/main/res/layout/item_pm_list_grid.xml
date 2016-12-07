@@ -12,11 +12,11 @@
     <RelativeLayout
         android:id="@+id/rl_list_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="55dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:background="#11141A"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/iv_pm_logo"
@@ -86,14 +86,5 @@
         </LinearLayout>
 
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/iv_big_logo"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:background="#11141A"
-        android:scaleType="fitCenter"
-        android:visibility="gone"/>
 
 </RelativeLayout>

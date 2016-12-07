@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -32,11 +31,8 @@ public class ListItemAdapter extends BaseAdapter {
     private RequestManager requestManager;
     private GlideCircleTransform transform;
 
-    private boolean isGrid;
-
-    public ListItemAdapter(Context context, List<PokemonBean> list, boolean isGrid) {
+    public ListItemAdapter(Context context, List<PokemonBean> list) {
         this.list = list;
-        this.isGrid = isGrid;
         inflater = LayoutInflater.from(context);
         requestManager = Glide.with(context);
         transform = new GlideCircleTransform(context)
@@ -64,8 +60,6 @@ public class ListItemAdapter extends BaseAdapter {
         if (convertView == null) {
             holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.item_pm_list_grid, parent, false);
-            holder.rlListItem = (RelativeLayout) convertView.findViewById(R.id.rl_list_item);
-            holder.ivBigLogo = (ImageView) convertView.findViewById(R.id.iv_big_logo);
             holder.ivLogo = (ImageView) convertView.findViewById(R.id.iv_pm_logo);
             holder.tvId = (TextView) convertView.findViewById(R.id.tv_pm_id);
             holder.tvName = (TextView) convertView.findViewById(R.id.tv_pm_name);
@@ -91,71 +85,48 @@ public class ListItemAdapter extends BaseAdapter {
         String genuineSmallLogo = "http://www.koudai8.com/pmdex/img/pm/cg/" + id + ".png";
         String detailWeb = "https://wiki.52poke.com/wiki/" + pm.getName();
 
-        String url;
+        requestManager.load(smallLogo)
+                .transform(transform)
+                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                .placeholder(R.mipmap.ic_no_image_circle)
+                .error(R.mipmap.ic_no_image_circle)
+                .into(holder.ivLogo);
 
-        if (isGrid) {
-            url = noBackgroundLogo;
+        holder.tvId.setText("No." + id);
+        holder.tvName.setText(pm.getName());
 
-            holder.rlListItem.setVisibility(View.GONE);
-            holder.ivBigLogo.setVisibility(View.VISIBLE);
+        List<PropertyBean> pList = pm.getProperty();
+        if (pList != null) {
+            if (pList.size() > 0) {
+                PropertyBean pb = pList.get(0);
 
-            requestManager.load(url)
-                    .transform(transform)
-                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                    .placeholder(R.mipmap.ic_no_image_circle)
-                    .error(R.mipmap.ic_no_image_circle)
-                    .into(holder.ivBigLogo);
-        } else {
-            url = smallLogo;
+                holder.tvProperty1.setText(pb.getName());
+                holder.tvProperty1.setVisibility(View.VISIBLE);
 
-            holder.rlListItem.setVisibility(View.VISIBLE);
-            holder.ivBigLogo.setVisibility(View.GONE);
-
-            requestManager.load(url)
-                    .transform(transform)
-                    .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                    .placeholder(R.mipmap.ic_no_image_circle)
-                    .error(R.mipmap.ic_no_image_circle)
-                    .into(holder.ivLogo);
-
-            holder.tvId.setText("No." + id);
-            holder.tvName.setText(pm.getName());
-
-            List<PropertyBean> pList = pm.getProperty();
-            if (pList != null) {
-                if (pList.size() > 0) {
-                    PropertyBean pb = pList.get(0);
-
-                    holder.tvProperty1.setText(pb.getName());
-                    holder.tvProperty1.setVisibility(View.VISIBLE);
-
-                    if (!StringCheck.isEmpty(pb.getId())) {
-                        holder.tvProperty1.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
-                    }
-                } else {
-                    holder.tvProperty1.setVisibility(View.GONE);
+                if (!StringCheck.isEmpty(pb.getId())) {
+                    holder.tvProperty1.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
                 }
-                if (pList.size() == 2) {
-                    PropertyBean pb = pList.get(1);
+            } else {
+                holder.tvProperty1.setVisibility(View.GONE);
+            }
+            if (pList.size() == 2) {
+                PropertyBean pb = pList.get(1);
 
-                    holder.tvProperty2.setText(pb.getName());
-                    holder.tvProperty2.setVisibility(View.VISIBLE);
+                holder.tvProperty2.setText(pb.getName());
+                holder.tvProperty2.setVisibility(View.VISIBLE);
 
-                    if (!StringCheck.isEmpty(pb.getId())) {
-                        holder.tvProperty2.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
-                    }
-                } else {
-                    holder.tvProperty2.setVisibility(View.GONE);
+                if (!StringCheck.isEmpty(pb.getId())) {
+                    holder.tvProperty2.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
                 }
+            } else {
+                holder.tvProperty2.setVisibility(View.GONE);
             }
         }
 
         return convertView;
     }
 
-    class ViewHolder {
-        private RelativeLayout rlListItem;
-        private ImageView ivBigLogo;
+    private class ViewHolder {
         private ImageView ivLogo;
         private TextView tvId;
         private TextView tvName;

@@ -193,7 +193,7 @@ public class ListNestDatailActivity extends BaseActivity {
             if (nestType == SCROLL_TO_LIST) {
                 lvScroll.setVisibility(View.VISIBLE);
 
-                stoAdapter = new ListItemAdapter(this, scrollList, false);
+                stoAdapter = new ListItemAdapter(this, scrollList);
                 lvScroll.setAdapter(stoAdapter);
                 lvScroll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -204,7 +204,7 @@ public class ListNestDatailActivity extends BaseActivity {
             } else if (nestType == SCROLL_TO_GRID) {
                 gvScroll.setVisibility(View.VISIBLE);
 
-                stoAdapter = new ListItemAdapter(this, scrollList, true);
+                stoAdapter = new ListItemAdapter(this, scrollList);
                 gvScroll.setAdapter(stoAdapter);
                 gvScroll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override

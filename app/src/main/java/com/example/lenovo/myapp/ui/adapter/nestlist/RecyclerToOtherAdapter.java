@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import com.cxb.tools.CustomList.NoScrollGridView;
-import com.cxb.tools.CustomList.NoScrollListView;
 import com.cxb.tools.CustomList.OnlyClickRecyclerview;
+import com.cxb.tools.utils.DisplayUtil;
+import com.cxb.tools.utils.ListFixedHeightUtils;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
@@ -72,9 +74,17 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         if (listType == RecyclerToOtherAdapter.ListType.LISTVIEW) {
             holder.lvItemList.setVisibility(View.VISIBLE);
+
+            int itemHeight = DisplayUtil.dip2px(context, 57);
+            ListFixedHeightUtils.getListViewHeight(holder.lvItemList, itemHeight, holder.pmList.size());
+
             holder.lvAdapter.notifyDataSetChanged();
         } else if (listType == RecyclerToOtherAdapter.ListType.GRIDVIEW) {
             holder.gvItemList.setVisibility(View.VISIBLE);
+
+            int itemHeight = DisplayUtil.dip2px(context, 57);
+            ListFixedHeightUtils.getGridViewHeight(holder.gvItemList, 2, itemHeight, holder.pmList.size());
+
             holder.gvAdapter.notifyDataSetChanged();
         } else if (listType == RecyclerToOtherAdapter.ListType.RECYCLERVIEW) {
             holder.rvItemList.setVisibility(View.VISIBLE);
@@ -89,8 +99,8 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     private class ListViewHolder extends RecyclerView.ViewHolder {
         private TextView tvTitle;
-        private NoScrollListView lvItemList;
-        private NoScrollGridView gvItemList;
+        private ListView lvItemList;
+        private GridView gvItemList;
         private OnlyClickRecyclerview rvItemList;
 
         private List<PokemonBean> pmList;
@@ -104,14 +114,14 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         private ListViewHolder(View view) {
             super(view);
             tvTitle = (TextView) view.findViewById(R.id.tv_title);
-            lvItemList = (NoScrollListView) view.findViewById(R.id.lv_item_list);
-            gvItemList = (NoScrollGridView) view.findViewById(R.id.gv_item_grid);
+            lvItemList = (ListView) view.findViewById(R.id.lv_item_list);
+            gvItemList = (GridView) view.findViewById(R.id.gv_item_grid);
             rvItemList = (OnlyClickRecyclerview) view.findViewById(R.id.rv_item_recycler);
 
             pmList = new ArrayList<>();
 
             if (listType == RecyclerToOtherAdapter.ListType.LISTVIEW) {
-                lvAdapter = new ListItemAdapter(context, pmList, false);
+                lvAdapter = new ListItemAdapter(context, pmList);
                 lvItemList.setAdapter(lvAdapter);
                 lvItemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -120,7 +130,7 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                     }
                 });
             } else if (listType == RecyclerToOtherAdapter.ListType.GRIDVIEW) {
-                gvAdapter = new ListItemAdapter(context, pmList, true);
+                gvAdapter = new ListItemAdapter(context, pmList);
                 gvItemList.setAdapter(gvAdapter);
                 gvItemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -129,19 +139,17 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                     }
                 });
             } else if (listType == RecyclerToOtherAdapter.ListType.RECYCLERVIEW) {
-                rvItemList.setVisibility(View.VISIBLE);
+                rvAdapter = new PokemenListAdapter(context, pmList, "all");
+                layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                rvItemList.setLayoutManager(layoutManager);
+                rvItemList.setAdapter(rvAdapter);
+                rvAdapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        ToastUtil.toast("RecyclerView：" + pmList.get(position).getName());
+                    }
+                });
             }
-
-            rvAdapter = new PokemenListAdapter(context, pmList, "all");
-            layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-            rvItemList.setLayoutManager(layoutManager);
-            rvItemList.setAdapter(rvAdapter);
-            rvAdapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
-                @Override
-                public void onItemClick(View view, int position) {
-                    ToastUtil.toast("RecyclerView：" + pmList.get(position).getName());
-                }
-            });
         }
     }
 

@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.widget.ListView;
 
 /**
- * 不滑动GridView （嵌套用）
+ * 不滑动GridView （用于嵌套滑动会卡顿）
  */
 
 public class NoScrollListView extends ListView {

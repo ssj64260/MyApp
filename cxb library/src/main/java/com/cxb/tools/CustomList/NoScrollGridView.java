@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.widget.GridView;
 
 /**
- * 不滑动GridView （嵌套用）
+ * 不滑动GridView （用于嵌套滑动会卡顿）
  */
 
 public class NoScrollGridView extends GridView {
@@ -26,6 +26,6 @@ public class NoScrollGridView extends GridView {
         //核心在此
         int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,
                 MeasureSpec.AT_MOST);
-        super.onMeasure(widthMeasureSpec, expandSpec + 50);
+        super.onMeasure(widthMeasureSpec, expandSpec);
     }
 }

@@ -42,21 +42,14 @@ public class ListNestDatailActivity extends BaseActivity {
 
     public static final String KEY_NEST_TYPE = "nest_type";
 
-    public static final int LIST_TO_LIST = 11;
-    public static final int LIST_TO_GRID = 12;
-    public static final int LIST_TO_RECYCLER = 13;
+    public static final int OUTER_LIST = 1 << 3;
+    public static final int OUTER_RECYCLER = 1 << 4;
+    public static final int OUTER_GRID = 1 << 5;
+    public static final int OUTER_SCROLL = 1 << 6;
 
-    public static final int RECYCLER_TO_LIST = 21;
-    public static final int RECYCLER_TO_GRID = 22;
-    public static final int RECYCLER_TO_RECYCLER = 23;
-
-    public static final int GRID_TO_LIST = 31;
-    public static final int GRID_TO_GRID = 32;
-    public static final int GRID_TO_RECYCLER = 33;
-
-    public static final int SCROLL_TO_LIST = 41;
-    public static final int SCROLL_TO_GRID = 42;
-    public static final int SCROLL_TO_RECYCLER = 43;
+    public static final int INNER_LIST = 1;
+    public static final int INNER_RECYCLER = 1 << 1;
+    public static final int INNER_GRID = 1 << 2;
 
     private int nestType;
 
@@ -96,7 +89,7 @@ public class ListNestDatailActivity extends BaseActivity {
     }
 
     private void initData() {
-        nestType = getIntent().getIntExtra(KEY_NEST_TYPE, LIST_TO_LIST);
+        nestType = getIntent().getIntExtra(KEY_NEST_TYPE, OUTER_LIST | INNER_LIST);
 
         String json = AssetsUtil.getAssetsTxtByName(this, "all");
         if (!StringCheck.isEmpty(json)) {
@@ -130,7 +123,7 @@ public class ListNestDatailActivity extends BaseActivity {
         }
 
         for (int i = 0; i < 5; i++) {
-            scrollList.add(pmList.get(i * nestType));
+            scrollList.add(pmList.get((int) ((i + 1) * Math.random() * 98)));
         }
 
     }
@@ -152,45 +145,45 @@ public class ListNestDatailActivity extends BaseActivity {
     private void setData() {
         tvBack.setOnClickListener(click);
 
-        if (nestType < 20) {
+        if (checkNestType(OUTER_LIST)) {
             lvList.setVisibility(View.VISIBLE);
 
-            if (nestType == LIST_TO_LIST) {
+            if (checkNestType(INNER_LIST)) {
                 ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.ListType.LISTVIEW);
                 lvList.setAdapter(ltoAdapter);
-            } else if (nestType == LIST_TO_GRID) {
+            } else if (checkNestType(INNER_GRID)) {
                 ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.ListType.GRIDVIEW);
                 lvList.setAdapter(ltoAdapter);
-            } else if (nestType == LIST_TO_RECYCLER) {
+            } else if (checkNestType(INNER_RECYCLER)) {
                 ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.ListType.RECYCLERVIEW);
                 lvList.setAdapter(ltoAdapter);
             }
-        } else if (nestType < 30) {
+        } else if (checkNestType(OUTER_RECYCLER)) {
             rvRecycler.setVisibility(View.VISIBLE);
 
-            if (nestType == RECYCLER_TO_LIST) {
+            if (checkNestType(INNER_LIST)) {
                 listType = RecyclerToOtherAdapter.ListType.LISTVIEW;
-            } else if (nestType == RECYCLER_TO_GRID) {
+            } else if (checkNestType(INNER_GRID)) {
                 listType = RecyclerToOtherAdapter.ListType.GRIDVIEW;
-            } else if (nestType == RECYCLER_TO_RECYCLER) {
+            } else if (checkNestType(INNER_RECYCLER)) {
                 listType = RecyclerToOtherAdapter.ListType.RECYCLERVIEW;
             }
-        } else if (nestType < 40) {
+        } else if (checkNestType(OUTER_GRID)) {
             gvGrid.setVisibility(View.VISIBLE);
 
-            if (nestType == GRID_TO_LIST) {
+            if (checkNestType(INNER_LIST)) {
                 gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.ListType.LISTVIEW);
                 gvGrid.setAdapter(gtoAdapter);
-            } else if (nestType == GRID_TO_GRID) {
+            } else if (checkNestType(INNER_GRID)) {
                 gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.ListType.GRIDVIEW);
                 gvGrid.setAdapter(gtoAdapter);
-            } else if (nestType == GRID_TO_RECYCLER) {
+            } else if (checkNestType(INNER_RECYCLER)) {
                 gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.ListType.RECYCLERVIEW);
                 gvGrid.setAdapter(gtoAdapter);
             }
-        } else if (nestType < 50) {
+        } else if (checkNestType(OUTER_SCROLL)) {
             svScroll.setVisibility(View.VISIBLE);
-            if (nestType == SCROLL_TO_LIST) {
+            if (checkNestType(INNER_LIST)) {
                 lvScroll.setVisibility(View.VISIBLE);
 
                 stoAdapter = new ListItemAdapter(this, scrollList);
@@ -201,7 +194,7 @@ public class ListNestDatailActivity extends BaseActivity {
                         ToastUtil.toast("ListView：" + scrollList.get(position).getName());
                     }
                 });
-            } else if (nestType == SCROLL_TO_GRID) {
+            } else if (checkNestType(INNER_GRID)) {
                 gvScroll.setVisibility(View.VISIBLE);
 
                 stoAdapter = new ListItemAdapter(this, scrollList);
@@ -212,7 +205,7 @@ public class ListNestDatailActivity extends BaseActivity {
                         ToastUtil.toast("GridView：" + scrollList.get(position).getName());
                     }
                 });
-            } else if (nestType == SCROLL_TO_RECYCLER) {
+            } else if (checkNestType(INNER_RECYCLER)) {
                 rvScroll.setVisibility(View.VISIBLE);
             }
         }
@@ -242,4 +235,8 @@ public class ListNestDatailActivity extends BaseActivity {
             }
         }
     };
+
+    private boolean checkNestType(int checkType) {
+        return (nestType & checkType) != 0;
+    }
 }

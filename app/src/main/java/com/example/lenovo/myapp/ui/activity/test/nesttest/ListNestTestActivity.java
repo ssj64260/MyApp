@@ -7,19 +7,14 @@ import android.view.View;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.GRID_TO_GRID;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.GRID_TO_LIST;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.GRID_TO_RECYCLER;
+import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.INNER_GRID;
+import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.INNER_LIST;
+import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.INNER_RECYCLER;
 import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.KEY_NEST_TYPE;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.LIST_TO_GRID;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.LIST_TO_LIST;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.LIST_TO_RECYCLER;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.RECYCLER_TO_GRID;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.RECYCLER_TO_LIST;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.RECYCLER_TO_RECYCLER;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.SCROLL_TO_GRID;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.SCROLL_TO_LIST;
-import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.SCROLL_TO_RECYCLER;
+import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.OUTER_GRID;
+import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.OUTER_LIST;
+import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.OUTER_RECYCLER;
+import static com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestDatailActivity.OUTER_SCROLL;
 
 /**
  * 列表嵌套
@@ -58,40 +53,40 @@ public class ListNestTestActivity extends BaseActivity {
             intent.setClass(ListNestTestActivity.this, ListNestDatailActivity.class);
             switch (v.getId()) {
                 case R.id.btn_list_list:
-                    intent.putExtra(KEY_NEST_TYPE, LIST_TO_LIST);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_LIST | INNER_LIST);
                     break;
                 case R.id.btn_list_grid:
-                    intent.putExtra(KEY_NEST_TYPE, LIST_TO_GRID);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_LIST | INNER_GRID);
                     break;
                 case R.id.btn_list_recycler:
-                    intent.putExtra(KEY_NEST_TYPE, LIST_TO_RECYCLER);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_LIST | INNER_RECYCLER);
                     break;
                 case R.id.btn_recycler_list:
-                    intent.putExtra(KEY_NEST_TYPE, RECYCLER_TO_LIST);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_RECYCLER | INNER_LIST);
                     break;
                 case R.id.btn_recycler_grid:
-                    intent.putExtra(KEY_NEST_TYPE, RECYCLER_TO_GRID);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_RECYCLER | INNER_GRID);
                     break;
                 case R.id.btn_recycler_recycler:
-                    intent.putExtra(KEY_NEST_TYPE, RECYCLER_TO_RECYCLER);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_RECYCLER | INNER_RECYCLER);
                     break;
                 case R.id.btn_grid_list:
-                    intent.putExtra(KEY_NEST_TYPE, GRID_TO_LIST);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_GRID | INNER_LIST);
                     break;
                 case R.id.btn_grid_grid:
-                    intent.putExtra(KEY_NEST_TYPE, GRID_TO_GRID);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_GRID | INNER_GRID);
                     break;
                 case R.id.btn_grid_recycler:
-                    intent.putExtra(KEY_NEST_TYPE, GRID_TO_RECYCLER);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_GRID | INNER_RECYCLER);
                     break;
                 case R.id.btn_scroll_list:
-                    intent.putExtra(KEY_NEST_TYPE, SCROLL_TO_LIST);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_SCROLL | INNER_LIST);
                     break;
                 case R.id.btn_scroll_grid:
-                    intent.putExtra(KEY_NEST_TYPE, SCROLL_TO_GRID);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_SCROLL | INNER_GRID);
                     break;
                 case R.id.btn_scroll_recycler:
-                    intent.putExtra(KEY_NEST_TYPE, SCROLL_TO_RECYCLER);
+                    intent.putExtra(KEY_NEST_TYPE, OUTER_SCROLL | INNER_RECYCLER);
                     break;
             }
             startActivity(intent);

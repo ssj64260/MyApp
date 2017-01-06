@@ -12,4 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <include
+        android:id="@+id/view_detail"
+        layout="@layout/include_app_info_detail"
+        android:visibility="gone" />
+
 </LinearLayout>

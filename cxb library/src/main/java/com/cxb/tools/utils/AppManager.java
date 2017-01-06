@@ -2,7 +2,6 @@ package com.cxb.tools.utils;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -13,22 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AppManager {
-
-    //得到所有APP
-    public static List<ApplicationInfo> getApplicationInfos(Context context) {
-
-        PackageManager pm = context.getPackageManager();
-        List<PackageInfo> packageInfos = pm.getInstalledPackages(PackageManager.PERMISSION_GRANTED);
-        List<ApplicationInfo> applicationInfos = new ArrayList<>();
-
-        for (PackageInfo info : packageInfos) {
-            ApplicationInfo applicationInfo = info.applicationInfo;
-            if (((applicationInfo.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0) || ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0)) {
-                applicationInfos.add(applicationInfo);
-            }
-        }
-        return applicationInfos;
-    }
 
     //获取本机已经安装信息列表
     public static List<PackageInfo> getInstallApkList(Context context) {

@@ -36,7 +36,7 @@ import com.example.lenovo.myapp.ui.activity.test.DateTimeTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.DialogTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.OkhttpTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.ThreadPoolTestActivity;
-import com.example.lenovo.myapp.ui.activity.test.appinfo.AppInfoTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.AppInfoTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;

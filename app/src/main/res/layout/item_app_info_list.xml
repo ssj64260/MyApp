@@ -16,7 +16,8 @@
             android:layout_height="60dp"
             android:layout_margin="10dp"
             tools:ignore="ContentDescription"
-            tools:src="@mipmap/app_icon" />
+            tools:src="@mipmap/app_icon"
+            android:scaleType="centerInside"/>
 
         <TextView
             android:id="@+id/tv_app_name"

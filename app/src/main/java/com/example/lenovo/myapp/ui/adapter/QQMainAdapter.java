@@ -24,7 +24,7 @@ import java.util.List;
 
 public class QQMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private OnItemClickListener onItemClickListener;
+    private OnListClickListener onListClickListener;
 
     private List<QQMessageBean> list;
     private LayoutInflater layoutInflater;
@@ -69,8 +69,8 @@ public class QQMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         holder.rlItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onItemClickListener != null) {
-                    onItemClickListener.onItemClick(v, position);
+                if (onListClickListener != null) {
+                    onListClickListener.onItemClick(position);
                 }
             }
         });
@@ -98,11 +98,7 @@ public class QQMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
+    public void setOnListClickListener(OnListClickListener onListClickListener) {
+        this.onListClickListener = onListClickListener;
     }
 }

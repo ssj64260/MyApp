@@ -29,7 +29,7 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private static final String ALL = "all";
 
-    private MainAdapter.OnItemClickListener onItemClickListener;
+    private OnListClickListener onListClickListener;
 
     private LayoutInflater layoutInflater;
     private List<PokemonBean> list;
@@ -129,8 +129,8 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         holder.all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (onItemClickListener != null) {
-                    onItemClickListener.onItemClick(v, position);
+                if (onListClickListener != null) {
+                    onListClickListener.onItemClick(position);
                 }
             }
         });
@@ -160,11 +160,7 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
-    public void setOnItemClickListener(MainAdapter.OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
+    public void setOnListClickListener(OnListClickListener onListClickListener) {
+        this.onListClickListener = onListClickListener;
     }
 }

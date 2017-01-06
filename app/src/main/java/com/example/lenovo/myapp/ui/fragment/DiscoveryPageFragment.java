@@ -16,7 +16,7 @@ import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.ui.activity.PokemonDetailActivity;
-import com.example.lenovo.myapp.ui.adapter.MainAdapter;
+import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemenListAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -84,16 +84,23 @@ public class DiscoveryPageFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         PokemenListAdapter adapter = new PokemenListAdapter(getActivity(), pmList, property);
         mRecyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                if (!FastClick.isFastClick()) {
-                    Intent intent = new Intent();
-                    intent.setClass(getActivity(), PokemonDetailActivity.class);
-                    intent.putExtra("pokemon", pmList.get(position));
-                    startActivity(intent);
-                }
-            }
-        });
+        adapter.setOnListClickListener(listClick);
     }
+
+    private OnListClickListener listClick = new OnListClickListener() {
+        @Override
+        public void onItemClick(int position) {
+            if (!FastClick.isFastClick()) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), PokemonDetailActivity.class);
+                intent.putExtra("pokemon", pmList.get(position));
+                startActivity(intent);
+            }
+        }
+
+        @Override
+        public void onTagClick(Tag tag, int position) {
+
+        }
+    };
 }

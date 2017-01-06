@@ -23,6 +23,7 @@ import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
+import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.model.QQMessageBean;
 import com.example.lenovo.myapp.ui.adapter.QQMainAdapter;
@@ -186,12 +187,7 @@ public class QQMainActivity extends BaseActivity {
         list = new ArrayList<>();
         adapter = new QQMainAdapter(this, list);
         recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new QQMainAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                ToastUtil.toast(list.get(position).getName());
-            }
-        });
+        adapter.setOnListClickListener(listClick);
 
         for (int i = 0; i < SlidingMenuResUtil.QQ_AVATAR.length; i++) {
             QQMessageBean qq = new QQMessageBean();
@@ -203,6 +199,18 @@ public class QQMainActivity extends BaseActivity {
         }
         adapter.notifyDataSetChanged();
     }
+
+    private OnListClickListener listClick = new OnListClickListener() {
+        @Override
+        public void onItemClick(int position) {
+            ToastUtil.toast(list.get(position).getName());
+        }
+
+        @Override
+        public void onTagClick(Tag tag, int position) {
+
+        }
+    };
 
     private View.OnClickListener leftClick = new View.OnClickListener() {
         @Override

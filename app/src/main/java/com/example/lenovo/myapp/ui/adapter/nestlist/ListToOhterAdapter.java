@@ -18,7 +18,7 @@ import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.testbean.NestTestBean;
-import com.example.lenovo.myapp.ui.adapter.MainAdapter;
+import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemenListAdapter;
 
 import java.util.ArrayList;
@@ -99,10 +99,15 @@ public class ListToOhterAdapter extends BaseAdapter {
                 holder.layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
                 holder.rvItemList.setLayoutManager(holder.layoutManager);
                 holder.rvItemList.setAdapter(holder.rvAdapter);
-                holder.rvAdapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
+                holder.rvAdapter.setOnListClickListener(new OnListClickListener() {
                     @Override
-                    public void onItemClick(View view, int position) {
+                    public void onItemClick(int position) {
                         ToastUtil.toast("RecyclerView：" + holder.pmList.get(position).getName());
+                    }
+
+                    @Override
+                    public void onTagClick(Tag tag, int position) {
+
                     }
                 });
             }

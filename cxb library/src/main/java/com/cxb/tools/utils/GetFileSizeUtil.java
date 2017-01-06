@@ -1,25 +1,15 @@
 package com.cxb.tools.utils;
 
+import android.content.Context;
+import android.text.format.Formatter;
+
 import java.io.File;
 import java.io.FileInputStream;
-import java.text.DecimalFormat;
 
 public class GetFileSizeUtil {
 
-    private static GetFileSizeUtil instance;
-
-    public GetFileSizeUtil() {
-    }
-
-    public static GetFileSizeUtil getInstance() {
-        if (instance == null) {
-            instance = new GetFileSizeUtil();
-        }
-        return instance;
-    }
-
-    /*** 获取文件大小 ***/
-    public long getFileSizes(File f) throws Exception {
+    //获取文件大小
+    public static long getFileSizes(File f) throws Exception {
         long s = 0;
         if (f.exists()) {
             FileInputStream fis;
@@ -31,8 +21,8 @@ public class GetFileSizeUtil {
         return s;
     }
 
-    /*** 获取文件夹大小 ***/
-    public long getFileSize(File f) throws Exception {
+    //获取文件夹大小
+    public static long getFileSize(File f) throws Exception {
         long size = 0;
         File flist[] = f.listFiles();
         for (int i = 0; i < flist.length; i++) {
@@ -45,24 +35,13 @@ public class GetFileSizeUtil {
         return size;
     }
 
-    /*** 转换文件大小单位(B/KB/MB/GB) ***/
-    public String FormetFileSize(long fileS) {// 转换文件大小
-        DecimalFormat df = new DecimalFormat("#0.00");
-        String fileSizeString;
-        if (fileS < 1024) {
-            fileSizeString = df.format((double) fileS) + "B";
-        } else if (fileS < 1048576) {
-            fileSizeString = df.format((double) fileS / 1024) + "KB";
-        } else if (fileS < 1073741824) {
-            fileSizeString = df.format((double) fileS / 1048576) + "MB";
-        } else {
-            fileSizeString = df.format((double) fileS / 1073741824) + "GB";
-        }
-        return fileSizeString;
+    //转换文件大小单位(B/KB/MB/GB)
+    public static String FormetFileSize(Context context, long size) {
+        return Formatter.formatFileSize(context, size);
     }
 
-    /*** 获取文件个数 ***/
-    public long getlist(File f) {// 递归求取目录文件个数
+    //获取文件个数
+    public static long getlist(File f) {// 递归求取目录文件个数
         long size = 0;
         File flist[] = f.listFiles();
         size = flist.length;

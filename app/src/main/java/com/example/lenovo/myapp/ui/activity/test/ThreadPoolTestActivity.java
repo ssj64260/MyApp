@@ -71,6 +71,12 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        shutDownAll();
+        super.onDestroy();
+    }
+
     private void initVew() {
 
         btnAsyncTask = (Button) findViewById(R.id.btn_async_task);

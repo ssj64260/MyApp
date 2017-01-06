@@ -29,16 +29,18 @@ import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.activity.test.DateTimeTestActivity;
-import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
-import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.activity.test.AnimationTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.DateTimeTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.DialogTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.OkhttpTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.ThreadPoolTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.appinfo.AppInfoTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
+import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.io.File;
@@ -199,12 +201,7 @@ public class MainActivity extends BaseAppCompatActivity {
         list = new ArrayList<>();
         adapter = new MainAdapter(this, list);
         recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                ToastUtil.toast(list.get(position).getName());
-            }
-        });
+        adapter.setOnListClickListener(listClick);
 
         for (int i = 0; i < 10; i++) {
             list.add(new MainListBean("分类" + i / 4, "测试数据#" + i));
@@ -254,7 +251,19 @@ public class MainActivity extends BaseAppCompatActivity {
         });
     }
 
-    NavigationView.OnNavigationItemSelectedListener selectedListener = new NavigationView.OnNavigationItemSelectedListener() {
+    private OnListClickListener listClick = new OnListClickListener() {
+        @Override
+        public void onItemClick(int position) {
+            ToastUtil.toast(list.get(position).getName());
+        }
+
+        @Override
+        public void onTagClick(Tag tag, int position) {
+
+        }
+    };
+
+    private NavigationView.OnNavigationItemSelectedListener selectedListener = new NavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
@@ -296,6 +305,11 @@ public class MainActivity extends BaseAppCompatActivity {
                     nestIntent.setClass(MainActivity.this, ListNestTestActivity.class);
                     startActivity(nestIntent);
                     break;
+                case R.id.nav_app_info_test:
+                    Intent appIntent = new Intent();
+                    appIntent.setClass(MainActivity.this, AppInfoTestActivity.class);
+                    startActivity(appIntent);
+                    break;
                 case R.id.nav_manage:
                     showTipsActionDialog();
                     break;
@@ -312,13 +326,13 @@ public class MainActivity extends BaseAppCompatActivity {
             String cacheDir = SDCardUtil.getCacheDir(this);
             String externalCacheDir = SDCardUtil.getExternalCacheDir(this);
 
-            cacheSize += GetFileSizeUtil.getInstance().getFileSize(new File(cacheDir));
-            cacheSize += GetFileSizeUtil.getInstance().getFileSize(new File(externalCacheDir));
+            cacheSize += GetFileSizeUtil.getFileSize(new File(cacheDir));
+            cacheSize += GetFileSizeUtil.getFileSize(new File(externalCacheDir));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        String cache = GetFileSizeUtil.getInstance().FormetFileSize(cacheSize);
+        String cache = GetFileSizeUtil.FormetFileSize(this, cacheSize);
 
         if (navigationView != null) {
             navigationView.getMenu().findItem(R.id.nav_manage).setTitle("清理缓存：" + cache);

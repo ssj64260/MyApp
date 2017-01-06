@@ -18,7 +18,7 @@ import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.testbean.NestTestBean;
-import com.example.lenovo.myapp.ui.adapter.MainAdapter;
+import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemenListAdapter;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import java.util.List;
 
 public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private OnItemClickListener onItemClickListener;
+    private OnListClickListener onListClickListener;
 
     public enum ListType {
         LISTVIEW,
@@ -143,10 +143,15 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                 layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
                 rvItemList.setLayoutManager(layoutManager);
                 rvItemList.setAdapter(rvAdapter);
-                rvAdapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
+                rvAdapter.setOnListClickListener(new OnListClickListener() {
                     @Override
-                    public void onItemClick(View view, int position) {
+                    public void onItemClick(int position) {
                         ToastUtil.toast("RecyclerView：" + pmList.get(position).getName());
+                    }
+
+                    @Override
+                    public void onTagClick(Tag tag, int position) {
+
                     }
                 });
             }
@@ -157,7 +162,7 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         void onItemClick(View view, int position);
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
+    public void setOnListClickListener(OnListClickListener onListClickListener) {
+        this.onListClickListener = onListClickListener;
     }
 }

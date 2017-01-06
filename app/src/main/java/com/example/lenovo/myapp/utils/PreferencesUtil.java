@@ -91,6 +91,13 @@ public class PreferencesUtil {
         return sp.getFloat(key, defaultValue);
     }
 
+    public static void clearByKey(String fileName, String key) {
+        SharedPreferences sp = MyApplication.getInstance().getSharedPreferences(fileName, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.remove(key);
+        editor.apply();
+    }
+
     public static void clearAll(String fileName) {
         SharedPreferences sp = MyApplication.getInstance().getSharedPreferences(fileName, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();

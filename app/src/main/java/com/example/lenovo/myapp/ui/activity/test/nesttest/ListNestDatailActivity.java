@@ -20,7 +20,7 @@ import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.testbean.NestTestBean;
-import com.example.lenovo.myapp.ui.adapter.MainAdapter;
+import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemenListAdapter;
 import com.example.lenovo.myapp.ui.adapter.nestlist.GridToOhterAdapter;
 import com.example.lenovo.myapp.ui.adapter.nestlist.ListItemAdapter;
@@ -217,13 +217,20 @@ public class ListNestDatailActivity extends BaseActivity {
         pmAdapter = new PokemenListAdapter(this, scrollList, "all");
         rvScroll.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rvScroll.setAdapter(pmAdapter);
-        pmAdapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                ToastUtil.toast("RecyclerView：" + scrollList.get(position).getName());
-            }
-        });
+        pmAdapter.setOnListClickListener(listClick);
     }
+
+    private OnListClickListener listClick = new OnListClickListener() {
+        @Override
+        public void onItemClick(int position) {
+            ToastUtil.toast("RecyclerView：" + scrollList.get(position).getName());
+        }
+
+        @Override
+        public void onTagClick(Tag tag, int position) {
+
+        }
+    };
 
     private View.OnClickListener click = new View.OnClickListener() {
         @Override

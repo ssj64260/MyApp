@@ -19,7 +19,7 @@ public class MyProgressBar extends ViewGroup {
 
     private float maxNumber;
     private int backgroundColor;
-    private int progressColor;
+    private int progressResource;
     private float curProgress;
 
     private View background;
@@ -36,22 +36,30 @@ public class MyProgressBar extends ViewGroup {
     public MyProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MyProgressBar);
-        maxNumber = Math.abs(ta.getFloat(R.styleable.MyProgressBar_max_number, 100));
-        backgroundColor = ta.getColor(R.styleable.MyProgressBar_progress_background, Color.parseColor("#f2f2f2"));
-        progressColor = ta.getColor(R.styleable.MyProgressBar_progress_color, Color.parseColor("#87ea31"));
-        ta.recycle();
-
         ViewGroup.LayoutParams bgLayoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         background = new View(context);
         background.setLayoutParams(bgLayoutParams);
-        background.setBackgroundColor(backgroundColor);
-        addView(background);
 
         ViewGroup.LayoutParams pbLayoutParams = new ViewGroup.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
         progressBar = new View(context);
         progressBar.setLayoutParams(pbLayoutParams);
-        progressBar.setBackgroundColor(progressColor);
+
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MyProgressBar);
+        maxNumber = Math.abs(ta.getFloat(R.styleable.MyProgressBar_max_number, 100));
+
+        backgroundColor = ta.getColor(R.styleable.MyProgressBar_progress_background, Color.parseColor("#f2f2f2"));
+        background.setBackgroundColor(backgroundColor);
+
+        progressResource = ta.getResourceId(R.styleable.MyProgressBar_progress_color, -1);
+        if (progressResource == -1) {
+            progressResource = ta.getColor(R.styleable.MyProgressBar_progress_color, Color.parseColor("#87ea31"));
+            progressBar.setBackgroundColor(progressResource);
+        } else {
+            progressBar.setBackgroundResource(progressResource);
+        }
+        ta.recycle();
+
+        addView(background);
         addView(progressBar);
     }
 

@@ -25,7 +25,7 @@
 
     <declare-styleable name="MyProgressBar">
         <attr name="max_number" format="float" />
-        <attr name="progress_color" format="color" />
+        <attr name="progress_color" format="reference|color" />
         <attr name="progress_background" format="color" />
     </declare-styleable>
 

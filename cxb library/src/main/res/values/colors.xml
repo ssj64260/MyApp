@@ -70,4 +70,10 @@
 
     <color name="black_pressed">#33FFFFFF</color>
 
+    <color name="password_level_0">#D8D8D8</color>
+    <color name="password_level_1">#FF0000</color>
+    <color name="password_level_2">#FFC000</color>
+    <color name="password_level_3">#FFFF00</color>
+    <color name="password_level_4">#00B050</color>
+
 </resources>

@@ -20,6 +20,11 @@ public class StringCheck {
         return !isEmpty(mobiles) && mobiles.matches(telRegex);
     }
 
+    public static boolean isOnlyNumber(String number){
+        String regex = "\\d+";
+        return !isEmpty(number) && number.matches(regex);
+    }
+
     //判断输入的验证码是否6位纯数字
     public static boolean isCode(String code) {
         String regex = "\\d{6}";

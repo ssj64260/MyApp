@@ -32,6 +32,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.activity.test.AnimationTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.CustomViewTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.DateTimeTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.DialogTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.OkhttpTestActivity;
@@ -321,6 +322,11 @@ public class MainActivity extends BaseAppCompatActivity {
                     Intent appIntent = new Intent();
                     appIntent.setClass(MainActivity.this, AppInfoTestActivity.class);
                     startActivity(appIntent);
+                    break;
+                case R.id.nav_custom_view_test:
+                    Intent customIntent = new Intent();
+                    customIntent.setClass(MainActivity.this, CustomViewTestActivity.class);
+                    startActivity(customIntent);
                     break;
                 case R.id.nav_manage:
                     showTipsActionDialog();

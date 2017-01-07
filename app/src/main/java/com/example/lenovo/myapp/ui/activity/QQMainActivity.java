@@ -23,16 +23,17 @@ import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
-import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.model.QQMessageBean;
+import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.QQMainAdapter;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 侧滑栏测试
@@ -42,19 +43,8 @@ public class QQMainActivity extends BaseActivity {
 
     private final String[] titles = {"消息", "电话"};
 
-    private SegmentTabLayout titleTab;
-
     private MySlidingMenu smMain;
     private View leftView;
-    private View rightView;
-
-    private ImageView ivMainAvatar;//主页头像
-
-    private XRecyclerView recyclerView;
-    private List<QQMessageBean> list;
-    private QQMainAdapter adapter;
-
-
     private QQLevelLayout qqLevel;
     private ImageView ivBackground;
     private ImageView ivScan;
@@ -63,7 +53,15 @@ public class QQMainActivity extends BaseActivity {
     private LinearLayout llSign;
     private TextView tvSign;
 
+    private View rightView;
+    private ImageView ivMainAvatar;//主页头像
+    private SegmentTabLayout titleTab;
+    private ImageView ivAdd;
     private RelativeLayout rlNetworkWarm;
+
+    private XRecyclerView recyclerView;
+    private List<QQMessageBean> list;
+    private QQMainAdapter adapter;
 
     BroadcastReceiver checkNetwork = new BroadcastReceiver() {
         @Override
@@ -153,9 +151,8 @@ public class QQMainActivity extends BaseActivity {
         rightView = findViewById(R.id.include_content);
         titleTab = (SegmentTabLayout) rightView.findViewById(R.id.stl_title_tab);
         ivMainAvatar = (ImageView) rightView.findViewById(R.id.iv_main_avatar);
-
-        titleTab.setTabData(titles);
-        titleTab.setOnTabSelectListener(tabSelect);
+        ivAdd = (ImageView) rightView.findViewById(R.id.iv_qq_add);
+        rlNetworkWarm = (RelativeLayout) findViewById(R.id.rl_network_warnning);
 
         Glide.with(this).load(R.mipmap.app_icon)
 //                .skipMemoryCache(true)
@@ -164,9 +161,10 @@ public class QQMainActivity extends BaseActivity {
                 .dontAnimate()
                 .into(ivMainAvatar);
 
+        titleTab.setTabData(titles);
+        titleTab.setOnTabSelectListener(tabSelect);
         ivMainAvatar.setOnClickListener(rightClick);
-
-        rlNetworkWarm = (RelativeLayout) findViewById(R.id.rl_network_warnning);
+        ivAdd.setOnClickListener(rightClick);
         rlNetworkWarm.setOnClickListener(rightClick);
 
         list = new ArrayList<>();
@@ -180,12 +178,12 @@ public class QQMainActivity extends BaseActivity {
         recyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                doRefreshLoading(true);
+                doRefresh();
             }
 
             @Override
             public void onLoadMore() {
-//                doRefreshLoading(false);
+//                doLoadMore();
             }
         });
 
@@ -239,6 +237,9 @@ public class QQMainActivity extends BaseActivity {
                 case R.id.rl_network_warnning:
                     startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
                     break;
+                case R.id.iv_qq_add:
+                    ToastUtil.toast("添加");
+                    break;
             }
         }
     };
@@ -265,38 +266,32 @@ public class QQMainActivity extends BaseActivity {
         }
     }
 
-    private void doRefreshLoading(final boolean isRefresh) {
-        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+    private void doRefresh() {
+        ThreadPoolUtil.getInstache().scheduled(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                if (isRefresh) {
-                    list.clear();
-                }
-
-                for (int i = 0; i < SlidingMenuResUtil.QQ_AVATAR.length; i++) {
-                    QQMessageBean qq = new QQMessageBean();
-                    qq.setAvatarRes(SlidingMenuResUtil.QQ_AVATAR[i]);
-                    qq.setName(SlidingMenuResUtil.QQ_NAME[i]);
-                    qq.setContent(SlidingMenuResUtil.QQ_NAME[i]);
-                    qq.setTime(SlidingMenuResUtil.QQ_TIME[i]);
-                    list.add(qq);
-                }
-
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        list.clear();
+                        for (int i = 0; i < SlidingMenuResUtil.QQ_AVATAR.length; i++) {
+                            QQMessageBean qq = new QQMessageBean();
+                            qq.setAvatarRes(SlidingMenuResUtil.QQ_AVATAR[i]);
+                            qq.setName(SlidingMenuResUtil.QQ_NAME[i]);
+                            qq.setContent(SlidingMenuResUtil.QQ_NAME[i]);
+                            qq.setTime(SlidingMenuResUtil.QQ_TIME[i]);
+                            list.add(qq);
+                        }
                         adapter.notifyDataSetChanged();
                         recyclerView.refreshComplete();
                     }
                 });
             }
-        });
+        }, 2, TimeUnit.SECONDS);
+    }
+
+    private void doLoadMore() {
+
     }
 
     @Override

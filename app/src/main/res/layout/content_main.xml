@@ -5,9 +5,9 @@
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.lenovo.myapp.ui.activity.MainActivity"
-    android:background="@color/white">
+    tools:context="com.example.lenovo.myapp.ui.activity.MainActivity">
 
     <RelativeLayout
         android:id="@+id/rl_network_warnning"
@@ -21,33 +21,33 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="8dp"
-            android:src="@mipmap/ic_wrong"
-            android:scaleType="centerInside"/>
+            android:layout_marginStart="8dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_wrong" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="连接超时，请检查你的网络设置。"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="8dp"
-            android:textColor="@color/text_black"
-            android:layout_toRightOf="@+id/iv_warnning_logo"/>
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/iv_warnning_logo"
+            android:text="连接超时，请检查你的网络设置。"
+            android:textColor="@color/text_black" />
 
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:layout_marginRight="8dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/ic_right"
-            android:scaleType="centerCrop"/>
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_right" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/line_gray"/>
+            android:background="@color/line_gray" />
     </RelativeLayout>
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
@@ -55,9 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_network_warnning"
+        android:background="@color/gray96"
         android:fadingEdge="none"
-        android:overScrollMode="never">
-
-    </com.jcodecraeer.xrecyclerview.XRecyclerView>
+        android:overScrollMode="never" />
 
 </RelativeLayout>

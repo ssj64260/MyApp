@@ -169,9 +169,14 @@ public class QQMainActivity extends BaseActivity {
         rlNetworkWarm = (RelativeLayout) findViewById(R.id.rl_network_warnning);
         rlNetworkWarm.setOnClickListener(rightClick);
 
+        list = new ArrayList<>();
+        adapter = new QQMainAdapter(this, list);
+        adapter.setOnListClickListener(listClick);
+
         recyclerView = (XRecyclerView) rightView.findViewById(R.id.xrv_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        recyclerView.showFooter(false);
+        recyclerView.setLoadingMoreEnabled(false);
+        recyclerView.setAdapter(adapter);
         recyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -183,11 +188,6 @@ public class QQMainActivity extends BaseActivity {
 //                doRefreshLoading(false);
             }
         });
-
-        list = new ArrayList<>();
-        adapter = new QQMainAdapter(this, list);
-        recyclerView.setAdapter(adapter);
-        adapter.setOnListClickListener(listClick);
 
         for (int i = 0; i < SlidingMenuResUtil.QQ_AVATAR.length; i++) {
             QQMessageBean qq = new QQMessageBean();
@@ -292,8 +292,7 @@ public class QQMainActivity extends BaseActivity {
                     @Override
                     public void run() {
                         adapter.notifyDataSetChanged();
-                        recyclerView.stopAll();
-                        recyclerView.showFooter(false);
+                        recyclerView.refreshComplete();
                     }
                 });
             }

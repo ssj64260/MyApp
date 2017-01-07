@@ -185,7 +185,12 @@ public class MainActivity extends BaseAppCompatActivity {
         tvUsername.setText("COKU");
         tvEmail.setText("799536767@qq.com");
 
+        list = new ArrayList<>();
+        adapter = new MainAdapter(this, list);
+        adapter.setOnListClickListener(listClick);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(adapter);
         recyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -197,11 +202,6 @@ public class MainActivity extends BaseAppCompatActivity {
                 doRefreshLoading(false);
             }
         });
-
-        list = new ArrayList<>();
-        adapter = new MainAdapter(this, list);
-        recyclerView.setAdapter(adapter);
-        adapter.setOnListClickListener(listClick);
 
         for (int i = 0; i < 10; i++) {
             list.add(new MainListBean("分类" + i / 4, "测试数据#" + i));
@@ -235,15 +235,10 @@ public class MainActivity extends BaseAppCompatActivity {
                     @Override
                     public void run() {
                         adapter.notifyDataSetChanged();
-                        recyclerView.stopAll();
+                        recyclerView.refreshComplete();
 
                         if (list.size() > 39) {
-//                            recyclerView.noMoreLoading();
-                            recyclerView.setLoadingMoreEnabled(false);
-                        }
-
-                        if (isRefresh) {
-                            recyclerView.setLoadingMoreEnabled(true);
+                            recyclerView.setNoMore(true);
                         }
                     }
                 });

@@ -46,6 +46,7 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends BaseAppCompatActivity {
 
@@ -194,56 +195,72 @@ public class MainActivity extends BaseAppCompatActivity {
         recyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                doRefreshLoading(true);
+                doRefresh();
             }
 
             @Override
             public void onLoadMore() {
-                doRefreshLoading(false);
+                doLoadMore();
             }
         });
 
-        for (int i = 0; i < 10; i++) {
-            list.add(new MainListBean("分类" + i / 4, "测试数据#" + i));
-        }
-        adapter.notifyDataSetChanged();
+        recyclerView.refresh();
     }
 
-    private void doRefreshLoading(final boolean isRefresh) {
-        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+    private void doRefresh() {
+        ThreadPoolUtil.getInstache().scheduled(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                if (isRefresh) {
-                    list.clear();
-                }
-
-                for (int i = 0; i < 10; i++) {
-                    if (isRefresh) {
-                        list.add(new MainListBean("刷新分类" + i / 4, "刷新数据#" + i));
-                    } else {
-                        list.add(new MainListBean("加载分类" + list.size() / 4, "加载数据#" + list.size()));
-                    }
-                }
-
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        list.clear();
+                        for (int i = 0; i < 10; i++) {
+                            MainListBean ml = new MainListBean();
+                            float progress;
+                            if (i == 0) {
+                                progress = 100;
+                            } else {
+                                progress = (float) (Math.random() * 99);
+                            }
+                            ml.setNumber(progress);
+                            ml.setHead("刷新分类" + list.size() / 4);
+                            ml.setName("刷新数据 #" + progress);
+                            list.add(ml);
+                        }
                         adapter.notifyDataSetChanged();
                         recyclerView.refreshComplete();
+                    }
+                });
+            }
+        }, 2, TimeUnit.SECONDS);
+    }
 
-                        if (list.size() > 39) {
+    private void doLoadMore() {
+        ThreadPoolUtil.getInstache().scheduled(new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < 10; i++) {
+                            MainListBean ml = new MainListBean();
+                            float progress = (float) (Math.random() * 99);
+                            ml.setNumber(progress);
+                            ml.setHead("加载分类" + list.size() / 4);
+                            ml.setName("加载数据 #" + progress);
+                            list.add(ml);
+                        }
+                        adapter.notifyDataSetChanged();
+                        recyclerView.loadMoreComplete();
+
+                        if (list.size() > 38) {
                             recyclerView.setNoMore(true);
                         }
                     }
                 });
             }
-        });
+        }, 2, TimeUnit.SECONDS);
     }
 
     private OnListClickListener listClick = new OnListClickListener() {

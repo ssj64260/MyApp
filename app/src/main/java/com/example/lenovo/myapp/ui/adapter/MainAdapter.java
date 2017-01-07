@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.cxb.tools.MyProgressBar.MyProgressBar;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.MainListBean;
 
@@ -69,7 +70,10 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     private void bindNoHeadItem(NoHeadViewHolder holder, final int position, boolean isNoHead) {
-        holder.name.setText(list.get(position).getName());
+
+        MainListBean ml = list.get(position);
+
+        holder.name.setText(String.valueOf(ml.getName()));
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +83,12 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
         });
         holder.line.setVisibility(isNoHead ? View.VISIBLE : View.GONE);
+
+        holder.mpbProgress.setCurrentNumber(ml.getNumber());
+        if (ml.isShowAnimation()) {
+            ml.setShowAnimation(false);
+            holder.mpbProgress.showAnimation();
+        }
     }
 
     private void bindHeadItem(HeadViewHolder holder, int position) {
@@ -102,13 +112,16 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     private class NoHeadViewHolder extends RecyclerView.ViewHolder {
+
         private TextView name;
         private View line;
+        private MyProgressBar mpbProgress;
 
         private NoHeadViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.tv_name);
             line = view.findViewById(R.id.view_line);
+            mpbProgress = (MyProgressBar) view.findViewById(R.id.mpb_progress);
         }
     }
 

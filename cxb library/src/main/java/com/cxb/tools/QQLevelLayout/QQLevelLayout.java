@@ -24,13 +24,11 @@ public class QQLevelLayout extends LinearLayout {
     private Context context;
 
     public QQLevelLayout(Context context) {
-        super(context);
-        this.context = context;
+        this(context, null, 0);
     }
 
     public QQLevelLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        this.context = context;
+        this(context, attrs, 0);
     }
 
     public QQLevelLayout(Context context, AttributeSet attrs, int defStyleAttr) {

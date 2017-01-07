@@ -10,10 +10,23 @@ public class MainListBean implements Serializable {
 
     private String name;
     private String head;
+    private float number;
+    private boolean isShowAnimation = true;
 
-    public MainListBean(String head, String name) {
-        this.head = head;
-        this.name = name;
+    public boolean isShowAnimation() {
+        return isShowAnimation;
+    }
+
+    public void setShowAnimation(boolean showAnimation) {
+        isShowAnimation = showAnimation;
+    }
+
+    public float getNumber() {
+        return number;
+    }
+
+    public void setNumber(float number) {
+        this.number = number;
     }
 
     public String getHead() {

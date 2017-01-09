@@ -67,7 +67,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_lightorange"
+                    android:background="@drawable/selector_fire"
                     android:text="确定"
                     android:textColor="@color/white"
                     android:textSize="@dimen/textsize_16sp" />

@@ -17,10 +17,11 @@ import com.cxb.tools.R;
 
 public class MyProgressBar extends ViewGroup {
 
+    private float curNumber;
     private float maxNumber;
     private int backgroundColor;
     private int progressResource;
-    private float curProgress;
+    private boolean showAnimation;
 
     private View background;
     private View progressBar;
@@ -45,7 +46,9 @@ public class MyProgressBar extends ViewGroup {
         progressBar.setLayoutParams(pbLayoutParams);
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MyProgressBar);
+        curNumber = Math.abs(ta.getFloat(R.styleable.MyProgressBar_current_number, 0));
         maxNumber = Math.abs(ta.getFloat(R.styleable.MyProgressBar_max_number, 100));
+        showAnimation = ta.getBoolean(R.styleable.MyProgressBar_show_animation, false);
 
         backgroundColor = ta.getColor(R.styleable.MyProgressBar_progress_background, Color.parseColor("#f2f2f2"));
         background.setBackgroundColor(backgroundColor);
@@ -70,7 +73,7 @@ public class MyProgressBar extends ViewGroup {
         int height = View.MeasureSpec.getSize(heightMeasureSpec);
 
         measureChild(background, widthMeasureSpec, heightMeasureSpec);
-        progressBar.getLayoutParams().width = (int) (curProgress * background.getMeasuredWidth());
+        progressBar.getLayoutParams().width = (int) (curNumber / maxNumber * background.getMeasuredWidth());
         measureChild(progressBar, widthMeasureSpec, heightMeasureSpec);
 
         setMeasuredDimension(width, height);
@@ -91,16 +94,18 @@ public class MyProgressBar extends ViewGroup {
             number = maxNumber;
         }
 
-        curProgress = number / maxNumber;
+        curNumber = number;
 
         requestLayout();
     }
 
     public void showAnimation() {
-        ScaleAnimation scaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
-        scaleX.setInterpolator(new AccelerateDecelerateInterpolator());
-        scaleX.setFillAfter(true);
-        scaleX.setDuration(1500);
-        progressBar.startAnimation(scaleX);
+        if (showAnimation) {
+            ScaleAnimation scaleX = new ScaleAnimation(0f, 1f, 1f, 1f);
+            scaleX.setInterpolator(new AccelerateDecelerateInterpolator());
+            scaleX.setFillAfter(true);
+            scaleX.setDuration(1500);
+            progressBar.startAnimation(scaleX);
+        }
     }
 }

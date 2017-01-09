@@ -35,6 +35,7 @@
         android:layout_margin="20dp"
         app:max_number="100"
         app:progress_background="@color/gray96"
-        app:progress_color="@color/grass" />
+        app:progress_color="@color/grass"
+        app:show_animation="true" />
 
 </LinearLayout>

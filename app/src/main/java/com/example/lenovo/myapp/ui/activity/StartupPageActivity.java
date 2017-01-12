@@ -6,6 +6,10 @@ import android.os.Bundle;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.PreferencesUtil;
+
+import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_FIRST_START;
 
 /**
  * 启动页
@@ -42,10 +46,14 @@ public class StartupPageActivity extends BaseActivity {
         main.setClass(this, PokemonMainActivity.class);
         startActivity(main);
 
-        Intent ad = new Intent();
-        ad.setClass(this, AdPagesActivity.class);
-        startActivity(ad);
-        overridePendingTransition(R.anim.alpha_0_to_1, R.anim.alpha_1_to_0);
+        boolean firstStart = PreferencesUtil.getBoolean(APP_SETTING, KEY_FIRST_START, true);
+        if (firstStart) {
+            PreferencesUtil.setData(APP_SETTING, KEY_FIRST_START, false);
+            Intent ad = new Intent();
+            ad.setClass(this, AdPagesActivity.class);
+            startActivity(ad);
+            overridePendingTransition(R.anim.alpha_0_to_1, R.anim.alpha_1_to_0);
+        }
 
         finish();
     }

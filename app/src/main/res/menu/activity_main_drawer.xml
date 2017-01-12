@@ -52,6 +52,11 @@
             android:title="@string/menu_nav_custom_view_test"/>
 
         <item
+            android:id="@+id/nav_system_res"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_system_res"/>
+
+        <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/menu_nav_manage" />

@@ -21,19 +21,18 @@ import okhttp3.OkHttpClient;
 public class OkHttpClientManager {
 
     private static OkHttpClientManager mInstance;
-    private OkHttpClient client;
+    private OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
     private boolean igonreVerification = false;//忽略验证
 
     private OkHttpClientManager() {
+
+        builder.connectTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS);
+
         if (igonreVerification) {
             initIgonreVerification();
-        } else {
-            client = new OkHttpClient.Builder()
-                    .connectTimeout(15, TimeUnit.SECONDS)
-                    .writeTimeout(15, TimeUnit.SECONDS)
-                    .readTimeout(15, TimeUnit.SECONDS)
-                    .build();
         }
     }
 
@@ -66,13 +65,8 @@ public class OkHttpClientManager {
                 }
             };
 
-            client = new OkHttpClient.Builder()
-                    .connectTimeout(15, TimeUnit.SECONDS)
-                    .writeTimeout(15, TimeUnit.SECONDS)
-                    .readTimeout(15, TimeUnit.SECONDS)
-                    .sslSocketFactory(sslContext.getSocketFactory(), xtm)
-                    .hostnameVerifier(DO_NOT_VERIFY)
-                    .build();
+            builder.sslSocketFactory(sslContext.getSocketFactory(), xtm)
+                    .hostnameVerifier(DO_NOT_VERIFY);
 
         } catch (NoSuchAlgorithmException | KeyManagementException e) {
             throw new NullPointerException("Failed to initialize the ignored authentication client");
@@ -91,7 +85,7 @@ public class OkHttpClientManager {
     }
 
     public OkHttpClient getClient() {
-        return client;
+        return builder.build();
     }
 
     public void igonreVerification(boolean igonreVerification) {

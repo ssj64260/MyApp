@@ -94,6 +94,12 @@
         <activity android:name=".ui.activity.test.CustomViewTestActivity"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".ui.activity.test.systemres.SystemResActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.activity.test.systemres.AlbumActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ui.activity.SetPostUrlActivity"
             android:screenOrientation="portrait" />

@@ -13,6 +13,10 @@ import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.PreferencesUtil;
+
+import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_FIRST_START;
 
 /**
  * 自定义控件展示
@@ -26,6 +30,8 @@ public class CustomViewTestActivity extends BaseActivity {
     private EditText etProgress;
     private Button btnConfirm;
     private MyProgressBar mpbProgress;
+
+    private Button btnFirstStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +51,16 @@ public class CustomViewTestActivity extends BaseActivity {
         etProgress = (EditText) findViewById(R.id.et_progress);
         btnConfirm = (Button) findViewById(R.id.btn_confirm);
         mpbProgress = (MyProgressBar) findViewById(R.id.mpb_progress);
+
+        btnFirstStart = (Button) findViewById(R.id.btn_first_start);
     }
 
     private void setData() {
         etPassword.addTextChangedListener(watcher);
 
         btnConfirm.setOnClickListener(click);
+
+        btnFirstStart.setOnClickListener(click);
     }
 
     //输入框内容改变监听
@@ -77,12 +87,16 @@ public class CustomViewTestActivity extends BaseActivity {
                 case R.id.btn_confirm:
                     String number = etProgress.getText().toString().trim();
                     if (StringCheck.isOnlyNumber(number)) {
+                        hideKeyboard();
                         mpbProgress.setCurrentNumber(Float.parseFloat(number));
                         mpbProgress.showAnimation();
                     } else {
                         ToastUtil.toast("不是纯数字");
                     }
-
+                    break;
+                case R.id.btn_first_start:
+                    PreferencesUtil.setData(APP_SETTING, KEY_FIRST_START, true);
+                    ToastUtil.toast("设置成功");
                     break;
             }
         }

@@ -32,13 +32,14 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.activity.test.AnimationTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.AppInfoTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.CustomViewTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.DateTimeTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.DialogTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.OkhttpTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.ThreadPoolTestActivity;
-import com.example.lenovo.myapp.ui.activity.test.AppInfoTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.systemres.SystemResActivity;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
@@ -281,52 +282,37 @@ public class MainActivity extends BaseAppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.nav_home:
-                    Intent intent = new Intent();
-                    intent.setClass(MainActivity.this, IntroductionActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(MainActivity.this, IntroductionActivity.class));
                     break;
                 case R.id.nav_camera:
                     ToastUtil.toast("打开相机");
                     break;
                 case R.id.nav_gallery:
-                    Intent okhttpIntent = new Intent();
-                    okhttpIntent.setClass(MainActivity.this, OkhttpTestActivity.class);
-                    startActivity(okhttpIntent);
+                    startActivity(new Intent(MainActivity.this, OkhttpTestActivity.class));
                     break;
                 case R.id.nav_slideshow:
-                    Intent animIntent = new Intent();
-                    animIntent.setClass(MainActivity.this, AnimationTestActivity.class);
-                    startActivity(animIntent);
+                    startActivity(new Intent(MainActivity.this, AnimationTestActivity.class));
                     break;
                 case R.id.nav_dialog_test:
-                    Intent dialogIntent = new Intent();
-                    dialogIntent.setClass(MainActivity.this, DialogTestActivity.class);
-                    startActivity(dialogIntent);
+                    startActivity(new Intent(MainActivity.this, DialogTestActivity.class));
                     break;
                 case R.id.nav_thread_pool_test:
-                    Intent threadIntent = new Intent();
-                    threadIntent.setClass(MainActivity.this, ThreadPoolTestActivity.class);
-                    startActivity(threadIntent);
+                    startActivity(new Intent(MainActivity.this, ThreadPoolTestActivity.class));
                     break;
                 case R.id.nav_datetime_test:
-                    Intent datetimeIntent = new Intent();
-                    datetimeIntent.setClass(MainActivity.this, DateTimeTestActivity.class);
-                    startActivity(datetimeIntent);
+                    startActivity(new Intent(MainActivity.this, DateTimeTestActivity.class));
                     break;
                 case R.id.nav_list_nest_test:
-                    Intent nestIntent = new Intent();
-                    nestIntent.setClass(MainActivity.this, ListNestTestActivity.class);
-                    startActivity(nestIntent);
+                    startActivity(new Intent(MainActivity.this, ListNestTestActivity.class));
                     break;
                 case R.id.nav_app_info_test:
-                    Intent appIntent = new Intent();
-                    appIntent.setClass(MainActivity.this, AppInfoTestActivity.class);
-                    startActivity(appIntent);
+                    startActivity(new Intent(MainActivity.this, AppInfoTestActivity.class));
                     break;
                 case R.id.nav_custom_view_test:
-                    Intent customIntent = new Intent();
-                    customIntent.setClass(MainActivity.this, CustomViewTestActivity.class);
-                    startActivity(customIntent);
+                    startActivity(new Intent(MainActivity.this, CustomViewTestActivity.class));
+                    break;
+                case R.id.nav_system_res:
+                    startActivity(new Intent(MainActivity.this, SystemResActivity.class));
                     break;
                 case R.id.nav_manage:
                     showTipsActionDialog();

@@ -16,6 +16,8 @@ public class PreferencesUtil {
     public static final String USER_INFO = "user_info";//用户信息
     public static final String KEY_BASE_URL = "base_url";//接口链接基础部分
 
+    public static final String KEY_FIRST_START = "first_start";//首次启动
+
     public static void setData(String fileName, String key, Object object) {
         String obj = String.valueOf(object);
         if (object instanceof String) {

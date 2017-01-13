@@ -28,7 +28,7 @@ public class SDCardUtil {
         return context.getExternalCacheDir().getPath();
     }
 
-    //  /storage/emulated/0/Android/data/你的应用的包名/files/
+    //  /storage/emulated/0/Android/data/你的应用的包名/files/（APP卸载后，数据会被删除）
     public static String getExternalFilesDir(Context context) {
         return context.getExternalFilesDir(null).getPath();
     }

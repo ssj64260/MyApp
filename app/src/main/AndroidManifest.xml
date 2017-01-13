@@ -76,8 +76,8 @@
 
         <activity
             android:name=".ui.activity.test.DateTimeTestActivity"
-            android:windowSoftInputMode="stateHidden|stateUnchanged"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <activity
             android:name=".ui.activity.test.nesttest.ListNestTestActivity"
@@ -91,13 +91,20 @@
             android:name=".ui.activity.test.AppInfoTestActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.activity.test.CustomViewTestActivity"
+        <activity
+            android:name=".ui.activity.test.CustomViewTestActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.activity.test.systemres.SystemResActivity"
+        <activity
+            android:name=".ui.activity.test.systemres.SystemResActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.activity.test.systemres.AlbumActivity"
+        <activity
+            android:name=".ui.activity.test.systemres.SystemGetPhotoActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.test.systemres.AlbumActivity"
             android:screenOrientation="portrait" />
 
         <activity

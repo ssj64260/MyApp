@@ -25,13 +25,13 @@
                 android:text="获取相册资源" />
 
             <TextView
-                android:id="@+id/tv_get_"
+                android:id="@+id/tv_get_photo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:background="@drawable/selector_bg_iselectable"
-                android:text="获取相册资源" />
+                android:text="选图和拍照" />
 
         </LinearLayout>
 

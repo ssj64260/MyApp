@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_outsize"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/transparent" />
+
+    <TextView
+        android:id="@+id/btn_first"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/selector_bg_iselectable"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:text="第一个按钮" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f3f3f3" />
+
+    <TextView
+        android:id="@+id/btn_second"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/selector_bg_iselectable"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:text="第二个按钮" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#f3f3f3" />
+
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/selector_bg_iselectable"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+</LinearLayout>

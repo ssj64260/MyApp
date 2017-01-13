@@ -9,10 +9,10 @@ import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
-import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
-import com.example.lenovo.myapp.dialog.EvaluationDialog;
-import com.example.lenovo.myapp.dialog.InputContentDialog;
-import com.example.lenovo.myapp.dialog.TipsActionDialog;
+import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
+import com.example.lenovo.myapp.ui.dialog.EvaluationDialog;
+import com.example.lenovo.myapp.ui.dialog.InputContentDialog;
+import com.example.lenovo.myapp.ui.dialog.TipsActionDialog;
 
 /**
  * 对话框测试

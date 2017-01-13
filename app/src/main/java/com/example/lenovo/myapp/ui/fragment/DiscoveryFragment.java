@@ -14,7 +14,7 @@ import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.dialog.DefaultProgressDialog;
+import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.adapter.MyPagerAdapter;
 import com.cxb.tools.CustomViewpager.CustomDepthPageTransformer;

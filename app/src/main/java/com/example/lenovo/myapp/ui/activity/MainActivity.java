@@ -29,7 +29,7 @@ import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.dialog.TipsActionDialog;
+import com.example.lenovo.myapp.ui.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.activity.test.AnimationTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.AppInfoTestActivity;

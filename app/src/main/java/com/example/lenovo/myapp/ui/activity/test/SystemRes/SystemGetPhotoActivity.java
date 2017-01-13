@@ -14,7 +14,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.dialog.ChooseDialog;
+import com.example.lenovo.myapp.ui.dialog.ChooseDialog;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.orhanobut.logger.Logger;
 

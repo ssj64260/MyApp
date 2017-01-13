@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.dialog;
+package com.example.lenovo.myapp.ui.dialog;
 
 import android.app.ProgressDialog;
 import android.content.Context;

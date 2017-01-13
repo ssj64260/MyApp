@@ -1,47 +1,42 @@
-package com.example.lenovo.myapp.dialog;
+package com.example.lenovo.myapp.ui.dialog;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.lenovo.myapp.R;
 
 /**
- * 内容输入对话框
+ * Created by CXB on 16/08/11.
+ *
+ * 自定义提示框
  */
-public class InputContentDialog {
+public class TipsActionDialog {
 
     private AlertDialog dialog;
     private Window window;
 
     private TextView title;
-    private EditText content;
-    private TextView cancel, confirm;
+    private Button cancel, confirm;
 
     private OnConfirmListener mOnConfirmListener;
     private OnCancelListener mOnCancelListener;
 
     private boolean finish = false;
 
-    private boolean backCanDismiss = true;//系统返回键能销毁对话框
-    private boolean cancelCanDismiss = true;//取消按钮能销毁对话框
-    private boolean confirmCanDismiss = true;//确定按钮能销毁对话框
+    private boolean backCanDismiss = true;
+    private boolean cancelCanDismiss = true;
+    private boolean confirmCanDismiss = true;
 
-    public InputContentDialog(final Context context) {
+    public TipsActionDialog(final Context context) {
         dialog = new AlertDialog.Builder(context).create();
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.dialog_input_content, null);
-        dialog.setView(layout);
-
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
 
@@ -52,18 +47,16 @@ public class InputContentDialog {
 
     private void setView() {
         window = dialog.getWindow();
-        window.setContentView(R.layout.dialog_input_content);
+        window.setContentView(R.layout.dialog_tips_action);
 //        window.setWindowAnimations(R.style.dialoganimstyle);  //添加动画
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);//设置不被虚拟键盘遮挡
         window.setBackgroundDrawableResource(R.color.transparent);//设置对话框以外的背景颜色
 
 
         title = (TextView) window.findViewById(R.id.tv_title);
-        content = (EditText) window.findViewById(R.id.et_content);
-        cancel = (TextView) window.findViewById(R.id.btn_cancel);
-        confirm = (TextView) window.findViewById(R.id.btn_confirm);
+        cancel = (Button) window.findViewById(R.id.btn_cancel);
+        confirm = (Button) window.findViewById(R.id.btn_confirm);
     }
-
 
     //设置是否强制在dismiss对话框时 销毁Activity
     public void setisFinishActivity(boolean finish) {
@@ -91,12 +84,12 @@ public class InputContentDialog {
     }
 
     //设置取消按钮是否dismiss对话框
-    public void setCancelCanDismiss(boolean canDismiss) {
+    public void setCancelCanDismiss(boolean canDismiss){
         cancelCanDismiss = canDismiss;
     }
 
     //设置确定按钮是否dismiss对话框
-    public void setConfirmCanDismiss(boolean canDismiss) {
+    public void setConfirmCanDismiss(boolean canDismiss){
         confirmCanDismiss = canDismiss;
     }
 
@@ -137,8 +130,7 @@ public class InputContentDialog {
             @Override
             public void onClick(View v) {
                 if (mOnConfirmListener != null) {
-                    String con = content.getText().toString();
-                    mOnConfirmListener.OnConfirmListener(v, con);
+                    mOnConfirmListener.OnConfirmListener(v);
                 }
                 if (confirmCanDismiss) {
                     dismiss();
@@ -167,7 +159,7 @@ public class InputContentDialog {
     }
 
     public interface OnConfirmListener {
-        void OnConfirmListener(View v, String content);
+        void OnConfirmListener(View v);
     }
 
     //设置取消按钮点击后的回调事件

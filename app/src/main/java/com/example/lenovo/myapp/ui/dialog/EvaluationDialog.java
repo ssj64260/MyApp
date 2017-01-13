@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.dialog;
+package com.example.lenovo.myapp.ui.dialog;
 
 import android.app.AlertDialog;
 import android.content.Context;

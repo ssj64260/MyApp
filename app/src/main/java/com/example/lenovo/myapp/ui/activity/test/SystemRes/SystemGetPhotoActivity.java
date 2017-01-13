@@ -11,11 +11,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.cxb.tools.utils.DataCleanManager;
 import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.dialog.ChooseDialog;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.ui.dialog.ChooseDialog;
 import com.orhanobut.logger.Logger;
 
 import java.io.File;
@@ -29,8 +30,8 @@ public class SystemGetPhotoActivity extends BaseActivity {
     private static final int REQUESTCODE_PICK = 0;// 相册选图标记
     private static final int REQUESTCODE_TAKE = 1;// 相机拍照标记
 
-    private File photoTemp;//拍照图片存放位置
-    private final String fileName = "photo.jpg";//拍照图片名称
+    private File PhotoDirectory;//图片路径
+    private File photoTemp;//图片完整uri
 
     private ImageView ivPhoto;
     private TextView tvChangePhoto;
@@ -54,16 +55,13 @@ public class SystemGetPhotoActivity extends BaseActivity {
             chooseDialog.dismiss();
         }
 
-        if (photoTemp.exists()) {
-            photoTemp.delete();
-        }
+        DataCleanManager.deleteFilesByDirectory(PhotoDirectory);
 
         super.onDestroy();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         switch (requestCode) {
             case REQUESTCODE_PICK:// 直接从相册获取
                 if (data != null && data.getData() != null) {
@@ -75,7 +73,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
                     Glide.with(SystemGetPhotoActivity.this)
                             .load(url)
                             .fitCenter()
-                            .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
                             .placeholder(R.mipmap.ic_no_image_circle)
                             .error(R.mipmap.ic_no_image_circle)
                             .dontAnimate()
@@ -89,7 +87,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
                     Glide.with(SystemGetPhotoActivity.this)
                             .load(photoTemp.getAbsolutePath())
                             .fitCenter()
-                            .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
                             .placeholder(R.mipmap.ic_no_image_circle)
                             .error(R.mipmap.ic_no_image_circle)
                             .dontAnimate()
@@ -106,7 +104,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
     }
 
     private void setData() {
-        photoTemp = new File(SDCardUtil.getAutoFilesPath(SystemGetPhotoActivity.this), fileName);
+        PhotoDirectory = new File(SDCardUtil.getAutoFilesPath(SystemGetPhotoActivity.this));
 
         tvChangePhoto.setOnClickListener(click);
     }
@@ -124,6 +122,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
         chooseDialog.setOnSecondButtonListener("拍照", new ChooseDialog.OnSecondButtonListener() {
             @Override
             public void OnSecondButtonListener(View v) {
+                photoTemp = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
                 Intent takeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 takeIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoTemp));
                 startActivityForResult(takeIntent, REQUESTCODE_TAKE);

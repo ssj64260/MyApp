@@ -46,7 +46,7 @@ public class SystemResActivity extends BaseActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.tv_get_ablum:
-                    startActivity(new Intent(SystemResActivity.this, AlbumActivity.class));
+                    startActivity(new Intent(SystemResActivity.this, AlbumListActivity.class));
                     break;
                 case R.id.tv_get_photo:
                     startActivity(new Intent(SystemResActivity.this, SystemGetPhotoActivity.class));

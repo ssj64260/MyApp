@@ -104,7 +104,11 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.activity.test.systemres.AlbumActivity"
+            android:name=".ui.activity.test.systemres.PhotoListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.test.systemres.AlbumListActivity"
             android:screenOrientation="portrait" />
 
         <activity

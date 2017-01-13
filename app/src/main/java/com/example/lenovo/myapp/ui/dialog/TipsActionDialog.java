@@ -14,8 +14,6 @@ import android.widget.TextView;
 import com.example.lenovo.myapp.R;
 
 /**
- * Created by CXB on 16/08/11.
- *
  * 自定义提示框
  */
 public class TipsActionDialog {

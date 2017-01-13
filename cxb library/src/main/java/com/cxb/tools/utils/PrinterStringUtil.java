@@ -3,8 +3,6 @@ package com.cxb.tools.utils;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Created by CXB on 16/8/5.
- * <p/>
  * 字符串处理
  */
 public class PrinterStringUtil {

@@ -20,8 +20,6 @@ import static com.example.lenovo.myapp.utils.Constants.DEBUG_URL;
 import static com.example.lenovo.myapp.utils.Constants.OFFICIAL_URL;
 
 /**
- * Created by CXB on 16/8/20.
- * <p/>
  * 设置接口url
  */
 public class SetPostUrlActivity extends BaseActivity {

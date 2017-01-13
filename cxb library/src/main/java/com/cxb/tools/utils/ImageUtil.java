@@ -7,7 +7,7 @@ import android.media.ExifInterface;
 import java.io.IOException;
 
 /**
- * Created by lenovo on 2016/10/17.
+ * 图片旋转处理工具类
  */
 
 public class ImageUtil {

@@ -31,7 +31,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
     private static final int REQUESTCODE_TAKE = 1;// 相机拍照标记
 
     private File PhotoDirectory;//图片路径
-    private File photoTemp;//图片完整uri
+    private File photoUri;//图片完整uri
 
     private ImageView ivPhoto;
     private TextView tvChangePhoto;
@@ -83,9 +83,9 @@ public class SystemGetPhotoActivity extends BaseActivity {
                 }
                 break;
             case REQUESTCODE_TAKE:// 调用相机拍照
-                if (photoTemp.exists() && resultCode == Activity.RESULT_OK) {
+                if (photoUri.exists() && resultCode == Activity.RESULT_OK) {
                     Glide.with(SystemGetPhotoActivity.this)
-                            .load(photoTemp.getAbsolutePath())
+                            .load(photoUri.getAbsolutePath())
                             .fitCenter()
                             .diskCacheStrategy(DiskCacheStrategy.NONE)
                             .placeholder(R.mipmap.ic_no_image_circle)
@@ -104,7 +104,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
     }
 
     private void setData() {
-        PhotoDirectory = new File(SDCardUtil.getAutoFilesPath(SystemGetPhotoActivity.this));
+        PhotoDirectory = new File(SDCardUtil.getAutoFilesPath(this));
 
         tvChangePhoto.setOnClickListener(click);
     }
@@ -122,9 +122,9 @@ public class SystemGetPhotoActivity extends BaseActivity {
         chooseDialog.setOnSecondButtonListener("拍照", new ChooseDialog.OnSecondButtonListener() {
             @Override
             public void OnSecondButtonListener(View v) {
-                photoTemp = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
+                photoUri = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
                 Intent takeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                takeIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoTemp));
+                takeIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoUri));
                 startActivityForResult(takeIntent, REQUESTCODE_TAKE);
             }
         });

@@ -457,7 +457,7 @@ public class FileUtil {
     /*
     * 把Bitmap转换成jpg图片
     * */
-    public static File saveBitmapToJpg(Bitmap bitmap,String path, String bitName,int size) {
+    public static File saveBitmapToJpg(Bitmap bitmap, String path, String bitName, int size) {
         File file = new File(path);
 
         try {
@@ -465,7 +465,7 @@ public class FileUtil {
                 file.mkdir();
             }
 
-            file = new File(path + bitName);
+            file = new File(path, bitName);
 
             if (!file.exists()) {
                 file.createNewFile();
@@ -485,7 +485,7 @@ public class FileUtil {
     public static String getContentImage(String url, Context context) {
         Uri uri = Uri.parse(url);
         String[] proj = {MediaStore.Images.Media.DATA};
-        Cursor actualimagecursor = ((Activity)context).managedQuery(uri, proj, null, null, null);
+        Cursor actualimagecursor = ((Activity) context).managedQuery(uri, proj, null, null, null);
         int actual_image_column_index = actualimagecursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         actualimagecursor.moveToFirst();
         String img_path = actualimagecursor.getString(actual_image_column_index);
@@ -566,7 +566,7 @@ public class FileUtil {
      * 6.设置解码位图的尺寸信息
      * 7.解码位图
      */
-    public static Bitmap setPicToView(String path,int width,int height) {
+    public static Bitmap setPicToView(String path, int width, int height) {
 
         float scale = 1;
         File file = new File(path);
@@ -578,19 +578,19 @@ public class FileUtil {
             int outHeight = options.outHeight;
             int outWidth = options.outWidth;
 
-            if(outHeight > height && outWidth > width){
+            if (outHeight > height && outWidth > width) {
                 float s1 = (float) width / (float) height;
                 float s2 = (float) outWidth / (float) outHeight;
-                if(s2 > s1){
-                    if(width > outWidth){
+                if (s2 > s1) {
+                    if (width > outWidth) {
                         scale = (float) width / (float) outWidth;
-                    }else{
+                    } else {
                         scale = (float) outWidth / (float) width;
                     }
-                }else{
-                    if(height > outHeight){
+                } else {
+                    if (height > outHeight) {
                         scale = (float) height / (float) outHeight;
-                    }else{
+                    } else {
                         scale = (float) outHeight / (float) height;
                     }
                 }
@@ -610,7 +610,7 @@ public class FileUtil {
         return null;
     }
 
-    public static Bitmap setPicToView(String path,int size) {
+    public static Bitmap setPicToView(String path, int size) {
 
         File file = new File(path);
 
@@ -643,7 +643,7 @@ public class FileUtil {
 //        if(tempSize > 1.4){
 //            size = 2;
 //        }
-        if(Math.max(bitmap.getWidth(),bitmap.getHeight()) > maxWidth){
+        if (Math.max(bitmap.getWidth(), bitmap.getHeight()) > maxWidth) {
             size = 2;
         }
         opts.inTempStorage = new byte[100 * 1024];
@@ -663,8 +663,7 @@ public class FileUtil {
     }
 
     //使用BitmapFactory.Options的inSampleSize参数来缩放
-    public static Bitmap resizeImage2(Bitmap bitmap, int width,int height)
-    {
+    public static Bitmap resizeImage2(Bitmap bitmap, int width, int height) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;//不加载bitmap到内存中
 //        BitmapFactory.decodeFile(path,options);
@@ -675,20 +674,18 @@ public class FileUtil {
         options.inPreferredConfig = Bitmap.Config.ALPHA_8;
         options.inSampleSize = 1;
 
-        if (outWidth != 0 && outHeight != 0 && width != 0 && height != 0)
-        {
-            int sampleSize=(outWidth/width+outHeight/height)/2;
+        if (outWidth != 0 && outHeight != 0 && width != 0 && height != 0) {
+            int sampleSize = (outWidth / width + outHeight / height) / 2;
 
             options.inSampleSize = sampleSize;
         }
 
         options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeStream(Bitmap2IS(bitmap),null,options);
+        return BitmapFactory.decodeStream(Bitmap2IS(bitmap), null, options);
     }
 
     //使用Bitmap加Matrix来缩放
-    public static Bitmap resizeImage(Bitmap bitmap, int newWidth, int newHeight)
-    {
+    public static Bitmap resizeImage(Bitmap bitmap, int newWidth, int newHeight) {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
 
@@ -702,7 +699,7 @@ public class FileUtil {
         Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0, width,
                 height, matrix, true);
 
-        if(bitmap != null){
+        if (bitmap != null) {
             bitmap.recycle();
             bitmap = null;
             System.gc();

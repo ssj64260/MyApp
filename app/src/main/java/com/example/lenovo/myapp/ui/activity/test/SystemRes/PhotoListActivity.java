@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.AlbumListBean;
 import com.example.lenovo.myapp.model.testbean.PhotoBean;
@@ -18,6 +17,8 @@ import com.example.lenovo.myapp.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.lenovo.myapp.ui.activity.test.systemres.ClippingImageActivity.KEY_IMAGE_URI;
 
 /**
  * 相册对应的相片列表
@@ -82,7 +83,10 @@ public class PhotoListActivity extends BaseActivity {
     private OnListClickListener listClick = new OnListClickListener() {
         @Override
         public void onItemClick(int position) {
-            ToastUtil.toast(list.get(position).getPath());
+            Intent intent = new Intent();
+            intent.setClass(PhotoListActivity.this, ClippingImageActivity.class);
+            intent.putExtra(KEY_IMAGE_URI, list.get(position).getPath());
+            startActivity(intent);
         }
 
         @Override

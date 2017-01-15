@@ -113,6 +113,15 @@ public class MainActivity extends BaseAppCompatActivity {
         getCacheSize();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
     private void initView() {
         rlNetworkWarm = (RelativeLayout) findViewById(R.id.rl_network_warnning);
         rlNetworkWarm.setOnClickListener(new View.OnClickListener() {

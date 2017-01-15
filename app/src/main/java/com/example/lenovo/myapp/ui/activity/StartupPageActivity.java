@@ -8,6 +8,8 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.PreferencesUtil;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
 import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_FIRST_START;
 
@@ -21,15 +23,9 @@ public class StartupPageActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+        ThreadPoolUtil.getInstache().scheduled(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -37,22 +33,17 @@ public class StartupPageActivity extends BaseActivity {
                     }
                 });
             }
-        });
-
+        }, 1, TimeUnit.SECONDS);
     }
 
     private void startNextActivity() {
-        Intent main = new Intent();
-        main.setClass(this, PokemonMainActivity.class);
-        startActivity(main);
-
         boolean firstStart = PreferencesUtil.getBoolean(APP_SETTING, KEY_FIRST_START, true);
         if (firstStart) {
             PreferencesUtil.setData(APP_SETTING, KEY_FIRST_START, false);
-            Intent ad = new Intent();
-            ad.setClass(this, AdPagesActivity.class);
-            startActivity(ad);
+            startActivity(new Intent(this, AdPagesActivity.class));
             overridePendingTransition(R.anim.alpha_0_to_1, R.anim.alpha_1_to_0);
+        } else {
+            startActivity(new Intent(this, PokemonMainActivity.class));
         }
 
         finish();

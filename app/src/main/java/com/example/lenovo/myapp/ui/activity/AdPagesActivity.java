@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -72,6 +73,7 @@ public class AdPagesActivity extends BaseActivity {
     private void toFinish() {
         if (!isNoFirst) {
             isNoFirst = true;
+            startActivity(new Intent(this, PokemonMainActivity.class));
             finish();
             overridePendingTransition(R.anim.alpha_0_to_1, R.anim.alpha_1_to_0);
         }

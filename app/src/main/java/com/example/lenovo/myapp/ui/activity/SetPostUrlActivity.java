@@ -79,18 +79,18 @@ public class SetPostUrlActivity extends BaseActivity {
                             finish();
                         } else {
                             curUrl = url;
-                            deleteAllData(true, true);
+                            deleteAllData(true);
                         }
                     }
                     break;
                 case R.id.btn_clear_all_data:
-                    deleteAllData(true, true);
+                    deleteAllData(true);
                     break;
                 case R.id.btn_clear_db:
-                    deleteAllData(true, false);
+                    deleteAllData(false);
                     break;
                 case R.id.btn_clear_share:
-                    deleteAllData(false, true);
+                    deleteAllData(true);
                     break;
                 case R.id.btn_test:
 
@@ -99,7 +99,7 @@ public class SetPostUrlActivity extends BaseActivity {
         }
     };
 
-    private void deleteAllData(final boolean clearDB, final boolean clearShare) {
+    private void deleteAllData(final boolean clearShare) {
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {

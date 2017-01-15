@@ -116,9 +116,7 @@ public class OkhttpTestActivity extends BaseActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_change_url:
-                    Intent intent = new Intent();
-                    intent.setClass(OkhttpTestActivity.this, SetPostUrlActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(OkhttpTestActivity.this, SetPostUrlActivity.class));
                     break;
                 case R.id.btn_meishiyi_ad:
                     Type returnType = new TypeToken<List<AdBean>>() {

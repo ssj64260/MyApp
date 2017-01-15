@@ -42,9 +42,7 @@ public class MineFragment extends Fragment {
         view.findViewById(R.id.tv_sliding_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), QQMainActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getActivity(), QQMainActivity.class));
             }
         });
     }
@@ -54,9 +52,10 @@ public class MineFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.tv_tools:
-                    Intent intent = new Intent();
-                    intent.setClass(getActivity(), MainActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(getActivity(), MainActivity.class));
+                    break;
+                case R.id.tv_sliding_test:
+                    startActivity(new Intent(getActivity(), QQMainActivity.class));
                     break;
             }
         }

@@ -3,7 +3,7 @@ package com.cxb.tools.utils;
 import java.io.UnsupportedEncodingException;
 
 /**
- *  字符串检测工具
+ * 字符串检测工具
  */
 public class StringCheck {
     /**
@@ -20,7 +20,7 @@ public class StringCheck {
         return !isEmpty(mobiles) && mobiles.matches(telRegex);
     }
 
-    public static boolean isOnlyNumber(String number){
+    public static boolean isOnlyNumber(String number) {
         String regex = "\\d+";
         return !isEmpty(number) && number.matches(regex);
     }
@@ -31,33 +31,12 @@ public class StringCheck {
         return !isEmpty(code) && code.matches(regex);
     }
 
-    public static boolean isAddress(String address) {
-        String regex = "[^((\\ud83c\\udc00-\\ud83c\\udfff)|(\\ud83d\\udc00-\\ud83d\\udfff)|(\\u2600-\\u27ff))]+";
-        return sizeIn(address, 2, 200) && address.matches(regex);
-    }
-
-    public static boolean isStreet(String street) {
-        String regex = ".{2,20}";
-        return !isEmpty(street) && street.matches(regex);
-    }
-
     public static boolean isName(String name) {
         String regex = "[\\u4E00-\\u9FA5·]+";
         return sizeIn(name, 4, 40) && name.matches(regex);
     }
 
-    public static boolean isCompanyName(String companyName) {
-        String regex = "[\\u4E00-\\u9FA5A-Za-z0-9\\(\\)\\uff08\\uff09]+";
-        return sizeIn(companyName, 2, 200) && companyName.matches(regex);
-    }
-
-    public static boolean isNickName(String nickName) {
-        String regex = "[\\u4E00-\\u9FA50-9A-Za-z_.]+";
-        return sizeIn(nickName, 2, 12) && nickName.matches(regex);
-    }
-
     public static boolean isPassword(String password) {
-//        String telRegex = "(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,12})$";
         String regex = "[0-9A-Za-z]{6,12}";
         return !isEmpty(password) && password.matches(regex);
     }
@@ -67,23 +46,13 @@ public class StringCheck {
         return !isEmpty(idCard) && idCard.matches(regex);
     }
 
-    public static boolean isTaxIDCard(String taxIdCard) {
-        String regex = "[0-9a-zA-Z]{15,18}";
-        return !isEmpty(taxIdCard) && taxIdCard.matches(regex);
+    public static boolean isEmail(String email) {
+        String regex = "\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+        return !isEmpty(email) && email.matches(regex);
     }
 
     public static boolean isEmpty(String str) {
         return !(str != null && str.length() != 0 && !"".equals(str));
-    }
-
-    public static boolean isCarNumber(String carNumber) {
-        String regex = "[\\u4e00-\\u9fa5]{1}[A-Z]{1}[A-Z0-9]{5}";
-        return carNumber.matches(regex);
-    }
-
-    public static boolean isCarType(String carType) {
-        String regex = "[\\u4e00-\\u9fa5A-Za-z0-9-]+";
-        return sizeIn(carType, 2, 40) && carType.matches(regex);
     }
 
     public static boolean sizeIn(String str, int min, int max) {
@@ -157,5 +126,19 @@ public class StringCheck {
         }
 
         return Math.min(lenLevel, formatLevel);
+    }
+
+    //半角转全角
+    public static String ToDBC(String input) {
+        char[] c = input.toCharArray();
+        for (int i = 0; i < c.length; i++) {
+            if (c[i] == 12288) {
+                c[i] = (char) 32;
+                continue;
+            }
+            if (c[i] > 65280 && c[i] < 65375)
+                c[i] = (char) (c[i] - 65248);
+        }
+        return new String(c);
     }
 }

@@ -18,12 +18,31 @@ import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.systemres.AlbumListAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
-import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.provider.MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME;
+import static android.provider.MediaStore.Images.ImageColumns.BUCKET_ID;
+import static android.provider.MediaStore.Images.ImageColumns.DATA;
+import static android.provider.MediaStore.Images.ImageColumns.DATE_ADDED;
+import static android.provider.MediaStore.Images.ImageColumns.DATE_MODIFIED;
+import static android.provider.MediaStore.Images.ImageColumns.DATE_TAKEN;
+import static android.provider.MediaStore.Images.ImageColumns.DESCRIPTION;
+import static android.provider.MediaStore.Images.ImageColumns.DISPLAY_NAME;
+import static android.provider.MediaStore.Images.ImageColumns.HEIGHT;
+import static android.provider.MediaStore.Images.ImageColumns.IS_PRIVATE;
+import static android.provider.MediaStore.Images.ImageColumns.LATITUDE;
+import static android.provider.MediaStore.Images.ImageColumns.LONGITUDE;
+import static android.provider.MediaStore.Images.ImageColumns.MIME_TYPE;
+import static android.provider.MediaStore.Images.ImageColumns.MINI_THUMB_MAGIC;
+import static android.provider.MediaStore.Images.ImageColumns.ORIENTATION;
+import static android.provider.MediaStore.Images.ImageColumns.PICASA_ID;
+import static android.provider.MediaStore.Images.ImageColumns.SIZE;
+import static android.provider.MediaStore.Images.ImageColumns.TITLE;
+import static android.provider.MediaStore.Images.ImageColumns.WIDTH;
+import static android.provider.MediaStore.Images.ImageColumns._ID;
 import static com.example.lenovo.myapp.ui.activity.test.systemres.PhotoListActivity.KEY_ALBUM;
 
 /**
@@ -90,28 +109,40 @@ public class AlbumListActivity extends BaseActivity {
                 if (mCursor != null) {
                     mCursor.moveToLast();
                     do {
-                        String temp = "";
-                        for (int i = 0; i < mCursor.getColumnCount(); i++) {
-                            temp += mCursor.getColumnName(i) + ":\t" + mCursor.getString(mCursor.getColumnIndex(mCursor.getColumnName(i))) + "\n";
-                        }
-                        Logger.d(temp);
+//                        String temp = "";
+//                        for (int i = 0; i < mCursor.getColumnCount(); i++) {
+//                            temp += mCursor.getColumnName(i) + ":\t" + mCursor.getString(mCursor.getColumnIndex(mCursor.getColumnName(i))) + "\n";
+//                        }
+//                        Logger.d(temp);
 
                         PhotoBean photo = new PhotoBean();
-                        photo.setTitle(mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.TITLE)));
-                        photo.setFileName(mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME)));
-                        photo.setAlbumName(mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.BUCKET_DISPLAY_NAME)));
-                        photo.setPath(mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.DATA)));
-                        photo.setSize(mCursor.getLong(mCursor.getColumnIndex(MediaStore.Images.Media.SIZE)));
-                        photo.setDateTaken(mCursor.getLong(mCursor.getColumnIndex(MediaStore.Images.Media.DATE_TAKEN)));
-                        photo.setType(mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.MIME_TYPE)));
-                        photo.setWidth(mCursor.getInt(mCursor.getColumnIndex(MediaStore.Images.Media.WIDTH)));
-                        photo.setHeight(mCursor.getInt(mCursor.getColumnIndex(MediaStore.Images.Media.HEIGHT)));
+                        photo.setId(mCursor.getLong(mCursor.getColumnIndex(_ID)));
+                        photo.setData(mCursor.getString(mCursor.getColumnIndex(DATA)));
+                        photo.setSize(mCursor.getLong(mCursor.getColumnIndex(SIZE)));
+                        photo.setDisplayName(mCursor.getString(mCursor.getColumnIndex(DISPLAY_NAME)));
+                        photo.setTitle(mCursor.getString(mCursor.getColumnIndex(TITLE)));
+                        photo.setDateAdded(mCursor.getLong(mCursor.getColumnIndex(DATE_ADDED)));
+                        photo.setDateModified(mCursor.getLong(mCursor.getColumnIndex(DATE_MODIFIED)));
+                        photo.setType(mCursor.getString(mCursor.getColumnIndex(MIME_TYPE)));
+                        photo.setWidth(mCursor.getInt(mCursor.getColumnIndex(WIDTH)));
+                        photo.setHeight(mCursor.getInt(mCursor.getColumnIndex(HEIGHT)));
+
+                        photo.setDescription(mCursor.getString(mCursor.getColumnIndex(DESCRIPTION)));
+                        photo.setPicasaId(mCursor.getString(mCursor.getColumnIndex(PICASA_ID)));
+                        photo.setIsprivate(mCursor.getInt(mCursor.getColumnIndex(IS_PRIVATE)));
+                        photo.setLatitude(mCursor.getDouble(mCursor.getColumnIndex(LATITUDE)));
+                        photo.setLongitude(mCursor.getDouble(mCursor.getColumnIndex(LONGITUDE)));
+                        photo.setDateTaken(mCursor.getLong(mCursor.getColumnIndex(DATE_TAKEN)));
+                        photo.setOrientation(mCursor.getInt(mCursor.getColumnIndex(ORIENTATION)));
+                        photo.setMiniThumbMagic(mCursor.getLong(mCursor.getColumnIndex(MINI_THUMB_MAGIC)));
+                        photo.setBucketId(mCursor.getString(mCursor.getColumnIndex(BUCKET_ID)));
+                        photo.setBucketDisplayName(mCursor.getString(mCursor.getColumnIndex(BUCKET_DISPLAY_NAME)));
 
                         boolean isNew = true;
 
                         if (list.size() > 0) {
                             for (AlbumListBean al : list) {
-                                if (al.getPath().equals(new File(photo.getPath()).getParent())) {
+                                if (al.getPath().equals(new File(photo.getData()).getParent())) {
                                     al.getPhotos().add(photo);
                                     isNew = false;
                                 }
@@ -120,9 +151,9 @@ public class AlbumListActivity extends BaseActivity {
 
                         if (isNew) {
                             AlbumListBean al = new AlbumListBean();
-                            al.setName(photo.getAlbumName());
-                            al.setPath(new File(photo.getPath()).getParent());
-                            al.setIcon(photo.getPath());
+                            al.setName(photo.getBucketDisplayName());
+                            al.setPath(new File(photo.getData()).getParent());
+                            al.setIcon(photo.getData());
                             List<PhotoBean> pList = new ArrayList<>();
                             pList.add(photo);
                             al.setPhotos(pList);
@@ -133,7 +164,7 @@ public class AlbumListActivity extends BaseActivity {
                     if (list.size() > 0) {
                         AlbumListBean al = new AlbumListBean();
                         al.setName("最近相片");
-                        al.setIcon(list.get(0).getPhotos().get(0).getPath());
+                        al.setIcon(list.get(0).getPhotos().get(0).getData());
 
                         List<PhotoBean> pList = new ArrayList<>();
                         for (AlbumListBean alb : list) {

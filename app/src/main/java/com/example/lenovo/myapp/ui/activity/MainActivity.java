@@ -23,13 +23,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.cxb.tools.Glide.GlideCircleTransform;
 import com.cxb.tools.utils.DataCleanManager;
-import com.cxb.tools.utils.GetFileSizeUtil;
+import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.activity.test.AnimationTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.AppInfoTestActivity;
@@ -43,6 +42,7 @@ import com.example.lenovo.myapp.ui.activity.test.systemres.SystemResActivity;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
+import com.example.lenovo.myapp.ui.dialog.TipsActionDialog;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.io.File;
@@ -339,13 +339,13 @@ public class MainActivity extends BaseAppCompatActivity {
             String cacheDir = SDCardUtil.getCacheDir(this);
             String externalCacheDir = SDCardUtil.getExternalCacheDir(this);
 
-            cacheSize += GetFileSizeUtil.getFileSize(new File(cacheDir));
-            cacheSize += GetFileSizeUtil.getFileSize(new File(externalCacheDir));
+            cacheSize += FileUtil.getFileSize(new File(cacheDir));
+            cacheSize += FileUtil.getFileSize(new File(externalCacheDir));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        String cache = GetFileSizeUtil.FormetFileSize(this, cacheSize);
+        String cache = FileUtil.FormetFileSize(this, cacheSize);
 
         if (navigationView != null) {
             navigationView.getMenu().findItem(R.id.nav_manage).setTitle("清理缓存：" + cache);

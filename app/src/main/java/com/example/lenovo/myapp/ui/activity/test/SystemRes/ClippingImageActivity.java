@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.cxb.tools.utils.FileUtil;
+import com.cxb.tools.utils.ImageUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
@@ -63,7 +63,7 @@ public class ClippingImageActivity extends BaseActivity {
 
     private void uploadAvatar() {
         photoUri = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
-        FileUtil.saveBitmapToJpg(civClipper.getCroppedImage(),
+        ImageUtil.saveBitmapToJpg(civClipper.getCroppedImage(),
                 PhotoDirectory.getAbsolutePath(),
                 photoUri.getName(),
                 30);

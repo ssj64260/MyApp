@@ -2,6 +2,9 @@ package com.cxb.tools.utils;
 
 import android.content.Context;
 import android.os.Environment;
+import android.os.StatFs;
+
+import java.io.File;
 
 /**
  * sd卡路径
@@ -63,6 +66,38 @@ public class SDCardUtil {
     //检查SD卡是否能被移除
     public static boolean SDCardRemovable(){
         return Environment.isExternalStorageRemovable();
+    }
+
+    /**
+     * 计算SD卡的剩余空间
+     *
+     * @return 返回-1，说明没有安装sd卡
+     */
+    public static long getFreeDiskSpace() {
+        String status = Environment.getExternalStorageState();
+        long freeSpace = 0;
+        if (status.equals(Environment.MEDIA_MOUNTED)) {
+            try {
+                File path = Environment.getExternalStorageDirectory();
+                StatFs stat = new StatFs(path.getPath());
+                long blockSize;
+                long availableBlocks;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                    blockSize = stat.getBlockSizeLong();
+                    availableBlocks = stat.getAvailableBlocksLong();
+                } else {
+                    blockSize = stat.getBlockSize();
+                    availableBlocks = stat.getAvailableBlocks();
+                }
+
+                freeSpace = availableBlocks * blockSize / 1024;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            return -1;
+        }
+        return (freeSpace);
     }
 
 }

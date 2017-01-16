@@ -8,47 +8,43 @@ import java.io.Serializable;
 
 public class PhotoBean implements Serializable {
 
-    private String title;       //图片名           （title）
-    private String fileName;    //带后缀的图片名    （_display_name）
-    private String albumName;   //上级目录名称      （bucket_display_name）
-    private String path;        //图片路径          （_data）
-    private long size;          //图片大小          （_size）
-    private long dateTaken;     //时间戳            （datetaken）
-    private String type;        //图片类型          （mime_type）
-    private int width;          //图片宽度          （width）
-    private int height;         //图片高度          （height）
+    private long id;            //ID               （INTEGER long）（_id）
 
+    private String data;        //图片路径          （DATA STREAM）（_data）
+    private long size;          //图片大小              （INTEGER）（_size）
+    private String displayName; //显示名称                 （TEXT）（_display_name）
+    private String title;       //标题                     （TEXT）（title）
+    private long dateAdded;     //创建日期         （INTEGER long）（date_added）
+    private long dateModified;  //最后修改日期      （INTEGER long）（date_modified）
+    private String type;        //MIME类型                 （TEXT）（mime_type）
+    private int width;          //图片宽度                         （width）
+    private int height;         //图片高度                         （height）
 
-    public String getTitle() {
-        return title;
+    private String description;         //描述                        （TEXT）（description）
+    private String picasaId;            //                            （TEXT）（picasa_id）
+    private int isprivate;              //是否私有                  （INTEGER）（isprivate）
+    private double latitude;            //捕获图像的纬度             （DOUBLE）（latitude）
+    private double longitude;           //捕获图像的经度             （DOUBLE）（longitude）
+    private long dateTaken;             //拍摄时间（毫秒）           （INTEGER）（datetaken）
+    private int orientation;            //图片角度（0，90，180，270）（INTEGER）（orientation）
+    private long miniThumbMagic;        //                         （INTEGER）（mini_thumb_magic）
+    private String bucketId;            //上级目录ID                   （TEXT）（bucket_id）
+    private String bucketDisplayName;   //上级目录显示名称              （TEXT）（bucket_display_name）
+
+    public long getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getData() {
+        return data;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getAlbumName() {
-        return albumName;
-    }
-
-    public void setAlbumName(String albumName) {
-        this.albumName = albumName;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
+    public void setData(String data) {
+        this.data = data;
     }
 
     public long getSize() {
@@ -59,12 +55,36 @@ public class PhotoBean implements Serializable {
         this.size = size;
     }
 
-    public long getDateTaken() {
-        return dateTaken;
+    public String getDisplayName() {
+        return displayName;
     }
 
-    public void setDateTaken(long dateTaken) {
-        this.dateTaken = dateTaken;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public long getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(long dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    public long getDateModified() {
+        return dateModified;
+    }
+
+    public void setDateModified(long dateModified) {
+        this.dateModified = dateModified;
     }
 
     public String getType() {
@@ -89,5 +109,85 @@ public class PhotoBean implements Serializable {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPicasaId() {
+        return picasaId;
+    }
+
+    public void setPicasaId(String picasaId) {
+        this.picasaId = picasaId;
+    }
+
+    public int getIsprivate() {
+        return isprivate;
+    }
+
+    public void setIsprivate(int isprivate) {
+        this.isprivate = isprivate;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public long getDateTaken() {
+        return dateTaken;
+    }
+
+    public void setDateTaken(long dateTaken) {
+        this.dateTaken = dateTaken;
+    }
+
+    public int getOrientation() {
+        return orientation;
+    }
+
+    public void setOrientation(int orientation) {
+        this.orientation = orientation;
+    }
+
+    public long getMiniThumbMagic() {
+        return miniThumbMagic;
+    }
+
+    public void setMiniThumbMagic(long miniThumbMagic) {
+        this.miniThumbMagic = miniThumbMagic;
+    }
+
+    public String getBucketId() {
+        return bucketId;
+    }
+
+    public void setBucketId(String bucketId) {
+        this.bucketId = bucketId;
+    }
+
+    public String getBucketDisplayName() {
+        return bucketDisplayName;
+    }
+
+    public void setBucketDisplayName(String bucketDisplayName) {
+        this.bucketDisplayName = bucketDisplayName;
     }
 }

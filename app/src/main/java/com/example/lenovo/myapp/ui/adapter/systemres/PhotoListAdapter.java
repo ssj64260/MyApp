@@ -16,6 +16,8 @@ import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 
 import java.util.List;
 
+import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.Tag.LINEARLAYOUT;
+
 /**
  * 相片列表
  */
@@ -48,7 +50,7 @@ public class PhotoListAdapter extends RecyclerView.Adapter {
 
         PhotoBean photo = list.get(position);
 
-        requestManager.load(photo.getPath())
+        requestManager.load(photo.getData())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .placeholder(R.mipmap.ic_no_image_circle)
@@ -62,6 +64,15 @@ public class PhotoListAdapter extends RecyclerView.Adapter {
                 if (onListClickListener != null) {
                     onListClickListener.onItemClick(position);
                 }
+            }
+        });
+        holder.view.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (onListClickListener != null) {
+                    onListClickListener.onTagClick(LINEARLAYOUT, position);
+                }
+                return true;
             }
         });
 

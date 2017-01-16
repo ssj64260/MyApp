@@ -6,10 +6,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.TextView;
 
 import com.cxb.tools.utils.FileUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.AlbumListBean;
 import com.example.lenovo.myapp.model.testbean.PhotoBean;
@@ -39,6 +39,8 @@ public class PhotoListActivity extends BaseActivity {
     private List<PhotoBean> list;
     private PhotoListAdapter mAdapter;
 
+    private TextView tvPictureInfo;
+
     private AlbumListBean album;
 
     @Override
@@ -57,11 +59,13 @@ public class PhotoListActivity extends BaseActivity {
 
         rvPhoto = (RecyclerView) findViewById(R.id.rv_photo);
 
+        tvPictureInfo = (TextView) findViewById(R.id.tv_picture_info);
     }
 
     private void setData() {
         tvBack.setOnClickListener(click);
         tvCancel.setOnClickListener(click);
+        tvPictureInfo.setOnClickListener(click);
 
         list = new ArrayList<>();
         mAdapter = new PhotoListAdapter(this, list);
@@ -81,6 +85,20 @@ public class PhotoListActivity extends BaseActivity {
                 mAdapter.notifyDataSetChanged();
             }
         }
+    }
+
+    private void showPictureMsg() {
+        AlphaAnimation mShowAction = new AlphaAnimation(0, 1);
+        mShowAction.setDuration(500);
+        tvPictureInfo.setAnimation(mShowAction);
+        tvPictureInfo.setVisibility(View.VISIBLE);
+    }
+
+    private void hidePictureMsg() {
+        AlphaAnimation mHiddenAction = new AlphaAnimation(1, 0);
+        mHiddenAction.setDuration(500);
+        tvPictureInfo.setAnimation(mHiddenAction);
+        tvPictureInfo.setVisibility(View.GONE);
     }
 
     private OnListClickListener listClick = new OnListClickListener() {
@@ -117,9 +135,10 @@ public class PhotoListActivity extends BaseActivity {
                 content += "MiniThumbMagic：" + pb.getMiniThumbMagic() + "\n";
                 content += "上级目录ID：" + pb.getBucketId() + "\n";
                 content += "上级目录显示名称：" + pb.getBucketDisplayName() + "\n";
+                tvPictureInfo.setText(content);
+                showPictureMsg();
 
                 Logger.d(content);
-                ToastUtil.toast(content);
             }
         }
     };
@@ -138,6 +157,9 @@ public class PhotoListActivity extends BaseActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
+                    break;
+                case R.id.tv_picture_info:
+                    hidePictureMsg();
                     break;
             }
         }

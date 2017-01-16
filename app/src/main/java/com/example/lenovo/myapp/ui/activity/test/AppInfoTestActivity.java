@@ -95,7 +95,6 @@ public class AppInfoTestActivity extends BaseActivity {
             }
         });
     }
-
     private void showDetail() {
         AlphaAnimation mShowAction = new AlphaAnimation(0, 1);
         mShowAction.setDuration(500);
@@ -113,6 +112,7 @@ public class AppInfoTestActivity extends BaseActivity {
         detail.setVisibility(View.GONE);
         rvAppList.setVisibility(View.VISIBLE);
     }
+
 
     //列表点击监听
     private OnListClickListener listClick = new OnListClickListener() {

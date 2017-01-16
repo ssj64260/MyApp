@@ -46,14 +46,12 @@
             android:textSize="@dimen/textsize_14sp"
             tools:ignore="HardcodedText" />
 
-
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:background="@color/white">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_photo"
@@ -61,6 +59,19 @@
             android:layout_height="match_parent"
             android:paddingEnd="1dp"
             android:paddingStart="1dp" />
-    </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_picture_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/shape_bg_picture_info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_14sp"
+            android:visibility="gone"
+            tools:text="图片信息图片信息图片信息图片信息图片信息图片信息" />
+
+    </RelativeLayout>
 
 </LinearLayout>

@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.cxb.tools.Glide.GlideCircleTransform;
 import com.cxb.tools.utils.DataCleanManager;
+import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.SDCardUtil;
@@ -163,20 +164,21 @@ public class MainActivity extends BaseAppCompatActivity {
 
     private void setData() {
         Glide.get(MainActivity.this).clearMemory();
-//        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
-//            @Override
-//            public void run() {
-//                Glide.get(MainActivity.this).clearDiskCache();
-//            }
-//        });
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+            @Override
+            public void run() {
+                Glide.get(MainActivity.this).clearDiskCache();
+            }
+        });
 
         GlideCircleTransform transform = new GlideCircleTransform(this)
-                .setBorderThickness(10)
+                .setBorderThickness(DisplayUtil.dip2px(this, 5))
                 .setColor(255, 255, 255, 1);
 
         Glide.with(this).load(R.mipmap.app_icon)
-                .transform(transform)
 //                .placeholder(R.mipmap.app_icon)
+                .centerCrop()
+                .transform(transform)
                 .dontAnimate()
                 .into(ivAvatar);
 

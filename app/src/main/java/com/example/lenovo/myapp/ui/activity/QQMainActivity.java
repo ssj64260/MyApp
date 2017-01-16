@@ -19,6 +19,7 @@ import com.cxb.tools.Glide.GlideCircleTransform;
 import com.cxb.tools.QQLevelLayout.QQLevelLayout;
 import com.cxb.tools.SlidingMenu.MySlidingMenu;
 import com.cxb.tools.SlidingMenu.SlidingMenuResUtil;
+import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
@@ -103,12 +104,12 @@ public class QQMainActivity extends BaseActivity {
 
     private void initView() {
         Glide.get(QQMainActivity.this).clearMemory();
-//        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
-//            @Override
-//            public void run() {
-//                Glide.get(QQMainActivity.this).clearDiskCache();
-//            }
-//        });
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+            @Override
+            public void run() {
+                Glide.get(QQMainActivity.this).clearDiskCache();
+            }
+        });
 
         smMain = (MySlidingMenu) findViewById(R.id.sm_main);
 
@@ -135,13 +136,14 @@ public class QQMainActivity extends BaseActivity {
         qqLevel.setLevel(59);
 
         GlideCircleTransform transform = new GlideCircleTransform(this)
-                .setBorderThickness(11)
+                .setBorderThickness(DisplayUtil.dip2px(this, 3))
                 .setColor(255, 255, 255, 1);
 
         Glide.with(this).load(R.mipmap.app_icon)
 //                .skipMemoryCache(true)
 //                .diskCacheStrategy(DiskCacheStrategy.NONE)
 //                .placeholder(R.mipmap.app_icon)
+                .centerCrop()
                 .transform(transform)
                 .dontAnimate()
                 .into(ivMenuAvatar);

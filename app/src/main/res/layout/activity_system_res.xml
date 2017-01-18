@@ -17,11 +17,20 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/tv_get_permissions"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_bg_iselectable"
+                android:gravity="center"
+                android:text="获取系统权限" />
+
+            <TextView
                 android:id="@+id/tv_get_ablum"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_iselectable"
+                android:gravity="center"
                 android:text="获取相册资源" />
 
             <TextView
@@ -29,9 +38,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:gravity="center"
                 android:background="@drawable/selector_bg_iselectable"
+                android:gravity="center"
                 android:text="选图和拍照" />
+
+            <TextView
+                android:id="@+id/tv_get_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_bg_iselectable"
+                android:gravity="center"
+                android:text="获取系统联系人" />
 
         </LinearLayout>
 

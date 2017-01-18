@@ -2,24 +2,36 @@ package com.example.lenovo.myapp.ui.base;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import com.cxb.tools.utils.AppManager;
 import com.cxb.tools.utils.DisplayUtil;
 import com.example.lenovo.myapp.MyApplication;
+import com.example.lenovo.myapp.ui.dialog.DefaultAlertDialog;
 import com.orhanobut.logger.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 基类
  */
 
 public class BaseActivity extends Activity {
+
+    protected String[] permissions;
+    protected String[] refuseTips;
 
     private InputMethodManager manager;
 
@@ -113,4 +125,66 @@ public class BaseActivity extends Activity {
             }
         }
     };
+
+    protected void setPermissions() {
+        List<String> temp = new ArrayList<>();
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                temp.add(permission);
+            }
+        }
+
+        permissions = temp.toArray(new String[temp.size()]);
+
+        requestPermissions(0);
+    }
+
+    private void requestPermissions(int index) {
+        if (permissions.length > 0 && index >= 0 && index < permissions.length) {
+            ActivityCompat.requestPermissions(this, new String[]{permissions[index]}, index);
+        } else if (permissions.length == 0) {
+            doSomeThing();
+        }
+    }
+
+    protected void doSomeThing() {
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] p, int[] grantResults) {
+        if (grantResults != null && grantResults.length > 0) {
+            if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                DefaultAlertDialog alertDialog = new DefaultAlertDialog(this);
+                alertDialog.setTitle("权限申请");
+                alertDialog.setMessage(refuseTips[requestCode]);
+                alertDialog.setCancelButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                alertDialog.setConfirmButton("去设置", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        AppManager.showInstalledAppDetails(BaseActivity.this, getPackageName());
+                    }
+                });
+                alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        finish();
+                    }
+                });
+                alertDialog.showDialog();
+            } else {
+                requestCode++;
+                if (requestCode == permissions.length) {
+                    doSomeThing();
+                } else {
+                    requestPermissions(requestCode);
+                }
+            }
+        }
+    }
 }

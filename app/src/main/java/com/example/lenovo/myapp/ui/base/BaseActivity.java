@@ -127,16 +127,20 @@ public class BaseActivity extends Activity {
     };
 
     protected void setPermissions() {
-        List<String> temp = new ArrayList<>();
-        for (String permission : permissions) {
-            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
-                temp.add(permission);
+        if (Build.VERSION.SDK_INT < 23) {
+            doSomeThing();
+        } else {
+            List<String> temp = new ArrayList<>();
+            for (String permission : permissions) {
+                if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                    temp.add(permission);
+                }
             }
+
+            permissions = temp.toArray(new String[temp.size()]);
+
+            requestPermissions(0);
         }
-
-        permissions = temp.toArray(new String[temp.size()]);
-
-        requestPermissions(0);
     }
 
     private void requestPermissions(int index) {

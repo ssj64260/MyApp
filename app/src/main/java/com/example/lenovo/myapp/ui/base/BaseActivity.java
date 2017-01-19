@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.cxb.tools.utils.AppManager;
 import com.cxb.tools.utils.DisplayUtil;
 import com.example.lenovo.myapp.MyApplication;
+import com.example.lenovo.myapp.ui.activity.ActivityListener;
 import com.example.lenovo.myapp.ui.dialog.DefaultAlertDialog;
 import com.orhanobut.logger.Logger;
 
@@ -28,14 +29,12 @@ import java.util.List;
  * 基类
  */
 
-public class BaseActivity extends Activity {
+public class BaseActivity extends Activity implements ActivityListener {
 
     protected String[] permissions;
     protected String[] refuseTips;
 
     private InputMethodManager manager;
-
-    private OnKeyboardChangeListener mOnKeyboardChangeListener;
 
     private boolean curIsShow = false;
 
@@ -96,13 +95,8 @@ public class BaseActivity extends Activity {
     }
 
     //键盘显示隐藏回调
-    protected void setOnKeyboardChangeListener(OnKeyboardChangeListener mOnKeyboardChangeListener) {
-        this.mOnKeyboardChangeListener = mOnKeyboardChangeListener;
+    protected void setOnKeyboardChangeListener() {
         getWindow().getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(mLayoutChangeListener);
-    }
-
-    protected interface OnKeyboardChangeListener {
-        public void onkeyboardChangelistener(boolean isShow);
     }
 
     //layout改变监听
@@ -119,8 +113,8 @@ public class BaseActivity extends Activity {
 
             boolean isShow = heightDifference > screenHeight / 3;
 
-            if (mOnKeyboardChangeListener != null && ((!curIsShow && isShow) || curIsShow && !isShow)) {
-                mOnKeyboardChangeListener.onkeyboardChangelistener(isShow);
+            if (((!curIsShow && isShow) || curIsShow && !isShow)) {
+                onkeyboardChange(isShow);
                 curIsShow = isShow;
             }
         }
@@ -128,7 +122,7 @@ public class BaseActivity extends Activity {
 
     protected void setPermissions() {
         if (Build.VERSION.SDK_INT < 23) {
-            doSomeThing();
+            onPermissionSuccess();
         } else {
             List<String> temp = new ArrayList<>();
             for (String permission : permissions) {
@@ -147,12 +141,8 @@ public class BaseActivity extends Activity {
         if (permissions.length > 0 && index >= 0 && index < permissions.length) {
             ActivityCompat.requestPermissions(this, new String[]{permissions[index]}, index);
         } else if (permissions.length == 0) {
-            doSomeThing();
+            onPermissionSuccess();
         }
-    }
-
-    protected void doSomeThing() {
-
     }
 
     @Override
@@ -162,12 +152,7 @@ public class BaseActivity extends Activity {
                 DefaultAlertDialog alertDialog = new DefaultAlertDialog(this);
                 alertDialog.setTitle("权限申请");
                 alertDialog.setMessage(refuseTips[requestCode]);
-                alertDialog.setCancelButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
+                alertDialog.setCancelButton("取消");
                 alertDialog.setConfirmButton("去设置", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -184,11 +169,21 @@ public class BaseActivity extends Activity {
             } else {
                 requestCode++;
                 if (requestCode == permissions.length) {
-                    doSomeThing();
+                    onPermissionSuccess();
                 } else {
                     requestPermissions(requestCode);
                 }
             }
         }
+    }
+
+    @Override
+    public void onkeyboardChange(boolean isShow) {
+        //键盘显示隐藏后的操作
+    }
+
+    @Override
+    public void onPermissionSuccess() {
+        //请求权限成功后的操作
     }
 }

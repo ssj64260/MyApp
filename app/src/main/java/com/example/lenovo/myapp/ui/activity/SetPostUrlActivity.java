@@ -48,12 +48,7 @@ public class SetPostUrlActivity extends BaseActivity {
 
         findViewById(R.id.btn_test).setOnClickListener(btnClick);
 
-        setOnKeyboardChangeListener(new OnKeyboardChangeListener() {
-            @Override
-            public void onkeyboardChangelistener(boolean isShow) {
-                ToastUtil.toast(isShow ? "键盘弹起" : "键盘收起");
-            }
-        });
+        setOnKeyboardChangeListener();
     }
 
     View.OnClickListener btnClick = new View.OnClickListener() {
@@ -120,5 +115,10 @@ public class SetPostUrlActivity extends BaseActivity {
                 });
             }
         });
+    }
+
+    @Override
+    public void onkeyboardChange(boolean isShow) {
+        ToastUtil.toast(isShow ? "键盘弹起" : "键盘收起");
     }
 }

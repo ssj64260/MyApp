@@ -41,8 +41,26 @@ public class DefaultAlertDialog {
         alertDialog.setMessage(message);
     }
 
+    public void setCancelButton(String text) {
+        alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, text, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+    }
+
     public void setCancelButton(String text, DialogInterface.OnClickListener onClickListener) {
         alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, text, onClickListener);
+    }
+
+    public void setConfirmButton(String text) {
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, text, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
     }
 
     public void setConfirmButton(String text, DialogInterface.OnClickListener onClickListener) {

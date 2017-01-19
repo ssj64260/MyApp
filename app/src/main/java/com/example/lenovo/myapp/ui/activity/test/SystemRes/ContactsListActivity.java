@@ -47,12 +47,20 @@ public class ContactsListActivity extends BaseActivity {
         setPermissions();
     }
 
-    @Override
-    protected void doSomeThing() {
-        getContacts();
-    }
+    //点击监听
+    private View.OnClickListener click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.tv_back:
+                    finish();
+                    break;
+            }
+        }
+    };
 
-    private void getContacts() {
+    @Override
+    public void onPermissionSuccess() {
         ContentResolver cr = getContentResolver();
         Cursor cursor = cr.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
 
@@ -67,17 +75,4 @@ public class ContactsListActivity extends BaseActivity {
             }
         }
     }
-
-    //点击监听
-    private View.OnClickListener click = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.tv_back:
-                    finish();
-                    break;
-            }
-        }
-    };
-
 }

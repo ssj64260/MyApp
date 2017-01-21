@@ -9,18 +9,16 @@ import android.widget.EditText;
 import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
 import com.cxb.tools.network.okhttp.OkHttpBaseApi;
 import com.cxb.tools.network.okhttp.OnRequestCallBack;
-import com.cxb.tools.network.okhttp.ServiceResult;
 import com.cxb.tools.utils.ToastUtil;
 import com.cxb.tools.utils.VersionUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
-import com.example.lenovo.myapp.model.testbean.UserInfoBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.okhttp.call.GetWeatherCall;
 import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.google.gson.reflect.TypeToken;
 import com.orhanobut.logger.Logger;
 
@@ -29,8 +27,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.example.lenovo.myapp.utils.Constants.ID_MSY_AD;
 import static com.example.lenovo.myapp.utils.Constants.ID_GET_WEATHER;
+import static com.example.lenovo.myapp.utils.Constants.ID_MSY_AD;
 import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
 
 /**
@@ -82,7 +80,7 @@ public class OkhttpTestActivity extends BaseActivity {
         btnAd = (Button) findViewById(R.id.btn_meishiyi_ad);
         btnAd.setOnClickListener(btnClick);
 
-        btnTable = (Button) findViewById(R.id.btn_meishiyi_table);
+        btnTable = (Button) findViewById(R.id.btn_get_weather);
         btnTable.setOnClickListener(btnClick);
 
         btnSynGet = (Button) findViewById(R.id.btn_syn_get);
@@ -129,7 +127,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
                             .getPath(URL_MSY_AD, params, returnType);
                     break;
-                case R.id.btn_meishiyi_table:
+                case R.id.btn_get_weather:
                     getWeatherCall.requestCall();
                     break;
                 case R.id.btn_syn_get:
@@ -216,13 +214,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             ToastUtil.toast("请求美食易广告成功");
                             break;
                         case ID_GET_WEATHER:
-                            ServiceResult<UserInfoBean> sr = (ServiceResult<UserInfoBean>) dataObject;
-                            UserInfoBean userinfo = sr.getData();
-                            content += sr.getMsg() + ":" + sr.getCode() + "\n";
-                            content += userinfo.getBossid() + "\n";
-                            content += userinfo.getAccess_token() + "\n";
-                            content += userinfo.getIsfirst() + "\n";
-
+                            
                             ToastUtil.toast("美食易BOSS登录成功");
                             break;
                         case 9999:

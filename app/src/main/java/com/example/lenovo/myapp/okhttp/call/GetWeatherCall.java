@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.example.lenovo.myapp.utils.Constants.ID_GET_WEATHER;
-import static com.example.lenovo.myapp.utils.Constants.URL_GET_WEATHER;
+import static com.example.lenovo.myapp.utils.Constants.WEATHER_URL;
 
 /**
  * 获取天气预报
@@ -21,7 +21,7 @@ public class GetWeatherCall extends OkHttpAsynchApi {
     public GetWeatherCall() {
         super();
         setCurrentProtocol(Protocol.HTTP);
-        setCurrentBaseUrl(URL_GET_WEATHER);
+        setCurrentBaseUrl(WEATHER_URL);
         setRequestId(ID_GET_WEATHER);
     }
 

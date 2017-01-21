@@ -13,12 +13,11 @@ import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
-import com.example.lenovo.myapp.model.testbean.UserInfoBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -27,10 +26,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import static com.example.lenovo.myapp.utils.Constants.ID_GET_WEATHER;
 import static com.example.lenovo.myapp.utils.Constants.ID_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.ID_BOSS_LOGIN;
 import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.URL_BOSS_LOGIN;
+import static com.example.lenovo.myapp.utils.Constants.WEATHER_URL;
 
 /**
  * 线程池测试
@@ -56,7 +55,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
     private DefaultProgressDialog progressDialog;
 
     private OkHttpSynchApi getAd;
-    private OkHttpSynchApi getList;
+    private OkHttpSynchApi getWeather;
     private OkHttpSynchApi getGithub;
 
     private int threadIndex = 0;
@@ -124,7 +123,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
         getAd = new OkHttpSynchApi()
                 .addListener(callBack);
 
-        getList = new OkHttpSynchApi()
+        getWeather = new OkHttpSynchApi()
                 .addListener(callBack);
 
         getGithub = new OkHttpSynchApi()
@@ -198,21 +197,17 @@ public class ThreadPoolTestActivity extends BaseActivity {
     private void sequence() {
         final Type adType = new TypeToken<List<AdBean>>() {
         }.getType();
-        final Type tabType = new TypeToken<List<UserInfoBean>>() {
-        }.getType();
 
         final Map<String, String> adParams = new HashMap<>();
         adParams.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
         adParams.put("user", "aiweitest");
 
-        final Map<String, String> tabParams = new HashMap<>();
-        tabParams.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
-        tabParams.put("user", "aiweitest");
-        tabParams.put("e_access_token", "sACu425r6r45740A4tjmwSD466108Gy0a3f7");
-        tabParams.put("eeId", "97");
-        tabParams.put("timesId", "2935");
-        tabParams.put("date", "2016-11-23");
-        tabParams.put("memberId", "1");
+        final Map<String, String> weatherParams = new HashMap<>();
+        weatherParams.put("app", "weather.future");
+        weatherParams.put("weaid", "101280800");
+        weatherParams.put("appkey", "10003");
+        weatherParams.put("sign", "b59bc3ef6191eb9f747dd4e83c99f2a4");
+        weatherParams.put("format", "json");
 
         for (int i = 0; i < 30; i++) {
             final int index = i;
@@ -234,10 +229,10 @@ public class ThreadPoolTestActivity extends BaseActivity {
                                     .getPath(URL_MSY_AD, adParams, adType);
                             break;
                         case 2:
-                            getList.setRequestId(ID_BOSS_LOGIN)
+                            getWeather.setRequestId(ID_GET_WEATHER)
                                     .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
-                                    .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
-                                    .postParameters(URL_BOSS_LOGIN, tabParams, tabType);
+                                    .setCurrentBaseUrl(WEATHER_URL)
+                                    .postParameters("", weatherParams, null);
                             break;
                     }
                 }
@@ -274,8 +269,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
                             case ID_MSY_AD:
                                 tvContent.setText(content + threadIndex + "#请求美食易广告失败\n");
                                 break;
-                            case ID_BOSS_LOGIN:
-                                tvContent.setText(content + threadIndex + "#请求美食易餐位失败\n");
+                            case ID_GET_WEATHER:
+                                tvContent.setText(content + threadIndex + "#请求天气预报失败\n");
                                 break;
                             case 9999:
                                 tvContent.setText(content + threadIndex + "#请求Github失败\n");
@@ -302,8 +297,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
                         case ID_MSY_AD:
                             tvContent.setText(content + threadIndex + "#请求美食易广告成功\n");
                             break;
-                        case ID_BOSS_LOGIN:
-                            tvContent.setText(content + threadIndex + "#请求美食易餐位成功\n");
+                        case ID_GET_WEATHER:
+                            tvContent.setText(content + threadIndex + "#请求天气预报成功\n");
                             break;
                         case 9999:
                             tvContent.setText(content + threadIndex + "#请求Github成功\n");

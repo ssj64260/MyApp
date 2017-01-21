@@ -12,12 +12,14 @@ public class Constants {
 //    public static final String CUSTOM_URL = "192.168.199.173/meishiyi/api/index.php";//自定义链接
     public static final String CUSTOM_URL = "192.168.199.178/aiweiplatform/api/index.php";//自定义链接
 
+    public static final String WEATHER_URL = "api.k780.com:88";
+
     //美食易广告
     public static final int ID_MSY_AD = 1000;
     public static final String URL_MSY_AD = "ADGetData/getHomeAdvert";
 
-    //美食易BOSS登录
-    public static final int ID_BOSS_LOGIN = 1001;
-    public static final String URL_BOSS_LOGIN = "boss/dologin";
+    //获取天气预报
+    public static final int ID_GET_WEATHER = 1001;
+    public static final String URL_GET_WEATHER = "boss/dologin";
 
 }

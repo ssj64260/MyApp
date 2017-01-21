@@ -18,7 +18,7 @@ import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
 import com.example.lenovo.myapp.model.testbean.UserInfoBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
-import com.example.lenovo.myapp.okhttp.call.BossLoginCall;
+import com.example.lenovo.myapp.okhttp.call.GetWeatherCall;
 import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.google.gson.reflect.TypeToken;
@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.example.lenovo.myapp.utils.Constants.ID_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.ID_BOSS_LOGIN;
+import static com.example.lenovo.myapp.utils.Constants.ID_GET_WEATHER;
 import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
 
 /**
@@ -50,7 +50,7 @@ public class OkhttpTestActivity extends BaseActivity {
     private EditText version1;
     private EditText version2;
 
-    private BossLoginCall tableCall = new BossLoginCall();
+    private GetWeatherCall getWeatherCall = new GetWeatherCall();
     private OkHttpAsynchApi okHttpAsynchApi;
     private OkHttpAsynchApi okHttpAuthenticatior;
 
@@ -107,8 +107,8 @@ public class OkhttpTestActivity extends BaseActivity {
         okHttpAuthenticatior = new OkHttpAsynchApi("jesse", "password1")
                 .addListener(callBack);
 
-        tableCall.setParams("13826414032", "123456");
-        tableCall.addListener(callBack);
+        getWeatherCall.setParams("101280800");
+        getWeatherCall.addListener(callBack);
     }
 
     View.OnClickListener btnClick = new View.OnClickListener() {
@@ -130,7 +130,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             .getPath(URL_MSY_AD, params, returnType);
                     break;
                 case R.id.btn_meishiyi_table:
-                    tableCall.requestCall();
+                    getWeatherCall.requestCall();
                     break;
                 case R.id.btn_syn_get:
                     okHttpAsynchApi.setRequestId(9999)
@@ -185,7 +185,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             case ID_MSY_AD:
                                 ToastUtil.toast("请求美食易广告失败");
                                 break;
-                            case ID_BOSS_LOGIN:
+                            case ID_GET_WEATHER:
                                 ToastUtil.toast("请求美食易餐位失败");
                                 break;
                             case 9999:
@@ -215,7 +215,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             }
                             ToastUtil.toast("请求美食易广告成功");
                             break;
-                        case ID_BOSS_LOGIN:
+                        case ID_GET_WEATHER:
                             ServiceResult<UserInfoBean> sr = (ServiceResult<UserInfoBean>) dataObject;
                             UserInfoBean userinfo = sr.getData();
                             content += sr.getMsg() + ":" + sr.getCode() + "\n";

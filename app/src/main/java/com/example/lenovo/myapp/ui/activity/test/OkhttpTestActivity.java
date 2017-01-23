@@ -1,7 +1,9 @@
 package com.example.lenovo.myapp.ui.activity.test;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,10 +13,9 @@ import com.cxb.tools.network.okhttp.OkHttpBaseApi;
 import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.ToastUtil;
 import com.cxb.tools.utils.VersionUtil;
+import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
-import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.okhttp.call.GetWeatherCall;
 import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
@@ -24,12 +25,17 @@ import com.orhanobut.logger.Logger;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+import static com.example.lenovo.myapp.utils.Constants.HOST_GITHUB;
+import static com.example.lenovo.myapp.utils.Constants.HOST_PUBLIC_OBJECT;
+import static com.example.lenovo.myapp.utils.Constants.ID_GET_GITHUB_INFO;
+import static com.example.lenovo.myapp.utils.Constants.ID_GET_OKHTTP_INFO;
 import static com.example.lenovo.myapp.utils.Constants.ID_GET_WEATHER;
-import static com.example.lenovo.myapp.utils.Constants.ID_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
+import static com.example.lenovo.myapp.utils.Constants.ID_POST_WEATHER;
+import static com.example.lenovo.myapp.utils.Constants.URL_GET_GITHUB_INFO;
+import static com.example.lenovo.myapp.utils.Constants.URL_GET_OKHTTP_INFO;
+import static com.example.lenovo.myapp.utils.Constants.URL_WEATHER;
 
 /**
  * okhttp 请求框架
@@ -37,11 +43,11 @@ import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
 
 public class OkhttpTestActivity extends BaseActivity {
 
-    private Button btnAd;
-    private Button btnTable;
+    private Button btnTodayWeather;
+    private Button btnGetWeather;
     private Button btnChange;
     private Button btnAuthenticator;
-    private Button btnSynGet;
+    private Button btnGetGitHub;
     private Button btnGetVersion;
     private Button btnCompareVersion;
 
@@ -66,25 +72,20 @@ public class OkhttpTestActivity extends BaseActivity {
 
     private void initView() {
         progressDialog = new DefaultProgressDialog(this);
-        progressDialog.setOnDismissListener(new DefaultProgressDialog.OnDismissListener() {
-            @Override
-            public void OnDismissListener() {
-                okHttpAsynchApi.cancelRequest();
-            }
-        });
+        progressDialog.setOnkeyListener(backClick);
         progressDialog.setMessage("请求中...");
 
         btnChange = (Button) findViewById(R.id.btn_change_url);
         btnChange.setOnClickListener(btnClick);
 
-        btnAd = (Button) findViewById(R.id.btn_meishiyi_ad);
-        btnAd.setOnClickListener(btnClick);
+        btnTodayWeather = (Button) findViewById(R.id.btn_get_today_weather);
+        btnTodayWeather.setOnClickListener(btnClick);
 
-        btnTable = (Button) findViewById(R.id.btn_get_weather);
-        btnTable.setOnClickListener(btnClick);
+        btnGetWeather = (Button) findViewById(R.id.btn_get_weather);
+        btnGetWeather.setOnClickListener(btnClick);
 
-        btnSynGet = (Button) findViewById(R.id.btn_syn_get);
-        btnSynGet.setOnClickListener(btnClick);
+        btnGetGitHub = (Button) findViewById(R.id.btn_get_github_info);
+        btnGetGitHub.setOnClickListener(btnClick);
 
         btnAuthenticator = (Button) findViewById(R.id.btn_authenticator);
         btnAuthenticator.setOnClickListener(btnClick);
@@ -105,45 +106,33 @@ public class OkhttpTestActivity extends BaseActivity {
         okHttpAuthenticatior = new OkHttpAsynchApi("jesse", "password1")
                 .addListener(callBack);
 
-        getWeatherCall.setParams("101280800");
         getWeatherCall.addListener(callBack);
     }
 
     View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
+            progressDialog.showDialog();
+
             switch (v.getId()) {
                 case R.id.btn_change_url:
                     startActivity(new Intent(OkhttpTestActivity.this, SetPostUrlActivity.class));
                     break;
-                case R.id.btn_meishiyi_ad:
-                    Type returnType = new TypeToken<List<AdBean>>() {
-                    }.getType();
-                    Map<String, String> params = new HashMap<>();
-                    params.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
-                    params.put("user", "aiweitest");
-                    okHttpAsynchApi.setRequestId(ID_MSY_AD)
-                            .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
-                            .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
-                            .getPath(URL_MSY_AD, params, returnType);
+                case R.id.btn_get_today_weather:
+                    getTodayWeather();
                     break;
                 case R.id.btn_get_weather:
-                    getWeatherCall.requestCall();
+                    getWeather();
                     break;
-                case R.id.btn_syn_get:
-                    okHttpAsynchApi.setRequestId(9999)
-                            .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTPS)
-                            .setCurrentBaseUrl("api.github.com")
-                            .getPath("gists/c2a7c39532239ff261be", GithubBean.class);
+                case R.id.btn_get_github_info:
+                    getGitHubInfo();
                     break;
                 case R.id.btn_authenticator:
-                    okHttpAuthenticatior.setRequestId(9998)
-                            .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
-                            .setCurrentBaseUrl("publicobject.com")
-                            .getPath("secrets/hellosecret.txt", null);
+                    getAuthenticatorData();
                     break;
                 case R.id.btn_get_app_version:
-                    ToastUtil.toast(VersionUtil.getVersionName(getPackageManager(), getApplication().getPackageName()));
+                    ToastUtil.toast("版本号：" + VersionUtil.getVersionName(MyApplication.getInstance()));
                     break;
                 case R.id.btn_compare_version:
                     String v1 = version1.getText().toString();
@@ -158,83 +147,124 @@ public class OkhttpTestActivity extends BaseActivity {
         }
     };
 
+    //GET获取当天天气
+    private void getTodayWeather() {
+        progressDialog.setMessage("获取今天天气中...");
+        progressDialog.showDialog();
+
+        Type returnType = new TypeToken<String>() {
+        }.getType();
+        Map<String, String> params = new HashMap<>();
+
+        params.put("app", "weather.today");
+        params.put("weaid", "101280800");
+        params.put("appkey", "10003");
+        params.put("sign", "b59bc3ef6191eb9f747dd4e83c99f2a4");
+        params.put("format", "json");
+        okHttpAsynchApi.setRequestId(ID_GET_WEATHER)
+                .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
+                .setCurrentBaseUrl(URL_WEATHER)
+                .getPath("", params, null);
+    }
+
+    //POST获取天气预报
+    private void getWeather() {
+        progressDialog.setMessage("获取天气预报中...");
+        progressDialog.showDialog();
+        getWeatherCall.setParams("101280800");
+        getWeatherCall.requestCall();
+    }
+
+    //获取GitHub信息
+    private void getGitHubInfo() {
+        progressDialog.setMessage("获取GitHub信息中...");
+        progressDialog.showDialog();
+        okHttpAsynchApi.setRequestId(ID_GET_GITHUB_INFO)
+                .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTPS)
+                .setCurrentBaseUrl(HOST_GITHUB)
+                .getPath(URL_GET_GITHUB_INFO, GithubBean.class);
+    }
+
+    //获取需验证的数据
+    private void getAuthenticatorData() {
+        progressDialog.setMessage("获取需验证数据中...");
+        progressDialog.showDialog();
+        okHttpAuthenticatior.setRequestId(ID_GET_OKHTTP_INFO)
+                .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
+                .setCurrentBaseUrl(HOST_PUBLIC_OBJECT)
+                .getPath(URL_GET_OKHTTP_INFO, null);
+    }
+
+    private DialogInterface.OnKeyListener backClick = new DialogInterface.OnKeyListener() {
+        @Override
+        public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+            if (getWeatherCall != null) {
+                getWeatherCall.cancelRequest();
+            }
+            if (okHttpAsynchApi != null) {
+                okHttpAsynchApi.cancelRequest();
+            }
+            if (okHttpAuthenticatior != null) {
+                okHttpAuthenticatior.cancelRequest();
+            }
+            return false;
+        }
+    };
+
     private OnRequestCallBack callBack = new OnRequestCallBack() {
         @Override
-        public void onBefore(int requestId) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.showDialog();
-                }
-            });
-        }
-
-        @Override
         public void onFailure(final int requestId, final FailureReason reason) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.dismissDialog();
+            progressDialog.dismissDialog();
 
-                    if (reason != FailureReason.OTHER) {
-                        ToastUtil.toast(reason.getReason());
-                    } else {
-                        switch (requestId) {
-                            case ID_MSY_AD:
-                                ToastUtil.toast("请求美食易广告失败");
-                                break;
-                            case ID_GET_WEATHER:
-                                ToastUtil.toast("请求美食易餐位失败");
-                                break;
-                            case 9999:
-                                ToastUtil.toast("请求失败");
-                                break;
-                            case 9998:
-                                ToastUtil.toast("验证请求失败");
-                                break;
-                        }
-                    }
+            if (reason != FailureReason.OTHER) {
+                ToastUtil.toast(reason.getReason());
+            } else {
+                switch (requestId) {
+                    case ID_GET_WEATHER:
+                        ToastUtil.toast("请求今天天气失败");
+                        break;
+                    case ID_POST_WEATHER:
+                        ToastUtil.toast("请求天气预报失败");
+                        break;
+                    case ID_GET_GITHUB_INFO:
+                        ToastUtil.toast("请求失败");
+                        break;
+                    case ID_GET_OKHTTP_INFO:
+                        ToastUtil.toast("验证请求失败");
+                        break;
                 }
-            });
+            }
         }
 
         @Override
         public void onResponse(final int requestId, final Object dataObject, int networkCode) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.dismissDialog();
-                    String content = "";
-                    switch (requestId) {
-                        case ID_MSY_AD:
-                            List<AdBean> adTemp = (List<AdBean>) dataObject;
-                            for (AdBean ad : adTemp) {
-                                content += ad.getPic_url() + "\n";
-                            }
-                            ToastUtil.toast("请求美食易广告成功");
-                            break;
-                        case ID_GET_WEATHER:
-                            
-                            ToastUtil.toast("美食易BOSS登录成功");
-                            break;
-                        case 9999:
-                            GithubBean github = (GithubBean) dataObject;
-                            Map<String, GithubBean.OkhttpTxt> map = github.getFiles();
-                            for (Map.Entry<String, GithubBean.OkhttpTxt> entry : map.entrySet()) {
-                                content += entry.getKey() + "\n" + entry.getValue().content + "\n";
-                            }
-                            ToastUtil.toast("请求Github成功");
-                            break;
-                        case 9998:
-                            if (dataObject != null) {
-                                content += dataObject.toString();
-                            }
-                            ToastUtil.toast("验证请求成功");
-                            break;
+            progressDialog.dismissDialog();
+            String content = "";
+            switch (requestId) {
+                case ID_GET_WEATHER:
+
+                    ToastUtil.toast("请求今天天气成功");
+                    break;
+                case ID_POST_WEATHER:
+
+                    ToastUtil.toast("请求天气预报成功");
+                    break;
+                case ID_GET_GITHUB_INFO:
+                    GithubBean github = (GithubBean) dataObject;
+                    Map<String, GithubBean.OkhttpTxt> map = github.getFiles();
+                    for (Map.Entry<String, GithubBean.OkhttpTxt> entry : map.entrySet()) {
+                        content += entry.getKey() + "\n" + entry.getValue().content + "\n";
                     }
-                    Logger.d(content);
-                }
-            });
+                    ToastUtil.toast("请求Github成功");
+                    break;
+                case ID_GET_OKHTTP_INFO:
+                    if (dataObject != null) {
+                        content += dataObject.toString();
+                    }
+                    ToastUtil.toast("验证请求成功");
+                    break;
+            }
+            Logger.d(content);
         }
     };
 }

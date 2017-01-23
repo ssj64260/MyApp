@@ -23,8 +23,6 @@ public interface OnRequestCallBack {
         }
     }
 
-    public void onBefore(int requestId);
-
     public void onFailure(int requestId, FailureReason reason);
 
     public void onResponse(int requestId, Object dataObject, int networkCode);

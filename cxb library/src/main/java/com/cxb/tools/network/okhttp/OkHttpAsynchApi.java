@@ -1,7 +1,7 @@
 package com.cxb.tools.network.okhttp;
 
+import com.cxb.tools.utils.StringUtils;
 import com.google.gson.Gson;
-import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,41 +32,40 @@ public class OkHttpAsynchApi extends OkHttpBaseApi {
 
     @Override
     protected void doTheCall(final Request request, final String url, final Type returnType) {
-        if (callBack != null) {
-            callBack.onBefore(requestId);
-        }
 
         currentCall = client.newCall(request);
 
         currentCall.enqueue(new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(Call call, final IOException e) {
                 e.printStackTrace();
-                if (callBack != null) {
-                    if ("Canceled".equals(e.getMessage()) || "Socket closed".equals(e.getMessage())) {
-                        callBack.onFailure(requestId, OnRequestCallBack.FailureReason.CANCELED);
-                    } else if (e instanceof SocketTimeoutException) {
-                        callBack.onFailure(requestId, OnRequestCallBack.FailureReason.TIMEOUT);
-                    } else {
-                        callBack.onFailure(requestId, OnRequestCallBack.FailureReason.OTHER);
+                mainThread.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (callBack != null) {
+                            if ("Canceled".equals(e.getMessage()) || "Socket closed".equals(e.getMessage())) {
+                                callBack.onFailure(requestId, OnRequestCallBack.FailureReason.CANCELED);
+                            } else if (e instanceof SocketTimeoutException) {
+                                callBack.onFailure(requestId, OnRequestCallBack.FailureReason.TIMEOUT);
+                            } else {
+                                callBack.onFailure(requestId, OnRequestCallBack.FailureReason.OTHER);
+                            }
+                        }
                     }
-                }
+                });
             }
 
             @Override
-            public void onResponse(Call call, Response response) {
-                if (debug) {
-                    Logger.d(url);
-                }
+            public void onResponse(final Call call, final Response response) {
+                showLog("", url);
 
                 try {
                     String json = response.body().string();
 
-                    if (debug) {
-                        Logger.t(url.substring(url.lastIndexOf("/") + 1, url.contains("?") ? url.indexOf("?") : url.length())).json(json + "");
-                    }
+                    String tag = StringUtils.getUrlTag(url);
+                    showLog(tag, json + "");
 
-                    Object bm;
+                    final Object bm;
                     if (returnType != null) {
                         Gson gson = new Gson();
                         bm = gson.fromJson(json, returnType);
@@ -74,14 +73,24 @@ public class OkHttpAsynchApi extends OkHttpBaseApi {
                         bm = json;
                     }
 
-                    if (callBack != null) {
-                        callBack.onResponse(requestId, bm, response.code());
-                    }
+                    mainThread.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (callBack != null && !call.isCanceled()) {
+                                callBack.onResponse(requestId, bm, response.code());
+                            }
+                        }
+                    });
                 } catch (Exception e) {
                     e.printStackTrace();
-                    if (callBack != null) {
-                        callBack.onFailure(requestId, OnRequestCallBack.FailureReason.DATAANALYSIS);
-                    }
+                    mainThread.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (callBack != null && !call.isCanceled()) {
+                                callBack.onFailure(requestId, OnRequestCallBack.FailureReason.DATAANALYSIS);
+                            }
+                        }
+                    });
                 }
             }
         });

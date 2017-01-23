@@ -1,5 +1,11 @@
 package com.cxb.tools.network.okhttp;
 
+import android.os.Handler;
+import android.os.Looper;
+
+import com.cxb.tools.utils.StringCheck;
+import com.orhanobut.logger.Logger;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -45,6 +51,8 @@ public abstract class OkHttpBaseApi {
     OnRequestCallBack callBack;
 
     OkHttpClient client;
+
+    protected Handler mainThread = new Handler(Looper.getMainLooper());//回调到主线程
 
     boolean debug = true;//开启debug模式，打印log
 
@@ -170,7 +178,7 @@ public abstract class OkHttpBaseApi {
     protected abstract void doTheCall(final Request request, final String url, final Type returnType);
 
     public void cancelRequest() {
-        if (currentCall != null) {
+        if (currentCall != null && currentCall.isExecuted()) {
             currentCall.cancel();
         }
     }
@@ -200,4 +208,13 @@ public abstract class OkHttpBaseApi {
         return this;
     }
 
+    protected void showLog(String tag, String data) {
+        if (debug) {
+            if (StringCheck.isEmpty(tag)) {
+                Logger.d(data);
+            } else {
+                Logger.t(tag).json(data);
+            }
+        }
+    }
 }

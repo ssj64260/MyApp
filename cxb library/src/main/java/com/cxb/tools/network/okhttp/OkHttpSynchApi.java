@@ -1,7 +1,7 @@
 package com.cxb.tools.network.okhttp;
 
+import com.cxb.tools.utils.StringUtils;
 import com.google.gson.Gson;
-import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.lang.reflect.Type;
@@ -28,22 +28,17 @@ public class OkHttpSynchApi extends OkHttpBaseApi {
 
     @Override
     protected void doTheCall(Request request, String url, Type returnType) {
-        if (callBack != null) {
-            callBack.onBefore(requestId);
-        }
 
         currentCall = client.newCall(request);
 
         try {
-            Response response = currentCall.execute();
+            final Response response = currentCall.execute();
 
             if (response.isSuccessful()) {
-                if (debug) {
-                    Logger.d(url);
-                }
+                showLog("", url);
 
                 String json = response.body().string();
-                Object bm;
+                final Object bm;
                 if (returnType != null) {
                     Gson gson = new Gson();
                     bm = gson.fromJson(json, returnType);
@@ -51,24 +46,37 @@ public class OkHttpSynchApi extends OkHttpBaseApi {
                     bm = json;
                 }
 
-                if (debug) {
-                    Logger.t(url.substring(url.lastIndexOf("/") + 1, url.contains("?") ? url.indexOf("?") : url.length())).json(json + "");
-                }
+                showLog(StringUtils.getUrlTag(url), json + "");
 
-                if (callBack != null) {
-                    callBack.onResponse(requestId, bm, response.code());
-                }
+                mainThread.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (callBack != null && !currentCall.isCanceled()) {
+                            callBack.onResponse(requestId, bm, response.code());
+                        }
+                    }
+                });
             } else {
-                if (callBack != null) {
-                    callBack.onFailure(requestId, OnRequestCallBack.FailureReason.OTHER);
-                }
+                mainThread.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (callBack != null) {
+                            callBack.onFailure(requestId, OnRequestCallBack.FailureReason.OTHER);
+                        }
+                    }
+                });
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            if (callBack != null) {
-                callBack.onFailure(requestId, OnRequestCallBack.FailureReason.OTHER);
-            }
+            mainThread.post(new Runnable() {
+                @Override
+                public void run() {
+                    if (callBack != null) {
+                        callBack.onFailure(requestId, OnRequestCallBack.FailureReason.OTHER);
+                    }
+                }
+            });
         }
     }
 

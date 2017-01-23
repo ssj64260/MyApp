@@ -13,23 +13,22 @@ import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.model.testbean.AdBean;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
-import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import static com.example.lenovo.myapp.utils.Constants.HOST_GITHUB;
+import static com.example.lenovo.myapp.utils.Constants.ID_GET_GITHUB_INFO;
 import static com.example.lenovo.myapp.utils.Constants.ID_GET_WEATHER;
-import static com.example.lenovo.myapp.utils.Constants.ID_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.URL_MSY_AD;
-import static com.example.lenovo.myapp.utils.Constants.WEATHER_URL;
+import static com.example.lenovo.myapp.utils.Constants.ID_POST_WEATHER;
+import static com.example.lenovo.myapp.utils.Constants.URL_GET_GITHUB_INFO;
+import static com.example.lenovo.myapp.utils.Constants.URL_WEATHER;
 
 /**
  * 线程池测试
@@ -176,31 +175,37 @@ public class ThreadPoolTestActivity extends BaseActivity {
     // 接口
     ///////////////////////////////////////////////////////////////////////////
     private void heartGet() {
-        final Type returnType = new TypeToken<List<AdBean>>() {
+        final Type returnType = new TypeToken<String>() {
         }.getType();
         final Map<String, String> params = new HashMap<>();
-        params.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
-        params.put("user", "aiweitest");
+        params.put("app", "weather.today");
+        params.put("weaid", "101280800");
+        params.put("appkey", "10003");
+        params.put("sign", "b59bc3ef6191eb9f747dd4e83c99f2a4");
+        params.put("format", "json");
 
         ThreadPoolUtil.getInstache().scheduledRate(new Runnable() {
 
             @Override
             public void run() {
-                getAd.setRequestId(ID_MSY_AD)
+                getAd.setRequestId(ID_GET_WEATHER)
                         .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
-                        .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
-                        .getPath(URL_MSY_AD, params, returnType);
+                        .setCurrentBaseUrl(URL_WEATHER)
+                        .getPath("", params, null);
             }
         }, 0, 1, TimeUnit.SECONDS);
     }
 
     private void sequence() {
-        final Type adType = new TypeToken<List<AdBean>>() {
+        final Type todayWeatherType = new TypeToken<String>() {
         }.getType();
 
-        final Map<String, String> adParams = new HashMap<>();
-        adParams.put("access_token", "70q2K29N2c8910p827M6Gff1Td1YIo");
-        adParams.put("user", "aiweitest");
+        final Map<String, String> todayWeatherParams = new HashMap<>();
+        todayWeatherParams.put("app", "weather.today");
+        todayWeatherParams.put("weaid", "101280800");
+        todayWeatherParams.put("appkey", "10003");
+        todayWeatherParams.put("sign", "b59bc3ef6191eb9f747dd4e83c99f2a4");
+        todayWeatherParams.put("format", "json");
 
         final Map<String, String> weatherParams = new HashMap<>();
         weatherParams.put("app", "weather.future");
@@ -217,21 +222,21 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 public void run() {
                     switch (index % 3) {
                         case 0:
-                            getGithub.setRequestId(9999)
+                            getGithub.setRequestId(ID_GET_GITHUB_INFO)
                                     .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTPS)
-                                    .setCurrentBaseUrl("api.github.com")
-                                    .getPath("gists/c2a7c39532239ff261be", GithubBean.class);
+                                    .setCurrentBaseUrl(HOST_GITHUB)
+                                    .getPath(URL_GET_GITHUB_INFO, GithubBean.class);
                             break;
                         case 1:
-                            getAd.setRequestId(ID_MSY_AD)
+                            getAd.setRequestId(ID_GET_WEATHER)
                                     .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
-                                    .setCurrentBaseUrl(URLSetting.getInstance().getBaseUrl())
-                                    .getPath(URL_MSY_AD, adParams, adType);
+                                    .setCurrentBaseUrl(URL_WEATHER)
+                                    .getPath("", todayWeatherParams, null);
                             break;
                         case 2:
-                            getWeather.setRequestId(ID_GET_WEATHER)
+                            getWeather.setRequestId(ID_POST_WEATHER)
                                     .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
-                                    .setCurrentBaseUrl(WEATHER_URL)
+                                    .setCurrentBaseUrl(URL_WEATHER)
                                     .postParameters("", weatherParams, null);
                             break;
                     }
@@ -242,77 +247,50 @@ public class ThreadPoolTestActivity extends BaseActivity {
     }
 
     private OnRequestCallBack callBack = new OnRequestCallBack() {
-
-        @Override
-        public void onBefore(int requestId) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-//                    progressDialog.showDialog();
-                }
-            });
-        }
-
         @Override
         public void onFailure(final int requestId, final FailureReason reason) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.dismissDialog();
+            progressDialog.dismissDialog();
 
-                    if (reason != FailureReason.OTHER) {
-                        ToastUtil.toast(reason.getReason());
-                    } else {
-                        String content = tvContent.getText().toString();
-                        threadIndex++;
-                        switch (requestId) {
-                            case ID_MSY_AD:
-                                tvContent.setText(content + threadIndex + "#请求美食易广告失败\n");
-                                break;
-                            case ID_GET_WEATHER:
-                                tvContent.setText(content + threadIndex + "#请求天气预报失败\n");
-                                break;
-                            case 9999:
-                                tvContent.setText(content + threadIndex + "#请求Github失败\n");
-                                break;
-                            case 9998:
-                                tvContent.setText(content + threadIndex + "#验证请求失败\n");
-                                break;
-                        }
-                        svBackground.fullScroll(ScrollView.FOCUS_DOWN);
-                    }
+            if (reason != FailureReason.OTHER) {
+                ToastUtil.toast(reason.getReason());
+            } else {
+                String content = tvContent.getText().toString();
+                threadIndex++;
+                switch (requestId) {
+                    case ID_GET_WEATHER:
+                        tvContent.setText(content + threadIndex + "#请求今天天气失败\n");
+                        break;
+                    case ID_POST_WEATHER:
+                        tvContent.setText(content + threadIndex + "#请求天气预报失败\n");
+                        break;
+                    case ID_GET_GITHUB_INFO:
+                        tvContent.setText(content + threadIndex + "#请求Github失败\n");
+                        break;
                 }
-            });
+                svBackground.fullScroll(ScrollView.FOCUS_DOWN);
+            }
         }
 
         @Override
         public void onResponse(final int requestId, final Object dataObject, int networkCode) {
-            runOnUiThread(new Runnable() {
+            progressDialog.dismissDialog();
+            String content = tvContent.getText().toString();
+            threadIndex++;
+            switch (requestId) {
+                case ID_GET_WEATHER:
+                    tvContent.setText(content + threadIndex + "#请求今天天气成功\n");
+                    break;
+                case ID_POST_WEATHER:
+                    tvContent.setText(content + threadIndex + "#请求天气预报成功\n");
+                    break;
+                case ID_GET_GITHUB_INFO:
+                    tvContent.setText(content + threadIndex + "#请求Github成功\n");
+                    break;
+            }
+            tvContent.post(new Runnable() {
                 @Override
                 public void run() {
-                    progressDialog.dismissDialog();
-                    String content = tvContent.getText().toString();
-                    threadIndex++;
-                    switch (requestId) {
-                        case ID_MSY_AD:
-                            tvContent.setText(content + threadIndex + "#请求美食易广告成功\n");
-                            break;
-                        case ID_GET_WEATHER:
-                            tvContent.setText(content + threadIndex + "#请求天气预报成功\n");
-                            break;
-                        case 9999:
-                            tvContent.setText(content + threadIndex + "#请求Github成功\n");
-                            break;
-                        case 9998:
-                            tvContent.setText(content + threadIndex + "#验证请求成功\n");
-                            break;
-                    }
-                    tvContent.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            svBackground.fullScroll(ScrollView.FOCUS_DOWN);
-                        }
-                    });
+                    svBackground.fullScroll(ScrollView.FOCUS_DOWN);
                 }
             });
         }

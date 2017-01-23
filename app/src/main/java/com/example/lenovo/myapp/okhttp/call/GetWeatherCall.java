@@ -1,13 +1,14 @@
 package com.example.lenovo.myapp.okhttp.call;
 
 import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
+import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.example.lenovo.myapp.utils.Constants.ID_GET_WEATHER;
-import static com.example.lenovo.myapp.utils.Constants.WEATHER_URL;
+import static com.example.lenovo.myapp.utils.Constants.ID_POST_WEATHER;
+import static com.example.lenovo.myapp.utils.Constants.URL_WEATHER;
 
 /**
  * 获取天气预报
@@ -21,8 +22,8 @@ public class GetWeatherCall extends OkHttpAsynchApi {
     public GetWeatherCall() {
         super();
         setCurrentProtocol(Protocol.HTTP);
-        setCurrentBaseUrl(WEATHER_URL);
-        setRequestId(ID_GET_WEATHER);
+        setCurrentBaseUrl(URL_WEATHER);
+        setRequestId(ID_POST_WEATHER);
     }
 
     public void setParams(String weaid) {
@@ -33,8 +34,8 @@ public class GetWeatherCall extends OkHttpAsynchApi {
         params.put("sign", "b59bc3ef6191eb9f747dd4e83c99f2a4");
         params.put("format", "json");
 
-//        returnType = new TypeToken<ServiceResult<UserInfoBean>>() {
-//        }.getType();
+        returnType = new TypeToken<String>() {
+        }.getType();
     }
 
     public void requestCall() {

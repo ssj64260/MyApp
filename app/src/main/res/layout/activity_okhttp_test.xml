@@ -14,10 +14,10 @@
         android:text="更换接口" />
 
     <Button
-        android:id="@+id/btn_meishiyi_ad"
+        android:id="@+id/btn_get_today_weather"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="GET美食易顶部广告" />
+        android:text="GET今天天气" />
 
     <Button
         android:id="@+id/btn_get_weather"
@@ -26,10 +26,10 @@
         android:text="POST天气预报" />
 
     <Button
-        android:id="@+id/btn_syn_get"
+        android:id="@+id/btn_get_github_info"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="Github Message"
+        android:text="GET GitHub信息"
         android:textAllCaps="false" />
 
     <Button

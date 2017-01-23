@@ -1,5 +1,6 @@
 package com.cxb.tools.utils;
 
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
@@ -14,35 +15,35 @@ public class VersionUtil {
     /**
      * 比较两个version name大小
      *
-     * @param curVersion 当前app版本号
-     * @param netVersion 网络获取的版本号
+     * @param localVersion 当前app版本号
+     * @param serverVersion 网络获取的版本号
      * @return true为有新版本，false为没有新版本
      */
-    public static boolean isNewVersionName(String curVersion, String netVersion) {
+    public static boolean isNewVersionName(String localVersion, String serverVersion) {
 
-        if (!StringCheck.isEmpty(curVersion) && !StringCheck.isEmpty(netVersion)) {
+        if (!StringCheck.isEmpty(localVersion) && !StringCheck.isEmpty(serverVersion)) {
 
-            if (curVersion.equals(netVersion)) {
+            if (localVersion.equals(serverVersion)) {
                 return false;
             }
 
             try {
-                String[] curVersions = curVersion.split("\\.");
-                String[] netVersions = netVersion.split("\\.");
+                String[] localVersions = localVersion.split("\\.");
+                String[] serverVersions = serverVersion.split("\\.");
 
-                for (int i = 0; i < curVersions.length; i++) {
-                    if (i < netVersions.length) {
-                        int cVersion = Integer.parseInt(curVersions[i]);
-                        int nVersion = Integer.parseInt(netVersions[i]);
-                        if (cVersion > nVersion) {
+                for (int i = 0; i < localVersions.length; i++) {
+                    if (i < serverVersions.length) {
+                        int lVersion = Integer.parseInt(localVersions[i]);
+                        int sVersion = Integer.parseInt(serverVersions[i]);
+                        if (lVersion > sVersion) {
                             return false;
-                        } else if (cVersion < nVersion) {
+                        } else if (lVersion < sVersion) {
                             return true;
                         }
                     }
                 }
 
-                return curVersions.length < netVersions.length;
+                return localVersions.length < serverVersions.length;
 
             } catch (Exception e) {
                 return false;
@@ -57,9 +58,10 @@ public class VersionUtil {
     }
 
     //获取version name
-    public static String getVersionName(PackageManager pm, String packageName) {
+    public static String getVersionName(Context context) {
         try {
-            PackageInfo pi = pm.getPackageInfo(packageName, 0);
+            PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
             return pi.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
@@ -68,9 +70,10 @@ public class VersionUtil {
     }
 
     //获取version code
-    public static int getVersionCode(PackageManager pm, String packageName) {
+    public static int getVersionCode(Context context) {
         try {
-            PackageInfo pi = pm.getPackageInfo(packageName, 0);
+            PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
             return pi.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

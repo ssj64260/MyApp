@@ -56,6 +56,11 @@ public class DefaultProgressDialog {
         this.mOnDismissListener = mOnDismissListener;
     }
 
+    //对话框返回键监听
+    public void setOnkeyListener(DialogInterface.OnKeyListener onkeyListener){
+        progressDialog.setOnKeyListener(onkeyListener);
+    }
+
     public interface OnDismissListener {
         void OnDismissListener();
     }

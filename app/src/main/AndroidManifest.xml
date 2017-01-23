@@ -94,6 +94,7 @@
 
         <activity
             android:name=".ui.activity.test.OkhttpTestActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
             android:screenOrientation="portrait" />
 
         <activity

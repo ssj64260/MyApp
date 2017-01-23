@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/meituan_green"
@@ -7,50 +8,79 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_change_url"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="更换接口" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
 
-    <Button
-        android:id="@+id/btn_get_today_weather"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="GET今天天气" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_get_weather"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="POST天气预报" />
+            <Button
+                android:id="@+id/btn_change_url"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="更换接口" />
 
-    <Button
-        android:id="@+id/btn_get_github_info"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="GET GitHub信息"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_get_today_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="GET今天天气" />
 
-    <Button
-        android:id="@+id/btn_authenticator"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="需要验证的连接"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_get_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="POST天气预报" />
 
-    <Button
-        android:id="@+id/btn_download"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="下载文件"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn_get_github_info"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="GET GitHub信息"
+                android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_get_app_version"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="获取App版本号" />
+            <Button
+                android:id="@+id/btn_authenticator"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="需要验证的连接"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_download"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="下载文件"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_get_app_version"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="获取App版本号" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:typeface="serif"
+                tools:text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+
+        </ScrollView>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

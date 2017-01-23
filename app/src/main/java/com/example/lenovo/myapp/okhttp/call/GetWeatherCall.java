@@ -1,6 +1,7 @@
 package com.example.lenovo.myapp.okhttp.call;
 
 import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
+import com.example.lenovo.myapp.model.testbean.WeatherList;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -34,11 +35,11 @@ public class GetWeatherCall extends OkHttpAsynchApi {
         params.put("sign", "b59bc3ef6191eb9f747dd4e83c99f2a4");
         params.put("format", "json");
 
-        returnType = new TypeToken<String>() {
+        returnType = new TypeToken<WeatherList>() {
         }.getType();
     }
 
     public void requestCall() {
-        postParameters(PATH, params, null);
+        postParameters(PATH, params, returnType);
     }
 }

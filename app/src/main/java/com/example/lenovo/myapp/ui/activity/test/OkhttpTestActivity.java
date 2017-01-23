@@ -4,10 +4,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
 import com.cxb.tools.network.okhttp.OkHttpBaseApi;
@@ -15,11 +17,15 @@ import com.cxb.tools.network.okhttp.OnDownloadCallBack;
 import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.SDCardUtil;
+import com.cxb.tools.utils.StringUtils;
 import com.cxb.tools.utils.ToastUtil;
 import com.cxb.tools.utils.VersionUtil;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
+import com.example.lenovo.myapp.model.testbean.WeatherInfo;
+import com.example.lenovo.myapp.model.testbean.WeatherList;
+import com.example.lenovo.myapp.model.testbean.WeatherToday;
 import com.example.lenovo.myapp.okhttp.call.GetWeatherCall;
 import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
@@ -30,6 +36,7 @@ import com.orhanobut.logger.Logger;
 import java.io.File;
 import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.example.lenovo.myapp.utils.Constants.HOST_GITHUB;
@@ -55,6 +62,8 @@ public class OkhttpTestActivity extends BaseActivity {
     private Button btnGetGitHub;
     private Button btnDownload;
 
+    private TextView tvContent;
+
     private Button btnGetVersion;
     private Button btnCompareVersion;
 
@@ -62,8 +71,8 @@ public class OkhttpTestActivity extends BaseActivity {
     private EditText version2;
 
     private GetWeatherCall getWeatherCall = new GetWeatherCall();
-    private OkHttpAsynchApi okHttpAsynchApi;
-    private OkHttpAsynchApi okHttpAuthenticatior;
+    private OkHttpAsynchApi getTodayWeather;
+    private OkHttpAsynchApi getOkhttpAuthInfo;
     private OkHttpAsynchApi downloadCall;
 
     private DefaultProgressDialog progressDialog;
@@ -101,6 +110,8 @@ public class OkhttpTestActivity extends BaseActivity {
         btnDownload = (Button) findViewById(R.id.btn_download);
         btnDownload.setOnClickListener(btnClick);
 
+        tvContent = (TextView) findViewById(R.id.tv_content);
+
         btnGetVersion = (Button) findViewById(R.id.btn_get_app_version);
         btnGetVersion.setOnClickListener(btnClick);
 
@@ -112,9 +123,9 @@ public class OkhttpTestActivity extends BaseActivity {
     }
 
     private void setData() {
-        okHttpAsynchApi = new OkHttpAsynchApi()
+        getTodayWeather = new OkHttpAsynchApi()
                 .addListener(callBack);
-        okHttpAuthenticatior = new OkHttpAsynchApi("jesse", "password1")
+        getOkhttpAuthInfo = new OkHttpAsynchApi("jesse", "password1")
                 .addListener(callBack);
 
         getWeatherCall.addListener(callBack);
@@ -168,7 +179,7 @@ public class OkhttpTestActivity extends BaseActivity {
         progressDialog.setMessage("获取今天天气中...");
         progressDialog.showDialog();
 
-        Type returnType = new TypeToken<String>() {
+        Type returnType = new TypeToken<WeatherToday>() {
         }.getType();
         Map<String, String> params = new HashMap<>();
 
@@ -177,10 +188,10 @@ public class OkhttpTestActivity extends BaseActivity {
         params.put("appkey", "10003");
         params.put("sign", "b59bc3ef6191eb9f747dd4e83c99f2a4");
         params.put("format", "json");
-        okHttpAsynchApi.setRequestId(ID_GET_WEATHER)
+        getTodayWeather.setRequestId(ID_GET_WEATHER)
                 .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
                 .setCurrentBaseUrl(URL_WEATHER)
-                .getPath("", params, null);
+                .getPath("", params, returnType);
     }
 
     //POST获取天气预报
@@ -195,7 +206,7 @@ public class OkhttpTestActivity extends BaseActivity {
     private void getGitHubInfo() {
         progressDialog.setMessage("获取GitHub信息中...");
         progressDialog.showDialog();
-        okHttpAsynchApi.setRequestId(ID_GET_GITHUB_INFO)
+        getTodayWeather.setRequestId(ID_GET_GITHUB_INFO)
                 .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTPS)
                 .setCurrentBaseUrl(HOST_GITHUB)
                 .getPath(URL_GET_GITHUB_INFO, GithubBean.class);
@@ -205,7 +216,7 @@ public class OkhttpTestActivity extends BaseActivity {
     private void getAuthenticatorData() {
         progressDialog.setMessage("获取需验证数据中...");
         progressDialog.showDialog();
-        okHttpAuthenticatior.setRequestId(ID_GET_OKHTTP_INFO)
+        getOkhttpAuthInfo.setRequestId(ID_GET_OKHTTP_INFO)
                 .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
                 .setCurrentBaseUrl(HOST_PUBLIC_OBJECT)
                 .getPath(URL_GET_OKHTTP_INFO, null);
@@ -230,11 +241,11 @@ public class OkhttpTestActivity extends BaseActivity {
             if (getWeatherCall != null) {
                 getWeatherCall.cancelRequest();
             }
-            if (okHttpAsynchApi != null) {
-                okHttpAsynchApi.cancelRequest();
+            if (getTodayWeather != null) {
+                getTodayWeather.cancelRequest();
             }
-            if (okHttpAuthenticatior != null) {
-                okHttpAuthenticatior.cancelRequest();
+            if (getOkhttpAuthInfo != null) {
+                getOkhttpAuthInfo.cancelRequest();
             }
             if (downloadCall != null) {
                 downloadCall.cancelRequest();
@@ -298,12 +309,39 @@ public class OkhttpTestActivity extends BaseActivity {
             String content = "";
             switch (requestId) {
                 case ID_GET_WEATHER:
-
-                    ToastUtil.toast("请求今天天气成功");
+                    WeatherToday today = (WeatherToday) dataObject;
+                    if (today != null) {
+                        WeatherInfo info = today.getResult();
+                        if (info != null) {
+                            content += "日期：" + info.getDays() + "\n";
+                            content += "城市：" + info.getCitynm() + "\n";
+                            content += "天气：" + info.getWeather() + "\n";
+                            content += "温度：" + info.getTemperature() + "\n";
+                            content += "风力：" + info.getWind() + " " + info.getWinp() + "\n";
+                            content += "湿度：" + info.getHumidity();
+                        }
+                    }
+                    ToastUtil.toast(content);
+                    tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                     break;
                 case ID_POST_WEATHER:
-
+                    WeatherList wl = (WeatherList) dataObject;
+                    if (wl != null) {
+                        List<WeatherInfo> temp = wl.getResult();
+                        if (temp != null) {
+                            for (WeatherInfo info : temp) {
+                                content += "\n\n";
+                                content += "日期：" + info.getDays() + "\n";
+                                content += "城市：" + info.getCitynm() + "\n";
+                                content += "天气：" + info.getWeather() + "\n";
+                                content += "温度：" + info.getTemperature() + "\n";
+                                content += "风力：" + info.getWind() + " " + info.getWinp() + "\n";
+                                content += "湿度：" + info.getHumidity();
+                            }
+                        }
+                    }
                     ToastUtil.toast("请求天气预报成功");
+                    tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                     break;
                 case ID_GET_GITHUB_INFO:
                     GithubBean github = (GithubBean) dataObject;
@@ -311,16 +349,21 @@ public class OkhttpTestActivity extends BaseActivity {
                     for (Map.Entry<String, GithubBean.OkhttpTxt> entry : map.entrySet()) {
                         content += entry.getKey() + "\n" + entry.getValue().content + "\n";
                     }
+                    content = StringUtils.halfToFull(content);
                     ToastUtil.toast("请求Github成功");
+                    tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 3);
                     break;
                 case ID_GET_OKHTTP_INFO:
                     if (dataObject != null) {
                         content += dataObject.toString();
                     }
+                    content = StringUtils.halfToFull(content);
                     ToastUtil.toast("验证请求成功");
+                    tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 3);
                     break;
             }
             Logger.d(content);
+            tvContent.setText(content);
         }
     };
 }

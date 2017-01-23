@@ -31,7 +31,6 @@ import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.google.gson.reflect.TypeToken;
-import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.lang.reflect.Type;
@@ -294,10 +293,10 @@ public class OkhttpTestActivity extends BaseActivity {
                         ToastUtil.toast("请求天气预报失败");
                         break;
                     case ID_GET_GITHUB_INFO:
-                        ToastUtil.toast("请求失败");
+                        ToastUtil.toast("请求Okhttp失败");
                         break;
                     case ID_GET_OKHTTP_INFO:
-                        ToastUtil.toast("验证请求失败");
+                        ToastUtil.toast("Okhttp验证请求失败");
                         break;
                 }
             }
@@ -321,7 +320,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             content += "湿度：" + info.getHumidity();
                         }
                     }
-                    ToastUtil.toast(content);
+                    ToastUtil.toast("请求今天天气成功");
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                     break;
                 case ID_POST_WEATHER:
@@ -330,13 +329,12 @@ public class OkhttpTestActivity extends BaseActivity {
                         List<WeatherInfo> temp = wl.getResult();
                         if (temp != null) {
                             for (WeatherInfo info : temp) {
-                                content += "\n\n";
                                 content += "日期：" + info.getDays() + "\n";
                                 content += "城市：" + info.getCitynm() + "\n";
                                 content += "天气：" + info.getWeather() + "\n";
                                 content += "温度：" + info.getTemperature() + "\n";
                                 content += "风力：" + info.getWind() + " " + info.getWinp() + "\n";
-                                content += "湿度：" + info.getHumidity();
+                                content += "湿度：" + info.getHumidity() + "\n\n";
                             }
                         }
                     }
@@ -350,7 +348,7 @@ public class OkhttpTestActivity extends BaseActivity {
                         content += entry.getKey() + "\n" + entry.getValue().content + "\n";
                     }
                     content = StringUtils.halfToFull(content);
-                    ToastUtil.toast("请求Github成功");
+                    ToastUtil.toast("请求Okhttp成功");
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 3);
                     break;
                 case ID_GET_OKHTTP_INFO:
@@ -358,11 +356,10 @@ public class OkhttpTestActivity extends BaseActivity {
                         content += dataObject.toString();
                     }
                     content = StringUtils.halfToFull(content);
-                    ToastUtil.toast("验证请求成功");
+                    ToastUtil.toast("Okhttp验证请求成功");
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 3);
                     break;
             }
-            Logger.d(content);
             tvContent.setText(content);
         }
     };

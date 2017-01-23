@@ -69,36 +69,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/btn_clear_all_data"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="清空所有数据"
-            android:visibility="visible"/>
-        <Button
-            android:id="@+id/btn_clear_db"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="只清空数据库"
-            android:visibility="gone"/>
-        <Button
-            android:id="@+id/btn_clear_share"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="只清空缓存"
-            android:visibility="gone"/>
+            android:text="清空 SharedPreferences"
+            android:textAllCaps="false"
+            android:visibility="visible" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_test"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="自定义测试用按钮"
-        android:visibility="gone"/>
 
 </LinearLayout>

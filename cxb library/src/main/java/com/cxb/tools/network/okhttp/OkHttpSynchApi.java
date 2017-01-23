@@ -80,6 +80,11 @@ public class OkHttpSynchApi extends OkHttpBaseApi {
         }
     }
 
+    public OkHttpSynchApi addDownloadListener(OnDownloadCallBack downloadCallBack){
+        this.downloadCallBack = downloadCallBack;
+        return this;
+    }
+
     public OkHttpSynchApi addListener(OnRequestCallBack callBack) {
         super.addListener(callBack);
         return this;

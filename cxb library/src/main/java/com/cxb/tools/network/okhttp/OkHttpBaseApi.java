@@ -7,7 +7,9 @@ import com.cxb.tools.utils.StringCheck;
 import com.orhanobut.logger.Logger;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.net.URLEncoder;
@@ -16,6 +18,7 @@ import java.util.Map;
 import okhttp3.Authenticator;
 import okhttp3.Cache;
 import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.Credentials;
 import okhttp3.FormBody;
 import okhttp3.MediaType;
@@ -49,6 +52,7 @@ public abstract class OkHttpBaseApi {
 
     Call currentCall;
     OnRequestCallBack callBack;
+    OnDownloadCallBack downloadCallBack;
 
     OkHttpClient client;
 
@@ -175,12 +179,93 @@ public abstract class OkHttpBaseApi {
         doTheCall(request, url, returnType);
     }
 
+    public void downloadFile(String path, final String fileUri) {
+        String url = getWholeUrl(path);
+        Request request = new Request.Builder().url(url).build();
+        currentCall = client.newCall(request);
+        currentCall.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                mainThread.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (downloadCallBack != null) {
+                            downloadCallBack.onFailed(fileUri);
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(final Call call, Response response) throws IOException {
+                InputStream is = null;
+                byte[] buf = new byte[2048];
+                int len;
+                FileOutputStream fos = null;
+                try {
+                    final long total = response.body().contentLength();
+                    long current = 0;
+                    is = response.body().byteStream();
+                    fos = new FileOutputStream(fileUri);
+                    while ((len = is.read(buf)) != -1) {
+                        current += len;
+                        final long finalCurrent = current;
+                        mainThread.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (downloadCallBack != null && !call.isCanceled()) {
+                                    downloadCallBack.onPregrass(finalCurrent, total);
+                                }
+                            }
+                        });
+                        fos.write(buf, 0, len);
+                    }
+                    fos.flush();
+                    mainThread.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (downloadCallBack != null && !call.isCanceled()) {
+                                downloadCallBack.onSuccess(fileUri);
+                            }
+                        }
+                    });
+
+                } catch (IOException e) {
+                    mainThread.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (downloadCallBack != null) {
+                                downloadCallBack.onFailed(fileUri);
+                            }
+                        }
+                    });
+                } finally {
+                    try {
+                        if (is != null) {
+                            is.close();
+                        }
+                        if (fos != null) {
+                            fos.close();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
     protected abstract void doTheCall(final Request request, final String url, final Type returnType);
 
     public void cancelRequest() {
         if (currentCall != null && currentCall.isExecuted()) {
             currentCall.cancel();
         }
+    }
+
+    public OkHttpBaseApi addDownloadListener(OnDownloadCallBack downloadCallBack){
+        this.downloadCallBack = downloadCallBack;
+        return this;
     }
 
     public OkHttpBaseApi addListener(OnRequestCallBack callBack) {

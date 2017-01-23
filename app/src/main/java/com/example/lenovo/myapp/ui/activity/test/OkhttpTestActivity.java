@@ -2,6 +2,7 @@ package com.example.lenovo.myapp.ui.activity.test;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.EditText;
 
 import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
 import com.cxb.tools.network.okhttp.OkHttpBaseApi;
+import com.cxb.tools.network.okhttp.OnDownloadCallBack;
 import com.cxb.tools.network.okhttp.OnRequestCallBack;
+import com.cxb.tools.utils.FileUtil;
+import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.cxb.tools.utils.VersionUtil;
 import com.example.lenovo.myapp.MyApplication;
@@ -23,6 +27,7 @@ import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.google.gson.reflect.TypeToken;
 import com.orhanobut.logger.Logger;
 
+import java.io.File;
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,6 +53,8 @@ public class OkhttpTestActivity extends BaseActivity {
     private Button btnChange;
     private Button btnAuthenticator;
     private Button btnGetGitHub;
+    private Button btnDownload;
+
     private Button btnGetVersion;
     private Button btnCompareVersion;
 
@@ -57,6 +64,7 @@ public class OkhttpTestActivity extends BaseActivity {
     private GetWeatherCall getWeatherCall = new GetWeatherCall();
     private OkHttpAsynchApi okHttpAsynchApi;
     private OkHttpAsynchApi okHttpAuthenticatior;
+    private OkHttpAsynchApi downloadCall;
 
     private DefaultProgressDialog progressDialog;
 
@@ -90,6 +98,9 @@ public class OkhttpTestActivity extends BaseActivity {
         btnAuthenticator = (Button) findViewById(R.id.btn_authenticator);
         btnAuthenticator.setOnClickListener(btnClick);
 
+        btnDownload = (Button) findViewById(R.id.btn_download);
+        btnDownload.setOnClickListener(btnClick);
+
         btnGetVersion = (Button) findViewById(R.id.btn_get_app_version);
         btnGetVersion.setOnClickListener(btnClick);
 
@@ -107,14 +118,14 @@ public class OkhttpTestActivity extends BaseActivity {
                 .addListener(callBack);
 
         getWeatherCall.addListener(callBack);
+
+        downloadCall = new OkHttpAsynchApi()
+                .addDownloadListener(downloadCallBack);
     }
 
     View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
-            progressDialog.showDialog();
-
             switch (v.getId()) {
                 case R.id.btn_change_url:
                     startActivity(new Intent(OkhttpTestActivity.this, SetPostUrlActivity.class));
@@ -131,8 +142,13 @@ public class OkhttpTestActivity extends BaseActivity {
                 case R.id.btn_authenticator:
                     getAuthenticatorData();
                     break;
+                case R.id.btn_download:
+                    downloadFile();
+                    break;
                 case R.id.btn_get_app_version:
-                    ToastUtil.toast("版本号：" + VersionUtil.getVersionName(MyApplication.getInstance()));
+                    String version = VersionUtil.getVersionName(MyApplication.getInstance());
+                    version1.setText(version);
+                    ToastUtil.toast("版本号：" + version);
                     break;
                 case R.id.btn_compare_version:
                     String v1 = version1.getText().toString();
@@ -195,6 +211,19 @@ public class OkhttpTestActivity extends BaseActivity {
                 .getPath(URL_GET_OKHTTP_INFO, null);
     }
 
+    private void downloadFile() {
+        progressDialog.setMessage("下载中...");
+        progressDialog.showDialog();
+
+        String fileName = "duiduoduo.apk";
+        String directoryUri = SDCardUtil.getAutoFilesPath(MyApplication.getInstance());
+        File file = new File(directoryUri, fileName);
+
+        downloadCall.setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
+                .setCurrentBaseUrl("121.201.74.114/duidouduo")
+                .downloadFile("public/app-debug.apk_1.0.apk", file.getAbsolutePath());
+    }
+
     private DialogInterface.OnKeyListener backClick = new DialogInterface.OnKeyListener() {
         @Override
         public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
@@ -207,7 +236,34 @@ public class OkhttpTestActivity extends BaseActivity {
             if (okHttpAuthenticatior != null) {
                 okHttpAuthenticatior.cancelRequest();
             }
+            if (downloadCall != null) {
+                downloadCall.cancelRequest();
+            }
             return false;
+        }
+    };
+
+    private OnDownloadCallBack downloadCallBack = new OnDownloadCallBack() {
+        @Override
+        public void onPregrass(long curSize, long maxSize) {
+            String curDownload = FileUtil.FormetFileSize(MyApplication.getInstance(), curSize);
+            String totalDownload = FileUtil.FormetFileSize(MyApplication.getInstance(), maxSize);
+            progressDialog.setMessage("下载中：" + curDownload + "/" + totalDownload);
+        }
+
+        @Override
+        public void onSuccess(String fileUri) {
+            progressDialog.dismissDialog();
+            ToastUtil.toast("下载成功");
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(new File(fileUri)), "application/vnd.android.package-archive");
+            startActivity(intent);
+        }
+
+        @Override
+        public void onFailed(String fileUri) {
+            progressDialog.dismissDialog();
+            ToastUtil.toast("已取消下载，下载失败");
         }
     };
 

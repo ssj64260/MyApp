@@ -40,6 +40,13 @@
         android:textAllCaps="false" />
 
     <Button
+        android:id="@+id/btn_download"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="下载文件"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/btn_get_app_version"
         android:layout_width="200dp"
         android:layout_height="50dp"

@@ -96,6 +96,11 @@ public class OkHttpAsynchApi extends OkHttpBaseApi {
         });
     }
 
+    public OkHttpAsynchApi addDownloadListener(OnDownloadCallBack downloadCallBack){
+        this.downloadCallBack = downloadCallBack;
+        return this;
+    }
+
     public OkHttpAsynchApi addListener(OnRequestCallBack callBack) {
         super.addListener(callBack);
         return this;

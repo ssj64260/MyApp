@@ -43,10 +43,6 @@ public class SetPostUrlActivity extends BaseActivity {
         findViewById(R.id.btn_use_custom_url).setOnClickListener(btnClick);
         findViewById(R.id.btn_set_confirm).setOnClickListener(btnClick);
         findViewById(R.id.btn_clear_all_data).setOnClickListener(btnClick);
-        findViewById(R.id.btn_clear_db).setOnClickListener(btnClick);
-        findViewById(R.id.btn_clear_share).setOnClickListener(btnClick);
-
-        findViewById(R.id.btn_test).setOnClickListener(btnClick);
 
         setOnKeyboardChangeListener();
     }
@@ -74,34 +70,23 @@ public class SetPostUrlActivity extends BaseActivity {
                             finish();
                         } else {
                             curUrl = url;
-                            deleteAllData(true);
+                            clearAllShare();
                         }
                     }
                     break;
                 case R.id.btn_clear_all_data:
-                    deleteAllData(true);
-                    break;
-                case R.id.btn_clear_db:
-                    deleteAllData(false);
-                    break;
-                case R.id.btn_clear_share:
-                    deleteAllData(true);
-                    break;
-                case R.id.btn_test:
-
+                    clearAllShare();
                     break;
             }
         }
     };
 
-    private void deleteAllData(final boolean clearShare) {
+    private void clearAllShare() {
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
-                if (clearShare) {
-                    PreferencesUtil.clearAll(APP_SETTING);
-                    PreferencesUtil.clearAll(USER_INFO);
-                }
+                PreferencesUtil.clearAll(APP_SETTING);
+                PreferencesUtil.clearAll(USER_INFO);
 
                 PreferencesUtil.setData(APP_SETTING, KEY_BASE_URL, curUrl);
                 URLSetting.getInstance().setUrl();

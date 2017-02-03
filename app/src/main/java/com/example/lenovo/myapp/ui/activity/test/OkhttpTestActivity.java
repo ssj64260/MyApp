@@ -26,6 +26,7 @@ import com.example.lenovo.myapp.model.testbean.GithubBean;
 import com.example.lenovo.myapp.model.testbean.WeatherInfo;
 import com.example.lenovo.myapp.model.testbean.WeatherList;
 import com.example.lenovo.myapp.model.testbean.WeatherToday;
+import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.okhttp.call.GetWeatherCall;
 import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
@@ -136,6 +137,7 @@ public class OkhttpTestActivity extends BaseActivity {
     View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            hideKeyboard();
             switch (v.getId()) {
                 case R.id.btn_change_url:
                     startActivity(new Intent(OkhttpTestActivity.this, SetPostUrlActivity.class));
@@ -188,7 +190,7 @@ public class OkhttpTestActivity extends BaseActivity {
         params.put("sign", "b59bc3ef6191eb9f747dd4e83c99f2a4");
         params.put("format", "json");
         getTodayWeather.setRequestId(ID_GET_WEATHER)
-                .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
+                .setCurrentProtocol(URLSetting.getInstance().getBaseProtocol())
                 .setCurrentBaseUrl(URL_WEATHER)
                 .getPath("", params, returnType);
     }
@@ -216,7 +218,7 @@ public class OkhttpTestActivity extends BaseActivity {
         progressDialog.setMessage("获取需验证数据中...");
         progressDialog.showDialog();
         getOkhttpAuthInfo.setRequestId(ID_GET_OKHTTP_INFO)
-                .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
+                .setCurrentProtocol(URLSetting.getInstance().getBaseProtocol())
                 .setCurrentBaseUrl(HOST_PUBLIC_OBJECT)
                 .getPath(URL_GET_OKHTTP_INFO, null);
     }
@@ -229,7 +231,7 @@ public class OkhttpTestActivity extends BaseActivity {
         String directoryUri = SDCardUtil.getAutoFilesPath(MyApplication.getInstance());
         File file = new File(directoryUri, fileName);
 
-        downloadCall.setCurrentProtocol(OkHttpBaseApi.Protocol.HTTP)
+        downloadCall.setCurrentProtocol(URLSetting.getInstance().getBaseProtocol())
                 .setCurrentBaseUrl("121.201.74.114/duidouduo")
                 .downloadFile("public/app-debug.apk_1.0.apk", file.getAbsolutePath());
     }

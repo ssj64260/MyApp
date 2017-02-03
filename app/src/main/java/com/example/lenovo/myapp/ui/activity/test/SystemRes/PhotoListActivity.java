@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.TextView;
 
+import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.FileUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.AlbumListBean;
@@ -88,17 +89,21 @@ public class PhotoListActivity extends BaseActivity {
     }
 
     private void showPictureMsg() {
-        AlphaAnimation mShowAction = new AlphaAnimation(0, 1);
-        mShowAction.setDuration(500);
-        tvPictureInfo.setAnimation(mShowAction);
-        tvPictureInfo.setVisibility(View.VISIBLE);
+        if (!FastClick.isFastClick() && tvPictureInfo.getVisibility() == View.GONE) {
+            AlphaAnimation mShowAction = new AlphaAnimation(0.1f, 1f);
+            mShowAction.setDuration(500);
+            tvPictureInfo.setAnimation(mShowAction);
+            tvPictureInfo.setVisibility(View.VISIBLE);
+        }
     }
 
     private void hidePictureMsg() {
-        AlphaAnimation mHiddenAction = new AlphaAnimation(1, 0);
-        mHiddenAction.setDuration(500);
-        tvPictureInfo.setAnimation(mHiddenAction);
-        tvPictureInfo.setVisibility(View.GONE);
+        if (!FastClick.isFastClick() && tvPictureInfo.getVisibility() == View.VISIBLE) {
+            AlphaAnimation mHiddenAction = new AlphaAnimation(1, 0.1f);
+            mHiddenAction.setDuration(500);
+            tvPictureInfo.setAnimation(mHiddenAction);
+            tvPictureInfo.setVisibility(View.GONE);
+        }
     }
 
     private OnListClickListener listClick = new OnListClickListener() {

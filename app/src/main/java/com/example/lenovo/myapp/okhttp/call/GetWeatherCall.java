@@ -2,6 +2,7 @@ package com.example.lenovo.myapp.okhttp.call;
 
 import com.cxb.tools.network.okhttp.OkHttpAsynchApi;
 import com.example.lenovo.myapp.model.testbean.WeatherList;
+import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -22,7 +23,7 @@ public class GetWeatherCall extends OkHttpAsynchApi {
 
     public GetWeatherCall() {
         super();
-        setCurrentProtocol(Protocol.HTTP);
+        setCurrentProtocol(URLSetting.getInstance().getBaseProtocol());
         setCurrentBaseUrl(URL_WEATHER);
         setRequestId(ID_POST_WEATHER);
     }

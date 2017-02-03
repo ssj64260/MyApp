@@ -124,14 +124,18 @@ public class BaseActivity extends Activity implements ActivityListener {
         if (Build.VERSION.SDK_INT < 23) {
             onPermissionSuccess();
         } else {
-            List<String> temp = new ArrayList<>();
-            for (String permission : permissions) {
+            List<String> pTemp = new ArrayList<>();
+            List<String> tTemp = new ArrayList<>();
+            for (int i = 0; i < permissions.length; i++) {
+                String permission = permissions[i];
                 if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
-                    temp.add(permission);
+                    pTemp.add(permission);
+                    tTemp.add(refuseTips[i]);
                 }
             }
 
-            permissions = temp.toArray(new String[temp.size()]);
+            permissions = pTemp.toArray(new String[pTemp.size()]);
+            refuseTips = tTemp.toArray(new String[tTemp.size()]);
 
             requestPermissions(0);
         }

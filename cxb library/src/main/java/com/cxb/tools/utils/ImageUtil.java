@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.net.Uri;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 
 import java.io.BufferedInputStream;
@@ -142,6 +143,19 @@ public class ImageUtil {
             int actual_image_column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             cursor.moveToFirst();
             return cursor.getString(actual_image_column_index);
+        } else {
+            return url;
+        }
+    }
+
+    public static String getContentContactAvatar(String url, Context context){
+        Uri uri = Uri.parse(url);
+        String[] proj = {ContactsContract.Contacts.PHOTO_THUMBNAIL_URI};
+        Cursor cursor = context.getContentResolver().query(uri, proj, null, null, null);
+        if (cursor != null) {
+            int index = cursor.getColumnIndexOrThrow(ContactsContract.Contacts.PHOTO_THUMBNAIL_URI);
+            cursor.moveToFirst();
+            return cursor.getString(index);
         } else {
             return url;
         }

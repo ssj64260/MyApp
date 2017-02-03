@@ -36,11 +36,29 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/white">
 
-    </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_contact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingEnd="1dp"
+            android:paddingStart="1dp" />
+
+        <TextView
+            android:id="@+id/tv_contact_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/shape_bg_picture_info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_14sp"
+            android:visibility="gone"
+            tools:text="联系人信息联系人信息联系人信息联系人信息" />
+    </RelativeLayout>
 
 </LinearLayout>

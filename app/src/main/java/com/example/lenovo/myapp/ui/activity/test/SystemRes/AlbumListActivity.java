@@ -23,26 +23,26 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.provider.MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME;
-import static android.provider.MediaStore.Images.ImageColumns.BUCKET_ID;
-import static android.provider.MediaStore.Images.ImageColumns.DATA;
-import static android.provider.MediaStore.Images.ImageColumns.DATE_ADDED;
-import static android.provider.MediaStore.Images.ImageColumns.DATE_MODIFIED;
-import static android.provider.MediaStore.Images.ImageColumns.DATE_TAKEN;
-import static android.provider.MediaStore.Images.ImageColumns.DESCRIPTION;
-import static android.provider.MediaStore.Images.ImageColumns.DISPLAY_NAME;
-import static android.provider.MediaStore.Images.ImageColumns.HEIGHT;
-import static android.provider.MediaStore.Images.ImageColumns.IS_PRIVATE;
-import static android.provider.MediaStore.Images.ImageColumns.LATITUDE;
-import static android.provider.MediaStore.Images.ImageColumns.LONGITUDE;
-import static android.provider.MediaStore.Images.ImageColumns.MIME_TYPE;
-import static android.provider.MediaStore.Images.ImageColumns.MINI_THUMB_MAGIC;
-import static android.provider.MediaStore.Images.ImageColumns.ORIENTATION;
-import static android.provider.MediaStore.Images.ImageColumns.PICASA_ID;
-import static android.provider.MediaStore.Images.ImageColumns.SIZE;
-import static android.provider.MediaStore.Images.ImageColumns.TITLE;
-import static android.provider.MediaStore.Images.ImageColumns.WIDTH;
-import static android.provider.MediaStore.Images.ImageColumns._ID;
+import static android.provider.MediaStore.Images.Media.PICASA_ID;
+import static android.provider.MediaStore.Images.Media.BUCKET_DISPLAY_NAME;
+import static android.provider.MediaStore.Images.Media.BUCKET_ID;
+import static android.provider.MediaStore.Images.Media.DATA;
+import static android.provider.MediaStore.Images.Media.DATE_ADDED;
+import static android.provider.MediaStore.Images.Media.DATE_MODIFIED;
+import static android.provider.MediaStore.Images.Media.DATE_TAKEN;
+import static android.provider.MediaStore.Images.Media.DESCRIPTION;
+import static android.provider.MediaStore.Images.Media.DISPLAY_NAME;
+import static android.provider.MediaStore.Images.Media.IS_PRIVATE;
+import static android.provider.MediaStore.Images.Media.LATITUDE;
+import static android.provider.MediaStore.Images.Media.LONGITUDE;
+import static android.provider.MediaStore.Images.Media.MIME_TYPE;
+import static android.provider.MediaStore.Images.Media.MINI_THUMB_MAGIC;
+import static android.provider.MediaStore.Images.Media.ORIENTATION;
+import static android.provider.MediaStore.Images.Media.SIZE;
+import static android.provider.MediaStore.Images.Media.TITLE;
+import static android.provider.MediaStore.Images.Media.WIDTH;
+import static android.provider.MediaStore.Images.Media._ID;
+import static android.provider.MediaStore.Images.Media.HEIGHT;
 import static com.example.lenovo.myapp.ui.activity.test.systemres.PhotoListActivity.KEY_ALBUM;
 
 /**
@@ -117,26 +117,27 @@ public class AlbumListActivity extends BaseActivity {
 
                         PhotoBean photo = new PhotoBean();
                         photo.setId(mCursor.getLong(mCursor.getColumnIndex(_ID)));
-                        photo.setData(mCursor.getString(mCursor.getColumnIndex(DATA)));
-                        photo.setSize(mCursor.getLong(mCursor.getColumnIndex(SIZE)));
-                        photo.setDisplayName(mCursor.getString(mCursor.getColumnIndex(DISPLAY_NAME)));
-                        photo.setTitle(mCursor.getString(mCursor.getColumnIndex(TITLE)));
-                        photo.setDateAdded(mCursor.getLong(mCursor.getColumnIndex(DATE_ADDED)));
-                        photo.setDateModified(mCursor.getLong(mCursor.getColumnIndex(DATE_MODIFIED)));
-                        photo.setType(mCursor.getString(mCursor.getColumnIndex(MIME_TYPE)));
-                        photo.setWidth(mCursor.getInt(mCursor.getColumnIndex(WIDTH)));
-                        photo.setHeight(mCursor.getInt(mCursor.getColumnIndex(HEIGHT)));
 
+                        photo.setBucketDisplayName(mCursor.getString(mCursor.getColumnIndex(BUCKET_DISPLAY_NAME)));
+                        photo.setBucketId(mCursor.getString(mCursor.getColumnIndex(BUCKET_ID)));
+                        photo.setDateTaken(mCursor.getLong(mCursor.getColumnIndex(DATE_TAKEN)));
                         photo.setDescription(mCursor.getString(mCursor.getColumnIndex(DESCRIPTION)));
-                        photo.setPicasaId(mCursor.getString(mCursor.getColumnIndex(PICASA_ID)));
                         photo.setIsprivate(mCursor.getInt(mCursor.getColumnIndex(IS_PRIVATE)));
                         photo.setLatitude(mCursor.getDouble(mCursor.getColumnIndex(LATITUDE)));
                         photo.setLongitude(mCursor.getDouble(mCursor.getColumnIndex(LONGITUDE)));
-                        photo.setDateTaken(mCursor.getLong(mCursor.getColumnIndex(DATE_TAKEN)));
-                        photo.setOrientation(mCursor.getInt(mCursor.getColumnIndex(ORIENTATION)));
                         photo.setMiniThumbMagic(mCursor.getLong(mCursor.getColumnIndex(MINI_THUMB_MAGIC)));
-                        photo.setBucketId(mCursor.getString(mCursor.getColumnIndex(BUCKET_ID)));
-                        photo.setBucketDisplayName(mCursor.getString(mCursor.getColumnIndex(BUCKET_DISPLAY_NAME)));
+                        photo.setOrientation(mCursor.getInt(mCursor.getColumnIndex(ORIENTATION)));
+                        photo.setPicasaId(mCursor.getString(mCursor.getColumnIndex(PICASA_ID)));
+
+                        photo.setData(mCursor.getString(mCursor.getColumnIndex(DATA)));
+                        photo.setDateAdded(mCursor.getLong(mCursor.getColumnIndex(DATE_ADDED)));
+                        photo.setDateModified(mCursor.getLong(mCursor.getColumnIndex(DATE_MODIFIED)));
+                        photo.setDisplayName(mCursor.getString(mCursor.getColumnIndex(DISPLAY_NAME)));
+                        photo.setHeight(mCursor.getInt(mCursor.getColumnIndex(HEIGHT)));
+                        photo.setType(mCursor.getString(mCursor.getColumnIndex(MIME_TYPE)));
+                        photo.setSize(mCursor.getLong(mCursor.getColumnIndex(SIZE)));
+                        photo.setTitle(mCursor.getString(mCursor.getColumnIndex(TITLE)));
+                        photo.setWidth(mCursor.getInt(mCursor.getColumnIndex(WIDTH)));
 
                         boolean isNew = true;
 

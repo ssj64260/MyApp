@@ -4,20 +4,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.lenovo.myapp.utils.PreferencesUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.PreferencesUtil;
 
-import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
-import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_BASE_URL;
-import static com.example.lenovo.myapp.utils.PreferencesUtil.USER_INFO;
 import static com.example.lenovo.myapp.utils.Constants.CUSTOM_URL;
 import static com.example.lenovo.myapp.utils.Constants.DEBUG_URL;
 import static com.example.lenovo.myapp.utils.Constants.OFFICIAL_URL;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_BASE_URL;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.USER_INFO;
 
 /**
  * 设置接口url
@@ -89,7 +88,6 @@ public class SetPostUrlActivity extends BaseActivity {
                 PreferencesUtil.clearAll(USER_INFO);
 
                 PreferencesUtil.setData(APP_SETTING, KEY_BASE_URL, curUrl);
-                URLSetting.getInstance().setUrl();
 
                 runOnUiThread(new Runnable() {
                     @Override

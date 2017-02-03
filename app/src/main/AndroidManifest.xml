@@ -124,6 +124,7 @@
 
         <activity
             android:name=".ui.activity.test.CustomViewTestActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged"
             android:screenOrientation="portrait" />
 
         <activity

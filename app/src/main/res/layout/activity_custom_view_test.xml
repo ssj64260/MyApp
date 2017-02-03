@@ -81,7 +81,15 @@
                 app:max_number="100"
                 app:progress_color="@color/fire"
                 app:show_animation="true" />
-            
+
+            <Button
+                android:id="@+id/btn_get_code"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_bg_iselectable"
+                android:text="倒数60秒"/>
+
             <Button
                 android:id="@+id/btn_first_start"
                 android:layout_width="match_parent"

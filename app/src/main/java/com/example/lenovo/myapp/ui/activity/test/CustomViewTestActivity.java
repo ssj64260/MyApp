@@ -1,6 +1,7 @@
 package com.example.lenovo.myapp.ui.activity.test;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.PreferencesUtil;
+import com.orhanobut.logger.Logger;
 
 import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
 import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_FIRST_START;
@@ -31,7 +33,10 @@ public class CustomViewTestActivity extends BaseActivity {
     private Button btnConfirm;
     private MyProgressBar mpbProgress;
 
+    private Button btnGetCode;
     private Button btnFirstStart;
+
+    private int downTime = 60;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,7 @@ public class CustomViewTestActivity extends BaseActivity {
         btnConfirm = (Button) findViewById(R.id.btn_confirm);
         mpbProgress = (MyProgressBar) findViewById(R.id.mpb_progress);
 
+        btnGetCode = (Button) findViewById(R.id.btn_get_code);
         btnFirstStart = (Button) findViewById(R.id.btn_first_start);
     }
 
@@ -60,8 +66,25 @@ public class CustomViewTestActivity extends BaseActivity {
 
         btnConfirm.setOnClickListener(click);
 
+        btnGetCode.setOnClickListener(click);
         btnFirstStart.setOnClickListener(click);
     }
+
+    private CountDownTimer timer = new CountDownTimer(60000, 1000) {
+        @Override
+        public void onTick(long millisUntilFinished) {
+            Logger.d(millisUntilFinished);
+            downTime--;
+            btnGetCode.setText(String.format("(%d) 再次倒数", downTime));
+        }
+
+        @Override
+        public void onFinish() {
+            btnGetCode.setText("倒数60秒");
+            btnGetCode.setClickable(true);
+            timer.cancel();
+        }
+    };
 
     //输入框内容改变监听
     private TextWatcher watcher = new TextWatcher() {
@@ -83,6 +106,7 @@ public class CustomViewTestActivity extends BaseActivity {
     private View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            hideKeyboard();
             switch (v.getId()) {
                 case R.id.btn_confirm:
                     String number = etProgress.getText().toString().trim();
@@ -93,6 +117,11 @@ public class CustomViewTestActivity extends BaseActivity {
                     } else {
                         ToastUtil.toast("不是纯数字");
                     }
+                    break;
+                case R.id.btn_get_code:
+                    btnGetCode.setClickable(false);
+                    downTime = 60;
+                    timer.start();
                     break;
                 case R.id.btn_first_start:
                     PreferencesUtil.setData(APP_SETTING, KEY_FIRST_START, true);

@@ -172,7 +172,7 @@ public class MainActivity extends BaseAppCompatActivity {
         });
 
         GlideCircleTransform transform = new GlideCircleTransform(this)
-                .setBorderThickness(DisplayUtil.dip2px(this, 5))
+                .setBorderThickness(DisplayUtil.dip2px(this, 3))
                 .setColor(255, 255, 255, 1);
 
         Glide.with(this).load(R.mipmap.app_icon)

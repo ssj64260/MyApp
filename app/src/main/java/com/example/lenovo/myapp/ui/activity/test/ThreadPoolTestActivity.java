@@ -14,6 +14,7 @@ import com.cxb.tools.utils.ThreadPoolUtil;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
+import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.google.gson.reflect.TypeToken;
@@ -189,7 +190,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
             @Override
             public void run() {
                 getAd.setRequestId(ID_GET_WEATHER)
-                        .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
+                        .setCurrentProtocol(URLSetting.getInstance().getBaseProtocol())
                         .setCurrentBaseUrl(URL_WEATHER)
                         .getPath("", params, null);
             }
@@ -229,13 +230,13 @@ public class ThreadPoolTestActivity extends BaseActivity {
                             break;
                         case 1:
                             getAd.setRequestId(ID_GET_WEATHER)
-                                    .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
+                                    .setCurrentProtocol(URLSetting.getInstance().getBaseProtocol())
                                     .setCurrentBaseUrl(URL_WEATHER)
                                     .getPath("", todayWeatherParams, null);
                             break;
                         case 2:
                             getWeather.setRequestId(ID_POST_WEATHER)
-                                    .setCurrentProtocol(OkHttpSynchApi.Protocol.HTTP)
+                                    .setCurrentProtocol(URLSetting.getInstance().getBaseProtocol())
                                     .setCurrentBaseUrl(URL_WEATHER)
                                     .postParameters("", weatherParams, null);
                             break;

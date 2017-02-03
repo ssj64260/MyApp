@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cxb.tools.utils.AppManager;
+import com.cxb.tools.utils.FastClick;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.adapter.AppInfoListAdapter;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
@@ -96,21 +97,25 @@ public class AppInfoTestActivity extends BaseActivity {
         });
     }
     private void showDetail() {
-        AlphaAnimation mShowAction = new AlphaAnimation(0, 1);
-        mShowAction.setDuration(500);
-        detail.setAnimation(mShowAction);
+        if (!FastClick.isFastClick()) {
+            AlphaAnimation mShowAction = new AlphaAnimation(0, 1);
+            mShowAction.setDuration(500);
+            detail.setAnimation(mShowAction);
 
-        detail.setVisibility(View.VISIBLE);
-        rvAppList.setVisibility(View.GONE);
+            detail.setVisibility(View.VISIBLE);
+            rvAppList.setVisibility(View.GONE);
+        }
     }
 
     private void hideDetail() {
-        AlphaAnimation mHiddenAction = new AlphaAnimation(1, 0);
-        mHiddenAction.setDuration(500);
-        detail.setAnimation(mHiddenAction);
+        if (!FastClick.isFastClick()) {
+            AlphaAnimation mHiddenAction = new AlphaAnimation(1, 0);
+            mHiddenAction.setDuration(500);
+            detail.setAnimation(mHiddenAction);
 
-        detail.setVisibility(View.GONE);
-        rvAppList.setVisibility(View.VISIBLE);
+            detail.setVisibility(View.GONE);
+            rvAppList.setVisibility(View.VISIBLE);
+        }
     }
 
 

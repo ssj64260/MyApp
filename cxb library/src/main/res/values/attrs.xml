@@ -31,4 +31,8 @@
         <attr name="show_animation" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="MyTextSwitcher">
+        <attr name="period" format="integer" />
+    </declare-styleable>
+
 </resources>

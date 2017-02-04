@@ -10,12 +10,16 @@ import android.widget.EditText;
 
 import com.cxb.tools.MyProgressBar.MyProgressBar;
 import com.cxb.tools.PasswordLevel.PasswordLevelLayout;
+import com.cxb.tools.textswitcher.MyTextSwitcher;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.PreferencesUtil;
 import com.orhanobut.logger.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
 import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_FIRST_START;
@@ -36,6 +40,8 @@ public class CustomViewTestActivity extends BaseActivity {
     private Button btnGetCode;
     private Button btnFirstStart;
 
+    private MyTextSwitcher mtsText;
+
     private int downTime = 60;
 
     @Override
@@ -49,6 +55,14 @@ public class CustomViewTestActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        if (mtsText != null) {
+            mtsText.stop();
+        }
+        super.onDestroy();
+    }
+
     private void initView() {
         etPassword = (EditText) findViewById(R.id.et_password);
         pllPwdLevel = (PasswordLevelLayout) findViewById(R.id.pll_password_level);
@@ -59,6 +73,8 @@ public class CustomViewTestActivity extends BaseActivity {
 
         btnGetCode = (Button) findViewById(R.id.btn_get_code);
         btnFirstStart = (Button) findViewById(R.id.btn_first_start);
+
+        mtsText = (MyTextSwitcher) findViewById(R.id.mts_text);
     }
 
     private void setData() {
@@ -68,6 +84,13 @@ public class CustomViewTestActivity extends BaseActivity {
 
         btnGetCode.setOnClickListener(click);
         btnFirstStart.setOnClickListener(click);
+
+        List<String> texts = new ArrayList<>();
+        texts.add("恭喜 <font color='#00a9e7'>乌蝇哥</font> 1分钟前获得 <font color='red'>至尊表情包</font> 的称号");
+        texts.add("恭喜 <font color='#00a9e7'>卖萌的猫咪</font> 使用7200张兑换券成功兑换IPhone7 Plus");
+        texts.add("恭喜 <font color='#00a9e7'>忍</font> 完成 <font color='blue'>[最强忍耐者]</font> 成就，获得10张富士苹果兑换券");
+        texts.add("恭喜 <font color='#00a9e7'>熊本</font> 1分钟前成功兑换了<font color='yellow'>三星Note7 Power版</font>");
+        mtsText.getResource(texts);
     }
 
     private CountDownTimer timer = new CountDownTimer(60000, 1000) {

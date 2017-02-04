@@ -88,7 +88,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/selector_bg_iselectable"
-                android:text="倒数60秒"/>
+                android:text="倒数60秒" />
 
             <Button
                 android:id="@+id/btn_first_start"
@@ -96,7 +96,26 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/selector_bg_iselectable"
-                android:text="下次启动打开导航页"/>
+                android:text="下次启动打开导航页" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/ic_evaluation" />
+
+                <com.cxb.tools.textswitcher.MyTextSwitcher
+                    android:id="@+id/mts_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:gravity="center_vertical" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

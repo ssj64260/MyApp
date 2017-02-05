@@ -81,7 +81,7 @@ public class DiscoveryFragment extends Fragment {
                 list = new ArrayList<>();
                 propertyList = new ArrayList<>();
 
-                String json = AssetsUtil.getAssetsTxtByName(getActivity(), "property");
+                String json = AssetsUtil.getAssetsTxtByName(getActivity(), "property.txt");
                 if (!StringCheck.isEmpty(json)) {
                     Type newsType = new TypeToken<List<NewsTab>>() {
                     }.getType();

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cxb.tools.utils.DataCleanManager;
 import com.cxb.tools.utils.ImageUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.StringCheck;
@@ -35,9 +36,14 @@ public class ClippingImageActivity extends BaseActivity {
         setContentView(R.layout.activity_clipping_image);
 
         initView();
-
         setData();
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        DataCleanManager.deleteFilesByDirectory(PhotoDirectory);
+        super.onDestroy();
     }
 
     private void initView() {

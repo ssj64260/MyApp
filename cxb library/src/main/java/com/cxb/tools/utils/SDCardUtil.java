@@ -26,6 +26,11 @@ public class SDCardUtil {
         return context.getFilesDir().getPath();
     }
 
+    //  /data/data/<application package>/databases
+    public static String getDataBaseDir(Context context, String dbName) {
+        return context.getDatabasePath(dbName).getPath();
+    }
+
     //  /storage/emulated/0/Android/data/你的应用包名/cache/（APP卸载后，数据会被删除）
     public static String getExternalCacheDir(Context context) {
         return context.getExternalCacheDir().getPath();
@@ -37,7 +42,7 @@ public class SDCardUtil {
     }
 
     //自动选择Flies路径，若SD卡存在并且不能移除则用SD卡存储
-    public static String getAutoFilesPath(Context context){
+    public static String getAutoFilesPath(Context context) {
         String filesPath;
         if (ExistSDCard() && !SDCardRemovable()) {
             filesPath = getExternalFilesDir(context);
@@ -64,7 +69,7 @@ public class SDCardUtil {
     }
 
     //检查SD卡是否能被移除
-    public static boolean SDCardRemovable(){
+    public static boolean SDCardRemovable() {
         return Environment.isExternalStorageRemovable();
     }
 

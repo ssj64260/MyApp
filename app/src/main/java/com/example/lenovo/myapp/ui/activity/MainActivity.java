@@ -341,8 +341,8 @@ public class MainActivity extends BaseAppCompatActivity {
             String cacheDir = SDCardUtil.getCacheDir(this);
             String externalCacheDir = SDCardUtil.getExternalCacheDir(this);
 
-            cacheSize += FileUtil.getFileSize(new File(cacheDir));
-            cacheSize += FileUtil.getFileSize(new File(externalCacheDir));
+            cacheSize += FileUtil.getDirSize(new File(cacheDir));
+            cacheSize += FileUtil.getDirSize(new File(externalCacheDir));
         } catch (Exception e) {
             e.printStackTrace();
         }

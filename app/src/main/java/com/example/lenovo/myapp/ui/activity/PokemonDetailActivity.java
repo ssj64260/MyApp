@@ -150,7 +150,7 @@ public class PokemonDetailActivity extends BaseActivity {
         int allBgColor = NewsTabResoureUtil.property_color[propertyId];
         int textBgColorRes = NewsTabResoureUtil.perty_bg_color[propertyId];
 
-        String pmNmaeJson = AssetsUtil.getAssetsTxtByName(this, "pokemon_name");
+        String pmNmaeJson = AssetsUtil.getAssetsTxtByName(this, "pokemon_name.txt");
         if (!StringCheck.isEmpty(pmNmaeJson)) {
             Type type = new TypeToken<List<PokemonNameBean>>() {
             }.getType();

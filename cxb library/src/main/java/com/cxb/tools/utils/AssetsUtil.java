@@ -16,7 +16,7 @@ public class AssetsUtil {
 
     public static String getAssetsTxtByName(Context context, String name) {
         try {
-            InputStream is = context.getAssets().open(name + ".txt");
+            InputStream is = context.getAssets().open(name);
             int size = is.available();
 
             byte[] buffer = new byte[size];
@@ -28,6 +28,15 @@ public class AssetsUtil {
         } catch (IOException e) {
             e.printStackTrace();
             return "";
+        }
+    }
+
+    public static InputStream getInputStream(Context context, String fileName) {
+        try {
+            return context.getAssets().open(fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

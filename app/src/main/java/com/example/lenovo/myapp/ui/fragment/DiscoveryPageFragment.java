@@ -72,7 +72,7 @@ public class DiscoveryPageFragment extends Fragment {
     }
 
     private void setData() {
-        String json = AssetsUtil.getAssetsTxtByName(getActivity(), property);
+        String json = AssetsUtil.getAssetsTxtByName(getActivity(), property + ".txt");
         if (!StringCheck.isEmpty(json)) {
             Type type = new TypeToken<List<PokemonBean>>() {
             }.getType();

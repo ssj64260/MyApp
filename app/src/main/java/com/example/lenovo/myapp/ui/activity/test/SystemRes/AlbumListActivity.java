@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity.test.systemres;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -87,10 +88,47 @@ public class AlbumListActivity extends BaseActivity {
 
     private void setData() {
         tvCancel.setOnClickListener(click);
-        setAlbum();
+
+        String appName = getString(R.string.app_name);
+        permissions = new String[]{
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+        };
+        refuseTips = new String[]{
+                String.format("在设置-应用-%1$s-权限中开启存储权限，以正常使用该功能", appName),
+        };
+        setPermissions();
     }
 
-    private void setAlbum() {
+    private OnListClickListener listClick = new OnListClickListener() {
+        @Override
+        public void onItemClick(int position) {
+            Intent intent = new Intent();
+            intent.setClass(AlbumListActivity.this, PhotoListActivity.class);
+            intent.putExtra(KEY_ALBUM, list.get(position));
+            startActivity(intent);
+            overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+        }
+
+        @Override
+        public void onTagClick(Tag tag, int position) {
+
+        }
+    };
+
+    //点击监听
+    private View.OnClickListener click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.tv_cancel:
+                    finish();
+                    break;
+            }
+        }
+    };
+
+    @Override
+    public void onPermissionSuccess() {
         progressDialog.showDialog();
 
         list = new ArrayList<>();
@@ -186,33 +224,4 @@ public class AlbumListActivity extends BaseActivity {
             }
         });
     }
-
-    private OnListClickListener listClick = new OnListClickListener() {
-        @Override
-        public void onItemClick(int position) {
-            Intent intent = new Intent();
-            intent.setClass(AlbumListActivity.this, PhotoListActivity.class);
-            intent.putExtra(KEY_ALBUM, list.get(position));
-            startActivity(intent);
-            overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
-        }
-
-        @Override
-        public void onTagClick(Tag tag, int position) {
-
-        }
-    };
-
-    //点击监听
-    private View.OnClickListener click = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.tv_cancel:
-                    finish();
-                    break;
-            }
-        }
-    };
-
 }

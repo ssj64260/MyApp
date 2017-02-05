@@ -91,7 +91,7 @@ public class ListNestDatailActivity extends BaseActivity {
     private void initData() {
         nestType = getIntent().getIntExtra(KEY_NEST_TYPE, OUTER_LIST | INNER_LIST);
 
-        String json = AssetsUtil.getAssetsTxtByName(this, "all");
+        String json = AssetsUtil.getAssetsTxtByName(this, "all.txt");
         if (!StringCheck.isEmpty(json)) {
             Type type = new TypeToken<List<PokemonBean>>() {
             }.getType();

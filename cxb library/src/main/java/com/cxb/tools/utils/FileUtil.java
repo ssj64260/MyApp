@@ -18,25 +18,23 @@ import java.io.InputStream;
 public class FileUtil {
 
     //获取文件大小
-    public static long getFileSizes(File f) throws Exception {
+    public static long getFileSize(File f) throws Exception {
         long s = 0;
         if (f.exists()) {
             FileInputStream fis;
             fis = new FileInputStream(f);
             s = fis.available();
-        } else {
-            f.createNewFile();
         }
         return s;
     }
 
     //获取文件夹大小
-    public static long getFileSize(File f) throws Exception {
+    public static long getDirSize(File f) throws Exception {
         long size = 0;
         File flist[] = f.listFiles();
         for (int i = 0; i < flist.length; i++) {
             if (flist[i].isDirectory()) {
-                size += getFileSize(flist[i]);
+                size += getDirSize(flist[i]);
             } else {
                 size += flist[i].length();
             }
@@ -61,6 +59,30 @@ public class FileUtil {
             }
         }
         return size;
+    }
+
+    public static void copyFile(InputStream from, String toFilePath) {
+        try {
+            File file = new File(toFilePath);
+            File parentDir = file.getParentFile();
+            if (!parentDir.exists()) {
+                parentDir.mkdirs();
+            }
+
+            FileOutputStream outputStream = new FileOutputStream(file);
+
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = from.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, length);
+            }
+
+            outputStream.close();
+            from.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     //写文本文件 在Android系统中，文件保存在 /data/data/PACKAGE_NAME/files 目录下

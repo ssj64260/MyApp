@@ -120,9 +120,9 @@ public class ImageUtil {
 
             file = new File(path, bitName);
 
-            if (!file.exists()) {
-                file.createNewFile();
-            }
+//            if (!file.exists()) {
+//                file.createNewFile();
+//            }
 
             FileOutputStream out = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.JPEG, size, out);

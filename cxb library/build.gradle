@@ -31,4 +31,6 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.orhanobut:logger:1.15'
     compile 'com.theartofdev.edmodo:android-image-cropper:2.3.+'
+    compile 'com.weigan:loopView:0.1.1'
+    compile files('libs/lite-orm-1.9.2.jar')
 }

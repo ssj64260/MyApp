@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
     <ScrollView
+        android:id="@+id/sv_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,9 +19,75 @@
             android:orientation="vertical"
             android:padding="20dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/ic_evaluation" />
+
+                <com.cxb.tools.textswitcher.MyTextSwitcher
+                    android:id="@+id/mts_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:gravity="center_vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.weigan.loopview.LoopView
+                    android:id="@+id/loop_city"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="@color/white" />
+
+                <com.weigan.loopview.LoopView
+                    android:id="@+id/loop_area"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="@color/white" />
+
+                <com.weigan.loopview.LoopView
+                    android:id="@+id/loop_street"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="@color/white" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_get_code"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_bg_iselectable"
+                android:text="倒数60秒" />
+
+            <Button
+                android:id="@+id/btn_first_start"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_bg_iselectable"
+                android:text="下次启动打开导航页" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="请输入密码（4-10位，数字、字母和符号）" />
 
@@ -81,41 +148,6 @@
                 app:max_number="100"
                 app:progress_color="@color/fire"
                 app:show_animation="true" />
-
-            <Button
-                android:id="@+id/btn_get_code"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/selector_bg_iselectable"
-                android:text="倒数60秒" />
-
-            <Button
-                android:id="@+id/btn_first_start"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/selector_bg_iselectable"
-                android:text="下次启动打开导航页" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/white">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@mipmap/ic_evaluation" />
-
-                <com.cxb.tools.textswitcher.MyTextSwitcher
-                    android:id="@+id/mts_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:gravity="center_vertical" />
-
-            </LinearLayout>
 
         </LinearLayout>
 

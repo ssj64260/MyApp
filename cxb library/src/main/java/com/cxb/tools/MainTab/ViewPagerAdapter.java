@@ -1,4 +1,4 @@
-package com.cxb.tools.MainTab;
+package com.cxb.tools.maintab;
 
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;

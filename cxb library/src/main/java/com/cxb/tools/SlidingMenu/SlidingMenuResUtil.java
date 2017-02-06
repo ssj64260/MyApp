@@ -1,4 +1,4 @@
-package com.cxb.tools.SlidingMenu;
+package com.cxb.tools.slidingmenu;
 
 import com.cxb.tools.R;
 

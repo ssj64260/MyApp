@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.cxb.tools.NewsTab.NewsTabResoureUtil;
+import com.cxb.tools.newstab.NewsTabResoureUtil;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.StringCheck;

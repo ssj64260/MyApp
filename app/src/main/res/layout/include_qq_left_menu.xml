@@ -57,7 +57,7 @@
                 android:textSize="30sp"
                 tools:text="COKU" />
 
-            <com.cxb.tools.QQLevelLayout.QQLevelLayout
+            <com.cxb.tools.qqlevellayout.QQLevelLayout
                 android:id="@+id/qql_qq_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                 android:orientation="horizontal"
                 android:paddingTop="5dp">
 
-            </com.cxb.tools.QQLevelLayout.QQLevelLayout>
+            </com.cxb.tools.qqlevellayout.QQLevelLayout>
         </RelativeLayout>
 
         <LinearLayout

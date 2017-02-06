@@ -1,4 +1,4 @@
-package com.cxb.tools.SlidingMenu;
+package com.cxb.tools.slidingmenu;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cxb.tools.NewsTab.HorizontalTabListScrollView;
-import com.cxb.tools.NewsTab.NewsTab;
+import com.cxb.tools.newstab.HorizontalTabListScrollView;
+import com.cxb.tools.newstab.NewsTab;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
@@ -17,7 +17,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.adapter.MyPagerAdapter;
-import com.cxb.tools.CustomViewpager.CustomDepthPageTransformer;
+import com.cxb.tools.customviewpager.CustomDepthPageTransformer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

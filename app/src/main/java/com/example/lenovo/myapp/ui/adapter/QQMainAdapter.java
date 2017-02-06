@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.cxb.tools.Glide.GlideCircleTransform;
+import com.cxb.tools.glide.GlideCircleTransform;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.QQMessageBean;
 

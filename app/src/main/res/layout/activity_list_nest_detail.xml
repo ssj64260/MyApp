@@ -63,7 +63,7 @@
                     android:layout_margin="16dp"
                     android:background="@color/black" />
 
-                <com.cxb.tools.CustomList.NoScrollListView
+                <com.cxb.tools.customlist.NoScrollListView
                     android:id="@+id/lv_scroll_list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -75,7 +75,7 @@
                     android:layout_height="match_parent"
                     android:visibility="gone" />
 
-                <com.cxb.tools.CustomList.NoScrollGridView
+                <com.cxb.tools.customlist.NoScrollGridView
                     android:id="@+id/gv_scroll_grid"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

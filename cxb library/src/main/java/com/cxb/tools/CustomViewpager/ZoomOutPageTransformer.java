@@ -1,4 +1,4 @@
-package com.cxb.tools.CustomViewpager;
+package com.cxb.tools.customviewpager;
 
 import android.annotation.SuppressLint;
 import android.support.v4.view.ViewPager;

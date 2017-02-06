@@ -1,4 +1,4 @@
-package com.cxb.tools.PasswordLevel;
+package com.cxb.tools.passwordlevel;
 
 import android.content.Context;
 import android.graphics.Color;

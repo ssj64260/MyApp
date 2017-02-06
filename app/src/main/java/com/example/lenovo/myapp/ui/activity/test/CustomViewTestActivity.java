@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 
-import com.cxb.tools.MyProgressBar.MyProgressBar;
-import com.cxb.tools.PasswordLevel.PasswordLevelLayout;
+import com.cxb.tools.myprogressbar.MyProgressBar;
+import com.cxb.tools.passwordlevel.PasswordLevelLayout;
 import com.cxb.tools.textswitcher.MyTextSwitcher;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;

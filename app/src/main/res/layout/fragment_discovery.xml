@@ -11,7 +11,7 @@
         android:layout_height="48dp"
         android:background="#3C4146">
 
-        <com.cxb.tools.NewsTab.HorizontalTabListScrollView
+        <com.cxb.tools.newstab.HorizontalTabListScrollView
             android:id="@+id/htlsv_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

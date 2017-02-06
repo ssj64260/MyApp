@@ -1,4 +1,4 @@
-package com.cxb.tools.QQLevelLayout;
+package com.cxb.tools.qqlevellayout;
 
 import android.content.Context;
 import android.util.AttributeSet;

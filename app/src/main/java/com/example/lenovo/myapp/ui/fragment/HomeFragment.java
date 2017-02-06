@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.cxb.tools.MainTab.MainTab;
-import com.cxb.tools.MainTab.MainTabListLayout;
-import com.cxb.tools.MainTab.MainTabResoureUtil;
+import com.cxb.tools.maintab.MainTab;
+import com.cxb.tools.maintab.MainTabListLayout;
+import com.cxb.tools.maintab.MainTabResoureUtil;
 import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;

@@ -1,4 +1,4 @@
-package com.cxb.tools.CustomList;
+package com.cxb.tools.customlist;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

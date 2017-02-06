@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.cxb.tools.SlidingMenu.MySlidingMenu
+    <com.cxb.tools.slidingmenu.MySlidingMenu
         android:id="@+id/sm_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,6 +19,6 @@
             android:id="@+id/include_content"
             layout="@layout/include_qq_right_content" />
 
-    </com.cxb.tools.SlidingMenu.MySlidingMenu>
+    </com.cxb.tools.slidingmenu.MySlidingMenu>
 
 </LinearLayout>

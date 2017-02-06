@@ -1,4 +1,4 @@
-package com.cxb.tools.NewsTab;
+package com.cxb.tools.newstab;
 
 import android.content.Context;
 import android.content.res.TypedArray;

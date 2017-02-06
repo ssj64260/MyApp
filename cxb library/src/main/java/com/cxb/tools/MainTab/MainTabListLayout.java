@@ -1,4 +1,4 @@
-package com.cxb.tools.MainTab;
+package com.cxb.tools.maintab;
 
 import android.content.Context;
 import android.content.res.TypedArray;

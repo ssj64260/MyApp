@@ -1,4 +1,4 @@
-package com.cxb.tools.Glide;
+package com.cxb.tools.glide;
 
 import android.content.Context;
 import android.graphics.Bitmap;

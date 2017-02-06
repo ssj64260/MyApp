@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.cxb.tools.Glide.GlideCircleTransform;
+import com.cxb.tools.glide.GlideCircleTransform;
 import com.cxb.tools.utils.ImageUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;

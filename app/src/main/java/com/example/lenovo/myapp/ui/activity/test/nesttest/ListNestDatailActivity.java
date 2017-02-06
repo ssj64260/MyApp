@@ -11,8 +11,8 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.cxb.tools.CustomList.NoScrollGridView;
-import com.cxb.tools.CustomList.NoScrollListView;
+import com.cxb.tools.customlist.NoScrollGridView;
+import com.cxb.tools.customlist.NoScrollListView;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;

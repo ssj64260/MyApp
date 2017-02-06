@@ -28,7 +28,7 @@
         android:textSize="@dimen/textsize_16sp"
         tools:text="测试数据测试数据测试数据" />
 
-    <com.cxb.tools.MyProgressBar.MyProgressBar
+    <com.cxb.tools.myprogressbar.MyProgressBar
         android:id="@+id/mpb_progress"
         android:layout_width="match_parent"
         android:layout_height="10dp"

@@ -1,4 +1,4 @@
-package com.cxb.tools.MyProgressBar;
+package com.cxb.tools.myprogressbar;
 
 import android.content.Context;
 import android.content.res.TypedArray;

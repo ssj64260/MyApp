@@ -15,10 +15,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.cxb.tools.Glide.GlideCircleTransform;
-import com.cxb.tools.QQLevelLayout.QQLevelLayout;
-import com.cxb.tools.SlidingMenu.MySlidingMenu;
-import com.cxb.tools.SlidingMenu.SlidingMenuResUtil;
+import com.cxb.tools.glide.GlideCircleTransform;
+import com.cxb.tools.qqlevellayout.QQLevelLayout;
+import com.cxb.tools.slidingmenu.MySlidingMenu;
+import com.cxb.tools.slidingmenu.SlidingMenuResUtil;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;

@@ -21,7 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.cxb.tools.Glide.GlideCircleTransform;
+import com.cxb.tools.glide.GlideCircleTransform;
 import com.cxb.tools.utils.DataCleanManager;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.FileUtil;

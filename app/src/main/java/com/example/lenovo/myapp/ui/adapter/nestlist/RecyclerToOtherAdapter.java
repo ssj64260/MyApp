@@ -11,7 +11,6 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.cxb.tools.CustomList.OnlyClickRecyclerview;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.ListFixedHeightUtils;
 import com.cxb.tools.utils.ToastUtil;
@@ -101,7 +100,7 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         private TextView tvTitle;
         private ListView lvItemList;
         private GridView gvItemList;
-        private OnlyClickRecyclerview rvItemList;
+        private RecyclerView rvItemList;
 
         private List<PokemonBean> pmList;
 
@@ -116,7 +115,7 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             tvTitle = (TextView) view.findViewById(R.id.tv_title);
             lvItemList = (ListView) view.findViewById(R.id.lv_item_list);
             gvItemList = (GridView) view.findViewById(R.id.gv_item_grid);
-            rvItemList = (OnlyClickRecyclerview) view.findViewById(R.id.rv_item_recycler);
+            rvItemList = (RecyclerView) view.findViewById(R.id.rv_item_recycler);
 
             pmList = new ArrayList<>();
 
@@ -141,6 +140,8 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             } else if (listType == RecyclerToOtherAdapter.ListType.RECYCLERVIEW) {
                 rvAdapter = new PokemenListAdapter(context, pmList, "all");
                 layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                rvItemList.setHasFixedSize(true);
+                rvItemList.setNestedScrollingEnabled(false);
                 rvItemList.setLayoutManager(layoutManager);
                 rvItemList.setAdapter(rvAdapter);
                 rvAdapter.setOnListClickListener(new OnListClickListener() {

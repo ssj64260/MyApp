@@ -2,6 +2,7 @@ package com.example.lenovo.myapp.ui.adapter.nestlist;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,6 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.cxb.tools.CustomList.OnlyClickRecyclerview;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.ListFixedHeightUtils;
 import com.cxb.tools.utils.ToastUtil;
@@ -72,7 +72,7 @@ public class GridToOhterAdapter extends BaseAdapter {
             holder.tvTitle = (TextView) convertView.findViewById(R.id.tv_title);
             holder.lvItemList = (ListView) convertView.findViewById(R.id.lv_item_list);
             holder.gvItemList = (GridView) convertView.findViewById(R.id.gv_item_grid);
-            holder.rvItemList = (OnlyClickRecyclerview) convertView.findViewById(R.id.rv_item_recycler);
+            holder.rvItemList = (RecyclerView) convertView.findViewById(R.id.rv_item_recycler);
 
             holder.pmList = new ArrayList<>();
 
@@ -97,6 +97,8 @@ public class GridToOhterAdapter extends BaseAdapter {
             } else if (listType == ListType.RECYCLERVIEW) {
                 holder.rvAdapter = new PokemenListAdapter(context, holder.pmList, "all");
                 holder.layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                holder.rvItemList.setHasFixedSize(true);
+                holder.rvItemList.setNestedScrollingEnabled(false);
                 holder.rvItemList.setLayoutManager(holder.layoutManager);
                 holder.rvItemList.setAdapter(holder.rvAdapter);
                 holder.rvAdapter.setOnListClickListener(new OnListClickListener() {
@@ -154,7 +156,7 @@ public class GridToOhterAdapter extends BaseAdapter {
         private TextView tvTitle;
         private ListView lvItemList;
         private GridView gvItemList;
-        private OnlyClickRecyclerview rvItemList;
+        private RecyclerView rvItemList;
 
         private List<PokemonBean> pmList;
 

@@ -79,21 +79,21 @@
                 android:id="@+id/btn_scroll_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ScrollView 嵌套 ListView"
+                android:text="NestedScrollView 嵌套 ListView"
                 android:textAllCaps="false"/>
 
             <Button
                 android:id="@+id/btn_scroll_grid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ScrollView 嵌套 GridView"
+                android:text="NestedScrollView 嵌套 GridView"
                 android:textAllCaps="false"/>
 
             <Button
                 android:id="@+id/btn_scroll_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ScrollView 嵌套 RecyclerView"
+                android:text="NestedScrollView 嵌套 RecyclerView"
                 android:textAllCaps="false"/>
         </LinearLayout>
     </ScrollView>

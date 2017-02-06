@@ -1,6 +1,7 @@
 package com.example.lenovo.myapp.ui.activity.test.nesttest;
 
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -8,12 +9,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.cxb.tools.CustomList.NoScrollGridView;
 import com.cxb.tools.CustomList.NoScrollListView;
-import com.cxb.tools.CustomList.OnlyClickRecyclerview;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ToastUtil;
@@ -33,6 +32,8 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.lenovo.myapp.ui.adapter.nestlist.RecyclerToOtherAdapter.ListType.LISTVIEW;
 
 /**
  * 列表嵌套详情页面
@@ -59,9 +60,9 @@ public class ListNestDatailActivity extends BaseActivity {
     private RecyclerView rvRecycler;
     private GridView gvGrid;
 
-    private ScrollView svScroll;
+    private NestedScrollView svScroll;
     private NoScrollListView lvScroll;
-    private OnlyClickRecyclerview rvScroll;
+    private RecyclerView rvScroll;
     private NoScrollGridView gvScroll;
 
     private List<PokemonBean> pmList = new ArrayList<>();
@@ -74,8 +75,6 @@ public class ListNestDatailActivity extends BaseActivity {
     private GridToOhterAdapter gtoAdapter;
     private ListItemAdapter stoAdapter;
     private PokemenListAdapter pmAdapter;
-
-    private RecyclerToOtherAdapter.ListType listType = RecyclerToOtherAdapter.ListType.LISTVIEW;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +99,7 @@ public class ListNestDatailActivity extends BaseActivity {
             pmList.addAll(temp);
         }
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 30; i++) {
             NestTestBean nt = new NestTestBean();
             nt.setTitle("外层List控件#" + (i + 1));
             List<PokemonBean> pmTemp = new ArrayList<>();
@@ -111,7 +110,7 @@ public class ListNestDatailActivity extends BaseActivity {
             nestList.add(nt);
         }
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 30; i++) {
             NestTestBean nt = new NestTestBean();
             nt.setTitle("外层List控件#" + (i + 1));
             List<PokemonBean> pmTemp = new ArrayList<>();
@@ -122,8 +121,8 @@ public class ListNestDatailActivity extends BaseActivity {
             gridList.add(nt);
         }
 
-        for (int i = 0; i < 5; i++) {
-            scrollList.add(pmList.get((int) ((i + 1) * Math.random() * 98)));
+        for (int i = 0; i < 10; i++) {
+            scrollList.add(pmList.get((int) ((i + 1) * Math.random() * 10)));
         }
 
     }
@@ -135,11 +134,10 @@ public class ListNestDatailActivity extends BaseActivity {
         rvRecycler = (RecyclerView) findViewById(R.id.rv_recycler);
         gvGrid = (GridView) findViewById(R.id.gv_grid);
 
-        svScroll = (ScrollView) findViewById(R.id.sv_scroll);
+        svScroll = (NestedScrollView) findViewById(R.id.sv_scroll);
         lvScroll = (NoScrollListView) findViewById(R.id.lv_scroll_list);
-        rvScroll = (OnlyClickRecyclerview) findViewById(R.id.rv_scroll_recycler);
+        rvScroll = (RecyclerView) findViewById(R.id.rv_scroll_recycler);
         gvScroll = (NoScrollGridView) findViewById(R.id.gv_scroll_grid);
-
     }
 
     private void setData() {
@@ -161,12 +159,16 @@ public class ListNestDatailActivity extends BaseActivity {
         } else if (checkNestType(OUTER_RECYCLER)) {
             rvRecycler.setVisibility(View.VISIBLE);
 
+            rvRecycler.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
             if (checkNestType(INNER_LIST)) {
-                listType = RecyclerToOtherAdapter.ListType.LISTVIEW;
+                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, LISTVIEW);
+                rvRecycler.setAdapter(rtoAdapter);
             } else if (checkNestType(INNER_GRID)) {
-                listType = RecyclerToOtherAdapter.ListType.GRIDVIEW;
+                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, RecyclerToOtherAdapter.ListType.GRIDVIEW);
+                rvRecycler.setAdapter(rtoAdapter);
             } else if (checkNestType(INNER_RECYCLER)) {
-                listType = RecyclerToOtherAdapter.ListType.RECYCLERVIEW;
+                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, RecyclerToOtherAdapter.ListType.RECYCLERVIEW);
+                rvRecycler.setAdapter(rtoAdapter);
             }
         } else if (checkNestType(OUTER_GRID)) {
             gvGrid.setVisibility(View.VISIBLE);
@@ -183,6 +185,7 @@ public class ListNestDatailActivity extends BaseActivity {
             }
         } else if (checkNestType(OUTER_SCROLL)) {
             svScroll.setVisibility(View.VISIBLE);
+
             if (checkNestType(INNER_LIST)) {
                 lvScroll.setVisibility(View.VISIBLE);
 
@@ -192,6 +195,12 @@ public class ListNestDatailActivity extends BaseActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         ToastUtil.toast("ListView：" + scrollList.get(position).getName());
+                    }
+                });
+                lvScroll.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        svScroll.scrollTo(0, 0);
                     }
                 });
             } else if (checkNestType(INNER_GRID)) {
@@ -205,19 +214,29 @@ public class ListNestDatailActivity extends BaseActivity {
                         ToastUtil.toast("GridView：" + scrollList.get(position).getName());
                     }
                 });
+                gvScroll.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        svScroll.scrollTo(0, 0);
+                    }
+                });
             } else if (checkNestType(INNER_RECYCLER)) {
                 rvScroll.setVisibility(View.VISIBLE);
+
+                pmAdapter = new PokemenListAdapter(this, scrollList, "all");
+                pmAdapter.setOnListClickListener(listClick);
+                rvScroll.setHasFixedSize(true);
+                rvScroll.setNestedScrollingEnabled(false);
+                rvScroll.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+                rvScroll.setAdapter(pmAdapter);
+                rvScroll.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        svScroll.scrollTo(0, 0);
+                    }
+                });
             }
         }
-
-        rtoAdapter = new RecyclerToOtherAdapter(this, nestList, listType);
-        rvRecycler.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        rvRecycler.setAdapter(rtoAdapter);
-
-        pmAdapter = new PokemenListAdapter(this, scrollList, "all");
-        rvScroll.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        rvScroll.setAdapter(pmAdapter);
-        pmAdapter.setOnListClickListener(listClick);
     }
 
     private OnListClickListener listClick = new OnListClickListener() {

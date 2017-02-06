@@ -36,7 +36,7 @@
             android:numColumns="2"
             android:visibility="gone"/>
 
-        <com.cxb.tools.CustomList.OnlyClickRecyclerview
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_item_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

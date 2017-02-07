@@ -18,7 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="#21262D"
-        tl:tl_backgroundSelectColor="#11141A"
         tl:tl_iconHeight="32dp"
         tl:tl_iconWidth="32dp"
         tl:tl_indicator_color="#000000"

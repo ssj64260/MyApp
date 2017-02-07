@@ -60,7 +60,17 @@ public class CustomViewTestActivity extends BaseActivity {
     private List<Area> areas;
     private List<Street> streets;
 
+    private List<String> cityNames;
+    private List<String> areaNames;
+    private List<String> streetNames;
+
+    private String curCity;
+    private String curArea;
+    private String curStreet;
+
     private int downTime = 60;
+
+    private AddressDBHelper addressDBHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,12 +87,19 @@ public class CustomViewTestActivity extends BaseActivity {
         if (mtsText != null) {
             mtsText.stop();
         }
-        AddressDBHelper.closeDB();
+        addressDBHelper.closeDB();
         super.onDestroy();
     }
 
     private void initView() {
         svRoot = (ScrollView) findViewById(R.id.sv_root);
+
+        etPassword = (EditText) findViewById(R.id.et_password);
+        pllPwdLevel = (PasswordLevelLayout) findViewById(R.id.pll_password_level);
+
+        etProgress = (EditText) findViewById(R.id.et_progress);
+        btnConfirm = (Button) findViewById(R.id.btn_confirm);
+        mpbProgress = (MyProgressBar) findViewById(R.id.mpb_progress);
 
         mtsText = (MyTextSwitcher) findViewById(R.id.mts_text);
 
@@ -92,13 +109,6 @@ public class CustomViewTestActivity extends BaseActivity {
 
         btnGetCode = (Button) findViewById(R.id.btn_get_code);
         btnFirstStart = (Button) findViewById(R.id.btn_first_start);
-
-        etPassword = (EditText) findViewById(R.id.et_password);
-        pllPwdLevel = (PasswordLevelLayout) findViewById(R.id.pll_password_level);
-
-        etProgress = (EditText) findViewById(R.id.et_progress);
-        btnConfirm = (Button) findViewById(R.id.btn_confirm);
-        mpbProgress = (MyProgressBar) findViewById(R.id.mpb_progress);
     }
 
     private void setData() {
@@ -128,9 +138,21 @@ public class CustomViewTestActivity extends BaseActivity {
     }
 
     private void setAddress() {
+        addressDBHelper = new AddressDBHelper(this);
         cities = new ArrayList<>();
         areas = new ArrayList<>();
         streets = new ArrayList<>();
+
+        cityNames = new ArrayList<>();
+        areaNames = new ArrayList<>();
+        streetNames = new ArrayList<>();
+
+        if (addressDBHelper.updateDB(this)) {
+            cities.clear();
+            cities.addAll(addressDBHelper.getCity("6"));
+        } else {
+            ToastUtil.toast("数据库文件不存在");
+        }
 
         loopCity.setOnTouchListener(touch);
         loopCity.setTextSize(20);
@@ -138,14 +160,7 @@ public class CustomViewTestActivity extends BaseActivity {
         loopCity.setListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                areas.clear();
-                areas.addAll(AddressDBHelper.getArea(CustomViewTestActivity.this, cities.get(index).getId()));
-                List<String> areaNames = new ArrayList<>();
-                for (Area a : areas) {
-                    areaNames.add(a.getName());
-                }
-                loopArea.setItems(areaNames);
-                loopArea.setInitPosition(0);
+                setAreaNames(index);
             }
         });
 
@@ -155,33 +170,80 @@ public class CustomViewTestActivity extends BaseActivity {
         loopArea.setListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                streets.clear();
-                streets.addAll(AddressDBHelper.getStreet(CustomViewTestActivity.this, areas.get(index).getId()));
-                List<String> streetNames = new ArrayList<>();
-                for (Street s : streets) {
-                    streetNames.add(s.getName());
-                }
-                loopStreet.setItems(streetNames);
-                loopStreet.setInitPosition(0);
+                setStreetNames(index);
             }
         });
 
         loopStreet.setOnTouchListener(touch);
         loopStreet.setTextSize(20);
         loopStreet.setItemsVisibleCount(7);
-
-        if (AddressDBHelper.updateDB(this)) {
-            cities.clear();
-            cities.addAll(AddressDBHelper.getCity(CustomViewTestActivity.this, "6"));
-            List<String> cityNames = new ArrayList<>();
-            for (City c : cities) {
-                cityNames.add(c.getName());
+        loopStreet.setListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int index) {
+                curStreet = streetNames.get(index);
             }
-            loopCity.setItems(cityNames);
-            loopCity.setInitPosition(0);
-        } else {
-            ToastUtil.toast("数据库文件不存在");
+        });
+
+        setCityNames();
+    }
+
+    private void setCityNames() {
+        cityNames.clear();
+        for (City c : cities) {
+            cityNames.add(c.getName());
         }
+        if (cityNames.size() <= 0) {
+            cityNames.add("");
+        }
+        loopCity.setInitPosition(0);
+        loopCity.setItems(cityNames);
+        curCity = cityNames.get(0);
+        setAreaNames(0);
+    }
+
+    private void setAreaNames(int cityPosition) {
+        areaNames.clear();
+        areas.clear();
+        if (cityPosition < cities.size()) {
+            List<Area> temp = addressDBHelper.getArea(cities.get(cityPosition).getId());
+            if (temp != null) {
+                areas.addAll(temp);
+                for (Area a : areas) {
+                    areaNames.add(a.getName());
+                }
+            }
+        }
+
+        if (areaNames.size() <= 0) {
+            areaNames.add("");
+        }
+        loopArea.setInitPosition(0);
+        loopArea.setItems(areaNames);
+        curArea = areaNames.get(0);
+        Logger.d(curArea);
+
+        setStreetNames(0);
+    }
+
+    private void setStreetNames(int areaPosition) {
+        streetNames.clear();
+        streets.clear();
+        if (areaPosition < areas.size()) {
+            List<Street> temp = addressDBHelper.getStreet(areas.get(areaPosition).getId());
+            if (temp != null) {
+                streets.addAll(temp);
+                for (Street s : streets) {
+                    streetNames.add(s.getName());
+                }
+            }
+        }
+
+        if (streetNames.size() <= 0) {
+            streetNames.add("");
+        }
+        loopStreet.setInitPosition(0);
+        loopStreet.setItems(streetNames);
+        curStreet = streetNames.get(0);
     }
 
     private CountDownTimer timer = new CountDownTimer(60000, 1000) {

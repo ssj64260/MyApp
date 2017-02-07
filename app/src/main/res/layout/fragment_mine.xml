@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -11,52 +10,59 @@
         android:background="#3C4146">
 
         <TextView
-            android:id="@+id/tv_sliding_test"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="侧滑"
+            android:text="我的"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_qq_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:gravity="center"
+            android:text="仿QQ界面"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_tools"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
+            android:id="@+id/tv_md_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector_bg_red_iselectable"
             android:gravity="center"
-            android:text="工具"
+            android:text="Material Design界面"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_my_tools"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:gravity="center"
+            android:text="我的工具"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="top"
-        android:text="我的"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="我的"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:text="我的"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
 </LinearLayout>

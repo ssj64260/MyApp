@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/meituan_green"
+    android:background="#11141A"
     android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical">
@@ -11,12 +11,15 @@
         android:id="@+id/btn_a"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="AAA" />
+        android:background="@drawable/selector_bg_red_iselectable"
+        android:text="AAA"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/btn_b"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:background="#FFFF00"
         android:text="BBB" />
 
@@ -24,6 +27,9 @@
         android:id="@+id/btn_c"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="CCC" />
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_bg_red_iselectable"
+        android:text="CCC"
+        android:textColor="@color/white" />
 
 </LinearLayout>

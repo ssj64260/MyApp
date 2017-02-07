@@ -159,10 +159,6 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         }
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
     public void setOnListClickListener(OnListClickListener onListClickListener) {
         this.onListClickListener = onListClickListener;
     }

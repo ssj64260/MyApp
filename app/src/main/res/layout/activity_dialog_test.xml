@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/meituan_green"
+    android:background="#11141A"
     android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical">
@@ -10,29 +10,40 @@
     <Button
         android:id="@+id/btn_clear_cache"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
+        android:background="@drawable/selector_bg_red_iselectable"
+        android:text="选择对话框"
         android:textAllCaps="false"
-        android:text="选择对话框"/>
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/btn_prograss"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_bg_red_iselectable"
+        android:text="等待对话框"
         android:textAllCaps="false"
-        android:text="等待对话框"/>
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/btn_input"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_bg_red_iselectable"
+        android:text="输入内容对话框"
         android:textAllCaps="false"
-        android:text="输入内容对话框"/>
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/btn_input_evaluation"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_bg_red_iselectable"
+        android:text="输入与评价对话框"
         android:textAllCaps="false"
-        android:text="输入与评价对话框"/>
+        android:textColor="@color/white" />
 
 </LinearLayout>

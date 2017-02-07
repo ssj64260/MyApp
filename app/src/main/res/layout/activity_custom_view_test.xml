@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/meituan_green"
+    android:background="#11141A"
     android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical">
@@ -36,6 +36,73 @@
                     android:gravity="center_vertical" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="请输入密码（4-10位，数字、字母和符号）"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_bg_stroke_gray"
+                android:gravity="center"
+                android:maxLength="15"
+                android:maxLines="1" />
+
+            <com.cxb.tools.passwordlevel.PasswordLevelLayout
+                android:id="@+id/pll_password_level"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="请输入进度（0-100之间的数字）"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_progress"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_bg_stroke_gray"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1" />
+
+                <Button
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="@dimen/custom_weight_10dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_bg_red_iselectable"
+                    android:text="确定"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_16sp" />
+            </LinearLayout>
+
+            <com.cxb.tools.myprogressbar.MyProgressBar
+                android:id="@+id/mpb_progress"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                app:max_number="100"
+                app:progress_color="@color/fire"
+                app:show_animation="true" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,81 +140,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/selector_bg_iselectable"
-                android:text="倒数60秒" />
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:text="倒数60秒"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_first_start"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/selector_bg_iselectable"
-                android:text="下次启动打开导航页" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="请输入密码（4-10位，数字、字母和符号）" />
-
-            <EditText
-                android:id="@+id/et_password"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/shape_bg_stroke_gray"
-                android:gravity="center"
-                android:maxLength="15"
-                android:maxLines="1" />
-
-            <com.cxb.tools.passwordlevel.PasswordLevelLayout
-                android:id="@+id/pll_password_level"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="请输入进度（0-100之间的数字）" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/et_progress"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape_bg_stroke_gray"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:maxLines="1" />
-
-                <Button
-                    android:id="@+id/btn_confirm"
-                    android:layout_width="@dimen/custom_weight_10dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/selector_fire"
-                    android:text="确定"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/textsize_16sp" />
-            </LinearLayout>
-
-            <com.cxb.tools.myprogressbar.MyProgressBar
-                android:id="@+id/mpb_progress"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_marginTop="10dp"
-                app:max_number="100"
-                app:progress_color="@color/fire"
-                app:show_animation="true" />
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:text="下次启动打开导航页"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

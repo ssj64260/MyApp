@@ -3,59 +3,9 @@
 
     <group android:checkableBehavior="none">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_home"
-            android:title="@string/menu_nav_home"/>
-        <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_nav_camera"
-            android:visible="false"/>
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_gallery"
-            android:visible="true"/>
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_slideshow"
-            android:visible="true"/>
-        <item
-            android:id="@+id/nav_dialog_test"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_dialog_test"/>
-
-        <item
-            android:id="@+id/nav_thread_pool_test"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_thread_pool_test"/>
-
-        <item
-            android:id="@+id/nav_datetime_test"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_datetime_test"/>
-
-        <item
-            android:id="@+id/nav_list_nest_test"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_list_nest_test"/>
-
-        <item
-            android:id="@+id/nav_app_info_test"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_app_info_test"/>
-
-        <item
-            android:id="@+id/nav_custom_view_test"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_custom_view_test"/>
-
-        <item
-            android:id="@+id/nav_system_res"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_nav_system_res"/>
-
+            android:title="@string/menu_nav_camera"/>
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.FileUtil;
-import com.cxb.tools.utils.LiteOrmHelper;
 import com.cxb.tools.utils.SDCardUtil;
 import com.example.lenovo.myapp.model.testbean.Area;
 import com.example.lenovo.myapp.model.testbean.City;
@@ -23,25 +22,18 @@ import java.util.List;
 
 public class AddressDBHelper {
 
-    private static final String DB_NAME = "region.db";
+    private final String DB_NAME = "region.db";
 
-    private static final boolean DEBUGGABLE = true; // 是否输出log
+    private final boolean DEBUGGABLE = true; // 是否输出log
 
-    private static volatile LiteOrm liteOrm;
+    private LiteOrm liteOrm;
 
-    private static LiteOrm getInstance(Context context) {
-        if (liteOrm == null) {
-            synchronized (LiteOrmHelper.class) {
-                if (liteOrm == null) {
-                    liteOrm = LiteOrm.newSingleInstance(context, DB_NAME);
-                    liteOrm.setDebugged(DEBUGGABLE);
-                }
-            }
-        }
-        return liteOrm;
+    public AddressDBHelper(Context context) {
+        liteOrm = LiteOrm.newSingleInstance(context, DB_NAME);
+        liteOrm.setDebugged(DEBUGGABLE);
     }
 
-    public static boolean updateDB(Context context) {
+    public boolean updateDB(Context context) {
         File dbFile = new File(SDCardUtil.getDataBaseDir(context, DB_NAME));
         InputStream inputStream = AssetsUtil.getInputStream(context, DB_NAME);
 
@@ -60,28 +52,26 @@ public class AddressDBHelper {
         return dbFile.exists();
     }
 
-    public static List<Province> getProvince(Context context) {
-        return getInstance(context).query(Province.class);
+    public List<Province> getProvince() {
+        return liteOrm.query(Province.class);
     }
 
-    public static List<City> getCity(Context context, String provinceId) {
-        return getInstance(context)
-                .query(new QueryBuilder<>(City.class)
-                        .where("pid = ?", provinceId));
+    public List<City> getCity(String provinceId) {
+        return liteOrm.query(new QueryBuilder<>(City.class)
+                .where("pid = ?", provinceId));
     }
 
-    public static List<Area> getArea(Context context, String cityId) {
-        return getInstance(context).query(new QueryBuilder<>(Area.class)
+    public List<Area> getArea(String cityId) {
+        return liteOrm.query(new QueryBuilder<>(Area.class)
                 .where("pid = ?", cityId));
     }
 
-    public static List<Street> getStreet(Context context, String areaId) {
-        return getInstance(context)
-                .query(new QueryBuilder<>(Street.class)
-                        .where("pid = ?", areaId));
+    public List<Street> getStreet(String areaId) {
+        return liteOrm.query(new QueryBuilder<>(Street.class)
+                .where("pid = ?", areaId));
     }
 
-    public static void closeDB() {
+    public void closeDB() {
         if (liteOrm != null) {
             liteOrm.close();
         }

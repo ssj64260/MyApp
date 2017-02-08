@@ -152,16 +152,12 @@ public class MySlidingMenu extends RelativeLayout {
 //                Log.d("有个APP - scrollx", getScrollX() + "   " + (-mScreenWidth / 2));
                 break;
             case MotionEvent.ACTION_UP:
-                if (dx > 0) {
-                    if (dx > shortTouchWidth) {
-                        openMenu();
-                        return true;
-                    }
-                } else {
-                    if (dx < -shortTouchWidth) {
-                        closeMenu();
-                        return true;
-                    }
+                if (dx > shortTouchWidth) {
+                    openMenu();
+                    return true;
+                } else if (dx < -shortTouchWidth) {
+                    closeMenu();
+                    return true;
                 }
 
                 if (getScrollX() < -mScreenWidth / 2) {

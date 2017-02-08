@@ -17,7 +17,10 @@ public class DateTimeUtils {
     private static SimpleDateFormat enDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
     private static SimpleDateFormat enNotYearDateFormat = new SimpleDateFormat("MM-dd", Locale.getDefault());
     private static SimpleDateFormat enLongTimeFormat = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+    private static SimpleDateFormat enShortTimeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
 
+    private static SimpleDateFormat cnLongDateTimeFormat = new SimpleDateFormat("yyyy年MM月dd HH时mm分ss秒", Locale.getDefault());
+    private static SimpleDateFormat cnDateFormat = new SimpleDateFormat("yyyy年MM月dd日", Locale.getDefault());
     private static SimpleDateFormat cnNotYearDateFormat = new SimpleDateFormat("MM月dd日", Locale.getDefault());
     private static SimpleDateFormat cnLongTimeFormat = new SimpleDateFormat("HH时mm分ss秒", Locale.getDefault());
     private static SimpleDateFormat cnShortTimeFormat = new SimpleDateFormat("HH时mm分", Locale.getDefault());
@@ -84,32 +87,52 @@ public class DateTimeUtils {
         return enLongDateTimeFormat.format(new Date());
     }
 
-    // 获取当前日期时间，格式：2016-11-24
+    // 获取当前日期，格式：2016-11-24
     public static String getEnDate() {
         return enDateFormat.format(new Date());
     }
 
-    // 获取当前日期时间，格式：11-24
+    // 获取当前日期，格式：11-24
     public static String getEnNotYearDate() {
         return enNotYearDateFormat.format(new Date());
     }
 
-    // 获取当前日期时间，格式：11月24日
+    // 获取当前时间，格式：23:33:33
+    public static String getEnLongTime() {
+        return enLongTimeFormat.format(new Date());
+    }
+
+    // 获取当前时间，格式：23:33
+    public static String getEnShortTime() {
+        return enShortTimeFormat.format(new Date());
+    }
+
+    // 获取当前日期时间，格式：2016年11月24日 23时33分33秒
+    public static String getCnLongDateTime() {
+        return cnLongDateTimeFormat.format(new Date());
+    }
+
+    // 获取当前日期，格式：2016年11月24日
+    public static String getCnDate(){
+        return cnDateFormat.format(new Date());
+    }
+
+    // 获取当前日期，格式：11月24日
     public static String getCnNotYearDate() {
         return cnNotYearDateFormat.format(new Date());
     }
 
-    // 获取当前日期时间，格式：23时33分33秒
+    // 获取当前时间，格式：23时33分33秒
     public static String getCnLongTime() {
         return cnLongTimeFormat.format(new Date());
     }
 
-    // 获取当前日期时间，格式：23时33分
+    // 获取当前时间，格式：23时33分
     public static String getCnShortTime() {
         return cnShortTimeFormat.format(new Date());
     }
 
-    // 获取当前日期时间，格式：星期四
+    // 获取当前星期，格式：星期四
     public static String getCnWeek() {
         return cnWeekFormat.format(new Date());
     }
@@ -255,8 +278,7 @@ public class DateTimeUtils {
             return timeStamp1 - timeStamp2;
         }
     }
-
-
+    
     // 日期字符串转日期对象
     public static Date StringToDate(String dateTimeStr) {
         try {

@@ -75,7 +75,7 @@ public class DateTimeTestActivity extends BaseActivity {
         rgDate = (RadioGroup) findViewById(R.id.rg_date);
 
         String date = DateTimeUtils.getEnDate();
-        String time = DateTimeUtils.getCurrentTime(DateTimeUtils.TimeType.MEDIUM);
+        String time = DateTimeUtils.getEnLongTime();
 
         tvDate1.setText(date);
         tvDate2.setText(date);
@@ -137,6 +137,10 @@ public class DateTimeTestActivity extends BaseActivity {
         content += "getEnLongDateTime:\t" + DateTimeUtils.getEnLongDateTime() + "\n";
         content += "getEnDate:        \t" + DateTimeUtils.getEnDate() + "\n";
         content += "getEnNotYearDate: \t" + DateTimeUtils.getEnNotYearDate() + "\n";
+        content += "getEnLongTime:    \t" + DateTimeUtils.getEnLongTime() + "\n";
+        content += "getEnShortTime:   \t" + DateTimeUtils.getEnShortTime() + "\n";
+        content += "getCnLongDateTime:\t" + DateTimeUtils.getCnLongDateTime() + "\n";
+        content += "getCnDate:        \t" + DateTimeUtils.getCnDate() + "\n";
         content += "getCnNotYearDate: \t" + DateTimeUtils.getCnNotYearDate() + "\n";
         content += "getCnLongTime:    \t" + DateTimeUtils.getCnLongTime() + "\n";
         content += "getCnShortTime:   \t" + DateTimeUtils.getCnShortTime() + "\n";

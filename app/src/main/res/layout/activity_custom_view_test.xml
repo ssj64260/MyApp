@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.weigan.loopview.LoopView
+                <com.cxb.tools.loopview.LoopView
                     android:id="@+id/loop_city"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
@@ -117,7 +117,7 @@
                     android:layout_weight="1"
                     android:background="@color/white" />
 
-                <com.weigan.loopview.LoopView
+                <com.cxb.tools.loopview.LoopView
                     android:id="@+id/loop_area"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
@@ -125,7 +125,7 @@
                     android:layout_weight="1"
                     android:background="@color/white" />
 
-                <com.weigan.loopview.LoopView
+                <com.cxb.tools.loopview.LoopView
                     android:id="@+id/loop_street"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
@@ -134,6 +134,15 @@
                     android:background="@color/white" />
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_get_address"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:text="获取当前选中地址"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_get_code"

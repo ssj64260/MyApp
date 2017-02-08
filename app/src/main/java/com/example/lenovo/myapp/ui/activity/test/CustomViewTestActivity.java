@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 
+import com.cxb.tools.loopview.LoopView;
+import com.cxb.tools.loopview.OnItemSelectedListener;
 import com.cxb.tools.myprogressbar.MyProgressBar;
 import com.cxb.tools.passwordlevel.PasswordLevelLayout;
 import com.cxb.tools.textswitcher.MyTextSwitcher;
@@ -23,8 +25,6 @@ import com.example.lenovo.myapp.model.testbean.Street;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.PreferencesUtil;
 import com.orhanobut.logger.Logger;
-import com.weigan.loopview.LoopView;
-import com.weigan.loopview.OnItemSelectedListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +55,7 @@ public class CustomViewTestActivity extends BaseActivity {
     private LoopView loopCity;
     private LoopView loopArea;
     private LoopView loopStreet;
+    private Button btnGetAddress;
 
     private List<City> cities;
     private List<Area> areas;
@@ -106,6 +107,7 @@ public class CustomViewTestActivity extends BaseActivity {
         loopCity = (LoopView) findViewById(R.id.loop_city);
         loopArea = (LoopView) findViewById(R.id.loop_area);
         loopStreet = (LoopView) findViewById(R.id.loop_street);
+        btnGetAddress = (Button) findViewById(R.id.btn_get_address);
 
         btnGetCode = (Button) findViewById(R.id.btn_get_code);
         btnFirstStart = (Button) findViewById(R.id.btn_first_start);
@@ -118,6 +120,7 @@ public class CustomViewTestActivity extends BaseActivity {
         etPassword.addTextChangedListener(watcher);
 
         btnConfirm.setOnClickListener(click);
+        btnGetAddress.setOnClickListener(click);
         btnGetCode.setOnClickListener(click);
         btnFirstStart.setOnClickListener(click);
     }
@@ -180,7 +183,11 @@ public class CustomViewTestActivity extends BaseActivity {
         loopStreet.setListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                curStreet = streetNames.get(index);
+                if (index < streetNames.size()) {
+                    curStreet = streetNames.get(index);
+                } else {
+                    curStreet = "";
+                }
             }
         });
 
@@ -197,7 +204,6 @@ public class CustomViewTestActivity extends BaseActivity {
         }
         loopCity.setInitPosition(0);
         loopCity.setItems(cityNames);
-        curCity = cityNames.get(0);
         setAreaNames(0);
     }
 
@@ -205,6 +211,7 @@ public class CustomViewTestActivity extends BaseActivity {
         areaNames.clear();
         areas.clear();
         if (cityPosition < cities.size()) {
+            curCity = cities.get(cityPosition).getName();
             List<Area> temp = addressDBHelper.getArea(cities.get(cityPosition).getId());
             if (temp != null) {
                 areas.addAll(temp);
@@ -212,6 +219,8 @@ public class CustomViewTestActivity extends BaseActivity {
                     areaNames.add(a.getName());
                 }
             }
+        } else {
+            curCity = "";
         }
 
         if (areaNames.size() <= 0) {
@@ -219,9 +228,6 @@ public class CustomViewTestActivity extends BaseActivity {
         }
         loopArea.setInitPosition(0);
         loopArea.setItems(areaNames);
-        curArea = areaNames.get(0);
-        Logger.d(curArea);
-
         setStreetNames(0);
     }
 
@@ -229,6 +235,7 @@ public class CustomViewTestActivity extends BaseActivity {
         streetNames.clear();
         streets.clear();
         if (areaPosition < areas.size()) {
+            curArea = areas.get(areaPosition).getName();
             List<Street> temp = addressDBHelper.getStreet(areas.get(areaPosition).getId());
             if (temp != null) {
                 streets.addAll(temp);
@@ -236,6 +243,8 @@ public class CustomViewTestActivity extends BaseActivity {
                     streetNames.add(s.getName());
                 }
             }
+        } else {
+            curArea = "";
         }
 
         if (streetNames.size() <= 0) {
@@ -309,6 +318,9 @@ public class CustomViewTestActivity extends BaseActivity {
                     } else {
                         ToastUtil.toast("不是纯数字");
                     }
+                    break;
+                case R.id.btn_get_address:
+                    ToastUtil.toast(curCity + " " + curArea + " " + curStreet);
                     break;
                 case R.id.btn_get_code:
                     btnGetCode.setClickable(false);

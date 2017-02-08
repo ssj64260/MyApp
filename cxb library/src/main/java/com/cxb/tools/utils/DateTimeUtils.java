@@ -82,6 +82,7 @@ public class DateTimeUtils {
         return SimpleDateFormat.getDateTimeInstance(dateType.getType(), timeType.getType()).format(new Date());
     }
 
+
     // 获取当前日期时间，格式：2016-11-24 23:33:33
     public static String getEnLongDateTime() {
         return enLongDateTimeFormat.format(new Date());
@@ -278,7 +279,7 @@ public class DateTimeUtils {
             return timeStamp1 - timeStamp2;
         }
     }
-    
+
     // 日期字符串转日期对象
     public static Date StringToDate(String dateTimeStr) {
         try {

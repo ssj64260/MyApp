@@ -20,7 +20,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.testbean.NestTestBean;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
-import com.example.lenovo.myapp.ui.adapter.PokemenListAdapter;
+import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
 import com.example.lenovo.myapp.ui.adapter.nestlist.GridToOhterAdapter;
 import com.example.lenovo.myapp.ui.adapter.nestlist.ListItemAdapter;
 import com.example.lenovo.myapp.ui.adapter.nestlist.ListToOhterAdapter;
@@ -74,7 +74,7 @@ public class ListNestDatailActivity extends BaseActivity {
     private RecyclerToOtherAdapter rtoAdapter;
     private GridToOhterAdapter gtoAdapter;
     private ListItemAdapter stoAdapter;
-    private PokemenListAdapter pmAdapter;
+    private PokemonListAdapter pmAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -223,7 +223,8 @@ public class ListNestDatailActivity extends BaseActivity {
             } else if (checkNestType(INNER_RECYCLER)) {
                 rvScroll.setVisibility(View.VISIBLE);
 
-                pmAdapter = new PokemenListAdapter(this, scrollList, "all");
+                pmAdapter = new PokemonListAdapter(this, "all");
+                pmAdapter.setList(scrollList);
                 pmAdapter.setOnListClickListener(listClick);
                 rvScroll.setHasFixedSize(true);
                 rvScroll.setNestedScrollingEnabled(false);

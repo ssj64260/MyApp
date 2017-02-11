@@ -19,7 +19,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.testbean.NestTestBean;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
-import com.example.lenovo.myapp.ui.adapter.PokemenListAdapter;
+import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,12 +95,7 @@ public class GridToOhterAdapter extends BaseAdapter {
                     }
                 });
             } else if (listType == ListType.RECYCLERVIEW) {
-                holder.rvAdapter = new PokemenListAdapter(context, holder.pmList, "all");
-                holder.layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-                holder.rvItemList.setHasFixedSize(true);
-                holder.rvItemList.setNestedScrollingEnabled(false);
-                holder.rvItemList.setLayoutManager(holder.layoutManager);
-                holder.rvItemList.setAdapter(holder.rvAdapter);
+                holder.rvAdapter = new PokemonListAdapter(context, "all");
                 holder.rvAdapter.setOnListClickListener(new OnListClickListener() {
                     @Override
                     public void onItemClick(int position) {
@@ -112,6 +107,12 @@ public class GridToOhterAdapter extends BaseAdapter {
 
                     }
                 });
+
+                holder.layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                holder.rvItemList.setHasFixedSize(true);
+                holder.rvItemList.setNestedScrollingEnabled(false);
+                holder.rvItemList.setLayoutManager(holder.layoutManager);
+                holder.rvItemList.setAdapter(holder.rvAdapter);
             }
 
             convertView.setTag(holder);
@@ -146,6 +147,7 @@ public class GridToOhterAdapter extends BaseAdapter {
             holder.gvAdapter.notifyDataSetChanged();
         } else if (listType == ListType.RECYCLERVIEW) {
             holder.rvItemList.setVisibility(View.VISIBLE);
+            holder.rvAdapter.setList(holder.pmList);
             holder.rvAdapter.notifyDataSetChanged();
         }
 
@@ -164,6 +166,6 @@ public class GridToOhterAdapter extends BaseAdapter {
         private ListItemAdapter gvAdapter;
 
         private LinearLayoutManager layoutManager;
-        private PokemenListAdapter rvAdapter;
+        private PokemonListAdapter rvAdapter;
     }
 }

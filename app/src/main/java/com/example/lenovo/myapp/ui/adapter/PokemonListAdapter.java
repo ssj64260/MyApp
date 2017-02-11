@@ -19,13 +19,14 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PropertyBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * 口袋妖怪列表adapter
  */
 
-public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class PokemonListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final String ALL = "all";
 
@@ -38,8 +39,8 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private GlideCircleTransform transform;
 
-    public PokemenListAdapter(Context context, List<PokemonBean> list, String type) {
-        this.list = list;
+    public PokemonListAdapter(Context context, String type) {
+        this.list = new ArrayList<>();
         layoutInflater = LayoutInflater.from(context);
         requestManager = Glide.with(context);
         this.type = type;
@@ -162,5 +163,17 @@ public class PokemenListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public void setOnListClickListener(OnListClickListener onListClickListener) {
         this.onListClickListener = onListClickListener;
+    }
+
+    public void setList(List<PokemonBean> list) {
+        if (this.list == null) {
+            this.list = new ArrayList<>();
+        }
+        this.list.clear();
+        this.list.addAll(list);
+    }
+
+    public List<PokemonBean> getList() {
+        return list;
     }
 }

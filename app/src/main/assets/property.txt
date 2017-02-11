@@ -93,11 +93,5 @@
         "id": "18",
         "name": "妖精",
         "en_name": "fairy"
-    },
-    {
-        "id": "0",
-        "name": "特殊形态",
-        "en_name": "mega"
     }
-
 ]

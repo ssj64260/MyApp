@@ -1,19 +1,33 @@
 package com.example.lenovo.myapp.model;
 
+import com.litesuits.orm.db.annotation.Mapping;
+import com.litesuits.orm.db.annotation.PrimaryKey;
+import com.litesuits.orm.db.annotation.Table;
+import com.litesuits.orm.db.enums.AssignType;
+import com.litesuits.orm.db.enums.Relation;
+
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * 口袋妖怪
  */
-
+@Table("Pokemon")
 public class PokemonBean implements Serializable {
+
+    @PrimaryKey(AssignType.AUTO_INCREMENT)
+    private int _id;
 
     private String id;//pokemon ID
     private String name;//pokemon 名称
     private String mega;//pokemon 形态
+
+    @Mapping(Relation.ManyToMany)
     private List<PropertyBean> property;//pokemon 属性
+
+    @Mapping(Relation.ManyToMany)
     private List<CharacteristicBean> characteristic;//pokemon 特性
+
     private String hp;//pokemon 血量
     private String attack;//pokemon 攻击
     private String defense;//pokemon 防御
@@ -21,6 +35,14 @@ public class PokemonBean implements Serializable {
     private String s_defense;//pokemon 特防
     private String speed;//pokemon 速度
     private String ethnic_value;//pokemon 种族值
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
+    }
 
     public String getId() {
         return id;

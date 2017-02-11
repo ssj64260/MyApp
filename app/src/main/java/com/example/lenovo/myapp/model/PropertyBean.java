@@ -1,13 +1,18 @@
 package com.example.lenovo.myapp.model;
 
+import com.litesuits.orm.db.annotation.PrimaryKey;
+import com.litesuits.orm.db.annotation.Table;
+import com.litesuits.orm.db.enums.AssignType;
+
 import java.io.Serializable;
 
 /**
  * 属性
  */
-
+@Table("Property")
 public class PropertyBean implements Serializable {
 
+    @PrimaryKey(AssignType.BY_MYSELF)
     private String id;
     private String name;
     private String en_name;

@@ -34,6 +34,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     tools:text="喷火龙" />
 
                 <TextView
@@ -67,8 +68,8 @@
             android:layout_height="200dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/shape_bg_content_white"
-            tools:src="@mipmap/bg_ditto"
-            android:padding="5dp" />
+            android:padding="5dp"
+            tools:src="@mipmap/bg_ditto" />
 
         <!--特性-->
         <LinearLayout
@@ -171,9 +172,12 @@
 
                     <TextView
                         android:id="@+id/tv_pm_property1"
-                        android:layout_width="50dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
+                        android:minWidth="50dp"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="5dp"
                         android:textColor="@color/white"
                         android:textSize="10sp"
                         android:visibility="visible"
@@ -182,10 +186,13 @@
 
                     <TextView
                         android:id="@+id/tv_pm_property2"
-                        android:layout_width="50dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="1dp"
+                        android:layout_marginStart="1dp"
                         android:gravity="center"
+                        android:minWidth="50dp"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="5dp"
                         android:textColor="@color/white"
                         android:textSize="10sp"
                         android:visibility="visible"
@@ -501,6 +508,17 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_add_database"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_bg_content_white"
+            android:text="加入数据库"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
     </LinearLayout>
 
 </ScrollView>

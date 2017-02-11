@@ -18,7 +18,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.testbean.NestTestBean;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
-import com.example.lenovo.myapp.ui.adapter.PokemenListAdapter;
+import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,6 +87,7 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             holder.gvAdapter.notifyDataSetChanged();
         } else if (listType == RecyclerToOtherAdapter.ListType.RECYCLERVIEW) {
             holder.rvItemList.setVisibility(View.VISIBLE);
+            holder.rvAdapter.setList(holder.pmList);
             holder.rvAdapter.notifyDataSetChanged();
         }
     }
@@ -108,7 +109,7 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         private ListItemAdapter gvAdapter;
 
         private LinearLayoutManager layoutManager;
-        private PokemenListAdapter rvAdapter;
+        private PokemonListAdapter rvAdapter;
 
         private ListViewHolder(View view) {
             super(view);
@@ -138,12 +139,7 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                     }
                 });
             } else if (listType == RecyclerToOtherAdapter.ListType.RECYCLERVIEW) {
-                rvAdapter = new PokemenListAdapter(context, pmList, "all");
-                layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-                rvItemList.setHasFixedSize(true);
-                rvItemList.setNestedScrollingEnabled(false);
-                rvItemList.setLayoutManager(layoutManager);
-                rvItemList.setAdapter(rvAdapter);
+                rvAdapter = new PokemonListAdapter(context, "all");
                 rvAdapter.setOnListClickListener(new OnListClickListener() {
                     @Override
                     public void onItemClick(int position) {
@@ -155,6 +151,11 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
                     }
                 });
+                layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+                rvItemList.setHasFixedSize(true);
+                rvItemList.setNestedScrollingEnabled(false);
+                rvItemList.setLayoutManager(layoutManager);
+                rvItemList.setAdapter(rvAdapter);
             }
         }
     }

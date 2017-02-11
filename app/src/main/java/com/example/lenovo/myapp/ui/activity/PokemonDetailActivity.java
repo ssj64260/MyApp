@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.ScaleAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -18,15 +19,19 @@ import com.cxb.tools.newstab.NewsTabResoureUtil;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.StringCheck;
+import com.cxb.tools.utils.ThreadPoolUtil;
+import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.db.PokemonDBHelper;
 import com.example.lenovo.myapp.model.CharacteristicBean;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PokemonNameBean;
 import com.example.lenovo.myapp.model.PropertyBean;
+import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.orhanobut.logger.Logger;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -73,8 +78,12 @@ public class PokemonDetailActivity extends BaseActivity {
     private View lineSdefense;//特防柱状图
     private View lineSpeed;//速度柱状图
 
+    private Button btnAddDatabase;//加入数据库
+
     private PokemonBean pokemon;
     private PokemonNameBean name;
+    private List<CharacteristicBean> cList;
+    private List<PropertyBean> pList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +95,8 @@ public class PokemonDetailActivity extends BaseActivity {
         initView();
         setData();
 
+        List<PokemonBean> pList = PokemonDBHelper.getPokemonList(this);
+        Logger.d(pList);
     }
 
     private void initView() {
@@ -121,6 +132,8 @@ public class PokemonDetailActivity extends BaseActivity {
         lineSattack = findViewById(R.id.view_s_attack_line);
         lineSdefense = findViewById(R.id.view_s_defense_line);
         lineSpeed = findViewById(R.id.view_speede_line);
+
+        btnAddDatabase = (Button) findViewById(R.id.btn_add_database);
     }
 
     private void setData() {
@@ -135,8 +148,8 @@ public class PokemonDetailActivity extends BaseActivity {
             url = noBackgroundLogo;
         }
 
-        List<PropertyBean> pList = pokemon.getProperty();
-        List<CharacteristicBean> cList = pokemon.getCharacteristic();
+        pList = pokemon.getProperty();
+        cList = pokemon.getCharacteristic();
         String hp = pokemon.getHp();
         String attack = pokemon.getAttack();
         String defense = pokemon.getDefense();
@@ -150,11 +163,12 @@ public class PokemonDetailActivity extends BaseActivity {
         int allBgColor = NewsTabResoureUtil.property_color[propertyId];
         int textBgColorRes = NewsTabResoureUtil.perty_bg_color[propertyId];
 
+        Gson gson = new Gson();
+
         String pmNmaeJson = AssetsUtil.getAssetsTxtByName(this, "pokemon_name.txt");
         if (!StringCheck.isEmpty(pmNmaeJson)) {
             Type type = new TypeToken<List<PokemonNameBean>>() {
             }.getType();
-            Gson gson = new Gson();
             List<PokemonNameBean> temp = gson.fromJson(pmNmaeJson, type);
             for (PokemonNameBean pmn : temp) {
                 if (id.equals(pmn.getId())) {
@@ -194,13 +208,28 @@ public class PokemonDetailActivity extends BaseActivity {
 
         //设置特性
         if (cList != null && cList.size() > 0) {
+            String cJson = AssetsUtil.getAssetsTxtByName(this, "characteristic.txt");
+            List<CharacteristicBean> temp = new ArrayList<>();
+            if (!StringCheck.isEmpty(cJson)) {
+                Type type = new TypeToken<List<CharacteristicBean>>() {
+                }.getType();
+                temp = gson.fromJson(cJson, type);
+            }
             List<String> cNames = new ArrayList<>();
             for (CharacteristicBean c : cList) {
+                for (CharacteristicBean cb : temp) {
+                    if (c.getId().equals(cb.getId())) {
+                        c.setJp_name(cb.getJp_name());
+                        c.setEn_name(cb.getEn_name());
+                        c.setDescription(cb.getDescription());
+                    }
+                }
                 String cName = c.getName();
                 if (!StringCheck.isEmpty(cName)) {
                     cNames.add(cName);
                 }
             }
+
 
             if (cNames.size() >= 3) {
                 tvCharacteristic1.setText(cNames.get(0) + "  或  " + cNames.get(1));
@@ -212,32 +241,54 @@ public class PokemonDetailActivity extends BaseActivity {
                 tvCharacteristic1.setText(cNames.get(0));
                 tvCharacteristic2.setText("无");
             }
+            tvCharacteristic1.setOnClickListener(click);
+            tvCharacteristic2.setOnClickListener(click);
         }
 
         //设置属性
         if (pList.size() > 0) {
-            PropertyBean pb = pList.get(0);
 
-            tvProperty1.setText(pb.getName());
+            String pJson = AssetsUtil.getAssetsTxtByName(this, "property.txt");
+            List<PropertyBean> temp = new ArrayList<>();
+            if (!StringCheck.isEmpty(pJson)) {
+                Type type = new TypeToken<List<PropertyBean>>() {
+                }.getType();
+                temp = gson.fromJson(pJson, type);
+            }
+
+            for (PropertyBean p : pList) {
+                for (PropertyBean pb : temp) {
+                    if (p.getId().equals(pb.getId())) {
+                        p.setEn_name(pb.getEn_name());
+                    }
+                }
+            }
+
+            PropertyBean pb1 = pList.get(0);
+
+            tvProperty1.setText(pb1.getName());
             tvProperty1.setVisibility(View.VISIBLE);
+            tvProperty1.setOnClickListener(click);
 
-            if (!StringCheck.isEmpty(pb.getId())) {
-                tvProperty1.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
+            if (!StringCheck.isEmpty(pb1.getId())) {
+                tvProperty1.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb1.getId()) - 1]);
+            }
+
+            if (pList.size() > 1) {
+                PropertyBean pb2 = pList.get(1);
+
+                tvProperty2.setText(pb2.getName());
+                tvProperty2.setVisibility(View.VISIBLE);
+                tvProperty2.setOnClickListener(click);
+
+                if (!StringCheck.isEmpty(pb2.getId())) {
+                    tvProperty2.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb2.getId()) - 1]);
+                }
+            } else {
+                tvProperty2.setVisibility(View.GONE);
             }
         } else {
             tvProperty1.setVisibility(View.GONE);
-        }
-        if (pList.size() == 2) {
-            PropertyBean pb = pList.get(1);
-
-            tvProperty2.setText(pb.getName());
-            tvProperty2.setVisibility(View.VISIBLE);
-
-            if (!StringCheck.isEmpty(pb.getId())) {
-                tvProperty2.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
-            }
-        } else {
-            tvProperty2.setVisibility(View.GONE);
         }
 
         //设置种族值
@@ -283,5 +334,53 @@ public class PokemonDetailActivity extends BaseActivity {
         lineSdefense.startAnimation(scaleX);
         lineSpeed.startAnimation(scaleX);
 
+        btnAddDatabase.setOnClickListener(click);
     }
+
+    private void addPokemonToDB() {
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+            @Override
+            public void run() {
+
+                PokemonDBHelper.addPokemon(PokemonDetailActivity.this, pokemon);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ToastUtil.toast("已经成功加入数据库");
+                    }
+                });
+            }
+        });
+    }
+
+    private View.OnClickListener click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_add_database:
+                    addPokemonToDB();
+                    break;
+                case R.id.tv_characteristic1:
+                    ToastUtil.toast(cList.get(0).getDescription());
+                    break;
+                case R.id.tv_characteristic2:
+                    ToastUtil.toast(cList.get(cList.size() - 1).getDescription());
+                    break;
+                case R.id.tv_pm_property1:
+                    if (tvProperty1.getText().toString().equals(pList.get(0).getName())) {
+                        tvProperty1.setText(pList.get(0).getEn_name());
+                    } else {
+                        tvProperty1.setText(pList.get(0).getName());
+                    }
+                    break;
+                case R.id.tv_pm_property2:
+                    if (tvProperty2.getText().toString().equals(pList.get(1).getName())) {
+                        tvProperty2.setText(pList.get(1).getEn_name());
+                    } else {
+                        tvProperty2.setText(pList.get(1).getName());
+                    }
+                    break;
+            }
+        }
+    };
 }

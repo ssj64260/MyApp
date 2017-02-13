@@ -1,11 +1,16 @@
 package com.example.lenovo.myapp.model;
 
+import com.litesuits.orm.db.annotation.PrimaryKey;
+import com.litesuits.orm.db.annotation.Table;
+import com.litesuits.orm.db.enums.AssignType;
+
 /**
  * 口袋妖怪 中日英名称
  */
-
+@Table("PokemonName")
 public class PokemonNameBean {
 
+    @PrimaryKey(AssignType.BY_MYSELF)
     private String id;
     private String cn_name;
     private String jp_name;

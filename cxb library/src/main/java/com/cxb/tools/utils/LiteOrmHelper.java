@@ -30,9 +30,13 @@ public class LiteOrmHelper {
         return sLiteOrm;
     }
 
-    public static void deleteDB(){
-        if (sLiteOrm != null) {
-            sLiteOrm.deleteDatabase();
+    public static boolean deleteDB() {
+        if (sLiteOrm != null && sLiteOrm.deleteDatabase()) {
+            closeDB();
+            sLiteOrm = null;
+            return true;
+        } else {
+            return false;
         }
     }
 

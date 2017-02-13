@@ -31,7 +31,6 @@ import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.orhanobut.logger.Logger;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -81,7 +80,6 @@ public class PokemonDetailActivity extends BaseActivity {
     private Button btnAddDatabase;//加入数据库
 
     private PokemonBean pokemon;
-    private PokemonNameBean name;
     private List<CharacteristicBean> cList;
     private List<PropertyBean> pList;
 
@@ -95,8 +93,6 @@ public class PokemonDetailActivity extends BaseActivity {
         initView();
         setData();
 
-        List<PokemonBean> pList = PokemonDBHelper.getPokemonList(this);
-        Logger.d(pList);
     }
 
     private void initView() {
@@ -165,15 +161,17 @@ public class PokemonDetailActivity extends BaseActivity {
 
         Gson gson = new Gson();
 
-        String pmNmaeJson = AssetsUtil.getAssetsTxtByName(this, "pokemon_name.txt");
-        if (!StringCheck.isEmpty(pmNmaeJson)) {
-            Type type = new TypeToken<List<PokemonNameBean>>() {
-            }.getType();
-            List<PokemonNameBean> temp = gson.fromJson(pmNmaeJson, type);
-            for (PokemonNameBean pmn : temp) {
-                if (id.equals(pmn.getId())) {
-                    name = pmn;
-                    break;
+        if (pokemon.getPmName() == null) {
+            String pmNmaeJson = AssetsUtil.getAssetsTxtByName(this, "pokemon_name.txt");
+            if (!StringCheck.isEmpty(pmNmaeJson)) {
+                Type type = new TypeToken<List<PokemonNameBean>>() {
+                }.getType();
+                List<PokemonNameBean> temp = gson.fromJson(pmNmaeJson, type);
+                for (PokemonNameBean pmn : temp) {
+                    if (id.equals(pmn.getId())) {
+                        pokemon.setPmName(pmn);
+                        break;
+                    }
                 }
             }
         }
@@ -186,8 +184,10 @@ public class PokemonDetailActivity extends BaseActivity {
         llBgAttributes.setBackgroundResource(textBgColorRes);
 
         //设置名称编号图片
-        tvCnName.setText(name.getCn_name());
-        tvJpEnName.setText(name.getJp_name() + " " + name.getEn_name());
+        tvCnName.setText(pokemon.getName());
+        if (pokemon.getPmName() != null) {
+            tvJpEnName.setText(pokemon.getPmName().getJp_name() + " " + pokemon.getPmName().getEn_name());
+        }
         tvId.setText("#" + id);
         final RequestManager requestManager = Glide.with(this);
         requestManager.load(url)
@@ -230,7 +230,6 @@ public class PokemonDetailActivity extends BaseActivity {
                 }
             }
 
-
             if (cNames.size() >= 3) {
                 tvCharacteristic1.setText(cNames.get(0) + "  或  " + cNames.get(1));
                 tvCharacteristic2.setText(cNames.get(2));
@@ -247,7 +246,6 @@ public class PokemonDetailActivity extends BaseActivity {
 
         //设置属性
         if (pList.size() > 0) {
-
             String pJson = AssetsUtil.getAssetsTxtByName(this, "property.txt");
             List<PropertyBean> temp = new ArrayList<>();
             if (!StringCheck.isEmpty(pJson)) {

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.text.Html;
 import android.text.TextUtils;
@@ -100,7 +101,7 @@ public class MyTextSwitcher extends TextSwitcher {
         }
     }
 
-    private Handler handler = new Handler() {
+    private Handler handler = new Handler(Looper.getMainLooper()) {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case UPDATE_TEXTSWITCHER:

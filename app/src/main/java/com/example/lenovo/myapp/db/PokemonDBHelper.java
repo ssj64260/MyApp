@@ -19,7 +19,7 @@ public class PokemonDBHelper {
     }
 
     public static PokemonBean selectPokemonById(Context context, String id) {
-        return LiteOrmHelper.getInstance(context).queryById(id, PokemonBean.class);
+        return LiteOrmHelper.getInstance(context).cascade().queryById(id, PokemonBean.class);
     }
 
     public static void addPokemon(Context context, PokemonBean pokemon) {
@@ -31,7 +31,7 @@ public class PokemonDBHelper {
     }
 
     public static void updatePokemon(Context context, PokemonBean pokemon) {
-        LiteOrmHelper.getInstance(context).update(pokemon);
+        LiteOrmHelper.getInstance(context).cascade().update(pokemon);
     }
 
     public static void deletePokemon(Context context, PokemonBean pokemon) {
@@ -41,6 +41,10 @@ public class PokemonDBHelper {
     public static void deletePokemonById(Context context, String id) {
         LiteOrmHelper.getInstance(context).delete(new WhereBuilder(PokemonBean.class)
                 .where("id = ?", id));
+    }
+
+    public static void deleteAll(Context context) {
+        LiteOrmHelper.getInstance(context).cascade().delete(PokemonBean.class);
     }
 
 }

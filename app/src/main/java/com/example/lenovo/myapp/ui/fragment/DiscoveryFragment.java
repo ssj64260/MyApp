@@ -2,6 +2,8 @@ package com.example.lenovo.myapp.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -37,6 +39,8 @@ import java.util.List;
  */
 
 public class DiscoveryFragment extends Fragment {
+
+    private Handler mainThread = new Handler(Looper.getMainLooper());//回调到主线程
 
     private HorizontalTabListScrollView svNewsTabs;
 

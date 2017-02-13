@@ -39,7 +39,8 @@ public class MyToolsActivity extends BaseActivity {
             "列表嵌套测试",
             "已安装APP信息",
             "自定义控件展示",
-            "获取系统资源"
+            "获取系统资源",
+            "LiteOrm数据库工具"
     };
 
     @Override
@@ -125,6 +126,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 9://获取系统资源
                         startActivity(new Intent(MyToolsActivity.this, SystemResActivity.class));
+                        break;
+                    case 10://LiteOrm数据库工具s
+                        startActivity(new Intent(MyToolsActivity.this, DatebaseTestActivity.class));
                         break;
                 }
             }

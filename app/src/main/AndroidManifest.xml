@@ -156,6 +156,10 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".ui.activity.test.DatebaseTestActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".ui.activity.SetPostUrlActivity"
             android:screenOrientation="portrait" />
 

@@ -7,7 +7,7 @@ import com.litesuits.orm.db.enums.AssignType;
 import com.litesuits.orm.db.enums.Relation;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * 口袋妖怪
@@ -22,11 +22,14 @@ public class PokemonBean implements Serializable {
     private String name;//pokemon 名称
     private String mega;//pokemon 形态
 
-    @Mapping(Relation.ManyToMany)
-    private List<PropertyBean> property;//pokemon 属性
+    @Mapping(Relation.OneToOne)
+    private PokemonNameBean pmName;//pokemon 名称
 
     @Mapping(Relation.ManyToMany)
-    private List<CharacteristicBean> characteristic;//pokemon 特性
+    private ArrayList<PropertyBean> property;//pokemon 属性
+
+    @Mapping(Relation.ManyToMany)
+    private ArrayList<CharacteristicBean> characteristic;//pokemon 特性
 
     private String hp;//pokemon 血量
     private String attack;//pokemon 攻击
@@ -68,19 +71,27 @@ public class PokemonBean implements Serializable {
         this.mega = mega;
     }
 
-    public List<PropertyBean> getProperty() {
+    public PokemonNameBean getPmName() {
+        return pmName;
+    }
+
+    public void setPmName(PokemonNameBean pmName) {
+        this.pmName = pmName;
+    }
+
+    public ArrayList<PropertyBean> getProperty() {
         return property;
     }
 
-    public void setProperty(List<PropertyBean> property) {
+    public void setProperty(ArrayList<PropertyBean> property) {
         this.property = property;
     }
 
-    public List<CharacteristicBean> getCharacteristic() {
+    public ArrayList<CharacteristicBean> getCharacteristic() {
         return characteristic;
     }
 
-    public void setCharacteristic(List<CharacteristicBean> characteristic) {
+    public void setCharacteristic(ArrayList<CharacteristicBean> characteristic) {
         this.characteristic = characteristic;
     }
 

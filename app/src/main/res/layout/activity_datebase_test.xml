@@ -5,52 +5,58 @@
     android:background="#11141A"
     android:fitsSystemWindows="true"
     android:gravity="center"
-    android:orientation="vertical"
-    android:padding="10dp">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_pm_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <Button
-            android:id="@+id/btn_insert_all"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/selector_bg_red_iselectable"
-            android:text="导入全部数据"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_pm_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/btn_delete_table"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/selector_bg_red_iselectable"
-            android:text="删除表数据"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
-        <Button
-            android:id="@+id/btn_delete_db"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/selector_bg_red_iselectable"
-            android:text="删除数据库"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btn_insert_all"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:text="导入全部数据"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
 
+            <Button
+                android:id="@+id/btn_delete_table"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:text="删除表数据"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_delete_db"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:text="删除数据库"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

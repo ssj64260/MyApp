@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.activity.IntroductionActivity;
+import com.example.lenovo.myapp.ui.activity.test.dbtest.DatebaseTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.systemres.SystemResActivity;
 import com.example.lenovo.myapp.ui.adapter.MyToolsAdapter;

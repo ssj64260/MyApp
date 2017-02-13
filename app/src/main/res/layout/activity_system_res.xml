@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#12B7F5"
-    android:fitsSystemWindows="true">
+    android:background="#11141A"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,36 +22,40 @@
                 android:id="@+id/tv_get_permissions"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="@drawable/selector_bg_iselectable"
+                android:background="@drawable/selector_bg_red_iselectable"
                 android:gravity="center"
-                android:text="获取系统权限" />
+                android:text="获取系统权限"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_get_ablum"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/selector_bg_iselectable"
+                android:background="@drawable/selector_bg_red_iselectable"
                 android:gravity="center"
-                android:text="获取相册资源" />
+                android:text="获取相册资源"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_get_photo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/selector_bg_iselectable"
+                android:background="@drawable/selector_bg_red_iselectable"
                 android:gravity="center"
-                android:text="选图和拍照" />
+                android:text="选图和拍照"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_get_contacts"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/selector_bg_iselectable"
+                android:background="@drawable/selector_bg_red_iselectable"
                 android:gravity="center"
-                android:text="获取系统联系人" />
+                android:text="获取系统联系人"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

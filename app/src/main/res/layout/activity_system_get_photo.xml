@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#12B7F5"
+    android:background="#11141A"
     android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical">
@@ -20,8 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_margin="20dp"
-        android:background="@drawable/selector_bg_iselectable"
+        android:background="@drawable/selector_bg_red_iselectable"
         android:gravity="center"
-        android:text="修改图片" />
+        android:text="修改图片"
+        android:textColor="@color/white" />
 
 </LinearLayout>

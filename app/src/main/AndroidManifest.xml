@@ -98,8 +98,8 @@
 
         <activity
             android:name=".ui.activity.test.OkhttpTestActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
 
         <activity
             android:name=".ui.activity.test.DialogTestActivity"
@@ -128,8 +128,8 @@
 
         <activity
             android:name=".ui.activity.test.CustomViewTestActivity"
-            android:windowSoftInputMode="stateHidden|stateUnchanged"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <activity
             android:name=".ui.activity.test.systemres.SystemResActivity"
@@ -156,7 +156,11 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.activity.test.DatebaseTestActivity"
+            android:name=".ui.activity.test.dbtest.DatebaseTestActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.test.dbtest.DatebaseDetailActivity"
             android:screenOrientation="portrait" />
 
         <activity

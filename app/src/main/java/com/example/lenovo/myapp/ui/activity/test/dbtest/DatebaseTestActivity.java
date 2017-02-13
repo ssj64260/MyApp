@@ -1,5 +1,6 @@
-package com.example.lenovo.myapp.ui.activity.test;
+package com.example.lenovo.myapp.ui.activity.test.dbtest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +28,8 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.lenovo.myapp.ui.activity.test.dbtest.DatebaseDetailActivity.POKEMON_ID;
+
 /**
  * 数据库操作
  */
@@ -53,6 +56,19 @@ public class DatebaseTestActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            progressDialog.showDialog();
+            ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+                @Override
+                public void run() {
+                    getPokemons();
+                }
+            });
+        }
+    }
+
     private void initView() {
         progressDialog = new DefaultProgressDialog(this);
         progressDialog.setMessage("加载中...");
@@ -65,10 +81,7 @@ public class DatebaseTestActivity extends BaseActivity {
     }
 
     private void setData() {
-        list = PokemonDBHelper.getPokemonList(this);
-
         mAdapter = new PokemonListAdapter(this, "all");
-        mAdapter.setList(list);
         mAdapter.setOnListClickListener(listClick);
 
         rvPmList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -77,6 +90,27 @@ public class DatebaseTestActivity extends BaseActivity {
         btnInsertAll.setOnClickListener(click);
         btnDeleteDB.setOnClickListener(click);
         btnDeleteTable.setOnClickListener(click);
+
+        progressDialog.showDialog();
+        ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
+            @Override
+            public void run() {
+                getPokemons();
+            }
+        });
+    }
+
+    private void getPokemons() {
+        list = PokemonDBHelper.getPokemonList(DatebaseTestActivity.this);
+        mAdapter.setList(list);
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mAdapter.notifyDataSetChanged();
+                progressDialog.dismissDialog();
+            }
+        });
     }
 
     private void insertByTxt() {
@@ -143,23 +177,14 @@ public class DatebaseTestActivity extends BaseActivity {
                         }
 
                         PokemonDBHelper.addPokemons(DatebaseTestActivity.this, pmTemp);
-                        list = PokemonDBHelper.getPokemonList(DatebaseTestActivity.this);
-                        mAdapter.setList(list);
-
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                mAdapter.notifyDataSetChanged();
-                                progressDialog.dismissDialog();
-                            }
-                        });
+                        getPokemons();
                     }
                 }
             }
         });
     }
 
-    private void deleteAll(){
+    private void deleteAll() {
         progressDialog.showDialog();
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
@@ -206,7 +231,10 @@ public class DatebaseTestActivity extends BaseActivity {
     private OnListClickListener listClick = new OnListClickListener() {
         @Override
         public void onItemClick(int position) {
-
+            Intent intent = new Intent();
+            intent.setClass(DatebaseTestActivity.this, DatebaseDetailActivity.class);
+            intent.putExtra(POKEMON_ID, list.get(position).getId());
+            startActivityForResult(intent, 1);
         }
 
         @Override

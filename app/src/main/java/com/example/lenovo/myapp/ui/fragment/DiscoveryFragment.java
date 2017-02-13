@@ -70,6 +70,14 @@ public class DiscoveryFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onDestroy() {
+        if (mainThread != null) {
+            mainThread.removeCallbacksAndMessages(null);
+        }
+        super.onDestroy();
+    }
+
     private void initView() {
         progressDialog = new DefaultProgressDialog(getActivity());
 
@@ -105,7 +113,7 @@ public class DiscoveryFragment extends Fragment {
                     }.getType());
                     if (propertyTemp != null) {
                         propertyList.addAll(propertyTemp);
-                        getActivity().runOnUiThread(new Runnable() {
+                        mainThread.post(new Runnable() {
                             @Override
                             public void run() {
                                 svNewsTabs.addTabList(newsTemp);
@@ -153,7 +161,7 @@ public class DiscoveryFragment extends Fragment {
                     }
                 }
 
-                getActivity().runOnUiThread(new Runnable() {
+                mainThread.post(new Runnable() {
                     @Override
                     public void run() {
                         if (adapterList.size() > 0) {
@@ -198,7 +206,7 @@ public class DiscoveryFragment extends Fragment {
                             }
                             pAdapter.setList(temp);
                         }
-                        getActivity().runOnUiThread(new Runnable() {
+                        mainThread.post(new Runnable() {
                             @Override
                             public void run() {
                                 pAdapter.notifyDataSetChanged();

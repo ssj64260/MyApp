@@ -41,7 +41,8 @@ public class MyToolsActivity extends BaseActivity {
             "已安装APP信息",
             "自定义控件展示",
             "获取系统资源",
-            "LiteOrm数据库工具"
+            "LiteOrm数据库工具",
+            "WebView Demo"
     };
 
     @Override
@@ -130,6 +131,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 10://LiteOrm数据库工具s
                         startActivity(new Intent(MyToolsActivity.this, DatebaseTestActivity.class));
+                        break;
+                    case 11://WebView Demo
+                        startActivity(new Intent(MyToolsActivity.this, WebViewTestActivity.class));
                         break;
                 }
             }

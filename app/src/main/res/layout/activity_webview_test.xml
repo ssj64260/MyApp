@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#222222"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageButton
+            android:id="@+id/ib_select"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="7dp"
+            android:background="@drawable/btn_md_style"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_via_select" />
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/ib_select"
+            android:layout_toStartOf="@+id/ib_refresh"
+            android:background="@null"
+            android:maxLines="1"
+            android:inputType="textWebEditText"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/ib_refresh"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/btn_md_style"
+            android:padding="7dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_via_refresh" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/wv_web"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/pb_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:progressDrawable="@drawable/progressbar_style" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_left"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_md_style"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_via_back" />
+
+        <ImageButton
+            android:id="@+id/btn_right"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_md_style"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_via_go" />
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_md_style"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_via_home" />
+
+        <ImageButton
+            android:id="@+id/btn_page"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_md_style"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_via_bg_number" />
+
+        <ImageButton
+            android:id="@+id/btn_tools"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_md_style"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_via_tools" />
+
+    </LinearLayout>
+
+</LinearLayout>

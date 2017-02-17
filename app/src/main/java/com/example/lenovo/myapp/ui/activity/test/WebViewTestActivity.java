@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
@@ -197,6 +198,12 @@ public class WebViewTestActivity extends BaseActivity {
         setOnKeyboardChangeListener();
     }
 
+    private void webViewGoBack() {
+        WebBackForwardList history = wvWeb.copyBackForwardList();
+        int curIndex = history.getCurrentIndex();
+        WebView.HitTestResult result = wvWeb.getHitTestResult();
+    }
+
     //点击监听
     private View.OnClickListener click = new View.OnClickListener() {
         @Override
@@ -214,6 +221,7 @@ public class WebViewTestActivity extends BaseActivity {
                 case R.id.btn_left:
                     if (wvWeb.canGoBack()) {
                         wvWeb.goBack();
+
                     } else {
                         ToastUtil.toast("没有上一页了");
                     }
@@ -230,8 +238,10 @@ public class WebViewTestActivity extends BaseActivity {
                     }
                     break;
                 case R.id.btn_home:
-                    curUrl = URL_HOME_PAGE;
-                    wvWeb.loadUrl(curUrl);
+                    WebBackForwardList history = wvWeb.copyBackForwardList();
+                    int curIndex = history.getCurrentIndex();
+                    curUrl = history.getItemAtIndex(0).getUrl();
+                    wvWeb.goBackOrForward(0 - curIndex);
                     break;
                 case R.id.btn_page:
 
@@ -277,10 +287,15 @@ public class WebViewTestActivity extends BaseActivity {
     private WebViewClient client = new WebViewClient() {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            WebView.HitTestResult result = view.getHitTestResult();
             isLoading = true;
-            curUrl = url;
-            view.loadUrl(curUrl);
-            return true;
+            if (result == null) {
+                curUrl = url;
+                view.loadUrl(curUrl);
+                return true;
+            } else {
+                return super.shouldOverrideUrlLoading(view, url);
+            }
         }
 
         @Override

@@ -27,9 +27,9 @@ public class IntroductionActivity extends BaseActivity {
     private List<ImageView> pointList;
 
     private static final int[] pics = {
-            R.mipmap.img_instinct,
-            R.mipmap.img_valor,
-            R.mipmap.img_mystic
+            R.drawable.img_instinct,
+            R.drawable.img_valor,
+            R.drawable.img_mystic
     };
 
     @Override
@@ -75,9 +75,9 @@ public class IntroductionActivity extends BaseActivity {
             ivPoint.setLayoutParams(params);
             pointList.add(ivPoint);
             if (i == 0) {
-                pointList.get(i).setBackgroundResource(R.mipmap.point_select_pop);
+                pointList.get(i).setBackgroundResource(R.drawable.point_select_pop);
             } else {
-                pointList.get(i).setBackgroundResource(R.mipmap.point_unselect_white);
+                pointList.get(i).setBackgroundResource(R.drawable.point_unselect_white);
             }
             vgPoints.addView(ivPoint);
         }
@@ -92,9 +92,9 @@ public class IntroductionActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 for (int i = 0; i < pointList.size(); i++) {
-                    pointList.get(i).setBackgroundResource(R.mipmap.point_unselect_white);
+                    pointList.get(i).setBackgroundResource(R.drawable.point_unselect_white);
                     if (position == i) {
-                        pointList.get(i).setBackgroundResource(R.mipmap.point_select_pop);
+                        pointList.get(i).setBackgroundResource(R.drawable.point_select_pop);
                     }
                 }
             }

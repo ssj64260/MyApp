@@ -23,7 +23,7 @@
             android:padding="7dp"
             android:background="@drawable/btn_md_style"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_via_select" />
+            android:src="@drawable/ic_via_select" />
 
         <EditText
             android:id="@+id/et_title"
@@ -45,7 +45,7 @@
             android:background="@drawable/btn_md_style"
             android:padding="7dp"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_via_refresh" />
+            android:src="@drawable/ic_via_refresh" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -81,7 +81,7 @@
             android:background="@drawable/btn_md_style"
             android:padding="10dp"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_via_back" />
+            android:src="@drawable/ic_via_back" />
 
         <ImageButton
             android:id="@+id/btn_right"
@@ -91,7 +91,7 @@
             android:background="@drawable/btn_md_style"
             android:padding="10dp"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_via_go" />
+            android:src="@drawable/ic_via_go" />
 
         <ImageButton
             android:id="@+id/btn_home"
@@ -101,7 +101,7 @@
             android:background="@drawable/btn_md_style"
             android:padding="10dp"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_via_home" />
+            android:src="@drawable/ic_via_home" />
 
         <ImageButton
             android:id="@+id/btn_page"
@@ -111,7 +111,7 @@
             android:background="@drawable/btn_md_style"
             android:padding="10dp"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_via_bg_number" />
+            android:src="@drawable/ic_via_bg_number" />
 
         <ImageButton
             android:id="@+id/btn_tools"
@@ -121,7 +121,7 @@
             android:background="@drawable/btn_md_style"
             android:padding="10dp"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_via_tools" />
+            android:src="@drawable/ic_via_tools" />
 
     </LinearLayout>
 

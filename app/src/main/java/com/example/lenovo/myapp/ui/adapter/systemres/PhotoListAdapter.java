@@ -53,8 +53,8 @@ public class PhotoListAdapter extends RecyclerView.Adapter {
         requestManager.load(photo.getData())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .placeholder(R.mipmap.ic_no_image_circle)
-                .error(R.mipmap.ic_no_image_circle)
+                .placeholder(R.drawable.ic_no_image_circle)
+                .error(R.drawable.ic_no_image_circle)
                 .dontAnimate()
                 .into(holder.ivPhoto);
 

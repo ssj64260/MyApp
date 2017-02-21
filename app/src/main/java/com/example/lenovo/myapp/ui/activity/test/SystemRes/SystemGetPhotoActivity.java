@@ -74,8 +74,8 @@ public class SystemGetPhotoActivity extends BaseActivity {
                             .load(url)
                             .fitCenter()
                             .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .placeholder(R.mipmap.ic_no_image_circle)
-                            .error(R.mipmap.ic_no_image_circle)
+                            .placeholder(R.drawable.ic_no_image_circle)
+                            .error(R.drawable.ic_no_image_circle)
                             .dontAnimate()
                             .into(ivPhoto);
 
@@ -88,8 +88,8 @@ public class SystemGetPhotoActivity extends BaseActivity {
                             .load(photoUri.getAbsolutePath())
                             .fitCenter()
                             .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .placeholder(R.mipmap.ic_no_image_circle)
-                            .error(R.mipmap.ic_no_image_circle)
+                            .placeholder(R.drawable.ic_no_image_circle)
+                            .error(R.drawable.ic_no_image_circle)
                             .dontAnimate()
                             .into(ivPhoto);
                 }

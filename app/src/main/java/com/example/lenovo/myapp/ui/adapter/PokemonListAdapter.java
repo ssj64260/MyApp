@@ -93,8 +93,8 @@ public class PokemonListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         requestManager.load(url)
                 .transform(transform)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .placeholder(R.mipmap.ic_no_image_circle)
-                .error(R.mipmap.ic_no_image_circle)
+                .placeholder(R.drawable.ic_no_image_circle)
+                .error(R.drawable.ic_no_image_circle)
                 .into(holder.ivLogo);
         holder.tvId.setText("No." + id);
         holder.tvName.setText(pm.getName());

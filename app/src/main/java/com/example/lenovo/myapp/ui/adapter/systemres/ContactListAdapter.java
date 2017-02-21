@@ -77,8 +77,8 @@ public class ContactListAdapter extends RecyclerView.Adapter {
             Glide.with(context).load(ImageUtil.getContentContactAvatar(avatarUri, context))
                     .transform(transform)
                     .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                    .placeholder(R.mipmap.ic_no_image_circle)
-                    .error(R.mipmap.ic_no_image_circle)
+                    .placeholder(R.drawable.ic_no_image_circle)
+                    .error(R.drawable.ic_no_image_circle)
                     .into(holder.ivAvatar);
         }
 

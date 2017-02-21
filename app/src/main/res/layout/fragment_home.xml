@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/selector_bg_selectable"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_scan"
+            android:src="@drawable/ic_scan"
             tools:ignore="ContentDescription" />
 
         <LinearLayout
@@ -37,7 +37,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:scaleType="centerInside"
-                android:src="@mipmap/ic_search"
+                android:src="@drawable/ic_search"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/selector_bg_selectable"
             android:scaleType="centerInside"
-            android:src="@mipmap/ic_message"
+            android:src="@drawable/ic_message"
             tools:ignore="ContentDescription" />
 
     </LinearLayout>
@@ -67,7 +67,7 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:span_count="5"
-        app:mt_select_point="@mipmap/point_select_pop"
-        app:mt_unselect_point="@mipmap/point_unselect"/>
+        app:mt_select_point="@drawable/point_select_pop"
+        app:mt_unselect_point="@drawable/point_unselect"/>
 
 </LinearLayout>

@@ -51,8 +51,8 @@ public class AlbumListAdapter extends RecyclerView.Adapter {
         requestManager.load(al.getIcon())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .placeholder(R.mipmap.ic_no_image_circle)
-                .error(R.mipmap.ic_no_image_circle)
+                .placeholder(R.drawable.ic_no_image_circle)
+                .error(R.drawable.ic_no_image_circle)
                 .dontAnimate()
                 .into(holder.ivIcon);
         holder.tvName.setText(al.getName() + " (" + al.getPhotos().size() + ")");

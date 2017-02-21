@@ -28,14 +28,14 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
 
     private final String[] titles = {"首页", "图鉴", "我的"};
     private final int[] iconSelect = {
-            R.mipmap.tab_home_select,
-            R.mipmap.tab_discovery_select,
-            R.mipmap.tab_me_select
+            R.drawable.tab_home_select,
+            R.drawable.tab_discovery_select,
+            R.drawable.tab_me_select
     };
     private final int[] iconUnselect = {
-            R.mipmap.tab_home_unselect,
-            R.mipmap.tab_discovery_unselect,
-            R.mipmap.tab_me_unselect
+            R.drawable.tab_home_unselect,
+            R.drawable.tab_discovery_unselect,
+            R.drawable.tab_me_unselect
     };
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();

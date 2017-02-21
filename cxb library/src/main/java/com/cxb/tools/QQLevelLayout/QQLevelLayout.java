@@ -58,7 +58,7 @@ public class QQLevelLayout extends LinearLayout {
         for (int i = 0; i < sunNum; i++) {
             ImageView imageView = new ImageView(context);
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-            imageView.setImageResource(R.mipmap.ic_qq_level_sun);
+            imageView.setImageResource(R.drawable.ic_qq_level_sun);
             imageView.setLayoutParams(params);
             addView(imageView);
         }
@@ -66,7 +66,7 @@ public class QQLevelLayout extends LinearLayout {
         for (int i = 0; i < moonNum; i++) {
             ImageView imageView = new ImageView(context);
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-            imageView.setImageResource(R.mipmap.ic_qq_level_moon);
+            imageView.setImageResource(R.drawable.ic_qq_level_moon);
             imageView.setLayoutParams(params);
             addView(imageView);
         }
@@ -74,7 +74,7 @@ public class QQLevelLayout extends LinearLayout {
         for (int i = 0; i < starNum; i++) {
             ImageView imageView = new ImageView(context);
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-            imageView.setImageResource(R.mipmap.ic_qq_level_star);
+            imageView.setImageResource(R.drawable.ic_qq_level_star);
             imageView.setLayoutParams(params);
             addView(imageView);
         }

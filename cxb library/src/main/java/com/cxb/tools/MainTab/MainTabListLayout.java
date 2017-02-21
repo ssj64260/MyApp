@@ -52,8 +52,8 @@ public class MainTabListLayout extends LinearLayout {
 
     private void initAttrs(Context context, AttributeSet attrs) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MainTabListLayout);
-        selectPoint = ta.getResourceId(R.styleable.MainTabListLayout_mt_select_point, R.mipmap.point_select_pop);
-        unselectPoint = ta.getResourceId(R.styleable.MainTabListLayout_mt_unselect_point, R.mipmap.point_unselect);
+        selectPoint = ta.getResourceId(R.styleable.MainTabListLayout_mt_select_point, R.drawable.point_select_pop);
+        unselectPoint = ta.getResourceId(R.styleable.MainTabListLayout_mt_unselect_point, R.drawable.point_unselect);
         spanCount = ta.getInt(R.styleable.MainTabListLayout_span_count, 5);
         count = spanCount * 2;
         ta.recycle();

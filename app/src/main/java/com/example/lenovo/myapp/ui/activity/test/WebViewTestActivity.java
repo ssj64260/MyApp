@@ -276,10 +276,10 @@ public class WebViewTestActivity extends BaseActivity {
             isEditing = hasFocus;
             if (hasFocus) {
                 etTitle.setText(curUrl);
-                ivRefresh.setImageResource(R.mipmap.ic_via_go);
+                ivRefresh.setImageResource(R.drawable.ic_via_go);
             } else {
                 etTitle.setText(curTitle);
-                ivRefresh.setImageResource(R.mipmap.ic_via_refresh);
+                ivRefresh.setImageResource(R.drawable.ic_via_refresh);
             }
         }
     };
@@ -303,7 +303,7 @@ public class WebViewTestActivity extends BaseActivity {
             //设定加载开始的操作
             isLoading = true;
             pbProgress.setVisibility(View.VISIBLE);
-            btnRight.setImageResource(R.mipmap.ic_via_cancel);
+            btnRight.setImageResource(R.drawable.ic_via_cancel);
         }
 
         @Override
@@ -341,7 +341,7 @@ public class WebViewTestActivity extends BaseActivity {
             pbProgress.setProgress(newProgress);
             if (newProgress >= 100) {
                 pbProgress.setVisibility(View.INVISIBLE);
-                btnRight.setImageResource(R.mipmap.ic_via_go);
+                btnRight.setImageResource(R.drawable.ic_via_go);
                 isLoading = false;
             }
         }

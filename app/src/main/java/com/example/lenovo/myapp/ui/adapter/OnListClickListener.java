@@ -12,7 +12,8 @@ public interface OnListClickListener {
         BUTTON2,
         TEXTVIEW1,
         TEXTVIEW2,
-        LINEARLAYOUT
+        LINEARLAYOUT,
+        LONGCLICK
     }
 
     //item点击事件

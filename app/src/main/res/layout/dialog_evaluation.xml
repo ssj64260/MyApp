@@ -20,14 +20,14 @@
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="8dp">
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp">
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="评价业务"
+                android:text="@string/dialog_title_evalutation"
                 android:textColor="@color/text_black"
                 android:textSize="@dimen/textsize_16sp"/>
 
@@ -36,7 +36,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:src="@drawable/btn_close"/>
         </RelativeLayout>
 
@@ -53,8 +53,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="8dp"
-                android:text="我的评分"
+                android:layout_marginStart="8dp"
+                android:text="@string/dialog_text_my_score"
                 android:textColor="@color/gray60"
                 android:textSize="@dimen/textsize_16sp"/>
 
@@ -63,9 +63,9 @@
                 style="@style/RatingBarBig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/tv_my_score"
+                android:layout_toEndOf="@+id/tv_my_score"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:numStars="5"
                 android:rating="5"
                 android:stepSize="0.5" />
@@ -80,7 +80,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:hint="填写您的感受或意见..."
+            android:hint="@string/dialog_text_hint"
             android:gravity="top"
             android:textSize="@dimen/textsize_14sp"
             android:textColorHint="@color/gray60"
@@ -98,7 +98,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/btn_lightorange"
-            android:text="提交您的评价"
+            android:text="@string/dialog_btn_confirm_evalutation"
             android:textSize="@dimen/textsize_16sp"
             android:textColor="@color/white"/>
 

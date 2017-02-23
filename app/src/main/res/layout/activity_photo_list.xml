@@ -19,7 +19,7 @@
             android:drawableStart="@drawable/ic_back1"
             android:gravity="center_vertical"
             android:paddingStart="10dp"
-            android:text="相册"
+            android:text="@string/btn_back_to_album"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_16sp"
             tools:ignore="HardcodedText,RtlSymmetry" />
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="最近相片"
+            android:text="@string/title_lately_photo"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_16sp"
             tools:ignore="HardcodedText" />
@@ -41,7 +41,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="取消"
+            android:text="@string/btn_photo_list_cancel"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_16sp"
             tools:ignore="HardcodedText" />

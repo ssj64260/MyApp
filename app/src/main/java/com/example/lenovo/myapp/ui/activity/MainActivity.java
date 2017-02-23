@@ -347,8 +347,8 @@ public class MainActivity extends BaseAppCompatActivity {
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        toolbar.setTitle("空白页");
-//        toolbar.setLogo(R.mipmap.ic_launcher);
-//        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+//        toolbar.setLogo(R.mipmap.app_icon);
+//        toolbar.setNavigationIcon(R.mipmap.app_icon);
         toolbar.inflateMenu(R.menu.main);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

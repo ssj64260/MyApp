@@ -4,11 +4,13 @@ import com.litesuits.orm.db.annotation.PrimaryKey;
 import com.litesuits.orm.db.annotation.Table;
 import com.litesuits.orm.db.enums.AssignType;
 
+import java.io.Serializable;
+
 /**
  * 口袋妖怪 中日英名称
  */
 @Table("PokemonName")
-public class PokemonNameBean {
+public class PokemonNameBean implements Serializable {
 
     @PrimaryKey(AssignType.BY_MYSELF)
     private String id;

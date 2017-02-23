@@ -12,6 +12,8 @@
     <color name="gray99">#fcfcfc</color>
     <color name="gray96">#f5f5f5</color>
     <color name="gray60">#999999</color>
+    <color name="gray_dark">#898989</color>
+    <color name="gray_light">#b6b6b6</color>
 
     <color name="network_warnning">#f7f492</color>
 

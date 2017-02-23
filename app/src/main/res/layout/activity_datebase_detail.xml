@@ -30,7 +30,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/selector_bg_red_iselectable"
-            android:text="更新名称"
+            android:text="@string/btn_update_name"
             android:textAllCaps="false"
             android:textColor="@color/white" />
 
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/selector_bg_red_iselectable"
-            android:text="删除这只Pokemon"
+            android:text="@string/btn_delete_pokemon"
             android:textAllCaps="false"
             android:textColor="@color/white" />
 

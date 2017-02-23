@@ -1,17 +1,10 @@
 <resources>
     <string name="app_name">有个APP</string>
 
-    <string name="mainactivity_name">首页</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!--<string name="navigation_drawer_open">Open navigation drawer</string>-->
+    <!--<string name="navigation_drawer_close">Close navigation drawer</string>-->
 
     <string name="action_settings">Settings</string>
-
-
-    <string name="dialog_confirm">确定</string>
-    <string name="dialog_cancel">取消</string>
-
 
     <string name="menu_nav_camera">拍照</string>
     <string name="menu_nav_manage">设置</string>
@@ -40,5 +33,198 @@
     <string name="Dragon">龙</string>
     <string name="evil">恶</string>
     <string name="Fairy">妖精</string>
+
+    <!--activity_album_list-->
+    <string name="title_select_album">选择相册</string>
+    <string name="btn_album_list_cancel">取消</string>
+
+    <!--activity_clipping_image-->
+    <string name="btn_back_to_photo">照片</string>
+    <string name="title_move_and_zoom">移动和缩放</string>
+    <string name="btn_cut_photo_confirm">完成</string>
+
+    <!--activity_contacts_list-->
+    <string name="btn_contacts_back">返回</string>
+    <string name="title_contacts">联系人</string>
+
+    <!--activity_custom_view_test-->
+    <string name="text_input_password">请输入密码（4&#8211;10位，数字、字母和符号）</string>
+    <string name="text_input_progress">请输入进度（0&#8211;100之间的数字）</string>
+    <string name="btn_set_progress_confirm">确定</string>
+    <string name="btn_get_current_address">获取当前选中地址</string>
+    <string name="btn_count_down">倒数60秒</string>
+    <string name="btn_show_guide_next_time">下次启动打开导航页</string>
+
+    <!--activity_datebase_detail-->
+    <string name="btn_update_name">更新名称</string>
+    <string name="btn_delete_pokemon">删除这只Pokemon</string>
+
+    <!--activity_datebase_test-->
+    <string name="btn_insert_all_data">导入全部数据</string>
+    <string name="btn_delete_table_data">删除表数据</string>
+    <string name="btn_delete_database">删除数据库</string>
+
+    <!--activity_datetime_test-->
+    <string name="text_date1">日期【1】</string>
+    <string name="text_time1">时间【1】</string>
+    <string name="text_date2">日期【2】</string>
+    <string name="text_time2">时间【2】</string>
+    <string name="text_friendly_time1">友好时间【1】</string>
+    <string name="radio_btn_year">年</string>
+    <string name="radio_btn_month">月</string>
+    <string name="radio_btn_day">日</string>
+    <string name="text_get_apart">获取相差：</string>
+    <string name="btn_number_of_year">年份</string>
+    <string name="btn_number_of_month">月数</string>
+    <string name="btn_number_of_day">天数</string>
+    <string name="btn_number_of_minute">分钟</string>
+    <string name="btn_get_current_time">获取当前时间</string>
+    <string name="btn_clear_datetime_data">清除数据</string>
+
+    <!--activity_dialog_test-->
+    <string name="btn_select_dialog">选择对话框</string>
+    <string name="btn_loading_dialog">等待对话框</string>
+    <string name="btn_input_content_dialog">输入内容对话框</string>
+    <string name="btn_input_evalutation_dialog">输入与评价对话框</string>
+
+    <!--activity_introduction-->
+    <string name="btn_guide_skip">跳过</string>
+
+    <!--activity_list_nest_detail-->
+    <string name="btn_nest_detail_back">返回</string>
+
+    <!--activity_list_nest_test-->
+    <string name="btn_list_nest_list">ListView 嵌套 ListView</string>
+    <string name="btn_list_nest_grid">ListView 嵌套 GridView</string>
+    <string name="btn_list_nest_recycler">ListView 嵌套 RecyclerView</string>
+    <string name="btn_recycler_nest_list">RecyclerView 嵌套 ListView（瀑布流）</string>
+    <string name="btn_recycler_nest_grid">RecyclerView 嵌套 GridView（瀑布流）</string>
+    <string name="btn_recycler_nest_recycler">RecyclerView 嵌套 RecyclerView（瀑布流）</string>
+    <string name="btn_grid_nest_list">GridView 嵌套 ListView</string>
+    <string name="btn_grid_nest_grid">GridView 嵌套 GridView</string>
+    <string name="btn_grid_nest_recycler">GridView 嵌套 RecyclerView</string>
+    <string name="btn_scroll_nest_list">NestedScrollView 嵌套 ListView</string>
+    <string name="btn_scroll_nest_grid">NestedScrollView 嵌套 GridView</string>
+    <string name="btn_scroll_nest_recycler">NestedScrollView 嵌套 RecyclerView</string>
+
+    <!--activity_my_tools-->
+    <string name="title_my_tools">我的工具</string>
+
+    <!--activity_okhttp_test-->
+    <string name="btn_change_url">更换接口</string>
+    <string name="btn_get_weather">GET今天天气</string>
+    <string name="btn_post_weather">POST天气预报</string>
+    <string name="btn_get_okhttp_msg">GET Okhttp信息</string>
+    <string name="btn_get_verification_msg">需要验证的连接</string>
+    <string name="btn_download_file">下载文件</string>
+    <string name="btn_get_app_version">获取App版本号</string>
+    <string name="text_current_version">当前版本号</string>
+    <string name="text_network_version">网络版本号</string>
+    <string name="btn_compare_two_version">比较两个版本号大小</string>
+
+    <!--activity_photo_list-->
+    <string name="btn_back_to_album">相册</string>
+    <string name="title_lately_photo">最近相片</string>
+    <string name="btn_photo_list_cancel">取消</string>
+
+    <!--activity_pokemon_detail-->
+    <string name="text_pokemon_characteristic">特性</string>
+    <string name="text_special_characteristics">特殊特性</string>
+    <string name="text_pokemon_property">属性</string>
+    <string name="text_pokemon_race_value">种族值</string>
+    <string name="text_pokemon_hp_value">HP</string>
+    <string name="text_pokemon_attack_value">攻击</string>
+    <string name="text_pokemon_defense_value">防御</string>
+    <string name="text_special_attack_value">特攻</string>
+    <string name="text_special_defense_value">特防</string>
+    <string name="text_pokemon_speed_value">速度</string>
+    <string name="btn_insert_to_datebase">加入数据库</string>
+
+    <!--activity_set_post_url-->
+    <string name="btn_test_server_url">测试服url</string>
+    <string name="btn_official_server_url">正式服url</string>
+    <string name="btn_custion_server_url">自定义url</string>
+    <string name="btn_set_url_confirm">确定</string>
+    <string name="btn_clear_sharedpreferences">清空 SharedPreferences</string>
+
+    <!--activity_system_get_photo-->
+    <string name="btn_change_photo">修改图片</string>
+
+    <!--activity_system_res-->
+    <string name="btn_get_system_permission">获取系统权限</string>
+    <string name="btn_get_ablum_resourcd">获取相册资源</string>
+    <string name="btn_take_photo">选图和拍照</string>
+    <string name="btn_get_contacts">获取系统联系人</string>
+
+    <!--activity_thread_pool_test-->
+    <string name="btn_do_asynctask">AsyncTask</string>
+    <string name="btn_do_heart_request">心跳请求</string>
+    <string name="btn_do_queue_request">队列请求</string>
+    <string name="btn_do_cache_pool">缓存线程池</string>
+    <string name="btn_do_fix_pool">定长线程池</string>
+    <string name="btn_do_delayed_pool">延时执行</string>
+    <string name="btn_do_period_pool">周期执行</string>
+    <string name="btn_do_alway_period_pool">每周期延时执行</string>
+    <string name="btn_do_single_pool">单线程线程池</string>
+    <string name="btn_cancel_all_thread">取消所有线程</string>
+    <string name="btn_clear_thread_msg">清除信息</string>
+
+    <!--content_main-->
+    <string name="text_network_timeout_msg">连接超时，请检查你的网络设置。</string>
+
+    <!--dialog_evaluation-->
+    <string name="dialog_title_evalutation">评价业务</string>
+    <string name="dialog_text_my_score">我的评分</string>
+    <string name="dialog_text_hint">填写您的感受或意见&#8230;</string>
+    <string name="dialog_btn_confirm_evalutation">提交您的评价</string>
+
+    <!--dialog_input_content-->
+    <string name="dialog_input_confirm">确定</string>
+    <string name="dialog_input_cancel">取消</string>
+
+    <!--dialog_tips_action-->
+    <string name="dialog_tips_confirm">确定</string>
+    <string name="dialog_tips_cancel">取消</string>
+
+    <!--fragment_home-->
+    <string name="text_select_by_key">输入关键字搜索</string>
+
+    <!--fragment_mine-->
+    <string name="title_mine">我的</string>
+    <string name="btn_imitate_qq_interface">仿QQ界面</string>
+    <string name="btn_material_design_interface">Material Design界面</string>
+    <string name="btn_my_tools">我的工具</string>
+
+    <!--include_app_info_detail-->
+    <string name="btn_app_info_detail">详细信息</string>
+    <string name="btn_uninstall_app">卸载</string>
+
+    <!--include_qq_left_menu-->
+    <string name="text_edit_personalized_signature">编辑个性签名</string>
+
+    <!--include_qq_right_content-->
+    <string name="text_network_connect_msg">连接超时，请检查你的网络设置。</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </resources>

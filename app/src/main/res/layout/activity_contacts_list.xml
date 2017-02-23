@@ -19,7 +19,7 @@
             android:drawableStart="@drawable/ic_back1"
             android:gravity="center_vertical"
             android:paddingStart="10dp"
-            android:text="返回"
+            android:text="@string/btn_contacts_back"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_16sp"
             tools:ignore="HardcodedText,RtlSymmetry" />
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="联系人"
+            android:text="@string/title_contacts"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_16sp"
             tools:ignore="HardcodedText" />

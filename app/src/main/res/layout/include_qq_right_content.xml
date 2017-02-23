@@ -66,14 +66,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/iv_warnning_logo"
-            android:text="连接超时，请检查你的网络设置。"
+            android:layout_toEndOf="@+id/iv_warnning_logo"
+            android:text="@string/text_network_connect_msg"
             android:textColor="@color/text_black" />
 
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"

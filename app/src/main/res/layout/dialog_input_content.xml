@@ -41,10 +41,10 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:background="@drawable/btn_green"
             android:gravity="center"
-            android:text="@string/dialog_cancel"
+            android:text="@string/dialog_input_cancel"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
@@ -53,11 +53,11 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/btn_lightblue"
             android:gravity="center"
-            android:text="@string/dialog_confirm"
+            android:text="@string/dialog_input_confirm"
             android:textColor="@color/white"
             android:textSize="18sp" />
     </LinearLayout>

@@ -51,7 +51,7 @@
                 android:id="@+id/tv_pm_id"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
                 android:background="@drawable/shape_bg_content_white"
                 android:gravity="center"
                 android:paddingLeft="15dp"
@@ -69,7 +69,8 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/shape_bg_content_white"
             android:padding="5dp"
-            tools:src="@mipmap/bg_ditto" />
+            tools:src="@drawable/bg_ditto"
+            tools:ignore="ContentDescription" />
 
         <!--特性-->
         <LinearLayout
@@ -85,19 +86,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:gravity="center"
-                android:text="特性"
+                android:text="@string/text_pokemon_characteristic"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv_characteristic1"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
@@ -107,8 +108,8 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
@@ -116,18 +117,16 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.7"
+                        android:layout_height="20dp"
                         android:gravity="center_horizontal|bottom"
-                        android:text="特殊特性"
+                        android:text="@string/text_special_characteristics"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tv_characteristic2"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="30dp"
                         android:gravity="center"
                         android:textColor="@color/black"
                         android:textSize="12sp"
@@ -141,7 +140,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="DisableBaselineAlignment">
 
             <LinearLayout
                 android:id="@+id/ll_bg_property"
@@ -154,17 +154,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="20dp"
                     android:gravity="center"
-                    android:text="属性"
+                    android:text="@string/text_pokemon_property"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1.5"
+                    android:layout_height="30dp"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -179,7 +177,7 @@
                         android:paddingEnd="5dp"
                         android:paddingStart="5dp"
                         android:textColor="@color/white"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:visibility="visible"
                         tools:background="@drawable/shape_bg_fire"
                         tools:text="火" />
@@ -194,7 +192,7 @@
                         android:paddingEnd="5dp"
                         android:paddingStart="5dp"
                         android:textColor="@color/white"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:visibility="visible"
                         tools:background="@drawable/shape_bg_flight"
                         tools:text="飞行" />
@@ -206,7 +204,7 @@
                 android:id="@+id/ll_bg_ethnic_value"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:padding="5dp"
@@ -214,18 +212,16 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="20dp"
                     android:gravity="center"
-                    android:text="种族值"
+                    android:text="@string/text_pokemon_race_value"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tv_ethnic_value"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1.5"
+                    android:layout_height="30dp"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
                     android:textColor="@color/black"
@@ -255,7 +251,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
-                    android:text="HP"
+                    android:text="@string/text_pokemon_hp_value"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -272,7 +268,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center_vertical"
@@ -299,7 +295,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
-                    android:text="攻击"
+                    android:text="@string/text_pokemon_attack_value"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -316,7 +312,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center_vertical"
@@ -343,7 +339,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
-                    android:text="防御"
+                    android:text="@string/text_pokemon_defense_value"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -360,7 +356,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center_vertical"
@@ -387,7 +383,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
-                    android:text="特攻"
+                    android:text="@string/text_special_attack_value"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -404,7 +400,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center_vertical"
@@ -431,7 +427,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
-                    android:text="特防"
+                    android:text="@string/text_special_defense_value"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -448,7 +444,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center_vertical"
@@ -475,7 +471,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center"
-                    android:text="速度"
+                    android:text="@string/text_pokemon_speed_value"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -492,7 +488,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_content_white"
                     android:gravity="center_vertical"
@@ -515,7 +511,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/shape_bg_content_white"
-            android:text="加入数据库"
+            android:text="@string/btn_insert_to_datebase"
             android:textColor="@color/black"
             android:textSize="16sp" />
 

@@ -17,70 +17,70 @@
             android:id="@+id/btn_async_task"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="AsyncTask"
+            android:text="@string/btn_do_asynctask"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_heart_get"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="心跳请求"
+            android:text="@string/btn_do_heart_request"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_sequence"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="顺序请求"
+            android:text="@string/btn_do_queue_request"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_cached_thread_pool"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="缓存线程池"
+            android:text="@string/btn_do_cache_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_fixed_thread_pool"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="定长线程池"
+            android:text="@string/btn_do_fix_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_scheduled_thread_pool"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="延时执行"
+            android:text="@string/btn_do_delayed_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_scheduled_thread_pool_rate"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="周期执行"
+            android:text="@string/btn_do_period_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_scheduled_thread_pool_delay"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="每周期延时执行"
+            android:text="@string/btn_do_alway_period_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_single_thread_pool"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="单线程线程池"
+            android:text="@string/btn_do_single_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_shut_down"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="取消所有线程"
+            android:text="@string/btn_cancel_all_thread"
             android:textAllCaps="false" />
     </LinearLayout>
 
@@ -94,7 +94,7 @@
             android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="清除信息"
+            android:text="@string/btn_clear_thread_msg"
             android:textAllCaps="false" />
 
         <ScrollView

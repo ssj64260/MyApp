@@ -22,7 +22,7 @@
         android:layout_margin="20dp"
         android:background="@drawable/selector_bg_red_iselectable"
         android:gravity="center"
-        android:text="修改图片"
+        android:text="@string/btn_change_photo"
         android:textColor="@color/white" />
 
 </LinearLayout>

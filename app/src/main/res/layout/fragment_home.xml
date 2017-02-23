@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:gravity="center_vertical"
-                android:text="搜索宝可梦信息"
+                android:text="@string/text_select_by_key"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 

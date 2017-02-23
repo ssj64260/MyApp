@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="我的工具"
+            android:text="@string/title_my_tools"
             android:textColor="@color/white"
             android:textSize="16sp" />
     </RelativeLayout>

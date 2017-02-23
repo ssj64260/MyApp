@@ -20,7 +20,7 @@
             android:drawableStart="@drawable/ic_back1"
             android:gravity="center_vertical"
             android:paddingStart="10dp"
-            android:text="照片"
+            android:text="@string/btn_back_to_photo"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_16sp"
             tools:ignore="HardcodedText,RtlSymmetry" />
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="移动和缩放"
+            android:text="@string/title_move_and_zoom"
             android:textColor="@color/white"
             android:textSize="16sp"
             tools:ignore="HardcodedText" />
@@ -42,7 +42,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="完成"
+            android:text="@string/btn_cut_photo_confirm"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_16sp"
             tools:ignore="HardcodedText" />

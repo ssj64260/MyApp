@@ -23,46 +23,46 @@
                 android:id="@+id/btn_change_url"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="更换接口" />
+                android:text="@string/btn_change_url" />
 
             <Button
                 android:id="@+id/btn_get_today_weather"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="GET今天天气" />
+                android:text="@string/btn_get_weather" />
 
             <Button
                 android:id="@+id/btn_get_weather"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="POST天气预报" />
+                android:text="@string/btn_post_weather" />
 
             <Button
                 android:id="@+id/btn_get_github_info"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="GET GitHub信息"
+                android:text="@string/btn_get_okhttp_msg"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_authenticator"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="需要验证的连接"
+                android:text="@string/btn_get_verification_msg"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_download"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="下载文件"
+                android:text="@string/btn_download_file"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn_get_app_version"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="获取App版本号" />
+                android:text="@string/btn_get_app_version" />
         </LinearLayout>
 
         <ScrollView
@@ -94,7 +94,7 @@
             android:layout_height="50dp"
             android:background="@color/grass"
             android:gravity="center"
-            android:hint="当前版本号"
+            android:hint="@string/text_current_version"
             android:inputType="date"
             android:textColor="@color/white" />
 
@@ -104,7 +104,7 @@
             android:layout_height="50dp"
             android:background="@color/btn_blue_normal"
             android:gravity="center"
-            android:hint="网络版本号"
+            android:hint="@string/text_network_version"
             android:inputType="date"
             android:textColor="@color/white" />
 
@@ -114,7 +114,7 @@
         android:id="@+id/btn_compare_version"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="比较两个版本号大小" />
+        android:text="@string/btn_compare_two_version" />
 
 
 </LinearLayout>

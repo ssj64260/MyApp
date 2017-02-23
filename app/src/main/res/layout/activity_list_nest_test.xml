@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="ListView 嵌套 ListView"
+                android:text="@string/btn_list_nest_list"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -32,7 +32,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="ListView 嵌套 GridView"
+                android:text="@string/btn_list_nest_grid"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -42,7 +42,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="ListView 嵌套 RecyclerView"
+                android:text="@string/btn_list_nest_recycler"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -52,7 +52,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="RecyclerView 嵌套 ListView（瀑布流）"
+                android:text="@string/btn_recycler_nest_list"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -62,7 +62,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="RecyclerView 嵌套 GridView（瀑布流）"
+                android:text="@string/btn_recycler_nest_grid"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -72,7 +72,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="RecyclerView 嵌套 RecyclerView（瀑布流）"
+                android:text="@string/btn_recycler_nest_recycler"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -82,7 +82,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="GridView 嵌套 ListView"
+                android:text="@string/btn_grid_nest_list"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -92,7 +92,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="GridView 嵌套 GridView"
+                android:text="@string/btn_grid_nest_grid"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -102,7 +102,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="GridView 嵌套 RecyclerView"
+                android:text="@string/btn_grid_nest_recycler"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -112,7 +112,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="NestedScrollView 嵌套 ListView"
+                android:text="@string/btn_scroll_nest_list"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -122,7 +122,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="NestedScrollView 嵌套 GridView"
+                android:text="@string/btn_scroll_nest_grid"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
@@ -132,7 +132,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="NestedScrollView 嵌套 RecyclerView"
+                android:text="@string/btn_scroll_nest_recycler"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
         </LinearLayout>

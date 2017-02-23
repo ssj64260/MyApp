@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="我的"
+            android:text="@string/title_mine"
             android:textColor="@color/white"
             android:textSize="16sp" />
     </RelativeLayout>
@@ -34,7 +34,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/selector_bg_red_iselectable"
             android:gravity="center"
-            android:text="仿QQ界面"
+            android:text="@string/btn_imitate_qq_interface"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -47,7 +47,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/selector_bg_red_iselectable"
             android:gravity="center"
-            android:text="Material Design界面"
+            android:text="@string/btn_material_design_interface"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -60,7 +60,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/selector_bg_red_iselectable"
             android:gravity="center"
-            android:text="我的工具"
+            android:text="@string/btn_my_tools"
             android:textColor="@color/white"
             android:textSize="16sp" />
     </LinearLayout>

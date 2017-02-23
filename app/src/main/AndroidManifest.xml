@@ -68,7 +68,6 @@
         <!--主页面-->
         <activity
             android:name=".ui.activity.MainActivity"
-            android:label="@string/mainactivity_name"
             android:screenOrientation="portrait" />
 
         <!--口袋妖怪主页-->
@@ -78,7 +77,7 @@
 
         <!--app介绍页面-->
         <activity
-            android:name=".ui.activity.IntroductionActivity"
+            android:name=".ui.activity.GuideActivity"
             android:screenOrientation="portrait" />
 
         <!--口袋妖怪详情页面-->
@@ -167,6 +166,10 @@
             android:name=".ui.activity.test.WebViewTestActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <activity
+            android:name=".ui.activity.test.MultiLanguageActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.activity.SetPostUrlActivity"

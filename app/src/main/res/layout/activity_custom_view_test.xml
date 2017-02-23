@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="请输入密码（4-10位，数字、字母和符号）"
+                android:text="@string/text_input_password"
                 android:textColor="@color/white" />
 
             <EditText
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="请输入进度（0-100之间的数字）"
+                android:text="@string/text_input_progress"
                 android:textColor="@color/white" />
 
             <LinearLayout
@@ -90,7 +90,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/selector_bg_red_iselectable"
-                    android:text="确定"
+                    android:text="@string/btn_set_progress_confirm"
                     android:textColor="@color/white"
                     android:textSize="@dimen/textsize_16sp" />
             </LinearLayout>
@@ -141,7 +141,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="获取当前选中地址"
+                android:text="@string/btn_get_current_address"
                 android:textColor="@color/white" />
 
             <Button
@@ -150,7 +150,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="倒数60秒"
+                android:text="@string/btn_count_down"
                 android:textColor="@color/white" />
 
             <Button
@@ -159,7 +159,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/selector_bg_red_iselectable"
-                android:text="下次启动打开导航页"
+                android:text="@string/btn_show_guide_next_time"
                 android:textColor="@color/white" />
 
         </LinearLayout>

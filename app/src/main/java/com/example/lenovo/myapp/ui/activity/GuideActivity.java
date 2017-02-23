@@ -19,7 +19,7 @@ import java.util.List;
  * 介绍页面
  */
 
-public class IntroductionActivity extends BaseActivity {
+public class GuideActivity extends BaseActivity {
 
     private ViewPager mViewPager;
     private ViewGroup vgPoints;
@@ -35,7 +35,7 @@ public class IntroductionActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_introduction);
+        setContentView(R.layout.activity_guide);
 
         initView();
         setData();
@@ -52,7 +52,7 @@ public class IntroductionActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 //                Intent intent = new Intent();
-//                intent.setClass(IntroductionActivity.this, PokemonMainActivity.class);
+//                intent.setClass(GuideActivity.this, PokemonMainActivity.class);
 //                startActivity(intent);
                 finish();
             }

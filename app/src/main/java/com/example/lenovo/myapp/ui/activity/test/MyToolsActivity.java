@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.ui.activity.IntroductionActivity;
+import com.example.lenovo.myapp.ui.activity.GuideActivity;
 import com.example.lenovo.myapp.ui.activity.test.dbtest.DatebaseTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.systemres.SystemResActivity;
@@ -42,7 +42,8 @@ public class MyToolsActivity extends BaseActivity {
             "自定义控件展示",
             "获取系统资源",
             "LiteOrm数据库工具",
-            "WebView Demo"
+            "WebView Demo",
+            "多语言设置"
     };
 
     @Override
@@ -100,7 +101,7 @@ public class MyToolsActivity extends BaseActivity {
             if (tag == Tag.TEXTVIEW1) {
                 switch (position) {
                     case 0://ViewPager简介
-                        startActivity(new Intent(MyToolsActivity.this, IntroductionActivity.class));
+                        startActivity(new Intent(MyToolsActivity.this, GuideActivity.class));
                         break;
                     case 1://接口测试
                         startActivity(new Intent(MyToolsActivity.this, OkhttpTestActivity.class));
@@ -134,6 +135,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 11://WebView Demo
                         startActivity(new Intent(MyToolsActivity.this, WebViewTestActivity.class));
+                        break;
+                    case 12://多语言设置
+                        startActivity(new Intent(MyToolsActivity.this, MultiLanguageActivity.class));
                         break;
                 }
             }

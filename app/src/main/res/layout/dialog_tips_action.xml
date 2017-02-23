@@ -34,7 +34,7 @@
             android:layout_weight="1"
             android:background="@drawable/btn_green"
             android:gravity="center"
-            android:text="@string/dialog_cancel"
+            android:text="@string/dialog_tips_cancel"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -42,11 +42,11 @@
             android:id="@+id/btn_confirm"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:background="@drawable/btn_lightblue"
             android:gravity="center"
-            android:text="@string/dialog_confirm"
+            android:text="@string/dialog_tips_confirm"
             android:textColor="@color/white"
             android:textSize="16sp" />
     </LinearLayout>

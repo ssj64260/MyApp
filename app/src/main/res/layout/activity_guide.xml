@@ -23,12 +23,12 @@
         android:id="@+id/tv_skip"
         android:layout_width="60dp"
         android:layout_height="30dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
         android:background="@drawable/btn_lightorange"
-        android:text="跳过"
+        android:text="@string/btn_guide_skip"
         android:textColor="@color/white"
         android:textSize="@dimen/textsize_16sp" />
 

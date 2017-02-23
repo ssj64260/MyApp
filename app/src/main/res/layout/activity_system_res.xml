@@ -24,7 +24,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/selector_bg_red_iselectable"
                 android:gravity="center"
-                android:text="获取系统权限"
+                android:text="@string/btn_get_system_permission"
                 android:textColor="@color/white" />
 
             <TextView
@@ -34,7 +34,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
                 android:gravity="center"
-                android:text="获取相册资源"
+                android:text="@string/btn_get_ablum_resourcd"
                 android:textColor="@color/white" />
 
             <TextView
@@ -44,7 +44,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
                 android:gravity="center"
-                android:text="选图和拍照"
+                android:text="@string/btn_take_photo"
                 android:textColor="@color/white" />
 
             <TextView
@@ -54,7 +54,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/selector_bg_red_iselectable"
                 android:gravity="center"
-                android:text="获取系统联系人"
+                android:text="@string/btn_get_contacts"
                 android:textColor="@color/white" />
 
         </LinearLayout>

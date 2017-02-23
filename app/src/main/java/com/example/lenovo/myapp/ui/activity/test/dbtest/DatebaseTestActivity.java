@@ -18,6 +18,7 @@ import com.example.lenovo.myapp.model.CharacteristicBean;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PokemonNameBean;
 import com.example.lenovo.myapp.model.PropertyBean;
+import com.example.lenovo.myapp.ui.activity.PokemonDetailActivity;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
@@ -28,6 +29,7 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.lenovo.myapp.ui.activity.PokemonDetailActivity.POKEMON;
 import static com.example.lenovo.myapp.ui.activity.test.dbtest.DatebaseDetailActivity.POKEMON_ID;
 
 /**
@@ -232,14 +234,19 @@ public class DatebaseTestActivity extends BaseActivity {
         @Override
         public void onItemClick(int position) {
             Intent intent = new Intent();
-            intent.setClass(DatebaseTestActivity.this, DatebaseDetailActivity.class);
-            intent.putExtra(POKEMON_ID, list.get(position).getId());
-            startActivityForResult(intent, 1);
+            intent.setClass(DatebaseTestActivity.this, PokemonDetailActivity.class);
+            intent.putExtra(POKEMON, list.get(position));
+            startActivity(intent);
         }
 
         @Override
         public void onTagClick(Tag tag, int position) {
-
+            if (tag == Tag.LONGCLICK) {
+                Intent intent = new Intent();
+                intent.setClass(DatebaseTestActivity.this, DatebaseDetailActivity.class);
+                intent.putExtra(POKEMON_ID, list.get(position).getId());
+                startActivityForResult(intent, 1);
+            }
         }
     };
 

@@ -12,7 +12,7 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:background="@drawable/selector_bg_red_iselectable"
-        android:text="选择对话框"
+        android:text="@string/btn_select_dialog"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 
@@ -22,7 +22,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/selector_bg_red_iselectable"
-        android:text="等待对话框"
+        android:text="@string/btn_loading_dialog"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 
@@ -32,7 +32,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/selector_bg_red_iselectable"
-        android:text="输入内容对话框"
+        android:text="@string/btn_input_content_dialog"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 
@@ -42,7 +42,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/selector_bg_red_iselectable"
-        android:text="输入与评价对话框"
+        android:text="@string/btn_input_evalutation_dialog"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 

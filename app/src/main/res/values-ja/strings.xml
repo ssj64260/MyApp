@@ -1,0 +1,230 @@
+<resources>
+    <string name="app_name">あるAPP</string>
+
+    <!--<string name="navigation_drawer_open">Open navigation drawer</string>-->
+    <!--<string name="navigation_drawer_close">Close navigation drawer</string>-->
+
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_nav_camera">写真を撮って</string>
+    <string name="menu_nav_manage">設置</string>
+    <string name="menu_nav_title">インタラクティブ</string>
+    <string name="menu_nav_share">共有</string>
+    <string name="menu_nav_send">発送</string>
+    <string name="menu_nav_evaluation">評価</string>
+
+
+    <!--口袋妖怪属性-->
+    <string name="general">一般</string>
+    <string name="Fighting">格闘</string>
+    <string name="flight">飛行</string>
+    <string name="poison">毒</string>
+    <string name="ground">地面</string>
+    <string name="rock">岩</string>
+    <string name="insect">虫</string>
+    <string name="ghost">幽霊</string>
+    <string name="steel">鋼</string>
+    <string name="fire">火</string>
+    <string name="water">水</string>
+    <string name="grass">草</string>
+    <string name="Electricity">電気</string>
+    <string name="superpower">超能力</string>
+    <string name="ice">氷</string>
+    <string name="Dragon">竜</string>
+    <string name="evil">悪</string>
+    <string name="Fairy">妖精</string>
+
+    <!--activity_album_list-->
+    <string name="title_select_album">選択アルバム</string>
+    <string name="btn_album_list_cancel">キャンセル</string>
+
+    <!--activity_clipping_image-->
+    <string name="btn_back_to_photo">写真</string>
+    <string name="title_move_and_zoom">移動とズーム</string>
+    <string name="btn_cut_photo_confirm">完成</string>
+
+    <!--activity_contacts_list-->
+    <string name="btn_contacts_back">に戻る</string>
+    <string name="title_contacts">コンタクト</string>
+
+    <!--activity_custom_view_test-->
+    <string name="text_input_password">パスワードを入力してください（4&#8211;10位、数字、アルファベットと記号）</string>
+    <string name="text_input_progress">進度を入力してください（0&#8211;100間の数字）</string>
+    <string name="btn_set_progress_confirm">確定</string>
+    <string name="btn_get_current_address">选を当面アドレス</string>
+    <string name="btn_count_down">逆数ろくじゅう秒</string>
+    <string name="btn_show_guide_next_time">次回起動ページを開いてナビゲーション</string>
+
+    <!--activity_datebase_detail-->
+    <string name="btn_update_name">更新名称</string>
+    <string name="btn_delete_pokemon">削除Pokemonだけ</string>
+
+    <!--activity_datebase_test-->
+    <string name="btn_insert_all_data">導入のすべてのデータ</string>
+    <string name="btn_delete_table_data">表データ削除</string>
+    <string name="btn_delete_database">削除データベース</string>
+
+    <!--activity_datetime_test-->
+    <string name="text_date1">期日【1】</string>
+    <string name="text_time1">時間【1】</string>
+    <string name="text_date2">期日【2】</string>
+    <string name="text_time2">時間【2】</string>
+    <string name="text_friendly_time1">友好時間【1】</string>
+    <string name="radio_btn_year">年</string>
+    <string name="radio_btn_month">月</string>
+    <string name="radio_btn_day">日</string>
+    <string name="text_get_apart">取得の違い：</string>
+    <string name="btn_number_of_year">年</string>
+    <string name="btn_number_of_month">月数</string>
+    <string name="btn_number_of_day">日数</string>
+    <string name="btn_number_of_minute">分</string>
+    <string name="btn_get_current_time">取得カレント時間</string>
+    <string name="btn_clear_datetime_data">クリアデータ</string>
+
+    <!--activity_dialog_test-->
+    <string name="btn_select_dialog">選択ダイアログ</string>
+    <string name="btn_loading_dialog">ダイアログを待つ</string>
+    <string name="btn_input_content_dialog">入力内容ダイアログ</string>
+    <string name="btn_input_evalutation_dialog">入力ダイアログと評価</string>
+
+    <!--activity_introduction-->
+    <string name="btn_guide_skip">スキップ</string>
+
+    <!--activity_list_nest_detail-->
+    <string name="btn_nest_detail_back">に戻る</string>
+
+    <!--activity_list_nest_test-->
+    <string name="btn_list_nest_list">ListView 入れ子 ListView</string>
+    <string name="btn_list_nest_grid">ListView 入れ子 GridView</string>
+    <string name="btn_list_nest_recycler">ListView 入れ子 RecyclerView</string>
+    <string name="btn_recycler_nest_list">RecyclerView 入れ子 ListView（滝流）</string>
+    <string name="btn_recycler_nest_grid">RecyclerView 入れ子 GridView（滝流）</string>
+    <string name="btn_recycler_nest_recycler">RecyclerView 入れ子 RecyclerView（滝流）</string>
+    <string name="btn_grid_nest_list">GridView 入れ子 ListView</string>
+    <string name="btn_grid_nest_grid">GridView 入れ子 GridView</string>
+    <string name="btn_grid_nest_recycler">GridView 入れ子 RecyclerView</string>
+    <string name="btn_scroll_nest_list">NestedScrollView 入れ子 ListView</string>
+    <string name="btn_scroll_nest_grid">NestedScrollView 入れ子 GridView</string>
+    <string name="btn_scroll_nest_recycler">NestedScrollView 入れ子 RecyclerView</string>
+
+    <!--activity_my_tools-->
+    <string name="title_my_tools">私の道具</string>
+
+    <!--activity_okhttp_test-->
+    <string name="btn_change_url">交換インタフェース</string>
+    <string name="btn_get_weather">GET今日の天気は</string>
+    <string name="btn_post_weather">POST天気予報</string>
+    <string name="btn_get_okhttp_msg">GET Okhttp情報</string>
+    <string name="btn_get_verification_msg">検証の接続が</string>
+    <string name="btn_download_file">ダウンロードファイル</string>
+    <string name="btn_get_app_version">得アプリバージョン番号</string>
+    <string name="text_current_version">カレントバージョン番号</string>
+    <string name="text_network_version">ネットワークバージョン番号</string>
+    <string name="btn_compare_two_version">比較的に2つのバージョン番号の大きさの</string>
+
+    <!--activity_photo_list-->
+    <string name="btn_back_to_album">アルバム</string>
+    <string name="title_lately_photo">最近の写真</string>
+    <string name="btn_photo_list_cancel">キャンセル</string>
+
+    <!--activity_pokemon_detail-->
+    <string name="text_pokemon_characteristic">特性</string>
+    <string name="text_special_characteristics">特殊特性</string>
+    <string name="text_pokemon_property">属性</string>
+    <string name="text_pokemon_race_value">種族値</string>
+    <string name="text_pokemon_hp_value">HP</string>
+    <string name="text_pokemon_attack_value">攻撃</string>
+    <string name="text_pokemon_defense_value">防御</string>
+    <string name="text_special_attack_value">特攻</string>
+    <string name="text_special_defense_value">特防</string>
+    <string name="text_pokemon_speed_value">速度</string>
+    <string name="btn_insert_to_datebase">加入データベース</string>
+
+    <!--activity_set_post_url-->
+    <string name="btn_test_server_url">テスト服url</string>
+    <string name="btn_official_server_url">正式服url</string>
+    <string name="btn_custion_server_url">カスタムurl</string>
+    <string name="btn_set_url_confirm">確定</string>
+    <string name="btn_clear_sharedpreferences">クリアSharedPreferences</string>
+
+    <!--activity_system_get_photo-->
+    <string name="btn_change_photo">改正画像</string>
+
+    <!--activity_system_res-->
+    <string name="btn_get_system_permission">アクセスシステム権限</string>
+    <string name="btn_get_ablum_resourcd">アルバム資源獲得</string>
+    <string name="btn_take_photo">选図や写真撮影に</string>
+    <string name="btn_get_contacts">コンタクトをシステム</string>
+
+    <!--activity_thread_pool_test-->
+    <string name="btn_do_asynctask">AsyncTask</string>
+    <string name="btn_do_heart_request">ときめき請求</string>
+    <string name="btn_do_queue_request">列請求</string>
+    <string name="btn_do_cache_pool">バッファプールスレッド</string>
+    <string name="btn_do_fix_pool">定線程池</string>
+    <string name="btn_do_delayed_pool">遅延執行</string>
+    <string name="btn_do_period_pool">サイクル実行</string>
+    <string name="btn_do_alway_period_pool">週期ごとに遅延執行</string>
+    <string name="btn_do_single_pool">単線程スレッド池</string>
+    <string name="btn_cancel_all_thread">を除く全てのスレッドが</string>
+    <string name="btn_clear_thread_msg">クリア情報</string>
+
+    <!--content_main-->
+    <string name="text_network_timeout_msg">接続タイムアウトをチェックしてくださいあなたのネットワーク設定。</string>
+
+    <!--dialog_evaluation-->
+    <string name="dialog_title_evalutation">評価業務</string>
+    <string name="dialog_text_my_score">私の採点</string>
+    <string name="dialog_text_hint">記入した感じや意見&#8230;</string>
+    <string name="dialog_btn_confirm_evalutation">提出ご評価</string>
+
+    <!--dialog_input_content-->
+    <string name="dialog_input_confirm">確定</string>
+    <string name="dialog_input_cancel">キャンセル</string>
+
+    <!--dialog_tips_action-->
+    <string name="dialog_tips_confirm">確定</string>
+    <string name="dialog_tips_cancel">キャンセル</string>
+
+    <!--fragment_home-->
+    <string name="text_select_by_key">検索キーワードを入力</string>
+
+    <!--fragment_mine-->
+    <string name="title_mine">私の</string>
+    <string name="btn_imitate_qq_interface">倣QQインターフェース</string>
+    <string name="btn_material_design_interface">Material Designインタフェース</string>
+    <string name="btn_my_tools">私の道具</string>
+
+    <!--include_app_info_detail-->
+    <string name="btn_app_info_detail">詳細</string>
+    <string name="btn_uninstall_app">アンロード</string>
+
+    <!--include_qq_left_menu-->
+    <string name="text_edit_personalized_signature">編集個性簽名</string>
+
+    <!--include_qq_right_content-->
+    <string name="text_network_connect_msg">接続タイムアウトをチェックしてくださいあなたのネットワーク設定。</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

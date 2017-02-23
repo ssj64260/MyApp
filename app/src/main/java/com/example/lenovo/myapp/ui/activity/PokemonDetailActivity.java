@@ -42,6 +42,8 @@ import java.util.List;
 
 public class PokemonDetailActivity extends BaseActivity {
 
+    public static final String POKEMON = "pokemon";
+
     private ScrollView svBackground;//总背景色
 
     private TextView tvCnName;//中文名
@@ -88,7 +90,7 @@ public class PokemonDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_detail);
 
-        pokemon = (PokemonBean) getIntent().getSerializableExtra("pokemon");
+        pokemon = (PokemonBean) getIntent().getSerializableExtra(POKEMON);
 
         initView();
         setData();

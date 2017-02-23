@@ -34,6 +34,8 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.lenovo.myapp.ui.activity.PokemonDetailActivity.POKEMON;
+
 /**
  * 附近
  */
@@ -125,7 +127,7 @@ public class DiscoveryFragment extends Fragment {
                                             if (!FastClick.isFastClick()) {
                                                 Intent intent = new Intent();
                                                 intent.setClass(getActivity(), PokemonDetailActivity.class);
-                                                intent.putExtra("pokemon", pmAdapter.getList().get(position));
+                                                intent.putExtra(POKEMON, pmAdapter.getList().get(position));
                                                 startActivity(intent);
                                             }
                                         }

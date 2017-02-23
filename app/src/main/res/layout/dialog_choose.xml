@@ -52,7 +52,7 @@
         android:layout_height="48dp"
         android:background="@drawable/selector_bg_iselectable"
         android:gravity="center"
-        android:text="取消"
+        tools:text="取消"
         android:textColor="#333333"
         android:textSize="14sp" />
 

@@ -1,7 +1,7 @@
-.gradle/2.*/
-/build/
-*/build/
-/.idea
+.gradle/
+build/
+Users/
+.idea
 
 
 *.iml
@@ -9,7 +9,7 @@
 *.mk
 *.flags
 *.stackdump
-
+*.pro
 
 
 

@@ -1,13 +1,15 @@
-/local.properties  
-/.idea/workspace.xml  
-/.idea/libraries  
-.DS_Store  
-/build 
-.idea
+.gradle/2.*/
+/build/
+*/build/
+/.idea
 
-DateTimePicker_Lib/build/
-.gradle/2.14.1/
+
 *.iml
-DateTimePicker_Lib/Android.mk
-DateTimePicker_Lib/proguard.flags
-sh.exe.stackdump
+*.properties
+*.mk
+*.flags
+*.stackdump
+
+
+
+

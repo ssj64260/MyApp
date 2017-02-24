@@ -3,6 +3,8 @@ package com.example.lenovo.myapp.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.cxb.tools.utils.LanguageUtil;
+import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
@@ -12,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
 import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_FIRST_START;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_LANGUAGE;
 
 /**
  * 启动页
@@ -26,6 +29,12 @@ public class StartupPageActivity extends BaseActivity {
         ThreadPoolUtil.getInstache().scheduled(new Runnable() {
             @Override
             public void run() {
+
+                String language = PreferencesUtil.getString(APP_SETTING, KEY_LANGUAGE, "");
+                if (!StringCheck.isEmpty(language)) {
+                    LanguageUtil.setLanguage(getResources(), language);
+                }
+
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

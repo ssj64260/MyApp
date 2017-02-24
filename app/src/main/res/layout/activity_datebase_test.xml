@@ -22,12 +22,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:layout_marginTop="10dp">
 
             <Button
                 android:id="@+id/btn_insert_all"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/selector_bg_red_iselectable"
                 android:text="@string/btn_insert_all_data"
@@ -37,7 +39,8 @@
             <Button
                 android:id="@+id/btn_delete_table"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
@@ -49,7 +52,8 @@
             <Button
                 android:id="@+id/btn_delete_db"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/selector_bg_red_iselectable"
                 android:text="@string/btn_delete_database"

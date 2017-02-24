@@ -17,6 +17,7 @@ public class PreferencesUtil {
     public static final String KEY_BASE_URL = "base_url";//接口链接基础部分
 
     public static final String KEY_FIRST_START = "first_start";//首次启动
+    public static final String KEY_LANGUAGE = "language";//语言
 
     public static void setData(String fileName, String key, Object object) {
         String obj = String.valueOf(object);

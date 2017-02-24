@@ -1,16 +1,20 @@
 package com.example.lenovo.myapp.ui.activity.test;
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 
-import com.cxb.tools.utils.ToastUtil;
+import com.cxb.tools.utils.LanguageUtil;
 import com.example.lenovo.myapp.R;
+import com.example.lenovo.myapp.ui.activity.PokemonMainActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.PreferencesUtil;
 
 import java.util.Locale;
+
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_LANGUAGE;
 
 /**
  * 多语言
@@ -39,13 +43,15 @@ public class MultiLanguageActivity extends BaseActivity {
 
     }
 
-    private void setLanguage(Locale language){
-        Resources resources = getResources();
-        DisplayMetrics dm = resources.getDisplayMetrics();
-        Configuration config = resources.getConfiguration();
-        config.locale = language;
-        resources.updateConfiguration(config, dm);
-        ToastUtil.toast("设置成功，请重启APP");
+    private void setLanguage(Locale language) {
+        LanguageUtil.setLanguage(getResources(), language.getLanguage());
+
+        PreferencesUtil.setData(APP_SETTING, KEY_LANGUAGE, language.getLanguage());
+
+        Intent intent = new Intent();
+        intent.setClass(this, PokemonMainActivity.class);
+        intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     //点击监听

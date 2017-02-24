@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/meituan_green"
+    android:background="#11141A"
     android:fitsSystemWindows="true"
     android:gravity="center_vertical"
     android:orientation="horizontal">
@@ -15,71 +15,121 @@
 
         <Button
             android:id="@+id/btn_async_task"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_asynctask"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_heart_get"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_heart_request"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_sequence"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_queue_request"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_cached_thread_pool"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_cache_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_fixed_thread_pool"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_fix_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_scheduled_thread_pool"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_delayed_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_scheduled_thread_pool_rate"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_period_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_scheduled_thread_pool_delay"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_alway_period_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_single_thread_pool"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_do_single_pool"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_shut_down"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_cancel_all_thread"
             android:textAllCaps="false" />
     </LinearLayout>
@@ -92,8 +142,13 @@
 
         <Button
             android:id="@+id/btn_clear"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
             android:text="@string/btn_clear_thread_msg"
             android:textAllCaps="false" />
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/meituan_green"
+    android:background="#11141A"
     android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
     android:orientation="vertical">
@@ -52,33 +52,39 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/text_date1" />
+                android:minHeight="40dp"
+                android:text="@string/text_date1"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_date1"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1.2"
                 android:background="@drawable/shape_bg_stroke_gray"
                 android:gravity="center"
                 android:maxLength="10"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:minHeight="40dp" />
 
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/text_time1" />
+                android:minHeight="40dp"
+                android:text="@string/text_time1"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_time1"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_bg_stroke_gray"
                 android:gravity="center"
                 android:maxLength="8"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:minHeight="40dp" />
 
         </LinearLayout>
 
@@ -86,66 +92,76 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="1dp"
-            android:background="@color/black" />
+            android:background="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:gravity="center">
 
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/text_date2" />
+                android:minHeight="40dp"
+                android:text="@string/text_date2"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_date2"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1.2"
                 android:background="@drawable/shape_bg_stroke_gray"
                 android:gravity="center"
                 android:maxLength="10"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:minHeight="40dp" />
 
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/text_time2" />
+                android:minHeight="40dp"
+                android:text="@string/text_time2"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_time2"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_bg_stroke_gray"
                 android:gravity="center"
                 android:maxLength="8"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:minHeight="40dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:gravity="center_vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btn_get_friendly_datetime"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:text="@string/text_friendly_time1" />
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:minHeight="40dp"
+                android:text="@string/text_friendly_time1"
+                android:textColor="@color/white" />
 
             <RadioGroup
                 android:id="@+id/rg_date"
-                android:layout_width="0dp"
-                android:layout_weight="1.3"
-                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:checkedButton="@+id/rb_year"
                 android:gravity="center"
+                android:minHeight="40dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -153,21 +169,27 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/radio_btn_year" />
+                    android:minHeight="40dp"
+                    android:text="@string/radio_btn_year"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/rb_month"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/radio_btn_month" />
+                    android:minHeight="40dp"
+                    android:text="@string/radio_btn_month"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/rb_day"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/radio_btn_day" />
+                    android:minHeight="40dp"
+                    android:text="@string/radio_btn_day"
+                    android:textColor="@color/white" />
 
             </RadioGroup>
         </LinearLayout>
@@ -175,64 +197,90 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:layout_marginTop="10dp"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/text_get_apart" />
+                android:minHeight="40dp"
+                android:text="@string/text_get_apart"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_get_difference_year"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_number_of_year" />
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:minHeight="40dp"
+                android:text="@string/btn_number_of_year"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_get_difference_month"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                android:text="@string/btn_number_of_month" />
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:minHeight="40dp"
+                android:text="@string/btn_number_of_month"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_get_difference_day"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                android:text="@string/btn_number_of_day" />
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:minHeight="40dp"
+                android:text="@string/btn_number_of_day"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_get_difference_time"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
-                android:text="@string/btn_number_of_minute" />
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:minHeight="40dp"
+                android:text="@string/btn_number_of_minute"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:layout_marginTop="10dp"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/btn_get_current_datetime"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:minHeight="40dp"
                 android:text="@string/btn_get_current_time"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btn_clear"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:minHeight="40dp"
                 android:text="@string/btn_clear_datetime_data"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>

@@ -73,7 +73,7 @@ public class DatebaseTestActivity extends BaseActivity {
 
     private void initView() {
         progressDialog = new DefaultProgressDialog(this);
-        progressDialog.setMessage("加载中...");
+        progressDialog.setMessage(getString(R.string.text_loading));
 
         rvPmList = (RecyclerView) findViewById(R.id.rv_pm_list);
 
@@ -199,7 +199,7 @@ public class DatebaseTestActivity extends BaseActivity {
                     @Override
                     public void run() {
                         mAdapter.notifyDataSetChanged();
-                        ToastUtil.toast("删除表成功");
+                        ToastUtil.toast(getString(R.string.toast_delete_data_table_success));
                         progressDialog.dismissDialog();
                     }
                 });
@@ -220,10 +220,10 @@ public class DatebaseTestActivity extends BaseActivity {
                     break;
                 case R.id.btn_delete_db:
                     if (LiteOrmHelper.deleteDB()) {
-                        ToastUtil.toast("删除数据库成功");
+                        ToastUtil.toast(getString(R.string.toast_delete_database_success));
                         finish();
                     } else {
-                        ToastUtil.toast("数据库不存在或删除失败");
+                        ToastUtil.toast(getString(R.string.toast_delete_database_error));
                     }
                     break;
             }

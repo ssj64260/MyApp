@@ -154,7 +154,7 @@ public class CustomViewTestActivity extends BaseActivity {
             cities.clear();
             cities.addAll(addressDBHelper.getCity("6"));
         } else {
-            ToastUtil.toast("数据库文件不存在");
+            ToastUtil.toast(getString(R.string.toast_datebase_file_not_exists));
         }
 
         loopCity.setOnTouchListener(touch);
@@ -260,12 +260,12 @@ public class CustomViewTestActivity extends BaseActivity {
         public void onTick(long millisUntilFinished) {
             Logger.d(millisUntilFinished);
             downTime--;
-            btnGetCode.setText(String.format("(%d) 再次倒数", downTime));
+            btnGetCode.setText(String.format(getString(R.string.btn_count_down_again), downTime));
         }
 
         @Override
         public void onFinish() {
-            btnGetCode.setText("倒数60秒");
+            btnGetCode.setText(getString(R.string.btn_count_down_60_second));
             btnGetCode.setClickable(true);
             timer.cancel();
         }
@@ -316,7 +316,7 @@ public class CustomViewTestActivity extends BaseActivity {
                         mpbProgress.setCurrentNumber(Float.parseFloat(number));
                         mpbProgress.showAnimation();
                     } else {
-                        ToastUtil.toast("不是纯数字");
+                        ToastUtil.toast(getString(R.string.toast_not_only_number));
                     }
                     break;
                 case R.id.btn_get_address:
@@ -329,7 +329,7 @@ public class CustomViewTestActivity extends BaseActivity {
                     break;
                 case R.id.btn_first_start:
                     PreferencesUtil.setData(APP_SETTING, KEY_FIRST_START, true);
-                    ToastUtil.toast("设置成功");
+                    ToastUtil.toast(getString(R.string.toast_open_guide_setting_success));
                     break;
             }
         }

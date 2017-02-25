@@ -205,24 +205,113 @@
     <!--include_qq_right_content-->
     <string name="text_network_connect_msg">连接超时，请检查你的网络设置。</string>
 
+    <!--============== 全局通用 ================-->
+    <string name="text_loading">加载中&#8230;</string>
+    <string name="text_requesting">请求中&#8230;</string>
+    <string name="text_downloading">下载中&#8230;</string>
+    <string name="text_contacts_permission_message">在设置-应用-%1$s-权限中开启通讯录权限，以正常使用获取联系人信息功能</string>
+    <string name="text_call_permission_message">在设置-应用-%1$s-权限中开启电话权限，以正常使用该功能</string>
+    <string name="text_calendar_permission_message">在设置-应用-%1$s-权限中开启日历权限，以正常使用该功能</string>
+    <string name="text_camera_permission_message">在设置-应用-%1$s-权限中开启相机权限，以正常使用该功能</string>
+    <string name="text_location_permission_message">在设置-应用-%1$s-权限中开启位置信息权限，以正常使用该功能</string>
+    <string name="text_storage_permission_message">在设置-应用-%1$s-权限中开启存储权限，以正常使用该功能</string>
+    <string name="text_audio_permission_message">在设置-应用-%1$s-权限中开启麦克风权限，以正常使用该功能</string>
+    <string name="text_sms_permission_message">在设置-应用-%1$s-权限中开启短信权限，以正常使用该功能</string>
+    <string name="text_sensors_permission_message">在设置-应用-%1$s-权限中开启身体传感器权限，以正常使用该功能</string>
 
 
 
+    <!--DatebaseDetailActivity-->
+    <string name="toast_not_pokemon_info">没有该Pokemon的信息</string>
+    <string name="toast_pokemon_data_update_success">更新成功</string>
+    <string name="toast_pokemon_name_not_null">名字不能为空</string>
+    <string name="toast_pokemon_data_delete_success">删除成功</string>
 
+    <!--DatebaseTestActivity-->
+    <string name="toast_delete_data_table_success">删除表成功</string>
+    <string name="toast_delete_database_success">删除数据库成功</string>
+    <string name="toast_delete_database_error">数据库不存在或删除失败</string>
 
+    <!--SystemGetPhotoActivity-->
+    <string name="btn_choose_from_mobile">从手机相册选择</string>
+    <string name="btn_choose_from_take_photo">拍照</string>
+    <string name="btn_do_not_choose">取消</string>
 
+    <!--SystemResActivity-->
+    <string name="toast_had_got_all_permission">已获取所有权限</string>
 
+    <!--CustomViewTestActivity-->
+    <string name="toast_datebase_file_not_exists">数据库文件不存在</string>
+    <string name="toast_not_only_number">不是纯数字</string>
+    <string name="toast_open_guide_setting_success">设置成功</string>
+    <string name="btn_count_down_again">(%d) 再次倒数</string>
+    <string name="btn_count_down_60_second">倒数60秒</string>
 
+    <!--DialogTestActivity-->
+    <string name="text_tips_dialog_title">确定要这样？</string>
+    <string name="btn_tips_dialog_confirm">确定</string>
+    <string name="btn_tips_dialog_cancel">取消</string>
+    <string name="toast_you_can_not_do_that">你不能这样的！</string>
+    <string name="text_input_dialog_title">请填写发送的内容</string>
+    <string name="text_input_dialog_send">发送</string>
+    <string name="text_input_dialog_close">关闭</string>
+    <string name="toast_contant_can_not_null">内容不能为空</string>
+    <string name="text_evalutation_dialog_title">给这个APP评价一次</string>
+    <string name="toast_contant_and_score">评价内容:%1$s 评分:%2$f</string>
 
+    <!--MyToolsActivity-->
+    <string name="btn_tool_1">ViewPager简介</string>
+    <string name="btn_tool_2">接口测试</string>
+    <string name="btn_tool_3">动画测试</string>
+    <string name="btn_tool_4">对话框测试</string>
+    <string name="btn_tool_5">线程池测试</string>
+    <string name="btn_tool_6">日期工具测试</string>
+    <string name="btn_tool_7">列表嵌套测试</string>
+    <string name="btn_tool_8">已安装APP信息</string>
+    <string name="btn_tool_9">自定义控件展示</string>
+    <string name="btn_tool_10">获取系统资源</string>
+    <string name="btn_tool_11">LiteOrm数据库工具</string>
+    <string name="btn_tool_12">WebView Demo</string>
+    <string name="btn_tool_13">多语言设置</string>
 
+    <!--OkhttpTestActivity-->
+    <string name="toast_version_name">版本号：%s</string>
+    <string name="toast_have_new_version">有更新，请下载</string>
+    <string name="toast_not_any_update">无更新</string>
+    <string name="text_geting_today_weather">获取今天天气中&#8230;</string>
+    <string name="text_geting_weather_forecast">获取天气预报中&#8230;</string>
+    <string name="text_geting_github_info">获取GitHub信息中&#8230;</string>
+    <string name="text_geting_verification_info">获取需验证数据中&#8230;</string>
+    <string name="text_downloading_with_progress">下载中：%1$s/%2$s</string>
+    <string name="toast_download_success">下载成功</string>
+    <string name="toast_download_had_been_cancel">已取消下载，下载失败</string>
+    <string name="toast_get_today_weather_error">请求今天天气失败</string>
+    <string name="toast_get_weather_forecast_error">请求天气预报失败</string>
+    <string name="toast_get_okhttp_info_error">请求Okhttp失败</string>
+    <string name="toast_get_okhttp_verification_info_error">Okhttp验证请求失败</string>
+    <string name="toast_get_today_weather_success">请求今天天气成功</string>
+    <string name="toast_get_weather_forecast_success">请求天气预报成功</string>
+    <string name="toast_get_okhttp_info_success">请求Okhttp成功</string>
+    <string name="toast_get_okhttp_verification_info_success">Okhttp验证请求成功</string>
 
+    <!--AdPagesActivity-->
+    <string name="btn_ad_skip">跳过%d</string>
 
+    <!--MainActivity-->
+    <string name="toast_had_connected_cmnet">已连接CMNET移动网络</string>
+    <string name="toast_had_connected_cmwap">已连接CMWAP移动网络</string>
+    <string name="toast_had_connected_wifi">已连接WIFI网络，可以正常使用</string>
 
+    <!--PokemonDetailActivity-->
+    <string name="text_pokemon_characteristic_or">%1$s 或 %2$s</string>
+    <string name="text_pokemon_characteristic_not">无</string>
+    <string name="toast_pokemon_had_added_to_datebase">已经成功加入数据库</string>
 
-
-
-
-
+    <!--PokemonMainActivity-->
+    <string name="btn_pokemon_home">首页</string>
+    <string name="btn_pokemon_pokedex">图鉴</string>
+    <string name="btn_pokemon_mine">我的</string>
+    <string name="tosat_double_click_to_exit">再次点击退出程序</string>
 
 
 

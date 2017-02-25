@@ -233,14 +233,14 @@ public class PokemonDetailActivity extends BaseActivity {
             }
 
             if (cNames.size() >= 3) {
-                tvCharacteristic1.setText(cNames.get(0) + "  或  " + cNames.get(1));
+                tvCharacteristic1.setText(String.format(getString(R.string.text_pokemon_characteristic_or), cNames.get(0), cNames.get(1)));
                 tvCharacteristic2.setText(cNames.get(2));
             } else if (cNames.size() >= 2) {
                 tvCharacteristic1.setText(cNames.get(0));
                 tvCharacteristic2.setText(cNames.get(1));
             } else {
                 tvCharacteristic1.setText(cNames.get(0));
-                tvCharacteristic2.setText("无");
+                tvCharacteristic2.setText(getString(R.string.text_pokemon_characteristic_not));
             }
             tvCharacteristic1.setOnClickListener(click);
             tvCharacteristic2.setOnClickListener(click);
@@ -346,7 +346,7 @@ public class PokemonDetailActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        ToastUtil.toast("已经成功加入数据库");
+                        ToastUtil.toast(getString(R.string.toast_pokemon_had_added_to_datebase));
                     }
                 });
             }

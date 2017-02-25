@@ -90,7 +90,7 @@ public class OkhttpTestActivity extends BaseActivity {
     private void initView() {
         progressDialog = new DefaultProgressDialog(this);
         progressDialog.setOnkeyListener(backClick);
-        progressDialog.setMessage("请求中...");
+        progressDialog.setMessage(getString(R.string.text_requesting));
 
         btnChange = (Button) findViewById(R.id.btn_change_url);
         btnChange.setOnClickListener(btnClick);
@@ -160,15 +160,15 @@ public class OkhttpTestActivity extends BaseActivity {
                 case R.id.btn_get_app_version:
                     String version = VersionUtil.getVersionName(MyApplication.getInstance());
                     version1.setText(version);
-                    ToastUtil.toast("版本号：" + version);
+                    ToastUtil.toast(String.format(getString(R.string.toast_version_name), version));
                     break;
                 case R.id.btn_compare_version:
                     String v1 = version1.getText().toString();
                     String v2 = version2.getText().toString();
                     if (VersionUtil.isNewVersionName(v1, v2)) {
-                        ToastUtil.toast("有更新，请下载");
+                        ToastUtil.toast(getString(R.string.toast_have_new_version));
                     } else {
-                        ToastUtil.toast("无更新");
+                        ToastUtil.toast(getString(R.string.toast_not_any_update));
                     }
                     break;
             }
@@ -177,7 +177,7 @@ public class OkhttpTestActivity extends BaseActivity {
 
     //GET获取当天天气
     private void getTodayWeather() {
-        progressDialog.setMessage("获取今天天气中...");
+        progressDialog.setMessage(getString(R.string.text_geting_today_weather));
         progressDialog.showDialog();
 
         Type returnType = new TypeToken<WeatherToday>() {
@@ -197,7 +197,7 @@ public class OkhttpTestActivity extends BaseActivity {
 
     //POST获取天气预报
     private void getWeather() {
-        progressDialog.setMessage("获取天气预报中...");
+        progressDialog.setMessage(getString(R.string.text_geting_weather_forecast));
         progressDialog.showDialog();
         getWeatherCall.setParams("101280800");
         getWeatherCall.requestCall();
@@ -205,7 +205,7 @@ public class OkhttpTestActivity extends BaseActivity {
 
     //获取GitHub信息
     private void getGitHubInfo() {
-        progressDialog.setMessage("获取GitHub信息中...");
+        progressDialog.setMessage(getString(R.string.text_geting_github_info));
         progressDialog.showDialog();
         getTodayWeather.setRequestId(ID_GET_GITHUB_INFO)
                 .setCurrentProtocol(OkHttpBaseApi.Protocol.HTTPS)
@@ -215,7 +215,7 @@ public class OkhttpTestActivity extends BaseActivity {
 
     //获取需验证的数据
     private void getAuthenticatorData() {
-        progressDialog.setMessage("获取需验证数据中...");
+        progressDialog.setMessage(getString(R.string.text_geting_verification_info));
         progressDialog.showDialog();
         getOkhttpAuthInfo.setRequestId(ID_GET_OKHTTP_INFO)
                 .setCurrentProtocol(URLSetting.getInstance().getBaseProtocol())
@@ -224,7 +224,7 @@ public class OkhttpTestActivity extends BaseActivity {
     }
 
     private void downloadFile() {
-        progressDialog.setMessage("下载中...");
+        progressDialog.setMessage(getString(R.string.text_downloading));
         progressDialog.showDialog();
 
         String fileName = "duiduoduo.apk";
@@ -260,13 +260,13 @@ public class OkhttpTestActivity extends BaseActivity {
         public void onPregrass(long curSize, long maxSize) {
             String curDownload = FileUtil.FormetFileSize(MyApplication.getInstance(), curSize);
             String totalDownload = FileUtil.FormetFileSize(MyApplication.getInstance(), maxSize);
-            progressDialog.setMessage("下载中：" + curDownload + "/" + totalDownload);
+            progressDialog.setMessage(String.format(getString(R.string.text_downloading_with_progress), curDownload, totalDownload));
         }
 
         @Override
         public void onSuccess(String fileUri) {
             progressDialog.dismissDialog();
-            ToastUtil.toast("下载成功");
+            ToastUtil.toast(getString(R.string.toast_download_success));
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(Uri.fromFile(new File(fileUri)), "application/vnd.android.package-archive");
             startActivity(intent);
@@ -275,7 +275,7 @@ public class OkhttpTestActivity extends BaseActivity {
         @Override
         public void onFailed(String fileUri) {
             progressDialog.dismissDialog();
-            ToastUtil.toast("已取消下载，下载失败");
+            ToastUtil.toast(getString(R.string.toast_download_had_been_cancel));
         }
     };
 
@@ -289,16 +289,16 @@ public class OkhttpTestActivity extends BaseActivity {
             } else {
                 switch (requestId) {
                     case ID_GET_WEATHER:
-                        ToastUtil.toast("请求今天天气失败");
+                        ToastUtil.toast(getString(R.string.toast_get_today_weather_error));
                         break;
                     case ID_POST_WEATHER:
-                        ToastUtil.toast("请求天气预报失败");
+                        ToastUtil.toast(getString(R.string.toast_get_weather_forecast_error));
                         break;
                     case ID_GET_GITHUB_INFO:
-                        ToastUtil.toast("请求Okhttp失败");
+                        ToastUtil.toast(getString(R.string.toast_get_okhttp_info_error));
                         break;
                     case ID_GET_OKHTTP_INFO:
-                        ToastUtil.toast("Okhttp验证请求失败");
+                        ToastUtil.toast(getString(R.string.toast_get_okhttp_verification_info_error));
                         break;
                 }
             }
@@ -322,7 +322,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             content += "湿度：" + info.getHumidity();
                         }
                     }
-                    ToastUtil.toast("请求今天天气成功");
+                    ToastUtil.toast(getString(R.string.toast_get_today_weather_success));
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                     break;
                 case ID_POST_WEATHER:
@@ -340,7 +340,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             }
                         }
                     }
-                    ToastUtil.toast("请求天气预报成功");
+                    ToastUtil.toast(getString(R.string.toast_get_weather_forecast_success));
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                     break;
                 case ID_GET_GITHUB_INFO:
@@ -350,7 +350,7 @@ public class OkhttpTestActivity extends BaseActivity {
                         content += entry.getKey() + "\n" + entry.getValue().content + "\n";
                     }
                     content = StringUtils.halfToFull(content);
-                    ToastUtil.toast("请求Okhttp成功");
+                    ToastUtil.toast(getString(R.string.toast_get_okhttp_info_success));
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 3);
                     break;
                 case ID_GET_OKHTTP_INFO:
@@ -358,7 +358,7 @@ public class OkhttpTestActivity extends BaseActivity {
                         content += dataObject.toString();
                     }
                     content = StringUtils.halfToFull(content);
-                    ToastUtil.toast("Okhttp验证请求成功");
+                    ToastUtil.toast(getString(R.string.toast_get_okhttp_verification_info_success));
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 3);
                     break;
             }

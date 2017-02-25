@@ -80,7 +80,7 @@ public class AlbumListActivity extends BaseActivity {
 
     private void initView() {
         progressDialog = new DefaultProgressDialog(this);
-        progressDialog.setMessage("加载中...");
+        progressDialog.setMessage(getString(R.string.text_loading));
 
         tvCancel = (TextView) findViewById(R.id.tv_cancel);
         rvAlbumList = (RecyclerView) findViewById(R.id.rv_album_list);
@@ -94,7 +94,7 @@ public class AlbumListActivity extends BaseActivity {
                 Manifest.permission.READ_EXTERNAL_STORAGE,
         };
         refuseTips = new String[]{
-                String.format("在设置-应用-%1$s-权限中开启存储权限，以正常使用该功能", appName),
+                String.format(getString(R.string.text_storage_permission_message), appName),
         };
         setPermissions();
     }

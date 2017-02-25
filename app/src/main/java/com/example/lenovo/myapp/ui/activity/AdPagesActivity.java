@@ -37,7 +37,7 @@ public class AdPagesActivity extends BaseActivity {
             }
         });
 
-        tvSkip.setText("跳过" + time);
+        tvSkip.setText(String.format(getString(R.string.btn_ad_skip), time));
 
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
@@ -52,7 +52,7 @@ public class AdPagesActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            tvSkip.setText("跳过" + time);
+                            tvSkip.setText(String.format(getString(R.string.btn_ad_skip), time));
                         }
                     });
 

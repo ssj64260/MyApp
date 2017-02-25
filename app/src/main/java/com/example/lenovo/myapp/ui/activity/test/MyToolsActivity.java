@@ -17,6 +17,7 @@ import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -29,22 +30,6 @@ public class MyToolsActivity extends BaseActivity {
     private RecyclerView rvTools;
     private List<String> list;
     private MyToolsAdapter mAdapter;
-
-    String[] toolNames = {
-            "ViewPager简介",
-            "接口测试",
-            "动画测试",
-            "对话框测试",
-            "线程池测试",
-            "日期工具测试",
-            "列表嵌套测试",
-            "已安装APP信息",
-            "自定义控件展示",
-            "获取系统资源",
-            "LiteOrm数据库工具",
-            "WebView Demo",
-            "多语言设置"
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,10 +56,24 @@ public class MyToolsActivity extends BaseActivity {
         rvTools.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rvTools.setAdapter(mAdapter);
 
+        String[] toolNames = {
+                getString(R.string.btn_tool_1),
+                getString(R.string.btn_tool_2),
+                getString(R.string.btn_tool_3),
+                getString(R.string.btn_tool_4),
+                getString(R.string.btn_tool_5),
+                getString(R.string.btn_tool_6),
+                getString(R.string.btn_tool_7),
+                getString(R.string.btn_tool_8),
+                getString(R.string.btn_tool_9),
+                getString(R.string.btn_tool_10),
+                getString(R.string.btn_tool_11),
+                getString(R.string.btn_tool_12),
+                getString(R.string.btn_tool_13)
+        };
+
         list.clear();
-        for (String str : toolNames) {
-            list.add(str);
-        }
+        Collections.addAll(list, toolNames);
         mAdapter.notifyDataSetChanged();
     }
 

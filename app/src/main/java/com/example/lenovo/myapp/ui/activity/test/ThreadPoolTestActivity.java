@@ -118,7 +118,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
     private void initData() {
         progressDialog = new DefaultProgressDialog(this);
-        progressDialog.setMessage("请求中...");
+        progressDialog.setMessage(getString(R.string.text_requesting));
 
         getAd = new OkHttpSynchApi()
                 .addListener(callBack);

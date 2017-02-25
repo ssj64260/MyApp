@@ -100,7 +100,7 @@ public class ContactsListActivity extends BaseActivity {
                 Manifest.permission.READ_CONTACTS,
         };
         refuseTips = new String[]{
-                String.format("在设置-应用-%1$s-权限中开启通讯录权限，以正常使用获取联系人信息功能", appName),
+                String.format(getString(R.string.text_contacts_permission_message), appName),
         };
         setPermissions();
     }

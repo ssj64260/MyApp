@@ -64,15 +64,15 @@ public class SystemResActivity extends BaseActivity {
                 Manifest.permission.BODY_SENSORS
         };
         refuseTips = new String[]{
-                String.format("在设置-应用-%1$s-权限中开启通讯录权限，以正常使用获取联系人信息功能", appName),
-                String.format("在设置-应用-%1$s-权限中开启电话权限，以正常使用该功能", appName),
-                String.format("在设置-应用-%1$s-权限中开启日历权限，以正常使用该功能", appName),
-                String.format("在设置-应用-%1$s-权限中开启相机权限，以正常使用该功能", appName),
-                String.format("在设置-应用-%1$s-权限中开启位置信息权限，以正常使用该功能", appName),
-                String.format("在设置-应用-%1$s-权限中开启存储权限，以正常使用该功能", appName),
-                String.format("在设置-应用-%1$s-权限中开启麦克风权限，以正常使用该功能", appName),
-                String.format("在设置-应用-%1$s-权限中开启短信权限，以正常使用该功能", appName),
-                String.format("在设置-应用-%1$s-权限中开启身体传感器权限，以正常使用该功能", appName)
+                String.format(getString(R.string.text_contacts_permission_message), appName),
+                String.format(getString(R.string.text_call_permission_message), appName),
+                String.format(getString(R.string.text_calendar_permission_message), appName),
+                String.format(getString(R.string.text_camera_permission_message), appName),
+                String.format(getString(R.string.text_location_permission_message), appName),
+                String.format(getString(R.string.text_storage_permission_message), appName),
+                String.format(getString(R.string.text_audio_permission_message), appName),
+                String.format(getString(R.string.text_sms_permission_message), appName),
+                String.format(getString(R.string.text_sensors_permission_message), appName)
         };
         setPermissions();
     }
@@ -100,6 +100,6 @@ public class SystemResActivity extends BaseActivity {
 
     @Override
     public void onPermissionSuccess() {
-        ToastUtil.toast("已获取所有权限");
+        ToastUtil.toast(getString(R.string.toast_had_got_all_permission));
     }
 }

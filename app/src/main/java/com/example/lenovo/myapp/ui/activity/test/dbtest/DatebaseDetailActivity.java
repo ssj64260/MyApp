@@ -55,11 +55,11 @@ public class DatebaseDetailActivity extends BaseActivity {
                 btnUpdate.setOnClickListener(click);
                 btnDelete.setOnClickListener(click);
             } else {
-                ToastUtil.toast("没有该Pokemon的信息");
+                ToastUtil.toast(getString(R.string.toast_not_pokemon_info));
                 finish();
             }
         } else {
-            ToastUtil.toast("没有该Pokemon的信息");
+            ToastUtil.toast(getString(R.string.toast_not_pokemon_info));
             finish();
         }
     }
@@ -74,15 +74,15 @@ public class DatebaseDetailActivity extends BaseActivity {
                     if (!StringCheck.isEmpty(name)) {
                         pokemon.setName(name);
                         PokemonDBHelper.updatePokemon(DatebaseDetailActivity.this, pokemon);
-                        ToastUtil.toast("更新成功");
+                        ToastUtil.toast(getString(R.string.toast_pokemon_data_update_success));
                         setResult(RESULT_OK);
                     } else {
-                        ToastUtil.toast("名字不能为空");
+                        ToastUtil.toast(getString(R.string.toast_pokemon_name_not_null));
                     }
                     break;
                 case R.id.btn_delete:
                     PokemonDBHelper.deletePokemon(DatebaseDetailActivity.this, pokemon);
-                    ToastUtil.toast("删除成功");
+                    ToastUtil.toast(getString(R.string.toast_pokemon_data_delete_success));
                     setResult(RESULT_OK);
                     finish();
                     break;

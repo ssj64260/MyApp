@@ -35,7 +35,7 @@ public class DialogTestActivity extends BaseActivity {
         initView();
     }
 
-    private void initView(){
+    private void initView() {
         progressDialog = new DefaultProgressDialog(this);
 
         btnClear = (Button) findViewById(R.id.btn_clear_cache);
@@ -54,7 +54,7 @@ public class DialogTestActivity extends BaseActivity {
     View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch (v.getId()){
+            switch (v.getId()) {
                 case R.id.btn_clear_cache:
                     showTipsActionDialog();
                     break;
@@ -66,7 +66,7 @@ public class DialogTestActivity extends BaseActivity {
                     break;
                 case R.id.btn_input_evaluation:
                     showEvaluationDialog();
-                     break;
+                    break;
             }
         }
     };
@@ -76,19 +76,19 @@ public class DialogTestActivity extends BaseActivity {
     ///////////////////////////////////////////////////////////////////////////
     private void showTipsActionDialog() {
         TipsActionDialog dialog = new TipsActionDialog(this);
-        dialog.setTitleText("确定要这样？");
-        dialog.setConfirmText("确定");
-        dialog.setCancelText("取消");
+        dialog.setTitleText(getString(R.string.text_tips_dialog_title));
+        dialog.setConfirmText(getString(R.string.btn_tips_dialog_confirm));
+        dialog.setCancelText(getString(R.string.btn_tips_dialog_cancel));
         dialog.setOnConfirmListener(new TipsActionDialog.OnConfirmListener() {
             @Override
             public void OnConfirmListener(View v) {
-                ToastUtil.toast("你不能这样的！");
+                ToastUtil.toast(getString(R.string.toast_you_can_not_do_that));
             }
         });
     }
 
     private void showProgressDialog() {
-        progressDialog.setMessage("加载中...");
+        progressDialog.setMessage(getString(R.string.text_loading));
         progressDialog.showDialog();
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
@@ -112,15 +112,15 @@ public class DialogTestActivity extends BaseActivity {
     private void showInputContentDialog() {
         InputContentDialog dialog = new InputContentDialog(this);
         dialog.setCanDismissByBackPressed(false);
-        dialog.setTitleText("请填写发送的内容");
-        dialog.setConfirmText("发送");
-        dialog.setCancelText("关闭");
+        dialog.setTitleText(getString(R.string.text_input_dialog_title));
+        dialog.setConfirmText(getString(R.string.text_input_dialog_send));
+        dialog.setCancelText(getString(R.string.text_input_dialog_close));
         dialog.setOnConfirmListener(new InputContentDialog.OnConfirmListener() {
             @Override
             public void OnConfirmListener(View v, String content) {
                 hideKeyboard();
                 if (StringCheck.isEmpty(content)) {
-                    ToastUtil.toast("内容不能为空");
+                    ToastUtil.toast(getString(R.string.toast_contant_can_not_null));
                 } else {
                     ToastUtil.toast(content);
                 }
@@ -130,12 +130,12 @@ public class DialogTestActivity extends BaseActivity {
 
     private void showEvaluationDialog() {
         EvaluationDialog evaDialog = new EvaluationDialog(this);
-        evaDialog.setTitle("给这个APP评价一次");
+        evaDialog.setTitle(getString(R.string.text_evalutation_dialog_title));
         evaDialog.setConfirmDismiss(true);
         evaDialog.setOnSelectedListener(new EvaluationDialog.OnSelectedListener() {
             @Override
             public void OnselectedListener(View v, String content, float score) {
-                ToastUtil.toast("评价内容:" + content + "\n评分:" + score);
+                ToastUtil.toast(String.format(getString(R.string.toast_contant_and_score), content, score));
             }
         });
     }

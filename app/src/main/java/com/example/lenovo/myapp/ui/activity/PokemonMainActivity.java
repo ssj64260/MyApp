@@ -26,7 +26,6 @@ import java.util.List;
 
 public class PokemonMainActivity extends BaseAppCompatActivity {
 
-    private final String[] titles = {"首页", "图鉴", "我的"};
     private final int[] iconSelect = {
             R.drawable.tab_home_select,
             R.drawable.tab_discovery_select,
@@ -57,6 +56,12 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
     }
 
     private void initView() {
+        String[] titles = {
+                getString(R.string.btn_pokemon_home),
+                getString(R.string.btn_pokemon_pokedex),
+                getString(R.string.btn_pokemon_mine)
+        };
+
         for (int i = 0; i < titles.length; i++) {
             mTabEntities.add(new TabEntity(titles[i], iconSelect[i], iconUnselect[i]));
         }
@@ -124,7 +129,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         if (FastClick.isExitClick()) {
             finish();
         } else {
-            ToastUtil.toast("再次点击退出程序");
+            ToastUtil.toast(getString(R.string.tosat_double_click_to_exit));
         }
     }
 }

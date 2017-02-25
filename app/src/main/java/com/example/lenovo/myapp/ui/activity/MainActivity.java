@@ -71,14 +71,14 @@ public class MainActivity extends BaseAppCompatActivity {
                     break;
                 case NetworkUtil.NETWORK_MOBILE:
                     if (apnType == NetworkUtil.NETWORK_TYPE_CMNET) {
-                        ToastUtil.toast("已连接CMNET移动网络");
+                        ToastUtil.toast(getString(R.string.toast_had_connected_cmnet));
                     } else {
-                        ToastUtil.toast("已连接CMWAP移动网络");
+                        ToastUtil.toast(getString(R.string.toast_had_connected_cmwap));
                     }
                     rlNetworkWarm.setVisibility(View.GONE);
                     break;
                 case NetworkUtil.NETWORK_WIFI:
-                    ToastUtil.toast("已连接WIFI网络，可以正常使用");
+                    ToastUtil.toast(getString(R.string.toast_had_connected_wifi));
                     rlNetworkWarm.setVisibility(View.GONE);
                     break;
             }

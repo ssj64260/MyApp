@@ -111,7 +111,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
 
     private void showChooseDialog() {
         chooseDialog = new ChooseDialog(this);
-        chooseDialog.setOnFirstButtonListener("从手机相册选择", new ChooseDialog.OnFirstButtonListener() {
+        chooseDialog.setOnFirstButtonListener(getString(R.string.btn_choose_from_mobile), new ChooseDialog.OnFirstButtonListener() {
             @Override
             public void OnFirstButtonListener(View v) {
                 Intent pickIntent = new Intent(Intent.ACTION_PICK, null);
@@ -119,7 +119,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
                 startActivityForResult(pickIntent, REQUESTCODE_PICK);
             }
         });
-        chooseDialog.setOnSecondButtonListener("拍照", new ChooseDialog.OnSecondButtonListener() {
+        chooseDialog.setOnSecondButtonListener(getString(R.string.btn_choose_from_take_photo), new ChooseDialog.OnSecondButtonListener() {
             @Override
             public void OnSecondButtonListener(View v) {
                 photoUri = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
@@ -128,7 +128,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
                 startActivityForResult(takeIntent, REQUESTCODE_TAKE);
             }
         });
-        chooseDialog.setOnCancelListener("取消", new ChooseDialog.OnCancelListener() {
+        chooseDialog.setOnCancelListener(getString(R.string.btn_do_not_choose), new ChooseDialog.OnCancelListener() {
             @Override
             public void OnCancelListener(View v) {
 

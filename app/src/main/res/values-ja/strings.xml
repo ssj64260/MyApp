@@ -13,27 +13,6 @@
     <string name="menu_nav_send">発送</string>
     <string name="menu_nav_evaluation">評価</string>
 
-
-    <!--口袋妖怪属性-->
-    <string name="general">一般</string>
-    <string name="Fighting">格闘</string>
-    <string name="flight">飛行</string>
-    <string name="poison">毒</string>
-    <string name="ground">地面</string>
-    <string name="rock">岩</string>
-    <string name="insect">虫</string>
-    <string name="ghost">幽霊</string>
-    <string name="steel">鋼</string>
-    <string name="fire">火</string>
-    <string name="water">水</string>
-    <string name="grass">草</string>
-    <string name="Electricity">電気</string>
-    <string name="superpower">超能力</string>
-    <string name="ice">氷</string>
-    <string name="Dragon">竜</string>
-    <string name="evil">悪</string>
-    <string name="Fairy">妖精</string>
-
     <!--activity_album_list-->
     <string name="title_select_album">選択アルバム</string>
     <string name="btn_album_list_cancel">キャンセル</string>
@@ -312,21 +291,26 @@
     <string name="btn_pokemon_mine">私の</string>
     <string name="tosat_double_click_to_exit">再クリック</string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!--QQMainActivity  DiscoveryFragment-->
+    <string name="text_all">全部</string>
+    <string name="text_general">一般</string>
+    <string name="text_fighting">格闘</string>
+    <string name="text_flight">飛行</string>
+    <string name="text_poison">毒</string>
+    <string name="text_ground">地面</string>
+    <string name="text_rock">岩</string>
+    <string name="text_insect">虫</string>
+    <string name="text_ghost">幽霊</string>
+    <string name="text_steel">鋼</string>
+    <string name="text_fire">火</string>
+    <string name="text_water">水</string>
+    <string name="text_grass">草</string>
+    <string name="text_electricity">電気</string>
+    <string name="text_superpower">超能力</string>
+    <string name="text_ice">氷</string>
+    <string name="text_dragon">竜</string>
+    <string name="text_evil">悪</string>
+    <string name="text_fairy">妖精</string>
 
 
 

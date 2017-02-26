@@ -13,27 +13,6 @@
     <string name="menu_nav_send">보내기</string>
     <string name="menu_nav_evaluation">평가</string>
 
-
-    <!--口袋妖怪属性-->
-    <string name="general">보통</string>
-    <string name="Fighting">격투하다.</string>
-    <string name="flight">비행</string>
-    <string name="poison">독</string>
-    <string name="ground">바닥</string>
-    <string name="rock">바위</string>
-    <string name="insect">벌레</string>
-    <string name="ghost">유령</string>
-    <string name="steel">스틸</string>
-    <string name="fire">불</string>
-    <string name="water">물</string>
-    <string name="grass">풀</string>
-    <string name="Electricity">전기</string>
-    <string name="superpower">초능력</string>
-    <string name="ice">얼음</string>
-    <string name="Dragon">용</string>
-    <string name="evil">악</string>
-    <string name="Fairy">요정</string>
-
     <!--activity_album_list-->
     <string name="title_select_album">선택 반전</string>
     <string name="btn_album_list_cancel">취소</string>
@@ -314,10 +293,25 @@
     <string name="btn_pokemon_mine">내</string>
     <string name="tosat_double_click_to_exit">다시 한 번 클릭 프로그램을 종료합니다.</string>
 
-
-
-
-
-
+    <!--QQMainActivity  DiscoveryFragment-->
+    <string name="text_all">전부</string>
+    <string name="text_general">보통</string>
+    <string name="text_fighting">격투하다.</string>
+    <string name="text_flight">비행</string>
+    <string name="text_poison">독</string>
+    <string name="text_ground">바닥</string>
+    <string name="text_rock">바위</string>
+    <string name="text_insect">벌레</string>
+    <string name="text_ghost">유령</string>
+    <string name="text_steel">스틸</string>
+    <string name="text_fire">불</string>
+    <string name="text_water">물</string>
+    <string name="text_grass">풀</string>
+    <string name="text_electricity">전기</string>
+    <string name="text_superpower">초능력</string>
+    <string name="text_ice">얼음</string>
+    <string name="text_dragon">용</string>
+    <string name="text_evil">악</string>
+    <string name="text_fairy">요정</string>
 
 </resources>

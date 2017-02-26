@@ -29,7 +29,7 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
     private LinearLayout mHorizontalTabView;
     private View topTempView;//当前选中的view对象
 
-    private List<NewsTab> tabList;
+    private List<String> tabList;
     private OnItemSelectedListener mOnItemSelectedListener;//点击回调
 
     private int textColorNormal = Color.parseColor("#FF707070");//未选中的字体颜色
@@ -67,7 +67,7 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
         ta.recycle();
     }
 
-    public void addTabList(List<NewsTab> tabList) {
+    public void addTabList(List<String> tabList) {
         this.tabList = tabList;
         initTab();
     }
@@ -83,7 +83,7 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
             final View itemView = mLayoutInflater.inflate(R.layout.item_news_tab, null);
             final TextView name = (TextView) itemView.findViewById(R.id.tv_name);
 
-            String cateName = tabList.get(i).getName();
+            String cateName = tabList.get(i);
 
             if (textSize > 0) {
                 name.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);

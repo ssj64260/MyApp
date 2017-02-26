@@ -10,25 +10,7 @@
     <string name="menu_nav_share">share</string>
     <string name="menu_nav_send">send</string>
     <string name="menu_nav_evaluation">evaluation</string>
-    <!-- Pokemon attribute -->
-    <string name="general">General</string>
-    <string name="Fighting">fighting</string>
-    <string name="flight">flight</string>
-    <string name="poison">poison</string>
-    <string name="ground">ground</string>
-    <string name="rock">rock</string>
-    <string name="insect">bug</string>
-    <string name="ghost">ghost</string>
-    <string name="steel">steel</string>
-    <string name="fire">fire</string>
-    <string name="water">water</string>
-    <string name="grass">grass</string>
-    <string name="Electricity">power</string>
-    <string name="superpower">super power</string>
-    <string name="ice">ice</string>
-    <string name="Dragon">Dragon</string>
-    <string name="evil">bad</string>
-    <string name="Fairy">fairy</string>
+
     <!--activity_album_list-->
     <string name="title_select_album">select album</string>
     <string name="btn_album_list_cancel">Cancel</string>
@@ -284,5 +266,25 @@
     <string name="btn_pokemon_mine">My</string>
     <string name="tosat_double_click_to_exit">Click exit again</string>
 
+    <!--QQMainActivity  DiscoveryFragment-->
+    <string name="text_all">all</string>
+    <string name="text_general">general</string>
+    <string name="text_fighting">fighting</string>
+    <string name="text_flight">flight</string>
+    <string name="text_poison">poison</string>
+    <string name="text_ground">ground</string>
+    <string name="text_rock">rock</string>
+    <string name="text_insect">insect</string>
+    <string name="text_ghost">ghost</string>
+    <string name="text_steel">steel</string>
+    <string name="text_fire">fire</string>
+    <string name="text_water">water</string>
+    <string name="text_grass">grass</string>
+    <string name="text_electricity">electricity</string>
+    <string name="text_superpower">superpower</string>
+    <string name="text_ice">ice</string>
+    <string name="text_dragon">dragon</string>
+    <string name="text_evil">evil</string>
+    <string name="text_fairy">fairy</string>
 
 </resources>

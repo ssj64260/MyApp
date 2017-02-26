@@ -33,7 +33,7 @@ public class PasswordLevelLayout extends LinearLayout {
             R.color.password_level_4
     };
 
-    private final String[] levelText = {
+    private String[] levelText = {
             "低","低", "中", "高", "非常高"
     };
 
@@ -49,6 +49,14 @@ public class PasswordLevelLayout extends LinearLayout {
 
     public PasswordLevelLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
+        levelText = new String[]{
+                context.getString(R.string.text_level_1),
+                context.getString(R.string.text_level_1),
+                context.getString(R.string.text_level_2),
+                context.getString(R.string.text_level_3),
+                context.getString(R.string.text_level_4)
+        };
 
         views = new ArrayList<>();
 

@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 
 import com.cxb.tools.customviewpager.CustomDepthPageTransformer;
 import com.cxb.tools.newstab.HorizontalTabListScrollView;
-import com.cxb.tools.newstab.NewsTab;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.StringCheck;
@@ -51,6 +50,7 @@ public class DiscoveryFragment extends Fragment {
     private List<PokemonBean> pmList;
 
     private List<PropertyBean> propertyList;
+    private List<String> propertyNames;
 
     private List<View> rvList;
 
@@ -65,6 +65,7 @@ public class DiscoveryFragment extends Fragment {
         if (view == null) {
             view = inflater.inflate(R.layout.fragment_discovery, null);
 
+            initData();
             initView();
             setData();
         }
@@ -78,6 +79,34 @@ public class DiscoveryFragment extends Fragment {
             mainThread.removeCallbacksAndMessages(null);
         }
         super.onDestroy();
+    }
+
+    private void initData(){
+        rvList = new ArrayList<>();
+        adapterList = new ArrayList<>();
+        pmList = new ArrayList<>();
+        propertyList = new ArrayList<>();
+        propertyNames = new ArrayList<>();
+
+        propertyNames.add(getString(R.string.text_all));
+        propertyNames.add(getString(R.string.text_general));
+        propertyNames.add(getString(R.string.text_fighting));
+        propertyNames.add(getString(R.string.text_flight));
+        propertyNames.add(getString(R.string.text_poison));
+        propertyNames.add(getString(R.string.text_ground));
+        propertyNames.add(getString(R.string.text_rock));
+        propertyNames.add(getString(R.string.text_insect));
+        propertyNames.add(getString(R.string.text_ghost));
+        propertyNames.add(getString(R.string.text_steel));
+        propertyNames.add(getString(R.string.text_fire));
+        propertyNames.add(getString(R.string.text_water));
+        propertyNames.add(getString(R.string.text_grass));
+        propertyNames.add(getString(R.string.text_electricity));
+        propertyNames.add(getString(R.string.text_superpower));
+        propertyNames.add(getString(R.string.text_ice));
+        propertyNames.add(getString(R.string.text_dragon));
+        propertyNames.add(getString(R.string.text_evil));
+        propertyNames.add(getString(R.string.text_fairy));
     }
 
     private void initView() {
@@ -95,22 +124,15 @@ public class DiscoveryFragment extends Fragment {
     }
 
     private void setData() {
-        progressDialog.setMessage("加载中...");
+        progressDialog.setMessage(getString(R.string.text_loading));
         progressDialog.showDialog();
 
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
-                rvList = new ArrayList<>();
-                adapterList = new ArrayList<>();
-                pmList = new ArrayList<>();
-                propertyList = new ArrayList<>();
-
                 Gson gson = new Gson();
                 String json = AssetsUtil.getAssetsTxtByName(getActivity(), "property.txt");
                 if (!StringCheck.isEmpty(json)) {
-                    final List<NewsTab> newsTemp = gson.fromJson(json, new TypeToken<List<NewsTab>>() {
-                    }.getType());
                     final List<PropertyBean> propertyTemp = gson.fromJson(json, new TypeToken<List<PropertyBean>>() {
                     }.getType());
                     if (propertyTemp != null) {
@@ -118,7 +140,7 @@ public class DiscoveryFragment extends Fragment {
                         mainThread.post(new Runnable() {
                             @Override
                             public void run() {
-                                svNewsTabs.addTabList(newsTemp);
+                                svNewsTabs.addTabList(propertyNames);
                                 for (int i = 0; i < propertyList.size(); i++) {
                                     final PokemonListAdapter pmAdapter = new PokemonListAdapter(getActivity(), propertyList.get(i).getEn_name());
                                     pmAdapter.setOnListClickListener(new OnListClickListener() {

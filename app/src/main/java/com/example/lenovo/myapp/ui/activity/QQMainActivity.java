@@ -18,7 +18,6 @@ import com.bumptech.glide.Glide;
 import com.cxb.tools.glide.GlideCircleTransform;
 import com.cxb.tools.qqlevellayout.QQLevelLayout;
 import com.cxb.tools.slidingmenu.MySlidingMenu;
-import com.cxb.tools.slidingmenu.SlidingMenuResUtil;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
@@ -64,6 +63,10 @@ public class QQMainActivity extends BaseActivity {
     private List<QQMessageBean> list;
     private QQMainAdapter adapter;
 
+    private String[] QQ_NAME = {};
+    private String[] QQ_TIME = {};
+    private int[] QQ_AVATAR = {};
+
     BroadcastReceiver checkNetwork = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -88,6 +91,7 @@ public class QQMainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qq_main);
 
+        initData();
         initView();
 
         IntentFilter intentFilter = new IntentFilter();
@@ -100,6 +104,43 @@ public class QQMainActivity extends BaseActivity {
     protected void onDestroy() {
         unregisterReceiver(checkNetwork);
         super.onDestroy();
+    }
+
+    private void initData() {
+        QQ_NAME = new String[]{
+                getString(R.string.text_general), getString(R.string.text_fighting), getString(R.string.text_flight),
+                getString(R.string.text_poison), getString(R.string.text_ground), getString(R.string.text_rock),
+                getString(R.string.text_insect), getString(R.string.text_ghost), getString(R.string.text_steel),
+                getString(R.string.text_fire), getString(R.string.text_water), getString(R.string.text_grass),
+                getString(R.string.text_electricity), getString(R.string.text_superpower), getString(R.string.text_ice),
+                getString(R.string.text_dragon), getString(R.string.text_evil), getString(R.string.text_fairy)
+        };
+        QQ_TIME = new String[]{
+                "23:33", "22:22", "20:00", "16:66", "06:66",
+                "00:01", "星期日", "星期一", "星期二", "星期三",
+                "星期四", "星期五", "星期六", "2016-12-22", "2016-11-11",
+                "2016-02-33", "2015-11-11", "1992-11-24"
+        };
+        QQ_AVATAR = new int[]{
+                com.cxb.tools.R.drawable.shape_bg_general,
+                com.cxb.tools.R.drawable.shape_bg_fighting,
+                com.cxb.tools.R.drawable.shape_bg_flight,
+                com.cxb.tools.R.drawable.shape_bg_poison,
+                com.cxb.tools.R.drawable.shape_bg_ground,
+                com.cxb.tools.R.drawable.shape_bg_rock,
+                com.cxb.tools.R.drawable.shape_bg_insect,
+                com.cxb.tools.R.drawable.shape_bg_ghost,
+                com.cxb.tools.R.drawable.shape_bg_steel,
+                com.cxb.tools.R.drawable.shape_bg_fire,
+                com.cxb.tools.R.drawable.shape_bg_water,
+                com.cxb.tools.R.drawable.shape_bg_grass,
+                com.cxb.tools.R.drawable.shape_bg_electricity,
+                com.cxb.tools.R.drawable.shape_bg_superpower,
+                com.cxb.tools.R.drawable.shape_bg_ice,
+                com.cxb.tools.R.drawable.shape_bg_dragon,
+                com.cxb.tools.R.drawable.shape_bg_evil,
+                com.cxb.tools.R.drawable.shape_bg_fairy
+        };
     }
 
     private void initView() {
@@ -189,12 +230,12 @@ public class QQMainActivity extends BaseActivity {
             }
         });
 
-        for (int i = 0; i < SlidingMenuResUtil.QQ_AVATAR.length; i++) {
+        for (int i = 0; i < QQ_AVATAR.length; i++) {
             QQMessageBean qq = new QQMessageBean();
-            qq.setAvatarRes(SlidingMenuResUtil.QQ_AVATAR[i]);
-            qq.setName(SlidingMenuResUtil.QQ_NAME[i]);
-            qq.setContent(SlidingMenuResUtil.QQ_NAME[i]);
-            qq.setTime(SlidingMenuResUtil.QQ_TIME[i]);
+            qq.setAvatarRes(QQ_AVATAR[i]);
+            qq.setName(QQ_NAME[i]);
+            qq.setContent(QQ_NAME[i]);
+            qq.setTime(QQ_TIME[i]);
             list.add(qq);
         }
         adapter.notifyDataSetChanged();
@@ -276,12 +317,12 @@ public class QQMainActivity extends BaseActivity {
                     @Override
                     public void run() {
                         list.clear();
-                        for (int i = 0; i < SlidingMenuResUtil.QQ_AVATAR.length; i++) {
+                        for (int i = 0; i < QQ_AVATAR.length; i++) {
                             QQMessageBean qq = new QQMessageBean();
-                            qq.setAvatarRes(SlidingMenuResUtil.QQ_AVATAR[i]);
-                            qq.setName(SlidingMenuResUtil.QQ_NAME[i]);
-                            qq.setContent(SlidingMenuResUtil.QQ_NAME[i]);
-                            qq.setTime(SlidingMenuResUtil.QQ_TIME[i]);
+                            qq.setAvatarRes(QQ_AVATAR[i]);
+                            qq.setName(QQ_NAME[i]);
+                            qq.setContent(QQ_NAME[i]);
+                            qq.setTime(QQ_TIME[i]);
                             list.add(qq);
                         }
                         adapter.notifyDataSetChanged();

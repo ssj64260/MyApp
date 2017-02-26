@@ -37,48 +37,6 @@ public class NewsTabResoureUtil {
 //            "卡洛斯"
 //    };
 
-//    public static final String[] property = {
-//            "一般",
-//            "格斗",
-//            "飞行",
-//            "毒",
-//            "地面",
-//            "岩石",
-//            "虫",
-//            "幽灵",
-//            "钢",
-//            "火",
-//            "水",
-//            "草",
-//            "电",
-//            "超能力",
-//            "冰",
-//            "龙",
-//            "恶",
-//            "妖精"
-//    };
-
-//    public static final String[] property_english = {
-//            "general",
-//            "fighting",
-//            "flight",
-//            "poison",
-//            "ground",
-//            "rock",
-//            "insect",
-//            "ghost",
-//            "steel",
-//            "fire",
-//            "water",
-//            "grass",
-//            "electricity",
-//            "superpower",
-//            "ice",
-//            "dragon",
-//            "evil",
-//            "fairy"
-//    };
-
     public static final int[] property_bg_color = {
             R.drawable.shape_bg_general,
             R.drawable.shape_bg_fighting,

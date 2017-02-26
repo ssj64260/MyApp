@@ -6,10 +6,10 @@
     <item type="id" name="llyout_point_list"/>
 
     <!--PasswordLevelLayout-->
-    <string name="text_level_1">低</string>
-    <string name="text_level_2">中</string>
-    <string name="text_level_3">高</string>
-    <string name="text_level_4">非常高</string>
+    <string name="text_level_1">低い</string>
+    <string name="text_level_2">の中で</string>
+    <string name="text_level_3">高い</string>
+    <string name="text_level_4">非常に高い</string>
 
 
 </resources>

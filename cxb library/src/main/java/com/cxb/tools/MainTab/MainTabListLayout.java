@@ -150,6 +150,7 @@ public class MainTabListLayout extends LinearLayout {
 
         mViewPager.setAdapter(new ViewPagerAdapter(vpList));
         mViewPager.addOnPageChangeListener(new MyOnPageChangeListener());
+        this.requestLayout();
     }
 
     //初始化当页对应的point

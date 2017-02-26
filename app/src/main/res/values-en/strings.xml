@@ -176,5 +176,113 @@
     <!--include_qq_right_content-->
     <string name="text_network_connect_msg">connection timed out, please check your network settings.</string>
 
+    <!--============== 全局通用 ================-->
+    <string name="text_loading">Loading&#8230;</string>
+    <string name="text_requesting">Request&#8230;</string>
+    <string name="text_downloading">Download&#8230;</string>
+    <string name="text_contacts_permission_message">In settings - Application -%1$s- permissions to open the address book permissions to use the normal access to contact information</string>
+    <string name="text_call_permission_message">In the settings - apply -%1$s- permissions to open the phone permission to use this function normally</string>
+    <string name="text_calendar_permission_message">In the settings - apply -%1$s- permissions to open the calendar permissions to use this function</string>
+    <string name="text_camera_permission_message">In the settings - apply -%1$s- permissions to open the camera permissions to use this function normally</string>
+    <string name="text_location_permission_message">In the settings - apply -%1$s- permissions to open the location information permissions to use this function</string>
+    <string name="text_storage_permission_message">In the settings - apply -%1$s- permissions to open storage permissions to use this function</string>
+    <string name="text_audio_permission_message">In settings - apply -%1$s- permission to open the microphone permissions to use this function normally</string>
+    <string name="text_sms_permission_message">In settings - Application -%1$s- permissions to open the SMS permissions to the normal use of the function</string>
+    <string name="text_sensors_permission_message">In settings - apply -%1$s- permissions to open the body sensor permissions to use this function normally</string>
+
+
+
+    <!--DatebaseDetailActivity-->
+    <string name="toast_not_pokemon_info">No information about the Pokemon</string>
+    <string name="toast_pokemon_data_update_success">Update success</string>
+    <string name="toast_pokemon_name_not_null">Name cannot be empty</string>
+    <string name="toast_pokemon_data_delete_success">Delete success</string>
+
+    <!--DatebaseTestActivity-->
+    <string name="toast_delete_data_table_success">Delete table successfully</string>
+    <string name="toast_delete_database_success">Delete database successfully</string>
+    <string name="toast_delete_database_error">Database does not exist or delete failed</string>
+
+    <!--SystemGetPhotoActivity-->
+    <string name="btn_choose_from_mobile">Choose from the phone album</string>
+    <string name="btn_choose_from_take_photo">Photograph</string>
+    <string name="btn_do_not_choose">Cancel</string>
+
+    <!--SystemResActivity-->
+    <string name="toast_had_got_all_permission">Access to all permissions</string>
+
+    <!--CustomViewTestActivity-->
+    <string name="toast_datebase_file_not_exists">Database file does not exist</string>
+    <string name="toast_not_only_number">Not pure numbers</string>
+    <string name="toast_open_guide_setting_success">Set success</string>
+    <string name="btn_count_down_again">(%d) again</string>
+    <string name="btn_count_down_60_second">Countdown 60 seconds</string>
+
+    <!--DialogTestActivity-->
+    <string name="text_tips_dialog_title">Are you sure you want this?</string>
+    <string name="btn_tips_dialog_confirm">Determine</string>
+    <string name="btn_tips_dialog_cancel">Cancel</string>
+    <string name="toast_you_can_not_do_that">You can not do this!</string>
+    <string name="text_input_dialog_title">Please fill in the content</string>
+    <string name="text_input_dialog_send">Send out</string>
+    <string name="text_input_dialog_close">Close</string>
+    <string name="toast_contant_can_not_null">Content cannot be empty</string>
+    <string name="text_evalutation_dialog_title">Give this APP a review</string>
+    <string name="toast_contant_and_score">Evaluation content:%1$s score:%2$f</string>
+
+    <!--MyToolsActivity-->
+    <string name="btn_tool_1">ViewPager profile</string>
+    <string name="btn_tool_2">Interface testing</string>
+    <string name="btn_tool_3">Animation test</string>
+    <string name="btn_tool_4">Dialog test</string>
+    <string name="btn_tool_5">Thread pool test</string>
+    <string name="btn_tool_6">Date tool test</string>
+    <string name="btn_tool_7">Nested list test</string>
+    <string name="btn_tool_8">Installed APP information</string>
+    <string name="btn_tool_9">Custom control display</string>
+    <string name="btn_tool_10">Get system resources</string>
+    <string name="btn_tool_11">LiteOrm database tools</string>
+    <string name="btn_tool_12">WebView Demo</string>
+    <string name="btn_tool_13">Multilingual Settings</string>
+
+    <!--OkhttpTestActivity-->
+    <string name="toast_version_name">Version number:%s</string>
+    <string name="toast_have_new_version">There are updates, please download</string>
+    <string name="toast_not_any_update">No update</string>
+    <string name="text_geting_today_weather">Get in today s weather&#8230;</string>
+    <string name="text_geting_weather_forecast">Get weather forecast&#8230;</string>
+    <string name="text_geting_github_info">Get GitHub information in&#8230;</string>
+    <string name="text_geting_verification_info">Get the validation data&#8230;</string>
+    <string name="text_downloading_with_progress">Download:%1$s/%2$s</string>
+    <string name="toast_download_success">Download success</string>
+    <string name="toast_download_had_been_cancel">Download has been canceled</string>
+    <string name="toast_get_today_weather_error">Request the weather today</string>
+    <string name="toast_get_weather_forecast_error">Weather forecast failed</string>
+    <string name="toast_get_okhttp_info_error">Request Okhttp failed</string>
+    <string name="toast_get_okhttp_verification_info_error">Okhttp validation request failed</string>
+    <string name="toast_get_today_weather_success">Ask for a successful weather today</string>
+    <string name="toast_get_weather_forecast_success">Weather forecast</string>
+    <string name="toast_get_okhttp_info_success">Request Okhttp to succeed</string>
+    <string name="toast_get_okhttp_verification_info_success">Okhttp validation request successful</string>
+
+    <!--AdPagesActivity-->
+    <string name="btn_ad_skip">Skip%d</string>
+
+    <!--MainActivity-->
+    <string name="toast_had_connected_cmnet">Connected CMNET mobile network</string>
+    <string name="toast_had_connected_cmwap">Connected CMWAP mobile network</string>
+    <string name="toast_had_connected_wifi">Connected to the WIFI network, can be used normally</string>
+
+    <!--PokemonDetailActivity-->
+    <string name="text_pokemon_characteristic_or">%1$s or %2$s</string>
+    <string name="text_pokemon_characteristic_not">nothing</string>
+    <string name="toast_pokemon_had_added_to_datebase">Has been successfully added to the database</string>
+
+    <!--PokemonMainActivity-->
+    <string name="btn_pokemon_home">home page</string>
+    <string name="btn_pokemon_pokedex">Pokedex</string>
+    <string name="btn_pokemon_mine">My</string>
+    <string name="tosat_double_click_to_exit">Click exit again</string>
+
 
 </resources>

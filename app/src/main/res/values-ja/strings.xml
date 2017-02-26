@@ -205,9 +205,112 @@
     <!--include_qq_right_content-->
     <string name="text_network_connect_msg">接続タイムアウトをチェックしてくださいあなたのネットワーク設定。</string>
 
+    <!--============== 全局通用 ================-->
+    <string name="text_loading">加載中&#8230;</string>
+    <string name="text_requesting">請求に&#8230;</string>
+    <string name="text_downloading">ダウンロード中&#8230;</string>
+    <string name="text_contacts_permission_message">設置-応用- %1$s -権限で住所録を開く権限は、正常に使う人の情報を得る機能</string>
+    <string name="text_call_permission_message">設置-応用- %1$s -権限に電話を開く権限は、正常にこの機能を使う</string>
+    <string name="text_calendar_permission_message">設置-応用- %1$s -権限を開く権限は正常にカレンダー、この機能を使う</string>
+    <string name="text_camera_permission_message">設置-応用- %1$s -権限を開く権限にカメラを正常にこの機能を使う</string>
+    <string name="text_location_permission_message">設置-応用- %1$s -権限で開く権限は正常位置情報を、この機能を使う</string>
+    <string name="text_storage_permission_message">設置-応用- %1$s -権限を開く権限は正常に収納、この機能を使う</string>
+    <string name="text_audio_permission_message">設置-応用- %1$s -権限を開く権限でマイクを正常にこの機能を使う</string>
+    <string name="text_sms_permission_message">設置-応用- %1$s -権限で開く権限を普通のメール、この機能を使う</string>
+    <string name="text_sensors_permission_message">設置-応用- %1$s -権限で開く権限体センサーは、正常にこの機能を使う</string>
 
 
+    <!--DatebaseDetailActivity-->
+    <string name="toast_not_pokemon_info">このPokemonの情報</string>
+    <string name="toast_pokemon_data_update_success">更新が成功する</string>
+    <string name="toast_pokemon_name_not_null">名前は暇にならない</string>
+    <string name="toast_pokemon_data_delete_success">成功を削除する</string>
 
+    <!--DatebaseTestActivity-->
+    <string name="toast_delete_data_table_success">表の成功を削除する</string>
+    <string name="toast_delete_database_success">データベースの削除に成功する</string>
+    <string name="toast_delete_database_error">データベースは存在しないで失敗して削除する</string>
+
+    <!--SystemGetPhotoActivity-->
+    <string name="btn_choose_from_mobile">携帯のアルバムから選んだ</string>
+    <string name="btn_choose_from_take_photo">写真を撮る</string>
+    <string name="btn_do_not_choose">キャンセル</string>
+
+    <!--SystemResActivity-->
+    <string name="toast_had_got_all_permission">すべての権限を取得している</string>
+
+    <!--CustomViewTestActivity-->
+    <string name="toast_datebase_file_not_exists">データベースファイルが存在しない</string>
+    <string name="toast_not_only_number">純数字ではない</string>
+    <string name="toast_open_guide_setting_success">成功を設定する</string>
+    <string name="btn_count_down_again">(%d) が再び逆数</string>
+    <string name="btn_count_down_60_second">カウントダウン60秒</string>
+
+    <!--DialogTestActivity-->
+    <string name="text_tips_dialog_title">確かにそうですか？</string>
+    <string name="btn_tips_dialog_confirm">確定</string>
+    <string name="btn_tips_dialog_cancel">キャンセル</string>
+    <string name="toast_you_can_not_do_that">君はこんなことはできない！</string>
+    <string name="text_input_dialog_title">発送の内容を記入してください。</string>
+    <string name="text_input_dialog_send">送信</string>
+    <string name="text_input_dialog_close">閉鎖</string>
+    <string name="toast_contant_can_not_null">内容は暇にならない</string>
+    <string name="text_evalutation_dialog_title">このAPP評価に一度</string>
+    <string name="toast_contant_and_score">評価の内容：%1$s採点：%2$f</string>
+
+    <!--MyToolsActivity-->
+    <string name="btn_tool_1">ViewPager簡介</string>
+    <string name="btn_tool_2">インターフェーステスト</string>
+    <string name="btn_tool_3">アニメーションテスト</string>
+    <string name="btn_tool_4">ダイアログテスト</string>
+    <string name="btn_tool_5">スレッドプールテスト</string>
+    <string name="btn_tool_6">日付ツールテスト</string>
+    <string name="btn_tool_7">リストネスティングテスト</string>
+    <string name="btn_tool_8">がインストールされてAPP情報</string>
+    <string name="btn_tool_9">カスタマイズコントロールの展示</string>
+    <string name="btn_tool_10">システムリソースを取得</string>
+    <string name="btn_tool_11">LiteOrmデータベースツール</string>
+    <string name="btn_tool_12">WebView Demo</string>
+    <string name="btn_tool_13">多言語設定</string>
+
+    <!--OkhttpTestActivity-->
+    <string name="toast_version_name">バージョン番号：%s</string>
+    <string name="toast_have_new_version">更新があります、ダウンロードして下さい</string>
+    <string name="toast_not_any_update">更新なし</string>
+    <string name="text_geting_today_weather">今日の天気で取得&#8230;</string>
+    <string name="text_geting_weather_forecast">今日の天気で取得&#8230;</string>
+    <string name="text_geting_github_info">取得GitHub情報の中&#8230;</string>
+    <string name="text_geting_verification_info">検証を必要&#8230;</string>
+    <string name="text_downloading_with_progress">ダウンロード中：%1$s/%2$s</string>
+    <string name="toast_download_success">ダウンロード成功</string>
+    <string name="toast_download_had_been_cancel">ダウンロードを取り消し、失敗はダウンロードします</string>
+    <string name="toast_get_today_weather_error">今日の天気は失敗する</string>
+    <string name="toast_get_weather_forecast_error">天気予報によると、失敗する</string>
+    <string name="toast_get_okhttp_info_error">請求Okhttp失敗</string>
+    <string name="toast_get_okhttp_verification_info_error">Okhttp検証請求失敗</string>
+    <string name="toast_get_today_weather_success">今日の天気は成功することを求めて</string>
+    <string name="toast_get_weather_forecast_success">天気予報には成功する</string>
+    <string name="toast_get_okhttp_info_success">請求Okhttp成功</string>
+    <string name="toast_get_okhttp_verification_info_success">Okhttp検証請求成功</string>
+
+    <!--AdPagesActivity-->
+    <string name="btn_ad_skip">スキップ%d</string>
+
+    <!--MainActivity-->
+    <string name="toast_had_connected_cmnet">もうCMNET移動ネットワーク接続</string>
+    <string name="toast_had_connected_cmwap">もうCMWAP移動ネットワーク接続</string>
+    <string name="toast_had_connected_wifi">すでにネット接続WIFI、正常に使え</string>
+
+    <!--PokemonDetailActivity-->
+    <string name="text_pokemon_characteristic_or">%1$s や %2$s</string>
+    <string name="text_pokemon_characteristic_not">無</string>
+    <string name="toast_pokemon_had_added_to_datebase">データベースに参加することに成功しました</string>
+
+    <!--PokemonMainActivity-->
+    <string name="btn_pokemon_home">トップページ</string>
+    <string name="btn_pokemon_pokedex">図鑑</string>
+    <string name="btn_pokemon_mine">私の</string>
+    <string name="tosat_double_click_to_exit">再クリック</string>
 
 
 

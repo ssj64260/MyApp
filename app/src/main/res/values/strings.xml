@@ -220,7 +220,6 @@
     <string name="text_sensors_permission_message">在设置-应用-%1$s-权限中开启身体传感器权限，以正常使用该功能</string>
 
 
-
     <!--DatebaseDetailActivity-->
     <string name="toast_not_pokemon_info">没有该Pokemon的信息</string>
     <string name="toast_pokemon_data_update_success">更新成功</string>

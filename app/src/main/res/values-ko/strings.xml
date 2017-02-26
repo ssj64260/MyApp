@@ -206,20 +206,113 @@
     <string name="text_network_connect_msg">연결 시간 확인하십시오. 너 네트워크 설정.</string>
 
 
+    <!--============== 全局通用 ================-->
+    <string name="text_loading">로드 중&#8230;</string>
+    <string name="text_requesting">요청 중&#8230;</string>
+    <string name="text_downloading">다운로드 중&#8230;</string>
+    <string name="text_contacts_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 주소록 권한 으로 정상적인 사용 기능 연락처 정보를 가져오는 중</string>
+    <string name="text_call_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 전화 권한 으로 이 기능은 정상이다 사용</string>
+    <string name="text_calendar_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 달력 권한 으로 이 기능은 정상이다 사용</string>
+    <string name="text_camera_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 카메라 권한 으로 이 기능은 정상이다 사용</string>
+    <string name="text_location_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 위치 정보 권한 으로 이 기능은 정상이다 사용</string>
+    <string name="text_storage_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 메모리 사용 권한 으로 이 기능은 정상이다</string>
+    <string name="text_audio_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 마이크 권한 으로 이 기능은 정상이다 사용</string>
+    <string name="text_sms_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 문자 권한 으로 이 기능은 정상이다 사용</string>
+    <string name="text_sensors_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 몸이 센서 권한 으로 이 기능은 정상이다 사용</string>
 
 
 
+    <!--DatebaseDetailActivity-->
+    <string name="toast_not_pokemon_info">이 Pokemon 정보가 없습니다.</string>
+    <string name="toast_pokemon_data_update_success">업데이트 성공</string>
+    <string name="toast_pokemon_name_not_null">이름이 비어 수 없다</string>
+    <string name="toast_pokemon_data_delete_success">삭제 성공</string>
 
+    <!--DatebaseTestActivity-->
+    <string name="toast_delete_data_table_success">삭제 시계 성공</string>
+    <string name="toast_delete_database_success">삭제 데이터베이스 성공</string>
+    <string name="toast_delete_database_error">데이터베이스 존재하지 않거나 삭제하는 데 실패했습니다</string>
 
+    <!--SystemGetPhotoActivity-->
+    <string name="btn_choose_from_mobile">이 휴대전화는 앨범 선택</string>
+    <string name="btn_choose_from_take_photo">사진</string>
+    <string name="btn_do_not_choose">취소</string>
 
+    <!--SystemResActivity-->
+    <string name="toast_had_got_all_permission">이미 모든 권한 가져오는 중</string>
 
+    <!--CustomViewTestActivity-->
+    <string name="toast_datebase_file_not_exists">데이터베이스 파일이 존재하지 않습니다</string>
+    <string name="toast_not_only_number">아니, 순수 숫자</string>
+    <string name="toast_open_guide_setting_success">설치 성공</string>
+    <string name="btn_count_down_again">(%d) 다시 밑에서</string>
+    <string name="btn_count_down_60_second">밑에서 60 초</string>
 
+    <!--DialogTestActivity-->
+    <string name="text_tips_dialog_title">정말 이러기야?</string>
+    <string name="btn_tips_dialog_confirm">확정</string>
+    <string name="btn_tips_dialog_cancel">취소</string>
+    <string name="toast_you_can_not_do_that">너 이러면 안돼!</string>
+    <string name="text_input_dialog_title">작성해 주세요 보내기 내용</string>
+    <string name="text_input_dialog_send">보내기</string>
+    <string name="text_input_dialog_close">닫기</string>
+    <string name="toast_contant_can_not_null">내용 못 비어</string>
+    <string name="text_evalutation_dialog_title">이거 한 번 APP 평가</string>
+    <string name="toast_contant_and_score">평가 내용:%1$s 별점:%2$f</string>
 
+    <!--MyToolsActivity-->
+    <string name="btn_tool_1">ViewPager 소개</string>
+    <string name="btn_tool_2">인터페이스 테스트</string>
+    <string name="btn_tool_3">애니메이션 테스트</string>
+    <string name="btn_tool_4">대화상자 테스트</string>
+    <string name="btn_tool_5">스레드 풀 테스트</string>
+    <string name="btn_tool_6">시험 날짜 도구</string>
+    <string name="btn_tool_7">테스트 목록 지역</string>
+    <string name="btn_tool_8">설치된 APP 정보</string>
+    <string name="btn_tool_9">사용자 정의 컨트롤 전시</string>
+    <string name="btn_tool_10">시스템 자원 가져오기</string>
+    <string name="btn_tool_11">LiteOrm 데이터베이스 도구</string>
+    <string name="btn_tool_12">WebView Demo</string>
+    <string name="btn_tool_13">많은 언어 설정</string>
 
+    <!--OkhttpTestActivity-->
+    <string name="toast_version_name">버전 번호：%s</string>
+    <string name="toast_have_new_version">업데이트 다운로드 좀 주세요</string>
+    <string name="toast_not_any_update">무 업데이트</string>
+    <string name="text_geting_today_weather">오늘 날씨가 가져오는 중&#8230;</string>
+    <string name="text_geting_weather_forecast">일기 예보 가져오는 중&#8230;</string>
+    <string name="text_geting_github_info">GitHub 정보 가져오는 중&#8230;</string>
+    <string name="text_geting_verification_info">검증 자료 필요한 가져오는 중&#8230;</string>
+    <string name="text_downloading_with_progress">다운로드 중：%1$s/%2$s</string>
+    <string name="toast_download_success">다운로드 성공</string>
+    <string name="toast_download_had_been_cancel">이미 다운로드, 다운로드 실패</string>
+    <string name="toast_get_today_weather_error">오늘 날씨가 요청 실패</string>
+    <string name="toast_get_weather_forecast_error">일기예보 요청 실패</string>
+    <string name="toast_get_okhttp_info_error">요청 Okhttp 실패</string>
+    <string name="toast_get_okhttp_verification_info_error">Okhttp 인증 요청 실패</string>
+    <string name="toast_get_today_weather_success">오늘 날씨가 성공적으로 요청</string>
+    <string name="toast_get_weather_forecast_success">일기예보 성공적으로 요청</string>
+    <string name="toast_get_okhttp_info_success">Okhttp 성공적으로 요청</string>
+    <string name="toast_get_okhttp_verification_info_success">Okhttp 승인이 성공적으로</string>
 
+    <!--AdPagesActivity-->
+    <string name="btn_ad_skip">건너뛰기%d</string>
 
+    <!--MainActivity-->
+    <string name="toast_had_connected_cmnet">이미 CMNET 모바일 네트워크 연결</string>
+    <string name="toast_had_connected_cmwap">이미 CMWAP 모바일 네트워크 연결</string>
+    <string name="toast_had_connected_wifi">이미 WIFI 네트워크 연결 정상적으로 사용할 수 있다</string>
 
+    <!--PokemonDetailActivity-->
+    <string name="text_pokemon_characteristic_or">%1$s 또는 %2$s</string>
+    <string name="text_pokemon_characteristic_not">없다</string>
+    <string name="toast_pokemon_had_added_to_datebase">이미 성공 가입 데이터베이스</string>
 
+    <!--PokemonMainActivity-->
+    <string name="btn_pokemon_home">홈</string>
+    <string name="btn_pokemon_pokedex">도감</string>
+    <string name="btn_pokemon_mine">내</string>
+    <string name="tosat_double_click_to_exit">다시 한 번 클릭 프로그램을 종료합니다.</string>
 
 
 

@@ -11,7 +11,7 @@
         android:id="@+id/iv_icon"
         android:layout_width="@dimen/custom_weight_40dp"
         android:layout_height="@dimen/custom_weight_40dp"
-        tools:src="@mipmap/ic_abra"
+        tools:src="@drawable/ic_abra"
         tools:background="@drawable/shape_cycle_lightblue"
         tools:ignore="ContentDescription" />
     <TextView

@@ -12,7 +12,7 @@ import com.litesuits.orm.LiteOrm;
  */
 public class LiteOrmHelper {
 
-    private static final String DB_NAME = String.format("%s_database.db", "myapp");
+    private static final String DB_NAME = "MyApp.db";
 
     private static final boolean DEBUGGABLE = true; // 是否输出log
 

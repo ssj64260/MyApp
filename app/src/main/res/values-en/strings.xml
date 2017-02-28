@@ -75,6 +75,13 @@
     <string name="btn_scroll_nest_list">NestedScrollView nested ListView</string>
     <string name="btn_scroll_nest_grid">NestedScrollView nested GridView</string>
     <string name="btn_scroll_nest_recycler">NestedScrollView nested RecyclerView</string>
+
+    <!--activity_multi_language-->
+    <string name="btn_text_chinese">中文</string>
+    <string name="btn_text_english">English</string>
+    <string name="btn_text_japanese">日本語</string>
+    <string name="btn_text_korean">한국어</string>
+
     <!--activity_my_tools-->
     <string name="title_my_tools">my tool</string>
     <!--activity_okhttp_test-->

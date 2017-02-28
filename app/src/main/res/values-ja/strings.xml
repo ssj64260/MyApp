@@ -86,6 +86,12 @@
     <string name="btn_scroll_nest_grid">NestedScrollView 入れ子 GridView</string>
     <string name="btn_scroll_nest_recycler">NestedScrollView 入れ子 RecyclerView</string>
 
+    <!--activity_multi_language-->
+    <string name="btn_text_chinese">中文</string>
+    <string name="btn_text_english">English</string>
+    <string name="btn_text_japanese">日本語</string>
+    <string name="btn_text_korean">한국어</string>
+
     <!--activity_my_tools-->
     <string name="title_my_tools">私の道具</string>
 

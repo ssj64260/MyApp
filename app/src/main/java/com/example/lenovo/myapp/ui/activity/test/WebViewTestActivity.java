@@ -19,9 +19,9 @@ import android.widget.ProgressBar;
 
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.SDCardUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
 
 import static android.view.KeyEvent.KEYCODE_BACK;
@@ -223,7 +223,7 @@ public class WebViewTestActivity extends BaseActivity {
                         wvWeb.goBack();
 
                     } else {
-                        ToastUtil.toast("没有上一页了");
+                        ToastMaster.toast("没有上一页了");
                     }
                     break;
                 case R.id.btn_right:
@@ -233,7 +233,7 @@ public class WebViewTestActivity extends BaseActivity {
                         if (wvWeb.canGoForward()) {
                             wvWeb.goForward();
                         } else {
-                            ToastUtil.toast("没有下一页了");
+                            ToastMaster.toast("没有下一页了");
                         }
                     }
                     break;
@@ -323,7 +323,7 @@ public class WebViewTestActivity extends BaseActivity {
 //            int code = errorResponse.getStatusCode();
 //            switch (code) {
 //                case 404:
-//                    ToastUtil.toast("无法找到页面");
+//                    ToastMaster.toast("无法找到页面");
 //                    break;
 //            }
         }

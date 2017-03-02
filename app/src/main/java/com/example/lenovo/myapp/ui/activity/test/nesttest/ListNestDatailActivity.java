@@ -15,7 +15,6 @@ import com.cxb.tools.customlist.NoScrollGridView;
 import com.cxb.tools.customlist.NoScrollListView;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.StringCheck;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.testbean.NestTestBean;
@@ -26,14 +25,13 @@ import com.example.lenovo.myapp.ui.adapter.nestlist.ListItemAdapter;
 import com.example.lenovo.myapp.ui.adapter.nestlist.ListToOhterAdapter;
 import com.example.lenovo.myapp.ui.adapter.nestlist.RecyclerToOtherAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.lenovo.myapp.ui.adapter.nestlist.RecyclerToOtherAdapter.ListType.LISTVIEW;
 
 /**
  * 列表嵌套详情页面
@@ -147,13 +145,13 @@ public class ListNestDatailActivity extends BaseActivity {
             lvList.setVisibility(View.VISIBLE);
 
             if (checkNestType(INNER_LIST)) {
-                ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.ListType.LISTVIEW);
+                ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.LISTVIEW);
                 lvList.setAdapter(ltoAdapter);
             } else if (checkNestType(INNER_GRID)) {
-                ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.ListType.GRIDVIEW);
+                ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.GRIDVIEW);
                 lvList.setAdapter(ltoAdapter);
             } else if (checkNestType(INNER_RECYCLER)) {
-                ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.ListType.RECYCLERVIEW);
+                ltoAdapter = new ListToOhterAdapter(this, nestList, ListToOhterAdapter.RECYCLERVIEW);
                 lvList.setAdapter(ltoAdapter);
             }
         } else if (checkNestType(OUTER_RECYCLER)) {
@@ -161,26 +159,26 @@ public class ListNestDatailActivity extends BaseActivity {
 
             rvRecycler.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
             if (checkNestType(INNER_LIST)) {
-                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, LISTVIEW);
+                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, RecyclerToOtherAdapter.LISTVIEW);
                 rvRecycler.setAdapter(rtoAdapter);
             } else if (checkNestType(INNER_GRID)) {
-                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, RecyclerToOtherAdapter.ListType.GRIDVIEW);
+                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, RecyclerToOtherAdapter.GRIDVIEW);
                 rvRecycler.setAdapter(rtoAdapter);
             } else if (checkNestType(INNER_RECYCLER)) {
-                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, RecyclerToOtherAdapter.ListType.RECYCLERVIEW);
+                rtoAdapter = new RecyclerToOtherAdapter(this, nestList, RecyclerToOtherAdapter.RECYCLERVIEW);
                 rvRecycler.setAdapter(rtoAdapter);
             }
         } else if (checkNestType(OUTER_GRID)) {
             gvGrid.setVisibility(View.VISIBLE);
 
             if (checkNestType(INNER_LIST)) {
-                gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.ListType.LISTVIEW);
+                gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.LISTVIEW);
                 gvGrid.setAdapter(gtoAdapter);
             } else if (checkNestType(INNER_GRID)) {
-                gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.ListType.GRIDVIEW);
+                gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.GRIDVIEW);
                 gvGrid.setAdapter(gtoAdapter);
             } else if (checkNestType(INNER_RECYCLER)) {
-                gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.ListType.RECYCLERVIEW);
+                gtoAdapter = new GridToOhterAdapter(this, gridList, GridToOhterAdapter.RECYCLERVIEW);
                 gvGrid.setAdapter(gtoAdapter);
             }
         } else if (checkNestType(OUTER_SCROLL)) {
@@ -194,7 +192,7 @@ public class ListNestDatailActivity extends BaseActivity {
                 lvScroll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        ToastUtil.toast("ListView：" + scrollList.get(position).getName());
+                        ToastMaster.toast("ListView：" + scrollList.get(position).getName());
                     }
                 });
                 lvScroll.post(new Runnable() {
@@ -211,7 +209,7 @@ public class ListNestDatailActivity extends BaseActivity {
                 gvScroll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        ToastUtil.toast("GridView：" + scrollList.get(position).getName());
+                        ToastMaster.toast("GridView：" + scrollList.get(position).getName());
                     }
                 });
                 gvScroll.post(new Runnable() {
@@ -243,11 +241,11 @@ public class ListNestDatailActivity extends BaseActivity {
     private OnListClickListener listClick = new OnListClickListener() {
         @Override
         public void onItemClick(int position) {
-            ToastUtil.toast("RecyclerView：" + scrollList.get(position).getName());
+            ToastMaster.toast("RecyclerView：" + scrollList.get(position).getName());
         }
 
         @Override
-        public void onTagClick(Tag tag, int position) {
+        public void onTagClick(int tag, int position) {
 
         }
     };

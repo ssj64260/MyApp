@@ -11,12 +11,12 @@ import com.cxb.tools.network.okhttp.OkHttpBaseApi;
 import com.cxb.tools.network.okhttp.OkHttpSynchApi;
 import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.GithubBean;
 import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -253,7 +253,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
             progressDialog.dismissDialog();
 
             if (reason != FailureReason.OTHER) {
-                ToastUtil.toast(reason.getReason());
+                ToastMaster.toast(reason.getReason());
             } else {
                 String content = tvContent.getText().toString();
                 threadIndex++;

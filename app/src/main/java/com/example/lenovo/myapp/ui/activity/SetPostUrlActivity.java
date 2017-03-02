@@ -6,10 +6,10 @@ import android.widget.EditText;
 
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.PreferencesUtil;
+import com.example.lenovo.myapp.utils.ToastMaster;
 
 import static com.example.lenovo.myapp.utils.Constants.CUSTOM_URL;
 import static com.example.lenovo.myapp.utils.Constants.DEBUG_URL;
@@ -62,10 +62,10 @@ public class SetPostUrlActivity extends BaseActivity {
                 case R.id.btn_set_confirm:
                     String url = urlText.getText().toString();
                     if (StringCheck.isEmpty(url)) {
-                        ToastUtil.toast("url不能为空");
+                        ToastMaster.toast("url不能为空");
                     } else {
                         if (url.equals(curUrl)) {
-                            ToastUtil.toast("设置成功");
+                            ToastMaster.toast("设置成功");
                             finish();
                         } else {
                             curUrl = url;
@@ -92,7 +92,7 @@ public class SetPostUrlActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        ToastUtil.toast("操作成功，请重新打开APP");
+                        ToastMaster.toast("操作成功，请重新打开APP");
                         finish();
                     }
                 });
@@ -102,6 +102,6 @@ public class SetPostUrlActivity extends BaseActivity {
 
     @Override
     public void onkeyboardChange(boolean isShow) {
-        ToastUtil.toast(isShow ? "键盘弹起" : "键盘收起");
+        ToastMaster.toast(isShow ? "键盘弹起" : "键盘收起");
     }
 }

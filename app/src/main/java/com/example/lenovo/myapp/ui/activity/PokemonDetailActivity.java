@@ -20,7 +20,6 @@ import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.db.PokemonDBHelper;
@@ -29,6 +28,7 @@ import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PokemonNameBean;
 import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -346,7 +346,7 @@ public class PokemonDetailActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        ToastUtil.toast(getString(R.string.toast_pokemon_had_added_to_datebase));
+                        ToastMaster.toast(getString(R.string.toast_pokemon_had_added_to_datebase));
                     }
                 });
             }
@@ -361,10 +361,10 @@ public class PokemonDetailActivity extends BaseActivity {
                     addPokemonToDB();
                     break;
                 case R.id.tv_characteristic1:
-                    ToastUtil.toast(cList.get(0).getDescription());
+                    ToastMaster.toast(cList.get(0).getDescription());
                     break;
                 case R.id.tv_characteristic2:
-                    ToastUtil.toast(cList.get(cList.size() - 1).getDescription());
+                    ToastMaster.toast(cList.get(cList.size() - 1).getDescription());
                     break;
                 case R.id.tv_pm_property1:
                     if (tvProperty1.getText().toString().equals(pList.get(0).getName())) {

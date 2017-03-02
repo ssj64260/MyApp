@@ -128,7 +128,7 @@ public class AppInfoTestActivity extends BaseActivity {
         }
 
         @Override
-        public void onTagClick(Tag tag, int position) {
+        public void onTagClick(int tag, int position) {
 
         }
     };

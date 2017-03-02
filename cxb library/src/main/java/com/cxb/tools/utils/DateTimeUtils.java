@@ -1,5 +1,9 @@
 package com.cxb.tools.utils;
 
+import android.support.annotation.IntDef;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,6 +16,11 @@ import java.util.Locale;
  */
 
 public class DateTimeUtils {
+
+    @IntDef({DateFormat.FULL, DateFormat.LONG, DateFormat.MEDIUM, DateFormat.SHORT})
+    @Retention(RetentionPolicy.SOURCE)
+    private @interface Format {
+    }
 
     private static SimpleDateFormat enLongDateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     private static SimpleDateFormat enDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
@@ -26,41 +35,6 @@ public class DateTimeUtils {
     private static SimpleDateFormat cnShortTimeFormat = new SimpleDateFormat("HH时mm分", Locale.getDefault());
     private static SimpleDateFormat cnWeekFormat = new SimpleDateFormat("EEEE", Locale.getDefault());
 
-
-    public enum DateType {
-        FULL(DateFormat.FULL),//2016年12月1日 星期四
-        LONG(DateFormat.LONG),//2016年12月1日
-        MEDIUM(DateFormat.MEDIUM),//2016年12月1日
-        SHORT(DateFormat.SHORT);//16/12/1
-
-        private int type;
-
-        DateType(int type) {
-            this.type = type;
-        }
-
-        public int getType() {
-            return type;
-        }
-    }
-
-    public enum TimeType {
-        FULL(DateFormat.FULL),//中国标准时间16:07:13
-        LONG(DateFormat.LONG),//GMT+08:0016:07:13
-        MEDIUM(DateFormat.MEDIUM),//16:07:13
-        SHORT(DateFormat.SHORT);//16:07
-
-        private int type;
-
-        TimeType(int type) {
-            this.type = type;
-        }
-
-        public int getType() {
-            return type;
-        }
-    }
-
     public enum MaxRange {
         DAY,
         MONTH,
@@ -68,18 +42,26 @@ public class DateTimeUtils {
     }
 
     // 获取当前日期，格式根据datetype决定
-    public static String getCurrentDate(DateType dateType) {
-        return SimpleDateFormat.getDateInstance(dateType.getType()).format(new Date());
+    //DateFormat.FULL, 2016年12月1日 星期四
+    //DateFormat.LONG 2016年12月1日
+    //DateFormat.MEDIUM 2016年12月1日
+    //DateFormat.SHORT 16/12/1
+    public static String getCurrentDate(@Format int dateType) {
+        return SimpleDateFormat.getDateInstance(dateType).format(new Date());
     }
 
     // 获取当前时间，格式根据timeType决定
-    public static String getCurrentTime(TimeType timeType) {
-        return SimpleDateFormat.getTimeInstance(timeType.getType()).format(new Date());
+    //DateFormat.FULL 中国标准时间16:07:13
+    //DateFormat.LONG GMT+08:0016:07:13
+    //DateFormat.MEDIUM 16:07:13
+    //DateFormat.SHORT 16:07
+    public static String getCurrentTime(@Format int timeType) {
+        return SimpleDateFormat.getTimeInstance(timeType).format(new Date());
     }
 
     // 获取当前日期时间，格式根据datetype 和 timeType 决定
-    public static String getCurrentDateTime(DateType dateType, TimeType timeType) {
-        return SimpleDateFormat.getDateTimeInstance(dateType.getType(), timeType.getType()).format(new Date());
+    public static String getCurrentDateTime(@Format int dateType, @Format int timeType) {
+        return SimpleDateFormat.getDateTimeInstance(dateType, timeType).format(new Date());
     }
 
 
@@ -114,7 +96,7 @@ public class DateTimeUtils {
     }
 
     // 获取当前日期，格式：2016年11月24日
-    public static String getCnDate(){
+    public static String getCnDate() {
         return cnDateFormat.format(new Date());
     }
 

@@ -11,7 +11,6 @@ import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.LiteOrmHelper;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.db.PokemonDBHelper;
 import com.example.lenovo.myapp.model.CharacteristicBean;
@@ -23,6 +22,7 @@ import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -199,7 +199,7 @@ public class DatebaseTestActivity extends BaseActivity {
                     @Override
                     public void run() {
                         mAdapter.notifyDataSetChanged();
-                        ToastUtil.toast(getString(R.string.toast_delete_data_table_success));
+                        ToastMaster.toast(getString(R.string.toast_delete_data_table_success));
                         progressDialog.dismissDialog();
                     }
                 });
@@ -220,10 +220,10 @@ public class DatebaseTestActivity extends BaseActivity {
                     break;
                 case R.id.btn_delete_db:
                     if (LiteOrmHelper.deleteDB()) {
-                        ToastUtil.toast(getString(R.string.toast_delete_database_success));
+                        ToastMaster.toast(getString(R.string.toast_delete_database_success));
                         finish();
                     } else {
-                        ToastUtil.toast(getString(R.string.toast_delete_database_error));
+                        ToastMaster.toast(getString(R.string.toast_delete_database_error));
                     }
                     break;
             }
@@ -240,8 +240,8 @@ public class DatebaseTestActivity extends BaseActivity {
         }
 
         @Override
-        public void onTagClick(Tag tag, int position) {
-            if (tag == Tag.LONGCLICK) {
+        public void onTagClick(int tag, int position) {
+            if (tag == LONGCLICK) {
                 Intent intent = new Intent();
                 intent.setClass(DatebaseTestActivity.this, DatebaseDetailActivity.class);
                 intent.putExtra(POKEMON_ID, list.get(position).getId());

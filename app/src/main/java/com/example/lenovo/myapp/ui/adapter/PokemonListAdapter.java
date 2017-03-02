@@ -22,7 +22,7 @@ import com.example.lenovo.myapp.model.PropertyBean;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.Tag.LONGCLICK;
+import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.LONGCLICK;
 
 /**
  * 口袋妖怪列表adapter
@@ -142,7 +142,7 @@ public class PokemonListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             @Override
             public boolean onLongClick(View v) {
                 if (onListClickListener != null) {
-                    onListClickListener.onTagClick(LONGCLICK,position);
+                    onListClickListener.onTagClick(LONGCLICK, position);
                 }
                 return true;
             }

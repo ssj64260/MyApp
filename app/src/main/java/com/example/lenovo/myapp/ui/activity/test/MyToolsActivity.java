@@ -96,8 +96,8 @@ public class MyToolsActivity extends BaseActivity {
         }
 
         @Override
-        public void onTagClick(Tag tag, int position) {
-            if (tag == Tag.TEXTVIEW1) {
+        public void onTagClick(int tag, int position) {
+            if (tag == TEXTVIEW) {
                 switch (position) {
                     case 0://ViewPager简介
                         startActivity(new Intent(MyToolsActivity.this, GuideActivity.class));

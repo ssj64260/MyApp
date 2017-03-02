@@ -1,24 +1,29 @@
 package com.example.lenovo.myapp.ui.adapter;
 
+import android.support.annotation.IntDef;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 /**
  * RecyclerView Adapter 的点击回调
  */
 
 public interface OnListClickListener {
 
-    //Tag类型（可以随便添加新类型）
-    enum Tag {
-        BUTTON1,
-        BUTTON2,
-        TEXTVIEW1,
-        TEXTVIEW2,
-        LINEARLAYOUT,
-        LONGCLICK
+    @IntDef({BUTTON, TEXTVIEW, LINEARLAYOUT, LONGCLICK})
+    @Retention(RetentionPolicy.SOURCE)
+    @interface View {
     }
+
+    int BUTTON = 0;
+    int TEXTVIEW = 1;
+    int LINEARLAYOUT = 2;
+    int LONGCLICK = 3;
 
     //item点击事件
     void onItemClick(int position);
 
     //可根据tag来区分点击的是item内部哪个控件
-    void onTagClick(Tag tag, int position);
+    void onTagClick(@View int tag, int position);
 }

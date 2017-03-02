@@ -16,7 +16,6 @@ import com.cxb.tools.myprogressbar.MyProgressBar;
 import com.cxb.tools.passwordlevel.PasswordLevelLayout;
 import com.cxb.tools.textswitcher.MyTextSwitcher;
 import com.cxb.tools.utils.StringCheck;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.db.AddressDBHelper;
 import com.example.lenovo.myapp.model.testbean.Area;
@@ -24,6 +23,7 @@ import com.example.lenovo.myapp.model.testbean.City;
 import com.example.lenovo.myapp.model.testbean.Street;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.PreferencesUtil;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -135,7 +135,7 @@ public class CustomViewTestActivity extends BaseActivity {
         mtsText.setOnTextClickListener(new MyTextSwitcher.OnTextClickListener() {
             @Override
             public void onTextClick(int position) {
-                ToastUtil.toast(texts.get(position));
+                ToastMaster.toast(texts.get(position));
             }
         });
     }
@@ -154,7 +154,7 @@ public class CustomViewTestActivity extends BaseActivity {
             cities.clear();
             cities.addAll(addressDBHelper.getCity("6"));
         } else {
-            ToastUtil.toast(getString(R.string.toast_datebase_file_not_exists));
+            ToastMaster.toast(getString(R.string.toast_datebase_file_not_exists));
         }
 
         loopCity.setOnTouchListener(touch);
@@ -316,11 +316,11 @@ public class CustomViewTestActivity extends BaseActivity {
                         mpbProgress.setCurrentNumber(Float.parseFloat(number));
                         mpbProgress.showAnimation();
                     } else {
-                        ToastUtil.toast(getString(R.string.toast_not_only_number));
+                        ToastMaster.toast(getString(R.string.toast_not_only_number));
                     }
                     break;
                 case R.id.btn_get_address:
-                    ToastUtil.toast(curCity + " " + curArea + " " + curStreet);
+                    ToastMaster.toast(curCity + " " + curArea + " " + curStreet);
                     break;
                 case R.id.btn_get_code:
                     btnGetCode.setClickable(false);
@@ -329,7 +329,7 @@ public class CustomViewTestActivity extends BaseActivity {
                     break;
                 case R.id.btn_first_start:
                     PreferencesUtil.setData(APP_SETTING, KEY_FIRST_START, true);
-                    ToastUtil.toast(getString(R.string.toast_open_guide_setting_success));
+                    ToastMaster.toast(getString(R.string.toast_open_guide_setting_success));
                     break;
             }
         }

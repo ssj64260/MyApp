@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.cxb.tools.utils.AndroidUtils;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.cxb.tools.utils.ToastUtil;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
 
 /**
@@ -34,12 +34,10 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        initToast();//初始化通用Toast
-
         Logger.init(getString(R.string.app_name));//初始化Log显示的TAG
 
         if (isApkDebugable()) {
-            ToastUtil.toast("这是debug版本");
+            ToastMaster.toast("这是debug版本");
         }
 
         ThreadPoolUtil.init(5);//初始化线程池最大线程数
@@ -50,13 +48,6 @@ public class MyApplication extends Application {
     ///////////////////////////////////////////////////////////////////////////
     public static boolean isApkDebugable() {
         return AndroidUtils.isApkDebugable(getInstance());
-    }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // 即时刷新内容toast
-    ///////////////////////////////////////////////////////////////////////////
-    private void initToast() {
-        ToastUtil.initToast(getInstance());
     }
 
 }

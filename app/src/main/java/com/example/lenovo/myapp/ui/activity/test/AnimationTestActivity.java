@@ -9,9 +9,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.ToastMaster;
 
 import static android.view.View.ROTATION;
 import static android.view.View.ROTATION_X;
@@ -44,7 +44,7 @@ public class AnimationTestActivity extends BaseActivity {
         btnA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.toast("A");
+                ToastMaster.toast("A");
                 Animation animation = AnimationUtils.loadAnimation(AnimationTestActivity.this, R.anim.test_animation_a);
                 btnA.startAnimation(animation);
 
@@ -82,14 +82,14 @@ public class AnimationTestActivity extends BaseActivity {
         btnB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.toast("B");
+                ToastMaster.toast("B");
                 btnC.setVisibility(View.VISIBLE);
             }
         });
         btnC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.toast("C");
+                ToastMaster.toast("C");
 
                 ObjectAnimator translationY = ObjectAnimator.ofFloat(btnC, TRANSLATION_Y, 0f, 50f, 0f);
                 translationY.setDuration(500);

@@ -6,13 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.cxb.tools.utils.FastClick;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.TabEntity;
 import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.ui.fragment.DiscoveryFragment;
 import com.example.lenovo.myapp.ui.fragment.HomeFragment;
 import com.example.lenovo.myapp.ui.fragment.MineFragment;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -129,7 +129,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         if (FastClick.isExitClick()) {
             finish();
         } else {
-            ToastUtil.toast(getString(R.string.tosat_double_click_to_exit));
+            ToastMaster.toast(getString(R.string.tosat_double_click_to_exit));
         }
     }
 }

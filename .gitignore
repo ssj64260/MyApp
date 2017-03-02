@@ -1,5 +1,6 @@
-.gradle/
-build/
+.gradle
+build
+bin
 .idea
 
 
@@ -9,6 +10,7 @@ build/
 *.flags
 *.stackdump
 *.pro
-
+*.jks
+*.keystore
 
 

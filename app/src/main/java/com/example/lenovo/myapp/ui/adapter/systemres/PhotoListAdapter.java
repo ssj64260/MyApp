@@ -16,7 +16,7 @@ import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 
 import java.util.List;
 
-import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.Tag.LINEARLAYOUT;
+import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.LINEARLAYOUT;
 
 /**
  * 相片列表

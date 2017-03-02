@@ -155,7 +155,7 @@ public class DiscoveryFragment extends Fragment {
                                         }
 
                                         @Override
-                                        public void onTagClick(Tag tag, int position) {
+                                        public void onTagClick(int tag, int position) {
 
                                         }
                                     });

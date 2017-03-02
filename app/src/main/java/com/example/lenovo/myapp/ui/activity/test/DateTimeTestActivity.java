@@ -11,11 +11,12 @@ import com.android.datetimepicker.date.DatePickerDialog;
 import com.android.datetimepicker.time.TimePickerDialog;
 import com.cxb.tools.utils.DateTimeUtils;
 import com.cxb.tools.utils.StringCheck;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -116,22 +117,22 @@ public class DateTimeTestActivity extends BaseActivity {
 
     private String getCurrentDateTime(String content) {
         content += "\n【getCurrentDate】\n";
-        content += "FULL:  \t" + DateTimeUtils.getCurrentDate(DateTimeUtils.DateType.FULL) + "\n";
-        content += "LONG:  \t" + DateTimeUtils.getCurrentDate(DateTimeUtils.DateType.LONG) + "\n";
-        content += "MEDIUM:\t" + DateTimeUtils.getCurrentDate(DateTimeUtils.DateType.MEDIUM) + "\n";
-        content += "SHORT: \t" + DateTimeUtils.getCurrentDate(DateTimeUtils.DateType.SHORT) + "\n";
+        content += "FULL:  \t" + DateTimeUtils.getCurrentDate(DateFormat.FULL) + "\n";
+        content += "LONG:  \t" + DateTimeUtils.getCurrentDate(DateFormat.LONG) + "\n";
+        content += "MEDIUM:\t" + DateTimeUtils.getCurrentDate(DateFormat.MEDIUM) + "\n";
+        content += "SHORT: \t" + DateTimeUtils.getCurrentDate(DateFormat.SHORT) + "\n";
 
         content += "\n【getCurrentTime】\n";
-        content += "FULL:  \t" + DateTimeUtils.getCurrentTime(DateTimeUtils.TimeType.FULL) + "\n";
-        content += "LONG:  \t" + DateTimeUtils.getCurrentTime(DateTimeUtils.TimeType.LONG) + "\n";
-        content += "MEDIUM:\t" + DateTimeUtils.getCurrentTime(DateTimeUtils.TimeType.MEDIUM) + "\n";
-        content += "SHORT: \t" + DateTimeUtils.getCurrentTime(DateTimeUtils.TimeType.SHORT) + "\n";
+        content += "FULL:  \t" + DateTimeUtils.getCurrentTime(DateFormat.FULL) + "\n";
+        content += "LONG:  \t" + DateTimeUtils.getCurrentTime(DateFormat.LONG) + "\n";
+        content += "MEDIUM:\t" + DateTimeUtils.getCurrentTime(DateFormat.MEDIUM) + "\n";
+        content += "SHORT: \t" + DateTimeUtils.getCurrentTime(DateFormat.SHORT) + "\n";
 
         content += "\n【getCurrentDateTime】\n";
-        content += "FULL:  \t" + DateTimeUtils.getCurrentDateTime(DateTimeUtils.DateType.FULL, DateTimeUtils.TimeType.FULL) + "\n";
-        content += "LONG:  \t" + DateTimeUtils.getCurrentDateTime(DateTimeUtils.DateType.LONG, DateTimeUtils.TimeType.LONG) + "\n";
-        content += "MEDIUM:\t" + DateTimeUtils.getCurrentDateTime(DateTimeUtils.DateType.MEDIUM, DateTimeUtils.TimeType.MEDIUM) + "\n";
-        content += "SHORT: \t" + DateTimeUtils.getCurrentDateTime(DateTimeUtils.DateType.SHORT, DateTimeUtils.TimeType.SHORT) + "\n";
+        content += "FULL:  \t" + DateTimeUtils.getCurrentDateTime(DateFormat.FULL, DateFormat.FULL) + "\n";
+        content += "LONG:  \t" + DateTimeUtils.getCurrentDateTime(DateFormat.LONG, DateFormat.LONG) + "\n";
+        content += "MEDIUM:\t" + DateTimeUtils.getCurrentDateTime(DateFormat.MEDIUM, DateFormat.MEDIUM) + "\n";
+        content += "SHORT: \t" + DateTimeUtils.getCurrentDateTime(DateFormat.SHORT, DateFormat.SHORT) + "\n";
 
         content += "\n【custom】\n";
         content += "getEnLongDateTime:\t" + DateTimeUtils.getEnLongDateTime() + "\n";
@@ -152,12 +153,12 @@ public class DateTimeTestActivity extends BaseActivity {
 
     private boolean checkTime(String time1, String... time2) {
         if (!DateTimeUtils.isTime(time1)) {
-            ToastUtil.toast("【时间1】不是时间格式");
+            ToastMaster.toast("【时间1】不是时间格式");
             return false;
         } else {
             if (time2 != null && time2.length > 0) {
                 if (!DateTimeUtils.isTime(time2[0])) {
-                    ToastUtil.toast("【时间2】不是时间格式");
+                    ToastMaster.toast("【时间2】不是时间格式");
                     return false;
                 }
             }
@@ -168,12 +169,12 @@ public class DateTimeTestActivity extends BaseActivity {
 
     private boolean checkDate(String date1, String... date2) {
         if (!DateTimeUtils.isDate(date1)) {
-            ToastUtil.toast("【日期1】不是日期格式");
+            ToastMaster.toast("【日期1】不是日期格式");
             return false;
         } else {
             if (date2 != null && date2.length > 0) {
                 if (!DateTimeUtils.isDate(date2[0])) {
-                    ToastUtil.toast("【日期2】不是日期格式");
+                    ToastMaster.toast("【日期2】不是日期格式");
                     return false;
                 }
             }

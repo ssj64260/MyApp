@@ -11,7 +11,7 @@ import com.example.lenovo.myapp.R;
 
 import java.util.List;
 
-import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.Tag.TEXTVIEW1;
+import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.TEXTVIEW;
 
 /**
  * 我的工具
@@ -45,7 +45,7 @@ public class MyToolsAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View v) {
                 if (onListClickListener != null) {
-                    onListClickListener.onTagClick(TEXTVIEW1, position);
+                    onListClickListener.onTagClick(TEXTVIEW, position);
                 }
             }
         });

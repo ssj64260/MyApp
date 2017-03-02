@@ -6,11 +6,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.cxb.tools.utils.StringCheck;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.db.PokemonDBHelper;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.ToastMaster;
 
 import java.util.List;
 
@@ -55,11 +55,11 @@ public class DatebaseDetailActivity extends BaseActivity {
                 btnUpdate.setOnClickListener(click);
                 btnDelete.setOnClickListener(click);
             } else {
-                ToastUtil.toast(getString(R.string.toast_not_pokemon_info));
+                ToastMaster.toast(getString(R.string.toast_not_pokemon_info));
                 finish();
             }
         } else {
-            ToastUtil.toast(getString(R.string.toast_not_pokemon_info));
+            ToastMaster.toast(getString(R.string.toast_not_pokemon_info));
             finish();
         }
     }
@@ -74,15 +74,15 @@ public class DatebaseDetailActivity extends BaseActivity {
                     if (!StringCheck.isEmpty(name)) {
                         pokemon.setName(name);
                         PokemonDBHelper.updatePokemon(DatebaseDetailActivity.this, pokemon);
-                        ToastUtil.toast(getString(R.string.toast_pokemon_data_update_success));
+                        ToastMaster.toast(getString(R.string.toast_pokemon_data_update_success));
                         setResult(RESULT_OK);
                     } else {
-                        ToastUtil.toast(getString(R.string.toast_pokemon_name_not_null));
+                        ToastMaster.toast(getString(R.string.toast_pokemon_name_not_null));
                     }
                     break;
                 case R.id.btn_delete:
                     PokemonDBHelper.deletePokemon(DatebaseDetailActivity.this, pokemon);
-                    ToastUtil.toast(getString(R.string.toast_pokemon_data_delete_success));
+                    ToastMaster.toast(getString(R.string.toast_pokemon_data_delete_success));
                     setResult(RESULT_OK);
                     finish();
                     break;

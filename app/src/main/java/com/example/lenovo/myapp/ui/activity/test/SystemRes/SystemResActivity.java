@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.ToastMaster;
 
 /**
  * 获取系统资源
@@ -100,6 +100,6 @@ public class SystemResActivity extends BaseActivity {
 
     @Override
     public void onPermissionSuccess() {
-        ToastUtil.toast(getString(R.string.toast_had_got_all_permission));
+        ToastMaster.toast(getString(R.string.toast_had_got_all_permission));
     }
 }

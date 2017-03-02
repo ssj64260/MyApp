@@ -21,12 +21,12 @@ import com.cxb.tools.slidingmenu.MySlidingMenu;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.QQMessageBean;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.QQMainAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -244,11 +244,11 @@ public class QQMainActivity extends BaseActivity {
     private OnListClickListener listClick = new OnListClickListener() {
         @Override
         public void onItemClick(int position) {
-            ToastUtil.toast(list.get(position).getName());
+            ToastMaster.toast(list.get(position).getName());
         }
 
         @Override
-        public void onTagClick(Tag tag, int position) {
+        public void onTagClick(int tag, int position) {
 
         }
     };
@@ -258,13 +258,13 @@ public class QQMainActivity extends BaseActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.iv_menu_background:
-                    ToastUtil.toast("背景");
+                    ToastMaster.toast("背景");
                     break;
                 case R.id.iv_menu_scan:
-                    ToastUtil.toast("二维码");
+                    ToastMaster.toast("二维码");
                     break;
                 case R.id.ll_menu_sign:
-                    ToastUtil.toast("签名");
+                    ToastMaster.toast("签名");
                     break;
             }
         }
@@ -281,7 +281,7 @@ public class QQMainActivity extends BaseActivity {
                     startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
                     break;
                 case R.id.iv_qq_add:
-                    ToastUtil.toast("添加");
+                    ToastMaster.toast("添加");
                     break;
             }
         }

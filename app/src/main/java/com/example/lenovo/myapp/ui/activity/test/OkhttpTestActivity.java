@@ -18,7 +18,6 @@ import com.cxb.tools.network.okhttp.OnRequestCallBack;
 import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.StringUtils;
-import com.cxb.tools.utils.ToastUtil;
 import com.cxb.tools.utils.VersionUtil;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
@@ -31,6 +30,7 @@ import com.example.lenovo.myapp.okhttp.call.GetWeatherCall;
 import com.example.lenovo.myapp.ui.activity.SetPostUrlActivity;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
@@ -160,15 +160,15 @@ public class OkhttpTestActivity extends BaseActivity {
                 case R.id.btn_get_app_version:
                     String version = VersionUtil.getVersionName(MyApplication.getInstance());
                     version1.setText(version);
-                    ToastUtil.toast(String.format(getString(R.string.toast_version_name), version));
+                    ToastMaster.toast(String.format(getString(R.string.toast_version_name), version));
                     break;
                 case R.id.btn_compare_version:
                     String v1 = version1.getText().toString();
                     String v2 = version2.getText().toString();
                     if (VersionUtil.isNewVersionName(v1, v2)) {
-                        ToastUtil.toast(getString(R.string.toast_have_new_version));
+                        ToastMaster.toast(getString(R.string.toast_have_new_version));
                     } else {
-                        ToastUtil.toast(getString(R.string.toast_not_any_update));
+                        ToastMaster.toast(getString(R.string.toast_not_any_update));
                     }
                     break;
             }
@@ -266,7 +266,7 @@ public class OkhttpTestActivity extends BaseActivity {
         @Override
         public void onSuccess(String fileUri) {
             progressDialog.dismissDialog();
-            ToastUtil.toast(getString(R.string.toast_download_success));
+            ToastMaster.toast(getString(R.string.toast_download_success));
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(Uri.fromFile(new File(fileUri)), "application/vnd.android.package-archive");
             startActivity(intent);
@@ -275,7 +275,7 @@ public class OkhttpTestActivity extends BaseActivity {
         @Override
         public void onFailed(String fileUri) {
             progressDialog.dismissDialog();
-            ToastUtil.toast(getString(R.string.toast_download_had_been_cancel));
+            ToastMaster.toast(getString(R.string.toast_download_had_been_cancel));
         }
     };
 
@@ -285,20 +285,20 @@ public class OkhttpTestActivity extends BaseActivity {
             progressDialog.dismissDialog();
 
             if (reason != FailureReason.OTHER) {
-                ToastUtil.toast(reason.getReason());
+                ToastMaster.toast(reason.getReason());
             } else {
                 switch (requestId) {
                     case ID_GET_WEATHER:
-                        ToastUtil.toast(getString(R.string.toast_get_today_weather_error));
+                        ToastMaster.toast(getString(R.string.toast_get_today_weather_error));
                         break;
                     case ID_POST_WEATHER:
-                        ToastUtil.toast(getString(R.string.toast_get_weather_forecast_error));
+                        ToastMaster.toast(getString(R.string.toast_get_weather_forecast_error));
                         break;
                     case ID_GET_GITHUB_INFO:
-                        ToastUtil.toast(getString(R.string.toast_get_okhttp_info_error));
+                        ToastMaster.toast(getString(R.string.toast_get_okhttp_info_error));
                         break;
                     case ID_GET_OKHTTP_INFO:
-                        ToastUtil.toast(getString(R.string.toast_get_okhttp_verification_info_error));
+                        ToastMaster.toast(getString(R.string.toast_get_okhttp_verification_info_error));
                         break;
                 }
             }
@@ -322,7 +322,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             content += "湿度：" + info.getHumidity();
                         }
                     }
-                    ToastUtil.toast(getString(R.string.toast_get_today_weather_success));
+                    ToastMaster.toast(getString(R.string.toast_get_today_weather_success));
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                     break;
                 case ID_POST_WEATHER:
@@ -340,7 +340,7 @@ public class OkhttpTestActivity extends BaseActivity {
                             }
                         }
                     }
-                    ToastUtil.toast(getString(R.string.toast_get_weather_forecast_success));
+                    ToastMaster.toast(getString(R.string.toast_get_weather_forecast_success));
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                     break;
                 case ID_GET_GITHUB_INFO:
@@ -350,7 +350,7 @@ public class OkhttpTestActivity extends BaseActivity {
                         content += entry.getKey() + "\n" + entry.getValue().content + "\n";
                     }
                     content = StringUtils.halfToFull(content);
-                    ToastUtil.toast(getString(R.string.toast_get_okhttp_info_success));
+                    ToastMaster.toast(getString(R.string.toast_get_okhttp_info_success));
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 3);
                     break;
                 case ID_GET_OKHTTP_INFO:
@@ -358,7 +358,7 @@ public class OkhttpTestActivity extends BaseActivity {
                         content += dataObject.toString();
                     }
                     content = StringUtils.halfToFull(content);
-                    ToastUtil.toast(getString(R.string.toast_get_okhttp_verification_info_success));
+                    ToastMaster.toast(getString(R.string.toast_get_okhttp_verification_info_success));
                     tvContent.setTextSize(TypedValue.COMPLEX_UNIT_SP, 3);
                     break;
             }

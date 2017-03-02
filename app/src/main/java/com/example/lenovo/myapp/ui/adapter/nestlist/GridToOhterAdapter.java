@@ -14,12 +14,12 @@ import android.widget.TextView;
 
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.ListFixedHeightUtils;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.testbean.NestTestBean;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
+import com.example.lenovo.myapp.utils.ToastMaster;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,18 +30,16 @@ import java.util.List;
 
 public class GridToOhterAdapter extends BaseAdapter {
 
-    public enum ListType {
-        LISTVIEW,
-        GRIDVIEW,
-        RECYCLERVIEW
-    }
+    public static final int LISTVIEW = 0;
+    public static final int GRIDVIEW = 1;
+    public static final int RECYCLERVIEW = 2;
 
     private Context context;
     private List<NestTestBean> list;
     private LayoutInflater inflater;
-    private ListType listType;
+    private int listType;
 
-    public GridToOhterAdapter(Context context, List<NestTestBean> list, ListType listType) {
+    public GridToOhterAdapter(Context context, List<NestTestBean> list, int listType) {
         this.context = context;
         this.listType = listType;
         this.list = list;
@@ -76,34 +74,34 @@ public class GridToOhterAdapter extends BaseAdapter {
 
             holder.pmList = new ArrayList<>();
 
-            if (listType == ListType.LISTVIEW) {
+            if (listType == LISTVIEW) {
                 holder.lvAdapter = new ListItemAdapter(context, holder.pmList);
                 holder.lvItemList.setAdapter(holder.lvAdapter);
                 holder.lvItemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        ToastUtil.toast("ListView：" + holder.pmList.get(position).getName());
+                        ToastMaster.toast("ListView：" + holder.pmList.get(position).getName());
                     }
                 });
-            } else if (listType == ListType.GRIDVIEW) {
+            } else if (listType == GRIDVIEW) {
                 holder.gvAdapter = new ListItemAdapter(context, holder.pmList);
                 holder.gvItemList.setAdapter(holder.gvAdapter);
                 holder.gvItemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        ToastUtil.toast("GridView：" + holder.pmList.get(position).getName());
+                        ToastMaster.toast("GridView：" + holder.pmList.get(position).getName());
                     }
                 });
-            } else if (listType == ListType.RECYCLERVIEW) {
+            } else if (listType == RECYCLERVIEW) {
                 holder.rvAdapter = new PokemonListAdapter(context, "all");
                 holder.rvAdapter.setOnListClickListener(new OnListClickListener() {
                     @Override
                     public void onItemClick(int position) {
-                        ToastUtil.toast("RecyclerView：" + holder.pmList.get(position).getName());
+                        ToastMaster.toast("RecyclerView：" + holder.pmList.get(position).getName());
                     }
 
                     @Override
-                    public void onTagClick(Tag tag, int position) {
+                    public void onTagClick(int tag, int position) {
 
                     }
                 });
@@ -131,21 +129,21 @@ public class GridToOhterAdapter extends BaseAdapter {
         holder.pmList.clear();
         holder.pmList.addAll(nt.getPokemons());
 
-        if (listType == ListType.LISTVIEW) {
+        if (listType == LISTVIEW) {
             holder.lvItemList.setVisibility(View.VISIBLE);
 
             int itemHeight = DisplayUtil.dip2px(context, 57);
             ListFixedHeightUtils.getListViewHeight(holder.lvItemList, itemHeight, holder.pmList.size());
 
             holder.lvAdapter.notifyDataSetChanged();
-        } else if (listType == ListType.GRIDVIEW) {
+        } else if (listType == GRIDVIEW) {
             holder.gvItemList.setVisibility(View.VISIBLE);
 
             int itemHeight = DisplayUtil.dip2px(context, 57);
             ListFixedHeightUtils.getGridViewHeight(holder.gvItemList, 2, itemHeight, holder.pmList.size());
 
             holder.gvAdapter.notifyDataSetChanged();
-        } else if (listType == ListType.RECYCLERVIEW) {
+        } else if (listType == RECYCLERVIEW) {
             holder.rvItemList.setVisibility(View.VISIBLE);
             holder.rvAdapter.setList(holder.pmList);
             holder.rvAdapter.notifyDataSetChanged();

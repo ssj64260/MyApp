@@ -116,8 +116,8 @@ public class PhotoListActivity extends BaseActivity {
         }
 
         @Override
-        public void onTagClick(Tag tag, int position) {
-            if (tag == Tag.LINEARLAYOUT) {
+        public void onTagClick(int tag, int position) {
+            if (tag == LINEARLAYOUT) {
                 PhotoBean pb = list.get(position);
                 String content = "";
                 content += "ID：" + pb.getId() + "\n";

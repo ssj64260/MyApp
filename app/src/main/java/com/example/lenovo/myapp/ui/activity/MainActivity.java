@@ -28,13 +28,13 @@ import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.ui.dialog.TipsActionDialog;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.io.File;
@@ -71,14 +71,14 @@ public class MainActivity extends BaseAppCompatActivity {
                     break;
                 case NetworkUtil.NETWORK_MOBILE:
                     if (apnType == NetworkUtil.NETWORK_TYPE_CMNET) {
-                        ToastUtil.toast(getString(R.string.toast_had_connected_cmnet));
+                        ToastMaster.toast(getString(R.string.toast_had_connected_cmnet));
                     } else {
-                        ToastUtil.toast(getString(R.string.toast_had_connected_cmwap));
+                        ToastMaster.toast(getString(R.string.toast_had_connected_cmwap));
                     }
                     rlNetworkWarm.setVisibility(View.GONE);
                     break;
                 case NetworkUtil.NETWORK_WIFI:
-                    ToastUtil.toast(getString(R.string.toast_had_connected_wifi));
+                    ToastMaster.toast(getString(R.string.toast_had_connected_wifi));
                     rlNetworkWarm.setVisibility(View.GONE);
                     break;
             }
@@ -135,7 +135,7 @@ public class MainActivity extends BaseAppCompatActivity {
                         .setAction("忽略", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                ToastUtil.toast("忽略了该推送");
+                                ToastMaster.toast("忽略了该推送");
                             }
                         })
                         .show();
@@ -270,11 +270,11 @@ public class MainActivity extends BaseAppCompatActivity {
     private OnListClickListener listClick = new OnListClickListener() {
         @Override
         public void onItemClick(int position) {
-            ToastUtil.toast(list.get(position).getName());
+            ToastMaster.toast(list.get(position).getName());
         }
 
         @Override
-        public void onTagClick(Tag tag, int position) {
+        public void onTagClick(int tag, int position) {
 
         }
     };
@@ -284,7 +284,7 @@ public class MainActivity extends BaseAppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.nav_camera:
-                    ToastUtil.toast("打开相机");
+                    ToastMaster.toast("打开相机");
                     break;
                 case R.id.nav_manage:
                     showTipsActionDialog();
@@ -356,7 +356,7 @@ public class MainActivity extends BaseAppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.action_settings) {
-                    ToastUtil.toast("settings");
+                    ToastMaster.toast("settings");
                 }
                 return true;
             }
@@ -388,13 +388,13 @@ public class MainActivity extends BaseAppCompatActivity {
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                ToastUtil.toast(getString(R.string.navigation_drawer_close));
+                ToastMaster.toast(getString(R.string.navigation_drawer_close));
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                ToastUtil.toast(getString(R.string.navigation_drawer_open));
+                ToastMaster.toast(getString(R.string.navigation_drawer_open));
             }
         };
         toggle.setDrawerIndicatorEnabled(false);

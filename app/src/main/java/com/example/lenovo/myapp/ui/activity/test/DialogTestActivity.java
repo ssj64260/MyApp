@@ -6,13 +6,13 @@ import android.widget.Button;
 
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.cxb.tools.utils.ToastUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.ui.dialog.EvaluationDialog;
 import com.example.lenovo.myapp.ui.dialog.InputContentDialog;
 import com.example.lenovo.myapp.ui.dialog.TipsActionDialog;
+import com.example.lenovo.myapp.utils.ToastMaster;
 
 /**
  * 对话框测试
@@ -82,7 +82,7 @@ public class DialogTestActivity extends BaseActivity {
         dialog.setOnConfirmListener(new TipsActionDialog.OnConfirmListener() {
             @Override
             public void OnConfirmListener(View v) {
-                ToastUtil.toast(getString(R.string.toast_you_can_not_do_that));
+                ToastMaster.toast(getString(R.string.toast_you_can_not_do_that));
             }
         });
     }
@@ -120,9 +120,9 @@ public class DialogTestActivity extends BaseActivity {
             public void OnConfirmListener(View v, String content) {
                 hideKeyboard();
                 if (StringCheck.isEmpty(content)) {
-                    ToastUtil.toast(getString(R.string.toast_contant_can_not_null));
+                    ToastMaster.toast(getString(R.string.toast_contant_can_not_null));
                 } else {
-                    ToastUtil.toast(content);
+                    ToastMaster.toast(content);
                 }
             }
         });
@@ -135,7 +135,7 @@ public class DialogTestActivity extends BaseActivity {
         evaDialog.setOnSelectedListener(new EvaluationDialog.OnSelectedListener() {
             @Override
             public void OnselectedListener(View v, String content, float score) {
-                ToastUtil.toast(String.format(getString(R.string.toast_contant_and_score), content, score));
+                ToastMaster.toast(String.format(getString(R.string.toast_contant_and_score), content, score));
             }
         });
     }

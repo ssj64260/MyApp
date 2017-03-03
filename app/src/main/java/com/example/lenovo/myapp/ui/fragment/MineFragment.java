@@ -3,7 +3,6 @@ package com.example.lenovo.myapp.ui.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +11,13 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.activity.MainActivity;
 import com.example.lenovo.myapp.ui.activity.QQMainActivity;
 import com.example.lenovo.myapp.ui.activity.test.MyToolsActivity;
+import com.example.lenovo.myapp.ui.base.BaseFragment;
 
 /**
  * 我的
  */
 
-public class MineFragment extends Fragment {
+public class MineFragment extends BaseFragment {
 
     private View view;
 

@@ -3,7 +3,6 @@ package com.example.lenovo.myapp.ui.fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +16,7 @@ import com.cxb.tools.maintab.MainTabListLayout;
 import com.cxb.tools.maintab.MainTabResoureUtil;
 import com.cxb.tools.utils.FastClick;
 import com.example.lenovo.myapp.R;
+import com.example.lenovo.myapp.ui.base.BaseFragment;
 import com.example.lenovo.myapp.utils.CustomToast;
 import com.example.lenovo.myapp.utils.ToastMaster;
 
@@ -27,7 +27,7 @@ import java.util.List;
  * 首页
  */
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     private MainTabListLayout mainTabListLayout;
     private List<MainTab> tabList;

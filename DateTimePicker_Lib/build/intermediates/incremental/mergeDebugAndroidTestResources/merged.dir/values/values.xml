@@ -56,28 +56,28 @@
     <item format="float" name="circle_radius_multiplier" type="string">0.82</item>
     <item format="float" name="circle_radius_multiplier_24HourMode" type="string">0.85</item>
     <string name="day_of_week_label_typeface">sans-serif</string>
-    <string name="day_picker_description">Month grid of days</string>
-    <string name="deleted_key"><ns1:g example="4" id="key">%1$s</ns1:g> deleted</string>
-    <string name="done_label">Done</string>
-    <string name="hour_picker_description">Hours circular slider</string>
-    <string name="item_is_selected"><ns1:g example="2013" id="item">%1$s</ns1:g> selected</string>
-    <string name="minute_picker_description">Minutes circular slider</string>
+    <string msgid="3968620852217927702" name="day_picker_description">"按月份划分的日期网格"</string>
+    <string msgid="6908431551612331381" name="deleted_key">"已删除 <ns1:g id="KEY">%1$s</ns1:g>"</string>
+    <string msgid="7007948707597430919" name="done_label">"完成"</string>
+    <string msgid="7586639618712934060" name="hour_picker_description">"小时转盘"</string>
+    <string msgid="2674929164900463786" name="item_is_selected">"已选择 <ns1:g id="ITEM">%1$s</ns1:g>"</string>
+    <string msgid="6024811202872705251" name="minute_picker_description">"分钟转盘"</string>
     <item format="float" name="numbers_radius_multiplier_inner" type="string">0.60</item>
     <item format="float" name="numbers_radius_multiplier_normal" type="string">0.81</item>
     <item format="float" name="numbers_radius_multiplier_outer" type="string">0.83</item>
     <string name="radial_numbers_typeface">sans-serif</string>
     <string name="sans_serif">sans-serif</string>
-    <string name="select_day">Select month and day</string>
-    <string name="select_hours">Select hours</string>
-    <string name="select_minutes">Select minutes</string>
-    <string name="select_year">Select year</string>
+    <string msgid="3973338219107019769" name="select_day">"选择月份和日期"</string>
+    <string msgid="7651068754188418859" name="select_hours">"选择小时"</string>
+    <string msgid="8327182090226828481" name="select_minutes">"选择分钟"</string>
+    <string msgid="2603330600102539372" name="select_year">"选择年份"</string>
     <item format="float" name="selection_radius_multiplier" type="string">0.16</item>
     <item format="float" name="text_size_multiplier_inner" type="string">0.14</item>
     <item format="float" name="text_size_multiplier_normal" type="string">0.17</item>
     <item format="float" name="text_size_multiplier_outer" type="string">0.11</item>
     <string name="time_placeholder">--</string>
     <string name="time_separator">:</string>
-    <string name="year_picker_description">Year list</string>
+    <string msgid="6963340404644587098" name="year_picker_description">"年份列表"</string>
     <style name="ampm_label">
         <item name="android:textSize">@dimen/ampm_label_size</item>
         <item name="android:textAllCaps">true</item>

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,6 +25,7 @@ import com.example.lenovo.myapp.ui.activity.PokemonDetailActivity;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
 import com.example.lenovo.myapp.ui.adapter.ViewPagerAdapter;
+import com.example.lenovo.myapp.ui.base.BaseFragment;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -39,7 +39,7 @@ import static com.example.lenovo.myapp.ui.activity.PokemonDetailActivity.POKEMON
  * 附近
  */
 
-public class DiscoveryFragment extends Fragment {
+public class DiscoveryFragment extends BaseFragment {
 
     private Handler mainThread = new Handler(Looper.getMainLooper());//回调到主线程
 

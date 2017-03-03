@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">cxb library</string>
+
+    <!--用于自定义控件标记id-->
+    <item type="id" name="vp_tab_list"/>
+    <item type="id" name="llyout_point_list"/>
+
+    <!--PasswordLevelLayout-->
+    <string name="text_level_1">低</string>
+    <string name="text_level_2">中</string>
+    <string name="text_level_3">高</string>
+    <string name="text_level_4">非常高</string>
+
+
+</resources>

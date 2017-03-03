@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
     }
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion '25.0.1'
     defaultConfig {
         applicationId 'com.example.lenovo.myapp'

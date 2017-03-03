@@ -24,15 +24,15 @@
     <string name="sans_serif">sans-serif</string>
     <string name="day_of_week_label_typeface">sans-serif</string>
 
-    <string name="done_label" msgid="7007948707597430919">"완료"</string>
-    <string name="hour_picker_description" msgid="7586639618712934060">"시간 원형 슬라이더"</string>
-    <string name="minute_picker_description" msgid="6024811202872705251">"분 원형 슬라이더"</string>
-    <string name="select_hours" msgid="7651068754188418859">"시간 선택"</string>
-    <string name="select_minutes" msgid="8327182090226828481">"분 선택"</string>
-    <string name="day_picker_description" msgid="3968620852217927702">"월별 바둑판식 날짜 표시"</string>
-    <string name="year_picker_description" msgid="6963340404644587098">"년"</string>
-    <string name="select_day" msgid="3973338219107019769">"월/일 선택"</string>
-    <string name="select_year" msgid="2603330600102539372">"연도 선택"</string>
-    <string name="item_is_selected" msgid="2674929164900463786">"<xliff:g id="ITEM">%1$s</xliff:g>이(가) 선택됨"</string>
-    <string name="deleted_key" msgid="6908431551612331381">"<xliff:g id="KEY">%1$s</xliff:g> 삭제됨"</string>
+    <string name="done_label" msgid="7007948707597430919">"Done"</string>
+    <string name="hour_picker_description" msgid="7586639618712934060">"Hours circular slider"</string>
+    <string name="minute_picker_description" msgid="6024811202872705251">"Minutes circular slider"</string>
+    <string name="select_hours" msgid="7651068754188418859">"Select hours"</string>
+    <string name="select_minutes" msgid="8327182090226828481">"Select minutes"</string>
+    <string name="day_picker_description" msgid="3968620852217927702">"Month grid of days"</string>
+    <string name="year_picker_description" msgid="6963340404644587098">"Year list"</string>
+    <string name="select_day" msgid="3973338219107019769">"Select month and day"</string>
+    <string name="select_year" msgid="2603330600102539372">"Select year"</string>
+    <string name="item_is_selected" msgid="2674929164900463786">"<xliff:g id="ITEM">%1$s</xliff:g> selected"</string>
+    <string name="deleted_key" msgid="6908431551612331381">"<xliff:g id="KEY">%1$s</xliff:g> deleted"</string>
 </resources>

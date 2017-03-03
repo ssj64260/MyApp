@@ -17,6 +17,13 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="time_placeholder">--</string>
+    <string name="time_separator">:</string>
+    <string name="radial_numbers_typeface">sans-serif</string>
+    <string name="sans_serif">sans-serif</string>
+    <string name="day_of_week_label_typeface">sans-serif</string>
+
     <string name="done_label" msgid="7007948707597430919">"完了"</string>
     <string name="hour_picker_description" msgid="7586639618712934060">"円形スライダー（時）"</string>
     <string name="minute_picker_description" msgid="6024811202872705251">"円形スライダー（分）"</string>

@@ -16,6 +16,7 @@ import com.example.lenovo.myapp.utils.ToastMaster;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +43,6 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
 
     private CommonTabLayout tabLayout;
 
-    private Fragment curFragment;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +50,13 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
 
         initView();
         setData();
-        initFragment();
+        initFragment(savedInstanceState);
+    }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("activity_will_destory", true);
+        super.onSaveInstanceState(outState);
     }
 
     private void initView() {
@@ -68,35 +72,6 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
 
         tabLayout = (CommonTabLayout) findViewById(R.id.com_tablayout);
 
-    }
-
-    private void initFragment() {
-        fragmentList = new ArrayList<>();
-        fragmentList.add(new HomeFragment());
-        fragmentList.add(new DiscoveryFragment());
-        fragmentList.add(new MineFragment());
-
-        showFragment(0);
-    }
-
-    private void showFragment(int position) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-        if (curFragment != null) {
-            transaction.hide(curFragment);
-        }
-
-        curFragment = getSupportFragmentManager().findFragmentByTag(fragmentList.get(position).getClass().getName());
-        if (curFragment == null) {
-            curFragment = fragmentList.get(position);
-        }
-
-        if (!curFragment.isAdded()) {
-            transaction.add(R.id.fl_fragment, curFragment);
-        } else {
-            transaction.show(curFragment);
-        }
-        transaction.commit();
     }
 
     private void setData() {
@@ -122,6 +97,59 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         //设置未读消息红点
         tabLayout.showDot(2);
 
+    }
+
+    private void initFragment(Bundle savedInstanceState) {
+        fragmentList = new ArrayList<>(3);
+        if (savedInstanceState != null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            List<Fragment> list = getSupportFragmentManager().getFragments();
+            if (list != null && list.size() >= 3) {
+                for (Fragment fragment : list) {
+                    if (fragment instanceof HomeFragment) {
+                        fragmentList.add(0, fragment);
+                    } else if (fragment instanceof DiscoveryFragment) {
+                        fragmentList.add(1, fragment);
+                    } else if (fragment instanceof MineFragment) {
+                        fragmentList.add(2, fragment);
+                    }
+                }
+            }
+            transaction.commit();
+        }
+
+        if (fragmentList.size() == 0) {
+            fragmentList.add(0, new HomeFragment());
+            fragmentList.add(1, new DiscoveryFragment());
+            fragmentList.add(2, new MineFragment());
+        }
+
+        showFragment(0);
+    }
+
+    private void showFragment(int position) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        List<Fragment> list = getSupportFragmentManager().getFragments();
+
+        if (list != null) {
+            String content = "";
+            for (Fragment fragment : list) {
+                transaction.hide(fragment);
+                content += fragment.getClass().getSimpleName() + ":" + fragment.isAdded() + "\n";
+            }
+            Logger.d(content);
+        }
+
+        if (position < fragmentList.size()) {
+            Fragment fragment = fragmentList.get(position);
+
+            if (!fragment.isAdded()) {
+                transaction.add(R.id.fl_fragment, fragment);
+            }
+            transaction.show(fragment);
+        }
+
+        transaction.commit();
     }
 
     @Override

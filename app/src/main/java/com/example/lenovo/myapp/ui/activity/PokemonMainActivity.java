@@ -39,9 +39,12 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
     };
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    private List<Fragment> fragmentList;
+
+    private Fragment[] fragmentList;
 
     private CommonTabLayout tabLayout;
+
+    private final int tabCount = 3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,28 +103,32 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
     }
 
     private void initFragment(Bundle savedInstanceState) {
-        fragmentList = new ArrayList<>(3);
+        fragmentList = new Fragment[tabCount];
         if (savedInstanceState != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             List<Fragment> list = getSupportFragmentManager().getFragments();
             if (list != null && list.size() >= 3) {
                 for (Fragment fragment : list) {
                     if (fragment instanceof HomeFragment) {
-                        fragmentList.add(0, fragment);
+                        fragmentList[0] = fragment;
                     } else if (fragment instanceof DiscoveryFragment) {
-                        fragmentList.add(1, fragment);
+                        fragmentList[1] = fragment;
                     } else if (fragment instanceof MineFragment) {
-                        fragmentList.add(2, fragment);
+                        fragmentList[2] = fragment;
                     }
                 }
             }
             transaction.commit();
         }
 
-        if (fragmentList.size() == 0) {
-            fragmentList.add(0, new HomeFragment());
-            fragmentList.add(1, new DiscoveryFragment());
-            fragmentList.add(2, new MineFragment());
+        if (fragmentList[0] == null) {
+            fragmentList[0] = new HomeFragment();
+        }
+        if (fragmentList[1] == null) {
+            fragmentList[1] = new DiscoveryFragment();
+        }
+        if (fragmentList[2] == null) {
+            fragmentList[2] = new MineFragment();
         }
 
         showFragment(0);
@@ -140,8 +147,8 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
             Logger.d(content);
         }
 
-        if (position < fragmentList.size()) {
-            Fragment fragment = fragmentList.get(position);
+        if (position < fragmentList.length) {
+            Fragment fragment = fragmentList[position];
 
             if (!fragment.isAdded()) {
                 transaction.add(R.id.fl_fragment, fragment);

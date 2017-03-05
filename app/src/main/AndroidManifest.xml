@@ -88,7 +88,7 @@
         <!-- ***********************************测试用页面*********************************** -->
         <activity
             android:name=".ui.activity.test.MyToolsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.activity.test.AnimationTestActivity"

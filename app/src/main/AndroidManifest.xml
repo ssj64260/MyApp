@@ -51,13 +51,10 @@
             android:name=".ui.activity.StartupPageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/splashTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <!--广告页-->
@@ -71,8 +68,7 @@
             android:screenOrientation="portrait" />
 
         <!--口袋妖怪主页-->
-        <activity
-            android:name=".ui.activity.PokemonMainActivity" />
+        <activity android:name=".ui.activity.PokemonMainActivity" />
 
         <!--app介绍页面-->
         <activity
@@ -88,7 +84,14 @@
         <!-- ***********************************测试用页面*********************************** -->
         <activity
             android:name=".ui.activity.test.MyToolsActivity"
-            android:screenOrientation="portrait"/>
+            android:icon="@mipmap/tools_icon"
+            android:label="我的工具"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".ui.activity.test.AnimationTestActivity"
@@ -168,7 +171,29 @@
 
         <activity
             android:name=".ui.activity.test.MultiLanguageActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.test.themetest.ThemeListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.test.themetest.ThemeDialogActivity"
+            android:label="@string/text_theme_dialog_title"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+
+        <activity
+            android:name=".ui.activity.test.themetest.ThemeTranslucentActivity"
+            android:label="@string/text_translucent_activity_title"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <activity
+            android:name=".ui.activity.test.themetest.ThemeWallpaperActivity"
+            android:label="@string/text_wallpaper_title"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Wallpaper" />
 
         <activity
             android:name=".ui.activity.SetPostUrlActivity"

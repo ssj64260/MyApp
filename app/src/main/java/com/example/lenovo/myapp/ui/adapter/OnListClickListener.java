@@ -13,7 +13,7 @@ public interface OnListClickListener {
 
     @IntDef({BUTTON, TEXTVIEW, LINEARLAYOUT, LONGCLICK})
     @Retention(RetentionPolicy.SOURCE)
-    @interface View {
+    @interface ItemView {
     }
 
     int BUTTON = 0;
@@ -25,5 +25,5 @@ public interface OnListClickListener {
     void onItemClick(int position);
 
     //可根据tag来区分点击的是item内部哪个控件
-    void onTagClick(@View int tag, int position);
+    void onTagClick(@ItemView int tag, int position);
 }

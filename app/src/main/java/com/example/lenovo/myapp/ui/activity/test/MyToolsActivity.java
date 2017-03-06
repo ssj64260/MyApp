@@ -12,6 +12,7 @@ import com.example.lenovo.myapp.ui.activity.GuideActivity;
 import com.example.lenovo.myapp.ui.activity.test.dbtest.DatebaseTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.systemres.SystemResActivity;
+import com.example.lenovo.myapp.ui.activity.test.themetest.ThemeListActivity;
 import com.example.lenovo.myapp.ui.adapter.MyToolsAdapter;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
@@ -69,7 +70,8 @@ public class MyToolsActivity extends BaseActivity {
                 getString(R.string.btn_tool_10),
                 getString(R.string.btn_tool_11),
                 getString(R.string.btn_tool_12),
-                getString(R.string.btn_tool_13)
+                getString(R.string.btn_tool_13),
+                getString(R.string.btn_tool_14)
         };
 
         list.clear();
@@ -137,6 +139,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 12://多语言设置
                         startActivity(new Intent(MyToolsActivity.this, MultiLanguageActivity.class));
+                        break;
+                    case 13://Android主题测试
+                        startActivity(new Intent(MyToolsActivity.this, ThemeListActivity.class));
                         break;
                 }
             }

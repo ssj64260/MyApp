@@ -257,6 +257,7 @@
     <string name="btn_tool_11">LiteOrm数据库工具</string>
     <string name="btn_tool_12">WebView Demo</string>
     <string name="btn_tool_13">多语言设置</string>
+    <string name="btn_tool_14">Android主题测试</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">版本号：%s</string>
@@ -317,6 +318,60 @@
     <string name="text_dragon">龙</string>
     <string name="text_evil">恶</string>
     <string name="text_fairy">妖精</string>
+
+    <!--ThemeListActivity-->
+    <string name="text_theme_name_1">Theme_Dialog</string>
+    <string name="text_theme_name_2">Theme_Translucent</string>
+    <string name="text_theme_name_3">Theme_Wallpaper</string>
+
+    <!--ThemeDialogActivity-->
+    <string name="text_theme_dialog_title">对话框Activity</string>
+    <string name="btn_dialog_theme_1">Theme_DeviceDefault_Dialog</string>
+    <string name="btn_dialog_theme_2">Theme_DeviceDefault_Dialog_Alert</string>
+    <string name="btn_dialog_theme_3">Theme_DeviceDefault_Dialog_MinWidth</string>
+    <string name="btn_dialog_theme_4">Theme_DeviceDefault_Dialog_NoActionBar</string>
+    <string name="btn_dialog_theme_5">Theme_DeviceDefault_Dialog_NoActionBar_MinWidth</string>
+    <string name="btn_dialog_theme_6">Theme_DeviceDefault_Light_Dialog</string>
+    <string name="btn_dialog_theme_7">Theme_DeviceDefault_Light_Dialog_Alert</string>
+    <string name="btn_dialog_theme_8">Theme_DeviceDefault_Light_Dialog_MinWidth</string>
+    <string name="btn_dialog_theme_9">Theme_DeviceDefault_Light_Dialog_NoActionBar</string>
+    <string name="btn_dialog_theme_10">Theme_DeviceDefault_Light_DialogWhenLarge_NoActionBar</string>
+    <string name="btn_dialog_theme_11">Theme_Holo_Dialog</string>
+    <string name="btn_dialog_theme_12">Theme_Holo_Dialog_MinWidth</string>
+    <string name="btn_dialog_theme_13">Theme_Holo_Dialog_NoActionBar</string>
+    <string name="btn_dialog_theme_14">Theme_Holo_Dialog_NoActionBar_MinWidth</string>
+    <string name="btn_dialog_theme_15">Theme_Holo_Light_Dialog</string>
+    <string name="btn_dialog_theme_16">Theme_Holo_Light_Dialog_MinWidth</string>
+    <string name="btn_dialog_theme_17">Theme_Holo_Light_Dialog_NoActionBar</string>
+    <string name="btn_dialog_theme_18">Theme_Holo_Light_Dialog_NoActionBar_MinWidth</string>
+    <string name="btn_dialog_theme_19">Theme_Material_Dialog</string>
+    <string name="btn_dialog_theme_20">Theme_Material_Dialog_Alert</string>
+    <string name="btn_dialog_theme_21">Theme_Material_Dialog_MinWidth</string>
+    <string name="btn_dialog_theme_22">Theme_Material_Dialog_NoActionBar</string>
+    <string name="btn_dialog_theme_23">Theme_Material_Dialog_NoActionBar_MinWidth</string>
+    <string name="btn_dialog_theme_24">Theme_Material_Light_Dialog</string>
+    <string name="btn_dialog_theme_25">Theme_Material_Light_Dialog_Alert</string>
+    <string name="btn_dialog_theme_26">Theme_Material_Light_Dialog_MinWidth</string>
+    <string name="btn_dialog_theme_27">Theme_Material_Light_Dialog_NoActionBar</string>
+    <string name="btn_dialog_theme_28">Theme_Material_Light_Dialog_NoActionBar_MinWidth</string>
+
+    <!--ThemeTranslucentActivity-->
+    <string name="text_translucent_activity_title">透明背景Activity</string>
+    <string name="btn_translucent_theme_1">Theme_Translucent_NoTitleBar</string>
+    <string name="btn_translucent_theme_2">Theme_Translucent_NoTitleBar_Fullscreen</string>
+
+    <!--ThemeWallpaperActivity-->
+    <string name="text_wallpaper_title">系统背景Activity</string>
+    <string name="btn_wallpaper_theme_1">Theme_Wallpaper_NoTitleBar</string>
+    <string name="btn_wallpaper_theme_2">Theme_Wallpaper_NoTitleBar_Fullscreen</string>
+    <string name="btn_wallpaper_theme_3">Theme_DeviceDefault_Wallpaper</string>
+    <string name="btn_wallpaper_theme_4">Theme_DeviceDefault_Wallpaper_NoTitleBar</string>
+    <string name="btn_wallpaper_theme_5">Theme_Holo_Wallpaper</string>
+    <string name="btn_wallpaper_theme_6">Theme_Holo_Wallpaper_NoTitleBar</string>
+    <string name="btn_wallpaper_theme_7">Theme_Material_Wallpaper</string>
+    <string name="btn_wallpaper_theme_8">Theme_Material_Wallpaper_NoTitleBar</string>
+    <string name="btn_wallpaper_theme_9">Theme_WallpaperSettings</string>
+    <string name="btn_wallpaper_theme_10">Theme_Light_WallpaperSettings</string>
 
 
 </resources>

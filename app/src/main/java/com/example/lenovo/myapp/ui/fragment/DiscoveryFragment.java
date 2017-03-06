@@ -63,7 +63,7 @@ public class DiscoveryFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         if (view == null) {
-            view = inflater.inflate(R.layout.fragment_discovery, null);
+            view = inflater.inflate(R.layout.fragment_discovery, container, false);
 
             initData();
             initView();
@@ -81,7 +81,7 @@ public class DiscoveryFragment extends BaseFragment {
         super.onDestroy();
     }
 
-    private void initData(){
+    private void initData() {
         rvList = new ArrayList<>();
         adapterList = new ArrayList<>();
         pmList = new ArrayList<>();

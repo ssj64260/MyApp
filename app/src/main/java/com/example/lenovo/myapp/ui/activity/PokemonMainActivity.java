@@ -16,7 +16,6 @@ import com.example.lenovo.myapp.utils.ToastMaster;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +40,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
     private Fragment[] fragmentList;
+    private Fragment currentFragment;
 
     private CommonTabLayout tabLayout;
 
@@ -136,24 +136,18 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
 
     private void showFragment(int position) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        List<Fragment> list = getSupportFragmentManager().getFragments();
 
-        if (list != null) {
-            String content = "";
-            for (Fragment fragment : list) {
-                transaction.hide(fragment);
-                content += fragment.getClass().getSimpleName() + ":" + fragment.isAdded() + "\n";
-            }
-            Logger.d(content);
+        if (currentFragment != null) {
+            transaction.hide(currentFragment);
         }
 
         if (position < fragmentList.length) {
-            Fragment fragment = fragmentList[position];
+            currentFragment = fragmentList[position];
 
-            if (!fragment.isAdded()) {
-                transaction.add(R.id.fl_fragment, fragment);
+            if (!currentFragment.isAdded()) {
+                transaction.add(R.id.fl_fragment, currentFragment);
             }
-            transaction.show(fragment);
+            transaction.show(currentFragment);
         }
 
         transaction.commit();

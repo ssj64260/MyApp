@@ -26,7 +26,7 @@ public class MineFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         if (view == null) {
-            view = inflater.inflate(R.layout.fragment_mine, null);
+            view = inflater.inflate(R.layout.fragment_mine, container, false);
             initView();
         }
 

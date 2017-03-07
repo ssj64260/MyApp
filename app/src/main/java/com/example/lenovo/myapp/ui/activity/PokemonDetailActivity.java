@@ -95,6 +95,21 @@ public class PokemonDetailActivity extends BaseActivity {
         initView();
         setData();
 
+        if (savedInstanceState != null) {
+            svBackground.post(new Runnable() {
+                @Override
+                public void run() {
+                    svBackground.setScrollY(0);
+                }
+            });
+        }
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("isChange", true);
+        super.onSaveInstanceState(outState);
     }
 
     private void initView() {

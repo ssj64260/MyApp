@@ -68,7 +68,9 @@
             android:screenOrientation="portrait" />
 
         <!--口袋妖怪主页-->
-        <activity android:name=".ui.activity.PokemonMainActivity" />
+        <activity
+            android:name=".ui.activity.PokemonMainActivity"
+            android:screenOrientation="portrait" />
 
         <!--app介绍页面-->
         <activity
@@ -77,8 +79,7 @@
 
         <!--口袋妖怪详情页面-->
         <activity
-            android:name=".ui.activity.PokemonDetailActivity"
-            android:screenOrientation="portrait" />
+            android:name=".ui.activity.PokemonDetailActivity" />
 
 
         <!-- ***********************************测试用页面*********************************** -->

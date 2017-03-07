@@ -74,6 +74,21 @@ public class SDCardUtil {
         return Environment.isExternalStorageRemovable();
     }
 
+    //获取内部存储剩余空间
+    public static long getFreeSpace(){
+        return Environment.getExternalStorageDirectory().getFreeSpace();
+    }
+
+    //获取内部存储可用空间
+    public static long getUsableSpace(){
+        return Environment.getExternalStorageDirectory().getUsableSpace();
+    }
+
+    //获取内部存储总空间
+    public static long getTotalSpace(){
+        return Environment.getExternalStorageDirectory().getTotalSpace();
+    }
+
     /**
      * 计算SD卡的剩余空间
      *

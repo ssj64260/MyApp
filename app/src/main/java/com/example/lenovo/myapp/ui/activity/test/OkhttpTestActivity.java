@@ -258,8 +258,8 @@ public class OkhttpTestActivity extends BaseActivity {
     private OnDownloadCallBack downloadCallBack = new OnDownloadCallBack() {
         @Override
         public void onPregrass(long curSize, long maxSize) {
-            String curDownload = FileUtil.FormetFileSize(MyApplication.getInstance(), curSize);
-            String totalDownload = FileUtil.FormetFileSize(MyApplication.getInstance(), maxSize);
+            String curDownload = FileUtil.FormatFileSize(MyApplication.getInstance(), curSize);
+            String totalDownload = FileUtil.FormatFileSize(MyApplication.getInstance(), maxSize);
             progressDialog.setMessage(String.format(getString(R.string.text_downloading_with_progress), curDownload, totalDownload));
         }
 

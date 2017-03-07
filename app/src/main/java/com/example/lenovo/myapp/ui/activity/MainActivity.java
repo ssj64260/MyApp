@@ -308,7 +308,7 @@ public class MainActivity extends BaseAppCompatActivity {
             e.printStackTrace();
         }
 
-        String cache = FileUtil.FormetFileSize(this, cacheSize);
+        String cache = FileUtil.FormatFileSize(this, cacheSize);
 
         if (navigationView != null) {
             navigationView.getMenu().findItem(R.id.nav_manage).setTitle("清理缓存：" + cache);

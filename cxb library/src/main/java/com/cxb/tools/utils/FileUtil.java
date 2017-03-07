@@ -43,7 +43,7 @@ public class FileUtil {
     }
 
     //转换文件大小单位(B/KB/MB/GB)
-    public static String FormetFileSize(Context context, long size) {
+    public static String FormatFileSize(Context context, long size) {
         return Formatter.formatFileSize(context, size);
     }
 

@@ -122,7 +122,7 @@ public class PhotoListActivity extends BaseActivity {
                 String content = "";
                 content += "ID：" + pb.getId() + "\n";
                 content += "图片路径：" + pb.getData() + "\n";
-                content += "图片大小：" + FileUtil.FormetFileSize(PhotoListActivity.this, pb.getSize()) + "\n";
+                content += "图片大小：" + FileUtil.FormatFileSize(PhotoListActivity.this, pb.getSize()) + "\n";
                 content += "显示名称：" + pb.getDisplayName() + "\n";
                 content += "标题：" + pb.getTitle() + "\n";
                 content += "创建日期：" + pb.getDateAdded() + "\n";

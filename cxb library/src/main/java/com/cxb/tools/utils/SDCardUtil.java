@@ -1,6 +1,7 @@
 package com.cxb.tools.utils;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 
@@ -87,7 +88,7 @@ public class SDCardUtil {
                 StatFs stat = new StatFs(path.getPath());
                 long blockSize;
                 long availableBlocks;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                     blockSize = stat.getBlockSizeLong();
                     availableBlocks = stat.getAvailableBlocksLong();
                 } else {
@@ -95,7 +96,7 @@ public class SDCardUtil {
                     availableBlocks = stat.getAvailableBlocks();
                 }
 
-                freeSpace = availableBlocks * blockSize / 1024;
+                freeSpace = availableBlocks * blockSize;
             } catch (Exception e) {
                 e.printStackTrace();
             }

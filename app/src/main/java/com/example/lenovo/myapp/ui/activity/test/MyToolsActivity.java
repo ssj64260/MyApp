@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.cxb.tools.utils.LanguageUtil;
+import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.activity.GuideActivity;
 import com.example.lenovo.myapp.ui.activity.test.dbtest.DatebaseTestActivity;
@@ -16,10 +18,14 @@ import com.example.lenovo.myapp.ui.activity.test.themetest.ThemeListActivity;
 import com.example.lenovo.myapp.ui.adapter.MyToolsAdapter;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.utils.PreferencesUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
+import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_LANGUAGE;
 
 /**
  * 我的工具
@@ -35,11 +41,25 @@ public class MyToolsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String language = PreferencesUtil.getString(APP_SETTING, KEY_LANGUAGE, "");
+        if (!StringCheck.isEmpty(language)) {
+            LanguageUtil.setLanguage(getResources(), language);
+        }
+
         setContentView(R.layout.activity_my_tools);
 
         initView();
         setData();
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            finish();
+        }
     }
 
     private void initView() {
@@ -138,7 +158,7 @@ public class MyToolsActivity extends BaseActivity {
                         startActivity(new Intent(MyToolsActivity.this, WebViewTestActivity.class));
                         break;
                     case 12://多语言设置
-                        startActivity(new Intent(MyToolsActivity.this, MultiLanguageActivity.class));
+                        startActivityForResult(new Intent(MyToolsActivity.this, MultiLanguageActivity.class), 1);
                         break;
                     case 13://Android主题测试
                         startActivity(new Intent(MyToolsActivity.this, ThemeListActivity.class));

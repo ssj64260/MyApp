@@ -48,10 +48,13 @@ public class MultiLanguageActivity extends BaseActivity {
 
         PreferencesUtil.setData(APP_SETTING, KEY_LANGUAGE, language.getLanguage());
 
+        setResult(RESULT_OK);
+
         Intent intent = new Intent();
         intent.setClass(this, PokemonMainActivity.class);
         intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        finish();
     }
 
     //点击监听

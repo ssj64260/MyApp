@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.cxb.tools.utils.FastClick;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.db.PokemonDBHelper;
@@ -68,32 +69,35 @@ public class DatebaseDetailActivity extends BaseActivity {
     private View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.btn_update:
-                    if (pokemon != null) {
-                        String name = etName.getText().toString();
-                        if (!StringCheck.isEmpty(name)) {
-                            pokemon.setName(name);
-                            pmDBHelper.update(pokemon);
-                            ToastMaster.toast(getString(R.string.toast_pokemon_data_update_success));
-                            setResult(RESULT_OK);
+            if (!FastClick.isFastClick()) {
+                hideKeyboard();
+                switch (v.getId()) {
+                    case R.id.btn_update:
+                        if (pokemon != null) {
+                            String name = etName.getText().toString();
+                            if (!StringCheck.isEmpty(name)) {
+                                pokemon.setName(name);
+                                pmDBHelper.update(pokemon);
+                                ToastMaster.toast(getString(R.string.toast_pokemon_data_update_success));
+                                setResult(RESULT_OK);
+                            } else {
+                                ToastMaster.toast(getString(R.string.toast_pokemon_name_not_null));
+                            }
                         } else {
-                            ToastMaster.toast(getString(R.string.toast_pokemon_name_not_null));
+                            ToastMaster.toast(getString(R.string.toast_not_pokemon_info));
                         }
-                    } else {
-                        ToastMaster.toast(getString(R.string.toast_not_pokemon_info));
-                    }
-                    break;
-                case R.id.btn_delete:
-                    if (pokemon != null) {
-                        pmDBHelper.delete(pokemon.getId());
-                        ToastMaster.toast(getString(R.string.toast_pokemon_data_delete_success));
-                        setResult(RESULT_OK);
-                        finish();
-                    } else {
-                        ToastMaster.toast(getString(R.string.toast_not_pokemon_info));
-                    }
-                    break;
+                        break;
+                    case R.id.btn_delete:
+                        if (pokemon != null) {
+                            pmDBHelper.delete(pokemon.getId());
+                            ToastMaster.toast(getString(R.string.toast_pokemon_data_delete_success));
+                            setResult(RESULT_OK);
+                            finish();
+                        } else {
+                            ToastMaster.toast(getString(R.string.toast_not_pokemon_info));
+                        }
+                        break;
+                }
             }
         }
     };

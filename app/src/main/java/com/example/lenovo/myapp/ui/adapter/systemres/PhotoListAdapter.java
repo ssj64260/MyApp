@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.cxb.tools.utils.DisplayUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.PhotoBean;
 import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
@@ -30,10 +31,14 @@ public class PhotoListAdapter extends RecyclerView.Adapter {
     private LayoutInflater inflater;
     private RequestManager requestManager;
 
+    private int itemWidth;
+    private int itemHeight;
+
     public PhotoListAdapter(Context context, List<PhotoBean> list) {
         this.list = list;
         inflater = LayoutInflater.from(context);
         requestManager = Glide.with(context);
+        itemHeight = itemWidth = DisplayUtil.getScreenWidth(context) / 3;
     }
 
     @Override
@@ -47,6 +52,11 @@ public class PhotoListAdapter extends RecyclerView.Adapter {
     }
 
     private void bindNoHeadItem(ListViewHolder holder, final int position) {
+
+        ViewGroup.LayoutParams params = holder.view.getLayoutParams();
+        params.width = itemWidth;
+        params.height = itemHeight;
+        holder.view.setLayoutParams(params);
 
         PhotoBean photo = list.get(position);
 

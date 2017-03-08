@@ -1,5 +1,9 @@
 package com.example.lenovo.myapp.ui.activity.test;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
@@ -48,6 +52,8 @@ public class CustomViewTestActivity extends BaseActivity {
     private MyProgressBar mpbProgress;
 
     private Button btnGetCode;
+    private EditText etIntent;
+    private Button btnIntent;
     private Button btnFirstStart;
 
     private MyTextSwitcher mtsText;
@@ -110,6 +116,8 @@ public class CustomViewTestActivity extends BaseActivity {
         btnGetAddress = (Button) findViewById(R.id.btn_get_address);
 
         btnGetCode = (Button) findViewById(R.id.btn_get_code);
+        etIntent = (EditText) findViewById(R.id.et_intent);
+        btnIntent = (Button) findViewById(R.id.btn_intent);
         btnFirstStart = (Button) findViewById(R.id.btn_first_start);
     }
 
@@ -122,6 +130,7 @@ public class CustomViewTestActivity extends BaseActivity {
         btnConfirm.setOnClickListener(click);
         btnGetAddress.setOnClickListener(click);
         btnGetCode.setOnClickListener(click);
+        btnIntent.setOnClickListener(click);
         btnFirstStart.setOnClickListener(click);
     }
 
@@ -330,6 +339,27 @@ public class CustomViewTestActivity extends BaseActivity {
                 case R.id.btn_first_start:
                     PreferencesUtil.setData(APP_SETTING, KEY_FIRST_START, true);
                     ToastMaster.toast(getString(R.string.toast_open_guide_setting_success));
+                    break;
+                case R.id.btn_intent:
+                    String content = etIntent.getText().toString();
+
+                    if (!StringCheck.isEmpty(content)) {
+                        Uri location = Uri.parse(content);
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+
+                        PackageManager packageManager = getPackageManager();
+                        List<ResolveInfo> activities = packageManager.queryIntentActivities(mapIntent, 0);
+                        boolean isIntentSafe = activities.size() > 0;
+
+                        if (isIntentSafe) {
+                            startActivity(mapIntent);
+                        } else {
+                            ToastMaster.toast(getString(R.string.toast_not_app_response));
+                        }
+                    } else {
+                        ToastMaster.toast(getString(R.string.toast_input_intent_can_not_null));
+                    }
+
                     break;
             }
         }

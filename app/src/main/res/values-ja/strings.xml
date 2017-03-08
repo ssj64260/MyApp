@@ -32,7 +32,11 @@
     <string name="btn_set_progress_confirm">確定</string>
     <string name="btn_get_current_address">选を当面アドレス</string>
     <string name="btn_count_down">逆数ろくじゅう秒</string>
+    <string name="btn_intent">Intent</string>
     <string name="btn_show_guide_next_time">次回起動ページを開いてナビゲーション</string>
+    <string name="text_input_intent_content">入力Intentの内容</string>
+    <string name="toast_input_intent_can_not_null">入力内容をIntentない空</string>
+    <string name="toast_not_app_response">APP応答がない</string>
 
     <!--activity_datebase_detail-->
     <string name="btn_update_name">更新名称</string>

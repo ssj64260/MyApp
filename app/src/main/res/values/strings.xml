@@ -32,7 +32,11 @@
     <string name="btn_set_progress_confirm">确定</string>
     <string name="btn_get_current_address">获取当前选中地址</string>
     <string name="btn_count_down">倒数60秒</string>
+    <string name="btn_intent">Intent</string>
     <string name="btn_show_guide_next_time">下次启动打开导航页</string>
+    <string name="text_input_intent_content">输入Intent的内容</string>
+    <string name="toast_input_intent_can_not_null">输入Intent内容不能为空</string>
+    <string name="toast_not_app_response">没有APP响应</string>
 
     <!--activity_datebase_detail-->
     <string name="btn_update_name">更新名称</string>

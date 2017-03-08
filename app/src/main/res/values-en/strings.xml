@@ -14,27 +14,37 @@
     <!--activity_album_list-->
     <string name="title_select_album">select album</string>
     <string name="btn_album_list_cancel">Cancel</string>
+
     <!--activity_clipping_image-->
     <string name="btn_back_to_photo">Photo</string>
     <string name="title_move_and_zoom">move and zoom</string>
     <string name="btn_cut_photo_confirm">complete</string>
+
     <!--activity_contacts_list-->
     <string name="btn_contacts_back">returns</string>
     <string name="title_contacts">contact</string>
+
     <!--activity_custom_view_test-->
     <string name="text_input_password">please enter the password (4–10, number, letter and symbol)</string>
     <string name="text_input_progress">please enter the progress (0–100 number between)</string>
     <string name="btn_set_progress_confirm">OK</string>
     <string name="btn_get_current_address">get the current selected address</string>
     <string name="btn_count_down">countdown 60 seconds</string>
+    <string name="btn_intent">Intent</string>
     <string name="btn_show_guide_next_time">start the next navigation page</string>
+    <string name="text_input_intent_content">Enter Intent content</string>
+    <string name="toast_input_intent_can_not_null">Enter Intent content cannot be empty</string>
+    <string name="toast_not_app_response">No APP response</string>
+
     <!--activity_datebase_detail-->
     <string name="btn_update_name">Update name</string>
     <string name="btn_delete_pokemon">delete this Pokemon</string>
+
     <!--activity_datebase_test-->
     <string name="btn_insert_all_data">import all data</string>
     <string name="btn_delete_table_data">delete table data</string>
     <string name="btn_delete_database">delete database</string>
+
     <!--activity_datetime_test-->
     <string name="text_date1">date [1]</string>
     <string name="text_time1">time [1]</string>
@@ -51,16 +61,18 @@
     <string name="btn_number_of_minute">minute</string>
     <string name="btn_get_current_time">get current time</string>
     <string name="btn_clear_datetime_data">clear data</string>
+
     <!--activity_dialog_test-->
     <string name="btn_select_dialog">select dialog box</string>
     <string name="btn_loading_dialog">wait dialog box</string>
     <string name="btn_input_content_dialog">enter content dialog box</string>
     <string name="btn_input_evalutation_dialog">input and evaluation dialog</string>
+
     <!--activity_introduction-->
     <string name="btn_guide_skip">skip</string>
+
     <!--activity_list_nest_detail-->
     <string name="btn_nest_detail_back">returns</string>
-
 
     <!--activity_list_nest_test-->
     <string name="btn_list_nest_list">ListView nested ListView</string>
@@ -84,6 +96,7 @@
 
     <!--activity_my_tools-->
     <string name="title_my_tools">my tool</string>
+
     <!--activity_okhttp_test-->
     <string name="btn_change_url">replace interface</string>
     <string name="btn_get_weather">GET weather today</string>
@@ -95,10 +108,12 @@
     <string name="text_current_version">current version number</string>
     <string name="text_network_version">network version number</string>
     <string name="btn_compare_two_version">compare the two version size</string>
+
     <!--activity_photo_list-->
     <string name="btn_back_to_album">album</string>
     <string name="title_lately_photo">recent photo</string>
     <string name="btn_photo_list_cancel">Cancel</string>
+
     <!--activity_pokemon_detail-->
     <string name="text_pokemon_characteristic">feature</string>
     <string name="text_special_characteristics">special features</string>
@@ -111,6 +126,7 @@
     <string name="text_special_defense_value">special anti</string>
     <string name="text_pokemon_speed_value">speed</string>
     <string name="btn_insert_to_datebase">Add database</string>
+
     <!--activity_set_post_url-->
     <string name="btn_test_server_url">test kit url</string>
     <string name="btn_official_server_url">formal service url</string>
@@ -120,11 +136,13 @@
 
     <!--activity_system_get_photo-->
     <string name="btn_change_photo">Modify picture</string>
+
     <!--activity_system_res-->
     <string name="btn_get_system_permission">get system permissions</string>
     <string name="btn_get_ablum_resourcd">Get Album resources</string>
     <string name="btn_take_photo">select and take pictures</string>
     <string name="btn_get_contacts">get system contact</string>
+
     <!--activity_thread_pool_test-->
     <string name="btn_do_asynctask">AsyncTask</string>
     <string name="btn_do_heart_request">heartbeat request</string>
@@ -137,31 +155,40 @@
     <string name="btn_do_single_pool">single thread pool</string>
     <string name="btn_cancel_all_thread">cancel all threads</string>
     <string name="btn_clear_thread_msg">clear message</string>
+
     <!--content_main-->
     <string name="text_network_timeout_msg">connection timed out, please check your network settings.</string>
+
     <!--dialog_evaluation-->
     <string name="dialog_title_evalutation">evaluation service</string>
     <string name="dialog_text_my_score">my score</string>
     <string name="dialog_text_hint">fill in your feelings or opinions …</string>
     <string name="dialog_btn_confirm_evalutation">submit your evaluation</string>
+
     <!--dialog_input_content-->
     <string name="dialog_input_confirm">OK</string>
     <string name="dialog_input_cancel">Cancel</string>
+
     <!--dialog_tips_action-->
     <string name="dialog_tips_confirm">OK</string>
     <string name="dialog_tips_cancel">Cancel</string>
+
     <!--fragment_home-->
     <string name="text_select_by_key">enter keyword search</string>
+
     <!--fragment_mine-->
     <string name="title_mine">My</string>
     <string name="btn_imitate_qq_interface">imitation QQ interface</string>
     <string name="btn_material_design_interface">Design Material interface</string>
     <string name="btn_my_tools">my tool</string>
+
     <!--include_app_info_detail-->
     <string name="btn_app_info_detail">details</string>
     <string name="btn_uninstall_app">uninstall</string>
+
     <!--include_qq_left_menu-->
     <string name="text_edit_personalized_signature">Edit personalized signature</string>
+
     <!--include_qq_right_content-->
     <string name="text_network_connect_msg">connection timed out, please check your network settings.</string>
 

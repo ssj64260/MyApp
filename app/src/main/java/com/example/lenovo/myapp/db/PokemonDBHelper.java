@@ -28,13 +28,20 @@ public class PokemonDBHelper {
                 PokemonBean.POKEMON_ID + "=?",
                 new String[]{id},
                 null, null, null);
-        cursor.moveToFirst();
 
-        PokemonBean pokemon = new PokemonBean();
-        pokemon.setId(cursor.getString(cursor.getColumnIndex(PokemonBean.POKEMON_ID)));
-        pokemon.setName(cursor.getString(cursor.getColumnIndex(PokemonBean.POKEMON_NAME)));
+        PokemonBean pokemon = null;
 
-        cursor.close();
+        if (cursor != null) {
+            cursor.moveToFirst();
+            do {
+                pokemon = new PokemonBean();
+                pokemon.setId(cursor.getString(cursor.getColumnIndex(PokemonBean.POKEMON_ID)));
+                pokemon.setName(cursor.getString(cursor.getColumnIndex(PokemonBean.POKEMON_NAME)));
+            } while (cursor.moveToNext());
+
+            cursor.close();
+        }
+        
         db.close();
 
         return pokemon;

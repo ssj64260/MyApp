@@ -173,7 +173,7 @@ public class ContactsListActivity extends BaseActivity {
         Cursor cursor = cr.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, "phonebook_label_alt");
 
         if (cursor != null) {
-            while (cursor.moveToNext()) {
+            do {
                 String temp = "";
                 for (int i = 0; i < cursor.getColumnCount(); i++) {
                     temp += cursor.getColumnName(i) + ":\t" + cursor.getString(cursor.getColumnIndex(cursor.getColumnName(i))) + "\n";
@@ -227,7 +227,7 @@ public class ContactsListActivity extends BaseActivity {
                 contact.setPhonebookBucket(cursor.getInt(cursor.getColumnIndex("phonebook_bucket")));
                 contact.setPhonebookBucketAlt(cursor.getString(cursor.getColumnIndex("phonebook_bucket_alt")));
                 list.add(contact);
-            }
+            } while (cursor.moveToNext());
             mAdapter.notifyDataSetChanged();
         }
     }

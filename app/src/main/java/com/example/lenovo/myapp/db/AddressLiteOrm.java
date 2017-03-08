@@ -20,7 +20,7 @@ import java.util.List;
  * 地址数据库管理
  */
 
-public class AddressDBHelper {
+public class AddressLiteOrm {
 
     private final String DB_NAME = "region.db";
 
@@ -28,7 +28,7 @@ public class AddressDBHelper {
 
     private LiteOrm liteOrm;
 
-    public AddressDBHelper(Context context) {
+    public AddressLiteOrm(Context context) {
         liteOrm = LiteOrm.newSingleInstance(context, DB_NAME);
         liteOrm.setDebugged(DEBUGGABLE);
     }

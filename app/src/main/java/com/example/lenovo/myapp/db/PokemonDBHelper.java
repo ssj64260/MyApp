@@ -1,64 +1,59 @@
 package com.example.lenovo.myapp.db;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
-import com.cxb.tools.utils.LiteOrmHelper;
+import com.cxb.tools.utils.SQLiteHelper;
 import com.example.lenovo.myapp.model.PokemonBean;
-import com.litesuits.orm.db.assit.QueryBuilder;
-import com.litesuits.orm.db.assit.WhereBuilder;
-
-import java.util.List;
 
 /**
- * 口袋妖怪数据库
+ * pokemon 数据库帮助
  */
 
 public class PokemonDBHelper {
 
-    public static List<PokemonBean> getPokemonList(Context context) {
-        return LiteOrmHelper.getInstance(context)
-                .cascade()
-                .query(PokemonBean.class);
+    private SQLiteHelper dbHelper;
+
+    public PokemonDBHelper(Context context) {
+        dbHelper = new SQLiteHelper(context);
     }
 
-    public static List<PokemonBean> selectPokemonById(Context context, String id) {
-        return LiteOrmHelper.getInstance(context)
-                .cascade()
-                .query(new QueryBuilder<>(PokemonBean.class)
-                        .where("id = ?", id));
+    public PokemonBean getPokemonById(String id) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        Cursor cursor = db.query(PokemonBean.POKEMON_TABLE,
+                new String[]{PokemonBean.POKEMON_ID, PokemonBean.POKEMON_NAME},
+                PokemonBean.POKEMON_ID + "=?",
+                new String[]{id},
+                null, null, null);
+        cursor.moveToFirst();
+
+        PokemonBean pokemon = new PokemonBean();
+        pokemon.setId(cursor.getString(cursor.getColumnIndex(PokemonBean.POKEMON_ID)));
+        pokemon.setName(cursor.getString(cursor.getColumnIndex(PokemonBean.POKEMON_NAME)));
+
+        cursor.close();
+        db.close();
+
+        return pokemon;
     }
 
-    public static void addPokemon(Context context, PokemonBean pokemon) {
-        LiteOrmHelper.getInstance(context)
-                .cascade()
-                .save(pokemon);
+    public void update(PokemonBean pokemon) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(PokemonBean.POKEMON_NAME, pokemon.getName());
+
+        db.update(PokemonBean.POKEMON_TABLE, values, PokemonBean.POKEMON_ID + "=?", new String[]{String.valueOf(pokemon.getId())});
+        db.close();
     }
 
-    public static void addPokemons(Context context, List<PokemonBean> pokemons) {
-        LiteOrmHelper.getInstance(context)
-                .cascade()
-                .save(pokemons);
-    }
-
-    public static void updatePokemon(Context context, PokemonBean pokemon) {
-        LiteOrmHelper.getInstance(context)
-                .cascade()
-                .update(pokemon);
-    }
-
-    public static void deletePokemon(Context context, PokemonBean pokemon) {
-        LiteOrmHelper.getInstance(context)
-                .delete(pokemon);
-    }
-
-    public static void deletePokemonById(Context context, String id) {
-        LiteOrmHelper.getInstance(context)
-                .delete(new WhereBuilder(PokemonBean.class)
-                .where("id = ?", id));
-    }
-
-    public static void deleteAll(Context context) {
-        LiteOrmHelper.getInstance(context).cascade().delete(PokemonBean.class);
+    public void delete(String id) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(PokemonBean.POKEMON_TABLE, PokemonBean.POKEMON_ID + "=?", new String[]{id});
+        db.close();
     }
 
 }

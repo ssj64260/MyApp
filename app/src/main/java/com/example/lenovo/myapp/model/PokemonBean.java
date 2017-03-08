@@ -15,6 +15,11 @@ import java.util.ArrayList;
 @Table("Pokemon")
 public class PokemonBean implements Serializable {
 
+    public static final String POKEMON_TABLE = "Pokemon";
+    public static final String POKEMON_ID = "id";
+    public static final String POKEMON_NAME = "name";
+
+
     @PrimaryKey(AssignType.AUTO_INCREMENT)
     private int _id;
 

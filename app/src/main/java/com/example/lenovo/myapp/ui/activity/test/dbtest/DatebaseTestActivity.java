@@ -12,7 +12,7 @@ import com.cxb.tools.utils.LiteOrmHelper;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.db.PokemonDBHelper;
+import com.example.lenovo.myapp.db.PokemonLiteOrm;
 import com.example.lenovo.myapp.model.CharacteristicBean;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PokemonNameBean;
@@ -103,7 +103,7 @@ public class DatebaseTestActivity extends BaseActivity {
     }
 
     private void getPokemons() {
-        list = PokemonDBHelper.getPokemonList(DatebaseTestActivity.this);
+        list = PokemonLiteOrm.getPokemonList(DatebaseTestActivity.this);
         mAdapter.setList(list);
 
         runOnUiThread(new Runnable() {
@@ -178,7 +178,7 @@ public class DatebaseTestActivity extends BaseActivity {
                             }
                         }
 
-                        PokemonDBHelper.addPokemons(DatebaseTestActivity.this, pmTemp);
+                        PokemonLiteOrm.addPokemons(DatebaseTestActivity.this, pmTemp);
                         getPokemons();
                     }
                 }
@@ -191,8 +191,8 @@ public class DatebaseTestActivity extends BaseActivity {
         ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
             @Override
             public void run() {
-                PokemonDBHelper.deleteAll(DatebaseTestActivity.this);
-                list = PokemonDBHelper.getPokemonList(DatebaseTestActivity.this);
+                PokemonLiteOrm.deleteAll(DatebaseTestActivity.this);
+                list = PokemonLiteOrm.getPokemonList(DatebaseTestActivity.this);
                 mAdapter.setList(list);
 
                 runOnUiThread(new Runnable() {

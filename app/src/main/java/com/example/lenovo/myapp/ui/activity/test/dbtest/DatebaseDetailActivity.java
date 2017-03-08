@@ -12,8 +12,6 @@ import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.ToastMaster;
 
-import java.util.List;
-
 /**
  * 数据库操作
  */
@@ -25,6 +23,8 @@ public class DatebaseDetailActivity extends BaseActivity {
     private EditText etName;
     private Button btnUpdate;
     private Button btnDelete;
+
+    private PokemonDBHelper pmDBHelper;
 
     private PokemonBean pokemon;
 
@@ -45,12 +45,12 @@ public class DatebaseDetailActivity extends BaseActivity {
     }
 
     private void setData() {
+        pmDBHelper = new PokemonDBHelper(DatebaseDetailActivity.this);
         String pmId = getIntent().getStringExtra(POKEMON_ID);
 
         if (!StringCheck.isEmpty(pmId)) {
-            List<PokemonBean> temp = PokemonDBHelper.selectPokemonById(this, pmId);
-            if (temp != null && temp.size() > 0) {
-                pokemon = temp.get(0);
+            pokemon = pmDBHelper.getPokemonById(pmId);
+            if (pokemon != null) {
                 etName.setText(pokemon.getName());
                 btnUpdate.setOnClickListener(click);
                 btnDelete.setOnClickListener(click);
@@ -70,21 +70,29 @@ public class DatebaseDetailActivity extends BaseActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_update:
-                    String name = etName.getText().toString();
-                    if (!StringCheck.isEmpty(name)) {
-                        pokemon.setName(name);
-                        PokemonDBHelper.updatePokemon(DatebaseDetailActivity.this, pokemon);
-                        ToastMaster.toast(getString(R.string.toast_pokemon_data_update_success));
-                        setResult(RESULT_OK);
+                    if (pokemon != null) {
+                        String name = etName.getText().toString();
+                        if (!StringCheck.isEmpty(name)) {
+                            pokemon.setName(name);
+                            pmDBHelper.update(pokemon);
+                            ToastMaster.toast(getString(R.string.toast_pokemon_data_update_success));
+                            setResult(RESULT_OK);
+                        } else {
+                            ToastMaster.toast(getString(R.string.toast_pokemon_name_not_null));
+                        }
                     } else {
-                        ToastMaster.toast(getString(R.string.toast_pokemon_name_not_null));
+                        ToastMaster.toast(getString(R.string.toast_not_pokemon_info));
                     }
                     break;
                 case R.id.btn_delete:
-                    PokemonDBHelper.deletePokemon(DatebaseDetailActivity.this, pokemon);
-                    ToastMaster.toast(getString(R.string.toast_pokemon_data_delete_success));
-                    setResult(RESULT_OK);
-                    finish();
+                    if (pokemon != null) {
+                        pmDBHelper.delete(pokemon.getId());
+                        ToastMaster.toast(getString(R.string.toast_pokemon_data_delete_success));
+                        setResult(RESULT_OK);
+                        finish();
+                    } else {
+                        ToastMaster.toast(getString(R.string.toast_not_pokemon_info));
+                    }
                     break;
             }
         }

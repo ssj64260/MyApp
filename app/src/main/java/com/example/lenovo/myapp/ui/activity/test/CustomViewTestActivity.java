@@ -17,7 +17,7 @@ import com.cxb.tools.passwordlevel.PasswordLevelLayout;
 import com.cxb.tools.textswitcher.MyTextSwitcher;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.db.AddressDBHelper;
+import com.example.lenovo.myapp.db.AddressLiteOrm;
 import com.example.lenovo.myapp.model.testbean.Area;
 import com.example.lenovo.myapp.model.testbean.City;
 import com.example.lenovo.myapp.model.testbean.Street;
@@ -71,7 +71,7 @@ public class CustomViewTestActivity extends BaseActivity {
 
     private int downTime = 60;
 
-    private AddressDBHelper addressDBHelper;
+    private AddressLiteOrm addressLiteOrm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +88,7 @@ public class CustomViewTestActivity extends BaseActivity {
         if (mtsText != null) {
             mtsText.stop();
         }
-        addressDBHelper.closeDB();
+        addressLiteOrm.closeDB();
         super.onDestroy();
     }
 
@@ -141,7 +141,7 @@ public class CustomViewTestActivity extends BaseActivity {
     }
 
     private void setAddress() {
-        addressDBHelper = new AddressDBHelper(this);
+        addressLiteOrm = new AddressLiteOrm(this);
         cities = new ArrayList<>();
         areas = new ArrayList<>();
         streets = new ArrayList<>();
@@ -150,9 +150,9 @@ public class CustomViewTestActivity extends BaseActivity {
         areaNames = new ArrayList<>();
         streetNames = new ArrayList<>();
 
-        if (addressDBHelper.updateDB(this)) {
+        if (addressLiteOrm.updateDB(this)) {
             cities.clear();
-            cities.addAll(addressDBHelper.getCity("6"));
+            cities.addAll(addressLiteOrm.getCity("6"));
         } else {
             ToastMaster.toast(getString(R.string.toast_datebase_file_not_exists));
         }
@@ -212,7 +212,7 @@ public class CustomViewTestActivity extends BaseActivity {
         areas.clear();
         if (cityPosition < cities.size()) {
             curCity = cities.get(cityPosition).getName();
-            List<Area> temp = addressDBHelper.getArea(cities.get(cityPosition).getId());
+            List<Area> temp = addressLiteOrm.getArea(cities.get(cityPosition).getId());
             if (temp != null) {
                 areas.addAll(temp);
                 for (Area a : areas) {
@@ -236,7 +236,7 @@ public class CustomViewTestActivity extends BaseActivity {
         streets.clear();
         if (areaPosition < areas.size()) {
             curArea = areas.get(areaPosition).getName();
-            List<Street> temp = addressDBHelper.getStreet(areas.get(areaPosition).getId());
+            List<Street> temp = addressLiteOrm.getStreet(areas.get(areaPosition).getId());
             if (temp != null) {
                 streets.addAll(temp);
                 for (Street s : streets) {

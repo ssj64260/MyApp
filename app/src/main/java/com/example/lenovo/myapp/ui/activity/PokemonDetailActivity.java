@@ -22,7 +22,7 @@ import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
-import com.example.lenovo.myapp.db.PokemonDBHelper;
+import com.example.lenovo.myapp.db.PokemonLiteOrm;
 import com.example.lenovo.myapp.model.CharacteristicBean;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PokemonNameBean;
@@ -357,7 +357,7 @@ public class PokemonDetailActivity extends BaseActivity {
             @Override
             public void run() {
 
-                PokemonDBHelper.addPokemon(PokemonDetailActivity.this, pokemon);
+                PokemonLiteOrm.addPokemon(PokemonDetailActivity.this, pokemon);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cxb.tools.utils.DataCleanManager;
-import com.cxb.tools.utils.ImageUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
@@ -109,9 +108,6 @@ public class SystemGetPhotoActivity extends BaseActivity {
             }
 
             if (!StringCheck.isEmpty(url)) {
-                if (url.contains("content:")) {
-                    url = ImageUtil.getContentImage(url, this);
-                }
 
                 Glide.with(SystemGetPhotoActivity.this)
                         .load(url)

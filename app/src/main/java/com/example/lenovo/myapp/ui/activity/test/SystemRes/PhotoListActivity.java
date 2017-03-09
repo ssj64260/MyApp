@@ -141,6 +141,7 @@ public class PhotoListActivity extends BaseActivity {
                 content += "上级目录ID：" + pb.getBucketId() + "\n";
                 content += "上级目录显示名称：" + pb.getBucketDisplayName() + "\n";
                 tvPictureInfo.setText(content);
+                tvPictureInfo.setTag(pb.getData());
                 showPictureMsg();
 
                 Logger.d(content);
@@ -164,6 +165,11 @@ public class PhotoListActivity extends BaseActivity {
                     overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
                     break;
                 case R.id.tv_picture_info:
+                    Intent shareIntent = new Intent();
+                    shareIntent.setAction(Intent.ACTION_SEND);
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, (String) tvPictureInfo.getTag());
+                    shareIntent.setType("image/*");
+                    startActivity(Intent.createChooser(shareIntent, "分享图片"));
                     hidePictureMsg();
                     break;
             }

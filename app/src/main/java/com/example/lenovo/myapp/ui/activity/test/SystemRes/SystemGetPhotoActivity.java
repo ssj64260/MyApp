@@ -1,6 +1,7 @@
 package com.example.lenovo.myapp.ui.activity.test.systemres;
 
 import android.app.Activity;
+import android.content.ClipData;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cxb.tools.utils.DataCleanManager;
 import com.cxb.tools.utils.ImageUtil;
 import com.cxb.tools.utils.SDCardUtil;
+import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.ChooseDialog;
@@ -44,9 +46,8 @@ public class SystemGetPhotoActivity extends BaseActivity {
         setContentView(R.layout.activity_system_get_photo);
 
         initView();
-
         setData();
-
+        setImageFromIntent(getIntent());
     }
 
     @Override
@@ -64,23 +65,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case REQUESTCODE_PICK:// 直接从相册获取
-                if (data != null && data.getData() != null) {
-                    String url = data.getData().toString();
-                    if (url.contains("content:")) {
-                        url = ImageUtil.getContentImage(url, this);
-                    }
-
-                    Glide.with(SystemGetPhotoActivity.this)
-                            .load(url)
-                            .fitCenter()
-                            .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .placeholder(R.drawable.ic_no_image_circle)
-                            .error(R.drawable.ic_no_image_circle)
-                            .dontAnimate()
-                            .into(ivPhoto);
-
-                    Logger.d(url);
-                }
+                setImageFromIntent(data);
                 break;
             case REQUESTCODE_TAKE:// 调用相机拍照
                 if (photoUri.exists() && resultCode == Activity.RESULT_OK) {
@@ -107,6 +92,39 @@ public class SystemGetPhotoActivity extends BaseActivity {
         PhotoDirectory = new File(SDCardUtil.getAutoFilesPath(this));
 
         tvChangePhoto.setOnClickListener(click);
+    }
+
+    private void setImageFromIntent(Intent data) {
+        if (data != null) {
+            String url = "";
+            if (data.getData() != null) {
+                url = data.getData().toString();
+            } else if (data.getClipData() != null) {
+                ClipData clipData = data.getClipData();
+                int itemCount = clipData.getItemCount();
+                if (itemCount > 0 && "image/*".equals(clipData.getDescription().getMimeType(0))) {
+                    ClipData.Item item = clipData.getItemAt(0);
+                    url = item.getUri().toString();
+                }
+            }
+
+            if (!StringCheck.isEmpty(url)) {
+                if (url.contains("content:")) {
+                    url = ImageUtil.getContentImage(url, this);
+                }
+
+                Glide.with(SystemGetPhotoActivity.this)
+                        .load(url)
+                        .fitCenter()
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.drawable.ic_no_image_circle)
+                        .error(R.drawable.ic_no_image_circle)
+                        .dontAnimate()
+                        .into(ivPhoto);
+
+                Logger.d(url);
+            }
+        }
     }
 
     private void showChooseDialog() {

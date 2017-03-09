@@ -344,22 +344,28 @@ public class CustomViewTestActivity extends BaseActivity {
                     String content = etIntent.getText().toString();
 
                     if (!StringCheck.isEmpty(content)) {
-                        Uri location = Uri.parse(content);
-                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+                        Intent intent = new Intent();
+                        if (content.contains(":") || content.contains("@")) {
+                            intent.setAction(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse(content));
+                        } else {
+                            intent.setAction(Intent.ACTION_SEND);
+                            intent.putExtra(Intent.EXTRA_TEXT, content);
+                            intent.setType("text/plain");
+                        }
 
                         PackageManager packageManager = getPackageManager();
-                        List<ResolveInfo> activities = packageManager.queryIntentActivities(mapIntent, 0);
+                        List<ResolveInfo> activities = packageManager.queryIntentActivities(intent, 0);
                         boolean isIntentSafe = activities.size() > 0;
 
                         if (isIntentSafe) {
-                            startActivity(mapIntent);
+                            startActivity(intent);
                         } else {
                             ToastMaster.toast(getString(R.string.toast_not_app_response));
                         }
                     } else {
                         ToastMaster.toast(getString(R.string.toast_input_intent_can_not_null));
                     }
-
                     break;
             }
         }

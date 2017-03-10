@@ -14,7 +14,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cxb.tools.utils.DataCleanManager;
 import com.cxb.tools.utils.SDCardUtil;
-import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.ChooseDialog;
@@ -93,32 +92,42 @@ public class SystemGetPhotoActivity extends BaseActivity {
         tvChangePhoto.setOnClickListener(click);
     }
 
-    private void setImageFromIntent(Intent data) {
-        if (data != null) {
-            String url = "";
-            if (data.getData() != null) {
-                url = data.getData().toString();
-            } else if (data.getClipData() != null) {
-                ClipData clipData = data.getClipData();
+    private void setImageFromIntent(Intent intent) {
+        if (intent != null && "image/*".equals(intent.getType())) {
+            Uri uri = null;
+            if (intent.getData() != null) {
+                uri = intent.getData();
+            } else if (intent.getClipData() != null) {
+                ClipData clipData = intent.getClipData();
                 int itemCount = clipData.getItemCount();
-                if (itemCount > 0 && "image/*".equals(clipData.getDescription().getMimeType(0))) {
+                if (itemCount > 0) {
                     ClipData.Item item = clipData.getItemAt(0);
-                    url = item.getUri().toString();
+                    uri = item.getUri();
                 }
+            } else {
+                uri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
             }
 
-            if (!StringCheck.isEmpty(url)) {
-
-                Glide.with(SystemGetPhotoActivity.this)
-                        .load(url)
-                        .fitCenter()
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .placeholder(R.drawable.ic_no_image_circle)
-                        .error(R.drawable.ic_no_image_circle)
-                        .dontAnimate()
-                        .into(ivPhoto);
-
+            if (uri != null) {
+                String url = uri.getPath();
                 Logger.d(url);
+
+                if (url.contains(".gif")) {
+                    Glide.with(SystemGetPhotoActivity.this)
+                            .load(uri)
+                            .asGif()
+                            .fitCenter()
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+                            .dontAnimate()
+                            .into(ivPhoto);
+                } else {
+                    Glide.with(SystemGetPhotoActivity.this)
+                            .load(uri)
+                            .fitCenter()
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+                            .dontAnimate()
+                            .into(ivPhoto);
+                }
             }
         }
     }

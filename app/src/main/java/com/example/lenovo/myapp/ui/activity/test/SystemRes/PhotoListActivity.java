@@ -1,6 +1,7 @@
 package com.example.lenovo.myapp.ui.activity.test.systemres;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -167,7 +168,7 @@ public class PhotoListActivity extends BaseActivity {
                 case R.id.tv_picture_info:
                     Intent shareIntent = new Intent();
                     shareIntent.setAction(Intent.ACTION_SEND);
-                    shareIntent.putExtra(Intent.EXTRA_STREAM, (String) tvPictureInfo.getTag());
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse((String) tvPictureInfo.getTag()));
                     shareIntent.setType("image/*");
                     startActivity(Intent.createChooser(shareIntent, "分享图片"));
                     hidePictureMsg();

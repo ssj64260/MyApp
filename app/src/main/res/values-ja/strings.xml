@@ -224,6 +224,7 @@
     <string name="btn_choose_from_mobile">携帯のアルバムから選んだ</string>
     <string name="btn_choose_from_take_photo">写真を撮る</string>
     <string name="btn_do_not_choose">キャンセル</string>
+    <string name="toast_do_not_accept_text_data">テキストデータを受け入れない</string>
 
     <!--SystemResActivity-->
     <string name="toast_had_got_all_permission">すべての権限を取得している</string>
@@ -376,5 +377,6 @@
     <string name="btn_wallpaper_theme_8">Theme_Material_Wallpaper_NoTitleBar</string>
     <string name="btn_wallpaper_theme_9">Theme_WallpaperSettings</string>
     <string name="btn_wallpaper_theme_10">Theme_Light_WallpaperSettings</string>
+
 
 </resources>

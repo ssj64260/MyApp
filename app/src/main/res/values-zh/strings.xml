@@ -224,6 +224,7 @@
     <string name="btn_choose_from_mobile">从手机相册选择</string>
     <string name="btn_choose_from_take_photo">拍照</string>
     <string name="btn_do_not_choose">取消</string>
+    <string name="toast_do_not_accept_text_data">不接受文本数据</string>
 
     <!--SystemResActivity-->
     <string name="toast_had_got_all_permission">已获取所有权限</string>
@@ -376,5 +377,6 @@
     <string name="btn_wallpaper_theme_8">Theme_Material_Wallpaper_NoTitleBar</string>
     <string name="btn_wallpaper_theme_9">Theme_WallpaperSettings</string>
     <string name="btn_wallpaper_theme_10">Theme_Light_WallpaperSettings</string>
+
 
 </resources>

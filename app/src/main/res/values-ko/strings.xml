@@ -226,6 +226,7 @@
     <string name="btn_choose_from_mobile">이 휴대전화는 앨범 선택</string>
     <string name="btn_choose_from_take_photo">사진</string>
     <string name="btn_do_not_choose">취소</string>
+    <string name="toast_do_not_accept_text_data">문자 데이터 안 받고</string>
 
     <!--SystemResActivity-->
     <string name="toast_had_got_all_permission">이미 모든 권한 가져오는 중</string>
@@ -378,5 +379,6 @@
     <string name="btn_wallpaper_theme_8">Theme_Material_Wallpaper_NoTitleBar</string>
     <string name="btn_wallpaper_theme_9">Theme_WallpaperSettings</string>
     <string name="btn_wallpaper_theme_10">Theme_Light_WallpaperSettings</string>
+
 
 </resources>

@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity.test;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -61,6 +62,7 @@ public class CustomViewTestActivity extends BaseActivity {
     private LoopView loopCity;
     private LoopView loopArea;
     private LoopView loopStreet;
+    private Button btnUpdateDB;
     private Button btnGetAddress;
 
     private List<City> cities;
@@ -113,6 +115,7 @@ public class CustomViewTestActivity extends BaseActivity {
         loopCity = (LoopView) findViewById(R.id.loop_city);
         loopArea = (LoopView) findViewById(R.id.loop_area);
         loopStreet = (LoopView) findViewById(R.id.loop_street);
+        btnUpdateDB = (Button) findViewById(R.id.btn_update_database);
         btnGetAddress = (Button) findViewById(R.id.btn_get_address);
 
         btnGetCode = (Button) findViewById(R.id.btn_get_code);
@@ -128,6 +131,7 @@ public class CustomViewTestActivity extends BaseActivity {
         etPassword.addTextChangedListener(watcher);
 
         btnConfirm.setOnClickListener(click);
+        btnUpdateDB.setOnClickListener(click);
         btnGetAddress.setOnClickListener(click);
         btnGetCode.setOnClickListener(click);
         btnIntent.setOnClickListener(click);
@@ -158,13 +162,6 @@ public class CustomViewTestActivity extends BaseActivity {
         cityNames = new ArrayList<>();
         areaNames = new ArrayList<>();
         streetNames = new ArrayList<>();
-
-        if (addressLiteOrm.updateDB(this)) {
-            cities.clear();
-            cities.addAll(addressLiteOrm.getCity("6"));
-        } else {
-            ToastMaster.toast(getString(R.string.toast_datebase_file_not_exists));
-        }
 
         loopCity.setOnTouchListener(touch);
         loopCity.setTextSize(20);
@@ -199,8 +196,6 @@ public class CustomViewTestActivity extends BaseActivity {
                 }
             }
         });
-
-        setCityNames();
     }
 
     private void setCityNames() {
@@ -328,6 +323,16 @@ public class CustomViewTestActivity extends BaseActivity {
                         ToastMaster.toast(getString(R.string.toast_not_only_number));
                     }
                     break;
+                case R.id.btn_update_database:
+                    String appName = getString(R.string.app_name);
+                    permissions = new String[]{
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                    };
+                    refuseTips = new String[]{
+                            String.format(getString(R.string.text_storage_permission_message), appName),
+                    };
+                    setPermissions();
+                    break;
                 case R.id.btn_get_address:
                     ToastMaster.toast(curCity + " " + curArea + " " + curStreet);
                     break;
@@ -371,4 +376,17 @@ public class CustomViewTestActivity extends BaseActivity {
         }
     };
 
+    @Override
+    public void onPermissionSuccess() {
+        if (addressLiteOrm.updateDB(CustomViewTestActivity.this)) {
+            ToastMaster.toast("数据库更新成功");
+            addressLiteOrm.closeDB();
+            addressLiteOrm = new AddressLiteOrm(CustomViewTestActivity.this);
+            cities.clear();
+            cities.addAll(addressLiteOrm.getCity("6"));
+            setCityNames();
+        } else {
+            ToastMaster.toast("数据库更新失败");
+        }
+    }
 }

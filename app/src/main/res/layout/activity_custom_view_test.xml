@@ -115,11 +115,11 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_bg_stroke_gray"
-                    android:hint="@string/text_input_intent_content"
-                    android:textSize="@dimen/textsize_14sp"
                     android:gravity="center"
+                    android:hint="@string/text_input_intent_content"
                     android:inputType="text"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:textSize="@dimen/textsize_14sp" />
 
                 <Button
                     android:id="@+id/btn_intent"
@@ -131,16 +131,25 @@
                     android:textColor="@color/white" />
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_update_database"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_bg_red_iselectable"
+                android:text="@string/btn_update_database"
+                android:textColor="@color/white" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <com.cxb.tools.loopview.LoopView
                     android:id="@+id/loop_city"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
-                    android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:background="@color/white" />
 
@@ -148,7 +157,6 @@
                     android:id="@+id/loop_area"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
-                    android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:background="@color/white" />
 
@@ -156,7 +164,6 @@
                     android:id="@+id/loop_street"
                     android:layout_width="0dp"
                     android:layout_height="200dp"
-                    android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:background="@color/white" />
 

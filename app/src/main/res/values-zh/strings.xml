@@ -30,6 +30,7 @@
     <string name="text_input_password">请输入密码（4&#8211;10位，数字、字母和符号）</string>
     <string name="text_input_progress">请输入进度（0&#8211;100之间的数字）</string>
     <string name="btn_set_progress_confirm">确定</string>
+    <string name="btn_update_database">更新并加载数据库</string>
     <string name="btn_get_current_address">获取当前选中地址</string>
     <string name="btn_count_down">倒数60秒</string>
     <string name="btn_intent">Intent</string>
@@ -377,6 +378,5 @@
     <string name="btn_wallpaper_theme_8">Theme_Material_Wallpaper_NoTitleBar</string>
     <string name="btn_wallpaper_theme_9">Theme_WallpaperSettings</string>
     <string name="btn_wallpaper_theme_10">Theme_Light_WallpaperSettings</string>
-
 
 </resources>

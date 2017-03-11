@@ -30,6 +30,7 @@
     <string name="text_input_password">암호를 입력하십시오 (4&#8211;10 분, 숫자, 자모와 기호)</string>
     <string name="text_input_progress">입력하십시오. 진도 (0&#8211;100 사이에 숫자)</string>
     <string name="btn_set_progress_confirm">확정</string>
+    <string name="btn_update_database">업데이트 및 불러오기 데이터베이스</string>
     <string name="btn_get_current_address">현재 선택한 주소 가져오기</string>
     <string name="btn_count_down">밑에서 60 초</string>
     <string name="btn_intent">Intent</string>

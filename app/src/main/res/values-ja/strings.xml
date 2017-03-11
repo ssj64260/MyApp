@@ -30,6 +30,7 @@
     <string name="text_input_password">パスワードを入力してください（4&#8211;10位、数字、アルファベットと記号）</string>
     <string name="text_input_progress">進度を入力してください（0&#8211;100間の数字）</string>
     <string name="btn_set_progress_confirm">確定</string>
+    <string name="btn_update_database">更新データベース</string>
     <string name="btn_get_current_address">选を当面アドレス</string>
     <string name="btn_count_down">逆数ろくじゅう秒</string>
     <string name="btn_intent">Intent</string>

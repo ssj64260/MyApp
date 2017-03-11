@@ -173,6 +173,7 @@ public class ContactsListActivity extends BaseActivity {
         Cursor cursor = cr.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, "phonebook_label_alt");
 
         if (cursor != null) {
+            cursor.moveToFirst();
             do {
                 String temp = "";
                 for (int i = 0; i < cursor.getColumnCount(); i++) {

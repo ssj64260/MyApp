@@ -28,6 +28,7 @@
     <string name="text_input_password">please enter the password (4–10, number, letter and symbol)</string>
     <string name="text_input_progress">please enter the progress (0–100 number between)</string>
     <string name="btn_set_progress_confirm">OK</string>
+    <string name="btn_update_database">Update and load database</string>
     <string name="btn_get_current_address">get the current selected address</string>
     <string name="btn_count_down">countdown 60 seconds</string>
     <string name="btn_intent">Intent</string>

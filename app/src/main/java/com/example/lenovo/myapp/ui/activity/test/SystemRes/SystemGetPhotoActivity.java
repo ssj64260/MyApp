@@ -95,10 +95,9 @@ public class SystemGetPhotoActivity extends BaseActivity {
 
     private void setImageFromIntent(Intent intent) {
         if (intent != null) {
-            String action = intent.getAction();
             String type = intent.getType();
 
-            if (Intent.ACTION_SEND.equals(action) && type != null) {
+            if (type != null) {
                 if ("text/plain".equals(type)) {
                     ToastMaster.toast(getString(R.string.toast_do_not_accept_text_data));
                 } else if (type.startsWith("image/")) {
@@ -147,7 +146,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
         chooseDialog.setOnFirstButtonListener(getString(R.string.btn_choose_from_mobile), new ChooseDialog.OnFirstButtonListener() {
             @Override
             public void OnFirstButtonListener(View v) {
-                Intent pickIntent = new Intent(Intent.ACTION_PICK, null);
+                Intent pickIntent = new Intent(Intent.ACTION_PICK);
                 pickIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
                 startActivityForResult(pickIntent, REQUESTCODE_PICK);
             }

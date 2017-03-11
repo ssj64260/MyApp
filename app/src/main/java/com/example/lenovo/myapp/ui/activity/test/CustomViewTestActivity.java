@@ -196,6 +196,18 @@ public class CustomViewTestActivity extends BaseActivity {
                 }
             }
         });
+
+        cityNames.add("");
+        areaNames.add("");
+        streetNames.add("");
+
+        loopCity.setInitPosition(0);
+        loopArea.setInitPosition(0);
+        loopStreet.setInitPosition(0);
+
+        loopCity.setItems(cityNames);
+        loopArea.setItems(areaNames);
+        loopStreet.setItems(streetNames);
     }
 
     private void setCityNames() {

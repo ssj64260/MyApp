@@ -1,6 +1,8 @@
 package com.example.lenovo.myapp.ui.activity.test;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -60,6 +62,7 @@ public class WebViewTestActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview_test);
 
+        setIntentUrl();
         initView();
         setData();
 
@@ -118,6 +121,19 @@ public class WebViewTestActivity extends BaseActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    private void setIntentUrl() {
+        Intent intent = getIntent();
+        if (intent != null) {
+            String action = intent.getAction();
+            if (Intent.ACTION_VIEW.equals(action)) {
+                Uri uri = intent.getData();
+                if (uri != null) {
+                    curUrl = uri.toString();
+                }
+            }
+        }
     }
 
     private void initView() {

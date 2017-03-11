@@ -3,13 +3,18 @@ package com.example.lenovo.myapp.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.cxb.tools.utils.AssetsUtil;
+import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.LanguageUtil;
+import com.cxb.tools.utils.SDCardUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.PreferencesUtil;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
 
 import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
@@ -33,6 +38,13 @@ public class StartupPageActivity extends BaseActivity {
                 String language = PreferencesUtil.getString(APP_SETTING, KEY_LANGUAGE, "");
                 if (!StringCheck.isEmpty(language)) {
                     LanguageUtil.setLanguage(getResources(), language);
+                }
+
+                File txtFile = new File(SDCardUtil.getFilesDir(StartupPageActivity.this) + File.separator + "txt", "all.txt");
+
+                if (!txtFile.exists()) {
+                    InputStream is = AssetsUtil.getInputStream(StartupPageActivity.this, "all.txt");
+                    FileUtil.copyFile(is, txtFile.getAbsolutePath());
                 }
 
                 runOnUiThread(new Runnable() {

@@ -1,14 +1,17 @@
 package com.example.lenovo.myapp.ui.activity.test;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
+import android.provider.OpenableColumns;
 import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.cxb.tools.utils.FileUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
@@ -46,6 +49,17 @@ public class IntentFileActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             Uri returnUri = data.getData();
+            Cursor returnCursor = getContentResolver().query(returnUri, null, null, null, null);
+
+            StringBuilder fileInfo = new StringBuilder("");
+            if (returnCursor != null) {
+                returnCursor.moveToFirst();
+                String fileName = returnCursor.getString(returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                long fileSize = returnCursor.getLong(returnCursor.getColumnIndex(OpenableColumns.SIZE));
+                fileInfo.append("文件名称：").append(fileName).append("\n");
+                fileInfo.append("文件大小：").append(FileUtil.FormatFileSize(this, fileSize)).append("\n");
+            }
+
             try {
                 mInputPFD = getContentResolver().openFileDescriptor(returnUri, "r");
                 if (mInputPFD != null) {
@@ -61,10 +75,12 @@ public class IntentFileActivity extends BaseActivity {
                     byte[] content = bout.toByteArray();
                     String str = new String(content);
 
+                    fileInfo.append("文件内容：\n").append(str);
+
                     bout.close();
                     inputStream.close();
 
-                    tvResponse.setText(str);
+                    tvResponse.setText(fileInfo.toString());
                 }
             } catch (IOException e) {
                 e.printStackTrace();

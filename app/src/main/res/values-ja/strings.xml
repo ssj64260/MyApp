@@ -195,6 +195,10 @@
     <!--include_qq_right_content-->
     <string name="text_network_connect_msg">接続タイムアウトをチェックしてくださいあなたのネットワーク設定。</string>
 
+    <!--activity_intent_file-->
+    <string name="btn_request_file">請求の外部APPファイル</string>
+    <string name="btn_response_file">戻りファイル[property.txt]</string>
+
     <!--============== 全局通用 ================-->
     <string name="text_loading">加載中&#8230;</string>
     <string name="text_requesting">請求に&#8230;</string>
@@ -264,6 +268,7 @@
     <string name="btn_tool_12">WebView Demo</string>
     <string name="btn_tool_13">多言語設定</string>
     <string name="btn_tool_14">Androidモチーフテスト</string>
+    <string name="btn_tool_15">請求の外部APPファイル</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">バージョン番号：%s</string>

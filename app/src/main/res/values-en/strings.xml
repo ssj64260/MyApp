@@ -193,6 +193,10 @@
     <!--include_qq_right_content-->
     <string name="text_network_connect_msg">connection timed out, please check your network settings.</string>
 
+    <!--activity_intent_file-->
+    <string name="btn_request_file">Request external APP file</string>
+    <string name="btn_response_file">Return file [property.txt]</string>
+
     <!--============== 全局通用 ================-->
     <string name="text_loading">Loading&#8230;</string>
     <string name="text_requesting">Request&#8230;</string>
@@ -263,6 +267,7 @@
     <string name="btn_tool_12">WebView Demo</string>
     <string name="btn_tool_13">Multilingual Settings</string>
     <string name="btn_tool_14">Android Theme Test</string>
+    <string name="btn_tool_15">Request external APP file</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">Version number:%s</string>

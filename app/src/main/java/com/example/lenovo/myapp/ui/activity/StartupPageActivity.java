@@ -40,10 +40,10 @@ public class StartupPageActivity extends BaseActivity {
                     LanguageUtil.setLanguage(getResources(), language);
                 }
 
-                File txtFile = new File(SDCardUtil.getFilesDir(StartupPageActivity.this) + File.separator + "txt", "all.txt");
+                File txtFile = new File(SDCardUtil.getFilesDir(StartupPageActivity.this) + File.separator + "txt", "property.txt");
 
                 if (!txtFile.exists()) {
-                    InputStream is = AssetsUtil.getInputStream(StartupPageActivity.this, "all.txt");
+                    InputStream is = AssetsUtil.getInputStream(StartupPageActivity.this, "property.txt");
                     FileUtil.copyFile(is, txtFile.getAbsolutePath());
                 }
 

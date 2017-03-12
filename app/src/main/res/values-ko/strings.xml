@@ -195,6 +195,9 @@
     <!--include_qq_right_content-->
     <string name="text_network_connect_msg">연결 시간 확인하십시오. 너 네트워크 설정.</string>
 
+    <!--activity_intent_file-->
+    <string name="btn_request_file">요청 외부 APP 파일</string>
+    <string name="btn_response_file">복귀 파일[property.txt]</string>
 
     <!--============== 全局通用 ================-->
     <string name="text_loading">로드 중&#8230;</string>
@@ -266,6 +269,7 @@
     <string name="btn_tool_12">WebView Demo</string>
     <string name="btn_tool_13">많은 언어 설정</string>
     <string name="btn_tool_14">Android 테마 시험</string>
+    <string name="btn_tool_15">요청 외부 APP 파일</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">버전 번호：%s</string>

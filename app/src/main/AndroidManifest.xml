@@ -224,6 +224,20 @@
             android:theme="@android:style/Theme.Wallpaper" />
 
         <activity
+            android:name=".ui.activity.test.IntentFileActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".ui.activity.SetPostUrlActivity"
             android:screenOrientation="portrait" />
 

@@ -63,7 +63,7 @@ public class OkHttpAsynchApi extends OkHttpBaseApi {
                     String json = response.body().string();
 
                     String tag = StringUtils.getUrlTag(url);
-                    showLog(tag, json + "");
+                    showLog(tag, String.valueOf(json));
 
                     final Object bm;
                     if (returnType != null) {
@@ -96,7 +96,7 @@ public class OkHttpAsynchApi extends OkHttpBaseApi {
         });
     }
 
-    public OkHttpAsynchApi addDownloadListener(OnDownloadCallBack downloadCallBack){
+    public OkHttpAsynchApi addDownloadListener(OnDownloadCallBack downloadCallBack) {
         this.downloadCallBack = downloadCallBack;
         return this;
     }

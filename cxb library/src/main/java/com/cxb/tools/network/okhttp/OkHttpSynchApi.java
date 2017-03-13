@@ -46,7 +46,7 @@ public class OkHttpSynchApi extends OkHttpBaseApi {
                     bm = json;
                 }
 
-                showLog(StringUtils.getUrlTag(url), json + "");
+                showLog(StringUtils.getUrlTag(url), String.valueOf(json));
 
                 mainThread.post(new Runnable() {
                     @Override
@@ -80,7 +80,7 @@ public class OkHttpSynchApi extends OkHttpBaseApi {
         }
     }
 
-    public OkHttpSynchApi addDownloadListener(OnDownloadCallBack downloadCallBack){
+    public OkHttpSynchApi addDownloadListener(OnDownloadCallBack downloadCallBack) {
         this.downloadCallBack = downloadCallBack;
         return this;
     }

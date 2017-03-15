@@ -270,6 +270,7 @@
     <string name="btn_tool_13">많은 언어 설정</string>
     <string name="btn_tool_14">Android 테마 시험</string>
     <string name="btn_tool_15">요청 외부 APP 파일</string>
+    <string name="btn_tool_16">시스템 관련</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">버전 번호：%s</string>
@@ -385,5 +386,12 @@
     <string name="btn_wallpaper_theme_9">Theme_WallpaperSettings</string>
     <string name="btn_wallpaper_theme_10">Theme_Light_WallpaperSettings</string>
 
+    <!--SystemRelatedActivity-->
+    <string name="text_ring_volume">링：[%1$d / %2$d]</string>
+    <string name="text_music_volume">미디어：[%1$d / %2$d]</string>
+    <string name="text_alarm_volume">자명종：[%1$d / %2$d]</string>
+    <string name="text_voice_call_volume">전화：[%1$d / %2$d]</string>
+    <string name="text_system_volume">체계：[%1$d / %2$d]</string>
+    <string name="text_notification_volume">공고：[%1$d / %2$d]</string>
 
 </resources>

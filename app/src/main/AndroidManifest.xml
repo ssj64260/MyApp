@@ -238,6 +238,10 @@
         </activity>
 
         <activity
+            android:name=".ui.activity.test.SystemRelatedActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".ui.activity.SetPostUrlActivity"
             android:screenOrientation="portrait" />
 

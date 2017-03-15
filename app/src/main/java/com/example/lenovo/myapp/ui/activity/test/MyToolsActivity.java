@@ -92,7 +92,8 @@ public class MyToolsActivity extends BaseActivity {
                 getString(R.string.btn_tool_12),
                 getString(R.string.btn_tool_13),
                 getString(R.string.btn_tool_14),
-                getString(R.string.btn_tool_15)
+                getString(R.string.btn_tool_15),
+                getString(R.string.btn_tool_16)
         };
 
         list.clear();
@@ -166,6 +167,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 14://请求外部APP文件
                         startActivity(new Intent(MyToolsActivity.this, IntentFileActivity.class));
+                        break;
+                    case 15://系统相关
+                        startActivity(new Intent(MyToolsActivity.this, SystemRelatedActivity.class));
                         break;
                 }
             }

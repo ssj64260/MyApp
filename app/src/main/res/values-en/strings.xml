@@ -212,7 +212,6 @@
     <string name="text_sensors_permission_message">In settings - apply -%1$s- permissions to open the body sensor permissions to use this function normally</string>
 
 
-
     <!--DatebaseDetailActivity-->
     <string name="toast_not_pokemon_info">No information about the Pokemon</string>
     <string name="toast_pokemon_data_update_success">Update success</string>
@@ -268,6 +267,7 @@
     <string name="btn_tool_13">Multilingual Settings</string>
     <string name="btn_tool_14">Android Theme Test</string>
     <string name="btn_tool_15">Request external APP file</string>
+    <string name="btn_tool_16">System related</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">Version number:%s</string>
@@ -383,5 +383,12 @@
     <string name="btn_wallpaper_theme_9">Theme_WallpaperSettings</string>
     <string name="btn_wallpaper_theme_10">Theme_Light_WallpaperSettings</string>
 
+    <!--SystemRelatedActivity-->
+    <string name="text_ring_volume">ring：[%1$d / %2$d]</string>
+    <string name="text_music_volume">media：[%1$d / %2$d]</string>
+    <string name="text_alarm_volume">Alarm clock：[%1$d / %2$d]</string>
+    <string name="text_voice_call_volume">voice call：[%1$d / %2$d]</string>
+    <string name="text_system_volume">system：[%1$d / %2$d]</string>
+    <string name="text_notification_volume">Notice：[%1$d / %2$d]</string>
 
 </resources>

@@ -392,5 +392,12 @@
     <string name="text_voice_call_volume">通话：[%1$d / %2$d]</string>
     <string name="text_system_volume">系统：[%1$d / %2$d]</string>
     <string name="text_notification_volume">通知：[%1$d / %2$d]</string>
+    <string name="btn_auto_brightness_on">开启屏幕亮度自动调节</string>
+    <string name="btn_auto_brightness_off">关闭屏幕亮度自动调节</string>
+    <string name="text_screen_brightness">亮度：[%1$d / %2$d]</string>
+    <string name="toast_get_settings_permission_failure">获取Settings权限失败</string>
+    <string name="toast_key_code_volume_down">音量-</string>
+    <string name="toast_key_code_volume_up">音量+</string>
+    <string name="toast_key_code_back">返回键</string>
 
 </resources>

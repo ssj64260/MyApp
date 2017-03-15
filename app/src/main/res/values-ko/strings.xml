@@ -393,5 +393,12 @@
     <string name="text_voice_call_volume">전화：[%1$d / %2$d]</string>
     <string name="text_system_volume">체계：[%1$d / %2$d]</string>
     <string name="text_notification_volume">공고：[%1$d / %2$d]</string>
+    <string name="btn_auto_brightness_on">자동으로 화면 밝기를 조정하는 열기</string>
+    <string name="btn_auto_brightness_off">자동으로 화면 밝기를 조정 닫기</string>
+    <string name="text_screen_brightness">명도：[%1$d / %2$d]</string>
+    <string name="toast_get_settings_permission_failure">권한 Settings를 획득 실패</string>
+    <string name="toast_key_code_volume_down">체적-</string>
+    <string name="toast_key_code_volume_up">체적+</string>
+    <string name="toast_key_code_back">뒤쪽 키</string>
 
 </resources>

@@ -392,5 +392,12 @@
     <string name="text_voice_call_volume">コール：[%1$d / %2$d]</string>
     <string name="text_system_volume">システム：[%1$d / %2$d]</string>
     <string name="text_notification_volume">通知：[%1$d / %2$d]</string>
+    <string name="btn_auto_brightness_on">自動的に画面の明るさを調整するためにオープン</string>
+    <string name="btn_auto_brightness_off">自動的に画面の明るさを調整する閉じます</string>
+    <string name="text_screen_brightness">明るさ：[%1$d / %2$d]</string>
+    <string name="toast_get_settings_permission_failure">許可Settingsを取得するために失敗</string>
+    <string name="toast_key_code_volume_down">ボリューム-</string>
+    <string name="toast_key_code_volume_up">ボリューム+</string>
+    <string name="toast_key_code_back">戻るキー</string>
 
 </resources>

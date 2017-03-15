@@ -121,7 +121,7 @@ public class BaseActivity extends Activity implements ActivityListener {
     };
 
     protected void setPermissions() {
-        if (Build.VERSION.SDK_INT < 23) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             onPermissionSuccess();
         } else {
             List<String> pTemp = new ArrayList<>();

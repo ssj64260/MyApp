@@ -390,5 +390,12 @@
     <string name="text_voice_call_volume">voice call：[%1$d / %2$d]</string>
     <string name="text_system_volume">system：[%1$d / %2$d]</string>
     <string name="text_notification_volume">Notice：[%1$d / %2$d]</string>
+    <string name="btn_auto_brightness_on">Turn on the screen brightness to adjust automatically</string>
+    <string name="btn_auto_brightness_off">Turn off the screen brightness auto adjustment</string>
+    <string name="text_screen_brightness">brightness：[%1$d / %2$d]</string>
+    <string name="toast_get_settings_permission_failure">Failed to get Settings permission</string>
+    <string name="toast_key_code_volume_down">volume -</string>
+    <string name="toast_key_code_volume_up">volume +</string>
+    <string name="toast_key_code_back">back key</string>
 
 </resources>

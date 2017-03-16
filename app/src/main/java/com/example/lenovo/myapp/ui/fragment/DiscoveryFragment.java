@@ -141,7 +141,8 @@ public class DiscoveryFragment extends BaseFragment {
                             @Override
                             public void run() {
                                 svNewsTabs.addTabList(propertyNames);
-                                for (int i = 0; i < propertyList.size(); i++) {
+                                final int count = propertyList.size();
+                                for (int i = 0; i < count; i++) {
                                     final PokemonListAdapter pmAdapter = new PokemonListAdapter(getActivity(), propertyList.get(i).getEn_name());
                                     pmAdapter.setOnListClickListener(new OnListClickListener() {
                                         @Override

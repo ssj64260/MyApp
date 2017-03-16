@@ -61,7 +61,7 @@ public class GuideActivity extends BaseActivity {
         List<View> viewList = new ArrayList<>();
         pointList = new ArrayList<>();
 
-        int Width = getApplicationContext().getResources().getDisplayMetrics().widthPixels/40;
+        int Width = getApplicationContext().getResources().getDisplayMetrics().widthPixels / 40;
 
         for (int i = 0; i < pics.length; i++) {
             View view = LayoutInflater.from(this).inflate(R.layout.viewpager_introduction, null);
@@ -71,7 +71,7 @@ public class GuideActivity extends BaseActivity {
 
             ImageView ivPoint = new ImageView(getApplicationContext());
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(Width, Width);
-            params.setMargins(Width/2, 0, Width/2, 0);
+            params.setMargins(Width / 2, 0, Width / 2, 0);
             ivPoint.setLayoutParams(params);
             pointList.add(ivPoint);
             if (i == 0) {
@@ -91,7 +91,8 @@ public class GuideActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                for (int i = 0; i < pointList.size(); i++) {
+                final int count = pointList.size();
+                for (int i = 0; i < count; i++) {
                     pointList.get(i).setBackgroundResource(R.drawable.point_unselect_white);
                     if (position == i) {
                         pointList.get(i).setBackgroundResource(R.drawable.point_select_pop);

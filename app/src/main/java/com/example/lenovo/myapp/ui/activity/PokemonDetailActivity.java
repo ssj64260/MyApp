@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.cxb.tools.newstab.NewsTabResoureUtil;
 import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.StringCheck;
@@ -173,8 +173,25 @@ public class PokemonDetailActivity extends BaseActivity {
 
         int propertyId = Integer.parseInt(pList.get(0).getId()) - 1;
 
-        int allBgColor = NewsTabResoureUtil.property_color[propertyId];
-        int textBgColorRes = NewsTabResoureUtil.perty_bg_color[propertyId];
+        int[] property_color = {
+                Color.parseColor("#FFBBBBAA"), Color.parseColor("#FFBB5544"), Color.parseColor("#FF6699FF"),
+                Color.parseColor("#FFAA5599"), Color.parseColor("#FFDDBB55"), Color.parseColor("#FFBBAA66"),
+                Color.parseColor("#FFAABB22"), Color.parseColor("#FF6666BB"), Color.parseColor("#FFAAAABB"),
+                Color.parseColor("#FFFF4422"), Color.parseColor("#FF3399FF"), Color.parseColor("#FF77CC55"),
+                Color.parseColor("#FFFFCC33"), Color.parseColor("#FFFF5599"), Color.parseColor("#FF77DDFF"),
+                Color.parseColor("#FF7766EE"), Color.parseColor("#FF775544"), Color.parseColor("#FFFFAAFF")
+        };
+        int[] perty_bg_color = {
+                R.drawable.shape_bg_general_light, R.drawable.shape_bg_fighting_light, R.drawable.shape_bg_flight_light,
+                R.drawable.shape_bg_poison_light, R.drawable.shape_bg_ground_light, R.drawable.shape_bg_rock_light,
+                R.drawable.shape_bg_insect_light, R.drawable.shape_bg_ghost_light, R.drawable.shape_bg_steel_light,
+                R.drawable.shape_bg_fire_light, R.drawable.shape_bg_water_light, R.drawable.shape_bg_grass_light,
+                R.drawable.shape_bg_electricity_light, R.drawable.shape_bg_superpower_light, R.drawable.shape_bg_ice_light,
+                R.drawable.shape_bg_dragon_light, R.drawable.shape_bg_evil_light, R.drawable.shape_bg_fairy_light
+        };
+
+        int allBgColor = property_color[propertyId];
+        int textBgColorRes = perty_bg_color[propertyId];
 
         Gson gson = new Gson();
 
@@ -285,8 +302,17 @@ public class PokemonDetailActivity extends BaseActivity {
             tvProperty1.setVisibility(View.VISIBLE);
             tvProperty1.setOnClickListener(click);
 
+            final int[] property_bg_color = {
+                    R.drawable.shape_bg_general, R.drawable.shape_bg_fighting, R.drawable.shape_bg_flight,
+                    R.drawable.shape_bg_poison, R.drawable.shape_bg_ground, R.drawable.shape_bg_rock,
+                    R.drawable.shape_bg_insect, R.drawable.shape_bg_ghost, R.drawable.shape_bg_steel,
+                    R.drawable.shape_bg_fire, R.drawable.shape_bg_water, R.drawable.shape_bg_grass,
+                    R.drawable.shape_bg_electricity, R.drawable.shape_bg_superpower, R.drawable.shape_bg_ice,
+                    R.drawable.shape_bg_dragon, R.drawable.shape_bg_evil, R.drawable.shape_bg_fairy
+            };
+
             if (!StringCheck.isEmpty(pb1.getId())) {
-                tvProperty1.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb1.getId()) - 1]);
+                tvProperty1.setBackgroundResource(property_bg_color[Integer.parseInt(pb1.getId()) - 1]);
             }
 
             if (pList.size() > 1) {
@@ -297,7 +323,7 @@ public class PokemonDetailActivity extends BaseActivity {
                 tvProperty2.setOnClickListener(click);
 
                 if (!StringCheck.isEmpty(pb2.getId())) {
-                    tvProperty2.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb2.getId()) - 1]);
+                    tvProperty2.setBackgroundResource(property_bg_color[Integer.parseInt(pb2.getId()) - 1]);
                 }
             } else {
                 tvProperty2.setVisibility(View.GONE);

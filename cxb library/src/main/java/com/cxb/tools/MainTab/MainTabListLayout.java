@@ -68,7 +68,8 @@ public class MainTabListLayout extends LinearLayout {
             protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
                 int height = 0;
                 //下面遍历所有child的高度
-                for (int i = 0; i < getChildCount(); i++) {
+                int childCount = getChildCount();
+                for (int i = 0; i < childCount; i++) {
                     View child = getChildAt(i);
                     child.measure(widthMeasureSpec,
                             MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));

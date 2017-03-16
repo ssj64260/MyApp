@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cxb.tools.glide.GlideCircleTransform;
-import com.cxb.tools.newstab.NewsTabResoureUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
@@ -29,6 +28,15 @@ import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.LONGCLICK;
  */
 
 public class PokemonListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private final int[] property_bg_color = {
+            R.drawable.shape_bg_general, R.drawable.shape_bg_fighting, R.drawable.shape_bg_flight,
+            R.drawable.shape_bg_poison, R.drawable.shape_bg_ground, R.drawable.shape_bg_rock,
+            R.drawable.shape_bg_insect, R.drawable.shape_bg_ghost, R.drawable.shape_bg_steel,
+            R.drawable.shape_bg_fire, R.drawable.shape_bg_water, R.drawable.shape_bg_grass,
+            R.drawable.shape_bg_electricity, R.drawable.shape_bg_superpower, R.drawable.shape_bg_ice,
+            R.drawable.shape_bg_dragon, R.drawable.shape_bg_evil, R.drawable.shape_bg_fairy
+    };
 
     private static final String ALL = "all";
 
@@ -110,7 +118,7 @@ public class PokemonListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 holder.tvProperty1.setVisibility(View.VISIBLE);
 
                 if (!StringCheck.isEmpty(pb.getId())) {
-                    holder.tvProperty1.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
+                    holder.tvProperty1.setBackgroundResource(property_bg_color[Integer.parseInt(pb.getId()) - 1]);
                 }
             } else {
                 holder.tvProperty1.setVisibility(View.GONE);
@@ -122,7 +130,7 @@ public class PokemonListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 holder.tvProperty2.setVisibility(View.VISIBLE);
 
                 if (!StringCheck.isEmpty(pb.getId())) {
-                    holder.tvProperty2.setBackgroundResource(NewsTabResoureUtil.property_bg_color[Integer.parseInt(pb.getId()) - 1]);
+                    holder.tvProperty2.setBackgroundResource(property_bg_color[Integer.parseInt(pb.getId()) - 1]);
                 }
             } else {
                 holder.tvProperty2.setVisibility(View.GONE);

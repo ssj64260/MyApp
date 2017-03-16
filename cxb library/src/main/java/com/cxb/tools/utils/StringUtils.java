@@ -105,7 +105,8 @@ public class StringUtils {
     private static String getLimitStringWithEndSpace(String str, int maxSize) {
         String temp = "";
         int num = 0;
-        for (int i = 1; i < str.length(); i++) {
+        final int count = str.length();
+        for (int i = 1; i < count; i++) {
             temp = str.substring(0, str.length() - i);
             num = getBytesLength(temp);
             if (num <= maxSize) {

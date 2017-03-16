@@ -51,7 +51,7 @@ public class IntentFileActivity extends BaseActivity {
             Uri returnUri = data.getData();
             Cursor returnCursor = getContentResolver().query(returnUri, null, null, null, null);
 
-            StringBuilder fileInfo = new StringBuilder("");
+            StringBuilder fileInfo = new StringBuilder();
             if (returnCursor != null) {
                 returnCursor.moveToFirst();
                 String fileName = returnCursor.getString(returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));

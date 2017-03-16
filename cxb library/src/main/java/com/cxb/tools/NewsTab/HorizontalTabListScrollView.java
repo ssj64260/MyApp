@@ -79,7 +79,8 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
-        for (int i = 0; i < tabList.size(); i++) {
+        final int count = tabList.size();
+        for (int i = 0; i < count; i++) {
             final View itemView = mLayoutInflater.inflate(R.layout.item_news_tab, null);
             final TextView name = (TextView) itemView.findViewById(R.id.tv_name);
 

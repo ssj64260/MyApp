@@ -176,7 +176,8 @@ public class ContactsListActivity extends BaseActivity {
             cursor.moveToFirst();
             do {
                 String temp = "";
-                for (int i = 0; i < cursor.getColumnCount(); i++) {
+                final int count = cursor.getColumnCount();
+                for (int i = 0; i < count; i++) {
                     temp += cursor.getColumnName(i) + ":\t" + cursor.getString(cursor.getColumnIndex(cursor.getColumnName(i))) + "\n";
                 }
                 Logger.d(temp);

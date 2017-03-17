@@ -70,6 +70,17 @@ public class AppInfoTestActivity extends BaseActivity {
     private void setData() {
         list = new ArrayList<>();
         list.addAll(AppManager.getInstallApkList(this));
+
+        int count = list.size();
+        for (int i = 0; i < count; i++) {
+            PackageInfo info = list.get(i);
+            if (getPackageName().contains(info.applicationInfo.packageName)) {
+                list.remove(info);
+                list.add(0, info);
+                break;
+            }
+        }
+
         mAdapter = new AppInfoListAdapter(this, list);
         mAdapter.setOnListClickListener(listClick);
 
@@ -96,6 +107,7 @@ public class AppInfoTestActivity extends BaseActivity {
             }
         });
     }
+
     private void showDetail() {
         if (!FastClick.isFastClick()) {
             AlphaAnimation mShowAction = new AlphaAnimation(0, 1);

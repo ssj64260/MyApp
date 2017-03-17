@@ -38,6 +38,8 @@ public class BaseActivity extends Activity implements ActivityListener {
 
     private boolean curIsShow = false;
 
+    private DefaultAlertDialog permissionDialog;//获取权限对话框
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +58,9 @@ public class BaseActivity extends Activity implements ActivityListener {
             getWindow().getDecorView().getViewTreeObserver().removeOnGlobalLayoutListener(mLayoutChangeListener);
         } else {
             getWindow().getDecorView().getViewTreeObserver().removeGlobalOnLayoutListener(mLayoutChangeListener);
+        }
+        if (permissionDialog != null) {
+            permissionDialog.dismissDialog();
         }
         super.onDestroy();
     }
@@ -82,10 +87,10 @@ public class BaseActivity extends Activity implements ActivityListener {
     //隐藏虚拟按键，并且全屏
     protected void hideBottomUIMenu() {
         //隐藏虚拟按键，并且全屏
-        if (Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB && Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             View v = this.getWindow().getDecorView();
             v.setSystemUiVisibility(View.GONE);
-        } else if (Build.VERSION.SDK_INT >= 19) {
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //for new api versions.
             View decorView = getWindow().getDecorView();
             int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -108,8 +113,6 @@ public class BaseActivity extends Activity implements ActivityListener {
 
             int screenHeight = DisplayUtil.getScreenHeight(MyApplication.getInstance());
             int heightDifference = screenHeight - (r.bottom - r.top);
-
-//            Log.d("有个", screenHeight + "-" + (r.bottom - r.top) + "=" + heightDifference);
 
             boolean isShow = heightDifference > screenHeight / 3;
 
@@ -153,23 +156,23 @@ public class BaseActivity extends Activity implements ActivityListener {
     public void onRequestPermissionsResult(int requestCode, String[] p, int[] grantResults) {
         if (grantResults != null && grantResults.length > 0) {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                DefaultAlertDialog alertDialog = new DefaultAlertDialog(this);
-                alertDialog.setTitle("权限申请");
-                alertDialog.setMessage(refuseTips[requestCode]);
-                alertDialog.setCancelButton("取消");
-                alertDialog.setConfirmButton("去设置", new DialogInterface.OnClickListener() {
+                permissionDialog = new DefaultAlertDialog(this);
+                permissionDialog.setTitle("权限申请");
+                permissionDialog.setMessage(refuseTips[requestCode]);
+                permissionDialog.setCancelButton("取消");
+                permissionDialog.setConfirmButton("去设置", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         AppManager.showInstalledAppDetails(BaseActivity.this, getPackageName());
                     }
                 });
-                alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                permissionDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialog) {
                         finish();
                     }
                 });
-                alertDialog.showDialog();
+                permissionDialog.showDialog();
             } else {
                 requestCode++;
                 if (requestCode == permissions.length) {

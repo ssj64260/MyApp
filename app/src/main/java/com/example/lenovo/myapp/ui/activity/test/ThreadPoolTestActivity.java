@@ -17,9 +17,7 @@ import com.example.lenovo.myapp.okhttp.URLSetting;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;
 import com.example.lenovo.myapp.utils.ToastMaster;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -59,6 +57,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
     private OkHttpSynchApi getGithub;
 
     private int threadIndex = 0;
+
+    private AsyncTask asyncTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,7 +163,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
                     singleThreadPool();
                     break;
                 case R.id.btn_shut_down:
-                    shutDownAll();
+                    stopAllThread();
                     break;
                 case R.id.btn_clear:
                     tvContent.setText("");
@@ -176,8 +176,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
     // 接口
     ///////////////////////////////////////////////////////////////////////////
     private void heartGet() {
-        final Type returnType = new TypeToken<String>() {
-        }.getType();
+        setButtonStyle(btnHeartGet, false);
+
         final Map<String, String> params = new HashMap<>();
         params.put("app", "weather.today");
         params.put("weaid", "101280800");
@@ -198,8 +198,7 @@ public class ThreadPoolTestActivity extends BaseActivity {
     }
 
     private void sequence() {
-        final Type todayWeatherType = new TypeToken<String>() {
-        }.getType();
+        setButtonStyle(btnSequence, false);
 
         final Map<String, String> todayWeatherParams = new HashMap<>();
         todayWeatherParams.put("app", "weather.today");
@@ -301,13 +300,15 @@ public class ThreadPoolTestActivity extends BaseActivity {
     // 模拟线程操作
     ///////////////////////////////////////////////////////////////////////////
     private void cachedThreadPool() {
+        setButtonStyle(btnCached, false);
+
         for (int i = 0; i < 50; i++) {
             final int index = i;
-            try {
-                Thread.sleep(100); // 休眠时间越短创建的线程数越多
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Thread.sleep(100); // 休眠时间越短创建的线程数越多
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
 
             ThreadPoolUtil.getInstache().cachedExecute(new Runnable() {
 
@@ -334,6 +335,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
     }
 
     private void fixedThreadPool() {
+        setButtonStyle(btnFixed, false);
+
         for (int i = 0; i < 30; i++) {
             final int index = i;
             ThreadPoolUtil.getInstache().fixedExecute(new Runnable() {
@@ -360,6 +363,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
     //延时3秒钟执行
     private void scheduledThreadPool() {
+        setButtonStyle(btnScheduled, false);
+
         ThreadPoolUtil.getInstache().scheduled(new Runnable() {
             @Override
             public void run() {
@@ -377,6 +382,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
     //延时1秒钟，之后每2秒执行一次（间隔时间和任务时间同步计算，最终等待时间为较长的那个时间）
     private void scheduledThreadPoolRate() {
+        setButtonStyle(btnScheduledRate, false);
+
         ThreadPoolUtil.getInstache().scheduledRate(new Runnable() {
 
             @Override
@@ -402,6 +409,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
 
     //延时1秒钟，之后每次完成任务后延时1秒
     private void scheduledThreadPoolDelay() {
+        setButtonStyle(btnScheduledDelay, false);
+
         ThreadPoolUtil.getInstache().scheduledDelay(new Runnable() {
 
             @Override
@@ -425,6 +434,8 @@ public class ThreadPoolTestActivity extends BaseActivity {
     }
 
     private void singleThreadPool() {
+        setButtonStyle(btnSingle, false);
+
         for (int i = 0; i < 100; i++) {
             final int index = i;
             ThreadPoolUtil.getInstache().singleExecute(new Runnable() {
@@ -449,31 +460,60 @@ public class ThreadPoolTestActivity extends BaseActivity {
         }
     }
 
+    private void setButtonStyle(View view, boolean clickAble) {
+        view.setClickable(clickAble);
+        view.setBackgroundResource(clickAble ? R.drawable.selector_bg_red_iselectable : R.drawable.btn_gray_radius);
+    }
+
+    private void stopAllThread() {
+        setButtonStyle(btnAsyncTask, true);
+        setButtonStyle(btnHeartGet, true);
+        setButtonStyle(btnSequence, true);
+        setButtonStyle(btnCached, true);
+        setButtonStyle(btnFixed, true);
+        setButtonStyle(btnScheduled, true);
+        setButtonStyle(btnScheduledRate, true);
+        setButtonStyle(btnScheduledDelay, true);
+        setButtonStyle(btnSingle, true);
+        shutDownAll();
+    }
+
     private void shutDownAll() {
         ThreadPoolUtil.getInstache().cachedShutDown(0);
         ThreadPoolUtil.getInstache().fixedShutDown(0);
         ThreadPoolUtil.getInstache().scheduledShutDown(0);
         ThreadPoolUtil.getInstache().singleShutDown(0);
+
+        if (asyncTask != null && AsyncTask.Status.RUNNING == asyncTask.getStatus()) {
+            asyncTask.cancel(true);
+        }
     }
 
     private void asyncTaskTest() {
-        new AsyncTask<Integer, String, String>() {
+        setButtonStyle(btnAsyncTask, false);
+        asyncTask = new AsyncTask<Integer, String, String>() {
             @Override
             protected void onPreExecute() {
-                tvContent.setText("开始下载...\n");
+                if (!isCancelled()) {
+                    tvContent.setText("开始下载...\n");
+                }
                 super.onPreExecute();
             }
 
             @Override
             protected void onPostExecute(String s) {
-                String con = tvContent.getText().toString();
-                tvContent.setText(con + s + "\n");
+                if (!isCancelled()) {
+                    String con = tvContent.getText().toString();
+                    tvContent.setText(con + s + "\n");
+                }
                 super.onPostExecute(s);
             }
 
             @Override
             protected void onProgressUpdate(String... values) {
-                tvContent.setText("下载中：" + values[0] + "%\n");
+                if (!isCancelled()) {
+                    tvContent.setText("下载中：" + values[0] + "%\n");
+                }
                 super.onProgressUpdate(values);
             }
 
@@ -486,6 +526,9 @@ public class ThreadPoolTestActivity extends BaseActivity {
                 }
 
                 for (int i = params[0]; i <= 100; i++) {
+                    if (isCancelled()) {
+                        break;
+                    }
                     publishProgress(String.valueOf(i));
                     try {
                         long sec = (long) (Math.random() * 300);

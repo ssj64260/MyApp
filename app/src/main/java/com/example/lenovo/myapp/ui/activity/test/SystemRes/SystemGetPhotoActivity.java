@@ -68,6 +68,11 @@ public class SystemGetPhotoActivity extends BaseActivity {
                 break;
             case REQUESTCODE_TAKE:// 调用相机拍照
                 if (photoUri.exists() && resultCode == Activity.RESULT_OK) {
+                    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                    Uri contentUri = Uri.fromFile(photoUri);
+                    mediaScanIntent.setData(contentUri);
+                    sendBroadcast(mediaScanIntent);
+
                     Glide.with(SystemGetPhotoActivity.this)
                             .load(photoUri.getAbsolutePath())
                             .fitCenter()
@@ -97,44 +102,42 @@ public class SystemGetPhotoActivity extends BaseActivity {
         if (intent != null) {
             String type = intent.getType();
 
-            if (type != null) {
-                if ("text/plain".equals(type)) {
-                    ToastMaster.toast(getString(R.string.toast_do_not_accept_text_data));
-                } else if (type.startsWith("image/")) {
-                    Uri uri = null;
-                    if (intent.getData() != null) {
-                        uri = intent.getData();
-                    } else if (intent.getClipData() != null) {
-                        ClipData clipData = intent.getClipData();
-                        int itemCount = clipData.getItemCount();
-                        if (itemCount > 0) {
-                            ClipData.Item item = clipData.getItemAt(0);
-                            uri = item.getUri();
-                        }
-                    } else {
-                        uri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
+            if ("text/plain".equals(type)) {
+                ToastMaster.toast(getString(R.string.toast_do_not_accept_text_data));
+            } else {
+                Uri uri = null;
+                if (intent.getData() != null) {
+                    uri = intent.getData();
+                } else if (intent.getClipData() != null) {
+                    ClipData clipData = intent.getClipData();
+                    int itemCount = clipData.getItemCount();
+                    if (itemCount > 0) {
+                        ClipData.Item item = clipData.getItemAt(0);
+                        uri = item.getUri();
                     }
+                } else {
+                    uri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
+                }
 
-                    if (uri != null) {
-                        String url = uri.getPath();
-                        Logger.d(url);
+                if (uri != null) {
+                    String url = uri.getPath();
+                    Logger.d(url);
 
-                        if (url.endsWith(".gif")) {
-                            Glide.with(SystemGetPhotoActivity.this)
-                                    .load(uri)
-                                    .asGif()
-                                    .fitCenter()
-                                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                                    .dontAnimate()
-                                    .into(ivPhoto);
-                        } else {
-                            Glide.with(SystemGetPhotoActivity.this)
-                                    .load(uri)
-                                    .fitCenter()
-                                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                                    .dontAnimate()
-                                    .into(ivPhoto);
-                        }
+                    if (url.endsWith(".gif")) {
+                        Glide.with(SystemGetPhotoActivity.this)
+                                .load(uri)
+                                .asGif()
+                                .fitCenter()
+                                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                                .dontAnimate()
+                                .into(ivPhoto);
+                    } else {
+                        Glide.with(SystemGetPhotoActivity.this)
+                                .load(uri)
+                                .fitCenter()
+                                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                                .dontAnimate()
+                                .into(ivPhoto);
                     }
                 }
             }
@@ -154,10 +157,14 @@ public class SystemGetPhotoActivity extends BaseActivity {
         chooseDialog.setOnSecondButtonListener(getString(R.string.btn_choose_from_take_photo), new ChooseDialog.OnSecondButtonListener() {
             @Override
             public void OnSecondButtonListener(View v) {
-                photoUri = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
                 Intent takeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                takeIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoUri));
-                startActivityForResult(takeIntent, REQUESTCODE_TAKE);
+                if (takeIntent.resolveActivity(getPackageManager()) != null) {
+                    photoUri = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
+                    takeIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoUri));
+                    startActivityForResult(takeIntent, REQUESTCODE_TAKE);
+                } else {
+                    ToastMaster.toast(getString(R.string.toast_not_activity_response));
+                }
             }
         });
         chooseDialog.setOnCancelListener(getString(R.string.btn_do_not_choose), new ChooseDialog.OnCancelListener() {

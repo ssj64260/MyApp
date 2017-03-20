@@ -214,7 +214,6 @@
     <string name="text_sensors_permission_message">설정 - 응용 -%1$s- 권한 중 켜기 몸이 센서 권한 으로 이 기능은 정상이다 사용</string>
 
 
-
     <!--DatebaseDetailActivity-->
     <string name="toast_not_pokemon_info">이 Pokemon 정보가 없습니다.</string>
     <string name="toast_pokemon_data_update_success">업데이트 성공</string>
@@ -231,9 +230,7 @@
     <string name="btn_choose_from_take_photo">사진</string>
     <string name="btn_do_not_choose">취소</string>
     <string name="toast_do_not_accept_text_data">문자 데이터 안 받고</string>
-
-    <!--SystemResActivity-->
-    <string name="toast_had_got_all_permission">이미 모든 권한 가져오는 중</string>
+    <string name="toast_not_activity_response">Activity는 요청에 응답하지 않는다</string>
 
     <!--CustomViewTestActivity-->
     <string name="toast_datebase_file_not_exists">데이터베이스 파일이 존재하지 않습니다</string>
@@ -400,5 +397,19 @@
     <string name="toast_key_code_volume_down">체적-</string>
     <string name="toast_key_code_volume_up">체적+</string>
     <string name="toast_key_code_back">뒤쪽 키</string>
+
+
+    <!--GetPermissionActivity-->
+    <string name="btn_permission_all">전체 액세스</string>
+    <string name="btn_permission_contacts">연락처 권한</string>
+    <string name="btn_permission_call">전화 권한</string>
+    <string name="btn_permission_calendar">일정 권한</string>
+    <string name="btn_permission_camera">카메라 권한</string>
+    <string name="btn_permission_location">위치 정보 권한</string>
+    <string name="btn_permission_storage">스토어 권한</string>
+    <string name="btn_permission_audio">마이크 권한</string>
+    <string name="btn_permission_sms">SMS 권한</string>
+    <string name="btn_permission_sensors">바디 센서 권한</string>
+    <string name="toast_had_got_this_permission">획득 한 %S</string>
 
 </resources>

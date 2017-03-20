@@ -228,9 +228,7 @@
     <string name="btn_choose_from_take_photo">Photograph</string>
     <string name="btn_do_not_choose">Cancel</string>
     <string name="toast_do_not_accept_text_data">Do not accept text data</string>
-
-    <!--SystemResActivity-->
-    <string name="toast_had_got_all_permission">Access to all permissions</string>
+    <string name="toast_not_activity_response">No Activity response request</string>
 
     <!--CustomViewTestActivity-->
     <string name="toast_datebase_file_not_exists">Database file does not exist</string>
@@ -397,5 +395,18 @@
     <string name="toast_key_code_volume_down">volume -</string>
     <string name="toast_key_code_volume_up">volume +</string>
     <string name="toast_key_code_back">back key</string>
+
+    <!--GetPermissionActivity-->
+    <string name="btn_permission_all">All permissions</string>
+    <string name="btn_permission_contacts">Contacts permissions</string>
+    <string name="btn_permission_call">Phone permissions</string>
+    <string name="btn_permission_calendar">Calendar permissions</string>
+    <string name="btn_permission_camera">Camera permissions</string>
+    <string name="btn_permission_location">Location information permissions</string>
+    <string name="btn_permission_storage">Storage permissions</string>
+    <string name="btn_permission_audio">Microphone permissions</string>
+    <string name="btn_permission_sms">SMS permissions</string>
+    <string name="btn_permission_sensors">Body sensor permissions</string>
+    <string name="toast_had_got_this_permission">Access to %S</string>
 
 </resources>

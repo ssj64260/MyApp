@@ -230,9 +230,7 @@
     <string name="btn_choose_from_take_photo">拍照</string>
     <string name="btn_do_not_choose">取消</string>
     <string name="toast_do_not_accept_text_data">不接受文本数据</string>
-
-    <!--SystemResActivity-->
-    <string name="toast_had_got_all_permission">已获取所有权限</string>
+    <string name="toast_not_activity_response">没有Activity响应请求</string>
 
     <!--CustomViewTestActivity-->
     <string name="toast_datebase_file_not_exists">数据库文件不存在</string>
@@ -400,5 +398,17 @@
     <string name="toast_key_code_volume_up">音量+</string>
     <string name="toast_key_code_back">返回键</string>
 
+    <!--GetPermissionActivity-->
+    <string name="btn_permission_all">全部权限</string>
+    <string name="btn_permission_contacts">通讯录权限</string>
+    <string name="btn_permission_call">电话权限</string>
+    <string name="btn_permission_calendar">日历权限</string>
+    <string name="btn_permission_camera">相机权限</string>
+    <string name="btn_permission_location">位置信息权限</string>
+    <string name="btn_permission_storage">存储权限</string>
+    <string name="btn_permission_audio">麦克风权限</string>
+    <string name="btn_permission_sms">短信权限</string>
+    <string name="btn_permission_sensors">身体传感器权限</string>
+    <string name="toast_had_got_this_permission">已获取%s</string>
 
 </resources>

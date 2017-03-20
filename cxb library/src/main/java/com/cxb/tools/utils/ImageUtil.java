@@ -9,6 +9,7 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.widget.ImageView;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -148,7 +149,7 @@ public class ImageUtil {
         }
     }
 
-    public static String getContentContactAvatar(String url, Context context){
+    public static String getContentContactAvatar(String url, Context context) {
         Uri uri = Uri.parse(url);
         String[] proj = {ContactsContract.Contacts.PHOTO_THUMBNAIL_URI};
         Cursor cursor = context.getContentResolver().query(uri, proj, null, null, null);
@@ -230,24 +231,29 @@ public class ImageUtil {
         return new ByteArrayInputStream(baos.toByteArray());
     }
 
-    //使用BitmapFactory.Options的inSampleSize参数来缩放
-    public static Bitmap resizeImage2(Bitmap bitmap, int width, int height) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;//不加载bitmap到内存中
-//        BitmapFactory.decodeFile(path,options);
-        BitmapFactory.decodeStream(Bitmap2IS(bitmap));
-        int outWidth = options.outWidth;
-        int outHeight = options.outHeight;
-        options.inDither = false;
-        options.inPreferredConfig = Bitmap.Config.ALPHA_8;
-        options.inSampleSize = 1;
+    //缩放图片为对应的ImageView宽高
+    public static void setImageToView(String mCurrentPhotoPath, ImageView mImageView) {
+        // Get the dimensions of the View
+        int targetW = mImageView.getWidth();
+        int targetH = mImageView.getHeight();
 
-        if (outWidth != 0 && outHeight != 0 && width != 0 && height != 0) {
-            options.inSampleSize = (outWidth / width + outHeight / height) / 2;
-        }
+        // Get the dimensions of the bitmap
+        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        bmOptions.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
+        int photoW = bmOptions.outWidth;
+        int photoH = bmOptions.outHeight;
 
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeStream(Bitmap2IS(bitmap), null, options);
+        // Determine how much to scale down the image
+        int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
+
+        // Decode the image file into a Bitmap sized to fill the View
+        bmOptions.inJustDecodeBounds = false;
+        bmOptions.inSampleSize = scaleFactor;
+        bmOptions.inPurgeable = true;
+
+        Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
+        mImageView.setImageBitmap(bitmap);
     }
 
     //使用Bitmap加Matrix来缩放

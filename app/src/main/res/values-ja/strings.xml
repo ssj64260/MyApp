@@ -230,9 +230,7 @@
     <string name="btn_choose_from_take_photo">写真を撮る</string>
     <string name="btn_do_not_choose">キャンセル</string>
     <string name="toast_do_not_accept_text_data">テキストデータを受け入れない</string>
-
-    <!--SystemResActivity-->
-    <string name="toast_had_got_all_permission">すべての権限を取得している</string>
+    <string name="toast_not_activity_response">Activityは要求に応答しません</string>
 
     <!--CustomViewTestActivity-->
     <string name="toast_datebase_file_not_exists">データベースファイルが存在しない</string>
@@ -399,5 +397,19 @@
     <string name="toast_key_code_volume_down">ボリューム-</string>
     <string name="toast_key_code_volume_up">ボリューム+</string>
     <string name="toast_key_code_back">戻るキー</string>
+
+
+    <!--GetPermissionActivity-->
+    <string name="btn_permission_all">フルアクセス</string>
+    <string name="btn_permission_contacts">コンタクト許可</string>
+    <string name="btn_permission_call">電話のアクセス許可</string>
+    <string name="btn_permission_calendar">カレンダーのアクセス許可</string>
+    <string name="btn_permission_camera">カメラのアクセス許可</string>
+    <string name="btn_permission_location">位置情報の権利</string>
+    <string name="btn_permission_storage">ストアのアクセス許可</string>
+    <string name="btn_permission_audio">マイクの権限</string>
+    <string name="btn_permission_sms">SMSの権限</string>
+    <string name="btn_permission_sensors">ボディセンサ許可</string>
+    <string name="toast_had_got_this_permission">獲得しました%S</string>
 
 </resources>

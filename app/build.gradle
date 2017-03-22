@@ -27,6 +27,17 @@ android {
     sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
     productFlavors {
     }
+
+    //自定义APK打包名称
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def appName = 'MyApp'
+            def buildType = buildType.name
+            def version = defaultConfig.versionName
+            def build = defaultConfig.versionCode
+            output.outputFile = new File(output.outputFile.parent, appName + "-" + buildType + "-V" + version + "-Build" + build + ".apk");
+        }
+    }
 }
 
 dependencies {

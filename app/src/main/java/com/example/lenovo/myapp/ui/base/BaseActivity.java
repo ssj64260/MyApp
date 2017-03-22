@@ -20,6 +20,7 @@ import com.cxb.tools.utils.DisplayUtil;
 import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.ui.activity.ActivityListener;
 import com.example.lenovo.myapp.ui.dialog.DefaultAlertDialog;
+import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -156,22 +157,27 @@ public class BaseActivity extends Activity implements ActivityListener {
     public void onRequestPermissionsResult(int requestCode, String[] p, int[] grantResults) {
         if (grantResults != null && grantResults.length > 0) {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                permissionDialog = new DefaultAlertDialog(this);
-                permissionDialog.setTitle("权限申请");
-                permissionDialog.setMessage(refuseTips[requestCode]);
-                permissionDialog.setCancelButton("取消");
-                permissionDialog.setConfirmButton("去设置", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        AppManager.showInstalledAppDetails(BaseActivity.this, getPackageName());
-                    }
-                });
-                permissionDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        finish();
-                    }
-                });
+                if (requestCode < refuseTips.length) {
+                    permissionDialog = new DefaultAlertDialog(this);
+                    permissionDialog.setTitle("权限申请");
+                    permissionDialog.setMessage(refuseTips[requestCode]);
+                    permissionDialog.setCancelButton("取消");
+                    permissionDialog.setConfirmButton("去设置", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            AppManager.showInstalledAppDetails(BaseActivity.this, getPackageName());
+                        }
+                    });
+                    permissionDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                            ToastMaster.toast("没权限，不能试用该功能");
+//                        finish();
+                        }
+                    });
+                } else {
+                    ToastMaster.toast("没权限，不能试用该功能");
+                }
                 permissionDialog.showDialog();
             } else {
                 requestCode++;

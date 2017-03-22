@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity.test.systemres;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.Intent;
@@ -157,14 +158,10 @@ public class SystemGetPhotoActivity extends BaseActivity {
         chooseDialog.setOnSecondButtonListener(getString(R.string.btn_choose_from_take_photo), new ChooseDialog.OnSecondButtonListener() {
             @Override
             public void OnSecondButtonListener(View v) {
-                Intent takeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (takeIntent.resolveActivity(getPackageManager()) != null) {
-                    photoUri = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
-                    takeIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoUri));
-                    startActivityForResult(takeIntent, REQUESTCODE_TAKE);
-                } else {
-                    ToastMaster.toast(getString(R.string.toast_not_activity_response));
-                }
+                String appName = getString(R.string.app_name);
+                permissions = new String[]{Manifest.permission.CAMERA};
+                refuseTips = new String[]{String.format(getString(R.string.text_camera_permission_message), appName)};
+                setPermissions();
             }
         });
         chooseDialog.setOnCancelListener(getString(R.string.btn_do_not_choose), new ChooseDialog.OnCancelListener() {
@@ -187,4 +184,15 @@ public class SystemGetPhotoActivity extends BaseActivity {
         }
     };
 
+    @Override
+    public void onPermissionSuccess() {
+        Intent takeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takeIntent.resolveActivity(getPackageManager()) != null) {
+            photoUri = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");
+            takeIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoUri));
+            startActivityForResult(takeIntent, REQUESTCODE_TAKE);
+        } else {
+            ToastMaster.toast(getString(R.string.toast_not_activity_response));
+        }
+    }
 }

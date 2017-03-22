@@ -24,6 +24,7 @@
     <color name="numbers_text_color">#8c8c8c</color>
 
     <color name="transparent_black">#7f000000</color>
+    <color name="transparent_light_black">#44000000</color>
     <color name="blue">#33b5e5</color>
     <color name="blue_focused">#c1e8f7</color>
     <color name="neutral_pressed">#33999999</color>

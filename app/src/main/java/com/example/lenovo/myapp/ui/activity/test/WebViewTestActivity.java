@@ -18,13 +18,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.SDCardUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.ToastMaster;
-import com.orhanobut.logger.Logger;
 
 import static android.view.KeyEvent.KEYCODE_BACK;
 
@@ -38,10 +38,12 @@ public class WebViewTestActivity extends BaseActivity {
     private final String URL_HOME_PAGE = "http://www.gamersky.com/1";
 
     private LinearLayout llRootView;
-    private EditText etTitle;
+    private EditText etUrl;
+    private TextView tvTitle;
     private ImageButton ivRefresh;
     private ProgressBar pbProgress;
     private WebView wvWeb;
+    private View viewLayer;
 
     private ImageButton btnLeft;
     private ImageButton btnRight;
@@ -51,7 +53,6 @@ public class WebViewTestActivity extends BaseActivity {
 
     private LinearLayout llBottom;
 
-    private String curTitle;
     private String curUrl = URL_HOME_PAGE;
 
     private boolean isEditing = false;
@@ -138,10 +139,12 @@ public class WebViewTestActivity extends BaseActivity {
 
     private void initView() {
         llRootView = (LinearLayout) findViewById(R.id.ll_rootview);
-        etTitle = (EditText) findViewById(R.id.et_title);
+        etUrl = (EditText) findViewById(R.id.et_url);
+        tvTitle = (TextView) findViewById(R.id.tv_title);
         ivRefresh = (ImageButton) findViewById(R.id.ib_refresh);
         pbProgress = (ProgressBar) findViewById(R.id.pb_progress);
         wvWeb = (WebView) findViewById(R.id.wv_web);
+        viewLayer = findViewById(R.id.view_layer);
 
         btnLeft = (ImageButton) findViewById(R.id.btn_left);
         btnRight = (ImageButton) findViewById(R.id.btn_right);
@@ -195,15 +198,17 @@ public class WebViewTestActivity extends BaseActivity {
         wvWeb.loadUrl(curUrl);
         wvWeb.setWebViewClient(client);
         wvWeb.setWebChromeClient(chromeClient);
-        wvWeb.setOnTouchListener(rootTouch);
+//        wvWeb.setOnTouchListener(touch);
 
         pbProgress.setMax(100);
 
-        etTitle.setOnFocusChangeListener(focusChange);
-        llRootView.setOnTouchListener(rootTouch);
-        llRootView.setFocusable(true);
-        llRootView.setFocusableInTouchMode(true);
-        llRootView.requestFocus();
+        etUrl.setText(curUrl);
+        etUrl.setOnFocusChangeListener(focusChange);
+        llRootView.setOnTouchListener(touch);
+        viewLayer.setOnTouchListener(touch);
+
+        tvTitle.setOnClickListener(click);
+        tvTitle.setOnLongClickListener(longClick);
         ivRefresh.setOnClickListener(click);
         btnLeft.setOnClickListener(click);
         btnRight.setOnClickListener(click);
@@ -220,69 +225,90 @@ public class WebViewTestActivity extends BaseActivity {
         WebView.HitTestResult result = wvWeb.getHitTestResult();
     }
 
+    private View.OnLongClickListener longClick = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            etUrl.setVisibility(View.VISIBLE);
+            viewLayer.setVisibility(View.VISIBLE);
+            etUrl.setFocusable(true);
+            etUrl.setFocusableInTouchMode(true);
+            etUrl.requestFocus();
+            etUrl.selectAll();
+            tvTitle.setVisibility(View.GONE);
+            return true;
+        }
+    };
+
     //点击监听
     private View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             hideKeyboard();
-            switch (v.getId()) {
-                case R.id.ib_refresh:
-                    if (isEditing) {
-                        curUrl = etTitle.getText().toString();
-                        wvWeb.loadUrl(curUrl);
-                    } else {
-                        wvWeb.reload();
-                    }
-                    break;
-                case R.id.btn_left:
-                    if (wvWeb.canGoBack()) {
-                        wvWeb.goBack();
-
-                    } else {
-                        ToastMaster.toast("没有上一页了");
-                    }
-                    break;
-                case R.id.btn_right:
-                    if (isLoading) {
-                        wvWeb.stopLoading();
-                    } else {
-                        if (wvWeb.canGoForward()) {
-                            wvWeb.goForward();
-                        } else {
-                            ToastMaster.toast("没有下一页了");
-                        }
-                    }
-                    break;
-                case R.id.btn_home:
+            viewLayer.setVisibility(View.GONE);
+            int viewId = v.getId();
+            if (viewId == R.id.tv_title) {
+                etUrl.setVisibility(View.VISIBLE);
+                viewLayer.setVisibility(View.VISIBLE);
+                etUrl.setFocusable(true);
+                etUrl.setFocusableInTouchMode(true);
+                etUrl.requestFocus();
+                etUrl.selectAll();
+                tvTitle.setVisibility(View.GONE);
+            } else if (viewId == R.id.ib_refresh) {
+                if (isEditing) {
+                    curUrl = etUrl.getText().toString();
+                    wvWeb.loadUrl(curUrl);
+                } else {
+                    etUrl.setText(curUrl);
+                    wvWeb.reload();
+                }
+            } else if (viewId == R.id.btn_left) {
+                WebBackForwardList history = wvWeb.copyBackForwardList();
+                int curIndex = history.getCurrentIndex();
+                if (curIndex > 0) {
+                    curUrl = history.getItemAtIndex(curIndex - 1).getUrl();
+                    etUrl.setText(curUrl);
+                    wvWeb.goBackOrForward(-1);
+                } else {
+                    ToastMaster.toast("没有上一页了");
+                }
+            } else if (viewId == R.id.btn_right) {
+                if (isLoading) {
+                    wvWeb.stopLoading();
+                } else {
                     WebBackForwardList history = wvWeb.copyBackForwardList();
                     int curIndex = history.getCurrentIndex();
-                    curUrl = history.getItemAtIndex(0).getUrl();
-                    wvWeb.goBackOrForward(0 - curIndex);
-                    break;
-                case R.id.btn_page:
-
-                    break;
-                case R.id.btn_tools:
-
-                    break;
+                    int maxSize = history.getSize();
+                    if (curIndex < maxSize - 1) {
+                        curUrl = history.getItemAtIndex(curIndex + 1).getUrl();
+                        etUrl.setText(curUrl);
+                        wvWeb.goBackOrForward(1);
+                    } else {
+                        ToastMaster.toast("没有下一页了");
+                    }
+                }
+            } else if (viewId == R.id.btn_home) {
+                WebBackForwardList history = wvWeb.copyBackForwardList();
+                int curIndex = history.getCurrentIndex();
+                curUrl = history.getItemAtIndex(0).getUrl();
+                etUrl.setText(curUrl);
+                wvWeb.goBackOrForward(0 - curIndex);
+            } else if (viewId == R.id.btn_page) {
+                ToastMaster.toast("打开新页面");
+            } else if (viewId == R.id.btn_tools) {
+                ToastMaster.toast("浏览器设置");
             }
-
-            llRootView.setFocusable(true);
-            llRootView.setFocusableInTouchMode(true);
-            llRootView.requestFocus();
         }
     };
 
-    private View.OnTouchListener rootTouch = new View.OnTouchListener() {
+    private View.OnTouchListener touch = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-
             hideKeyboard();
-            llRootView.setFocusable(true);
-            llRootView.setFocusableInTouchMode(true);
-            llRootView.requestFocus();
-
-            return false;
+            tvTitle.setVisibility(View.VISIBLE);
+            etUrl.setVisibility(View.GONE);
+            viewLayer.setVisibility(View.GONE);
+            return true;
         }
     };
 
@@ -291,10 +317,8 @@ public class WebViewTestActivity extends BaseActivity {
         public void onFocusChange(View v, boolean hasFocus) {
             isEditing = hasFocus;
             if (hasFocus) {
-                etTitle.setText(curUrl);
                 ivRefresh.setImageResource(R.drawable.ic_via_go);
             } else {
-                etTitle.setText(curTitle);
                 ivRefresh.setImageResource(R.drawable.ic_via_refresh);
             }
         }
@@ -305,8 +329,9 @@ public class WebViewTestActivity extends BaseActivity {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             WebView.HitTestResult result = view.getHitTestResult();
             isLoading = true;
+            curUrl = url;
+            etUrl.setText(curUrl);
             if (result == null) {
-                curUrl = url;
                 view.loadUrl(curUrl);
                 return true;
             } else {
@@ -318,6 +343,8 @@ public class WebViewTestActivity extends BaseActivity {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             //设定加载开始的操作
             isLoading = true;
+            tvTitle.setVisibility(View.GONE);
+            etUrl.setVisibility(View.VISIBLE);
             pbProgress.setVisibility(View.VISIBLE);
             btnRight.setImageResource(R.drawable.ic_via_cancel);
         }
@@ -346,7 +373,7 @@ public class WebViewTestActivity extends BaseActivity {
 
         @Override
         public void doUpdateVisitedHistory(WebView view, String url, boolean isReload) {
-            Logger.d("doUpdateVisitedHistory:\t" + url);
+//            Logger.d("doUpdateVisitedHistory:\t" + url);
             super.doUpdateVisitedHistory(view, url, isReload);
         }
     };
@@ -356,6 +383,8 @@ public class WebViewTestActivity extends BaseActivity {
         public void onProgressChanged(WebView view, int newProgress) {
             pbProgress.setProgress(newProgress);
             if (newProgress >= 100) {
+                tvTitle.setVisibility(View.VISIBLE);
+                etUrl.setVisibility(View.GONE);
                 pbProgress.setVisibility(View.INVISIBLE);
                 btnRight.setImageResource(R.drawable.ic_via_go);
                 isLoading = false;
@@ -364,8 +393,7 @@ public class WebViewTestActivity extends BaseActivity {
 
         @Override
         public void onReceivedTitle(WebView view, String title) {
-            curTitle = title;
-            etTitle.setText(curTitle);
+            tvTitle.setText(title);
         }
     };
 

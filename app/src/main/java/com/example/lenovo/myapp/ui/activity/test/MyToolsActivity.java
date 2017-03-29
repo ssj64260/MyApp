@@ -93,7 +93,8 @@ public class MyToolsActivity extends BaseActivity {
                 getString(R.string.btn_tool_13),
                 getString(R.string.btn_tool_14),
                 getString(R.string.btn_tool_15),
-                getString(R.string.btn_tool_16)
+                getString(R.string.btn_tool_16),
+                getString(R.string.btn_tool_17)
         };
 
         list.clear();
@@ -170,6 +171,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 15://系统相关
                         startActivity(new Intent(MyToolsActivity.this, SystemRelatedActivity.class));
+                        break;
+                    case 16://相机工具
+                        startActivity(new Intent(MyToolsActivity.this, CameraTestActivity.class));
                         break;
                 }
             }

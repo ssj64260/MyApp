@@ -24,6 +24,7 @@
     <color name="red">#ff3333</color>
     <color name="red_focused">#853333</color>
     <color name="transparent_black">#7f000000</color>
+    <color name="transparent_light_black">#44000000</color>
     <dimen name="ampm_label_size">16sp</dimen>
     <dimen name="ampm_left_padding">6dip</dimen>
     <dimen name="date_picker_component_width">270dp</dimen>

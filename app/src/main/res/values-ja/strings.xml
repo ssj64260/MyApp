@@ -268,6 +268,7 @@
     <string name="btn_tool_14">Androidモチーフテスト</string>
     <string name="btn_tool_15">請求の外部APPファイル</string>
     <string name="btn_tool_16">システム関連</string>
+    <string name="btn_tool_17">カメラツール</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">バージョン番号：%s</string>

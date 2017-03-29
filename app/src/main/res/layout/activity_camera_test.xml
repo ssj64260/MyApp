@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <com.cxb.tools.camera.CameraTextureView
+            android:id="@+id/cs_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_change_camera"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_change_camera" />
+
+        <ImageView
+            android:id="@+id/iv_hdr"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_hdr" />
+
+        <ImageView
+            android:id="@+id/iv_flash"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_flash_off" />
+
+        <ImageView
+            android:id="@+id/iv_camera_setting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_camera_setting" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/iv_take_picture"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_take_picture" />
+
+        <ImageView
+            android:id="@+id/iv_video"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/iv_take_picture"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_video" />
+
+        <ImageView
+            android:id="@+id/iv_album"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/iv_take_picture"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_album" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

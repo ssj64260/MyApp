@@ -4,7 +4,7 @@ android {
     signingConfigs {
     }
     compileSdkVersion 24
-    buildToolsVersion '25.0.1'
+    buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId 'com.example.lenovo.myapp'
         minSdkVersion 21
@@ -15,16 +15,38 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile file("chenxuebin.jks")
+            storePassword "damima123"
+            keyAlias "chenxuebin"
+            keyPassword "damima123"
+        }
+        debug {
+        }
+    }
+
     buildTypes {
         debug {
             minifyEnabled false
+            signingConfig signingConfigs.release
         }
         release {
-            minifyEnabled true
+            signingConfig signingConfigs.release
+            minifyEnabled true//启动代码混淆
+            zipAlignEnabled true//Zipalign优化
+            shrinkResources true// 移除无用的resource文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+        }
+    }
+
     productFlavors {
     }
 

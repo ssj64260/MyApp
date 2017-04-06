@@ -197,6 +197,11 @@
     <string name="btn_request_file">Request external APP file</string>
     <string name="btn_response_file">Return file [property.txt]</string>
 
+    <!--activity_camera_tools-->
+    <string name="btn_camera">Camera</string>
+    <string name="btn_camera2">Camera2</string>
+    <string name="btn_flashlight">FlashLight</string>
+
     <!--============== 全局通用 ================-->
     <string name="text_loading">Loading&#8230;</string>
     <string name="text_requesting">Request&#8230;</string>

@@ -11,6 +11,7 @@ import com.cxb.tools.utils.LanguageUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.activity.GuideActivity;
+import com.example.lenovo.myapp.ui.activity.test.cameratest.CameraToolsActivity;
 import com.example.lenovo.myapp.ui.activity.test.dbtest.DatebaseTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.systemres.SystemResActivity;
@@ -173,7 +174,7 @@ public class MyToolsActivity extends BaseActivity {
                         startActivity(new Intent(MyToolsActivity.this, SystemRelatedActivity.class));
                         break;
                     case 16://相机工具
-                        startActivity(new Intent(MyToolsActivity.this, CameraTestActivity.class));
+                        startActivity(new Intent(MyToolsActivity.this, CameraToolsActivity.class));
                         break;
                 }
             }

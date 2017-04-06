@@ -199,6 +199,11 @@
     <string name="btn_request_file">요청 외부 APP 파일</string>
     <string name="btn_response_file">복귀 파일[property.txt]</string>
 
+    <!--activity_camera_tools-->
+    <string name="btn_camera">Camera</string>
+    <string name="btn_camera2">Camera2</string>
+    <string name="btn_flashlight">FlashLight</string>
+
     <!--============== 全局通用 ================-->
     <string name="text_loading">로드 중&#8230;</string>
     <string name="text_requesting">요청 중&#8230;</string>

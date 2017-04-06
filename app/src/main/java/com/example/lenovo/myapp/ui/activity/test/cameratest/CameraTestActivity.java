@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.ui.activity.test;
+package com.example.lenovo.myapp.ui.activity.test.cameratest;
 
 import android.content.Intent;
 import android.hardware.Camera;
@@ -13,7 +13,7 @@ import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.ToastMaster;
 
 /**
- * \相机工具
+ * android.hardware.Camera
  */
 
 public class CameraTestActivity extends BaseActivity {

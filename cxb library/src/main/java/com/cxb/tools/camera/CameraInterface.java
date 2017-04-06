@@ -42,21 +42,19 @@ public class CameraInterface {
         if (mCamera != null) {
             mParams = mCamera.getParameters();
             mParams.setPictureFormat(PixelFormat.JPEG);//设置拍照后存储的图片格式
-//          CamParaUtil.getInstance().printSupportPictureSize(mParams);
-//          CamParaUtil.getInstance().printSupportPreviewSize(mParams);
+//          CameraUtil.getInstance().printSupportPictureSize(mParams);
+//          CameraUtil.getInstance().printSupportPreviewSize(mParams);
             //设置PreviewSize和PictureSize
-//            Size pictureSize = CamParaUtil.getInstance().getPropPictureSize(
-//                    mParams.getSupportedPictureSizes(), 1.777f, 1920);
-            List<Camera.Size> pictureSizes = mParams.getSupportedPictureSizes();
-            Camera.Size pictureSize = pictureSizes.get(1);
+            Size pictureSize = CameraUtil.getInstance().getPropSize(
+                    mParams.getSupportedPictureSizes(), 1.777f, 4032);
             mParams.setPictureSize(pictureSize.width, pictureSize.height);
-            Size previewSize = CamParaUtil.getInstance().getPropPreviewSize(
+            Size previewSize = CameraUtil.getInstance().getPropSize(
                     mParams.getSupportedPreviewSizes(), 1.777f, 1920);
             mParams.setPreviewSize(previewSize.width, previewSize.height);
 
             mCamera.setDisplayOrientation(90);
 
-//          CamParaUtil.getInstance().printSupportFocusMode(mParams);
+//          CameraUtil.getInstance().printSupportFocusMode(mParams);
             List<String> focusModes = mParams.getSupportedFocusModes();
             if (focusModes.contains("continuous-video")) {
                 mParams.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
@@ -162,7 +160,7 @@ public class CameraInterface {
         return flashMode;
     }
 
-    public void setAutoFocus(){
+    public void setAutoFocus() {
         if (mCamera != null) {
             mCamera.autoFocus(null);
         }
@@ -192,8 +190,8 @@ public class CameraInterface {
             if (null != b) {
                 //设置FOCUS_MODE_CONTINUOUS_VIDEO)之后，myParam.set("rotation", 90)失效。
                 //图片竟然不能旋转了，故这里要旋转下
-                Bitmap rotaBitmap = ImageUtil.getRotateBitmap(b, 90.0f);
-                FileUtil.saveBitmap(rotaBitmap);
+                Bitmap rotaBitmap = CameraUtil.getInstance().getRotateBitmap(b, 90.0f);
+                CameraUtil.getInstance().saveBitmap(rotaBitmap);
             }
             //再次进入预览
             mCamera.startPreview();

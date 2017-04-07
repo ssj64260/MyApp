@@ -40,8 +40,9 @@ public class CameraToolsActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        isON = true;
-        switchFlashlight();
+        if (isON) {
+            switchFlashlight();
+        }
     }
 
     private void initView() {
@@ -59,7 +60,7 @@ public class CameraToolsActivity extends BaseActivity {
     }
 
     private void switchFlashlight() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             isON = !isON;
             btnFlashLight.setText(isON ? getString(R.string.btn_flashlight_on) : getString(R.string.btn_flashlight_off));
 

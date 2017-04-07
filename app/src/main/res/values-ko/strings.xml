@@ -275,6 +275,7 @@
     <string name="btn_tool_15">요청 외부 APP 파일</string>
     <string name="btn_tool_16">시스템 관련</string>
     <string name="btn_tool_17">카메라 도구</string>
+    <string name="btn_tool_18">지향 페이지 바로 가기 만들기</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">버전 번호：%s</string>

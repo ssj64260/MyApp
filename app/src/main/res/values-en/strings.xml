@@ -273,6 +273,7 @@
     <string name="btn_tool_15">Request external APP file</string>
     <string name="btn_tool_16">System related</string>
     <string name="btn_tool_17">Camera tool</string>
+    <string name="btn_tool_18">Create shortcuts for this page</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">Version number:%s</string>

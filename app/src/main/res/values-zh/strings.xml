@@ -275,6 +275,7 @@
     <string name="btn_tool_15">请求外部APP文件</string>
     <string name="btn_tool_16">系统相关</string>
     <string name="btn_tool_17">相机工具</string>
+    <string name="btn_tool_18">为本页面创建快捷方式</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">版本号：%s</string>

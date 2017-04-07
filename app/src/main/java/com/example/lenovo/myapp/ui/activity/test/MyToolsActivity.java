@@ -95,12 +95,30 @@ public class MyToolsActivity extends BaseActivity {
                 getString(R.string.btn_tool_14),
                 getString(R.string.btn_tool_15),
                 getString(R.string.btn_tool_16),
-                getString(R.string.btn_tool_17)
+                getString(R.string.btn_tool_17),
+                getString(R.string.btn_tool_18)
         };
 
         list.clear();
         Collections.addAll(list, toolNames);
         mAdapter.notifyDataSetChanged();
+    }
+
+    private void createShortcut() {
+        Intent actionIntent = new Intent(Intent.ACTION_MAIN);
+        actionIntent.setClass(MyToolsActivity.this, MyToolsActivity.class);
+//        actionIntent.setComponent(new ComponentName("com.example.lenovo.myapp", this.getClass().getName()));
+        actionIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        actionIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+        String ACTION_ADD_SHORTCUT = "com.android.launcher.action.INSTALL_SHORTCUT";
+
+        Intent addShortcutIntent = new Intent(ACTION_ADD_SHORTCUT);
+        addShortcutIntent.putExtra("duplicate", false);
+        addShortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, getTitle().toString());
+        addShortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(this, R.mipmap.tools_icon));
+        addShortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, actionIntent);
+        sendBroadcast(addShortcutIntent);
     }
 
     //点击监听
@@ -175,6 +193,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 16://相机工具
                         startActivity(new Intent(MyToolsActivity.this, CameraToolsActivity.class));
+                        break;
+                    case 17://为本页面创建快捷方式
+                        createShortcut();
                         break;
                 }
             }

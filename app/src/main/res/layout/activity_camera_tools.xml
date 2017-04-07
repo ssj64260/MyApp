@@ -35,7 +35,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/selector_bg_red_iselectable"
-        android:text="@string/btn_flashlight"
+        android:text="@string/btn_flashlight_off"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 

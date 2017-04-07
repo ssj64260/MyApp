@@ -202,7 +202,8 @@
     <!--activity_camera_tools-->
     <string name="btn_camera">Camera</string>
     <string name="btn_camera2">Camera2</string>
-    <string name="btn_flashlight">FlashLight</string>
+    <string name="btn_flashlight_off">FlashLight Off</string>
+    <string name="btn_flashlight_on">FlashLight On</string>
 
     <!--============== 全局通用 ================-->
     <string name="text_loading">로드 중&#8230;</string>

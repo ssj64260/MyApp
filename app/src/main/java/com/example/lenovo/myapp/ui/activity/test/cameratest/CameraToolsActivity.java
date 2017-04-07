@@ -37,6 +37,13 @@ public class CameraToolsActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isON = true;
+        switchFlashlight();
+    }
+
     private void initView() {
         btnCamera = (Button) findViewById(R.id.btn_camera);
         btnCamera2 = (Button) findViewById(R.id.btn_camera2);
@@ -55,6 +62,7 @@ public class CameraToolsActivity extends BaseActivity {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
             isON = !isON;
             btnFlashLight.setText(isON ? getString(R.string.btn_flashlight_on) : getString(R.string.btn_flashlight_off));
+
             try {
                 mCameraManager.setTorchMode("0", isON);
             } catch (CameraAccessException e) {

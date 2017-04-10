@@ -121,7 +121,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
                 }
 
                 if (uri != null) {
-                    String url = uri.getPath();
+                    String url = uri.toString();
                     Logger.d(url);
 
                     if (url.endsWith(".gif")) {

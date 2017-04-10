@@ -3,6 +3,7 @@ package com.example.lenovo.myapp.ui.base;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Rect;
 import android.os.Build;
@@ -154,25 +155,23 @@ public class BaseActivity extends Activity implements ActivityListener {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] p, int[] grantResults) {
+    public void onRequestPermissionsResult(final int requestCode, String[] p, int[] grantResults) {
         if (grantResults != null && grantResults.length > 0) {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                 if (requestCode < refuseTips.length) {
                     permissionDialog = new DefaultAlertDialog(this);
                     permissionDialog.setTitle("权限申请");
                     permissionDialog.setMessage(refuseTips[requestCode]);
-                    permissionDialog.setCancelButton("取消");
                     permissionDialog.setConfirmButton("去设置", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            AppManager.showInstalledAppDetails(BaseActivity.this, getPackageName());
+                            AppManager.showInstalledAppDetails(BaseActivity.this, getPackageName(), requestCode);
                         }
                     });
-                    permissionDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    permissionDialog.setCancelButton("取消", new DialogInterface.OnClickListener() {
                         @Override
-                        public void onDismiss(DialogInterface dialog) {
+                        public void onClick(DialogInterface dialog, int which) {
                             ToastMaster.toast("没权限，不能试用该功能");
-//                        finish();
                         }
                     });
                 } else {
@@ -180,12 +179,24 @@ public class BaseActivity extends Activity implements ActivityListener {
                 }
                 permissionDialog.showDialog();
             } else {
-                requestCode++;
+                int nextRequest = requestCode + 1;
                 if (requestCode == permissions.length) {
                     onPermissionSuccess();
                 } else {
-                    requestPermissions(requestCode);
+                    requestPermissions(nextRequest);
                 }
+            }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode >= 0 && requestCode < permissions.length) {
+            if (ContextCompat.checkSelfPermission(this, permissions[requestCode]) != PackageManager.PERMISSION_GRANTED) {
+                ToastMaster.toast("没权限，不能试用该功能");
+            } else {
+                onPermissionSuccess();
             }
         }
     }

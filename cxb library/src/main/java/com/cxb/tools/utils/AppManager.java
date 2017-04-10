@@ -1,5 +1,6 @@
 package com.cxb.tools.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -52,22 +53,27 @@ public class AppManager {
      *
      * @param packageName 应用程序的包名
      */
-    public static void showInstalledAppDetails(Context context, String packageName) {
+    public static void showInstalledAppDetails(Context context, String packageName, int... requestCode) {
         Intent intent = new Intent();
         final int apiLevel = Build.VERSION.SDK_INT;
-        if (apiLevel >= 9) { // 2.3（ApiLevel 9）以上，使用SDK提供的接口
+        if (apiLevel >= Build.VERSION_CODES.GINGERBREAD) { // 2.3（ApiLevel 9）以上，使用SDK提供的接口
             intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             Uri uri = Uri.fromParts(SCHEME, packageName, null);
             intent.setData(uri);
-        } else { // 2.3以下，使用非公开的接口（查看InstalledAppDetails源码）
+        } else {
+            // 2.3以下，使用非公开的接口（查看InstalledAppDetails源码）
             // 2.2和2.1中，InstalledAppDetails使用的APP_PKG_NAME不同。
-            final String appPkgName = (apiLevel == 8 ? APP_PKG_NAME_22
-                    : APP_PKG_NAME_21);
+            final String appPkgName = (apiLevel == 8 ? APP_PKG_NAME_22 : APP_PKG_NAME_21);
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setClassName(APP_DETAILS_PACKAGE_NAME,
-                    APP_DETAILS_CLASS_NAME);
+            intent.setClassName(APP_DETAILS_PACKAGE_NAME, APP_DETAILS_CLASS_NAME);
             intent.putExtra(appPkgName, packageName);
         }
-        context.startActivity(intent);
+
+        if (requestCode.length > 0) {
+            ((Activity) context).startActivityForResult(intent, requestCode[0]);
+        } else {
+            context.startActivity(intent);
+        }
+
     }
 }

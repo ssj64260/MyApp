@@ -1,5 +1,6 @@
 package com.example.lenovo.myapp.ui.activity.test.cameratest;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.camera2.CameraAccessException;
@@ -45,6 +46,11 @@ public class CameraToolsActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     private void initView() {
         btnCamera = (Button) findViewById(R.id.btn_camera);
         btnCamera2 = (Button) findViewById(R.id.btn_camera2);
@@ -54,9 +60,11 @@ public class CameraToolsActivity extends BaseActivity {
     private void setData() {
         mCameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
-        btnCamera.setOnClickListener(click);
-        btnCamera2.setOnClickListener(click);
-        btnFlashLight.setOnClickListener(click);
+        String appName = getString(R.string.app_name);
+        permissions = new String[]{Manifest.permission.CAMERA};
+        refuseTips = new String[]{String.format(getString(R.string.text_camera_permission_message), appName)};
+
+        setPermissions();
     }
 
     private void switchFlashlight() {
@@ -92,4 +100,10 @@ public class CameraToolsActivity extends BaseActivity {
         }
     };
 
+    @Override
+    public void onPermissionSuccess() {
+        btnCamera.setOnClickListener(click);
+        btnCamera2.setOnClickListener(click);
+        btnFlashLight.setOnClickListener(click);
+    }
 }

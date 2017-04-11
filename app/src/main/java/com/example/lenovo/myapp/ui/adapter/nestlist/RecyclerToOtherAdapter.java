@@ -29,8 +29,6 @@ import java.util.List;
 
 public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private OnListClickListener onListClickListener;
-
     public static final int LISTVIEW = 0;
     public static final int GRIDVIEW = 1;
     public static final int RECYCLERVIEW = 2;
@@ -156,9 +154,5 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                 rvItemList.setAdapter(rvAdapter);
             }
         }
-    }
-
-    public void setOnListClickListener(OnListClickListener onListClickListener) {
-        this.onListClickListener = onListClickListener;
     }
 }

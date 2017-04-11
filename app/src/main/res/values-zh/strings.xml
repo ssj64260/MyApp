@@ -200,8 +200,8 @@
     <string name="btn_response_file">返回文件[property.txt]</string>
 
     <!--activity_camera_tools-->
-    <string name="btn_camera">Camera</string>
-    <string name="btn_camera2">Camera2</string>
+    <string name="btn_camera">android.hardware.Camera</string>
+    <string name="btn_camera2">android.hardware.camera2</string>
     <string name="btn_flashlight_off">FlashLight Off</string>
     <string name="btn_flashlight_on">FlashLight On</string>
 

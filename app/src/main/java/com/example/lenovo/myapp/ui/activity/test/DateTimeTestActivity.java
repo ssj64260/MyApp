@@ -45,7 +45,7 @@ public class DateTimeTestActivity extends BaseActivity {
 
     private RadioGroup rgDate;
 
-    private DateTimeUtils.MaxRange maxRange = DateTimeUtils.MaxRange.YEAR;
+    private int maxRange = DateTimeUtils.YEAR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,18 +101,17 @@ public class DateTimeTestActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_year:
-                        maxRange = DateTimeUtils.MaxRange.YEAR;
+                        maxRange = DateTimeUtils.YEAR;
                         break;
                     case R.id.rb_month:
-                        maxRange = DateTimeUtils.MaxRange.MONTH;
+                        maxRange = DateTimeUtils.MONTH;
                         break;
                     case R.id.rb_day:
-                        maxRange = DateTimeUtils.MaxRange.DAY;
+                        maxRange = DateTimeUtils.DAY;
                         break;
                 }
             }
         });
-
     }
 
     private String getCurrentDateTime(String content) {

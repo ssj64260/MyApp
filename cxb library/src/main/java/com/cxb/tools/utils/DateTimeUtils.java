@@ -35,11 +35,9 @@ public class DateTimeUtils {
     private static SimpleDateFormat cnShortTimeFormat = new SimpleDateFormat("HH时mm分", Locale.getDefault());
     private static SimpleDateFormat cnWeekFormat = new SimpleDateFormat("EEEE", Locale.getDefault());
 
-    public enum MaxRange {
-        DAY,
-        MONTH,
-        YEAR
-    }
+    public static final int DAY = 0;
+    public static final int MONTH = 1;
+    public static final int YEAR = 2;
 
     // 获取当前日期，格式根据datetype决定
     //DateFormat.FULL, 2016年12月1日 星期四
@@ -121,12 +119,12 @@ public class DateTimeUtils {
     }
 
     // 根据范围类型获取友好日期时间
-    public static String getFriendlyDateTime(MaxRange range, String datetime) {
-        if (range == MaxRange.DAY) {
+    public static String getFriendlyDateTime(int range, String datetime) {
+        if (range == DAY) {
             return getFriendlyDay(datetime);
-        } else if (range == MaxRange.MONTH) {
+        } else if (range == MONTH) {
             return getFriendlyMonth(datetime);
-        } else if (range == MaxRange.YEAR) {
+        } else if (range == YEAR) {
             return getFriendlyYear(datetime);
         } else {
             return datetime;

@@ -6,6 +6,7 @@ import com.cxb.tools.utils.AndroidUtils;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
+import com.squareup.leakcanary.LeakCanary;
 
 /**
  * 全局application
@@ -33,6 +34,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        LeakCanary.install(this);
 
         Logger.init(getString(R.string.app_name));//初始化Log显示的TAG
 

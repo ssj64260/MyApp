@@ -33,14 +33,17 @@ import java.util.List;
 
 public class BaseActivity extends Activity implements ActivityListener {
 
-    protected String[] permissions;
-    protected String[] refuseTips;
+    private static final int REQUEST_TO_SETTING = 0;//跳转到系统设置权限页面
+
+    protected String[] permissions = {};//需要请求的权限
+    protected String[] refuseTips = {};//拒绝请求后的对话框提示
 
     private InputMethodManager manager;
 
     private boolean curIsShow = false;
 
     private DefaultAlertDialog permissionDialog;//获取权限对话框
+    private int permissionPosition = 0;//当前请求的权限
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,7 +152,7 @@ public class BaseActivity extends Activity implements ActivityListener {
     private void requestPermissions(int index) {
         if (permissions.length > 0 && index >= 0 && index < permissions.length) {
             ActivityCompat.requestPermissions(this, new String[]{permissions[index]}, index);
-        } else if (permissions.length == 0) {
+        } else if (permissions.length == 0 || index >= permissions.length) {
             onPermissionSuccess();
         }
     }
@@ -157,6 +160,7 @@ public class BaseActivity extends Activity implements ActivityListener {
     @Override
     public void onRequestPermissionsResult(final int requestCode, String[] p, int[] grantResults) {
         if (grantResults != null && grantResults.length > 0) {
+            permissionPosition = requestCode;
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                 if (requestCode < refuseTips.length) {
                     permissionDialog = new DefaultAlertDialog(this);
@@ -165,7 +169,7 @@ public class BaseActivity extends Activity implements ActivityListener {
                     permissionDialog.setConfirmButton("去设置", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            AppManager.showInstalledAppDetails(BaseActivity.this, getPackageName(), requestCode);
+                            AppManager.showInstalledAppDetails(BaseActivity.this, getPackageName(), REQUEST_TO_SETTING);
                         }
                     });
                     permissionDialog.setCancelButton("取消", new DialogInterface.OnClickListener() {
@@ -179,12 +183,8 @@ public class BaseActivity extends Activity implements ActivityListener {
                 }
                 permissionDialog.showDialog();
             } else {
-                int nextRequest = requestCode + 1;
-                if (requestCode == permissions.length) {
-                    onPermissionSuccess();
-                } else {
-                    requestPermissions(nextRequest);
-                }
+                int nextRequest = permissionPosition + 1;
+                requestPermissions(nextRequest);
             }
         }
     }
@@ -192,11 +192,13 @@ public class BaseActivity extends Activity implements ActivityListener {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode >= 0 && requestCode < permissions.length) {
-            if (ContextCompat.checkSelfPermission(this, permissions[requestCode]) != PackageManager.PERMISSION_GRANTED) {
-                ToastMaster.toast("没权限，不能使用该功能");
-            } else {
-                onPermissionSuccess();
+        if (REQUEST_TO_SETTING == requestCode) {
+            if (permissionPosition < permissions.length) {
+                if (ContextCompat.checkSelfPermission(this, permissions[permissionPosition]) != PackageManager.PERMISSION_GRANTED) {
+                    ToastMaster.toast("没权限，不能使用该功能");
+                } else {
+                    onPermissionSuccess();
+                }
             }
         }
     }

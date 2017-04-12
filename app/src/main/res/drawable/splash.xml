@@ -3,7 +3,7 @@
 
     <item>
         <bitmap android:src="@drawable/img_startup_page"
-            android:gravity="center"/>
+            android:gravity="fill"/>
     </item>
 
 </layer-list>

@@ -171,11 +171,11 @@ public class BaseActivity extends Activity implements ActivityListener {
                     permissionDialog.setCancelButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            ToastMaster.toast("没权限，不能试用该功能");
+                            ToastMaster.toast("没权限，不能使用该功能");
                         }
                     });
                 } else {
-                    ToastMaster.toast("没权限，不能试用该功能");
+                    ToastMaster.toast("没权限，不能使用该功能");
                 }
                 permissionDialog.showDialog();
             } else {
@@ -194,7 +194,7 @@ public class BaseActivity extends Activity implements ActivityListener {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode >= 0 && requestCode < permissions.length) {
             if (ContextCompat.checkSelfPermission(this, permissions[requestCode]) != PackageManager.PERMISSION_GRANTED) {
-                ToastMaster.toast("没权限，不能试用该功能");
+                ToastMaster.toast("没权限，不能使用该功能");
             } else {
                 onPermissionSuccess();
             }

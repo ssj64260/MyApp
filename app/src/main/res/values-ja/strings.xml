@@ -205,6 +205,15 @@
     <string name="btn_flashlight_off">FlashLight Off</string>
     <string name="btn_flashlight_on">FlashLight On</string>
 
+    <!--activity_notification_test-->
+    <string name="btn_cancel_all_notification">すべてのキャンセル通知</string>
+    <string name="btn_send_cover_notification">カバーの通知を送信します</string>
+    <string name="btn_send_cover_not_notification">カバーしていない通知を送ります</string>
+    <string name="btn_send_permanent_notification">常駐通知を送信します</string>
+    <string name="btn_send_intent_notification">意図して通知を送信します</string>
+    <string name="btn_send_custom_music_notification">カスタムの音楽通知を送信します</string>
+    <string name="btn_send_progress_notification">プログレスバーの通知を送信します</string>
+
     <!--============== 全局通用 ================-->
     <string name="text_loading">加載中&#8230;</string>
     <string name="text_requesting">請求に&#8230;</string>
@@ -276,6 +285,7 @@
     <string name="btn_tool_16">システム関連</string>
     <string name="btn_tool_17">カメラツール</string>
     <string name="btn_tool_18">指向ページには、ショートカットを作成します。</string>
+    <string name="btn_tool_19">関連するメールを受け取ります</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">バージョン番号：%s</string>

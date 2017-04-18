@@ -203,6 +203,15 @@
     <string name="btn_flashlight_off">FlashLight Off</string>
     <string name="btn_flashlight_on">FlashLight On</string>
 
+    <!--activity_notification_test-->
+    <string name="btn_cancel_all_notification">Cancel all notifications</string>
+    <string name="btn_send_cover_notification">Send a cover notification</string>
+    <string name="btn_send_cover_not_notification">Send a no-cover notification</string>
+    <string name="btn_send_permanent_notification">Send a permanent notice</string>
+    <string name="btn_send_intent_notification">Send an Intent notification</string>
+    <string name="btn_send_custom_music_notification">Send a custom music notification</string>
+    <string name="btn_send_progress_notification">Send a progress bar notification</string>
+
     <!--============== 全局通用 ================-->
     <string name="text_loading">Loading&#8230;</string>
     <string name="text_requesting">Request&#8230;</string>
@@ -274,6 +283,7 @@
     <string name="btn_tool_16">System related</string>
     <string name="btn_tool_17">Camera tool</string>
     <string name="btn_tool_18">Create shortcuts for this page</string>
+    <string name="btn_tool_19">Notice related</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">Version number:%s</string>

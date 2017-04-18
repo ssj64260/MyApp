@@ -273,6 +273,10 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <activity
+            android:name=".ui.activity.test.NotificationTestActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".ui.activity.SetPostUrlActivity"
             android:screenOrientation="portrait" />
 

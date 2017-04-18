@@ -205,6 +205,15 @@
     <string name="btn_flashlight_off">FlashLight Off</string>
     <string name="btn_flashlight_on">FlashLight On</string>
 
+    <!--activity_notification_test-->
+    <string name="btn_cancel_all_notification">모든 취소 통보</string>
+    <string name="btn_send_cover_notification">커버 알림 보내기</string>
+    <string name="btn_send_cover_not_notification">포함되지 않습니다 통지를 보내기</string>
+    <string name="btn_send_permanent_notification">거주자 알림 보내기</string>
+    <string name="btn_send_intent_notification">의도와 통지를 보내기</string>
+    <string name="btn_send_custom_music_notification">사용자 정의 음악 알림 보내기</string>
+    <string name="btn_send_progress_notification">진행률 표시 줄 알림 보내기</string>
+
     <!--============== 全局通用 ================-->
     <string name="text_loading">로드 중&#8230;</string>
     <string name="text_requesting">요청 중&#8230;</string>
@@ -276,6 +285,7 @@
     <string name="btn_tool_16">시스템 관련</string>
     <string name="btn_tool_17">카메라 도구</string>
     <string name="btn_tool_18">지향 페이지 바로 가기 만들기</string>
+    <string name="btn_tool_19">관련 통보</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">버전 번호：%s</string>

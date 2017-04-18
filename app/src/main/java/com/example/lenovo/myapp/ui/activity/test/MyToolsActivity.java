@@ -96,7 +96,8 @@ public class MyToolsActivity extends BaseActivity {
                 getString(R.string.btn_tool_15),
                 getString(R.string.btn_tool_16),
                 getString(R.string.btn_tool_17),
-                getString(R.string.btn_tool_18)
+                getString(R.string.btn_tool_18),
+                getString(R.string.btn_tool_19)
         };
 
         list.clear();
@@ -196,6 +197,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 17://为本页面创建快捷方式
                         createShortcut();
+                        break;
+                    case 18://通知相关
+                        startActivity(new Intent(MyToolsActivity.this, NotificationTestActivity.class));
                         break;
                 }
             }

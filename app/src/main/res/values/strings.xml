@@ -205,6 +205,16 @@
     <string name="btn_flashlight_off">FlashLight Off</string>
     <string name="btn_flashlight_on">FlashLight On</string>
 
+    <!--activity_notification_test-->
+    <string name="btn_cancel_all_notification">取消全部通知</string>
+    <string name="btn_send_cover_notification">发送一条覆盖通知</string>
+    <string name="btn_send_cover_not_notification">发送一条不覆盖通知</string>
+    <string name="btn_send_permanent_notification">发送一条常驻通知</string>
+    <string name="btn_send_intent_notification">发送一条带Intent通知</string>
+    <string name="btn_send_custom_music_notification">发送一条自定义音乐通知</string>
+    <string name="btn_send_progress_notification">发送一条进度条通知</string>
+
+
     <!--============== 全局通用 ================-->
     <string name="text_loading">加载中&#8230;</string>
     <string name="text_requesting">请求中&#8230;</string>
@@ -276,6 +286,7 @@
     <string name="btn_tool_16">系统相关</string>
     <string name="btn_tool_17">相机工具</string>
     <string name="btn_tool_18">为本页面创建快捷方式</string>
+    <string name="btn_tool_19">通知相关</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">版本号：%s</string>

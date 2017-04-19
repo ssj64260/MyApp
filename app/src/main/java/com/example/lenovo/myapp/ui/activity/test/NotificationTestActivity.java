@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -98,27 +99,32 @@ public class NotificationTestActivity extends BaseActivity {
     //发送一条普通消息
     private void sendDefaultNotification(boolean isCover) {
         Notification.Builder mBuilder = new Notification.Builder(this);
-        mBuilder.setContentTitle("收到了一条消息");
+        mBuilder.setContentTitle("收到了一条消息")
+                .setTicker("收到了一条消息")
+                .setAutoCancel(true)
+                .setDefaults(Notification.DEFAULT_ALL);
         if (isCover) {
             mNotificationId = 0;
         } else {
             mNotificationId++;
         }
-        mBuilder.setContentText("消息内容：" + System.currentTimeMillis() + " ID:" + mNotificationId);
-        mBuilder.setSmallIcon(R.mipmap.app_icon);
+        mBuilder.setContentText("消息内容：" + System.currentTimeMillis() + " ID:" + mNotificationId)
+                .setSmallIcon(R.mipmap.app_icon);
         Notification notification = mBuilder.build();
-        notification.flags = Notification.FLAG_AUTO_CANCEL;
         mNotificationManager.notify(mNotificationId, notification);
     }
 
     //发送一条常驻通知
     private void sendPermanentNotification() {
         Notification.Builder mBuilder = new Notification.Builder(this);
-        mBuilder.setContentTitle("常驻通知");
-        mBuilder.setContentText("这是一条删除不掉的通知");
-        mBuilder.setSmallIcon(R.mipmap.app_icon);
+        mBuilder.setContentTitle("常驻通知")
+                .setTicker("收到了一条消息")
+                .setContentText("这是一条删除不掉的通知")
+                .setSmallIcon(R.mipmap.app_icon)
+                .setOngoing(true)
+                .setPriority(Notification.PRIORITY_HIGH)
+                .setDefaults(Notification.DEFAULT_ALL);
         Notification notification = mBuilder.build();
-        notification.flags = Notification.FLAG_ONGOING_EVENT;
         mNotificationManager.notify(0, notification);
     }
 
@@ -134,19 +140,24 @@ public class NotificationTestActivity extends BaseActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        mBuilder.setSmallIcon(R.mipmap.app_icon);
+        mBuilder.setSmallIcon(R.mipmap.app_icon)
+                .setTicker("收到了一条消息")
+                .setAutoCancel(true)
+                .setPriority(Notification.PRIORITY_HIGH)
+                .setLights(0xff00ff00, 2000, 2000)
+                .setVibrate(new long[]{0, 300, 200, 300})
+                .setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.qq_message));
         if (packageInfo != null) {
-            mBuilder.setContentTitle("带Intent的通知");
-            mBuilder.setContentText("点击后跳转到仿QQapp");
+            mBuilder.setContentTitle("带Intent的通知")
+                    .setContentText("点击后跳转到仿QQapp");
             Intent intent = packageManager.getLaunchIntentForPackage(packName);
             mBuilder.setContentIntent(PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
         } else {
-            mBuilder.setContentTitle("带Intent的通知");
-            mBuilder.setContentText("没有安装仿QQapp，点击无效");
+            mBuilder.setContentTitle("带Intent的通知")
+                    .setContentText("没有安装仿QQapp，点击无效");
         }
 
         Notification notification = mBuilder.build();
-        notification.flags = Notification.FLAG_AUTO_CANCEL;
         mNotificationManager.notify(0, notification);
     }
 
@@ -176,16 +187,16 @@ public class NotificationTestActivity extends BaseActivity {
         pendingIntent = PendingIntent.getBroadcast(this, 3, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         remoteViews.setOnClickPendingIntent(R.id.iv_music_close, pendingIntent);
 
-        mBuilder.setSmallIcon(R.mipmap.app_icon);
+        mBuilder.setSmallIcon(R.mipmap.app_icon)
+                .setTicker("收到了一条消息")
+                .setOngoing(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             mBuilder.setCustomContentView(remoteViews);
             Notification notification = mBuilder.build();
-            notification.flags = Notification.FLAG_ONGOING_EVENT;
             mNotificationManager.notify(REQUEST_ID_MUSIC_PLAYER, notification);
         } else {
             Notification notification = mBuilder.build();
             notification.contentView = remoteViews;
-            notification.flags = Notification.FLAG_ONGOING_EVENT;
             mNotificationManager.notify(REQUEST_ID_MUSIC_PLAYER, notification);
         }
     }
@@ -206,16 +217,16 @@ public class NotificationTestActivity extends BaseActivity {
         Intent intent = new Intent(ACTION_PROGRESS);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 4, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         remoteViews.setOnClickPendingIntent(R.id.ll_rootview, pendingIntent);
-        mBuilder.setSmallIcon(R.mipmap.app_icon);
+        mBuilder.setSmallIcon(R.mipmap.app_icon)
+                .setTicker("收到了一条消息")
+                .setOngoing(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             mBuilder.setCustomContentView(remoteViews);
             Notification notification = mBuilder.build();
-            notification.flags = Notification.FLAG_ONGOING_EVENT;
             mNotificationManager.notify(REQUEST_ID_PROGRESS, notification);
         } else {
             Notification notification = mBuilder.build();
             notification.contentView = remoteViews;
-            notification.flags = Notification.FLAG_ONGOING_EVENT;
             mNotificationManager.notify(REQUEST_ID_PROGRESS, notification);
         }
     }

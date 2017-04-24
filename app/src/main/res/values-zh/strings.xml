@@ -181,7 +181,8 @@
 
     <!--fragment_mine-->
     <string name="title_mine">我的</string>
-    <string name="btn_imitate_qq_interface">仿QQ界面</string>
+    <string name="btn_imitate_qq_interface_inside">仿QQ界面（内部界面）</string>
+    <string name="btn_imitate_qq_interface_outside">仿QQ界面（外部仿QQ应用）</string>
     <string name="btn_material_design_interface">Material Design界面</string>
     <string name="btn_my_tools">我的工具</string>
 
@@ -213,6 +214,17 @@
     <string name="btn_send_intent_notification">发送一条带Intent通知</string>
     <string name="btn_send_custom_music_notification">发送一条自定义音乐通知</string>
     <string name="btn_send_progress_notification">发送一条进度条通知</string>
+
+    <!--activity_service_test-->
+    <string name="btn_start_service">开启服务</string>
+    <string name="btn_stop_service">停止服务</string>
+    <string name="btn_bind_service">绑定服务</string>
+    <string name="btn_unbind_service">解绑服务</string>
+    <string name="btn_play_music">播放</string>
+    <string name="btn_pause_music">暂停</string>
+    <string name="btn_stop_music">停止</string>
+    <string name="btn_previous_music">上一首</string>
+    <string name="btn_next_music">下一首</string>
 
     <!--============== 全局通用 ================-->
     <string name="text_loading">加载中&#8230;</string>
@@ -286,6 +298,7 @@
     <string name="btn_tool_17">相机工具</string>
     <string name="btn_tool_18">为本页面创建快捷方式</string>
     <string name="btn_tool_19">通知相关</string>
+    <string name="btn_tool_20">服务相关</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">版本号：%s</string>
@@ -427,6 +440,6 @@
     <string name="btn_permission_audio">麦克风权限</string>
     <string name="btn_permission_sms">短信权限</string>
     <string name="btn_permission_sensors">身体传感器权限</string>
-        <string name="toast_had_got_this_permission">已获取%s</string>
+    <string name="toast_had_got_this_permission">已获取%s</string>
 
 </resources>

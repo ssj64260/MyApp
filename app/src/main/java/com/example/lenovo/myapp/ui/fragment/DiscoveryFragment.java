@@ -22,7 +22,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.activity.PokemonDetailActivity;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
 import com.example.lenovo.myapp.ui.adapter.ViewPagerAdapter;
 import com.example.lenovo.myapp.ui.base.BaseFragment;

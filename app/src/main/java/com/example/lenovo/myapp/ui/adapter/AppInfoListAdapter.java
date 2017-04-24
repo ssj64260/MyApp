@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.example.lenovo.myapp.R;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 
 import java.util.List;
 

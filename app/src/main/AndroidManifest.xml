@@ -70,6 +70,11 @@
                 android:resource="@xml/filepaths" />
         </provider>
 
+        <service
+            android:name=".service.MusicService"
+            android:icon="@drawable/ic_gengar"
+            android:label="音乐播放器" />
+
         <!--启动页-->
         <activity
             android:name=".ui.activity.StartupPageActivity"
@@ -123,7 +128,7 @@
         <activity
             android:name=".ui.activity.test.OkhttpTestActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <activity
             android:name=".ui.activity.test.DialogTestActivity"
@@ -274,6 +279,10 @@
 
         <activity
             android:name=".ui.activity.test.NotificationTestActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.test.ServiceTestActivity"
             android:screenOrientation="portrait" />
 
         <activity

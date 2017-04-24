@@ -15,6 +15,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cxb.tools.glide.GlideCircleTransform;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.QQMessageBean;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 
 import java.util.List;
 

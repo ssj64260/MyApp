@@ -181,7 +181,8 @@
 
     <!--fragment_mine-->
     <string name="title_mine">私の</string>
-    <string name="btn_imitate_qq_interface">倣QQインターフェース</string>
+    <string name="btn_imitate_qq_interface_inside">模倣QQインターフェイス（内部インターフェイス）</string>
+    <string name="btn_imitate_qq_interface_outside">模倣QQインタフェース（QQのような外部アプリケーション）</string>
     <string name="btn_material_design_interface">Material Designインタフェース</string>
     <string name="btn_my_tools">私の道具</string>
 
@@ -213,6 +214,17 @@
     <string name="btn_send_intent_notification">意図して通知を送信します</string>
     <string name="btn_send_custom_music_notification">カスタムの音楽通知を送信します</string>
     <string name="btn_send_progress_notification">プログレスバーの通知を送信します</string>
+
+    <!--activity_service_test-->
+    <string name="btn_start_service">オープンサービス</string>
+    <string name="btn_stop_service">ストップサービス</string>
+    <string name="btn_bind_service">バインディングサービス</string>
+    <string name="btn_unbind_service">アンバンドリングサービス</string>
+    <string name="btn_play_music">放送</string>
+    <string name="btn_pause_music">休止</string>
+    <string name="btn_stop_music">ストップ</string>
+    <string name="btn_previous_music">上の</string>
+    <string name="btn_next_music">次の曲</string>
 
     <!--============== 全局通用 ================-->
     <string name="text_loading">加載中&#8230;</string>
@@ -286,6 +298,7 @@
     <string name="btn_tool_17">カメラツール</string>
     <string name="btn_tool_18">指向ページには、ショートカットを作成します。</string>
     <string name="btn_tool_19">関連するメールを受け取ります</string>
+    <string name="btn_tool_20">関連サービス</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">バージョン番号：%s</string>

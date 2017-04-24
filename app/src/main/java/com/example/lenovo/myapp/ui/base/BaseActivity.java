@@ -19,7 +19,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.cxb.tools.utils.AppManager;
 import com.cxb.tools.utils.DisplayUtil;
 import com.example.lenovo.myapp.MyApplication;
-import com.example.lenovo.myapp.ui.activity.ActivityListener;
+import com.example.lenovo.myapp.ui.intefaces.ActivityListener;
 import com.example.lenovo.myapp.ui.dialog.DefaultAlertDialog;
 import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;

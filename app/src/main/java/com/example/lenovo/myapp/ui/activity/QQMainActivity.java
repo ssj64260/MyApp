@@ -23,7 +23,7 @@ import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.QQMessageBean;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.QQMainAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.ToastMaster;

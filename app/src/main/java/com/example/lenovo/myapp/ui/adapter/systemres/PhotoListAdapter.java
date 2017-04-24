@@ -13,11 +13,11 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cxb.tools.utils.DisplayUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.PhotoBean;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 
 import java.util.List;
 
-import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.LINEARLAYOUT;
+import static com.example.lenovo.myapp.ui.intefaces.OnListClickListener.LINEARLAYOUT;
 
 /**
  * 相片列表

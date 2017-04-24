@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.ui.adapter;
+package com.example.lenovo.myapp.ui.intefaces;
 
 import android.support.annotation.IntDef;
 

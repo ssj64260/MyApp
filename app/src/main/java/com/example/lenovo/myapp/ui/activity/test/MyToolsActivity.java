@@ -17,7 +17,7 @@ import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.systemres.SystemResActivity;
 import com.example.lenovo.myapp.ui.activity.test.themetest.ThemeListActivity;
 import com.example.lenovo.myapp.ui.adapter.MyToolsAdapter;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.PreferencesUtil;
 
@@ -97,7 +97,8 @@ public class MyToolsActivity extends BaseActivity {
                 getString(R.string.btn_tool_16),
                 getString(R.string.btn_tool_17),
                 getString(R.string.btn_tool_18),
-                getString(R.string.btn_tool_19)
+                getString(R.string.btn_tool_19),
+                getString(R.string.btn_tool_20)
         };
 
         list.clear();
@@ -174,7 +175,7 @@ public class MyToolsActivity extends BaseActivity {
                     case 9://获取系统资源
                         startActivity(new Intent(MyToolsActivity.this, SystemResActivity.class));
                         break;
-                    case 10://LiteOrm数据库工具s
+                    case 10://LiteOrm数据库工具
                         startActivity(new Intent(MyToolsActivity.this, DatebaseTestActivity.class));
                         break;
                     case 11://WebView Demo
@@ -200,6 +201,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 18://通知相关
                         startActivity(new Intent(MyToolsActivity.this, NotificationTestActivity.class));
+                        break;
+                    case 19://服务相关
+                        startActivity(new Intent(MyToolsActivity.this, ServiceTestActivity.class));
                         break;
                 }
             }

@@ -181,7 +181,8 @@
 
     <!--fragment_mine-->
     <string name="title_mine">내</string>
-    <string name="btn_imitate_qq_interface">가짜 큐큐 인터페이스</string>
+    <string name="btn_imitate_qq_interface_inside">모조 QQ 인터페이스 (내부 인터페이스)</string>
+    <string name="btn_imitate_qq_interface_outside">모조 QQ 인터페이스 (QQ 같은 외부 응용 프로그램)</string>
     <string name="btn_material_design_interface">Material Design 인터페이스</string>
     <string name="btn_my_tools">내 도구</string>
 
@@ -213,6 +214,17 @@
     <string name="btn_send_intent_notification">의도와 통지를 보내기</string>
     <string name="btn_send_custom_music_notification">사용자 정의 음악 알림 보내기</string>
     <string name="btn_send_progress_notification">진행률 표시 줄 알림 보내기</string>
+
+    <!--activity_service_test-->
+    <string name="btn_start_service">오픈 서비스</string>
+    <string name="btn_stop_service">서비스 중지</string>
+    <string name="btn_bind_service">바인딩 서비스</string>
+    <string name="btn_unbind_service">개별적으로 가격을 매기는 서비스</string>
+    <string name="btn_play_music">방송</string>
+    <string name="btn_pause_music">중지</string>
+    <string name="btn_stop_music">정지</string>
+    <string name="btn_previous_music">A의</string>
+    <string name="btn_next_music">다음 노래</string>
 
     <!--============== 全局通用 ================-->
     <string name="text_loading">로드 중&#8230;</string>
@@ -286,6 +298,7 @@
     <string name="btn_tool_17">카메라 도구</string>
     <string name="btn_tool_18">지향 페이지 바로 가기 만들기</string>
     <string name="btn_tool_19">관련 통보</string>
+    <string name="btn_tool_20">관련 서비스</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">버전 번호：%s</string>

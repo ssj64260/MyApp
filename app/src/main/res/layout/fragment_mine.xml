@@ -35,7 +35,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/selector_bg_red_iselectable"
             android:gravity="center"
-            android:text="@string/btn_imitate_qq_interface"
+            android:text="@string/btn_imitate_qq_interface_inside"
             android:textColor="@color/white"
             android:textSize="16sp" />
 

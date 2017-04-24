@@ -179,7 +179,8 @@
 
     <!--fragment_mine-->
     <string name="title_mine">My</string>
-    <string name="btn_imitate_qq_interface">imitation QQ interface</string>
+    <string name="btn_imitate_qq_interface_inside">Imitation QQ interface (internal interface)</string>
+    <string name="btn_imitate_qq_interface_outside">Imitation QQ interface (external imitation QQ application)</string>
     <string name="btn_material_design_interface">Design Material interface</string>
     <string name="btn_my_tools">my tool</string>
 
@@ -211,6 +212,17 @@
     <string name="btn_send_intent_notification">Send an Intent notification</string>
     <string name="btn_send_custom_music_notification">Send a custom music notification</string>
     <string name="btn_send_progress_notification">Send a progress bar notification</string>
+
+    <!--activity_service_test-->
+    <string name="btn_start_service">Open the service</string>
+    <string name="btn_stop_service">Out of service</string>
+    <string name="btn_bind_service">Binding service</string>
+    <string name="btn_unbind_service">Unpacking services</string>
+    <string name="btn_play_music">Play</string>
+    <string name="btn_pause_music">time out</string>
+    <string name="btn_stop_music">stop</string>
+    <string name="btn_previous_music">On the first one</string>
+    <string name="btn_next_music">next song</string>
 
     <!--============== 全局通用 ================-->
     <string name="text_loading">Loading&#8230;</string>
@@ -284,6 +296,7 @@
     <string name="btn_tool_17">Camera tool</string>
     <string name="btn_tool_18">Create shortcuts for this page</string>
     <string name="btn_tool_19">Notice related</string>
+    <string name="btn_tool_20">Service related</string>
 
     <!--OkhttpTestActivity-->
     <string name="toast_version_name">Version number:%s</string>

@@ -18,7 +18,7 @@ import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PokemonNameBean;
 import com.example.lenovo.myapp.model.PropertyBean;
 import com.example.lenovo.myapp.ui.activity.PokemonDetailActivity;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.PokemonListAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;

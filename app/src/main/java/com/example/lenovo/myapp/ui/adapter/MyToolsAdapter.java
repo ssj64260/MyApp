@@ -8,10 +8,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.lenovo.myapp.R;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 
 import java.util.List;
 
-import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.TEXTVIEW;
+import static com.example.lenovo.myapp.ui.intefaces.OnListClickListener.TEXTVIEW;
 
 /**
  * 我的工具

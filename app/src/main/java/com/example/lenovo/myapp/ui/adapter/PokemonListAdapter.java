@@ -17,11 +17,12 @@ import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.PokemonBean;
 import com.example.lenovo.myapp.model.PropertyBean;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.lenovo.myapp.ui.adapter.OnListClickListener.LONGCLICK;
+import static com.example.lenovo.myapp.ui.intefaces.OnListClickListener.LONGCLICK;
 
 /**
  * 口袋妖怪列表adapter

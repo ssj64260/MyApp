@@ -31,7 +31,7 @@ import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.ui.dialog.TipsActionDialog;
 import com.example.lenovo.myapp.utils.ToastMaster;

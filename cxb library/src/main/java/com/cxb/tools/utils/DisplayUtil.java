@@ -4,6 +4,7 @@ package com.cxb.tools.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
@@ -12,30 +13,79 @@ import android.view.View;
 
 public class DisplayUtil {
 
-    public static DisplayMetrics getMetrics(Context context){
+    public static DisplayMetrics getMetrics(Context context) {
         return context.getResources().getDisplayMetrics();
     }
 
     //获取屏幕密度
-    public static float getDensity(Context context){
+    public static float getDensity(Context context) {
         return getMetrics(context).density;
     }
 
     //获取屏幕高度像素
-    public static int getScreenHeight(Context context){
+    public static int getScreenHeight(Context context) {
         return getMetrics(context).heightPixels;
     }
 
     //获取屏幕宽度像素
-    public static int getScreenWidth(Context context){
+    public static int getScreenWidth(Context context) {
         return getMetrics(context).widthPixels;
     }
 
     //获取屏幕密度DPI
-    public static int getDensityDpi(Context context){
+    public static int getDensityDpi(Context context) {
         return getMetrics(context).densityDpi;
     }
 
+    public static String getScreenSize(Context context) {
+        String screenSizeText = "";
+
+        int screenSize = context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK;
+        if (screenSize == Configuration.SCREENLAYOUT_SIZE_SMALL) {
+            screenSizeText = "small";
+        } else if (screenSize == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
+            screenSizeText = "normal";
+        } else if (screenSize == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            screenSizeText = "large";
+        } else if (screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+            screenSizeText = "xlarge";
+        }
+
+        return screenSizeText;
+    }
+
+    public static String getScreenDensity(Context context) {
+        String screenDensityText = "";
+
+        int screenDensity = getDensityDpi(context);
+        if (DisplayMetrics.DENSITY_LOW == screenDensity) {
+            screenDensityText = "ldpi";
+        } else if (DisplayMetrics.DENSITY_MEDIUM == screenDensity) {
+            screenDensityText = "mdpi";
+        } else if (DisplayMetrics.DENSITY_TV == screenDensity) {
+            screenDensityText = "tvdpi";
+        } else if (DisplayMetrics.DENSITY_HIGH == screenDensity) {
+            screenDensityText = "hdpi";
+        } else if (DisplayMetrics.DENSITY_280 == screenDensity) {
+            screenDensityText = "280dpi";
+        } else if (DisplayMetrics.DENSITY_XHIGH == screenDensity) {
+            screenDensityText = "xhdpi";
+        } else if (DisplayMetrics.DENSITY_360 == screenDensity) {
+            screenDensityText = "360dpi";
+        } else if (DisplayMetrics.DENSITY_400 == screenDensity) {
+            screenDensityText = "400dpi";
+        } else if (DisplayMetrics.DENSITY_420 == screenDensity) {
+            screenDensityText = "420dpi";
+        } else if (DisplayMetrics.DENSITY_XXHIGH == screenDensity) {
+            screenDensityText = "xxhdpi";
+        } else if (DisplayMetrics.DENSITY_560 == screenDensity) {
+            screenDensityText = "560dpi";
+        } else if (DisplayMetrics.DENSITY_XXXHIGH == screenDensity) {
+            screenDensityText = "xxxhdpi";
+        }
+        return screenDensityText;
+    }
 
     /**
      * 将px值转换为dip或dp值，保证尺寸大小不变
@@ -75,18 +125,14 @@ public class DisplayUtil {
     /**
      * 获得状态栏的高度
      */
-    public static int getStatusHeight(Context context) {
-        int statusHeight = -1;
-        try {
-            Class<?> clazz = Class.forName("com.android.internal.R$dimen");
-            Object object = clazz.newInstance();
-            int height = Integer.parseInt(clazz.getField("status_bar_height")
-                    .get(object).toString());
-            statusHeight = context.getResources().getDimensionPixelSize(height);
-        } catch (Exception e) {
-            e.printStackTrace();
+    public static int getStatusBarHeight(Context context) {
+        int statusBarHeight = 0;
+        int resourceId = context.getResources().getIdentifier(
+                "status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            statusBarHeight = context.getResources().getDimensionPixelSize(resourceId);
         }
-        return statusHeight;
+        return statusBarHeight;
     }
 
     /**

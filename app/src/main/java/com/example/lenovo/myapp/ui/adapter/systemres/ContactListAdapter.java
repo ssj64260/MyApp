@@ -16,7 +16,7 @@ import com.cxb.tools.utils.ImageUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.Contact;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 
 import java.util.List;
 

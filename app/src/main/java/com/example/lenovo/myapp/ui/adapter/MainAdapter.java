@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.cxb.tools.myprogressbar.MyProgressBar;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.MainListBean;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 
 import java.util.List;
 

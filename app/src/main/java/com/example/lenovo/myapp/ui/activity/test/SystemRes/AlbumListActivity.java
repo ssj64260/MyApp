@@ -15,7 +15,7 @@ import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.AlbumListBean;
 import com.example.lenovo.myapp.model.testbean.PhotoBean;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.systemres.AlbumListAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.ui.dialog.DefaultProgressDialog;

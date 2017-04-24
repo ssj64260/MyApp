@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.adapter.MyToolsAdapter;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 
 import java.util.ArrayList;

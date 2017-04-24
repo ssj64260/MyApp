@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.cxb.tools.utils.FastClick;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.testbean.Contact;
-import com.example.lenovo.myapp.ui.adapter.OnListClickListener;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.systemres.ContactListAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.orhanobut.logger.Logger;

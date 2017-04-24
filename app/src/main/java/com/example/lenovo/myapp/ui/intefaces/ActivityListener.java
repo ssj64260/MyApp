@@ -1,4 +1,4 @@
-package com.example.lenovo.myapp.ui.activity;
+package com.example.lenovo.myapp.ui.intefaces;
 
 /**
  * BaseActivity 功能监听

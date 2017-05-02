@@ -3,11 +3,13 @@ package com.example.lenovo.myapp.ui.activity.test;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
@@ -25,7 +27,13 @@ import static com.cxb.tools.utils.AnimationUtil.BACKGROUND_COLOR;
 
 public class AnimationTestActivity extends BaseActivity {
 
+    private ImageView ivLoading, ivRedLoading, ivBigLoading, ivHeartLoading;
     private Button btnA, btnB, btnC;
+
+    private AnimationDrawable loadingDrawable;
+    private AnimationDrawable redLoadingDrawable;
+    private AnimationDrawable bigLoadingDrawable;
+    private AnimationDrawable heartLoadingDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,70 +41,127 @@ public class AnimationTestActivity extends BaseActivity {
         setContentView(R.layout.activity_animation_test);
 
         initView();
-
+        setData();
     }
 
     private void initView() {
+        ivLoading = (ImageView) findViewById(R.id.iv_loading);
+        ivRedLoading = (ImageView) findViewById(R.id.iv_red_loading);
+        ivBigLoading = (ImageView) findViewById(R.id.iv_big_loading);
+        ivHeartLoading = (ImageView) findViewById(R.id.iv_heart_loading);
+
         btnA = (Button) findViewById(R.id.btn_a);
         btnB = (Button) findViewById(R.id.btn_b);
         btnC = (Button) findViewById(R.id.btn_c);
-
-        btnA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastMaster.toast("A");
-                Animation animation = AnimationUtils.loadAnimation(AnimationTestActivity.this, R.anim.test_animation_a);
-                btnA.startAnimation(animation);
-
-                AnimatorSet animatorSet = new AnimatorSet();
-
-                ObjectAnimator translationY = ObjectAnimator.ofFloat(btnB, TRANSLATION_Y, 0f, 100f, 50f, 150f, 80f, 200f, 180f, 400f);
-                translationY.setDuration(4000);
-                ObjectAnimator translationX = ObjectAnimator.ofFloat(btnB, TRANSLATION_X, 0f, 200f);
-                translationX.setDuration(4000);
-
-                ObjectAnimator scaleX = ObjectAnimator.ofFloat(btnB, SCALE_X, 1f, 2f, 1f);
-                scaleX.setDuration(2000);
-                ObjectAnimator scaleY = ObjectAnimator.ofFloat(btnB, SCALE_Y, 1f, 2f, 1f);
-                scaleY.setDuration(2000);
-
-                ObjectAnimator rotation = ObjectAnimator.ofFloat(btnB, ROTATION, 0f, 360f);
-                rotation.setDuration(2000);
-
-                ObjectAnimator rotationX = ObjectAnimator.ofFloat(btnB, ROTATION_X, 0f, 180f);
-                rotationX.setDuration(2000);
-                ObjectAnimator rotationY = ObjectAnimator.ofFloat(btnB, ROTATION_Y, 0f, 180f);
-                rotationY.setDuration(2000);
-
-                ObjectAnimator backgroundColor = ObjectAnimator.ofInt(btnB, BACKGROUND_COLOR, Color.parseColor("#FFFFFF00"), Color.parseColor("#FFFF0000"));
-                backgroundColor.setDuration(10000);
-
-                animatorSet.play(translationY).with(translationX);
-                animatorSet.play(scaleX).with(scaleY).after(translationY);
-                animatorSet.play(rotation).after(scaleX);
-                animatorSet.play(rotationX).with(rotationY).after(rotation);
-                animatorSet.play(backgroundColor).after(rotationX);
-                animatorSet.start();
-            }
-        });
-        btnB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastMaster.toast("B");
-                btnC.setVisibility(View.VISIBLE);
-            }
-        });
-        btnC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastMaster.toast("C");
-
-                ObjectAnimator translationY = ObjectAnimator.ofFloat(btnC, TRANSLATION_Y, 0f, 50f, 0f);
-                translationY.setDuration(500);
-                translationY.setRepeatCount(-1);
-                translationY.start();
-
-            }
-        });
     }
+
+    private void setData() {
+        ivLoading.setOnClickListener(click);
+        ivRedLoading.setOnClickListener(click);
+        ivBigLoading.setOnClickListener(click);
+        ivHeartLoading.setOnClickListener(click);
+
+        btnA.setOnClickListener(click);
+        btnB.setOnClickListener(click);
+        btnC.setOnClickListener(click);
+
+        loadingDrawable = (AnimationDrawable) getDrawable(R.drawable.ic_qq_refresh_loading);
+        ivLoading.setImageDrawable(loadingDrawable);
+
+        redLoadingDrawable = (AnimationDrawable) getDrawable(R.drawable.red_loading);
+        ivRedLoading.setImageDrawable(redLoadingDrawable);
+
+        bigLoadingDrawable = (AnimationDrawable) getDrawable(R.drawable.big_loading);
+        ivBigLoading.setImageDrawable(bigLoadingDrawable);
+
+        heartLoadingDrawable = (AnimationDrawable) getDrawable(R.drawable.heart_loading);
+        ivHeartLoading.setImageDrawable(heartLoadingDrawable);
+    }
+
+    private void startAnimation() {
+        ToastMaster.toast("A");
+        Animation animation = AnimationUtils.loadAnimation(AnimationTestActivity.this, R.anim.test_animation_a);
+        btnA.startAnimation(animation);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+
+        ObjectAnimator translationY = ObjectAnimator.ofFloat(btnB, TRANSLATION_Y, 0f, 100f, 50f, 150f, 80f, 200f, 180f, 400f);
+        translationY.setDuration(4000);
+        ObjectAnimator translationX = ObjectAnimator.ofFloat(btnB, TRANSLATION_X, 0f, 200f);
+        translationX.setDuration(4000);
+
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(btnB, SCALE_X, 1f, 2f, 1f);
+        scaleX.setDuration(2000);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(btnB, SCALE_Y, 1f, 2f, 1f);
+        scaleY.setDuration(2000);
+
+        ObjectAnimator rotation = ObjectAnimator.ofFloat(btnB, ROTATION, 0f, 360f);
+        rotation.setDuration(2000);
+
+        ObjectAnimator rotationX = ObjectAnimator.ofFloat(btnB, ROTATION_X, 0f, 180f);
+        rotationX.setDuration(2000);
+        ObjectAnimator rotationY = ObjectAnimator.ofFloat(btnB, ROTATION_Y, 0f, 180f);
+        rotationY.setDuration(2000);
+
+        ObjectAnimator backgroundColor = ObjectAnimator.ofInt(btnB, BACKGROUND_COLOR, Color.parseColor("#FFFFFF00"), Color.parseColor("#FFFF0000"));
+        backgroundColor.setDuration(10000);
+
+        animatorSet.play(translationY).with(translationX);
+        animatorSet.play(scaleX).with(scaleY).after(translationY);
+        animatorSet.play(rotation).after(scaleX);
+        animatorSet.play(rotationX).with(rotationY).after(rotation);
+        animatorSet.play(backgroundColor).after(rotationX);
+        animatorSet.start();
+    }
+
+    private View.OnClickListener click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.iv_loading:
+                    if (loadingDrawable.isRunning()) {
+                        loadingDrawable.stop();
+                    } else {
+                        loadingDrawable.start();
+                    }
+                    break;
+                case R.id.iv_red_loading:
+                    if (redLoadingDrawable.isRunning()) {
+                        redLoadingDrawable.stop();
+                    } else {
+                        redLoadingDrawable.start();
+                    }
+                    break;
+                case R.id.iv_big_loading:
+                    if (bigLoadingDrawable.isRunning()) {
+                        bigLoadingDrawable.stop();
+                    } else {
+                        bigLoadingDrawable.start();
+                    }
+                    break;
+                case R.id.iv_heart_loading:
+                    if (heartLoadingDrawable.isRunning()) {
+                        heartLoadingDrawable.stop();
+                    } else {
+                        heartLoadingDrawable.start();
+                    }
+                    break;
+                case R.id.btn_a:
+                    startAnimation();
+                    break;
+                case R.id.btn_b:
+                    ToastMaster.toast("B");
+                    btnC.setVisibility(View.VISIBLE);
+                    break;
+                case R.id.btn_c:
+                    ToastMaster.toast("C");
+
+                    ObjectAnimator translationY = ObjectAnimator.ofFloat(btnC, TRANSLATION_Y, 0f, 50f, 0f);
+                    translationY.setDuration(500);
+                    translationY.setRepeatCount(-1);
+                    translationY.start();
+                    break;
+            }
+        }
+    };
 }

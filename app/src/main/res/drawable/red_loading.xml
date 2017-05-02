@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/red_loading01"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading02"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading03"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading04"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading05"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading06"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading07"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading08"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading09"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading10"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading11"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading12"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading13"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading14"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading15"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading16"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading17"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading18"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading19"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading20"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading21"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading22"
+        android:duration="70" />
+    <item
+        android:drawable="@drawable/red_loading23"
+        android:duration="500" />
+</animation-list>

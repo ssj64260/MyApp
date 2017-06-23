@@ -177,7 +177,7 @@ public class QQMainActivity extends BaseActivity {
         qqLevel.setLevel(59);
 
         GlideCircleTransform transform = new GlideCircleTransform(this)
-                .setBorderThickness(DisplayUtil.dip2px(this, 3))
+                .setBorderThickness(DisplayUtil.dip2px(3))
                 .setColor(255, 255, 255, 1);
 
         Glide.with(this).load(R.mipmap.app_icon)

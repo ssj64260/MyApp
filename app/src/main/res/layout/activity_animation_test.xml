@@ -1,73 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#11141A"
-    android:fitsSystemWindows="true"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:id="@+id/ll_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:layout_centerInParent="true"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/iv_loading"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:scaleType="centerInside" />
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/iv_red_loading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:scaleType="centerInside" />
+            <ImageView
+                android:id="@+id/iv_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:scaleType="centerInside" />
 
-        <ImageView
-            android:id="@+id/iv_big_loading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:scaleType="centerInside" />
+            <ImageView
+                android:id="@+id/iv_red_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:scaleType="centerInside" />
 
-        <ImageView
-            android:id="@+id/iv_heart_loading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:scaleType="centerInside" />
+            <ImageView
+                android:id="@+id/iv_big_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:scaleType="centerInside" />
+
+            <ImageView
+                android:id="@+id/iv_heart_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:scaleType="centerInside" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_material_design"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:text=""
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_a"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:text="AAA"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_b"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFFF00"
+            android:text="BBB" />
+
+        <Button
+            android:id="@+id/btn_c"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_bg_red_iselectable"
+            android:text="CCC"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_a"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/selector_bg_red_iselectable"
-        android:text="AAA"
-        android:textColor="@color/white" />
+    <View
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fire"
+        android:elevation="5dp"
+        android:translationZ="5dp"
+        android:visibility="gone" />
 
-    <Button
-        android:id="@+id/btn_b"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="#FFFF00"
-        android:text="BBB" />
-
-    <Button
-        android:id="@+id/btn_c"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/selector_bg_red_iselectable"
-        android:text="CCC"
-        android:textColor="@color/white" />
-
-</LinearLayout>
+</RelativeLayout>

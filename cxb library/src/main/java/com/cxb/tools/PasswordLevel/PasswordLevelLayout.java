@@ -61,7 +61,7 @@ public class PasswordLevelLayout extends LinearLayout {
         views = new ArrayList<>();
 
         setOrientation(LinearLayout.VERTICAL);
-        setMinimumHeight(DisplayUtil.dip2px(context, 40));
+        setMinimumHeight(DisplayUtil.dip2px(40));
 
         llLevelLayout = new LinearLayout(context);
         LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f);
@@ -69,8 +69,8 @@ public class PasswordLevelLayout extends LinearLayout {
         llLevelLayout.setOrientation(LinearLayout.HORIZONTAL);
         llLevelLayout.setGravity(Gravity.CENTER_VERTICAL);
 
-        LayoutParams viewParams = new LayoutParams(0, DisplayUtil.dip2px(context, 10), 1f);
-        viewParams.setMargins(0, 0, DisplayUtil.dip2px(context, 10), 0);
+        LayoutParams viewParams = new LayoutParams(0, DisplayUtil.dip2px(10), 1f);
+        viewParams.setMargins(0, 0, DisplayUtil.dip2px(10), 0);
         for (int i = 0; i < maxLevel; i++) {
             View view = new View(context);
             view.setLayoutParams(viewParams);

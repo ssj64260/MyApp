@@ -62,7 +62,7 @@ public class HorizontalTabListScrollView extends HorizontalScrollView {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.HorizontalTabListScrollView);
         textColorNormal = ta.getColor(R.styleable.HorizontalTabListScrollView_ht_unselect_text_color, Color.parseColor("#FF707070"));
         textColorSelect = ta.getColor(R.styleable.HorizontalTabListScrollView_ht_select_text_color, Color.parseColor("#FF0295C9"));
-        textSize = ta.getDimension(R.styleable.HorizontalTabListScrollView_ht_text_size, DisplayUtil.sp2px(getContext(), 14f));
+        textSize = ta.getDimension(R.styleable.HorizontalTabListScrollView_ht_text_size, DisplayUtil.sp2px(14f));
         reserveTab = ta.getInt(R.styleable.HorizontalTabListScrollView_ht_left_reserve_tab, 1);
         ta.recycle();
     }

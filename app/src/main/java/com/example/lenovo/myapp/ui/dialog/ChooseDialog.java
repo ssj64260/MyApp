@@ -40,7 +40,7 @@ public class ChooseDialog {
 
     public ChooseDialog(final Context context) {
 
-        screenWidth = DisplayUtil.getScreenWidth(context);
+        screenWidth = DisplayUtil.getScreenWidth();
 
         dialog = new AlertDialog.Builder(context).create();
         dialog.setCanceledOnTouchOutside(false);

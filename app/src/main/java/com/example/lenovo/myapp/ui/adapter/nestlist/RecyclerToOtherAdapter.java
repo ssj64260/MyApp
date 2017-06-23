@@ -70,14 +70,14 @@ public class RecyclerToOtherAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         if (listType == LISTVIEW) {
             holder.lvItemList.setVisibility(View.VISIBLE);
 
-            int itemHeight = DisplayUtil.dip2px(context, 57);
+            int itemHeight = DisplayUtil.dip2px(57);
             ListFixedHeightUtils.getListViewHeight(holder.lvItemList, itemHeight, holder.pmList.size());
 
             holder.lvAdapter.notifyDataSetChanged();
         } else if (listType == GRIDVIEW) {
             holder.gvItemList.setVisibility(View.VISIBLE);
 
-            int itemHeight = DisplayUtil.dip2px(context, 57);
+            int itemHeight = DisplayUtil.dip2px(57);
             ListFixedHeightUtils.getGridViewHeight(holder.gvItemList, 2, itemHeight, holder.pmList.size());
 
             holder.gvAdapter.notifyDataSetChanged();

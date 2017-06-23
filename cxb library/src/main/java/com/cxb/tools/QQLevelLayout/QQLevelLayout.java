@@ -51,8 +51,8 @@ public class QQLevelLayout extends LinearLayout {
 
         int starNum = curNum;
 
-        int width = DisplayUtil.dip2px(context, iconWidth);
-        int hight = DisplayUtil.dip2px(context, iconHight);
+        int width = DisplayUtil.dip2px(iconWidth);
+        int hight = DisplayUtil.dip2px(iconHight);
         LayoutParams params = new LinearLayout.LayoutParams(width, hight);
 
         for (int i = 0; i < sunNum; i++) {

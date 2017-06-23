@@ -5,6 +5,7 @@ package com.cxb.tools.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
@@ -13,28 +14,28 @@ import android.view.View;
 
 public class DisplayUtil {
 
-    public static DisplayMetrics getMetrics(Context context) {
-        return context.getResources().getDisplayMetrics();
+    public static DisplayMetrics getMetrics() {
+        return Resources.getSystem().getDisplayMetrics();
     }
 
     //获取屏幕密度
-    public static float getDensity(Context context) {
-        return getMetrics(context).density;
+    public static float getDensity() {
+        return getMetrics().density;
     }
 
     //获取屏幕高度像素
-    public static int getScreenHeight(Context context) {
-        return getMetrics(context).heightPixels;
+    public static int getScreenHeight() {
+        return getMetrics().heightPixels;
     }
 
     //获取屏幕宽度像素
-    public static int getScreenWidth(Context context) {
-        return getMetrics(context).widthPixels;
+    public static int getScreenWidth() {
+        return getMetrics().widthPixels;
     }
 
     //获取屏幕密度DPI
-    public static int getDensityDpi(Context context) {
-        return getMetrics(context).densityDpi;
+    public static int getDensityDpi() {
+        return getMetrics().densityDpi;
     }
 
     public static String getScreenSize(Context context) {
@@ -55,10 +56,10 @@ public class DisplayUtil {
         return screenSizeText;
     }
 
-    public static String getScreenDensity(Context context) {
+    public static String getScreenDensity() {
         String screenDensityText = "";
 
-        int screenDensity = getDensityDpi(context);
+        int screenDensity = getDensityDpi();
         if (DisplayMetrics.DENSITY_LOW == screenDensity) {
             screenDensityText = "ldpi";
         } else if (DisplayMetrics.DENSITY_MEDIUM == screenDensity) {
@@ -90,47 +91,48 @@ public class DisplayUtil {
     /**
      * 将px值转换为dip或dp值，保证尺寸大小不变
      */
-    public static int px2dip(Context context, float pxValue) {
-        return (int) (pxValue / getMetrics(context).density + 0.5f);
+    public static int px2dip(float pxValue) {
+        return (int) (pxValue / getMetrics().density + 0.5f);
     }
 
     /**
      * 将dip或dp值转换为px值，保证尺寸大小不变
      */
-    public static int dip2px(Context context, float dipValue) {
-        return (int) (dipValue * getMetrics(context).density + 0.5f);
+    public static int dip2px(float dipValue) {
+        return (int) (dipValue * getMetrics().density + 0.5f);
     }
 
     /**
      * 将px值转换为sp值，保证文字大小不变
      */
-    public static int px2sp(Context context, float pxValue) {
-        return (int) (pxValue / getMetrics(context).density + 0.5f);
+    public static int px2sp(float pxValue) {
+        return (int) (pxValue / getMetrics().density + 0.5f);
     }
 
     /**
      * 将sp值转换为px值，保证文字大小不变
      */
-    public static int sp2px(Context context, float spValue) {
-        return (int) (spValue * getMetrics(context).density + 0.5f);
+    public static int sp2px(float spValue) {
+        return (int) (spValue * getMetrics().density + 0.5f);
     }
 
     /**
      * 将传进来的数转化为dp
      */
-    public static int convertToDp(Context context, int num) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, num, getMetrics(context));
+    public static int convertToDp(int num) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, num, getMetrics());
     }
 
     /**
      * 获得状态栏的高度
      */
-    public static int getStatusBarHeight(Context context) {
+    public static int getStatusBarHeight() {
+        Resources resources = Resources.getSystem();
         int statusBarHeight = 0;
-        int resourceId = context.getResources().getIdentifier(
+        int resourceId = resources.getIdentifier(
                 "status_bar_height", "dimen", "android");
         if (resourceId > 0) {
-            statusBarHeight = context.getResources().getDimensionPixelSize(resourceId);
+            statusBarHeight = resources.getDimensionPixelSize(resourceId);
         }
         return statusBarHeight;
     }
@@ -143,8 +145,8 @@ public class DisplayUtil {
         view.setDrawingCacheEnabled(true);
         view.buildDrawingCache();
         Bitmap bmp = view.getDrawingCache();
-        int width = getScreenWidth(activity);
-        int height = getScreenHeight(activity);
+        int width = getScreenWidth();
+        int height = getScreenHeight();
         Bitmap bp = Bitmap.createBitmap(bmp, 0, 0, width, height);
         view.destroyDrawingCache();
         return bp;
@@ -162,8 +164,8 @@ public class DisplayUtil {
         activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
         int statusBarHeight = frame.top;
 
-        int width = getScreenWidth(activity);
-        int height = getScreenHeight(activity);
+        int width = getScreenWidth();
+        int height = getScreenHeight();
         Bitmap bp = Bitmap.createBitmap(bmp, 0, statusBarHeight, width, height
                 - statusBarHeight);
         view.destroyDrawingCache();

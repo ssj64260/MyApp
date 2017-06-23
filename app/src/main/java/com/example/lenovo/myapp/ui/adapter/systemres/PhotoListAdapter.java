@@ -38,7 +38,7 @@ public class PhotoListAdapter extends RecyclerView.Adapter {
         this.list = list;
         inflater = LayoutInflater.from(context);
         requestManager = Glide.with(context);
-        itemHeight = itemWidth = DisplayUtil.getScreenWidth(context) / 3;
+        itemHeight = itemWidth = DisplayUtil.getScreenWidth() / 3;
     }
 
     @Override

@@ -18,9 +18,8 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.cxb.tools.utils.AppManager;
 import com.cxb.tools.utils.DisplayUtil;
-import com.example.lenovo.myapp.MyApplication;
-import com.example.lenovo.myapp.ui.intefaces.ActivityListener;
 import com.example.lenovo.myapp.ui.dialog.DefaultAlertDialog;
+import com.example.lenovo.myapp.ui.intefaces.ActivityListener;
 import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
 
@@ -116,7 +115,7 @@ public class BaseActivity extends Activity implements ActivityListener {
             Rect r = new Rect();
             getWindow().getDecorView().getWindowVisibleDisplayFrame(r);
 
-            int screenHeight = DisplayUtil.getScreenHeight(MyApplication.getInstance());
+            int screenHeight = DisplayUtil.getScreenHeight();
             int heightDifference = screenHeight - (r.bottom - r.top);
 
             boolean isShow = heightDifference > screenHeight / 3;

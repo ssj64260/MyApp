@@ -42,7 +42,7 @@ public class CustomToast {
         Toast toast = new Toast(context);
         toast.setDuration(duration);
         toast.setView(view);
-        int height = DisplayUtil.getMetrics(context).heightPixels;
+        int height = DisplayUtil.getMetrics().heightPixels;
         toast.setGravity(Gravity.BOTTOM, 0, height / 2);
 
         ToastMaster.showToast(toast);

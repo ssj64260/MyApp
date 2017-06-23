@@ -3,6 +3,7 @@ package com.example.lenovo.myapp.ui.activity.test;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import com.cxb.tools.utils.DisplayUtil;
+import com.cxb.tools.utils.ViewAnimationUtils;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
 import com.example.lenovo.myapp.utils.ToastMaster;
@@ -28,7 +32,9 @@ import static com.cxb.tools.utils.AnimationUtil.BACKGROUND_COLOR;
 public class AnimationTestActivity extends BaseActivity {
 
     private ImageView ivLoading, ivRedLoading, ivBigLoading, ivHeartLoading;
-    private Button btnA, btnB, btnC;
+    private Button btnMaterialDesign, btnA, btnB, btnC;
+    private LinearLayout llButtons;
+    private View background;
 
     private AnimationDrawable loadingDrawable;
     private AnimationDrawable redLoadingDrawable;
@@ -50,9 +56,13 @@ public class AnimationTestActivity extends BaseActivity {
         ivBigLoading = (ImageView) findViewById(R.id.iv_big_loading);
         ivHeartLoading = (ImageView) findViewById(R.id.iv_heart_loading);
 
+        btnMaterialDesign = (Button) findViewById(R.id.btn_material_design);
         btnA = (Button) findViewById(R.id.btn_a);
         btnB = (Button) findViewById(R.id.btn_b);
         btnC = (Button) findViewById(R.id.btn_c);
+
+        llButtons = (LinearLayout) findViewById(R.id.ll_buttons);
+        background = findViewById(R.id.view_background);
     }
 
     private void setData() {
@@ -61,9 +71,12 @@ public class AnimationTestActivity extends BaseActivity {
         ivBigLoading.setOnClickListener(click);
         ivHeartLoading.setOnClickListener(click);
 
+        btnMaterialDesign.setOnClickListener(click);
         btnA.setOnClickListener(click);
         btnB.setOnClickListener(click);
         btnC.setOnClickListener(click);
+
+        background.setOnClickListener(click);
 
         loadingDrawable = (AnimationDrawable) getDrawable(R.drawable.ic_qq_refresh_loading);
         ivLoading.setImageDrawable(loadingDrawable);
@@ -114,6 +127,24 @@ public class AnimationTestActivity extends BaseActivity {
         animatorSet.start();
     }
 
+    private void showViewBackground() {
+        int statusBarHeight = DisplayUtil.getStatusBarHeight();
+        int[] position = new int[2];
+        btnMaterialDesign.getLocationOnScreen(position);
+
+        int viewWidth = btnMaterialDesign.getWidth();
+        int viewHeight = btnMaterialDesign.getHeight();
+
+        int pointX = position[0] + viewWidth / 2;
+        int pointY = position[1] - statusBarHeight + viewHeight / 2;
+
+        ViewAnimationUtils.showFullScreenViewWithMD(background, llButtons, new Point(pointX, pointY));
+    }
+
+    private void hideViewBackgound() {
+        ViewAnimationUtils.hideFullScreenViewWithMD(background, llButtons);
+    }
+
     private View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -146,6 +177,9 @@ public class AnimationTestActivity extends BaseActivity {
                         heartLoadingDrawable.start();
                     }
                     break;
+                case R.id.btn_material_design:
+                    showViewBackground();
+                    break;
                 case R.id.btn_a:
                     startAnimation();
                     break;
@@ -160,6 +194,9 @@ public class AnimationTestActivity extends BaseActivity {
                     translationY.setDuration(500);
                     translationY.setRepeatCount(-1);
                     translationY.start();
+                    break;
+                case R.id.view_background:
+                    hideViewBackgound();
                     break;
             }
         }

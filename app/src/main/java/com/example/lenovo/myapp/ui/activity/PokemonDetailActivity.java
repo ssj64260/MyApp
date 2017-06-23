@@ -20,7 +20,6 @@ import com.cxb.tools.utils.AssetsUtil;
 import com.cxb.tools.utils.DisplayUtil;
 import com.cxb.tools.utils.StringCheck;
 import com.cxb.tools.utils.ThreadPoolUtil;
-import com.example.lenovo.myapp.MyApplication;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.db.PokemonLiteOrm;
 import com.example.lenovo.myapp.model.CharacteristicBean;
@@ -344,17 +343,17 @@ public class PokemonDetailActivity extends BaseActivity {
         tvSpeed.setText(speed);
 
         LinearLayout.LayoutParams hpParams = (LinearLayout.LayoutParams) lineHp.getLayoutParams();
-        hpParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(hp)) * 0.8);
+        hpParams.width = (int) (DisplayUtil.dip2px(Float.parseFloat(hp)) * 0.8);
         LinearLayout.LayoutParams attackParams = (LinearLayout.LayoutParams) lineAttack.getLayoutParams();
-        attackParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(attack)) * 0.8);
+        attackParams.width = (int) (DisplayUtil.dip2px(Float.parseFloat(attack)) * 0.8);
         LinearLayout.LayoutParams defenseParams = (LinearLayout.LayoutParams) lineDefense.getLayoutParams();
-        defenseParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(defense)) * 0.8);
+        defenseParams.width = (int) (DisplayUtil.dip2px(Float.parseFloat(defense)) * 0.8);
         LinearLayout.LayoutParams sAttackParams = (LinearLayout.LayoutParams) lineSattack.getLayoutParams();
-        sAttackParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(sAttack)) * 0.8);
+        sAttackParams.width = (int) (DisplayUtil.dip2px(Float.parseFloat(sAttack)) * 0.8);
         LinearLayout.LayoutParams sDefenseParams = (LinearLayout.LayoutParams) lineSdefense.getLayoutParams();
-        sDefenseParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(sDefense)) * 0.8);
+        sDefenseParams.width = (int) (DisplayUtil.dip2px(Float.parseFloat(sDefense)) * 0.8);
         LinearLayout.LayoutParams speedParams = (LinearLayout.LayoutParams) lineSpeed.getLayoutParams();
-        speedParams.width = (int) (DisplayUtil.dip2px(MyApplication.getInstance(), Float.parseFloat(speed)) * 0.8);
+        speedParams.width = (int) (DisplayUtil.dip2px(Float.parseFloat(speed)) * 0.8);
 
         lineHp.setLayoutParams(hpParams);
         lineAttack.setLayoutParams(attackParams);

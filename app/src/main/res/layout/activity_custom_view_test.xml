@@ -19,9 +19,18 @@
             android:orientation="vertical"
             android:padding="20dp">
 
+            <Chronometer
+                android:id="@+id/tv_system_time"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
+                android:layout_marginTop="20dp"
                 android:background="@color/white">
 
                 <ImageView

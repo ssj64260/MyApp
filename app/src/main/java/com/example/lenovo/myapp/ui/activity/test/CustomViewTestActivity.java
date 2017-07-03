@@ -12,6 +12,7 @@ import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ScrollView;
 
@@ -20,6 +21,7 @@ import com.cxb.tools.loopview.OnItemSelectedListener;
 import com.cxb.tools.myprogressbar.MyProgressBar;
 import com.cxb.tools.passwordlevel.PasswordLevelLayout;
 import com.cxb.tools.textswitcher.MyTextSwitcher;
+import com.cxb.tools.utils.DateTimeUtils;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.db.AddressLiteOrm;
@@ -38,12 +40,14 @@ import static com.example.lenovo.myapp.utils.PreferencesUtil.APP_SETTING;
 import static com.example.lenovo.myapp.utils.PreferencesUtil.KEY_FIRST_START;
 
 /**
- * 自定义控件展示
+ * 自定义控件展示   TODO 增加Chronometer控件
  */
 
 public class CustomViewTestActivity extends BaseActivity {
 
     private ScrollView svRoot;
+
+    private Chronometer tvSystemTime;
 
     private EditText etPassword;
     private PasswordLevelLayout pllPwdLevel;
@@ -92,7 +96,14 @@ public class CustomViewTestActivity extends BaseActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        tvSystemTime.start();
+    }
+
+    @Override
     protected void onDestroy() {
+        tvSystemTime.stop();
         if (mtsText != null) {
             mtsText.stop();
         }
@@ -102,6 +113,8 @@ public class CustomViewTestActivity extends BaseActivity {
 
     private void initView() {
         svRoot = (ScrollView) findViewById(R.id.sv_root);
+
+        tvSystemTime = (Chronometer) findViewById(R.id.tv_system_time);
 
         etPassword = (EditText) findViewById(R.id.et_password);
         pllPwdLevel = (PasswordLevelLayout) findViewById(R.id.pll_password_level);
@@ -125,6 +138,13 @@ public class CustomViewTestActivity extends BaseActivity {
     }
 
     private void setData() {
+        tvSystemTime.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometer) {
+                chronometer.setText(DateTimeUtils.getCnLongTime());
+            }
+        });
+
         setLoopMessage();
         setAddress();
 

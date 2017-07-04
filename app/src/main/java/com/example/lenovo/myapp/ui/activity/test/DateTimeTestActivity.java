@@ -7,12 +7,12 @@ import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.android.datetimepicker.date.DatePickerDialog;
-import com.android.datetimepicker.time.TimePickerDialog;
 import com.cxb.tools.utils.DateTimeUtils;
 import com.cxb.tools.utils.StringCheck;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.ui.dialog.DateTimePickerDialog;
+import com.example.lenovo.myapp.ui.dialog.DialogListener;
 import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
 
@@ -45,6 +45,8 @@ public class DateTimeTestActivity extends BaseActivity {
 
     private RadioGroup rgDate;
 
+    private DateTimePickerDialog pickerDialog;
+
     private int maxRange = DateTimeUtils.YEAR;
 
     @Override
@@ -54,6 +56,14 @@ public class DateTimeTestActivity extends BaseActivity {
 
         initView();
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (pickerDialog != null) {
+            pickerDialog.dismiss();
+        }
+        super.onDestroy();
     }
 
     private void initView() {
@@ -182,39 +192,63 @@ public class DateTimeTestActivity extends BaseActivity {
         }
     }
 
+    private void showPickerDialog(int tag, Calendar calendar, boolean isTimePicker) {
+        if (pickerDialog == null) {
+            pickerDialog = new DateTimePickerDialog(this);
+            pickerDialog.setDialogClickListener(datetimeListener);
+        }
+        pickerDialog.setDate(tag, calendar, isTimePicker);
+        pickerDialog.show();
+    }
+
     // textview点击监听
     private View.OnClickListener textClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
             switch (v.getId()) {
                 case R.id.tv_date1:
-                    String dateText1 = tvDate1.getText().toString();
-                    Calendar date1 = Calendar.getInstance();
+                    final String dateText1 = tvDate1.getText().toString();
+                    final Calendar date1 = Calendar.getInstance();
                     date1.setTime(DateTimeUtils.StringToDateIgnoreTime(dateText1));
-
-                    DatePickerDialog.newInstance(dateSet, date1.get(Calendar.YEAR), date1.get(Calendar.MONTH), date1.get(Calendar.DAY_OF_MONTH)).show(getFragmentManager(), String.valueOf(v.getId()));
+                    showPickerDialog(v.getId(), date1, false);
                     break;
                 case R.id.tv_date2:
-                    String dateText2 = tvDate2.getText().toString();
-                    Calendar date2 = Calendar.getInstance();
+                    final String dateText2 = tvDate2.getText().toString();
+                    final Calendar date2 = Calendar.getInstance();
                     date2.setTime(DateTimeUtils.StringToDateIgnoreTime(dateText2));
-
-                    DatePickerDialog.newInstance(dateSet, date2.get(Calendar.YEAR), date2.get(Calendar.MONTH), date2.get(Calendar.DAY_OF_MONTH)).show(getFragmentManager(), String.valueOf(v.getId()));
+                    showPickerDialog(v.getId(), date2, false);
                     break;
                 case R.id.tv_time1:
                     String timeText1 = tvTime1.getText().toString();
                     Calendar time1 = Calendar.getInstance();
                     time1.setTime(DateTimeUtils.StringToTimeIgnoreDate(timeText1));
-
-                    TimePickerDialog.newInstance(timeSet, time1.get(Calendar.HOUR_OF_DAY), time1.get(Calendar.MINUTE), true).show(getFragmentManager(), String.valueOf(v.getId()));
+                    showPickerDialog(v.getId(), time1, true);
                     break;
                 case R.id.tv_time2:
                     String timeText2 = tvTime2.getText().toString();
                     Calendar time2 = Calendar.getInstance();
                     time2.setTime(DateTimeUtils.StringToTimeIgnoreDate(timeText2));
+                    showPickerDialog(v.getId(), time2, true);
+                    break;
+            }
+        }
+    };
 
-                    TimePickerDialog.newInstance(timeSet, time2.get(Calendar.HOUR_OF_DAY), time2.get(Calendar.MINUTE), true).show(getFragmentManager(), String.valueOf(v.getId()));
+    private DialogListener datetimeListener = new DialogListener() {
+        @Override
+        public void onConfirmListener(int tag, String content) {
+            switch (tag) {
+                case R.id.tv_date1:
+                    tvDate1.setText(content);
+                    break;
+                case R.id.tv_date2:
+                    tvDate2.setText(content);
+                    break;
+                case R.id.tv_time1:
+                    tvTime1.setText(content);
+                    break;
+                case R.id.tv_time2:
+                    tvTime2.setText(content);
                     break;
             }
         }
@@ -284,31 +318,6 @@ public class DateTimeTestActivity extends BaseActivity {
                     svBackground.fullScroll(ScrollView.FOCUS_DOWN);
                 }
             });
-        }
-    };
-
-    //日期选择监听
-    private DatePickerDialog.OnDateSetListener dateSet = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePickerDialog dialog, int year, int monthOfYear, int dayOfMonth) {
-            if (String.valueOf(R.id.tv_date1).equals(dialog.getParentId())) {
-                tvDate1.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
-            } else if (String.valueOf(R.id.tv_date2).equals(dialog.getParentId())) {
-                tvDate2.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
-            }
-        }
-    };
-
-    //时间选择监听
-    private TimePickerDialog.OnTimeSetListener timeSet = new TimePickerDialog.OnTimeSetListener() {
-        @Override
-        public void onTimeSet(TimePickerDialog dialog, int hourOfDay, int minute) {
-            int second = (int) (Math.random() * 60);
-            if (String.valueOf(R.id.tv_time1).equals(dialog.getParentId())) {
-                tvTime1.setText(hourOfDay + ":" + minute + ":" + second);
-            } else if (String.valueOf(R.id.tv_time2).equals(dialog.getParentId())) {
-                tvTime2.setText(hourOfDay + ":" + minute + ":" + second);
-            }
         }
     };
 }

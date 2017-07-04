@@ -1,1 +1,1 @@
-include ':app', ':cxb library', ':DateTimePicker_Lib'
+include ':app', ':cxb library'

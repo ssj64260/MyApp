@@ -11,7 +11,7 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:textSize="16sp"
-        android:background="@color/blue"
+        android:background="@color/water"
         tools:text="外层List控件" />
 
     <View

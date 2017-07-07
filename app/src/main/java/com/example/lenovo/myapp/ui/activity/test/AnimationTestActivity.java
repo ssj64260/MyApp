@@ -31,11 +31,12 @@ import static com.cxb.tools.utils.AnimationUtil.BACKGROUND_COLOR;
 
 public class AnimationTestActivity extends BaseActivity {
 
-    private ImageView ivLoading, ivRedLoading, ivBigLoading, ivHeartLoading;
+    private ImageView ivCatLoading, ivLoading, ivRedLoading, ivBigLoading, ivHeartLoading;
     private Button btnMaterialDesign, btnA, btnB, btnC;
     private LinearLayout llButtons;
     private View background;
 
+    private AnimationDrawable catLoadingDrawable;
     private AnimationDrawable loadingDrawable;
     private AnimationDrawable redLoadingDrawable;
     private AnimationDrawable bigLoadingDrawable;
@@ -51,6 +52,7 @@ public class AnimationTestActivity extends BaseActivity {
     }
 
     private void initView() {
+        ivCatLoading = (ImageView) findViewById(R.id.iv_cat_loading);
         ivLoading = (ImageView) findViewById(R.id.iv_loading);
         ivRedLoading = (ImageView) findViewById(R.id.iv_red_loading);
         ivBigLoading = (ImageView) findViewById(R.id.iv_big_loading);
@@ -66,6 +68,7 @@ public class AnimationTestActivity extends BaseActivity {
     }
 
     private void setData() {
+        ivCatLoading.setOnClickListener(click);
         ivLoading.setOnClickListener(click);
         ivRedLoading.setOnClickListener(click);
         ivBigLoading.setOnClickListener(click);
@@ -78,17 +81,11 @@ public class AnimationTestActivity extends BaseActivity {
 
         background.setOnClickListener(click);
 
-        loadingDrawable = (AnimationDrawable) getDrawable(R.drawable.ic_qq_refresh_loading);
-        ivLoading.setImageDrawable(loadingDrawable);
-
-        redLoadingDrawable = (AnimationDrawable) getDrawable(R.drawable.red_loading);
-        ivRedLoading.setImageDrawable(redLoadingDrawable);
-
-        bigLoadingDrawable = (AnimationDrawable) getDrawable(R.drawable.big_loading);
-        ivBigLoading.setImageDrawable(bigLoadingDrawable);
-
-        heartLoadingDrawable = (AnimationDrawable) getDrawable(R.drawable.heart_loading);
-        ivHeartLoading.setImageDrawable(heartLoadingDrawable);
+        catLoadingDrawable = (AnimationDrawable) ivCatLoading.getDrawable();
+        loadingDrawable = (AnimationDrawable) ivLoading.getDrawable();
+        redLoadingDrawable = (AnimationDrawable) ivRedLoading.getDrawable();
+        bigLoadingDrawable = (AnimationDrawable) ivBigLoading.getDrawable();
+        heartLoadingDrawable = (AnimationDrawable) ivHeartLoading.getDrawable();
     }
 
     private void startAnimation() {
@@ -149,6 +146,13 @@ public class AnimationTestActivity extends BaseActivity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
+                case R.id.iv_cat_loading:
+                    if (catLoadingDrawable.isRunning()) {
+                        catLoadingDrawable.stop();
+                    } else {
+                        catLoadingDrawable.start();
+                    }
+                    break;
                 case R.id.iv_loading:
                     if (loadingDrawable.isRunning()) {
                         loadingDrawable.stop();

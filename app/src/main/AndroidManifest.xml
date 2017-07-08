@@ -293,6 +293,11 @@
             android:name=".ui.activity.QQMainActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".ui.activity.test.DensityCalculatorActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+
         <!-- ***********************************测试用页面*********************************** -->
 
     </application>

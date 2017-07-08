@@ -98,7 +98,8 @@ public class MyToolsActivity extends BaseActivity {
                 getString(R.string.btn_tool_17),
                 getString(R.string.btn_tool_18),
                 getString(R.string.btn_tool_19),
-                getString(R.string.btn_tool_20)
+                getString(R.string.btn_tool_20),
+                "DP & PX 计算器"
         };
 
         list.clear();
@@ -204,6 +205,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 19://服务相关
                         startActivity(new Intent(MyToolsActivity.this, ServiceTestActivity.class));
+                        break;
+                    case 20://DP & PX 计算器
+                        startActivity(new Intent(MyToolsActivity.this, DensityCalculatorActivity.class));
                         break;
                 }
             }

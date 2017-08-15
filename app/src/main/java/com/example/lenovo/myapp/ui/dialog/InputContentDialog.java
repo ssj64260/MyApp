@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +57,7 @@ public class InputContentDialog {
 //        window.setWindowAnimations(R.style.dialoganimstyle);  //添加动画
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);//设置不被虚拟键盘遮挡
         window.setBackgroundDrawableResource(R.color.transparent);//设置对话框以外的背景颜色
-
+        window.setGravity(Gravity.BOTTOM);
 
         title = (TextView) window.findViewById(R.id.tv_title);
         content = (EditText) window.findViewById(R.id.et_content);

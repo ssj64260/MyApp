@@ -296,7 +296,12 @@
         <activity
             android:name=".ui.activity.test.DensityCalculatorActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <activity
+            android:name=".ui.activity.test.DpiCalculatorActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <!-- ***********************************测试用页面*********************************** -->
 

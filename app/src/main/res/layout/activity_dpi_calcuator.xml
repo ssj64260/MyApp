@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3C3F41"
+    android:fitsSystemWindows="true"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:background="#3e3e3e"
+            android:gravity="center_vertical"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="Resolution:"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_width"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_bg_edittext"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="numberSigned"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="1920"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="x"
+            android:textColor="#BBBBBB"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/et_height"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_bg_edittext"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="numberSigned"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="1080"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="#3e3e3e"
+            android:gravity="center"
+            android:text="px"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:text="please,input resolution first"
+        android:textColor="#ff2f2f"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:background="#3e3e3e"
+            android:gravity="center_vertical"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="Screen size:"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_inch"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_bg_edittext"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp"
+            tools:text="15.6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="#3e3e3e"
+            android:gravity="center"
+            android:text="inch"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:background="#3e3e3e"
+            android:gravity="center_vertical"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="Density:"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_dpi"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_bg_edittext"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp"
+            tools:text="15.6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="#3e3e3e"
+            android:gravity="center"
+            android:text="dpi"
+            android:textColor="#BBBBBB"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_do_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/selector_btn_gray"
+        android:gravity="center"
+        android:text="Calculate"
+        android:textColor="@drawable/selector_btn_text_gray"
+        android:textSize="18sp" />
+
+</LinearLayout>

@@ -18,7 +18,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("chenxuebin.jks")
+            storeFile file("F:\\DOCUMENT\\Keystore\\chenxuebin.jks")
             storePassword "damima123"
             keyAlias "chenxuebin"
             keyPassword "damima123"

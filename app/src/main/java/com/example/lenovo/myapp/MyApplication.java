@@ -1,12 +1,14 @@
 package com.example.lenovo.myapp;
 
 import android.app.Application;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.cxb.tools.utils.AndroidUtils;
 import com.cxb.tools.utils.ThreadPoolUtil;
+import com.example.lenovo.myapp.model.DaoMaster;
+import com.example.lenovo.myapp.model.DaoSession;
 import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
-import com.squareup.leakcanary.LeakCanary;
 
 /**
  * 全局application
@@ -15,6 +17,11 @@ import com.squareup.leakcanary.LeakCanary;
 public class MyApplication extends Application {
 
     private static MyApplication INStANCE;
+
+    public DaoSession daoSession;
+    public SQLiteDatabase basedb;
+    public DaoMaster.DevOpenHelper helper;
+    public DaoMaster daoMaster;
 
     public MyApplication() {
         INStANCE = this;
@@ -34,9 +41,6 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        LeakCanary.install(this);
-
         Logger.init(getString(R.string.app_name));//初始化Log显示的TAG
 
         if (isApkDebugable()) {
@@ -44,6 +48,12 @@ public class MyApplication extends Application {
         }
 
         ThreadPoolUtil.init(5);//初始化线程池最大线程数
+
+
+        helper = new DaoMaster.DevOpenHelper(this, "Pokemon-db", null);
+        basedb = helper.getWritableDatabase();
+        daoMaster = new DaoMaster(basedb);
+        daoSession = daoMaster.newSession();
     }
 
     ///////////////////////////////////////////////////////////////////////////

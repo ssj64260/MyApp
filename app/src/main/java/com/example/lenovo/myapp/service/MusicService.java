@@ -16,11 +16,11 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.widget.RemoteViews;
 
+import com.cxb.tools.utils.SDCardUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.utils.ToastMaster;
 import com.orhanobut.logger.Logger;
 
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -74,11 +74,7 @@ public class MusicService extends Service {
 
         if (mMediaPlayer == null) {
             try {
-                String path = "/storage/emulated/0/Music/01. Hello,world!.mp3";
-                File file = new File(path);
-                if (!file.exists()) {
-                    path = "/storage/emulated/0/netease/cloudmusic/Music/Megan Nicole - Escape.mp3";
-                }
+                String path = SDCardUtil.getSDCardDir() + "/notification/Rather Be (Instrumental) - 伴奏版.mp3";
 
                 mMediaPlayer = new MediaPlayer();
                 mMediaPlayer.setDataSource(path);
@@ -153,7 +149,7 @@ public class MusicService extends Service {
         stopSelf(startId);
     }
 
-    private BroadcastReceiver notificationBroadcast =   new BroadcastReceiver() {
+    private BroadcastReceiver notificationBroadcast = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();

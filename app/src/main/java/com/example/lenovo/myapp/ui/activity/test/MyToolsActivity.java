@@ -13,6 +13,7 @@ import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.ui.activity.GuideActivity;
 import com.example.lenovo.myapp.ui.activity.test.cameratest.CameraToolsActivity;
 import com.example.lenovo.myapp.ui.activity.test.dbtest.DatebaseTestActivity;
+import com.example.lenovo.myapp.ui.activity.test.greendao.GreenDaoTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.nesttest.ListNestTestActivity;
 import com.example.lenovo.myapp.ui.activity.test.systemres.SystemResActivity;
 import com.example.lenovo.myapp.ui.activity.test.themetest.ThemeListActivity;
@@ -100,7 +101,8 @@ public class MyToolsActivity extends BaseActivity {
                 getString(R.string.btn_tool_19),
                 getString(R.string.btn_tool_20),
                 "DP & PX 计算器",
-                "DPI 计算器"
+                "DPI 计算器",
+                "GreenDao"
         };
 
         list.clear();
@@ -212,6 +214,9 @@ public class MyToolsActivity extends BaseActivity {
                         break;
                     case 21://DPI 计算器
                         startActivity(new Intent(MyToolsActivity.this, DpiCalculatorActivity.class));
+                        break;
+                    case 22://GreenDao
+                        GreenDaoTestActivity.show(MyToolsActivity.this);
                         break;
                 }
             }

@@ -186,6 +186,7 @@ public class SystemGetPhotoActivity extends BaseActivity {
 
     @Override
     public void onPermissionSuccess() {
+        //TODO 适配7.0
         Intent takeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takeIntent.resolveActivity(getPackageManager()) != null) {
             photoUri = new File(PhotoDirectory, System.currentTimeMillis() + ".jpg");

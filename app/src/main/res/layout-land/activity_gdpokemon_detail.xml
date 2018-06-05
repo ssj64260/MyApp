@@ -110,12 +110,26 @@
                         android:gravity="center"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        tools:text="猛火 或 火焰身躯" />
+                        tools:text="猛火" />
+
+                    <TextView
+                        android:id="@+id/tv_characteristic2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_bg_content_white"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        tools:text="火焰身躯"
+                        tools:visibility="visible" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="50dp"
-                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
                         android:layout_weight="1"
                         android:background="@drawable/shape_bg_content_white"
                         android:gravity="center"
@@ -130,9 +144,9 @@
                             android:textSize="12sp" />
 
                         <TextView
-                            android:id="@+id/tv_characteristic2"
+                            android:id="@+id/tv_characteristic3"
                             android:layout_width="match_parent"
-                            android:layout_height="30dp"
+                            android:layout_height="20dp"
                             android:gravity="center"
                             android:textColor="@color/black"
                             android:textSize="12sp"
@@ -210,7 +224,7 @@
                     android:id="@+id/ll_bg_ethnic_value"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:padding="5dp"
@@ -243,9 +257,9 @@
             android:id="@+id/ll_bg_attributes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_margin="10dp"
             android:padding="5dp"
             tools:background="@drawable/shape_bg_fire_light">
 

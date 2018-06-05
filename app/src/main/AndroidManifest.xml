@@ -306,9 +306,7 @@
         <activity
             android:name=".ui.activity.test.greendao.GreenDaoTestActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.test.greendao.GDPokemonDetailActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.test.greendao.GDPokemonDetailActivity" />
 
         <!-- ***********************************测试用页面*********************************** -->
 

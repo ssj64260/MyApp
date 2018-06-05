@@ -51,7 +51,8 @@ public class GDPokemonDetailActivity extends BaseActivity {
     private LinearLayout llBgEthnicValue;//种族值背景色
     private LinearLayout llBgAttributes;//各项属性背景色
     private TextView tvCharacteristic1;//特性1
-    private TextView tvCharacteristic2;//特殊特性
+    private TextView tvCharacteristic2;//特性2
+    private TextView tvCharacteristic3;//特殊特性
     private TextView tvProperty1;//属性1
     private TextView tvProperty2;//属性2
     private TextView tvEthnicValue;//种族值
@@ -109,7 +110,7 @@ public class GDPokemonDetailActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pokemon_detail);
+        setContentView(R.layout.activity_gdpokemon_detail);
 
         initData();
         initView(savedInstanceState);
@@ -146,6 +147,7 @@ public class GDPokemonDetailActivity extends BaseActivity {
         llBgAttributes = findViewById(R.id.ll_bg_attributes);
         tvCharacteristic1 = findViewById(R.id.tv_characteristic1);
         tvCharacteristic2 = findViewById(R.id.tv_characteristic2);
+        tvCharacteristic3 = findViewById(R.id.tv_characteristic3);
         tvProperty1 = findViewById(R.id.tv_pm_property1);
         tvProperty2 = findViewById(R.id.tv_pm_property2);
         tvEthnicValue = findViewById(R.id.tv_ethnic_value);
@@ -172,8 +174,8 @@ public class GDPokemonDetailActivity extends BaseActivity {
         final String name = mPokemon.getName();
         final GDPokemonName pokemonName = mPokemon.getPmName();
         final String mega = mPokemon.getMega();
-        final String genuineSmallLogo = "http://www.koudai8.com/pmdex/img/pm/cg/" + id + ".png";
-        final String noBackgroundLogo = "http://res.pokemon.name/sprites/core/xy/front/" + id + "." + mega + ".png";
+        final String logo1 = "http://res.pokemon.name/sprites/core/xy/front/" + id + "." + mega + ".png";
+        final String logo2 = "http://res.pokemon.name/common/pokemon/pgl/" + id + "." + mega + ".png";
 
         final List<GDProperty> propertyList = mPokemon.getProperty();
         mPropertyList.clear();
@@ -212,18 +214,22 @@ public class GDPokemonDetailActivity extends BaseActivity {
         if (characteristicList != null && !characteristicList.isEmpty()) {
             mCharacteristicList.addAll(characteristicList);
             final String cName1 = mCharacteristicList.size() > 0 ? mCharacteristicList.get(0).getName() : "";
-            final String cName2 = mCharacteristicList.size() > 1 ? mCharacteristicList.get(1).getName() : "无";
+            final String cName2 = mCharacteristicList.size() > 1 ? mCharacteristicList.get(1).getName() : "";
             final String cName3 = mCharacteristicList.size() > 2 ? mCharacteristicList.get(2).getName() : "";
 
             if (!TextUtils.isEmpty(cName3)) {
-                tvCharacteristic1.setText(String.format(getString(R.string.text_pokemon_characteristic_or), cName1, cName2));
-                tvCharacteristic2.setText(cName3);
-            } else {
                 tvCharacteristic1.setText(cName1);
                 tvCharacteristic2.setText(cName2);
+                tvCharacteristic3.setText(cName3);
+
+                tvCharacteristic2.setVisibility(View.VISIBLE);
+            } else {
+                tvCharacteristic1.setText(cName1);
+                tvCharacteristic3.setText(cName2);
             }
             tvCharacteristic1.setOnClickListener(mClick);
             tvCharacteristic2.setOnClickListener(mClick);
+            tvCharacteristic3.setOnClickListener(mClick);
         }
 
         final String hp = mPokemon.getHp();
@@ -247,7 +253,7 @@ public class GDPokemonDetailActivity extends BaseActivity {
         }
         tvId.setText("#" + id);
 
-        Glide.with(this).load(noBackgroundLogo)
+        Glide.with(this).load(logo2)
                 .error(R.drawable.bg_ditto)
                 .fitCenter()
                 .into(ivImage);
@@ -320,6 +326,9 @@ public class GDPokemonDetailActivity extends BaseActivity {
                     ToastMaster.toast(mCharacteristicList.get(0).getDescription());
                     break;
                 case R.id.tv_characteristic2:
+                    ToastMaster.toast(mCharacteristicList.get(1).getDescription());
+                    break;
+                case R.id.tv_characteristic3:
                     ToastMaster.toast(mCharacteristicList.get(mCharacteristicList.size() - 1).getDescription());
                     break;
                 case R.id.tv_pm_property1:

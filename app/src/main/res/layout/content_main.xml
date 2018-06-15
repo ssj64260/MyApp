@@ -50,13 +50,19 @@
             android:background="@color/line_gray" />
     </RelativeLayout>
 
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/xrv_list"
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_network_warnning"
-        android:background="@color/gray96"
-        android:fadingEdge="none"
-        android:overScrollMode="never" />
+        android:background="@color/gray96">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </RelativeLayout>

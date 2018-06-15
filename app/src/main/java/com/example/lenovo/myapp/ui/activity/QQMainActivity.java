@@ -7,7 +7,9 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,13 +25,16 @@ import com.cxb.tools.utils.NetworkUtil;
 import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.QQMessageBean;
-import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.adapter.QQMainAdapter;
 import com.example.lenovo.myapp.ui.base.BaseActivity;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.utils.ToastMaster;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +64,8 @@ public class QQMainActivity extends BaseActivity {
     private ImageView ivAdd;
     private RelativeLayout rlNetworkWarm;
 
-    private XRecyclerView recyclerView;
+    private SmartRefreshLayout mRefreshLayout;
+    private RecyclerView recyclerView;
     private List<QQMessageBean> list;
     private QQMainAdapter adapter;
 
@@ -214,21 +220,26 @@ public class QQMainActivity extends BaseActivity {
         adapter = new QQMainAdapter(this, list);
         adapter.setOnListClickListener(listClick);
 
-        recyclerView = (XRecyclerView) rightView.findViewById(R.id.xrv_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        recyclerView.setLoadingMoreEnabled(false);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
+        mRefreshLayout = findViewById(R.id.refreshLayout);
+        mRefreshLayout.setRefreshHeader(new ClassicsHeader(this));
+//        mRefreshLayout.setRefreshFooter(new ClassicsFooter(mActivity));
+        mRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
-            public void onRefresh() {
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 doRefresh();
             }
-
-            @Override
-            public void onLoadMore() {
-//                doLoadMore();
-            }
         });
+//        mRefreshLayout.setOnLoadmoreListener(mLoadMore);
+//        mRefreshLayout.setEnableOverScrollBounce(true);
+        mRefreshLayout.setEnableOverScrollDrag(true);
+        mRefreshLayout.setEnableLoadMore(false);
+        mRefreshLayout.setEnableAutoLoadMore(false);
+        mRefreshLayout.setDisableContentWhenRefresh(true);
+        mRefreshLayout.setDisableContentWhenLoading(true);
+
+        recyclerView = (RecyclerView) rightView.findViewById(R.id.rv_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(adapter);
 
         for (int i = 0; i < QQ_AVATAR.length; i++) {
             QQMessageBean qq = new QQMessageBean();
@@ -326,7 +337,8 @@ public class QQMainActivity extends BaseActivity {
                             list.add(qq);
                         }
                         adapter.notifyDataSetChanged();
-                        recyclerView.refreshComplete();
+
+                        mRefreshLayout.finishRefresh();
                     }
                 });
             }

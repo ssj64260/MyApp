@@ -14,6 +14,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -31,11 +32,16 @@ import com.cxb.tools.utils.ThreadPoolUtil;
 import com.example.lenovo.myapp.R;
 import com.example.lenovo.myapp.model.MainListBean;
 import com.example.lenovo.myapp.ui.adapter.MainAdapter;
-import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.ui.base.BaseAppCompatActivity;
 import com.example.lenovo.myapp.ui.dialog.TipsActionDialog;
+import com.example.lenovo.myapp.ui.intefaces.OnListClickListener;
 import com.example.lenovo.myapp.utils.ToastMaster;
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -51,7 +57,8 @@ public class MainActivity extends BaseAppCompatActivity {
     private DrawerLayout drawer;
     private ImageView ivMainAvatar;//主页头像
 
-    private XRecyclerView recyclerView;
+    private SmartRefreshLayout mRefreshLayout;
+    private RecyclerView recyclerView;
     private List<MainListBean> list;
     private MainAdapter adapter;
 
@@ -125,7 +132,7 @@ public class MainActivity extends BaseAppCompatActivity {
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ivMainAvatar = (ImageView) findViewById(R.id.iv_main_avatar);
-        recyclerView = (XRecyclerView) findViewById(R.id.xrv_list);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_list);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -194,21 +201,31 @@ public class MainActivity extends BaseAppCompatActivity {
         adapter = new MainAdapter(this, list);
         adapter.setOnListClickListener(listClick);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
+        mRefreshLayout = findViewById(R.id.refreshLayout);
+        mRefreshLayout.setRefreshHeader(new ClassicsHeader(this));
+        mRefreshLayout.setRefreshFooter(new ClassicsFooter(this));
+        mRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
-            public void onRefresh() {
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 doRefresh();
             }
-
+        });
+        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
-            public void onLoadMore() {
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 doLoadMore();
             }
         });
+        mRefreshLayout.setEnableOverScrollBounce(true);
+        mRefreshLayout.setEnableOverScrollDrag(true);
+        mRefreshLayout.setEnableAutoLoadMore(false);
+        mRefreshLayout.setDisableContentWhenRefresh(true);
+        mRefreshLayout.setDisableContentWhenLoading(true);
 
-        recyclerView.refresh();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(adapter);
+
+        mRefreshLayout.autoRefresh();
     }
 
     private void doRefresh() {
@@ -233,7 +250,7 @@ public class MainActivity extends BaseAppCompatActivity {
                             list.add(ml);
                         }
                         adapter.notifyDataSetChanged();
-                        recyclerView.refreshComplete();
+                        mRefreshLayout.finishRefresh();
                     }
                 });
             }
@@ -247,6 +264,12 @@ public class MainActivity extends BaseAppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+
+                        if (list.size() > 38) {
+                            mRefreshLayout.finishLoadMoreWithNoMoreData();
+                            return;
+                        }
+
                         for (int i = 0; i < 10; i++) {
                             MainListBean ml = new MainListBean();
                             float progress = (float) (Math.random() * 99);
@@ -256,11 +279,7 @@ public class MainActivity extends BaseAppCompatActivity {
                             list.add(ml);
                         }
                         adapter.notifyDataSetChanged();
-                        recyclerView.loadMoreComplete();
-
-                        if (list.size() > 38) {
-                            recyclerView.setNoMore(true);
-                        }
+                        mRefreshLayout.finishLoadMore();
                     }
                 });
             }

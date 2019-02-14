@@ -107,7 +107,7 @@ public class PokemonMainActivity extends BaseAppCompatActivity {
         if (savedInstanceState != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             List<Fragment> list = getSupportFragmentManager().getFragments();
-            if (list != null && list.size() >= 3) {
+            if (list != null && list.size() >= tabCount) {
                 for (Fragment fragment : list) {
                     if (fragment instanceof HomeFragment) {
                         fragmentList[0] = fragment;
